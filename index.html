@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markar DAO</title>
+  </head>
+  <body theme-mode="dark">
+    <script>window.global = window;</script>
+    <script type="module">
+        import { Buffer } from "buffer";
+        import process from "process";
+        import EventEmitter from "events";
+            
+        window.Buffer = Buffer;
+        window.process = process;
+        window.EventEmitter = EventEmitter;
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
