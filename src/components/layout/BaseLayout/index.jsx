@@ -9,7 +9,7 @@ function BaseLayout(props) {
       <Layout.Header>
         <Header />
       </Layout.Header>
-      <Layout.Content className={classNames('bg-black/10 nmd:relative', contentClassName)}>
+      <Layout.Content className={classNames('bg-black/10 nmd:relative pt-[120px]', contentClassName)}>
         {children}
       </Layout.Content>
     </Layout>
