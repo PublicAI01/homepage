@@ -1,4 +1,5 @@
 import { Typography } from '@douyinfe/semi-ui';
+import { LinearGradientCard } from './components/LinearGradientCard';
 import LinearGradientText from './components/LinearGradientText';
 
 function Home() {
@@ -11,6 +12,12 @@ function Home() {
           <button>
             Get Started
           </button>
+          <LinearGradientCard
+            className="w-[200px] h-[250px]"
+            title="Quality Control"
+            text={<>Content</>}
+            border="linear-gradient(to right, #CBFF5E, #00E5FF)"
+          />
         </div>
       </div>
     </div>
