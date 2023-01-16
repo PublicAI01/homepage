@@ -7,6 +7,7 @@ import inject from '@rollup/plugin-inject';
 import compressPlugin from 'vite-plugin-compression';
 import legacyPlugin from '@vitejs/plugin-legacy';
 import path from 'path';
+import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
 import viteSvgComponentPlugin from './plugins/vite-svg-component/index';
 
 const r = (p) => path.resolve(__dirname, p);
@@ -49,6 +50,7 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       plugins: [
+        dynamicImportVars(),
         inject(
           { Buffer: ['buffer', 'Buffer'] },
         ),

@@ -1041,6 +1041,16 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.0.5.tgz#d5c65626add4c3c185a89aa5bd38b1e42daec075"
   integrity sha512-my0Mycd+jruq/1lQuO5LBB6WTlL/e8DTCYWp44DfMTDcXz8DcTlgF0ISaLsGewt+ctHN+yA8xMq3q/N7uWJPug==
 
+"@rollup/plugin-dynamic-import-vars@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-dynamic-import-vars/-/plugin-dynamic-import-vars-2.0.2.tgz#33a780a5f7ebd955357682583aef7e0346025069"
+  integrity sha512-aycot2FUPPVb3uDswXsmUdgu8Z8T82uQGBGXZm/uf9XNsp1QoFDBhPrLiwNDJB8BUIiaRjvmaVsAPAQrbVTBVA==
+  dependencies:
+    "@rollup/pluginutils" "^5.0.1"
+    estree-walker "^2.0.2"
+    fast-glob "^3.2.12"
+    magic-string "^0.27.0"
+
 "@rollup/plugin-inject@^5.0.0":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-inject/-/plugin-inject-5.0.2.tgz#b26c0e6e73f39c118ffc1cf07cfbfd93459b93a6"
