@@ -27,9 +27,7 @@ function Header() {
   }];
 
   return (
-    <header
-      className="text-white bg-black/30 nmd:h-[120px] xmd:py-4 backdrop-blur-md"
-    >
+    <header className="text-white bg-black/30 nmd:h-[120px] xmd:py-4 backdrop-blur-md fixed top-0 left-0 w-full z-40">
       <div className="h-full flex items-center container mx-auto">
         <div className="nmd:flex-shrink-0 mr-2 xmd:flex-1">
           <Link className="flex items-center" to="/">

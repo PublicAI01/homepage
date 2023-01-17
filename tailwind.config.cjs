@@ -12,17 +12,10 @@ module.exports = {
       fontWeight: {
       },
       colors: {
-        'primary-1': 'var(--color-primary-1)',
-        'primary-2': 'var(--color-primary-2)',
-        'secondary-danger': 'var(--color-secondary-danger)',
-        'secondary-waring': 'var(--color-secondary-waring)',
-        'secondary-green': 'var(--color-secondary-green)',
-        'secondary-purple': 'var(--color-secondary-purple)',
-        'dark-1': 'var(--color-dark-1)',
-        cancel: 'var(--color-cancel)',
-        'dark-bg-1': 'var(--color-dark-bg-1)',
-        'dark-bg-2': 'var(--color-dark-bg-2)',
-        'text-dark-1': 'var(--color-text-dark-1)',
+      },
+      backgroundImage: {
+        text: 'var(--linear-gradient-text)',
+        button: 'var(--linear-gradient-button)',
       },
       spacing: {},
       maxWidth: {

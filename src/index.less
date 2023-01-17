@@ -2,12 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import '@/assets/styles/base.css';
+@import '@/assets/styles/variable.less';
 
 :root {
-  --linear-primary: linear-gradient(267.71deg, #0348ff 0%, #1781ef 100%);
-  ::-webkit-scrollbar{
-    display: none;
-  }
+  --linear-gradient-text: @linear-gradient-text;
+  --linear-gradient-button: @linear-gradient-button;
 }
 
 * {
@@ -27,6 +26,9 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
+  @media (min-width: 1536px){
+    max-width: 1280px;
+  }
 
   @media (max-width: 1023px) {
     padding-left: 20px;
