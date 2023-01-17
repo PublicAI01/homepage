@@ -27,6 +27,9 @@ module.exports = {
         nmd: { min: '769px' },
         // md: { max: '1023px' },
       },
+      translate: {
+        'right-1/2': '-50%',
+      },
     },
   },
   plugins: [],
