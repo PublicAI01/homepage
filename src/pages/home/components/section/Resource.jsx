@@ -11,11 +11,6 @@ import resourceWhitePaper from '@/assets/imgs/home/resource-whitepaper.png';
 import resourceDocument from '@/assets/imgs/home/resource-document.png';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
 
-const Card = styled.div`
-
-
-`;
-
 const cardData = [{
   img: resourcePrice,
   title: 'Price',
@@ -45,9 +40,11 @@ function Resource() {
         {cardData.map((item) => (
           <Col xl={8} lg={12} span={24} className="text-center" key={item.title}>
             <LinearGradientBox
-              linear={activeCard === item.title ? 'var(--linear-gradient-border-green)' : false}
-              className={classNames('rounded-[10px] py-4', activeCard !== item.title && 'border-2 border-[#4E4E4E]')}
+              nolinear
+              linear="var(--linear-gradient-border-green)"
+              className="rounded-[10px] py-4 border-2 border-[#4E4E4E] hover:border-[transparent]"
               borderWidth={4}
+              hover
             >
               <Image src={item.img} preview={false} width="80px" />
               <Typography.Text className="text-lg block">{item.title}</Typography.Text>

@@ -16,6 +16,10 @@ module.exports = {
       backgroundImage: {
         text: 'var(--linear-gradient-text)',
         button: 'var(--linear-gradient-button)',
+        'bg-pink': 'var(--linear-gradient-bg-pink)',
+        'bg-gray': 'var(--linear-gradient-bg-gray)',
+        'border-green': 'var(--linear-gradient-border-green)',
+        'border-purple': 'var(--linear-gradient-border-purple)',
       },
       spacing: {},
       maxWidth: {

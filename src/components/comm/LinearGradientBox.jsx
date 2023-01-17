@@ -4,6 +4,12 @@ import styled from 'styled-components';
 export const StyledLinearGradientBox = styled.div`
   position: relative;
 
+  &:hover{
+    >.gradient{
+      background-image: ${(props) => (props.hover && (props.linear || 'var(--linear-gradient-border-purple);'))};
+    }
+  }
+
   >.gradient{
     position: absolute;
     top: -${(props) => `${props['border-width']}px`};
@@ -12,7 +18,7 @@ export const StyledLinearGradientBox = styled.div`
     height: calc(100% + ${(props) => `${props['border-width'] * 2}px`});
     border-radius: inherit;
     z-index: -1;
-    background-image: ${(props) => (props.linear === false ? '' : (props.linear || 'var(--linear-gradient-border-purple);'))};
+    background-image: ${(props) => (props.nolinear ? '' : (props.linear || 'var(--linear-gradient-border-purple);'))};
   }
 
 `;
