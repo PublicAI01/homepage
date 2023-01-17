@@ -5,6 +5,7 @@ import { Typography } from '@douyinfe/semi-ui';
 import { IconTwitter } from '@douyinfe/semi-icons';
 import { StyledIconWrap, StyledLaunchButton, StyledNavLink } from './styled';
 import logo from '@/assets/imgs/header/logo.png';
+import LinearGradientBox from '@/components/comm/LinearGradientBox';
 
 function Header() {
   const location = useLocation();
@@ -56,10 +57,9 @@ function Header() {
           <div><IconTwitter /></div>
         </StyledIconWrap>
 
-        <StyledLaunchButton className="xmd:hidden">
-          Launch App
-          <div className="gradient" />
-        </StyledLaunchButton>
+        <LinearGradientBox className="ml-3 w-[160px] h-[42px] text-center rounded-full xmd:hidden">
+          <button className="hover:text-white/80 font-bold !leading-[42px] " heading={5}>Launch App</button>
+        </LinearGradientBox>
 
       </div>
       <ul className="flex justify-center pt-2 nmd:hidden items-center text-center">

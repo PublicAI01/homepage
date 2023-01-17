@@ -70,11 +70,11 @@
     "vite-plugin-compression": "^0.5.1"
   },
   "lint-staged": {
-    "frontend/src/**/*.{js,jsx}": [
+    "src/**/*.{js,jsx}": [
       "eslint --fix",
       "git add"
     ],
-    "frontend/src/**/*.{css,less}": [
+    "src/**/*.{css,less}": [
       "stylelint --fix --custom-syntax postcss-less",
       "git add"
     ]
