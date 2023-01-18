@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import { Typography } from '@douyinfe/semi-ui';
 import { IconTwitter } from '@douyinfe/semi-icons';
-import { StyledIconWrap, StyledLaunchButton, StyledNavLink } from './styled';
+import { StyledIconWrap, StyledNavLink } from './styled';
 import logo from '@/assets/imgs/header/logo.png';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
 
@@ -16,15 +16,19 @@ function Header() {
   }, {
     text: 'Overview',
     href: '/overview',
+    disabled: true,
   }, {
     text: 'Pricing',
     href: '/pricing',
+    disabled: true,
   }, {
     text: 'Resources',
     href: '/resources',
+    disabled: true,
   }, {
     text: 'Help',
     href: '/help',
+    disabled: true,
   }];
 
   return (
@@ -41,8 +45,20 @@ function Header() {
           <ul className="flex-1 flex text-center xmd:hidden">
             {useMemo(
               () => navs.map((nav) => (
-                <StyledNavLink key={nav.text} className={nav.href === location.pathname ? 'active' : ''}>
-                  <Link className="block w-full h-full" to={nav.href}>{nav.text}</Link>
+                <StyledNavLink
+                  key={nav.text}
+                  className={classNames({
+                    active: nav.href === location.pathname,
+                    '!cursor-not-allowed': nav.disabled,
+                  })}
+                >
+                  <Link
+                    className={classNames('block w-full h-full', {
+                      'pointer-events-none': nav.disabled,
+                    })}
+                    to={nav.href}
+                  >{nav.text}
+                  </Link>
                 </StyledNavLink>
               )),
               [],
@@ -58,7 +74,7 @@ function Header() {
         </StyledIconWrap>
 
         <LinearGradientBox className="ml-3 w-[160px] h-[42px] text-center rounded-full xmd:hidden">
-          <button className="hover:text-white/80 font-bold !leading-[42px] " heading={5}>Launch App</button>
+          <button className="hover:text-white/80 font-bold !leading-[42px] ">Launch App</button>
         </LinearGradientBox>
 
       </div>

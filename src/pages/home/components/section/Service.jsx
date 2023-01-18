@@ -1,6 +1,7 @@
 import { Col, Row, Typography } from '@douyinfe/semi-ui';
 import LinearGradientText from '../LinearGradientText';
 import { SectionWrap, StyledServiceCard } from './styled';
+import bg from '@/assets/imgs/home/service-bg.png';
 
 const cardData = [{
   title: 'MarkerDao',
@@ -30,6 +31,7 @@ function Service() {
         ))}
 
       </Row>
+      <img src={bg} alt="" className="absolute top-[10%] left-0 -z-[1]" />
     </SectionWrap>
   );
 }
