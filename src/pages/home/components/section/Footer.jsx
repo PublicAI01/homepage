@@ -1,4 +1,4 @@
-import { Col, Row } from '@douyinfe/semi-ui';
+import { Col, Row, Typography } from '@douyinfe/semi-ui';
 import { IconMailStroked1, IconUserCardPhone, IconMapPin } from '@douyinfe/semi-icons';
 import logo from '../../../../assets/imgs/logo.svg';
 import ins from '../../../../assets/imgs/links/ins.svg';
@@ -49,6 +49,9 @@ export function Footer(params) {
           </div>
         </Col>
       </Row>
+      <div className="text-center mt-[200px]">
+        <Typography.Text className="text-[#7B7B7B]">© 2023 MarkerDAO . All Rights Reserved</Typography.Text>
+      </div>
     </SectionWrap>
   );
 }
