@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Col, Row } from '@douyinfe/semi-ui';
 import LinearGradientText from '../LinearGradientText';
 import { SectionWrap } from './styled';
 import img1 from '../../../../assets/imgs/howItWorks/img1.svg';
@@ -22,22 +23,28 @@ export function Section3() {
           showIcon
         />
       </div>
-      <div className="w-full flex justify-between mt-16">
-        <div className="w-[300px] flex flex-col items-center self-center">
+      <Row type="flex" gutter={16} className="mt-16">
+        <Col span={6} className="flex flex-col items-center self-center">
           <img src={img1} alt="" />
-          <div className="mt-4 text-[18px]">Requesters have tasks they need to be completed</div>
-        </div>
-        <img className="w-[150px] self-center" src={rightArrow} alt="" />
-        <ShadowWrapper className="w-[300px] px-8 py-6 self-center">
-          <img src={img2} alt="" />
-          <div className="text-[24px] mt-5">MarkerDAO <br /> Marketplace</div>
-        </ShadowWrapper>
-        <img className="w-[150px] self-center" src={leftArrow} alt="" />
-        <div className="w-[300px] flex flex-col items-center self-center">
+          <div className="mt-6 text-[18px]">Requesters have tasks they need to be completed</div>
+        </Col>
+        <Col className="self-center" span={3}>
+          <img src={rightArrow} alt="" />
+        </Col>
+        <Col span={6}>
+          <ShadowWrapper className="px-8 py-6 self-center">
+            <img src={img2} alt="" />
+            <div className="text-[24px] mt-5">MarkerDAO <br /> Marketplace</div>
+          </ShadowWrapper>
+        </Col>
+        <Col className="self-center" span={3}>
+          <img src={leftArrow} alt="" />
+        </Col>
+        <Col span={6} className="flex flex-col items-center self-center">
           <img src={img3} alt="" />
-          <div className="mt-4 text-[18px]">Workers want to earn money and work on interesting tasks</div>
-        </div>
-      </div>
+          <div className="mt-6 text-[18px]">Workers want to earn money and work on interesting tasks</div>
+        </Col>
+      </Row>
     </SectionWrap>
   );
 }

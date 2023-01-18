@@ -1,3 +1,4 @@
+import { Footer } from './components/section/Footer';
 import Partners from './components/section/Partners';
 import Resource from './components/section/Resource';
 import Section1 from './components/section/section1';
@@ -14,6 +15,7 @@ function Home() {
       <Service />
       <Partners />
       <Resource />
+      <Footer />
     </div>
   );
 }

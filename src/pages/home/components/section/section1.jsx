@@ -1,5 +1,4 @@
 import { Typography } from '@douyinfe/semi-ui';
-import { LinearGradientCard } from '../LinearGradientCard';
 import LinearGradientText from '../LinearGradientText';
 import { SectionWrap } from './styled';
 
