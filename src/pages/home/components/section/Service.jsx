@@ -17,7 +17,7 @@ function Service() {
   return (
     <SectionWrap>
       <LinearGradientText textClassName="text-[48px] leading-none" text="Service" showIcon />
-      <Row className="!mt-10">
+      <Row className="!mt-10" gutter={[12]}>
         {cardData.map((item) => (
           <Col key={item.tagText} xl={12} lg={12} md={12} span={24}>
             <StyledServiceCard>

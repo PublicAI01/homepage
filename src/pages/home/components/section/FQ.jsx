@@ -6,16 +6,20 @@ import { FQCard, SectionWrap } from './styled';
 
 const cardData = [{
   title: 'What is Webflow and why is it the best website builder?',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
 }, {
   title: 'What is your favorite template from BRIX Templates?',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
 }, {
   title: 'How do you clone a Webflow Template from the Showcase?',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
 }, {
   title: 'Why is BRIX Templates the best Webflow agency out there?',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
 }];
 
 function FQCardItem({ item }) {
@@ -26,13 +30,15 @@ function FQCardItem({ item }) {
       <div className="header">
         <Typography.Title heading={4}>{item.title}</Typography.Title>
         <div className="icon" onClick={() => setActive(!active)}>
-          <IconChevronRight size="large" />
+          <IconChevronRight className={active ? 'active' : ''} size="large" />
         </div>
       </div>
 
-      <Collapsible isOpen={active} keepDOM>
-        <Typography.Text className="mt-2">{item.text}</Typography.Text>
-      </Collapsible>
+      <div className="mr-20">
+        <Collapsible isOpen={active} keepDOM>
+          <Typography.Text className="mt-2">{item.text}</Typography.Text>
+        </Collapsible>
+      </div>
 
     </FQCard>
   );

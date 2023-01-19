@@ -10,12 +10,16 @@ export const SectionWrap = styled.div`
 export const StyledServiceCard = styled.div`
   background: var(--linear-gradient-bg-gray),
     url(/src/assets/imgs/home/service-card-bg.png) left top / 100% 100%;
-  border: 4px solid #3A3A3A;
+  /* border: 4px solid #3A3A3A; */
   backdrop-filter: blur(103.5px);
   border-radius: 10px;
-  padding: 240px 45px 70px;
+  padding: 0 45px 40px;
+  height: 520px;
   transition: 0.2s transform;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
   >.title-wrap{
     display: flex;
@@ -108,7 +112,9 @@ export const FQCard = styled(LinearGradientBox).attrs({
       }
       >span{
         transition: .3s transform;
-        transform: ${(props) => props.active && 'rotate(90deg);'};
+        &.active {
+          transform: rotate(90deg);
+        }
       }
     }
     /* >. */
