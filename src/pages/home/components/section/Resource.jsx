@@ -1,9 +1,7 @@
 import {
   Col, Image, Row, Typography,
 } from '@douyinfe/semi-ui';
-import styled from 'styled-components';
 import { useState } from 'react';
-import classNames from 'classnames';
 import LinearGradientText from '../LinearGradientText';
 import { SectionWrap } from './styled';
 import resourcePrice from '@/assets/imgs/home/resource-price.png';
@@ -23,7 +21,7 @@ const cardData = [{
 }];
 
 function Resource() {
-  const [activeCard] = useState('White Paper');
+  // const [activeCard] = useState('White Paper');
 
   return (
     <SectionWrap>

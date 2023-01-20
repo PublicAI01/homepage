@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { Col, Row } from '@douyinfe/semi-ui';
 import LinearGradientText from '../LinearGradientText';
 import { SectionWrap } from './styled';
-import img1 from '../../../../assets/imgs/howItWorks/img1.svg';
-import img2 from '../../../../assets/imgs/howItWorks/img2.svg';
-import img3 from '../../../../assets/imgs/howItWorks/img3.svg';
-import leftArrow from '../../../../assets/imgs/arrow/leftArrow.svg';
-import rightArrow from '../../../../assets/imgs/arrow/rightArrow.svg';
+import img1 from '@/assets/imgs/howItWorks/img1.png';
+import img2 from '@/assets/imgs/howItWorks/img2.png';
+import img3 from '@/assets/imgs/howItWorks/img3.png';
+import leftArrow from '@/assets/imgs/arrow/leftArrow.svg';
+import rightArrow from '@/assets/imgs/arrow/rightArrow.svg';
 
 const ShadowWrapper = styled.div`
   background: rgba(255, 255, 255, 0.03);
