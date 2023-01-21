@@ -22,7 +22,7 @@ function Header() {
     text: 'Services',
     href: 'services',
   }, {
-    text: 'Route',
+    text: 'Roadmap',
     href: 'roadmap',
   }, {
     text: 'Partners',

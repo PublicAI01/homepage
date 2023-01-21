@@ -10,8 +10,8 @@ import { SectionWrap } from './styled';
 export function Footer() {
   return (
     <SectionWrap>
-      <Row type="flex" justify="space-between">
-        <Col span={7}>
+      <Row type="flex" justify="center">
+        <Col span={6}>
           <img src={logo} alt="" />
           {/* <div className="mt-4">those who do not know how to pursue pleasure rationally encounter consequences that are</div> */}
           <div className="mt-4 flex w-1/3 justify-between">
@@ -21,7 +21,7 @@ export function Footer() {
             <img src={chat} alt="" />
           </div>
         </Col>
-        <Col span={3}>
+        <Col span={4} offset={2}>
           <div className="text-[20px]">Quick Links</div>
           <div>
             <div><Typography.Text className="mt-1">Home</Typography.Text></div>
@@ -30,7 +30,7 @@ export function Footer() {
             <div><Typography.Text className="mt-1">Contact</Typography.Text></div>
           </div>
         </Col>
-        <Col span={4}>
+        <Col span={4} offset={2}>
           <div>Let&apos;s Talk </div>
           <div className="flex mt-4">
             <IconMailStroked1 size="extra-large" className="mr-4" />
@@ -41,13 +41,13 @@ export function Footer() {
             <Typography.Text>+852 4639 6923</Typography.Text>
           </div>
         </Col>
-        <Col span={6}>
-          {/* <div>Office Address</div>
+        {/* <Col span={6}>
+          <div>Office Address</div>
           <div className="flex mt-4">
             <IconMapPin size="extra-large" className="mr-4" />
             <div>Futian district shenzhen.china</div>
-          </div> */}
-        </Col>
+          </div>
+        </Col> */}
       </Row>
       <div className="text-center mt-[200px]">
         <Typography.Text className="text-[#7B7B7B]">© 2023 MarkerDAO . All Rights Reserved</Typography.Text>
