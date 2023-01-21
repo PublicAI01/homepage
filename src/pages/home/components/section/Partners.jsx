@@ -19,7 +19,7 @@ function Partners() {
   }, []);
 
   return (
-    <SectionWrap>
+    <SectionWrap id="partners">
       <div className="text-center">
 
         <LinearGradientText

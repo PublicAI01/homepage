@@ -1,34 +1,52 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
-import { Typography } from '@douyinfe/semi-ui';
-import { IconTwitter } from '@douyinfe/semi-icons';
+import { Toast, Typography } from '@douyinfe/semi-ui';
 import { StyledIconWrap, StyledNavLink } from './styled';
 import logo from '@/assets/imgs/header/logo.png';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
+import { ReactComponent as Twitter } from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
+import { ReactComponent as Telegram } from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
+import { ReactComponent as Quora } from '@/assets/imgs/header/Navigation-Bar/quora.svg';
+import { ReactComponent as Medium } from '@/assets/imgs/header/Navigation-Bar/medium.svg';
+import { ReactComponent as Discord } from '@/assets/imgs/header/Navigation-Bar/discord.svg';
+import { toAnchor } from '@/utils/utils';
 
 function Header() {
   const location = useLocation();
 
   const navs = [{
     text: 'Home',
-    href: '/',
+    href: '',
   }, {
-    text: 'Overview',
-    href: '/overview',
-    disabled: true,
+    text: 'Services',
+    href: 'services',
   }, {
-    text: 'Pricing',
-    href: '/pricing',
-    disabled: true,
+    text: 'Route',
+    href: 'roadmap',
+  }, {
+    text: 'Partners',
+    href: 'partners',
   }, {
     text: 'Resources',
-    href: '/resources',
-    disabled: true,
+    href: 'resources',
+  }];
+
+  const platform = [{
+    href: 'https://twitter.com/MarkerDAO_',
+    com: Twitter,
   }, {
-    text: 'Help',
-    href: '/help',
-    disabled: true,
+    href: 'https://discord.gg/gpvb4cf8QE',
+    com: Discord,
+  }, {
+    href: 'https://medium.com/@contact_88042',
+    com: Medium,
+  }, {
+    href: 'https://www.quora.com/profile/MarkerDAO',
+    com: Quora,
+  }, {
+    href: '',
+    com: Telegram,
   }];
 
   return (
@@ -47,18 +65,19 @@ function Header() {
               () => navs.map((nav) => (
                 <StyledNavLink
                   key={nav.text}
-                  className={classNames({
-                    active: nav.href === location.pathname,
+                  className={classNames('header__nav', {
+                    active: nav.text === 'Home',
                     '!cursor-not-allowed': nav.disabled,
                   })}
                 >
-                  <Link
+                  <a
                     className={classNames('block w-full h-full', {
                       'pointer-events-none': nav.disabled,
                     })}
-                    to={nav.href}
-                  >{nav.text}
-                  </Link>
+                    href={`#${nav.href}`}
+                    onClick={() => toAnchor(nav.href)}
+                  > {nav.text}
+                  </a>
                 </StyledNavLink>
               )),
               [],
@@ -68,12 +87,17 @@ function Header() {
         </div>
 
         <StyledIconWrap className="xmd:!hidden">
-          <div><IconTwitter /></div>
-          <div><IconTwitter /></div>
-          <div><IconTwitter /></div>
+          {platform.map(({ href, com: Com }, i) => (
+            <a href={href} target="_blank " rel="noreferrer" key={i}>
+              <Com width="36" height="36" fill="white" />
+            </a>
+          ))}
         </StyledIconWrap>
 
-        <LinearGradientBox className="ml-3 w-[160px] h-[42px] text-center rounded-full xmd:hidden">
+        <LinearGradientBox
+          className="ml-3 w-[160px] h-[42px] text-center rounded-full xmd:hidden"
+          onClick={() => Toast.info('coming soon.')}
+        >
           <button className="hover:text-white/80 font-bold !leading-[42px] ">Launch App</button>
         </LinearGradientBox>
 

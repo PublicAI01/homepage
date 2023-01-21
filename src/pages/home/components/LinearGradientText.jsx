@@ -15,14 +15,14 @@ const GradientTextWrap = styled.div`
 
 function LinearGradientText(props) {
   const {
-    text, className, textClassName, showIcon,
+    text, className, textClassName, showIcon, id,
   } = props;
 
   return (
-    <div className={cns('inline-block relative', className)}>
+    <div className={cns('inline-block relative linear-gradient-text', className)}>
       { showIcon && <img className="inline" width="98" src={sphere} alt="sphere" />}
       <GradientTextWrap>
-        <Typography.Text className={cns(textClassName)}>{text}</Typography.Text>
+        <Typography.Text className={cns(textClassName)} id={id}>{text}</Typography.Text>
       </GradientTextWrap>
     </div>
   );

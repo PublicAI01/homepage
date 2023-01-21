@@ -89,3 +89,14 @@ export function filterEmptyField(data = []) {
     return ret;
   }, {});
 }
+
+export function toAnchor(id) {
+  try {
+    document.getElementById(id).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  } catch (error) {
+
+  }
+}

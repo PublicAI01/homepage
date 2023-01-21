@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import cns from 'classnames';
+import { Typography } from '@douyinfe/semi-ui';
 
 export function LinearGradientCard(params) {
   const {
@@ -10,12 +11,12 @@ export function LinearGradientCard(params) {
     color: white;
     box-sizing: border-box;
     padding: 2px;
-    background-image: ${border};
     border-radius: 8px;
   `;
 
   const SplitLine = styled.div`
-    background-image: ${border};
+    width: 100px;
+    background-image: var(--linear-gradient-border-green);
   `;
 
   return (
@@ -27,8 +28,8 @@ export function LinearGradientCard(params) {
             <div className="relative bottom-2/3 text-[24px]">{title}</div>
           </div>
         </div>
-        <SplitLine className="w-[150px] h-[4px] relative left-1/2 translate-x-right-1/2 my-4" />
-        <div>{text}</div>
+        <SplitLine className="h-[4px] relative left-1/2 translate-x-right-1/2 my-4" />
+        <Typography.Paragraph className="text-xl">{text}</Typography.Paragraph>
       </div>
     </CardWrapper>
   );

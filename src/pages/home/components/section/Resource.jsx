@@ -11,25 +11,25 @@ import LinearGradientBox from '@/components/comm/LinearGradientBox';
 
 const cardData = [{
   img: resourcePrice,
-  title: 'Price',
+  title: 'Pricing',
 }, {
   img: resourceWhitePaper,
   title: 'White Paper',
 }, {
   img: resourceDocument,
-  title: 'Development Doc',
+  title: 'Dev Documentation',
 }];
 
 function Resource() {
   // const [activeCard] = useState('White Paper');
 
   return (
-    <SectionWrap>
+    <SectionWrap id="resources">
 
       <div className="text-center mb-10">
         <LinearGradientText
           textClassName="text-[48px] leading-none"
-          text="Resource"
+          text="Resources"
           showIcon
         />
       </div>

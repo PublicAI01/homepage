@@ -19,22 +19,18 @@ export const StyledIconWrap = styled.div`
   align-items: center;
   margin-left: 80px;
   color: black;
-
-  >div{
+  >a{
     width: 36px;
     height: 36px;
-    background-color: white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
     cursor: pointer;
-
-    &:hover{
-      background-color: rgb(255 255 255 / 0.8);
+    & + a {
+      margin-left: 8px;
     }
-
-    & + div {
-      margin-left: 16px;
+    &:hover{
+      >svg{
+        fill: rgb(255 255 255 / 0.8);
+      }
     }
   }
+
 `;
