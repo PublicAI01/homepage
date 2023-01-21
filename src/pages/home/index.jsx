@@ -21,7 +21,7 @@ function Home() {
         for (let i = wraps.length - 1; i >= 0; i -= 1) {
           const wrap = wraps[i];
           const nav = navs[i];
-          if (wrap.offsetTop <= scrollY) {
+          if (wrap.offsetTop - 100 <= scrollY) {
             const preEl = nav.previousElementSibling;
             const nextEl = nav.nextElementSibling;
             if (preEl && preEl.classList.contains('active')) {
