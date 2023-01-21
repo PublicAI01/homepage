@@ -45,7 +45,7 @@ function Header() {
     href: 'https://www.quora.com/profile/MarkerDAO',
     com: Quora,
   }, {
-    href: '',
+    href: 'https://t.me/+3n0uhe65ECQxODBl',
     com: Telegram,
   }];
 
