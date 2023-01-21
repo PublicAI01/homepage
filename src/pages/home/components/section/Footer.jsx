@@ -15,10 +15,10 @@ export function Footer() {
           <img src={logo} alt="" />
           {/* <div className="mt-4">those who do not know how to pursue pleasure rationally encounter consequences that are</div> */}
           <div className="mt-4 flex w-1/3 justify-between">
-            <img src={camera} alt="" />
+            {/* <img src={camera} alt="" />
             <img src={ins} alt="" />
             <img src={facebook} alt="" />
-            <img src={chat} alt="" />
+            <img src={chat} alt="" /> */}
           </div>
         </Col>
         <Col span={4} offset={2}>
