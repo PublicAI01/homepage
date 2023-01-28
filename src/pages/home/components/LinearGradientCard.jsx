@@ -2,22 +2,22 @@ import styled from 'styled-components';
 import cns from 'classnames';
 import { Typography } from '@douyinfe/semi-ui';
 
+const CardWrapper = styled.div`
+  color: white;
+  box-sizing: border-box;
+  padding: 2px;
+  border-radius: 8px;
+`;
+
+const SplitLine = styled.div`
+  width: 100px;
+  background-image: var(--linear-gradient-border-green);
+`;
+
 export function LinearGradientCard(params) {
   const {
-    text, title, icon, border, className,
+    text, title, icon, className,
   } = params;
-
-  const CardWrapper = styled.div`
-    color: white;
-    box-sizing: border-box;
-    padding: 2px;
-    border-radius: 8px;
-  `;
-
-  const SplitLine = styled.div`
-    width: 100px;
-    background-image: var(--linear-gradient-border-green);
-  `;
 
   return (
     <CardWrapper className={cns(className)}>

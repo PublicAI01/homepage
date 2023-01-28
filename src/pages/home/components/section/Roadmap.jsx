@@ -17,11 +17,11 @@ function Roadmap() {
         text="Roadmap"
         showIcon
       />
-      <div className="cards mt-8 flex items-center overflow-y-auto p-2">
+      <div className="cards mt-8 flex overflow-x-auto p-2 whitespace-nowrap">
         {cardData.map((item) => (
           <RoadMapCard key={item.title}>
-            <Typography.Title>{item.title}</Typography.Title>
-            <Typography.Text className="mt-2">{item.text}</Typography.Text>
+            <Typography.Title className="whitespace-normal">{item.title}</Typography.Title>
+            <Typography.Text className="mt-2 whitespace-normal">{item.text}</Typography.Text>
           </RoadMapCard>
         ))}
       </div>

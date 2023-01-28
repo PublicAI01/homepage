@@ -10,9 +10,9 @@ import { SectionWrap } from './styled';
 export function Footer() {
   return (
     <SectionWrap>
-      <Row type="flex" justify="center">
-        <Col span={6}>
-          <img src={logo} alt="" />
+      <Row type="flex" gutter={[24, 24]} justify="center">
+        <Col xl={6} lg={6} span={24} className="text-center">
+          <img className="inline-block" src={logo} alt="" />
           {/* <div className="mt-4">those who do not know how to pursue pleasure rationally encounter consequences that are</div> */}
           <div className="mt-4 flex w-1/3 justify-between">
             {/* <img src={camera} alt="" />
@@ -21,7 +21,7 @@ export function Footer() {
             <img src={chat} alt="" /> */}
           </div>
         </Col>
-        <Col span={4} offset={2}>
+        <Col xl={6} lg={6} span={24} className="text-center">
           <div className="text-[20px]">Quick Links</div>
           <div>
             <div><Typography.Text className="mt-1">Home</Typography.Text></div>
@@ -30,13 +30,13 @@ export function Footer() {
             <div><Typography.Text className="mt-1">Contact</Typography.Text></div>
           </div>
         </Col>
-        <Col span={4} offset={2}>
+        <Col xl={6} lg={6} span={24} className="text-center">
           <div>Let&apos;s Talk </div>
-          <div className="flex mt-4">
+          <div className="flex mt-4 justify-center">
             <IconMailStroked1 size="extra-large" className="mr-4" />
             <Typography.Text>info@markerdao.io</Typography.Text>
           </div>
-          <div className="flex mt-4">
+          <div className="flex mt-4 justify-center">
             <IconUserCardPhone size="extra-large" className="mr-4" />
             <Typography.Text>+852 4639 6923</Typography.Text>
           </div>
@@ -49,7 +49,7 @@ export function Footer() {
           </div>
         </Col> */}
       </Row>
-      <div className="text-center mt-[200px]">
+      <div className="text-center mt-[100px]">
         <Typography.Text className="text-[#7B7B7B]">© 2023 MarkerDAO . All Rights Reserved</Typography.Text>
       </div>
     </SectionWrap>

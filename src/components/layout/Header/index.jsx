@@ -1,7 +1,8 @@
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import { Toast, Typography } from '@douyinfe/semi-ui';
+import { IconGithubLogo } from '@douyinfe/semi-icons';
 import { StyledIconWrap, StyledNavLink } from './styled';
 import logo from '@/assets/imgs/header/logo.png';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
@@ -41,10 +42,13 @@ function Header() {
   }, {
     href: 'https://medium.com/@contact_88042',
     com: Medium,
-  }, {
-    href: 'https://www.quora.com/profile/MarkerDAO',
-    com: Quora,
-  }, {
+  },
+  {
+    href: 'https://github.com/MarkerDAO',
+    // eslint-disable-next-line react/no-unstable-nested-components
+    com: () => <IconGithubLogo className="text-white text-[36px] hover:text-white/80" />,
+  },
+  {
     href: 'https://t.me/+3n0uhe65ECQxODBl',
     com: Telegram,
   }];
@@ -95,28 +99,36 @@ function Header() {
         </StyledIconWrap>
 
         <LinearGradientBox
-          className="ml-3 w-[160px] h-[42px] text-center rounded-full xmd:hidden"
+          className="ml-3 w-[160px] h-[42px] text-center rounded-full whitespace-nowrap px-2"
           onClick={() => Toast.info('coming soon.')}
         >
           <button className="hover:text-white/80 font-bold !leading-[42px] ">Launch App</button>
         </LinearGradientBox>
 
       </div>
-      <ul className="flex justify-center pt-2 nmd:hidden items-center text-center">
+      {/* <ul className="flex justify-center pt-2 nmd:hidden items-center text-center">
         {useMemo(
           () => navs.map((nav) => (
             <StyledNavLink
               key={nav.text}
-              className={classNames('!w-auto flex-1', {
-                active: nav.href === location.pathname,
+              className={classNames('header__nav', {
+                active: nav.text === 'Home',
+                '!cursor-not-allowed': nav.disabled,
               })}
             >
-              <Link className="block w-full h-full" to={nav.href}>{nav.text}</Link>
+              <a
+                className={classNames('block w-full h-full', {
+                  'pointer-events-none': nav.disabled,
+                })}
+                href={`#${nav.href}`}
+                onClick={() => toAnchor(nav.href)}
+              > {nav.text}
+              </a>
             </StyledNavLink>
           )),
           [],
         )}
-      </ul>
+      </ul> */}
     </header>
   );
 }

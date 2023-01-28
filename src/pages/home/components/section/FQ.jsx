@@ -33,15 +33,15 @@ function FQCardItem({ item }) {
   return (
     <FQCard>
       <div className="header">
-        <Typography.Title heading={4}>{item.title}</Typography.Title>
+        <Typography.Title heading={2}>{item.title}</Typography.Title>
         <div className="icon" onClick={() => setActive(!active)}>
           <IconChevronRight className={active ? 'active' : ''} size="large" />
         </div>
       </div>
 
-      <div className="mr-20">
+      <div className="mr-20 mt-4">
         <Collapsible isOpen={active} keepDOM>
-          <Typography.Text className="mt-2">{item.text}</Typography.Text>
+          <Typography.Text className="mt-2 text-lg">{item.text}</Typography.Text>
         </Collapsible>
       </div>
 

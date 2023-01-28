@@ -28,6 +28,7 @@ export const StyledServiceCard = styled.div`
     
     >.title-wrap{
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       margin-bottom: 24px;
       >h1{
@@ -85,9 +86,9 @@ export const RoadMapCard = styled(LinearGradientBox).attrs({
   linear: 'var(--linear-gradient-border-green)',
   borderWidth: 4,
 })`
-  padding: 32px 32px 0; 
-  height: 380px;
-  width: 340px;
+  padding: 18px; 
+  min-height: 380px;
+  min-width: 340px;
   border: 1px solid #4e4e4e;
   border-radius: 12px;
   &:hover {
@@ -126,6 +127,7 @@ export const FQCard = styled(LinearGradientBox).attrs({
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
       cursor: pointer;
       &:hover{
         background: #3E3E3E90;
