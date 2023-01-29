@@ -1,12 +1,15 @@
-import { Image, Typography } from '@douyinfe/semi-ui';
+import { Typography } from '@douyinfe/semi-ui';
+import React, { Suspense } from 'react';
 import LinearGradientText from '../LinearGradientText';
 import { SectionWrap } from './styled';
-import banner from '@/assets/imgs/banner.png';
+import sceneCodeUrl from './scene.splinecode?url';
+
+const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 function Section1() {
   return (
     <SectionWrap className="flex items-center" id="home">
-      <div className="nmd:w-3/5 relative z-2 xmd:backdrop-blur-[10px] xmd:py-20">
+      <div className="nmd:w-3/5 relative z-2 xmd:bg-black/40 xmd:py-20 p-2">
         <div>
           <LinearGradientText
             textClassName="text-[128px] leading-none xmd:text-4xl"
@@ -18,8 +21,12 @@ function Section1() {
           Get Started
         </button>
       </div>
-      <div className="max-w-[560px] xmd:absolute -z-10 xmd:top-20 xmd:left-0">
-        <Image preview={false} src={banner} alt="" />
+      <div className="nmd:flex-1 h-[600px] xmd:h-[500px] xmd:absolute xmd:-z-10 xmd:top-20 xmd:left-0 xmd:w-full">
+        <div className="w-full h-full rounded-lg overflow-auto">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Spline scene={sceneCodeUrl} />
+          </Suspense>
+        </div>
       </div>
     </SectionWrap>
   );

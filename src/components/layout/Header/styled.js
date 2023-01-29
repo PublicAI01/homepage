@@ -17,7 +17,7 @@ export const StyledNavLink = styled.li`
 export const StyledIconWrap = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 80px;
+  margin-left: 24px;
   color: black;
   >a{
     width: 36px;

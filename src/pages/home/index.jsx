@@ -12,36 +12,44 @@ import Service from './components/section/Service';
 function Home() {
   const wrapRef = useRef();
   useEffect(() => {
-    if (wrapRef.current) {
-      const navs = document.querySelectorAll('.header__nav');
-      const wraps = wrapRef.current.querySelectorAll('.section-wrap[id]');
-      const onScroll = () => {
-        const { scrollY } = window;
-        // eslint-disable-next-line for-direction
-        for (let i = wraps.length - 1; i >= 0; i -= 1) {
-          const wrap = wraps[i];
-          const nav = navs[i];
-          if (wrap.offsetTop - 100 <= scrollY) {
-            const preEl = nav.previousElementSibling;
-            const nextEl = nav.nextElementSibling;
-            if (preEl && preEl.classList.contains('active')) {
-              preEl.classList.remove('active');
-            }
-            if (nextEl && nextEl.classList.contains('active')) {
-              nextEl.classList.remove('active');
-            }
-            if (!nav.classList.contains('active')) {
-              nav.classList.add('active');
-            }
-            return;
+    setTimeout(() => {
+      if (wrapRef.current) {
+        const navs = document.querySelectorAll('.header__nav');
+        const wraps = wrapRef.current.querySelectorAll('.section-wrap[id]');
+        const handleNavClass = (nav) => {
+          const preEl = nav.previousElementSibling;
+          const nextEl = nav.nextElementSibling;
+          if (preEl && preEl.classList.contains('active')) {
+            preEl.classList.remove('active');
           }
-        }
-      };
-      document.addEventListener('scroll', onScroll);
-      return () => {
-        document.removeEventListener('scroll', onScroll);
-      };
-    }
+          if (nextEl && nextEl.classList.contains('active')) {
+            nextEl.classList.remove('active');
+          }
+          if (!nav.classList.contains('active')) {
+            nav.classList.add('active');
+            return true;
+          }
+        };
+        const onScroll = () => {
+          const { scrollY } = window;
+          // eslint-disable-next-line for-direction
+          for (let i = wraps.length - 1; i >= 0; i -= 1) {
+            const wrap = wraps[i];
+            const nav = navs[i];
+            const navMobile = navs[i + navs.length / 2];
+            if (wrap.offsetTop - 100 <= scrollY) {
+              handleNavClass(nav);
+              handleNavClass(navMobile);
+              return;
+            }
+          }
+        };
+        document.addEventListener('scroll', onScroll);
+        return () => {
+          document.removeEventListener('scroll', onScroll);
+        };
+      }
+    }, 100);
   }, []);
   return (
     <div className="mt-16 container scroll-smooth" ref={wrapRef}>
