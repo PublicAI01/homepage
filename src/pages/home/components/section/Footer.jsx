@@ -1,10 +1,6 @@
 import { Col, Row, Typography } from '@douyinfe/semi-ui';
 import { IconMailStroked1, IconUserCardPhone } from '@douyinfe/semi-icons';
 import logo from '@/assets/imgs/logo.svg';
-import ins from '@/assets/imgs/links/ins.svg';
-import camera from '@/assets/imgs/links/camera.svg';
-import facebook from '@/assets/imgs/links/facebook.svg';
-import chat from '@/assets/imgs/links/chat.svg';
 import { SectionWrap } from './styled';
 
 export function Footer() {

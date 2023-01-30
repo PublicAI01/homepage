@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
+import { DEVICE } from '@/config/device';
 
 export const SectionWrap = styled.div.attrs({ className: 'section-wrap' })`
   padding-top: 60px;
@@ -78,6 +79,12 @@ export const StyledServiceCard = styled.div`
       display: block;
     }
   }
+  @media ${DEVICE.xmd} {
+    >.content{
+      padding: 12px;
+      height: 400px;
+    }
+  }
 `;
 
 export const RoadMapCard = styled(LinearGradientBox).attrs({
@@ -139,6 +146,8 @@ export const FQCard = styled(LinearGradientBox).attrs({
         }
       }
     }
-    /* >. */
+  }
+  @media ${DEVICE.xmd} {
+    padding: 12px;
   }
 `;

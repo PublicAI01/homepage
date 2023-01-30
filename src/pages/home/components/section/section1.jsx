@@ -1,5 +1,5 @@
 import { Typography } from '@douyinfe/semi-ui';
-import React, { Suspense } from 'react';
+import React, { Suspense, useRef } from 'react';
 import LinearGradientText from '../LinearGradientText';
 import { SectionWrap } from './styled';
 import sceneCodeUrl from './scene.splinecode?url';
@@ -7,9 +7,14 @@ import sceneCodeUrl from './scene.splinecode?url';
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 function Section1() {
+  const splineApp = useRef();
+
+  const onLoad = (_splineApp) => {
+    splineApp.current = _splineApp;
+  };
   return (
-    <SectionWrap className="flex items-center" id="home">
-      <div className="nmd:w-3/5 relative z-2 xmd:bg-black/40 xmd:py-20 p-2">
+    <SectionWrap className="flex items-center h-[calc(100vh_-_120px)] xmd:!pt-0" id="home">
+      <div className="nmd:w-3/5 relative z-2 xmd:bg-black/40 p-2 xmd:py-24">
         <div>
           <LinearGradientText
             textClassName="text-[128px] leading-none xmd:text-4xl"
@@ -24,7 +29,7 @@ function Section1() {
       <div className="nmd:flex-1 h-[600px] xmd:h-[500px] xmd:absolute xmd:-z-10 xmd:top-20 xmd:left-0 xmd:w-full">
         <div className="w-full h-full rounded-lg overflow-auto">
           <Suspense fallback={<div>Loading...</div>}>
-            <Spline scene={sceneCodeUrl} />
+            <Spline onLoad={onLoad} scene={sceneCodeUrl} />
           </Suspense>
         </div>
       </div>

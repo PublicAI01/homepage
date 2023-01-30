@@ -28,8 +28,8 @@ function Service() {
             <StyledServiceCard>
               <div className="content">
                 <div className="title-wrap">
-                  <Typography.Title heading={1}>{item.title}</Typography.Title>
-                  <Typography.Title heading={1}>{item.tagText}</Typography.Title>
+                  <Typography.Title className="xmd:!text-3xl" heading={1}>{item.title}</Typography.Title>
+                  <Typography.Title className="xmd:!text-3xl" heading={1}>{item.tagText}</Typography.Title>
                 </div>
                 <Typography.Paragraph className="text-3xl">{item.content}</Typography.Paragraph>
               </div>

@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { Toast, Typography } from '@douyinfe/semi-ui';
 import { StyledIconWrap, StyledNavLink } from './styled';

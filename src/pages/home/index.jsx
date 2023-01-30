@@ -52,7 +52,7 @@ function Home() {
     }, 100);
   }, []);
   return (
-    <div className="mt-16 container scroll-smooth" ref={wrapRef}>
+    <div className="container scroll-smooth" ref={wrapRef}>
       <Section1 />
       <Section2 />
       <Section3 />

@@ -18,14 +18,14 @@ function Section2() {
             showIcon
           />
         </div>
-        <Typography.Paragraph className="text-2xl mt-4 text-right">
+        <Typography.Paragraph className="text-2xl mt-4 text-right xmd:break-all">
           MarkerDAO is an open, decentralized platform that connects businesses and individuals with a global network of workers.
           It simplifies the process of outsourcing a wide range of tasks, from data annotation to more complex research.
           This platform allows organizations to tap into the collective skills of a vast,
           structured workforce to enhance data analysis, and speed up the development of machine learning models.
         </Typography.Paragraph>
       </div>
-      <Row type="flex" gutter={[24, 24]} className="px-[50px]">
+      <Row type="flex" gutter={[24, 24]} className="px-[50px] xmd:px-0">
         <Col xl={8} lg={12} span={24}>
           <LinearGradientCard
             className="h-[400px]"

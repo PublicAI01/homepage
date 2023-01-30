@@ -33,7 +33,7 @@ function FQCardItem({ item }) {
   return (
     <FQCard>
       <div className="header">
-        <Typography.Title heading={2}>{item.title}</Typography.Title>
+        <Typography.Title heading={4}>{item.title}</Typography.Title>
         <div className="icon" onClick={() => setActive(!active)}>
           <IconChevronRight className={active ? 'active' : ''} size="large" />
         </div>

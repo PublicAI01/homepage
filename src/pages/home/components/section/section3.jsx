@@ -35,7 +35,7 @@ function Section3() {
           </div>
         </Col>
         <Col xl={8} lg={8} span={24}>
-          <ShadowWrapper className="px-8 py-6 text-center">
+          <ShadowWrapper className="px-8 py-6 text-center xmd:mx-10">
             <img className="inline" src={img2} width="270" alt="" />
             <div className="text-[24px] mt-5">MarkerDAO <br /> Marketplace</div>
           </ShadowWrapper>
