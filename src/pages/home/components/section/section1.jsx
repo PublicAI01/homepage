@@ -10,9 +10,13 @@ const Spline = React.lazy(() => import('@splinetool/react-spline'));
 const StyledSplineBox = styled.div`
   position: absolute;
   z-index: 1;
-  width: 70%;
-  right: -12%;
-  transform: scale(1.5);
+  width: 50%;
+  right: 0;
+  height: 600px;
+
+  >canvas{
+    transform: scale(1.2);
+  }
 
   @media ${DEVICE.xmd} {
     height: 500px;
@@ -21,22 +25,24 @@ const StyledSplineBox = styled.div`
     width: 100%;
     top: 100px;
     z-index: -10;
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
 
 `;
 
 function Section1() {
+  const splineRef = useRef();
   const splineApp = useRef();
 
   const onLoad = (_splineApp) => {
     splineApp.current = _splineApp;
-    // _splineApp.setZoom(1.5);
+    _splineApp.setZoom(1.2);
   };
+
   return (
     <SectionWrap className="flex items-center min-h-[calc(100vh_-_120px)] xmd:!pt-0" id="home">
       <div className="nmd:w-3/5 relative z-2 xmd:bg-black/40 p-2 xmd:py-24">
-        <div className="relative z-10 pointer-events-none">
+        <div className="relative z-10">
           <div>
             <LinearGradientText
               textClassName="text-[128px] leading-none xmd:text-[48px]"
@@ -49,9 +55,9 @@ function Section1() {
           Get Started
         </button>
       </div>
-      <StyledSplineBox className="nmd:flex-1 h-[600px]">
+      <StyledSplineBox>
         <Suspense fallback={<div>Loading...</div>}>
-          <Spline onLoad={onLoad} scene="https://prod.spline.design/RWc0Ma8j0CUcDh0e/scene.splinecode" />
+          <Spline ref={splineRef} onLoad={onLoad} scene="https://prod.spline.design/RWc0Ma8j0CUcDh0e/scene.splinecode" />
         </Suspense>
       </StyledSplineBox>
     </SectionWrap>
