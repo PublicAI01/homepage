@@ -24,9 +24,9 @@ function Section3() {
           showIcon
         />
       </div>
-      <Row type="flex" gutter={[24, 24]} className="mt-16">
+      <Row type="flex" gutter={[24, 44]} className="mt-16">
         <Col xl={8} lg={8} span={24} className="text-center">
-          <div className="flex items-center">
+          <div className="flex items-center justify-center">
             <div className="mr-4">
               <img className="inline" src={img1} width="200" alt="" />
               <Typography.Text className="block mt-6 text-[18px]">Requesters have tasks they need to be completed</Typography.Text>
@@ -41,7 +41,7 @@ function Section3() {
           </ShadowWrapper>
         </Col>
         <Col xl={8} lg={8} span={24} className="text-center">
-          <div className="flex items-center">
+          <div className="flex items-center justify-center">
             <img className="xmd:hidden" src={leftArrow} alt="" />
             <div className="ml-4">
               <img className="inline" src={img3} width="200" alt="" />
