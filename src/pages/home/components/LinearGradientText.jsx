@@ -22,7 +22,7 @@ function LinearGradientText(props) {
     <div className={cns('inline-block relative linear-gradient-text', className)}>
       { showIcon && <img className="inline" width="98" src={sphere} alt="sphere" />}
       <GradientTextWrap>
-        <Typography.Text className={cns(textClassName)} id={id}>{text}</Typography.Text>
+        <Typography.Text className={cns('title', textClassName)} id={id}>{text}</Typography.Text>
       </GradientTextWrap>
     </div>
   );
