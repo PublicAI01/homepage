@@ -31,15 +31,15 @@ function FQCardItem({ item }) {
   const [active, setActive] = useState(false);
 
   return (
-    <FQCard>
+    <FQCard onClick={() => setActive(!active)}>
       <div className="header">
         <Typography.Title heading={4}>{item.title}</Typography.Title>
-        <div className="icon" onClick={() => setActive(!active)}>
+        <div className="icon">
           <IconChevronRight className={active ? 'active' : ''} size="large" />
         </div>
       </div>
 
-      <div className="mr-20 mt-4">
+      <div className="mr-20 mt-4 cursor-default" onClick={(e) => e.stopPropagation()}>
         <Collapsible isOpen={active} keepDOM>
           <Typography.Text className="mt-2 text-lg">{item.text}</Typography.Text>
         </Collapsible>

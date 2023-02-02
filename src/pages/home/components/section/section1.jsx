@@ -1,5 +1,5 @@
 import { Typography } from '@douyinfe/semi-ui';
-import React, { Suspense, useRef, useEffect } from 'react';
+import React, { Suspense, useRef } from 'react';
 import styled from 'styled-components';
 import { DEVICE } from '@/config/device';
 import LinearGradientText from '../LinearGradientText';
@@ -13,10 +13,7 @@ const StyledSplineBox = styled.div`
   width: 50%;
   right: 0;
   height: 500px;
-
-  /* >canvas{
-    transform: scale(1.2);
-  } */
+  contain: paint;
 
   @media ${DEVICE.xmd} {
     height: 500px;
@@ -31,24 +28,12 @@ const StyledSplineBox = styled.div`
 `;
 
 function Section1() {
-  const splineRef = useRef();
   const splineApp = useRef();
-  const splineBoxRef = useRef();
-
-  // useEffect(() => {
-  //   if (splineBoxRef.current) {
-  //     document.body.addEventListener('scroll', () => {
-  //       console.log('body scroll');
-  //     });
-  //     splineBoxRef.current.addEventListener('scroll', () => {
-  //       console.log('box scroll');
-  //     });
-  //   }
-  // }, [splineBoxRef]);
 
   const onLoad = (_splineApp) => {
     splineApp.current = _splineApp;
-    _splineApp.setZoom(1.35);
+    _splineApp._eventManager.preventScroll = false;
+    _splineApp.setZoom(1.2);
   };
 
   return (
@@ -67,9 +52,9 @@ function Section1() {
           Get Started
         </button>
       </div>
-      <StyledSplineBox ref={splineBoxRef}>
+      <StyledSplineBox>
         <Suspense fallback={<div>Loading...</div>}>
-          <Spline ref={splineRef} onLoad={onLoad} scene="https://prod.spline.design/RWc0Ma8j0CUcDh0e/scene.splinecode" />
+          <Spline onLoad={onLoad} scene="https://prod.spline.design/RWc0Ma8j0CUcDh0e/scene.splinecode" />
         </Suspense>
       </StyledSplineBox>
     </SectionWrap>

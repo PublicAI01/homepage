@@ -116,6 +116,7 @@ export const FQCard = styled(LinearGradientBox).attrs({
   color: white;
   border-radius: 12px;
   border: 2px solid #3A3A3A;
+  cursor: pointer;
   &:hover, &.active{
     border-color: transparent;
   }
@@ -135,7 +136,6 @@ export const FQCard = styled(LinearGradientBox).attrs({
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      cursor: pointer;
       &:hover{
         background: #3E3E3E90;
       }
