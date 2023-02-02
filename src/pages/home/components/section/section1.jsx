@@ -12,7 +12,7 @@ const StyledSplineBox = styled.div`
   z-index: 1;
   width: 50%;
   right: 0;
-  height: 600px;
+  height: 500px;
 
   /* >canvas{
     transform: scale(1.2);
@@ -48,7 +48,7 @@ function Section1() {
 
   const onLoad = (_splineApp) => {
     splineApp.current = _splineApp;
-    _splineApp.setZoom(0.65);
+    _splineApp.setZoom(1.35);
   };
 
   return (
