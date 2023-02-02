@@ -15,11 +15,9 @@ function Roadmap() {
 
   const onClickCard = (e) => {
     const target = e.currentTarget;
-
-    cardBoxRef.current.scrollTo(target.offsetLeft, 0);
-    // e = e.target.parentNode || e.target;
-    // console.log(cardBoxRef.current);
-    // console.log(e);
+    const { offsetLeft } = target;
+    const { offsetWidth } = cardBoxRef.current;
+    cardBoxRef.current.scrollTo(offsetLeft < (offsetWidth / 2) ? 0 : offsetLeft, 0);
   };
 
   return (
