@@ -17,7 +17,7 @@ export function Footer() {
             <img src={chat} alt="" /> */}
           </div>
         </Col>
-        <Col xl={6} lg={6} span={24} className="text-left">
+        <Col xl={6} lg={6} span={24} className="text-left xmd:text-center">
           <div className="text-[20px]">Quick Links</div>
           <div>
             <div><Typography.Text className="mt-1">Home</Typography.Text></div>
@@ -26,9 +26,9 @@ export function Footer() {
             <div><Typography.Text className="mt-1">Contact</Typography.Text></div>
           </div>
         </Col>
-        <Col xl={6} lg={6} span={24} className="text-left">
+        <Col xl={6} lg={6} span={24} className="text-left xmd:text-center">
           <div>Let&apos;s Talk </div>
-          <div className="flex mt-4 items-center">
+          <div className="flex mt-4 items-center xmd:justify-center">
             <IconMailStroked1 size="extra-large" className="mr-2" />
             <Typography.Text>contact@markerdao.io</Typography.Text>
           </div>
