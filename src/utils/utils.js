@@ -100,3 +100,12 @@ export function toAnchor(id) {
 
   }
 }
+
+export function heightToTop(ele, root = document.body) {
+  let height = 0;
+  do {
+    height += ele.offsetTop;
+    ele = ele.offsetParent;
+  } while (ele !== root);
+  return height;
+}

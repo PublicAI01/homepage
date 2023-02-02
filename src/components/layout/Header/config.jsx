@@ -35,7 +35,14 @@ export const platform = [{
 {
   href: 'https://github.com/MarkerDAO',
   // eslint-disable-next-line react/no-unstable-nested-components
-  com: () => <IconGithubLogo className="text-white text-[36px] hover:text-white/80" />,
+  com: ({ width }) => (
+    <IconGithubLogo
+      className="text-white hover:text-white/80"
+      style={{
+        fontSize: `${width}px`,
+      }}
+    />
+  ),
 },
 {
   href: 'https://t.me/+3n0uhe65ECQxODBl',

@@ -16,7 +16,7 @@ const ShadowWrapper = styled.div`
 function Section3() {
   return (
     <SectionWrap>
-      <div className="text-center">
+      <div className="text-center hot_to_work">
         <LinearGradientText
           className="text-center"
           textClassName="text-[48px] leading-none"

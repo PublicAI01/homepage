@@ -44,8 +44,15 @@ function Home() {
             }
           }
         };
+        // const onHashChange = ({ newURL }) => {
+        //   const hash = newURL.split('#')[1] || '';
+        //   if (!hash) return window.scrollTo(0, 0);
+        //   // console.log(has);
+        // };
         document.addEventListener('scroll', onScroll);
+        // window.addEventListener('hashchange', onHashChange);
         return () => {
+          // window.removeEventListener('hashchange', onHashChange);
           document.removeEventListener('scroll', onScroll);
         };
       }

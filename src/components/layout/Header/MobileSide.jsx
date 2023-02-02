@@ -2,7 +2,6 @@ import { SideSheet } from '@douyinfe/semi-ui';
 
 import classNames from 'classnames';
 import { forwardRef, useImperativeHandle, useState } from 'react';
-import { toAnchor } from '@/utils/utils';
 import { navs, platform } from './config';
 import { StyledIconWrap, StyledNavLink } from './styled';
 
@@ -38,10 +37,7 @@ function MobileSide(props, ref) {
                 'pointer-events-none': nav.disabled,
               })}
               href={`#${nav.href}`}
-              onClick={() => {
-                toAnchor(nav.href);
-                onClose();
-              }}
+              onClick={onClose}
             > {nav.text}
             </a>
           </StyledNavLink>

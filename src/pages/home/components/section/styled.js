@@ -3,7 +3,7 @@ import LinearGradientBox from '@/components/comm/LinearGradientBox';
 import { DEVICE } from '@/config/device';
 
 export const SectionWrap = styled.div.attrs({ className: 'section-wrap' })`
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 60px;
   position: relative;
 `;

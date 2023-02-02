@@ -17,15 +17,13 @@ export const StyledNavLink = styled.li`
 export const StyledIconWrap = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 24px;
+  margin-left: 60px;
   color: black;
+  gap: 8px;
   >a{
-    width: 36px;
-    height: 36px;
+    font-size: 0;
     cursor: pointer;
-    & + a {
-      margin-left: 8px;
-    }
+    display: inline-block;
     &:hover{
       >svg{
         fill: rgb(255 255 255 / 0.8);

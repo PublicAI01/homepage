@@ -5,7 +5,6 @@ import { Toast, Typography } from '@douyinfe/semi-ui';
 import { StyledIconWrap, StyledNavLink } from './styled';
 import logo from '@/assets/imgs/header/logo.png';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
-import { toAnchor } from '@/utils/utils';
 import MenuToCloseIcon from '@/components/comm/MenuToCloseIcon';
 import MobileSide from './MobileSide';
 import { navs, platform } from './config';
@@ -38,7 +37,6 @@ function Header() {
                       'pointer-events-none': nav.disabled,
                     })}
                     href={`#${nav.href}`}
-                    onClick={() => toAnchor(nav.href)}
                   > {nav.text}
                   </a>
                 </StyledNavLink>
@@ -52,13 +50,13 @@ function Header() {
         <StyledIconWrap className="xmd:!hidden">
           {platform.map(({ href, com: Com }, i) => (
             <a href={href} target="_blank " rel="noreferrer" key={i}>
-              <Com width="36" height="36" fill="white" />
+              <Com width="24" height="24" fill="white" />
             </a>
           ))}
         </StyledIconWrap>
 
         <LinearGradientBox
-          className="ml-3 w-[160px] h-[42px] text-center rounded-full whitespace-nowrap px-2"
+          className="ml-[34px] w-[160px] h-[42px] text-center rounded-full whitespace-nowrap px-2"
           onClick={() => Toast.info('coming soon.')}
         >
           <button className="hover:text-white/80 font-bold !leading-[42px] ">Launch App</button>

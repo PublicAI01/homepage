@@ -37,7 +37,7 @@ function Section1() {
   };
 
   return (
-    <SectionWrap className="flex items-center min-h-[calc(100vh_-_120px)] xmd:!pt-0" id="home">
+    <SectionWrap className="flex items-center min-h-[calc(100vh_-_120px)] xmd:!pt-0 !pt-0" id="home">
       <div className="nmd:w-3/5 relative z-2 xmd:bg-black/40 p-2 xmd:py-24">
         <div className="relative z-10 pointer-events-none">
           <div>

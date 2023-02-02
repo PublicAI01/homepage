@@ -8,7 +8,7 @@ import img3 from '@/assets/imgs/linearGradientCard/img3.svg';
 
 function Section2() {
   return (
-    <SectionWrap>
+    <SectionWrap className="!pt-0">
       <div className="nmd:pl-[200px] mb-16">
         <div className="text-right">
           <LinearGradientText
