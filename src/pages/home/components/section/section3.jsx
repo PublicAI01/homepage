@@ -24,7 +24,7 @@ function Section3() {
           showIcon
         />
       </div>
-      <Row type="flex" gutter={[24, 44]} className="mt-16">
+      <Row type="flex" gutter={[24, 44]} className="!mt-4">
         <Col xl={8} lg={8} span={24} className="text-center">
           <div className="flex items-center justify-center">
             <div className="mr-4">
