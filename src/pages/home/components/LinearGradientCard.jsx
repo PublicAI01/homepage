@@ -28,7 +28,9 @@ export function LinearGradientCard(params) {
             <Typography.Text className="relative bottom-2/3 text-[24px] font-bold">{title}</Typography.Text>
           </div>
         </div>
-        <SplitLine className="h-[4px] relative left-1/2 translate-x-right-1/2 my-4" />
+        <div className="text-center mb-2">
+          <SplitLine className="h-[4px] inline-block" />
+        </div>
         <Typography.Paragraph className="text-xl">{text}</Typography.Paragraph>
       </div>
     </CardWrapper>

@@ -22,7 +22,20 @@ function MobileSide(props, ref) {
   }), [setVisible]);
 
   return (
-    <SideSheet keepDOM title=" " visible={visible} width="100%" onCancel={onClose} size="large">
+    <SideSheet
+      keepDOM
+      title=" "
+      headerStyle={{
+        backgroundColor: 'rgb(0 0 0 / 0.8)',
+      }}
+      bodyStyle={{
+        backgroundColor: 'rgb(0 0 0 / 0.8)',
+      }}
+      visible={visible}
+      width="240px"
+      onCancel={onClose}
+      size="large"
+    >
       <ul>
         {navs.map((nav) => (
           <StyledNavLink
@@ -43,10 +56,10 @@ function MobileSide(props, ref) {
           </StyledNavLink>
         ))}
       </ul>
-      <StyledIconWrap>
+      <StyledIconWrap className="!ml-0">
         {platform.map(({ href, com: Com }, i) => (
           <a href={href} target="_blank " rel="noreferrer" key={i}>
-            <Com width="36" height="36" fill="white" />
+            <Com width="24" height="24" fill="white" />
           </a>
         ))}
       </StyledIconWrap>

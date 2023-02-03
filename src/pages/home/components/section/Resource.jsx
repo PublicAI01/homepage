@@ -1,7 +1,6 @@
 import {
   Col, Image, Row, Typography,
 } from '@douyinfe/semi-ui';
-import { useState } from 'react';
 import LinearGradientText from '../LinearGradientText';
 import { SectionWrap } from './styled';
 import resourcePrice from '@/assets/imgs/home/resource-price.png';

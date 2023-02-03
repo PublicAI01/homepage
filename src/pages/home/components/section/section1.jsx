@@ -16,15 +16,16 @@ const StyledSplineBox = styled.div`
   contain: paint;
 
   @media ${DEVICE.xmd} {
-    position: relative;
-    height: 500px;
-    left: initial;
-    right: initial;
+    margin: auto;
     width: 100%;
-    top: initial;
-    z-index: -10;
+    position: static;
+    height: 400px;
+    width: 100%;
     order: 1;
-    /* transform: scale(1.2); */
+    >canvas{
+      width: 100%;
+      height: 100%;
+    }
   }
 
 `;
