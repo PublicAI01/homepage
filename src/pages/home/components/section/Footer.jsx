@@ -23,7 +23,7 @@ export function Footer() {
   return (
     <SectionWrap>
       <Row type="flex" gutter={[24, 24]} justify="center">
-        <Col xl={8} lg={8} span={24}>
+        <Col xl={8} lg={8} span={24} className="text-center">
           <img className="inline-block" src={logo} alt="" />
           <div className="mt-8">
             <div>
@@ -32,7 +32,7 @@ export function Footer() {
                 text="CollaborationOn-Chain."
               />
             </div>
-            <div className="flex items-center gap-2 mt-8">
+            <div className="flex items-center gap-2 mt-8 justify-center">
               {platform.map(({ href, com: Com }, i) => (
                 <a href={href} target="_blank " rel="noreferrer" key={i}>
                   <Com className="hover:fill-white/80" width="24" height="24" fill="white" />
