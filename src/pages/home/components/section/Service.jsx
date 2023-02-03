@@ -23,15 +23,15 @@ function Service() {
         showIcon
       />
       <Row type="flex" className="!mt-10" gutter={[24, 24]}>
-        {cardData.map((item) => (
+        {cardData.map((item, i) => (
           <Col key={item.tagText} xl={12} lg={12} md={12} span={24}>
-            <StyledServiceCard>
+            <StyledServiceCard gold={i === cardData.length - 1}>
               <div className="content">
                 <div className="title-wrap">
-                  <Typography.Title className="xmd:!text-3xl" heading={1}>{item.title}</Typography.Title>
-                  <Typography.Title className="xmd:!text-3xl" heading={1}>{item.tagText}</Typography.Title>
+                  <Typography.Title heading={1}>{item.title}</Typography.Title>
+                  <Typography.Title heading={1}>{item.tagText}</Typography.Title>
                 </div>
-                <Typography.Paragraph className="text-3xl">{item.content}</Typography.Paragraph>
+                <Typography.Paragraph className="nmd:text-3xl xmd:text-sm">{item.content}</Typography.Paragraph>
               </div>
               <img className="bg" src={bg2} alt="" />
             </StyledServiceCard>
@@ -39,7 +39,7 @@ function Service() {
         ))}
 
       </Row>
-      <img src={bg} alt="" className="absolute top-[10%] left-0 -z-[1]" />
+      <img src={bg} alt="" className="absolute top-[10%] left-0 -z-[1] xmd:hidden" />
     </SectionWrap>
   );
 }

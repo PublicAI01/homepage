@@ -35,10 +35,10 @@ export const StyledServiceCard = styled.div`
       >h1{
         font-size: 48px;
         &:last-child{
-          /* color: black; */
+          color: black;
           padding: 6px;
           border-radius: 4px;
-          background-image: var(--linear-gradient-bg-gray);
+          background-image: var(--linear-gradient-bg-silver);
         }
         & + h1{
           margin-left: 12px;
@@ -58,31 +58,49 @@ export const StyledServiceCard = styled.div`
     width: 70%;
     z-index: 1;
   }
+  @media ${DEVICE.nmd} {
+    &:hover {
+      transform: scale(1.1);
+      z-index: 4;
+      >.content{
+        >.title-wrap{
+          >h1 {
+            &:last-child{
+              background-image: var(--linear-gradient-bg-pink);
+            }
+          }
+        }
+        >p{
+          background-image: var(--linear-gradient-bg-pink);
+        }
+      }
+
+      >.bg{
+        display: block;
+      }
+    }
+  }
   
-  &:hover {
-    transform: scale(1.1);
-    z-index: 4;
+  @media ${DEVICE.xmd} {
+    background: none;
+    border: none;
     >.content{
+      height: auto;
+      padding: 12px;
       >.title-wrap{
-        >h1 {
+        margin-bottom: 4px;
+        >h1{
+          font-size: 24px;
           &:last-child{
-            background-image: var(--linear-gradient-bg-pink);
+            font-size: 20px;
+            line-height: 1;
+            ${({ gold }) => gold && 'background-image: var(--linear-gradient-bg-gold) !important;'}
           }
         }
       }
       >p{
-        background-image: var(--linear-gradient-bg-pink);
+        border-radius: 10px;
       }
-    }
-
-    >.bg{
-      display: block;
-    }
-  }
-  @media ${DEVICE.xmd} {
-    >.content{
-      padding: 12px;
-      height: 400px;
     }
   }
 `;
@@ -103,6 +121,10 @@ export const RoadMapCard = styled(LinearGradientBox).attrs({
   }
   &+div{
     margin-left: 12px;
+  }
+  @media ${DEVICE.xmd} {
+    min-height: auto;
+    min-width: 260px;
   }
 `;
 
@@ -149,5 +171,10 @@ export const FQCard = styled(LinearGradientBox).attrs({
   }
   @media ${DEVICE.xmd} {
     padding: 12px;
+    >.header{
+      >.icon{
+        background: none !important;
+      }
+    }
   }
 `;

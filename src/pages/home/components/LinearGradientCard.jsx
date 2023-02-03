@@ -25,7 +25,7 @@ export function LinearGradientCard(params) {
         <div className="h-1/2">
           <div className="w-full h-full">
             <img className="w-full h-full" src={icon} alt="" />
-            <div className="relative bottom-2/3 text-[24px]">{title}</div>
+            <Typography.Text className="relative bottom-2/3 text-[24px] font-bold">{title}</Typography.Text>
           </div>
         </div>
         <SplitLine className="h-[4px] relative left-1/2 translate-x-right-1/2 my-4" />

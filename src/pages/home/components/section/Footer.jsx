@@ -1,7 +1,7 @@
 import {
   Col, Row, Toast, Typography,
 } from '@douyinfe/semi-ui';
-import { IconMailStroked1, IconUserCardPhone } from '@douyinfe/semi-icons';
+import { IconMailStroked1 } from '@douyinfe/semi-icons';
 import styled from 'styled-components';
 import logo from '@/assets/imgs/logo.svg';
 import { SectionWrap } from './styled';
@@ -16,6 +16,9 @@ const TextBox = styled.div`
   }
   &+div{
     margin-top: 4px;
+  }
+  span{
+    font-size: 16px;
   }
 `;
 
@@ -43,7 +46,7 @@ export function Footer() {
         </Col>
         <Col xl={8} lg={8} span={24} className="text-left">
           <Typography.Title heading={4}>Quick Links</Typography.Title>
-          <div className="mt-8 xmd:mt-4">
+          <div className="mt-8 xmd:mt-4 xmd:flex items-center justify-between">
             <TextBox>
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href="#">

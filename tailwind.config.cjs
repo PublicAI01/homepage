@@ -18,6 +18,8 @@ module.exports = {
         button: 'var(--linear-gradient-button)',
         'bg-pink': 'var(--linear-gradient-bg-pink)',
         'bg-gray': 'var(--linear-gradient-bg-gray)',
+        'bg-silver': 'var(linear-gradient-bg-silver)',
+        'bg-gold': 'var(--linear-gradient-bg-gold)',
         'border-green': 'var(--linear-gradient-border-green)',
         'border-purple': 'var(--linear-gradient-border-purple)',
       },

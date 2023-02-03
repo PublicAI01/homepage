@@ -15,9 +15,10 @@ function Roadmap() {
 
   const onClickCard = (e) => {
     const target = e.currentTarget;
-    const { offsetLeft } = target;
-    const { offsetWidth } = cardBoxRef.current;
-    cardBoxRef.current.scrollTo(offsetLeft < (offsetWidth / 2) ? 0 : offsetLeft, 0);
+    const { offsetLeft, clientWidth } = target;
+    const { offsetWidth, clientWidth: boxClientWidth } = cardBoxRef.current;
+    const moveLeft = (boxClientWidth - clientWidth) / 2;
+    cardBoxRef.current.scrollTo(offsetLeft < (offsetWidth / 2) ? 0 : offsetLeft - moveLeft, 0);
   };
 
   return (
@@ -30,8 +31,8 @@ function Roadmap() {
       <div className="cards mt-8 flex overflow-x-auto p-2 whitespace-nowrap scroll-smooth" ref={cardBoxRef}>
         {cardData.map((item) => (
           <RoadMapCard key={item.title} onClick={onClickCard}>
-            <Typography.Title className="whitespace-normal">{item.title}</Typography.Title>
-            <Typography.Paragraph className="mt-2 whitespace-normal !text-base">{item.text}</Typography.Paragraph>
+            <Typography.Title className="whitespace-normal xmd:!text-2xl">{item.title}</Typography.Title>
+            <Typography.Paragraph className="mt-2 whitespace-normal text-base xmd:!text-sm">{item.text}</Typography.Paragraph>
           </RoadMapCard>
         ))}
       </div>

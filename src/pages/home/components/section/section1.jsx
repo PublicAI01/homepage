@@ -1,4 +1,4 @@
-import { Typography } from '@douyinfe/semi-ui';
+import { Toast, Typography } from '@douyinfe/semi-ui';
 import React, { Suspense, useRef } from 'react';
 import styled from 'styled-components';
 import { DEVICE } from '@/config/device';
@@ -16,12 +16,14 @@ const StyledSplineBox = styled.div`
   contain: paint;
 
   @media ${DEVICE.xmd} {
+    position: relative;
     height: 500px;
-    left: 0;
+    left: initial;
     right: initial;
     width: 100%;
-    top: 100px;
+    top: initial;
     z-index: -10;
+    order: 1;
     /* transform: scale(1.2); */
   }
 
@@ -37,18 +39,21 @@ function Section1() {
   };
 
   return (
-    <SectionWrap className="flex items-center min-h-[calc(100vh_-_120px)] xmd:!pt-0 !pt-0" id="home">
-      <div className="nmd:w-3/5 relative z-2 xmd:bg-black/40 p-2 xmd:py-24">
+    <SectionWrap className="flex items-center flex-wrap min-h-[calc(100vh_-_120px)] xmd:!pt-0 !pt-0" id="home">
+      <div className="nmd:w-3/5 relative z-2 xmd:bg-black/40 p-2 xmd:py-24 xmd:order-2 xmd:text-center">
         <div className="relative z-10 pointer-events-none">
           <div>
             <LinearGradientText
-              textClassName="text-[128px] leading-none xmd:text-[48px]"
+              textClassName="text-[128px] xmd:!text-[48px]"
               text={<>Collaboration <br />  On-Chain.</>}
             />
           </div>
           <Typography.Paragraph className="text-2xl mt-11">A multi-chain DAO platform to facilitate completion of exceptional AI annotation work and other data services.</Typography.Paragraph>
         </div>
-        <button className="mt-16 bg-button w-[200px] h-[56px] rounded-md hover:opacity-80">
+        <button
+          className="mt-16 bg-button w-[200px] h-[56px] rounded-md hover:opacity-80"
+          onClick={() => Toast.info('coming soon!')}
+        >
           Get Started
         </button>
       </div>

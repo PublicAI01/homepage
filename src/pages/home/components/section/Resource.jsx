@@ -26,7 +26,7 @@ function Resource() {
   return (
     <SectionWrap id="resources">
 
-      <div className="text-center mb-10">
+      <div className="text-center mb-10 xmd:text-left">
         <LinearGradientText
           textClassName="text-[48px] leading-none"
           text="Resources"

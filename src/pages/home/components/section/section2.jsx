@@ -10,15 +10,16 @@ function Section2() {
   return (
     <SectionWrap className="!pt-0">
       <div className="nmd:pl-[200px] mb-16">
-        <div className="text-right">
+        <div className="text-right xmd:text-left">
           <LinearGradientText
+            inline
             className="text-right"
             textClassName="text-[48px] leading-none"
             text="Marker DAO"
             showIcon
           />
         </div>
-        <Typography.Paragraph className="text-2xl mt-4 text-right xmd:break-all">
+        <Typography.Paragraph className="text-2xl mt-4 text-right xmd:break-all xmd:text-center">
           MarkerDAO is an open, decentralized platform that connects businesses and individuals with a global network of workers.
           It simplifies the process of outsourcing a wide range of tasks, from data annotation to more complex research.
           This platform allows organizations to tap into the collective skills of a vast,

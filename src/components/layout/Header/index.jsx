@@ -5,7 +5,7 @@ import { Toast, Typography } from '@douyinfe/semi-ui';
 import { StyledIconWrap, StyledNavLink } from './styled';
 import logo from '@/assets/imgs/header/logo.png';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
-import MenuToCloseIcon from '@/components/comm/MenuToCloseIcon';
+import MenuButton from '@/assets/imgs/header/menubutton.png';
 import MobileSide from './MobileSide';
 import { navs, platform } from './config';
 
@@ -56,19 +56,21 @@ function Header() {
         </StyledIconWrap>
 
         <LinearGradientBox
-          className="ml-[34px] w-[160px] h-[42px] text-center rounded-full whitespace-nowrap px-2"
+          className="ml-[34px] w-[160px] h-[42px] text-center rounded-full whitespace-nowrap px-2 xmd:!hidden"
           onClick={() => Toast.info('coming soon.')}
         >
           <button className="hover:text-white/80 font-bold !leading-[42px] ">Launch App</button>
         </LinearGradientBox>
 
-        <MenuToCloseIcon
+        <button
+          className="nmd:hidden"
           onClick={() => {
             sideRef.current.onOpen();
           }}
-          disable
-          className="nmd:hidden ml-4"
-        />
+        >
+          <img src={MenuButton} alt="" width="40" height="40" />
+        </button>
+
         <MobileSide ref={sideRef} />
       </div>
     </header>

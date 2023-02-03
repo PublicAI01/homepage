@@ -20,7 +20,7 @@ function Partners() {
 
   return (
     <SectionWrap id="partners">
-      <div className="text-center">
+      <div className="text-center xmd:text-left">
 
         <LinearGradientText
           className="text-center"
@@ -29,7 +29,7 @@ function Partners() {
           showIcon
         />
 
-        <Row gutter={[24, 24]} className="!mt-12">
+        <Row gutter={[12, 12]} className="!mt-12">
           {partners.map((img, i) => (
             <Col key={i} xl={8} lg={12} span={12}>
               <Image preview={false} src={img} alt={`partners-${i}`} />

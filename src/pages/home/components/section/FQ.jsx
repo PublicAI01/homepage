@@ -1,6 +1,7 @@
 import { Collapsible, Typography } from '@douyinfe/semi-ui';
 import { IconChevronRight } from '@douyinfe/semi-icons';
 import { useState } from 'react';
+import classNames from 'classnames';
 import LinearGradientText from '../LinearGradientText';
 import { FQCard, SectionWrap } from './styled';
 
@@ -33,15 +34,15 @@ function FQCardItem({ item }) {
   return (
     <FQCard onClick={() => setActive(!active)}>
       <div className="header">
-        <Typography.Title heading={4}>{item.title}</Typography.Title>
+        <Typography.Title className="xmd:!text-base" heading={4}>{item.title}</Typography.Title>
         <div className="icon">
           <IconChevronRight className={active ? 'active' : ''} size="large" />
         </div>
       </div>
 
-      <div className="mr-20 mt-4 cursor-default" onClick={(e) => e.stopPropagation()}>
+      <div className={classNames('mr-20 cursor-default', !active && 'mt-0')} onClick={(e) => e.stopPropagation()}>
         <Collapsible isOpen={active} keepDOM>
-          <Typography.Text className="mt-2 text-lg">{item.text}</Typography.Text>
+          <Typography.Text className="mt-2 text-lg block xmd:text-md">{item.text}</Typography.Text>
         </Collapsible>
       </div>
 
