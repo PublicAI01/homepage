@@ -7,6 +7,7 @@ import logo from '@/assets/imgs/logo.svg';
 import { SectionWrap } from './styled';
 import { heightToTop } from '@/utils/utils';
 import { platform } from '@/components/layout/Header/config';
+import LinearGradientText from '../LinearGradientText';
 
 const TextBox = styled.div`
   cursor: pointer;
@@ -25,9 +26,12 @@ export function Footer() {
         <Col xl={8} lg={8} span={24}>
           <img className="inline-block" src={logo} alt="" />
           <div className="mt-8">
-            <Typography.Paragraph>
-              those who do not know how to pursue pleasure rationally encounter consequences that are
-            </Typography.Paragraph>
+            <div>
+              <LinearGradientText
+                textClassName="text-[24px]"
+                text="CollaborationOn-Chain."
+              />
+            </div>
             <div className="flex items-center gap-2 mt-8">
               {platform.map(({ href, com: Com }, i) => (
                 <a href={href} target="_blank " rel="noreferrer" key={i}>
