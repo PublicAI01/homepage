@@ -23,7 +23,7 @@ export function Footer() {
   return (
     <SectionWrap>
       <Row type="flex" gutter={[24, 24]} justify="center">
-        <Col xl={8} lg={8} span={24} className="text-center">
+        <Col xl={8} lg={8} span={24}>
           <img className="inline-block" src={logo} alt="" />
           <div className="mt-8">
             <div>
@@ -32,7 +32,7 @@ export function Footer() {
                 text="CollaborationOn-Chain."
               />
             </div>
-            <div className="flex items-center gap-2 mt-8 justify-center">
+            <div className="inline-flex items-center gap-2 mt-8">
               {platform.map(({ href, com: Com }, i) => (
                 <a href={href} target="_blank " rel="noreferrer" key={i}>
                   <Com className="hover:fill-white/80" width="24" height="24" fill="white" />
@@ -41,9 +41,9 @@ export function Footer() {
             </div>
           </div>
         </Col>
-        <Col xl={8} lg={8} span={24} className="text-left xmd:text-center">
+        <Col xl={8} lg={8} span={24} className="text-left">
           <Typography.Title heading={4}>Quick Links</Typography.Title>
-          <div className="mt-8">
+          <div className="mt-8 xmd:mt-4">
             <TextBox>
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href="#">
@@ -62,17 +62,17 @@ export function Footer() {
             </TextBox>
           </div>
         </Col>
-        <Col xl={8} lg={8} span={24} className="text-left xmd:text-center">
+        <Col xl={8} lg={8} span={24} className="text-left">
           <Typography.Title heading={4}>Let&apos;s Talk</Typography.Title>
-          <div className="mt-8">
-            <div className="flex mt-4 items-center xmd:justify-center">
+          <div className="mt-8 xmd:mt-4">
+            <div className="inline-flex items-center">
               <IconMailStroked1 size="extra-large" className="mr-2" />
               <Typography.Text>contact@markerdao.io</Typography.Text>
             </div>
           </div>
         </Col>
       </Row>
-      <div className="text-center mt-[100px]">
+      <div className="mt-[100px] xmd:mt-4">
         <Typography.Text className="text-[#7B7B7B]">© 2023 MarkerDAO . All Rights Reserved</Typography.Text>
       </div>
     </SectionWrap>
