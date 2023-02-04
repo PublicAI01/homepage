@@ -26,7 +26,7 @@ export const platform = [{
   href: 'https://twitter.com/MarkerDAO_',
   com: Twitter,
 }, {
-  href: 'https://discord.gg/rqFcvGDs',
+  href: 'https://discord.gg/E962EdDmrB',
   com: Discord,
 }, {
   href: 'https://medium.com/@contact_88042',
