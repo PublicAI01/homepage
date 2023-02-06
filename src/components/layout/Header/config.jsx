@@ -45,6 +45,6 @@ export const platform = [{
   ),
 },
 {
-  href: 'https://t.me/+3n0uhe65ECQxODBl',
+  href: 'https://t.me/MarkerDAO',
   com: Telegram,
 }];
