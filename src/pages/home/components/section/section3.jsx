@@ -62,7 +62,7 @@ function Section3() {
         <LinearGradientText
           className="text-center"
           textClassName="text-[48px] leading-none"
-          text="HOW IT WORKS"
+          text="How it works"
           showIcon
         />
       </div>
