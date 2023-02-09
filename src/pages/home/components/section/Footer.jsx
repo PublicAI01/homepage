@@ -32,7 +32,7 @@ export function Footer() {
             <div>
               <LinearGradientText
                 textClassName="text-[24px]"
-                text="CollaborationOn-Chain."
+                text="Collaboration On-Chain."
               />
             </div>
             <div className="inline-flex items-center gap-2 mt-8">
