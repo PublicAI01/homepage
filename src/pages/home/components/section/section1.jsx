@@ -11,7 +11,7 @@ const StyledSplineBox = styled.div`
   position: absolute;
   z-index: 1;
   width: 50%;
-  right: 0;
+  right: -140px;
   height: 500px;
   contain: paint;
 
