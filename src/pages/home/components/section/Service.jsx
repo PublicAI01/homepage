@@ -22,7 +22,7 @@ function Service() {
         text="Services"
         showIcon
       />
-      <Row type="flex" className="!mt-10" gutter={[24, 24]}>
+      <Row type="flex" className="nmd:!mt-10" gutter={[24, 24]}>
         {cardData.map((item, i) => (
           <Col key={item.tagText} xl={12} lg={12} md={12} span={24}>
             <StyledServiceCard gold={i === cardData.length - 1}>
