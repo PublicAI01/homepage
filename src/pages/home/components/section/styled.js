@@ -112,7 +112,7 @@ export const RoadMapCard = styled(LinearGradientBox).attrs({
   borderWidth: 4,
 })`
   padding: 18px; 
-  min-height: 380px;
+  min-height: 240px;
   min-width: 340px;
   border: 1px solid #4e4e4e;
   border-radius: 12px;
@@ -134,7 +134,7 @@ export const FQCard = styled(LinearGradientBox).attrs({
   linear: 'var(--linear-gradient-border-green)',
   borderWidth: 4,
 })`
-  padding: 46px 32px;
+  padding: 12px 18px;
   color: white;
   border-radius: 12px;
   border: 2px solid #3A3A3A;
