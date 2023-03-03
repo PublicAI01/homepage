@@ -7,16 +7,26 @@ import resourcePrice from '@/assets/imgs/home/resource-price.png';
 import resourceWhitePaper from '@/assets/imgs/home/resource-whitepaper.png';
 import resourceDocument from '@/assets/imgs/home/resource-document.png';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
+import { heightToTop } from '@/utils/utils';
 
 const cardData = [{
   img: resourcePrice,
   title: 'Pricing',
+  onClick: () => {
+    window.scrollTo(0, heightToTop(document.querySelector('.hot_to_work')) - 200);
+  },
 }, {
   img: resourceWhitePaper,
   title: 'White Paper',
+  onClick: () => {
+    window.open('https://www.markerdao.io/whitepaper.pdf');
+  },
 }, {
   img: resourceDocument,
   title: 'Dev Documentation',
+  onClick: () => {
+    window.open('https://github.com/MarkerDAO');
+  },
 }];
 
 function Resource() {
@@ -37,9 +47,10 @@ function Resource() {
         {cardData.map((item) => (
           <Col xl={8} lg={12} span={24} className="text-center" key={item.title}>
             <LinearGradientBox
+              onClick={() => item.onClick && item.onClick()}
               nolinear
               linear="var(--linear-gradient-border-green)"
-              className="rounded-[10px] py-4 border-2 border-[#4E4E4E] hover:border-[transparent]"
+              className="rounded-[10px] py-4 border-2 border-[#4E4E4E] hover:border-[transparent] cursor-pointer"
               borderWidth={4}
               hover
             >

@@ -8,16 +8,12 @@ import { FQCard, SectionWrap } from './styled';
 const cardData = [{
   title: 'Is my data secure with MarkerDAO?',
   // eslint-disable-next-line max-len
-  text: <> <span>At MarkerDAO, customer security comes first. Learn more about our security and compliance practices here:</span>  <a href="https://markerdao.io/security" target="_blank" rel="noreferrer">https://markerdao.io/security</a>  </>,
+  text: <span>Yes, MarkerDAO takes data security and privacy very seriously and has implemented various measures to ensure that customer data is kept safe and secure.  MarkerDAO&apos;s platform is built with multiple layers of security to protect customer data, including encryption of data both in transit and at rest, and access controls to limit who can access the data. We also have strict policies and procedures in place to ensure that the employees and annotators follow best practices for data security and privacy. </span>,
+
 }, {
   title: 'How does pricing work? Can I just pay-as-I-go?',
-  text:
-  <>
-    <p>Visit the pricing page (<a href="https://markerdao.io/pricing" target="_blank" rel="noreferrer">https://markerdao.io/pricing</a>) to learn more about our pricing structure.</p>
-    {/* eslint-disable-next-line max-len */}
-    <p>There are two types of service options. If you choose the MarkerDAO marketplace, you can get a free tier that provides a complimentary amount of annotation, and you can pay-as-you-go for anything exceeding that amount.</p>
-    <p>To access additional features, you can upgrade to MarkerDAO Pro for Enterprise capabilities.</p>
-  </>,
+  // eslint-disable-next-line max-len
+  text: <span>  There are two types of service options. If you choose the MarkerDAO marketplace, you can get a free tier that provides a complimentary amount of annotation, and you can pay-as-you-go for anything exceeding that amount. To access additional features, you can upgrade to MarkerDAO Pro for Enterprise capabilities. </span>,
 }, {
   title: 'Do I get charged based on the number of annotators / labelers working on my project?',
   // eslint-disable-next-line max-len
