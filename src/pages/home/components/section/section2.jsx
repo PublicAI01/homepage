@@ -1,5 +1,5 @@
 import {
-  Button, Col, Row, Typography,
+  Col, Row, Typography,
 } from '@douyinfe/semi-ui';
 import { useState } from 'react';
 import { LinearGradientCard } from '../LinearGradientCard';

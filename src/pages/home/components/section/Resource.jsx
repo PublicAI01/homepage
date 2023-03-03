@@ -13,7 +13,7 @@ const cardData = [{
   img: resourcePrice,
   title: 'Pricing',
   onClick: () => {
-    window.scrollTo(0, heightToTop(document.querySelector('.hot_to_work')) - 200);
+    window.scrollTo(0, heightToTop(document.querySelector('._fq2')) - 200);
   },
 }, {
   img: resourceWhitePaper,

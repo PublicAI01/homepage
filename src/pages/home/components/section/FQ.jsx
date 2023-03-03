@@ -13,7 +13,7 @@ const cardData = [{
 }, {
   title: 'How does pricing work? Can I just pay-as-I-go?',
   // eslint-disable-next-line max-len
-  text: <span>  There are two types of service options. If you choose the MarkerDAO marketplace, you can get a free tier that provides a complimentary amount of annotation, and you can pay-as-you-go for anything exceeding that amount. To access additional features, you can upgrade to MarkerDAO Pro for Enterprise capabilities. </span>,
+  text: <span className="_fq2">  There are two types of service options. If you choose the MarkerDAO marketplace, you can get a free tier that provides a complimentary amount of annotation, and you can pay-as-you-go for anything exceeding that amount. To access additional features, you can upgrade to MarkerDAO Pro for Enterprise capabilities. </span>,
 }, {
   title: 'Do I get charged based on the number of annotators / labelers working on my project?',
   // eslint-disable-next-line max-len
