@@ -65,7 +65,7 @@ function Section2() {
           <LinearGradientCard
             className="h-[400px]"
             title="Cost Efficiency"
-            text="Via on-chian staking and liability mechanisms, MarkerDAO reduces work/cost redundancy required in traditional platforms."
+            text="Via on-chain staking and liability mechanisms, MarkerDAO reduces work/cost redundancy required in traditional platforms."
             icon={img3}
           />
         </Col>
