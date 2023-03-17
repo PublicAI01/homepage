@@ -59,7 +59,7 @@ function Home() {
     }, 100);
   }, []);
   return (
-    <div className="container scroll-smooth" ref={wrapRef}>
+    <div className="scroll-smooth" ref={wrapRef}>
       <Section1 />
       <Section2 />
       <Section3 />
