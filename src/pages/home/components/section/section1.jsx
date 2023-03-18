@@ -2,11 +2,9 @@ import { Toast, Typography } from '@douyinfe/semi-ui';
 import React, { Suspense, useRef } from 'react';
 import styled from 'styled-components';
 import { DEVICE } from '@/config/device';
-import LinearGradientText from '../LinearGradientText';
-import { SectionWrap } from './styled';
-import getStartedArrow from '@/assets/imgs/arrow/getStartedArrow.svg';
 import { StyledIconWrap } from '@/components/layout/Header/styled';
 import { platform } from '@/components/layout/Header/config';
+import getStartedArrow from '@/assets/imgs/arrow/getStartedArrow.svg';
 
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
