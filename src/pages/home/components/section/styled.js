@@ -9,12 +9,22 @@ export const SectionWrap = styled.div.attrs({ className: 'section-wrap' })`
     padding-bottom: 5rem;
     padding-left: 15%;
     padding-right: 15%;
+    
+    h1.semi-typography {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
   }
   @media ${DEVICE.xmd}{
     padding-top: 2rem;
     padding-bottom: 2rem;
     padding-left: 5%;
     padding-right: 5%;
+
+    h1.semi-typography {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
 `;
 

@@ -7,13 +7,13 @@ const cardData = [{
   title: 'MarkerDAO',
   tagText: 'Market',
   content: 'Publish tasks to access our on-demand 24/7 global workforce; or work on the tasks in the marketplace.',
-  bgColor: '#7A43FF',
+  bgColor: 'bg-my-purple',
   img: img1,
 }, {
   title: 'MarkerDAO',
   tagText: 'Pro',
   content: 'Contact the MakerDAO Pro team, and get a professional team of experts tailored for your specific task requirements.',
-  bgColor: '#FFCE18',
+  bgColor: 'bg-my-yellow',
   img: img2,
 }];
 
@@ -28,7 +28,7 @@ function Service() {
               <div>
                 <Typography.Title heading={2}>
                   <span>{item.title} </span>
-                  <span className={`box-border bg-[${item.bgColor}] py-1 px-2 text-black rounded-md`}>{item.tagText}</span>
+                  <span className={`${item.bgColor} box-border py-1 px-2 text-black rounded-md`}>{item.tagText}</span>
                 </Typography.Title>
                 <Typography.Paragraph className="mt-5">{item.content}</Typography.Paragraph>
               </div>
