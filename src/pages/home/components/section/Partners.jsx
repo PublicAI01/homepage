@@ -1,6 +1,7 @@
-import { Col, Image, Row } from '@douyinfe/semi-ui';
+import {
+  Col, Image, Row, Typography,
+} from '@douyinfe/semi-ui';
 import { useEffect, useState } from 'react';
-import LinearGradientText from '../LinearGradientText';
 import { SectionWrap } from './styled';
 
 function Partners() {
@@ -8,7 +9,7 @@ function Partners() {
 
   useEffect(() => {
     const load = async () => {
-      const modules = import.meta.glob('../../../../assets/imgs/partners/*.png');
+      const modules = import.meta.glob('../../../../assets/imgs/partners//*.png');
       const all = [];
       for (const path of Object.keys(modules)) {
         all.push(modules[path]());
@@ -19,20 +20,18 @@ function Partners() {
   }, []);
 
   return (
-    <SectionWrap id="partners">
-      <div className="text-center xmd:text-left">
-
-        <LinearGradientText
-          className="text-center"
-          textClassName="text-[48px] leading-none"
-          text="Partners"
-          showIcon
-        />
-
-        <Row gutter={[12, 12]} className="!mt-12">
+    <SectionWrap id="partners" className="bg-[#F8F8F8]">
+      <div className="">
+        <Typography.Title className="text-black xmd:!text-2xl">Partners</Typography.Title>
+        <Row
+          gutter={{
+            xxl: 115, xl: 115, lg: 16, xs: 16, sm: 16, md: 16,
+          }}
+          className="!mt-7"
+        >
           {partners.map((img, i) => (
             <Col key={i} xl={8} lg={12} span={12}>
-              <Image preview={false} src={img} alt={`partners-${i}`} />
+              <Image preview={false} src={img} alt={`partners-${i}`} style={{ marginBottom: '1.5rem' }} />
             </Col>
           ))}
         </Row>
