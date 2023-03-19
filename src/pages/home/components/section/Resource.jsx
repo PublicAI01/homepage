@@ -1,12 +1,12 @@
 import {
   Col, Image, Row, Typography,
 } from '@douyinfe/semi-ui';
+import styled from 'styled-components';
 import { SectionWrap } from './styled';
 import resourcePrice from '@/assets/imgs/home/resource-price.png';
 import resourceWhitePaper from '@/assets/imgs/home/resource-whitepaper.png';
 import resourceDocument from '@/assets/imgs/home/resource-document.png';
 import { heightToTop } from '@/utils/utils';
-import styled from 'styled-components';
 
 const cardData = [{
   img: resourcePrice,
