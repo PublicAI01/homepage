@@ -121,13 +121,19 @@ export const RoadMapCard = styled(LinearGradientBox).attrs({
   linear: 'var(--linear-gradient-border-green)',
   borderWidth: 4,
 })`
-  padding: 18px; 
+  padding: 28px; 
   min-height: 240px;
   min-width: 340px;
-  border: 1px solid #4e4e4e;
   border-radius: 12px;
+  background-color: white;
+  > *{
+    color: black;
+  }
   &:hover {
-    border-color: transparent;
+    background-color: #7A43FF;
+  }
+  :hover > *{
+    color: white;
   }
   &+div{
     margin-left: 12px;
