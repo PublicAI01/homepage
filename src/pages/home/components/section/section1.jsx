@@ -1,45 +1,10 @@
 import { Toast, Typography } from '@douyinfe/semi-ui';
-import React, { Suspense, useRef } from 'react';
-import styled from 'styled-components';
-import { DEVICE } from '@/config/device';
+import React from 'react';
 import { StyledIconWrap } from '@/components/layout/Header/styled';
 import { platform } from '@/components/layout/Header/config';
 import getStartedArrow from '@/assets/imgs/arrow/getStartedArrow.svg';
 
-const Spline = React.lazy(() => import('@splinetool/react-spline'));
-
-const StyledSplineBox = styled.div`
-  position: absolute;
-  z-index: 1;
-  width: 50%;
-  right: -140px;
-  height: 500px;
-  contain: paint;
-
-  @media ${DEVICE.xmd} {
-    margin: auto;
-    width: 100%;
-    position: static;
-    height: 400px;
-    width: 100%;
-    order: 1;
-    >canvas{
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-`;
-
 function Section1() {
-  const splineApp = useRef();
-
-  const onLoad = (_splineApp) => {
-    splineApp.current = _splineApp;
-    _splineApp._eventManager.preventScroll = false;
-    _splineApp.setZoom(1.2);
-  };
-
   return (
     <div
       className="flex justify-center items-center flex-wrap min-h-[calc(100vh_-_120px)] xmd:!pt-0 !pt-0"
@@ -61,7 +26,7 @@ function Section1() {
           <img src={getStartedArrow} alt="getStartedArrow" className="inline-block ml-4 mb-1" />
         </button>
       </div>
-      <StyledIconWrap className="xmd:!hidden fixed right-5 flex-col">
+      <StyledIconWrap className="xmd:!hidden fixed right-5 flex-col z-50">
         {platform.map(({ href, com: Com }, i) => (
           <a href={href} target="_blank " rel="noreferrer" key={i}>
             <Com width="24" height="24" fill="white" />

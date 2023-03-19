@@ -1,45 +1,42 @@
-import { Col, Row, Typography } from '@douyinfe/semi-ui';
-import LinearGradientText from '../LinearGradientText';
-import { SectionWrap, StyledServiceCard } from './styled';
-import bg from '@/assets/imgs/home/service-bg.png';
-import bg2 from '@/assets/imgs/home/service-card-bg2.png';
+import { Typography } from '@douyinfe/semi-ui';
+import { SectionWrap } from './styled';
+import img1 from '@/assets/imgs/service/1.png';
+import img2 from '@/assets/imgs/service/2.png';
 
 const cardData = [{
   title: 'MarkerDAO',
   tagText: 'Market',
   content: 'Publish tasks to access our on-demand 24/7 global workforce; or work on the tasks in the marketplace.',
+  bgColor: '#7A43FF',
+  img: img1,
 }, {
   title: 'MarkerDAO',
   tagText: 'Pro',
   content: 'Contact the MakerDAO Pro team, and get a professional team of experts tailored for your specific task requirements.',
+  bgColor: '#FFCE18',
+  img: img2,
 }];
 
 function Service() {
   return (
     <SectionWrap id="services">
-      <LinearGradientText
-        textClassName="text-[48px] leading-none"
-        text="Services"
-        showIcon
-      />
-      <Row type="flex" className="nmd:!mt-10" gutter={[24, 24]}>
-        {cardData.map((item, i) => (
-          <Col key={item.tagText} xl={12} lg={12} md={12} span={24}>
-            <StyledServiceCard gold={i === cardData.length - 1}>
-              <div className="content">
-                <div className="title-wrap">
-                  <Typography.Title heading={1}>{item.title}</Typography.Title>
-                  <Typography.Title heading={1}>{item.tagText}</Typography.Title>
-                </div>
-                <Typography.Paragraph className="nmd:text-3xl xmd:text-sm">{item.content}</Typography.Paragraph>
+      <Typography.Title>Service</Typography.Title>
+      <div className="flex nmd:flex-row xmd:flex-col mt-10 gap-7">
+        {cardData.map((item) => (
+          <div className="rounded-md box-border p-10 bg-[#18191E]">
+            <div className="flex flex-row gap-4">
+              <div>
+                <Typography.Title heading={2}>
+                  <span>{item.title} </span>
+                  <span className={`box-border bg-[${item.bgColor}] py-1 px-2 text-black rounded-md`}>{item.tagText}</span>
+                </Typography.Title>
+                <Typography.Paragraph className="mt-5">{item.content}</Typography.Paragraph>
               </div>
-              <img className="bg" src={bg2} alt="" />
-            </StyledServiceCard>
-          </Col>
+              <img src={item.img} alt="" className="w-1/4 object-contain" />
+            </div>
+          </div>
         ))}
-
-      </Row>
-      <img src={bg} alt="" className="absolute top-[10%] left-0 -z-[1] xmd:hidden" />
+      </div>
     </SectionWrap>
   );
 }

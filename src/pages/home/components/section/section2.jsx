@@ -1,7 +1,6 @@
 import {
-  Col, Row, Typography,
+  Typography,
 } from '@douyinfe/semi-ui';
-import { useState } from 'react';
 import img1 from '@/assets/imgs/section2/1.png';
 import img2 from '@/assets/imgs/section2/2.png';
 import img3 from '@/assets/imgs/section2/3.png';
@@ -28,7 +27,7 @@ function Card(params) {
 function Section2() {
   return (
     <SectionWrap className="z-10 bg-[#F8F8F8] xmd:p-3">
-      <div className="bg-white p-10 xmd:p-2">
+      <div className="bg-white p-10 xmd:p-2 rounded-md">
         <div>
           <Typography.Title className="text-black text-xl" heading={2}><span className="text-[#7A43FF] text-xl font-normal">About</span> MarkerDAO</Typography.Title>
           <Typography.Paragraph className="my-7 xmd:my-5 text-black text-lg xmd:text-base">

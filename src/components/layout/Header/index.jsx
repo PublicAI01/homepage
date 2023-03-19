@@ -3,12 +3,11 @@ import { useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { Toast, Typography } from '@douyinfe/semi-ui';
-import { StyledIconWrap, StyledNavLink } from './styled';
-import logo from '@/assets/imgs/header/logo.png';
+import { StyledNavLink } from './styled';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
 import MenuButton from '@/assets/imgs/header/menubutton.svg';
 import MobileSide from './MobileSide';
-import { navs, platform } from './config';
+import { navs } from './config';
 
 function Header() {
   const sideRef = useRef();

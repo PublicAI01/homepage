@@ -3,11 +3,19 @@ import LinearGradientBox from '@/components/comm/LinearGradientBox';
 import { DEVICE } from '@/config/device';
 
 export const SectionWrap = styled.div.attrs({ className: 'section-wrap' })`
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  padding-left: 15%;
-  padding-right: 15%;
   position: relative;
+  @media ${DEVICE.nmd}{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  @media ${DEVICE.xmd}{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 `;
 
 export const StyledServiceCard = styled.div`
