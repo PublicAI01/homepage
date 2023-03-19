@@ -1,9 +1,9 @@
 {
   "name": "marker-dao-homepage",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
-  "homepage": "https://[username].github.io/homepage",
+  "homepage": "https://github.com/MarkerDAO/homepage",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
