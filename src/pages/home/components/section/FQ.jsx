@@ -2,14 +2,12 @@ import { Collapsible, Typography } from '@douyinfe/semi-ui';
 import { IconChevronRight } from '@douyinfe/semi-icons';
 import { useState } from 'react';
 import classNames from 'classnames';
-import LinearGradientText from '../LinearGradientText';
 import { FQCard, SectionWrap } from './styled';
 
 const cardData = [{
   title: 'Is my data secure with MarkerDAO?',
   // eslint-disable-next-line max-len
   text: <span>Yes, MarkerDAO takes data security and privacy very seriously and has implemented various measures to ensure that customer data is kept safe and secure.  MarkerDAO&apos;s platform is built with multiple layers of security to protect customer data, including encryption of data both in transit and at rest, and access controls to limit who can access the data. We also have strict policies and procedures in place to ensure that the employees and annotators follow best practices for data security and privacy. </span>,
-
 }, {
   title: 'How does pricing work? Can I just pay-as-I-go?',
   // eslint-disable-next-line max-len
@@ -49,7 +47,7 @@ function FQCardItem({ item }) {
 function FQ() {
   return (
     <SectionWrap>
-      <LinearGradientText textClassName="leading-none text-[48px]" text="FAQ" showIcon />
+      <Typography.Title>FAQ</Typography.Title>
       <div className="cards mt-8">
         {cardData.map((item) => <FQCardItem item={item} key={item.title} />)}
       </div>

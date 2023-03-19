@@ -40,6 +40,7 @@ module.exports = {
         ...theme('colors'),
         'my-purple': '#7A43FF',
         'my-yellow': '#FFCE18',
+        'my-gray': '#131313',
       }),
     },
   },

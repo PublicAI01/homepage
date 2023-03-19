@@ -157,16 +157,18 @@ export const RoadMapCard = styled(LinearGradientBox).attrs({
 export const FQCard = styled(LinearGradientBox).attrs({
   nolinear: true,
   hover: true,
-  linear: 'var(--linear-gradient-border-green)',
-  borderWidth: 4,
+  borderWidth: 0,
 })`
   padding: 12px 18px;
-  color: white;
+  color: #131313;
   border-radius: 12px;
-  border: 2px solid #3A3A3A;
   cursor: pointer;
-  &:hover, &.active{
-    border-color: transparent;
+  background-color: #131313;
+  &:hover {
+    background-color: #7A43FF;
+  }
+  :hover > *{
+    color: white;
   }
   &+div{
     margin-top: 12px;
@@ -197,10 +199,5 @@ export const FQCard = styled(LinearGradientBox).attrs({
   }
   @media ${DEVICE.xmd} {
     padding: 12px;
-    >.header{
-      >.icon{
-        background: none !important;
-      }
-    }
   }
 `;
