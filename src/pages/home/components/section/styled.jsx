@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
 import { DEVICE } from '@/config/device';
 
-export const SectionWrap = styled.div.attrs({ className: 'section-wrap' })`
+const StyledSectionWrap = styled.div.attrs({ className: 'section-wrap' })`
   position: relative;
   @media ${DEVICE.nmd}{
     padding-top: 5rem;
@@ -27,6 +27,15 @@ export const SectionWrap = styled.div.attrs({ className: 'section-wrap' })`
     }
   }
 `;
+
+export function SectionWrap({ id, className, children }) {
+  return (
+    <div className={className}>
+      <div id={id} className="w-screen h-10 invisible">Invisible link prevent the header cover content</div>
+      <StyledSectionWrap>{children}</StyledSectionWrap>
+    </div>
+  );
+}
 
 export const StyledServiceCard = styled.div`
   position: relative;
