@@ -3,11 +3,8 @@ import {
 } from '@douyinfe/semi-ui';
 import { IconMailStroked1 } from '@douyinfe/semi-icons';
 import styled from 'styled-components';
-import logo from '@/assets/imgs/logo.svg';
 import { SectionWrap } from './styled';
 import { heightToTop } from '@/utils/utils';
-import { platform } from '@/components/layout/Header/config';
-import LinearGradientText from '../LinearGradientText';
 
 const TextBox = styled.div`
   cursor: pointer;
@@ -36,11 +33,12 @@ export function Footer() {
                   <Typography.Text>Home</Typography.Text>
                 </a>
               </TextBox>
-              <TextBox>
-                <Typography.Text>Overview</Typography.Text>
-              </TextBox>
-              <TextBox>
-                <Typography.Text>About</Typography.Text>
+              <TextBox
+                onClick={() => {
+                  window.scrollTo(0, heightToTop(document.querySelector('.how_it_works')) - 200);
+                }}
+              >
+                <Typography.Text>How it works</Typography.Text>
               </TextBox>
               <TextBox onClick={() => Toast.info('contact@markerdao.io')}>
                 <Typography.Text>Contact</Typography.Text>
