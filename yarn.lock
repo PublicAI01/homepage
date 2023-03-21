@@ -901,6 +901,11 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
+"@fontsource/bai-jamjuree@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.npmjs.org/@fontsource/bai-jamjuree/-/bai-jamjuree-4.5.9.tgz#2afd87852d018be97ce98cd74a91f89393ac2a6c"
+  integrity sha512-k+niRXYmS3SBWSN6E7iRiLb3wozy85Vdaiy+QR8oSwGN3HA49tTCEsKGm4yD0B7jmURT8V8p8ApYcLtBB9zOvg==
+
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.8.tgz#03595ac2075a4dc0f191cc2131de14fbd7d410b9"

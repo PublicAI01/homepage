@@ -1,6 +1,5 @@
 import { Typography } from '@douyinfe/semi-ui';
 import { useRef } from 'react';
-import LinearGradientText from '../LinearGradientText';
 import { RoadMapCard, SectionWrap } from './styled';
 
 const cardData = [
@@ -22,17 +21,13 @@ function Roadmap() {
   };
 
   return (
-    <SectionWrap id="roadmap">
-      <LinearGradientText
-        textClassName="leading-none text-[48px]"
-        text="Roadmap"
-        showIcon
-      />
+    <SectionWrap id="roadmap" className="bg-my-gray-white">
+      <Typography.Title className="text-black">Roadmap</Typography.Title>
       <div className="cards mt-8 flex overflow-x-auto p-2 whitespace-nowrap scroll-smooth" ref={cardBoxRef}>
         {cardData.map((item) => (
           <RoadMapCard key={item.title} onClick={onClickCard}>
-            <Typography.Title className="whitespace-normal xmd:!text-2xl">{item.title}</Typography.Title>
-            <Typography.Paragraph className="mt-2 whitespace-normal text-base xmd:!text-sm">{item.text}</Typography.Paragraph>
+            <Typography.Title className="whitespace-normal !text-2xl">{item.title}</Typography.Title>
+            <Typography.Paragraph className="mt-3 whitespace-normal text-base xmd:!text-sm">{item.text}</Typography.Paragraph>
           </RoadMapCard>
         ))}
       </div>

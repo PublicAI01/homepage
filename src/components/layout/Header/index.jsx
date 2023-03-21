@@ -3,26 +3,25 @@ import { useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { Toast, Typography } from '@douyinfe/semi-ui';
-import { StyledIconWrap, StyledNavLink } from './styled';
-import logo from '@/assets/imgs/header/logo.png';
+import { StyledNavLink } from './styled';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
-import MenuButton from '@/assets/imgs/header/menubutton.png';
+import MenuButton from '@/assets/imgs/header/menubutton.svg';
 import MobileSide from './MobileSide';
-import { navs, platform } from './config';
+import { navs } from './config';
 
 function Header() {
   const sideRef = useRef();
   return (
-    <header className="text-white bg-black/30 nmd:h-[120px] xmd:py-4 backdrop-blur-md fixed top-0 left-0 w-full z-40 xmd:h-[90px]">
-      <div className="h-full flex items-center container mx-auto">
-        <div className="nmd:flex-shrink-0 mr-2 xmd:flex-1">
+    <header className="text-white nmd:h-[88px] xmd:py-4 bg-black fixed top-0 left-0 w-full z-40 xmd:h-[78px]">
+      <div className="backdrop-filter backdrop-blur-[5px] h-full flex items-center justify-between">
+        <div className="nmd:flex-shrink-0 xmd:flex-1 ml-8">
           <Link className="flex items-center" to="/">
-            <img className="w-[62px]" src="/logo.png" alt="logo" />
-            <Typography.Title className="xmd:!text-lg" heading={2}><span className="font-light">Marker</span> DAO</Typography.Title>
+            <img className="xmd:w-[28px] w-[62px] mr-2" src="/logo.png" alt="logo" />
+            <Typography.Title className="nmd:!text-2xl xmd:!text-lg" heading={2}><span className="font-light">Marker</span>DAO</Typography.Title>
           </Link>
         </div>
 
-        <div className="ml-auto flex nmd:flex-wrap">
+        <div className="flex nmd:flex-wrap">
           <ul className="flex-1 flex text-center xmd:hidden">
             {useMemo(
               () => navs.map((nav) => (
@@ -45,26 +44,17 @@ function Header() {
               [],
             )}
           </ul>
-
         </div>
 
-        <StyledIconWrap className="xmd:!hidden">
-          {platform.map(({ href, com: Com }, i) => (
-            <a href={href} target="_blank " rel="noreferrer" key={i}>
-              <Com width="24" height="24" fill="white" />
-            </a>
-          ))}
-        </StyledIconWrap>
-
         <LinearGradientBox
-          className="inline-block ml-[34px] rounded-full whitespace-nowrap xmd:!hidden"
+          className="inline-block rounded-full whitespace-nowrap xmd:!hidden nmd:mr-8"
           onClick={() => Toast.info('coming soon.')}
         >
           <button className="hover:text-white/80 font-bold !leading-[42px] w-[160px] h-[42px] px-2">Launch App</button>
         </LinearGradientBox>
 
         <button
-          className="nmd:hidden"
+          className="nmd:hidden mr-4"
           onClick={() => sideRef.current.switch()}
         >
           <img
@@ -75,8 +65,8 @@ function Header() {
             }}
             src={MenuButton}
             alt=""
-            width="40"
-            height="40"
+            width="20"
+            height="20"
           />
         </button>
 

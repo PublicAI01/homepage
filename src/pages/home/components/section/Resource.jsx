@@ -1,20 +1,18 @@
+import { useContext } from 'react';
 import {
   Col, Image, Row, Typography,
 } from '@douyinfe/semi-ui';
-import LinearGradientText from '../LinearGradientText';
+import styled from 'styled-components';
 import { SectionWrap } from './styled';
 import resourcePrice from '@/assets/imgs/home/resource-price.png';
 import resourceWhitePaper from '@/assets/imgs/home/resource-whitepaper.png';
 import resourceDocument from '@/assets/imgs/home/resource-document.png';
-import LinearGradientBox from '@/components/comm/LinearGradientBox';
 import { heightToTop } from '@/utils/utils';
+import ActiveFQContext from '../../ActiveFQContext';
 
 const cardData = [{
   img: resourcePrice,
-  title: 'Pricing',
-  onClick: () => {
-    window.scrollTo(0, heightToTop(document.querySelector('._fq2')) - 200);
-  },
+  title: 'Price',
 }, {
   img: resourceWhitePaper,
   title: 'White Paper',
@@ -23,40 +21,50 @@ const cardData = [{
   },
 }, {
   img: resourceDocument,
-  title: 'Dev Documentation',
+  title: 'Development Doc',
   onClick: () => {
     window.open('https://github.com/MarkerDAO');
   },
 }];
 
-function Resource() {
-  // const [activeCard] = useState('White Paper');
+const StyledCard = styled.div`
+  img {
+    filter: grayscale(100%);
+  }
+  &:hover {
+    background-color: #7A43FF;
+  }
+  :hover img{
+    filter: grayscale(0);
+  }
+`;
 
+function Resource() {
+  const { setActiveFQ } = useContext(ActiveFQContext);
+
+  const handlePriceClick = () => {
+    setActiveFQ(true);
+    window.scrollTo(0, heightToTop(document.querySelector('._fq2')) - 300);
+  };
+
+  cardData[0].onClick = handlePriceClick;
   return (
     <SectionWrap id="resources">
-
-      <div className="text-center mb-10 xmd:text-left">
-        <LinearGradientText
-          textClassName="text-[48px] leading-none"
-          text="Resources"
-          showIcon
-        />
-      </div>
-
-      <Row gutter={[24, 24]} type="flex">
+      <Typography.Title>Resource</Typography.Title>
+      <Row gutter={[24, 24]} type="flex" className="!mt-10">
         {cardData.map((item) => (
           <Col xl={8} lg={12} span={24} className="text-center" key={item.title}>
-            <LinearGradientBox
+            <StyledCard
               onClick={() => item.onClick && item.onClick()}
               nolinear
               linear="var(--linear-gradient-border-green)"
-              className="rounded-[10px] py-4 border-2 border-[#4E4E4E] hover:border-[transparent] cursor-pointer"
+              className="rounded-[10px] py-4 cursor-pointer bg-my-gray"
               borderWidth={4}
               hover
             >
-              <Image src={item.img} preview={false} width="80px" />
-              <Typography.Text className="text-lg block">{item.title}</Typography.Text>
-            </LinearGradientBox>
+              <Image id="img" src={item.img} preview={false} width="80px" />
+              <Typography.Title heading={3} className="text-lg block">{item.title}</Typography.Title>
+            </StyledCard>
           </Col>
         ))}
       </Row>

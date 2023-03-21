@@ -19,7 +19,7 @@ export const StyledIconWrap = styled.div`
   align-items: center;
   margin-left: 60px;
   color: black;
-  gap: 8px;
+  gap: 16px;
   >a{
     font-size: 0;
     cursor: pointer;

@@ -1,10 +1,15 @@
 import { SideSheet, Toast } from '@douyinfe/semi-ui';
-
+import styled from 'styled-components';
 import classNames from 'classnames';
 import { forwardRef, useImperativeHandle, useState } from 'react';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
 import { navs, platform } from './config';
 import { StyledIconWrap, StyledNavLink } from './styled';
+
+const MySideSheet = styled(SideSheet)`
+  --semi-color-bg-2: transparent;
+  background-color: unset;
+`;
 
 function MobileSide(props, ref) {
   const [visible, setVisible] = useState(false);
@@ -26,18 +31,18 @@ function MobileSide(props, ref) {
   }), [visible, setVisible]);
 
   return (
-    <SideSheet
+    <MySideSheet
       keepDOM
       title={null}
       style={{
-        '--semi-color-bg-2': 'transparent',
       }}
       closable={false}
-      className="top-[90px] backdrop-blur-[5px]"
+      className="top-[78px] backdrop-blur-[5px]"
       visible={visible}
       width="100%"
       onCancel={onClose}
       size="large"
+      placement="top"
     >
       <ul className="text-center">
         {navs.map((nav) => (
@@ -74,7 +79,7 @@ function MobileSide(props, ref) {
           <button className="hover:text-white/80 font-bold h-[42px] rounded-[inherit] !leading-[42px] w-[160px]  px-2">Launch App</button>
         </LinearGradientBox>
       </div>
-    </SideSheet>
+    </MySideSheet>
   );
 }
 

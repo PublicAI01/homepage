@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import ActiveFQContext from './ActiveFQContext';
 import { Footer } from './components/section/Footer';
 import FQ from './components/section/FQ';
 import Partners from './components/section/Partners';
@@ -58,18 +59,24 @@ function Home() {
       }
     }, 100);
   }, []);
+
+  const [activeFQ, setActiveFQ] = useState(null);
+  const value = useMemo(() => ({ activeFQ, setActiveFQ }), [activeFQ]);
+
   return (
-    <div className="container scroll-smooth" ref={wrapRef}>
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Service />
-      <Roadmap />
-      <Partners />
-      <FQ />
-      <Resource />
-      <Footer />
-    </div>
+    <ActiveFQContext.Provider value={value}>
+      <div className="scroll-smooth" ref={wrapRef}>
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Service />
+        <Roadmap />
+        <Partners />
+        <FQ />
+        <Resource />
+        <Footer />
+      </div>
+    </ActiveFQContext.Provider>
   );
 }
 export default Home;

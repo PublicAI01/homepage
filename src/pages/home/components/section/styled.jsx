@@ -2,11 +2,42 @@ import styled from 'styled-components';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
 import { DEVICE } from '@/config/device';
 
-export const SectionWrap = styled.div.attrs({ className: 'section-wrap' })`
-  padding-top: 20px;
-  padding-bottom: 60px;
+const StyledSectionWrap = styled.div.attrs({ className: 'section-wrap' })`
   position: relative;
+  /* Desktop */
+  @media ${DEVICE.nmd}{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 15%;
+    padding-right: 15%;
+  
+    h1.semi-typography {
+      font-size: 32px;
+      line-height: 35px;
+    }
+  }
+  /* Mobile */
+  @media ${DEVICE.xmd}{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    h1.semi-typography {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
 `;
+
+export function SectionWrap({ id, className, children }) {
+  return (
+    <div>
+      <div id={id} className="w-screen h-5 invisible">Invisible link prevent the header cover content</div>
+      <StyledSectionWrap className={className}>{children}</StyledSectionWrap>
+    </div>
+  );
+}
 
 export const StyledServiceCard = styled.div`
   position: relative;
@@ -111,13 +142,19 @@ export const RoadMapCard = styled(LinearGradientBox).attrs({
   linear: 'var(--linear-gradient-border-green)',
   borderWidth: 4,
 })`
-  padding: 18px; 
+  padding: 28px; 
   min-height: 240px;
   min-width: 340px;
-  border: 1px solid #4e4e4e;
   border-radius: 12px;
+  background-color: white;
+  > *{
+    color: black;
+  }
   &:hover {
-    border-color: transparent;
+    background-color: #7A43FF;
+  }
+  :hover > *{
+    color: white;
   }
   &+div{
     margin-left: 12px;
@@ -131,16 +168,18 @@ export const RoadMapCard = styled(LinearGradientBox).attrs({
 export const FQCard = styled(LinearGradientBox).attrs({
   nolinear: true,
   hover: true,
-  linear: 'var(--linear-gradient-border-green)',
-  borderWidth: 4,
+  borderWidth: 0,
 })`
   padding: 12px 18px;
-  color: white;
+  color: #131313;
   border-radius: 12px;
-  border: 2px solid #3A3A3A;
   cursor: pointer;
-  &:hover, &.active{
-    border-color: transparent;
+  background-color: #131313;
+  &:hover {
+    background-color: #7A43FF;
+  }
+  :hover > *{
+    color: white;
   }
   &+div{
     margin-top: 12px;
@@ -171,10 +210,5 @@ export const FQCard = styled(LinearGradientBox).attrs({
   }
   @media ${DEVICE.xmd} {
     padding: 12px;
-    >.header{
-      >.icon{
-        background: none !important;
-      }
-    }
   }
 `;

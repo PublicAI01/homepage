@@ -36,6 +36,13 @@ module.exports = {
       translate: {
         'right-1/2': '-50%',
       },
+      backgroundColor: (theme) => ({
+        ...theme('colors'),
+        'my-purple': '#7A43FF',
+        'my-yellow': '#FFCE18',
+        'my-gray': '#131313',
+        'my-gray-white': '#F8F8F8',
+      }),
     },
   },
   plugins: [],
