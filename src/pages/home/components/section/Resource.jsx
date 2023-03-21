@@ -63,7 +63,7 @@ function Resource() {
               hover
             >
               <Image id="img" src={item.img} preview={false} width="80px" />
-              <Typography.Title heading={3} className="text-lg block">{item.title}</Typography.Title>
+              <Typography.Text className="text-xl block">{item.title}</Typography.Text>
             </StyledCard>
           </Col>
         ))}
