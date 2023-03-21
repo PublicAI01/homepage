@@ -37,7 +37,7 @@ export const platform = [{
   // eslint-disable-next-line react/no-unstable-nested-components
   com: ({ width }) => (
     <IconGithubLogo
-      className="text-white hover:text-white/80"
+      className="text-[#D7D7D7]"
       style={{
         fontSize: `${width}px`,
       }}

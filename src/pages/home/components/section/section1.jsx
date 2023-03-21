@@ -30,7 +30,7 @@ function Section1() {
       <StyledIconWrap className="xmd:!hidden fixed right-5 flex-col z-50">
         {platform.map(({ href, com: Com }, i) => (
           <a href={href} target="_blank " rel="noreferrer" key={i}>
-            <Com width="24" height="24" fill="white" />
+            <Com width="24" height="24" fill="#D7D7D7" />
           </a>
         ))}
       </StyledIconWrap>
