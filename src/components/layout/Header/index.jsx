@@ -12,7 +12,7 @@ import { navs } from './config';
 function Header() {
   const sideRef = useRef();
   return (
-    <header className="text-white nmd:h-[88px] xmd:py-4 backdrop-blur-[5px] fixed top-0 left-0 w-full z-40 xmd:h-[78px]">
+    <header className="text-white nmd:h-[88px] xmd:py-4 bg-black fixed top-0 left-0 w-full z-40 xmd:h-[78px]">
       <div className="backdrop-filter backdrop-blur-[5px] h-full flex items-center justify-between">
         <div className="nmd:flex-shrink-0 xmd:flex-1 ml-8">
           <Link className="flex items-center" to="/">
