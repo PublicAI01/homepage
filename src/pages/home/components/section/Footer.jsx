@@ -35,7 +35,7 @@ export function Footer() {
               </TextBox>
               <TextBox
                 onClick={() => {
-                  window.scrollTo(0, heightToTop(document.querySelector('.how_it_works')) - 200);
+                  window.scrollTo(0, heightToTop(document.getElementById('how_it_works')) - 50);
                 }}
               >
                 <Typography.Text>How it works</Typography.Text>

@@ -53,7 +53,7 @@ const ArrowBox = styled.div`
 
 function Section3() {
   return (
-    <SectionWrap className="xmd:p-3 bg-black how_it_works">
+    <SectionWrap className="xmd:p-3 bg-black" id="how_it_works">
       <Typography.Title>How it works</Typography.Title>
       <Row type="flex" className="xmd:!mt-4 nmd:!mt-24">
         <Col xl={8} lg={8} span={24} className="text-center">

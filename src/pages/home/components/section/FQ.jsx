@@ -11,9 +11,9 @@ const cardData = [{
   text: <span>Yes, MarkerDAO takes data security and privacy very seriously and has implemented various measures to ensure that customer data is kept safe and secure.  MarkerDAO&apos;s platform is built with multiple layers of security to protect customer data, including encryption of data both in transit and at rest, and access controls to limit who can access the data. We also have strict policies and procedures in place to ensure that the employees and annotators follow best practices for data security and privacy. </span>,
   isPriceFQContext: false,
 }, {
-  title: 'How does pricing work? Can I just pay-as-I-go?',
+  title: <span id="fq-price">How does pricing work? Can I just pay-as-I-go?</span>,
   // eslint-disable-next-line max-len
-  text: <span className="_fq2">  There are two types of service options. If you choose the MarkerDAO marketplace, you can get a free tier that provides a complimentary amount of annotation, and you can pay-as-you-go for anything exceeding that amount. To access additional features, you can upgrade to MarkerDAO Pro for Enterprise capabilities. </span>,
+  text: <span>There are two types of service options. If you choose the MarkerDAO marketplace, you can get a free tier that provides a complimentary amount of annotation, and you can pay-as-you-go for anything exceeding that amount. To access additional features, you can upgrade to MarkerDAO Pro for Enterprise capabilities. </span>,
   isPriceFQContext: true,
 }, {
   title: 'Do I get charged based on the number of annotators / labelers working on my project?',

@@ -44,7 +44,7 @@ function Resource() {
 
   const handlePriceClick = () => {
     setActiveFQ(true);
-    window.scrollTo(0, heightToTop(document.querySelector('._fq2')) - 300);
+    window.scrollTo(0, heightToTop(document.getElementById('fq-price')) - 120);
   };
 
   cardData[0].onClick = handlePriceClick;
