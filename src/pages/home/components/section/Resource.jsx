@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import {
   Col, Image, Row, Typography,
 } from '@douyinfe/semi-ui';
@@ -7,13 +8,11 @@ import resourcePrice from '@/assets/imgs/home/resource-price.png';
 import resourceWhitePaper from '@/assets/imgs/home/resource-whitepaper.png';
 import resourceDocument from '@/assets/imgs/home/resource-document.png';
 import { heightToTop } from '@/utils/utils';
+import ActiveFQContext from '../../ActiveFQContext';
 
 const cardData = [{
   img: resourcePrice,
   title: 'Price',
-  onClick: () => {
-    window.scrollTo(0, heightToTop(document.querySelector('._fq2')) - 200);
-  },
 }, {
   img: resourceWhitePaper,
   title: 'White Paper',
@@ -41,6 +40,14 @@ const StyledCard = styled.div`
 `;
 
 function Resource() {
+  const { setActiveFQ } = useContext(ActiveFQContext);
+
+  const handlePriceClick = () => {
+    setActiveFQ(true);
+    window.scrollTo(0, heightToTop(document.querySelector('._fq2')) - 300);
+  };
+
+  cardData[0].onClick = handlePriceClick;
   return (
     <SectionWrap id="resources">
       <Typography.Title>Resource</Typography.Title>
