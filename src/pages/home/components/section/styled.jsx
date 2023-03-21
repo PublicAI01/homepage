@@ -4,17 +4,19 @@ import { DEVICE } from '@/config/device';
 
 const StyledSectionWrap = styled.div.attrs({ className: 'section-wrap' })`
   position: relative;
+  /* Desktop */
   @media ${DEVICE.nmd}{
     padding-top: 5rem;
     padding-bottom: 5rem;
     padding-left: 15%;
     padding-right: 15%;
-    
+  
     h1.semi-typography {
-      font-size: 2.5rem;
-      line-height: 2.5rem;
+      font-size: 32px;
+      line-height: 35px;
     }
   }
+  /* Mobile */
   @media ${DEVICE.xmd}{
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -30,9 +32,9 @@ const StyledSectionWrap = styled.div.attrs({ className: 'section-wrap' })`
 
 export function SectionWrap({ id, className, children }) {
   return (
-    <div className={className}>
-      <div id={id} className="w-screen h-10 invisible">Invisible link prevent the header cover content</div>
-      <StyledSectionWrap>{children}</StyledSectionWrap>
+    <div>
+      <div id={id} className="w-screen h-5 invisible">Invisible link prevent the header cover content</div>
+      <StyledSectionWrap className={className}>{children}</StyledSectionWrap>
     </div>
   );
 }

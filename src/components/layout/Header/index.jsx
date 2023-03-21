@@ -17,7 +17,7 @@ function Header() {
         <div className="nmd:flex-shrink-0 xmd:flex-1 ml-8">
           <Link className="flex items-center" to="/">
             <img className="xmd:w-[28px] w-[62px] mr-2" src="/logo.png" alt="logo" />
-            <Typography.Title className="xmd:!text-lg" heading={2}><span className="font-light">Marker</span>DAO</Typography.Title>
+            <Typography.Title className="nmd:!text-2xl xmd:!text-lg" heading={2}><span className="font-light">Marker</span>DAO</Typography.Title>
           </Link>
         </div>
 

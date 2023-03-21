@@ -21,7 +21,7 @@ function Roadmap() {
   };
 
   return (
-    <SectionWrap id="roadmap" className="bg-[#F8F8F8]">
+    <SectionWrap id="roadmap" className="bg-my-gray-white">
       <Typography.Title className="text-black">Roadmap</Typography.Title>
       <div className="cards mt-8 flex overflow-x-auto p-2 whitespace-nowrap scroll-smooth" ref={cardBoxRef}>
         {cardData.map((item) => (

@@ -26,7 +26,7 @@ function Card(params) {
 
 function Section2() {
   return (
-    <SectionWrap className="z-10 bg-[#F8F8F8] xmd:p-3">
+    <SectionWrap className="z-10 bg-my-gray-white xmd:p-3">
       <div className="bg-white p-10 xmd:p-2 rounded-md">
         <div>
           <Typography.Title className="text-black text-xl" heading={2}><span className="text-[#7A43FF] text-xl font-normal">About</span> MarkerDAO</Typography.Title>

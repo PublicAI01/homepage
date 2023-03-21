@@ -37,7 +37,7 @@ function MobileSide(props, ref) {
       style={{
       }}
       closable={false}
-      className="top-[90px] backdrop-blur-[5px]"
+      className="top-[78px] backdrop-blur-[5px]"
       visible={visible}
       width="100%"
       onCancel={onClose}
