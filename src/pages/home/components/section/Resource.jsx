@@ -44,7 +44,7 @@ function Resource() {
 
   const handlePriceClick = () => {
     setActiveFQ(true);
-    window.scrollTo(0, heightToTop(document.querySelector('._fq2')) - 300);
+    window.scrollTo(0, heightToTop(document.getElementById('fq-price')) - 120);
   };
 
   cardData[0].onClick = handlePriceClick;
@@ -63,7 +63,7 @@ function Resource() {
               hover
             >
               <Image id="img" src={item.img} preview={false} width="80px" />
-              <Typography.Title heading={3} className="text-lg block">{item.title}</Typography.Title>
+              <Typography.Text className="text-xl block">{item.title}</Typography.Text>
             </StyledCard>
           </Col>
         ))}
