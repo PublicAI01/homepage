@@ -1,4 +1,4 @@
-import { IconGithubLogo } from '@douyinfe/semi-icons';
+import { IconGithubLogo, IconYoutube } from '@douyinfe/semi-icons';
 import { ReactComponent as Twitter } from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
 import { ReactComponent as Telegram } from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
 // import { ReactComponent as Quora } from '@/assets/imgs/header/Navigation-Bar/quora.svg';
@@ -47,4 +47,15 @@ export const platform = [{
 {
   href: 'https://t.me/MarkerDAO',
   com: Telegram,
+},
+{
+  href: 'https://www.youtube.com/@markerdao',
+  com: ({ width }) => (
+    <IconYoutube
+      className="text-[#D7D7D7]"
+      style={{
+        fontSize: `${width}px`,
+      }}
+    />
+  ),
 }];
