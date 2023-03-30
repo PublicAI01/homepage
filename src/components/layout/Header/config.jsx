@@ -1,9 +1,9 @@
-import { IconGithubLogo, IconYoutube } from '@douyinfe/semi-icons';
+import { IconGithubLogo } from '@douyinfe/semi-icons';
 import { ReactComponent as Twitter } from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
 import { ReactComponent as Telegram } from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
 // import { ReactComponent as Quora } from '@/assets/imgs/header/Navigation-Bar/quora.svg';
 import { ReactComponent as Medium } from '@/assets/imgs/header/Navigation-Bar/medium.svg';
-import { ReactComponent as Discord } from '@/assets/imgs/header/Navigation-Bar/discord.svg';
+import { ReactComponent as Discord, ReactComponent as IconYoutube } from '@/assets/imgs/header/Navigation-Bar/youtube.svg';
 
 export const navs = [{
   text: 'Home',
@@ -50,12 +50,5 @@ export const platform = [{
 },
 {
   href: 'https://www.youtube.com/@markerdao',
-  com: ({ width }) => (
-    <IconYoutube
-      className="text-[#D7D7D7]"
-      style={{
-        fontSize: `${width}px`,
-      }}
-    />
-  ),
+  com: IconYoutube,
 }];
