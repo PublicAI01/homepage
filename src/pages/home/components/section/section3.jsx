@@ -69,7 +69,7 @@ function Section3() {
           <ArrowBox>
             <div className="xmd:flex items-center xmd:mb-2">
               <img className="content-img" src={img2} alt="" />
-              <Typography.Text>MarkerDAO Marketplace</Typography.Text>
+              <Typography.Text>Public.AI Marketplace</Typography.Text>
             </div>
           </ArrowBox>
         </Col>

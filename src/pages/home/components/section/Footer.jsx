@@ -40,7 +40,7 @@ export function Footer() {
               >
                 <Typography.Text>How it works</Typography.Text>
               </TextBox>
-              <TextBox onClick={() => Toast.info('contact@markerdao.io')}>
+              <TextBox onClick={() => Toast.info('contact@publicai.io')}>
                 <Typography.Text>Contact</Typography.Text>
               </TextBox>
             </div>
@@ -50,14 +50,14 @@ export function Footer() {
             <div className="mt-8 xmd:mt-4">
               <div className="inline-flex items-center">
                 <IconMailStroked1 size="extra-large" className="mr-2" />
-                <Typography.Text copyable>contact@markerdao.io</Typography.Text>
+                <Typography.Text copyable>contact@publicai.io</Typography.Text>
               </div>
             </div>
           </Col>
         </Row>
       </SectionWrap>
       <div className="mt-[50px] xmd:mt-4 bg-my-gray w-screen text-center">
-        <Typography.Text className="text-[#7B7B7B]">© 2023 MarkerDAO . All Rights Reserved</Typography.Text>
+        <Typography.Text className="text-[#7B7B7B]">© 2023 Public.AI . All Rights Reserved</Typography.Text>
       </div>
     </div>
   );

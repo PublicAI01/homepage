@@ -4,9 +4,9 @@ import { RoadMapCard, SectionWrap } from './styled';
 
 const cardData = [
   { title: 'Q1 2023', text: 'Publishes the whitepaper. Completes the MVP and the seed funding round. Issues the Marker Genesis NFT series for early backers.' },
-  { title: 'Q2 2023', text: 'Develops MarkerDAO V1. Optimizes marketing campaigns, BD pipelines, and community accelerator and support programs.' },
-  { title: 'Q3 2023', text: 'Launches MarkerDAO V1 testnet. Initiates the MarkerDAO genesis airdrop.' },
-  { title: 'Q4 2023', text: 'Launches MarkerDAO V1 mainnet.' },
+  { title: 'Q2 2023', text: 'Develops Public.AI V1. Optimizes marketing campaigns, BD pipelines, and community accelerator and support programs.' },
+  { title: 'Q3 2023', text: 'Launches Public.AI V1 testnet. Initiates the Public.AI genesis airdrop.' },
+  { title: 'Q4 2023', text: 'Launches Public.AI V1 mainnet.' },
 ];
 
 function Roadmap() {

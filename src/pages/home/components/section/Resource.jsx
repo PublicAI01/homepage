@@ -17,13 +17,13 @@ const cardData = [{
   img: resourceWhitePaper,
   title: 'White Paper',
   onClick: () => {
-    window.open('https://www.markerdao.io/whitepaper.pdf');
+    window.open('https://www.publicai.io/whitepaper.pdf');
   },
 }, {
   img: resourceDocument,
   title: 'Development Doc',
   onClick: () => {
-    window.open('https://github.com/MarkerDAO');
+    window.open('https://github.com/PublicAI01');
   },
 }];
 

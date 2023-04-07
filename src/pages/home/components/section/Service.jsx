@@ -4,15 +4,15 @@ import img1 from '@/assets/imgs/service/1.png';
 import img2 from '@/assets/imgs/service/2.png';
 
 const cardData = [{
-  title: 'MarkerDAO',
+  title: 'Public.AI',
   tagText: 'Market',
   content: 'Publish tasks to access our on-demand 24/7 global workforce; or work on the tasks in the marketplace.',
   bgColor: 'bg-my-purple',
   img: img1,
 }, {
-  title: 'MarkerDAO',
+  title: 'Public.AI',
   tagText: 'Pro',
-  content: 'Contact the MakerDAO Pro team, and get a professional team of experts tailored for your specific task requirements.',
+  content: 'Contact the Public.AI Pro team, and get a professional team of experts tailored for your specific task requirements.',
   bgColor: 'bg-my-yellow',
   img: img2,
 }];

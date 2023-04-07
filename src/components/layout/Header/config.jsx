@@ -23,7 +23,7 @@ export const navs = [{
 }];
 
 export const platform = [{
-  href: 'https://twitter.com/MarkerDAO_',
+  href: 'https://twitter.com/PublicAI_',
   com: Twitter,
 }, {
   href: 'https://discord.gg/E962EdDmrB',
@@ -33,7 +33,7 @@ export const platform = [{
   com: Medium,
 },
 {
-  href: 'https://github.com/MarkerDAO',
+  href: 'https://github.com/PublicAI01',
   // eslint-disable-next-line react/no-unstable-nested-components
   com: ({ width }) => (
     <IconGithubLogo
@@ -45,7 +45,7 @@ export const platform = [{
   ),
 },
 {
-  href: 'https://t.me/MarkerDAO',
+  href: 'https://t.me/Public_AI',
   com: Telegram,
 },
 {

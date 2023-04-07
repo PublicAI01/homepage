@@ -1,4 +1,4 @@
-# Marker DAO
+# Public.AI
 
 # install 
 use `yarn` or `npm i`
