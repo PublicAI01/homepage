@@ -3,7 +3,9 @@ import { ReactComponent as Twitter } from '@/assets/imgs/header/Navigation-Bar/t
 import { ReactComponent as Telegram } from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
 // import { ReactComponent as Quora } from '@/assets/imgs/header/Navigation-Bar/quora.svg';
 import { ReactComponent as Medium } from '@/assets/imgs/header/Navigation-Bar/medium.svg';
-import { ReactComponent as Discord, ReactComponent as IconYoutube } from '@/assets/imgs/header/Navigation-Bar/youtube.svg';
+import { ReactComponent as IconYoutube } from '@/assets/imgs/header/Navigation-Bar/youtube.svg';
+import { ReactComponent as Discord } from '@/assets/imgs/header/Navigation-Bar/discord.svg';
+
 
 export const navs = [{
   text: 'Home',
