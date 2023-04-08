@@ -1,7 +1,7 @@
 {
   "name": "public-ai-homepage",
   "private": true,
-  "version": "2.0.1",
+  "version": "2.0.2",
   "type": "module",
   "homepage": "https://github.com/PublicAI01/homepage",
   "scripts": {
