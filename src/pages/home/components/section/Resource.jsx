@@ -17,7 +17,7 @@ const cardData = [{
   img: resourceWhitePaper,
   title: 'White Paper',
   onClick: () => {
-    window.open('https://www.publicai.io/whitepaper.pdf');
+    window.open('/whitepaper.pdf');
   },
 }, {
   img: resourceDocument,

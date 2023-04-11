@@ -25,6 +25,16 @@ const cardData = [{
   // eslint-disable-next-line max-len
   text: 'Public.AI V1 will support general image annotation, 2D semantic segmentation, text collection, document transcription, named entity recognition, video playback annotation, and LIDAR (3D) annotation.',
   isPriceFQContext: false,
+}, {
+  title: 'What are the advantages of Public.AI over other crowdsourcing task platforms?',
+  // eslint-disable-next-line max-len
+  text: 'Public.AI has the following advantages over centralised crowdsourcing platforms such as Mturk and Appen: first, it eliminates the huge price differentials that middlemen earn, which in turn reduces the cost of tasks; second, the WEB3 reputation system with incentive and penalty mechanisms makes DAO develop in a virtuous circle; third, the Crypto payment channel is used to solve the international labor settlement obstacles, and make it readily welcome the international members to join the ecosystem and so on.',
+  isPriceFQContext: false,
+}, {
+  title: 'Who can join the Public.AI ecosystem?',
+  // eslint-disable-next-line max-len
+  text: 'The Public.AI ecosystem includes roles such as task publishers, workers, job reviewers, labeling guilds, approvers, and councils. If you need labeling tasks completed, you can publish tasks via Public.AI in a variety of service modes; if you want to make money from Public.AI, you can join the Public.AI labor force and take tasks. We also welcome labeling service providers to join in the form of guilds to provide Pro services to the demand side.',
+  isPriceFQContext: false,
 }];
 
 function FQCardItem({ item, active, setActive }) {

@@ -46,11 +46,17 @@ export function Footer() {
             </div>
           </Col>
           <Col xl={8} lg={24} span={24} className="xmd:text-center nmd:text-left">
-            <Typography.Title heading={4}>Let&apos;s Talk</Typography.Title>
+            <Typography.Title heading={4}>Contact us</Typography.Title>
             <div className="mt-8 xmd:mt-4">
               <div className="inline-flex items-center">
                 <IconMailStroked1 size="extra-large" className="mr-2" />
-                <Typography.Text copyable>contact@publicai.io</Typography.Text>
+                <Typography.Text
+                  style={{
+                    '--semi-color-link': 'white',
+                  }}
+                  copyable
+                >contact@publicai.io
+                </Typography.Text>
               </div>
             </div>
           </Col>
