@@ -30,11 +30,13 @@ const StyledSectionWrap = styled.div.attrs({ className: 'section-wrap' })`
   }
 `;
 
-export function SectionWrap({ id, className, children }) {
+export function SectionWrap({
+  id, className, children, style,
+}) {
   return (
     <div>
-      <div id={id} className="w-screen h-5 invisible">Invisible link prevent the header cover content</div>
-      <StyledSectionWrap className={className}>{children}</StyledSectionWrap>
+      {id && <div id={id} className="w-screen h-5 invisible bg-transparent">Invisible link prevent the header cover content</div>}
+      <StyledSectionWrap style={style} className={className}>{children}</StyledSectionWrap>
     </div>
   );
 }
@@ -190,15 +192,15 @@ export const FQCard = styled(LinearGradientBox).attrs({
     justify-content: space-between;
     >.icon {
       border-radius: 50%;
-      background-color: #3E3E3E;
-      width: 48px;
-      height: 48px;
+      background-color: rgba(255,255,255,0.2);
+      width: 36px;
+      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       &:hover{
-        background: #3E3E3E90;
+        background: #3e3e3e47;
       }
       >span{
         transition: .3s transform;

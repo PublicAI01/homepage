@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { Toast, Typography } from '@douyinfe/semi-ui';
 import { StyledNavLink } from './styled';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
-import MenuButton from '@/assets/imgs/header/menubutton.svg';
+import { uri as MenuButtonUri } from '@/assets/imgs/header/menubutton.svg';
 import MobileSide from './MobileSide';
 import { navs } from './config';
 
@@ -16,8 +16,8 @@ function Header() {
       <div className="backdrop-filter backdrop-blur-[5px] h-full flex items-center justify-between">
         <div className="nmd:flex-shrink-0 xmd:flex-1 ml-8">
           <Link className="flex items-center" to="/">
-            <img className="xmd:w-[28px] w-[62px] mr-2" src="/logo.png" alt="logo" />
-            <Typography.Title className="nmd:!text-3xl xmd:!text-lg" heading={2}>Public.AI</Typography.Title>
+            <img className="xmd:w-[175px] w-[175px] mr-2" src="/logo-text.png" alt="logo" />
+            {/* <Typography.Title className="nmd:!text-3xl xmd:!text-lg" heading={2}>Public.<span className="font-bold">AI</span></Typography.Title> */}
           </Link>
         </div>
 
@@ -63,7 +63,7 @@ function Header() {
               const rotateDeg = Number((event.currentTarget.style.transform || '').replace(/rotate\(((\d+)deg)\)/, '$2') || 0);
               event.currentTarget.style.transform = `rotate(${rotateDeg + 45}deg)`;
             }}
-            src={MenuButton}
+            src={MenuButtonUri}
             alt=""
             width="20"
             height="20"

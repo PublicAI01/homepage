@@ -20,7 +20,7 @@ function Partners() {
   }, []);
 
   return (
-    <div className="bg-my-gray-white">
+    <div className="bg-my-gray-white -mt-1">
       <SectionWrap id="partners">
         <div className="">
           <Typography.Title className="text-black xmd:!text-2xl">Partners</Typography.Title>

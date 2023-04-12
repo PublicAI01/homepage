@@ -2,7 +2,7 @@ import { Toast, Typography } from '@douyinfe/semi-ui';
 import React from 'react';
 import { StyledIconWrap } from '@/components/layout/Header/styled';
 import { platform } from '@/components/layout/Header/config';
-import getStartedArrow from '@/assets/imgs/arrow/getStartedArrow.svg';
+import { uri as getStartedArrow } from '@/assets/imgs/arrow/getStartedArrow.svg';
 import bgImg from '@/assets/imgs/section1-bg.png';
 
 function Section1() {
@@ -14,13 +14,13 @@ function Section1() {
       <img src={bgImg} alt="section1-bg" className="absolute z-0 object-none h-full" />
       <div className="relative z-2 p-2 xmd:py-24 xmd:order-2 text-center">
         <div className="relative z-10 pointer-events-none">
-          <div className="text-6xl xmd:!text-[48px] font-bold">
+          <div className="text-[72px] xmd:text-[40px] font-bold">
             Collaboration On-Chain
           </div>
           <Typography.Paragraph className="text-lg mt-11">A multi-chain DAO platform to facilitate completion of exceptional AI annotation work and other data services.</Typography.Paragraph>
         </div>
         <button
-          className="text-center mt-16 bg-button w-[200px] h-[56px] rounded-md hover:opacity-80 text-lg font-bold"
+          className="text-center mt-16 bg-button2 w-[200px] h-[56px] rounded-md hover:opacity-80 text-lg font-bold"
           onClick={() => Toast.info('coming soon!')}
         >
           Get Started
@@ -28,9 +28,20 @@ function Section1() {
         </button>
       </div>
       <StyledIconWrap className="xmd:!hidden fixed right-5 flex-col z-50">
-        {platform.map(({ href, com: Com }, i) => (
-          <a href={href} target="_blank " rel="noreferrer" key={i}>
-            <Com width="24" height="24" fill="#D7D7D7" />
+        {platform.map(({ href, com: Com, text }, i) => (
+          <a
+            className="transform hover:scale-150 transition-transform relative"
+            href={href}
+            target="_blank "
+            rel="noreferrer"
+            key={i}
+          >
+            <Com
+              width="24"
+              height="24"
+              fill="#D7D7D7"
+            />
+            <p className="hidden absolute -left-2 text-sm text-[#D7D7D7] top-1/2 transform -translate-y-1/2 -translate-x-full">{text}</p>
           </a>
         ))}
       </StyledIconWrap>

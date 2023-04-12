@@ -16,6 +16,7 @@ module.exports = {
       backgroundImage: {
         text: 'var(--linear-gradient-text)',
         button: 'var(--linear-gradient-button)',
+        button2: 'var(--linear-gradient-button2)',
         'bg-pink': 'var(--linear-gradient-bg-pink)',
         'bg-gray': 'var(--linear-gradient-bg-gray)',
         'bg-silver': 'var(linear-gradient-bg-silver)',

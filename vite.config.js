@@ -8,7 +8,7 @@ import compressPlugin from 'vite-plugin-compression';
 import legacyPlugin from '@vitejs/plugin-legacy';
 import path from 'path';
 import dynamicImportVars from '@rollup/plugin-dynamic-import-vars';
-import viteSvgComponentPlugin from './plugins/vite-svg-component/index';
+import { viteReactSvgComponentPlugin } from 'svg-component-vite-plugin/dist/react';
 
 const r = (p) => path.resolve(__dirname, p);
 
@@ -30,7 +30,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    viteSvgComponentPlugin({
+    viteReactSvgComponentPlugin({
       include: 'src/assets/imgs/**/*.svg*',
     }),
     compressPlugin({

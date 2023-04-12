@@ -1,4 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import {
+  useEffect, useMemo, useRef, useState,
+} from 'react';
 import ActiveFQContext from './ActiveFQContext';
 import { Footer } from './components/section/Footer';
 import FQ from './components/section/FQ';
@@ -9,6 +11,7 @@ import Section1 from './components/section/section1';
 import Section2 from './components/section/section2';
 import Section3 from './components/section/section3';
 import Service from './components/section/Service';
+import News from './components/section/News';
 
 function Home() {
   const wrapRef = useRef();
@@ -71,6 +74,7 @@ function Home() {
         <Section3 />
         <Service />
         <Roadmap />
+        <News />
         <Partners />
         <FQ />
         <Resource />

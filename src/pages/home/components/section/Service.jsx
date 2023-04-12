@@ -23,7 +23,10 @@ function Service() {
       <Typography.Title>Service</Typography.Title>
       <div className="flex nmd:flex-row xmd:flex-col mt-10 gap-7">
         {cardData.map((item) => (
-          <div className="rounded-md box-border p-10 bg-[#18191E]">
+          <div
+            className="rounded-md box-border p-10 bg-[#18191E]"
+            key={item.tagText}
+          >
             <div className="flex flex-row gap-4">
               <div>
                 <Typography.Title heading={2}>

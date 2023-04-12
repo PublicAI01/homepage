@@ -1,11 +1,10 @@
 import { IconGithubLogo } from '@douyinfe/semi-icons';
-import { ReactComponent as Twitter } from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
-import { ReactComponent as Telegram } from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
-// import { ReactComponent as Quora } from '@/assets/imgs/header/Navigation-Bar/quora.svg';
-import { ReactComponent as Medium } from '@/assets/imgs/header/Navigation-Bar/medium.svg';
-import { ReactComponent as IconYoutube } from '@/assets/imgs/header/Navigation-Bar/youtube.svg';
-import { ReactComponent as Discord } from '@/assets/imgs/header/Navigation-Bar/discord.svg';
-
+import Twitter from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
+import Telegram from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
+// import Quora from '@/assets/imgs/header/Navigation-Bar/quora.svg';
+import Medium from '@/assets/imgs/header/Navigation-Bar/medium.svg';
+import IconYoutube from '@/assets/imgs/header/Navigation-Bar/youtube.svg';
+import Discord from '@/assets/imgs/header/Navigation-Bar/discord.svg';
 
 export const navs = [{
   text: 'Home',
@@ -27,12 +26,15 @@ export const navs = [{
 export const platform = [{
   href: 'https://twitter.com/PublicAI_',
   com: Twitter,
+  text: 'Twitter',
 }, {
   href: 'https://discord.gg/E962EdDmrB',
   com: Discord,
+  text: 'Discord',
 }, {
   href: 'https://medium.com/@contact_88042',
   com: Medium,
+  text: 'Medium',
 },
 {
   href: 'https://github.com/PublicAI01',
@@ -45,12 +47,15 @@ export const platform = [{
       }}
     />
   ),
+  text: 'Github',
 },
 {
   href: 'https://t.me/Public_AI',
   com: Telegram,
+  text: 'Telegram',
 },
 {
   href: 'https://www.youtube.com/@markerdao',
   com: IconYoutube,
+  text: 'Youtube',
 }];

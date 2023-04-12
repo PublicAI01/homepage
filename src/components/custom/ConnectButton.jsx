@@ -2,7 +2,7 @@ import { Typography } from '@douyinfe/semi-ui';
 import { useAccountModal, useConnectModal } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 import { omitText } from '@/utils/utils';
-import { ReactComponent as WalletIcon } from '@/assets/imgs/svg/wallet.svg';
+import WalletIcon from '@/assets/imgs/svg/wallet.svg';
 import { StyledRoundButton } from '../styled/button';
 
 function ConnectButton(props) {

@@ -43,7 +43,7 @@ function FQCardItem({ item, active, setActive }) {
       <div className="header">
         <Typography.Title className="xmd:!text-base" heading={4}>{item.title}</Typography.Title>
         <div className="icon">
-          <IconChevronRight className={active ? 'active' : ''} size="large" />
+          <IconChevronRight className={classNames('!text-white', active ? 'active' : '')} size="large" />
         </div>
       </div>
 

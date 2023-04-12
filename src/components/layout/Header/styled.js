@@ -28,6 +28,9 @@ export const StyledIconWrap = styled.div`
       >svg{
         fill: rgb(255 255 255 / 0.8);
       }
+      >p{
+        display: block;
+      }
     }
   }
 

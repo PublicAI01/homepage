@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
-// import { ReactComponent as BscIcon } from '@/assets/imgs/svg/Icon/BAN.svg';
-// import { ReactComponent as EthIcon } from '@/assets/imgs/svg/Icon/Ethereum.svg';
+// import BscIcon from '@/assets/imgs/svg/Icon/BAN.svg';
+// import EthIcon from '@/assets/imgs/svg/Icon/Ethereum.svg';
 import { EVMNETWORKS, EVM_CHAINID } from '@/config/network';
 
 // const CHAIN_ICON = {
