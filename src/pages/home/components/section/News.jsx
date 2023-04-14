@@ -3,6 +3,7 @@ import { Typography } from '@douyinfe/semi-ui';
 import { SectionWrap } from './styled';
 import RowCardWrap from '@/components/comm/RowCardWrap';
 import CardItem from '@/components/comm/RowCardWrap/CardItem';
+import B11_IMG from '@/assets/imgs/twitter/b11.png';
 import B1_IMG from '@/assets/imgs/twitter/b1.png';
 import B2_IMG from '@/assets/imgs/twitter/b2.png';
 import B3_IMG from '@/assets/imgs/twitter/b3.png';
@@ -24,6 +25,10 @@ const StyledNewsItem = styled.div`
 `;
 export default function News() {
   const data = [{
+    time: 'April 12th',
+    content: 'We are in Web3 Festival. H02 booth.',
+    img: B11_IMG,
+  }, {
     time: 'April 12th',
     content: 'Our founder@stevenwong3w met Chandler Guo@HongcaiGuo in HK Web3 festival and discussed the future of AI.',
     img: B1_IMG,
