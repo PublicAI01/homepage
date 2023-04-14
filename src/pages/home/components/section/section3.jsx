@@ -132,7 +132,7 @@ function Section3() {
 
       <div className="nmd:flex items-center mt-[130px] xmd:mt-[30px]">
         <StyledFragileWrap>
-          <div className="flex items-center img-wrap xmd:justify-between">
+          <div className="flex items-center justify-center img-wrap xmd:justify-between">
             <img className="nmd:w-[150px] xmd:w-[68px]" src={Fragile1_IMG} alt="" />
             <img className="nmd:w-[130px] xmd:w-[58px]" src={Fragile2_IMG} alt="" />
             <img className="nmd:w-[136px] xmd:w-[62px]" src={Fragile3_IMG} alt="" />
