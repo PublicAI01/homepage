@@ -1,4 +1,5 @@
 import { IconGithubLogo } from '@douyinfe/semi-icons';
+import classNames from 'classnames';
 import Twitter from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
 import Telegram from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
 // import Quora from '@/assets/imgs/header/Navigation-Bar/quora.svg';
@@ -39,11 +40,11 @@ export const platform = [{
 {
   href: 'https://github.com/PublicAI01',
   // eslint-disable-next-line react/no-unstable-nested-components
-  com: ({ width }) => (
+  com: ({ width, className }) => (
     <IconGithubLogo
-      className="text-[#D7D7D7]"
+      className={classNames('text-[#D7D7D7]', className)}
       style={{
-        fontSize: `${width}px`,
+        // fontSize: `${width}px`,
       }}
     />
   ),

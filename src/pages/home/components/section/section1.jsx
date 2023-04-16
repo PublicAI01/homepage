@@ -27,18 +27,17 @@ function Section1() {
           <img src={getStartedArrow} alt="getStartedArrow" className="inline-block ml-4 mb-1" />
         </button>
       </div>
-      <StyledIconWrap className="xmd:!hidden fixed right-5 flex-col z-50">
+      <StyledIconWrap className="fixed right-5 flex-col z-50 xmd:right-1">
         {platform.map(({ href, com: Com, text }, i) => (
           <a
-            className="transform hover:scale-150 transition-transform relative"
+            className="transform nmd:hover:scale-150 transition-transform relative"
             href={href}
             target="_blank "
             rel="noreferrer"
             key={i}
           >
             <Com
-              width="24"
-              height="24"
+              className="w-[24px] h-[24px] text-[24px] xmd:w-[36px] xmd:h-[36px] xmd:text-[36px] xmd:backdrop-blur-lg rounded-full"
               fill="#D7D7D7"
             />
             <p className="hidden absolute -left-2 text-sm text-[#D7D7D7] top-1/2 transform -translate-y-1/2 -translate-x-full">{text}</p>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICE } from '@/config/device';
 
 export const StyledNavLink = styled.li`
   width: 100px;
@@ -24,12 +25,14 @@ export const StyledIconWrap = styled.div`
     font-size: 0;
     cursor: pointer;
     display: inline-block;
-    &:hover{
-      >svg{
-        fill: rgb(255 255 255 / 0.8);
-      }
-      >p{
-        display: block;
+    @media ${DEVICE.nmd} {
+      &:hover{
+        >svg{
+          fill: rgb(255 255 255 / 0.8);
+        }
+        >p{
+          display: block;
+        }
       }
     }
   }
