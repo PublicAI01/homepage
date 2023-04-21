@@ -1,5 +1,4 @@
 import { Typography } from '@douyinfe/semi-ui';
-import { useRef } from 'react';
 import { RoadMapCard, SectionWrap } from './styled';
 import RowCardWrap from '@/components/comm/RowCardWrap';
 import CardItem from '@/components/comm/RowCardWrap/CardItem';
@@ -15,18 +14,20 @@ function Roadmap() {
   return (
     <div className="bg-my-gray-white">
       <SectionWrap>
-        <Typography.Title className="text-black">Roadmap</Typography.Title>
-        <RowCardWrap className="mt-8">
-          {cardData.map((item) => (
-            <CardItem key={item.title}>
-              <RoadMapCard className="cursor-pointer">
-                <Typography.Title className="whitespace-normal !text-2xl">{item.title}</Typography.Title>
-                <Typography.Paragraph className="mt-3 whitespace-normal text-base xmd:!text-sm">{item.text}</Typography.Paragraph>
-              </RoadMapCard>
-            </CardItem>
-          ))}
+        <Typography.Title data-aos="fade-up" className="text-black">Roadmap</Typography.Title>
+        <div data-aos="fade-up">
+          <RowCardWrap className="mt-8">
+            {cardData.map((item) => (
+              <CardItem key={item.title}>
+                <RoadMapCard className="cursor-pointer">
+                  <Typography.Title className="whitespace-normal !text-2xl">{item.title}</Typography.Title>
+                  <Typography.Paragraph className="mt-3 whitespace-normal text-base xmd:!text-sm">{item.text}</Typography.Paragraph>
+                </RoadMapCard>
+              </CardItem>
+            ))}
 
-        </RowCardWrap>
+          </RowCardWrap>
+        </div>
       </SectionWrap>
     </div>
   );

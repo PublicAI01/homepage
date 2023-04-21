@@ -20,8 +20,8 @@ const cardData = [{
 function Service() {
   return (
     <SectionWrap id="services">
-      <Typography.Title>Service</Typography.Title>
-      <div className="flex nmd:flex-row xmd:flex-col mt-10 gap-7">
+      <Typography.Title data-aos="fade-up">Service</Typography.Title>
+      <div className="flex nmd:flex-row xmd:flex-col mt-10 gap-7" data-aos="fade-up">
         {cardData.map((item) => (
           <div
             className="rounded-md box-border p-10 bg-[#18191E]"

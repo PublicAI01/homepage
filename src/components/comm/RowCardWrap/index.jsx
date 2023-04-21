@@ -25,7 +25,7 @@ export default function RowCardWrap(props) {
 
   return (
     <div
-      className={classNames('scroll-smooth flex items-stretch flex-row overflow-auto', className)}
+      className={classNames('scroll-smooth flex items-stretch flex-row overflow-x-auto overflow-y-hidden', className)}
       ref={wrapRef}
     >
       {_children}

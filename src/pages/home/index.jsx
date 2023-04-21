@@ -1,6 +1,7 @@
 import {
   useEffect, useMemo, useRef, useState,
 } from 'react';
+import Aos from 'aos';
 import ActiveFQContext from './ActiveFQContext';
 import { Footer } from './components/section/Footer';
 import FQ from './components/section/FQ';
@@ -16,6 +17,11 @@ import News from './components/section/News';
 function Home() {
   const wrapRef = useRef();
   useEffect(() => {
+    Aos.init({
+      delay: 100,
+      anchorPlacement: 'bottom-bottom',
+      offset: 200,
+    });
     setTimeout(() => {
       if (wrapRef.current) {
         const navs = document.querySelectorAll('.header__nav');

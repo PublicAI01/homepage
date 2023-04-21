@@ -12,7 +12,7 @@ function Section1() {
       id="home"
     >
       <img src={bgImg} alt="section1-bg" className="absolute z-0 object-none h-full" />
-      <div className="relative z-2 p-2 xmd:py-24 xmd:order-2 text-center">
+      <div className="relative z-2 p-2 xmd:py-24 xmd:order-2 text-center" data-aos="fade-up">
         <div className="relative z-10 pointer-events-none">
           <div className="text-[72px] xmd:text-[40px] font-bold">
             Collaboration On-Chain

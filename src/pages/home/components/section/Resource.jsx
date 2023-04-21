@@ -50,24 +50,26 @@ function Resource() {
   cardData[0].onClick = handlePriceClick;
   return (
     <SectionWrap id="resources">
-      <Typography.Title>Resource</Typography.Title>
-      <Row gutter={[24, 24]} type="flex" className="!mt-10">
-        {cardData.map((item) => (
-          <Col xl={8} lg={12} span={24} className="text-center" key={item.title}>
-            <StyledCard
-              onClick={() => item.onClick && item.onClick()}
-              nolinear
-              linear="var(--linear-gradient-border-green)"
-              className="rounded-[10px] py-4 cursor-pointer bg-my-gray"
-              borderWidth={4}
-              hover
-            >
-              <Image id="img" src={item.img} preview={false} width="80px" />
-              <Typography.Text className="text-xl block">{item.title}</Typography.Text>
-            </StyledCard>
-          </Col>
-        ))}
-      </Row>
+      <Typography.Title data-aos="fade-up">Resource</Typography.Title>
+      <div data-aos="fade-up">
+        <Row gutter={[24, 24]} type="flex" className="!mt-10">
+          {cardData.map((item) => (
+            <Col xl={8} lg={12} span={24} className="text-center" key={item.title}>
+              <StyledCard
+                onClick={() => item.onClick && item.onClick()}
+                nolinear
+                linear="var(--linear-gradient-border-green)"
+                className="rounded-[10px] py-4 cursor-pointer bg-my-gray"
+                borderWidth={4}
+                hover
+              >
+                <Image id="img" src={item.img} preview={false} width="80px" />
+                <Typography.Text className="text-xl block">{item.title}</Typography.Text>
+              </StyledCard>
+            </Col>
+          ))}
+        </Row>
+      </div>
 
     </SectionWrap>
   );

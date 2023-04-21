@@ -35,7 +35,7 @@ function LinearGradientBox(props) {
       className={cns('bg-black', className)}
     >
       {children}
-      <div className="gradient" />
+      {!props.nolinear && <div className="gradient" />}
     </StyledLinearGradientBox>
   );
 }

@@ -100,8 +100,8 @@ const StyledSustainableWrap = styled.div`
 function Section3() {
   return (
     <SectionWrap className="xmd:p-3 bg-black" id="how_it_works">
-      <Typography.Title>How it works</Typography.Title>
-      <Row type="flex" className="xmd:!mt-4 nmd:!mt-24">
+      <Typography.Title data-aos="fade-up">How it works</Typography.Title>
+      <Row type="flex" className="xmd:!mt-4 nmd:!mt-24" data-aos="fade-up">
         <Col xl={8} lg={8} span={24} className="text-center">
           <ArrowBox>
             <div className="xmd:flex items-center xmd:mb-2">
@@ -130,7 +130,7 @@ function Section3() {
         </Col>
       </Row>
 
-      <div className="nmd:flex items-center mt-[130px] xmd:mt-[30px]">
+      <div className="nmd:flex items-center mt-[130px] xmd:mt-[30px]" data-aos="fade-up">
         <StyledFragileWrap>
           <div className="flex items-center justify-center img-wrap xmd:justify-between">
             <img className="nmd:w-[150px] xmd:w-[68px]" src={Fragile1_IMG} alt="" />

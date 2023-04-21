@@ -12,7 +12,7 @@ function Card(params) {
   } = params;
 
   return (
-    <div className="flex flex-row bg-black my-4 p-10 xmd:p-3 rounded-md">
+    <div className="flex flex-row bg-black my-4 p-10 xmd:p-3 rounded-md" data-aos="fade-up">
       <img src={src} className="h-[80px] my-auto" alt={alt} />
       <div className="ml-5 xmd:ml-2 my-auto">
         <Typography.Title className="nmd:!text-xl xmd:!text-lg">{title}</Typography.Title>
@@ -28,7 +28,7 @@ function Section2() {
   return (
     <SectionWrap className="z-10 bg-my-gray-white xmd:p-3">
       <div className="bg-white p-10 xmd:p-2 rounded-md">
-        <div>
+        <div data-aos="fade-up">
           <Typography.Title className="text-black text-xl" heading={2}><span className="text-[#7A43FF] text-xl font-normal">About</span> Public.AI</Typography.Title>
           <Typography.Paragraph className="my-7 xmd:my-5 text-black text-lg xmd:text-base">
             Public.AI is an open, decentralized platform that connects businesses and individuals with a global network of workers.

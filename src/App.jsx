@@ -8,6 +8,7 @@ import Providers from './provider';
 import axios from './utils/ajax';
 
 import Routes from './router/index';
+import 'aos/dist/aos.css';
 
 const fetcher = (options) => axios({
   method: 'GET',

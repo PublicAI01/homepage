@@ -39,7 +39,7 @@ const cardData = [{
 
 function FQCardItem({ item, active, setActive }) {
   return (
-    <FQCard onClick={() => setActive(!active)}>
+    <FQCard onClick={() => setActive(!active)} data-aos="fade-up">
       <div className="header">
         <Typography.Title className="xmd:!text-base" heading={4}>{item.title}</Typography.Title>
         <div className="icon">

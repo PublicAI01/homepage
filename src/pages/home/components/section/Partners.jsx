@@ -23,19 +23,21 @@ function Partners() {
     <div className="bg-my-gray-white -mt-1">
       <SectionWrap id="partners">
         <div className="">
-          <Typography.Title className="text-black xmd:!text-2xl">Partners</Typography.Title>
-          <Row
-            gutter={{
-              xxl: 115, xl: 115, lg: 16, xs: 16, sm: 16, md: 16,
-            }}
-            className="!mt-7"
-          >
-            {partners.map((img, i) => (
-              <Col key={i} xl={8} lg={12} span={12}>
-                <Image preview={false} src={img} alt={`partners-${i}`} style={{ marginBottom: '1.5rem' }} />
-              </Col>
-            ))}
-          </Row>
+          <Typography.Title data-aos="fade-up" className="text-black xmd:!text-2xl">Partners</Typography.Title>
+          <div data-aos="fade-up">
+            <Row
+              gutter={{
+                xxl: 115, xl: 115, lg: 16, xs: 16, sm: 16, md: 16,
+              }}
+              className="!mt-7"
+            >
+              {partners.map((img, i) => (
+                <Col key={i} xl={8} lg={12} span={12}>
+                  <Image preview={false} src={img} alt={`partners-${i}`} style={{ marginBottom: '1.5rem' }} />
+                </Col>
+              ))}
+            </Row>
+          </div>
         </div>
       </SectionWrap>
     </div>

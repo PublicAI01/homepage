@@ -54,24 +54,26 @@ export default function News() {
       }}
     >
       <SectionWrap>
-        <Typography.Title>News</Typography.Title>
-        <RowCardWrap className="mt-5">
-          {data.map((item, index) => (
-            <CardItem key={index}>
-              <StyledNewsItem>
-                <div className="header">
-                  <p className="text-base font-bold">{item.time}</p>
-                </div>
-                <div className="mt-5">
-                  <Typography.Paragraph>{item.content}</Typography.Paragraph>
-                </div>
-                <div className="mt-auto">
-                  <img src={item.img} alt="" />
-                </div>
-              </StyledNewsItem>
-            </CardItem>
-          ))}
-        </RowCardWrap>
+        <Typography.Title data-aos="fade-up">News</Typography.Title>
+        <div data-aos="fade-up">
+          <RowCardWrap className="mt-5">
+            {data.map((item, index) => (
+              <CardItem key={index}>
+                <StyledNewsItem>
+                  <div className="header">
+                    <p className="text-base font-bold">{item.time}</p>
+                  </div>
+                  <div className="mt-5">
+                    <Typography.Paragraph>{item.content}</Typography.Paragraph>
+                  </div>
+                  <div className="mt-auto">
+                    <img src={item.img} alt="" />
+                  </div>
+                </StyledNewsItem>
+              </CardItem>
+            ))}
+          </RowCardWrap>
+        </div>
       </SectionWrap>
     </div>
   );
