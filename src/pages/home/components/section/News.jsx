@@ -29,10 +29,6 @@ export default function News() {
     content: 'We are in Web3 Festival. H02 booth.',
     img: B11_IMG,
   }, {
-    time: 'April 12th',
-    content: 'Our founder@stevenwong3w met Chandler Guo@HongcaiGuo in HK Web3 festival and discussed the future of AI.',
-    img: B1_IMG,
-  }, {
     time: 'April 8th',
     content: 'Take a moment to learn about the hottest AI project #PublicAI!@PublicAI_ demo Day comming soon ',
     img: B2_IMG,
