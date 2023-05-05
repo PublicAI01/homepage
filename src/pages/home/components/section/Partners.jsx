@@ -9,7 +9,7 @@ function Partners() {
 
   useEffect(() => {
     const load = async () => {
-      const modules = import.meta.glob('../../../../assets/imgs/partners//*.png');
+      const modules = import.meta.glob('../../../../assets/imgs/partners/*.png');
       const all = [];
       for (const path of Object.keys(modules)) {
         all.push(modules[path]());
