@@ -56,7 +56,7 @@ export const platform = [{
   text: 'Telegram',
 },
 {
-  href: 'https://www.youtube.com/@markerdao',
+  href: 'https://www.youtube.com/@PublicAI_',
   com: IconYoutube,
   text: 'Youtube',
 }];
