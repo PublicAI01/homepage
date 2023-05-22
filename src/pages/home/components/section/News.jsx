@@ -34,7 +34,7 @@ export default function News() {
     img: B2_IMG,
   }, {
     time: 'April 5th',
-    content: 'AMA专访http://Public.AI Let\'s embrace AI actively4.7 16:00 UTC+8',
+    content: 'AMA专访http://PublicAI Let\'s embrace AI actively4.7 16:00 UTC+8',
     img: B3_IMG,
   }, {
     time: 'March 23rd',

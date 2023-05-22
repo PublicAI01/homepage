@@ -1,4 +1,4 @@
-# Public.AI
+# PublicAI
 
 # install 
 use `yarn` or `npm i`

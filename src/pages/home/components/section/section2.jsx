@@ -29,9 +29,9 @@ function Section2() {
     <SectionWrap className="z-10 bg-my-gray-white xmd:p-3">
       <div className="bg-white p-10 xmd:p-2 rounded-md">
         <div data-aos="fade-up">
-          <Typography.Title className="text-black text-xl" heading={2}><span className="text-[#7A43FF] text-xl font-normal">About</span> Public.AI</Typography.Title>
+          <Typography.Title className="text-black text-xl" heading={2}><span className="text-[#7A43FF] text-xl font-normal">About</span> PublicAI</Typography.Title>
           <Typography.Paragraph className="my-7 xmd:my-5 text-black text-lg xmd:text-base">
-            Public.AI is an open, decentralized platform that connects businesses and individuals with a global network of workers.
+            PublicAI is an open, decentralized platform that connects businesses and individuals with a global network of workers.
             It simplifies the process of outsourcing a wide range of tasks, from data annotation to more complex research.
             This platform allows organizations to tap into the collective skills of a vast,
             structured workforce to enhance data analysis, and speed up the development of machine learning models.
@@ -54,7 +54,7 @@ function Section2() {
             src={img3}
             alt="Cost Efficiency"
             title="Cost Efficiency"
-            text="Via on-chain staking and liability mechanisms, Public.AI reduces work/cost redundancy required in traditional platforms."
+            text="Via on-chain staking and liability mechanisms, PublicAI reduces work/cost redundancy required in traditional platforms."
           />
         </div>
       </div>

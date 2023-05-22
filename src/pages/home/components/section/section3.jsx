@@ -115,7 +115,7 @@ function Section3() {
           <ArrowBox>
             <div className="xmd:flex items-center xmd:mb-2">
               <img className="content-img" src={img2} alt="" />
-              <Typography.Text>Public.AI Marketplace</Typography.Text>
+              <Typography.Text>PublicAI Marketplace</Typography.Text>
             </div>
           </ArrowBox>
         </Col>

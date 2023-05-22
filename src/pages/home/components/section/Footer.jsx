@@ -63,7 +63,7 @@ export function Footer() {
         </Row>
       </SectionWrap>
       <div className="mt-[50px] xmd:mt-4 bg-my-gray w-screen text-center">
-        <Typography.Text className="text-[#7B7B7B]">© 2023 Public.AI . All Rights Reserved</Typography.Text>
+        <Typography.Text className="text-[#7B7B7B]">© 2023 PublicAI . All Rights Reserved</Typography.Text>
       </div>
     </div>
   );
