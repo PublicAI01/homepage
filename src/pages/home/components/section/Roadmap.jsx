@@ -13,7 +13,7 @@ const cardData = [
 function Roadmap() {
   return (
     <div className="bg-my-gray-white">
-      <SectionWrap>
+      <SectionWrap id="roadmap">
         <Typography.Title data-aos="fade-up" className="text-black">Roadmap</Typography.Title>
         <div data-aos="fade-up">
           <RowCardWrap className="mt-8">

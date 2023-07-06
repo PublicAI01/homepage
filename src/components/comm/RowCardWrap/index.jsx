@@ -14,6 +14,8 @@ export default function RowCardWrap(props) {
   };
 
   const _children = useMemo(() => React.Children.map(children, (child) => {
+    if (child.type.name !== 'CardItem') return child;
+
     const _child = React.cloneElement(child, {
       onClick: (event) => {
         onClickCard(event);

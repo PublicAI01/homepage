@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Typography } from '@douyinfe/semi-ui';
+import { Tweet } from 'react-twitter-widgets';
 import { SectionWrap } from './styled';
 import RowCardWrap from '@/components/comm/RowCardWrap';
 import CardItem from '@/components/comm/RowCardWrap/CardItem';
@@ -24,23 +25,31 @@ const StyledNewsItem = styled.div`
 
 `;
 export default function News() {
-  const data = [{
-    time: 'April 12th',
-    content: 'We are in Web3 Festival. H02 booth.',
-    img: B11_IMG,
-  }, {
-    time: 'April 8th',
-    content: 'Take a moment to learn about the hottest AI project #PublicAI!@PublicAI_ demo Day comming soon ',
-    img: B2_IMG,
-  }, {
-    time: 'April 5th',
-    content: 'AMA专访http://PublicAI Let\'s embrace AI actively4.7 16:00 UTC+8',
-    img: B3_IMG,
-  }, {
-    time: 'March 23rd',
-    content: 'We are pleasure to announce that #MarkerDAO has been selected by BNB Grant DAO Round 3 Applicants Demo Time: Friday 23rd Mar, 10:00PM (SGT)',
-    img: B4_IMG,
-  }];
+  // const data = [{
+  //   time: 'April 12th',
+  //   content: 'We are in Web3 Festival. H02 booth.',
+  //   img: B11_IMG,
+  // }, {
+  //   time: 'April 8th',
+  //   content: 'Take a moment to learn about the hottest AI project #PublicAI!@PublicAI_ demo Day comming soon ',
+  //   img: B2_IMG,
+  // }, {
+  //   time: 'April 5th',
+  //   content: 'AMA专访http://PublicAI Let\'s embrace AI actively4.7 16:00 UTC+8',
+  //   img: B3_IMG,
+  // }, {
+  //   time: 'March 23rd',
+  //   content: 'We are pleasure to announce that #MarkerDAO has been selected by BNB Grant DAO Round 3 Applicants Demo Time: Friday 23rd Mar, 10:00PM (SGT)',
+  //   img: B4_IMG,
+  // }];
+
+  const tweetIds = [
+    '1654384838923939840',
+    '1675891271607660544',
+    '1668526033111482375',
+    '1666794788962840579',
+    '1664205220338081792',
+  ];
 
   return (
     <div
@@ -52,7 +61,7 @@ export default function News() {
       <SectionWrap>
         <Typography.Title data-aos="fade-up">News</Typography.Title>
         <div data-aos="fade-up">
-          <RowCardWrap className="mt-5">
+          {/* <RowCardWrap className="mt-5">
             {data.map((item, index) => (
               <CardItem key={index}>
                 <StyledNewsItem>
@@ -67,6 +76,17 @@ export default function News() {
                   </div>
                 </StyledNewsItem>
               </CardItem>
+            ))}
+          </RowCardWrap> */}
+
+          <RowCardWrap className="mt-5 gap-4 snap-mandatory snap-x">
+            {tweetIds.map((id) => (
+              <div className="xmd:snap-center w-[370px] xmd:w-full flex-shrink-0" key={id}>
+                <Tweet
+                  options={{ align: 'center' }}
+                  tweetId={id}
+                />
+              </div>
             ))}
           </RowCardWrap>
         </div>
