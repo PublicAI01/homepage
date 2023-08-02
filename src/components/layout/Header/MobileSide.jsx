@@ -12,6 +12,7 @@ const MySideSheet = styled(SideSheet)`
 `;
 
 function MobileSide(props, ref) {
+  const { setWalletsModalVisibleFn } = props;
   const [visible, setVisible] = useState(false);
 
   const onClose = () => {
@@ -67,16 +68,20 @@ function MobileSide(props, ref) {
       <StyledIconWrap className="!ml-0 justify-center mt-10 !gap-4">
         {platform.map(({ href, com: Com }, i) => (
           <a href={href} target="_blank " rel="noreferrer" key={i}>
-            <Com width="36" height="36" fill="white" />
+            <Com width="36" height="36" size={36} fill="white" />
           </a>
         ))}
       </StyledIconWrap>
-      <div className="text-center">
+      <div className="text-center mt-2">
         <LinearGradientBox
-          className="inline-block mt-10 font-bold text-center rounded-full whitespace-nowrap"
-          onClick={() => Toast.info('coming soon.')}
+          className="inline-block font-bold text-center rounded-full whitespace-nowrap"
+          onClick={() => {
+            setWalletsModalVisibleFn(true);
+          }}
         >
-          <button className="hover:text-white/80 font-bold h-[42px] rounded-[inherit] !leading-[42px] w-[160px]  px-2">Launch App</button>
+          <button className="hover:text-white/80 font-bold h-[42px] rounded-[inherit] !leading-[42px] w-[160px] px-2">
+            Connect
+          </button>
         </LinearGradientBox>
       </div>
     </MySideSheet>

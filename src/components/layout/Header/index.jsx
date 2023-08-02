@@ -1,16 +1,23 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { useMemo, useRef } from 'react';
+import {
+  useEffect,
+  useMemo, useRef, useState,
+} from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import { Toast, Typography } from '@douyinfe/semi-ui';
 import { StyledNavLink } from './styled';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
 import { uri as MenuButtonUri } from '@/assets/imgs/header/menubutton.svg';
 import MobileSide from './MobileSide';
 import { navs } from './config';
+import { useSolanaWalletProvider } from '@/provider/solanaWallet';
 
-function Header() {
+import { omitText } from '@/utils/utils';
+
+function Header({ setWalletsModalVisibleFn }) {
   const sideRef = useRef();
+  const { state: solanaWalletState } = useSolanaWalletProvider();
+
   return (
     <header className="text-white nmd:h-[88px] xmd:py-4 bg-black fixed top-0 left-0 w-full z-40 xmd:h-[78px]">
       <div className="backdrop-filter backdrop-blur-[5px] h-full flex items-center justify-between">
@@ -48,9 +55,13 @@ function Header() {
 
         <LinearGradientBox
           className="inline-block rounded-full whitespace-nowrap xmd:!hidden nmd:mr-8"
-          onClick={() => Toast.info('coming soon.')}
+          onClick={() => {
+            setWalletsModalVisibleFn(true);
+          }}
         >
-          <button className="hover:text-white/80 font-bold !leading-[42px] w-[160px] h-[42px] px-2">Launch App</button>
+          <button className="hover:text-white/80 font-bold !leading-[42px] w-[160px] h-[42px] px-2">
+            {solanaWalletState.connected ? omitText(solanaWalletState.publicKey.toString()) : 'Connect'}
+          </button>
         </LinearGradientBox>
 
         <button
@@ -70,7 +81,10 @@ function Header() {
           />
         </button>
 
-        <MobileSide ref={sideRef} />
+        <MobileSide
+          ref={sideRef}
+          setWalletsModalVisibleFn={setWalletsModalVisibleFn}
+        />
       </div>
     </header>
   );

@@ -42,11 +42,22 @@ export default defineConfig({
       ext: '.gz',
     }),
     legacyPlugin({
-      targets: ['chrome 52'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
     }),
   ],
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'esnext',
+      define: {
+        global: 'globalThis',
+      },
+      supported: {
+        bigint: true,
+      },
+    },
+  },
   build: {
+    target: ['esnext'],
     sourcemap: false,
     rollupOptions: {
       plugins: [

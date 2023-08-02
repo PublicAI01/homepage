@@ -6,7 +6,6 @@ import en_US from '@douyinfe/semi-ui/lib/es/locale/source/en_US';
 import { SWRConfig } from 'swr';
 import Providers from './provider';
 import axios from './utils/ajax';
-
 import Routes from './router/index';
 import 'aos/dist/aos.css';
 

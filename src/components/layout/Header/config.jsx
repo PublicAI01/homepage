@@ -44,7 +44,7 @@ export const platform = [{
     <IconGithubLogo
       className={classNames('text-[#D7D7D7]', className)}
       style={{
-        // fontSize: `${width}px`,
+        fontSize: `${width}px`,
       }}
     />
   ),

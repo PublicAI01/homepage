@@ -1,6 +1,12 @@
+import { SolanaWalletProvider } from './solanaWallet';
+
 function Providers(props) {
   const { children } = props;
-  return children;
+  return (
+    <SolanaWalletProvider>
+      {children}
+    </SolanaWalletProvider>
+  );
 }
 
 export default Providers;
