@@ -15,7 +15,7 @@ function Section1() {
       <div className="relative z-2 p-2 xmd:py-24 xmd:order-2 text-center" data-aos="fade-up">
         <div className="relative z-10 pointer-events-none">
           <div className="text-[72px] xmd:text-[40px] font-bold max-w-[1200px]">
-            Providing 40,00,000,000 Human Jobs in {new Date().getFullYear()}.
+            Providing 4,000,000,000 Human Jobs in {new Date().getFullYear()}.
           </div>
           <Typography.Paragraph className="text-lg mt-11">A multi-chain DAO platform to facilitate completion of exceptional AI annotation work and other data services.</Typography.Paragraph>
         </div>
