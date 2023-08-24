@@ -6,6 +6,4 @@ export const getSolanaProvider = () => {
       return provider;
     }
   }
-
-  window.open('https://phantom.app/', '_blank');
 };
