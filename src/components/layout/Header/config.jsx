@@ -1,11 +1,11 @@
+import Telegram from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
+import Twitter from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
 import { IconGithubLogo } from '@douyinfe/semi-icons';
 import classNames from 'classnames';
-import Twitter from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
-import Telegram from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
 // import Quora from '@/assets/imgs/header/Navigation-Bar/quora.svg';
+import Discord from '@/assets/imgs/header/Navigation-Bar/discord.svg';
 import Medium from '@/assets/imgs/header/Navigation-Bar/medium.svg';
 import IconYoutube from '@/assets/imgs/header/Navigation-Bar/youtube.svg';
-import Discord from '@/assets/imgs/header/Navigation-Bar/discord.svg';
 
 export const navs = [{
   text: 'Home',
@@ -29,7 +29,7 @@ export const platform = [{
   com: Twitter,
   text: 'Twitter',
 }, {
-  href: 'https://discord.gg/E962EdDmrB',
+  href: 'https://discord.gg/sQcS7Sh6ZD',
   com: Discord,
   text: 'Discord',
 }, {
