@@ -1,13 +1,14 @@
-import { Typography } from '@douyinfe/semi-ui';
-import { RoadMapCard, SectionWrap } from './styled';
 import RowCardWrap from '@/components/comm/RowCardWrap';
 import CardItem from '@/components/comm/RowCardWrap/CardItem';
+import { Typography } from '@douyinfe/semi-ui';
+import { RoadMapCard, SectionWrap } from './styled';
 
 const cardData = [
-  { title: 'Q1 2023', text: 'Publishes the whitepaper. Completes the MVP and the seed funding round. Issues the Marker Genesis NFT series for early backers.' },
-  { title: 'Q2 2023', text: 'Develops PublicAI V1. Optimizes marketing campaigns, BD pipelines, and community accelerator and support programs.' },
-  { title: 'Q3 2023', text: 'Launches PublicAI V1 testnet. Initiates the PublicAI genesis airdrop.' },
-  { title: 'Q4 2023', text: 'Launches PublicAI V1 mainnet.' },
+  { title: 'Q4 2023', text: 'Mobile testing version goes live, mobile RHFL annotation tool launches, PC annotation tool Xmed reaches 50% completion, annotation verification algorithm and zCloaK DID integration implemented.' },
+  { title: 'Q1 2024', text: 'Official mobile version released, data validation feature goes live, PC annotation tool Xmed launches, point cloud algorithm implemented, testing network goes live, airdrop activities planned.' },
+  { title: 'Q2 2024', text: 'Integration of multi-chain wallets on mobile, xStream streaming processing tool integrated on PC, voxel algorithm integration, ZKLink integration, mainnet launch.' },
+  { title: 'Q3 2024', text: 'Commence multimodal data generation model R&D, complete token staking system, develop data marketplace.' },
+  { title: 'Q4 2024', text: 'Launch multimodal data generation models, optimize security performance, launch data marketplace, API for data upload goes live.' },
 ];
 
 function Roadmap() {
