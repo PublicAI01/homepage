@@ -1,25 +1,26 @@
-import { useContext } from 'react';
+import resourceDocument from '@/assets/imgs/home/resource-document.png';
+import resourcePrice from '@/assets/imgs/home/resource-price.png';
+import { heightToTop } from '@/utils/utils';
 import {
   Col, Image, Row, Typography,
 } from '@douyinfe/semi-ui';
+import { useContext } from 'react';
 import styled from 'styled-components';
-import { SectionWrap } from './styled';
-import resourcePrice from '@/assets/imgs/home/resource-price.png';
-import resourceWhitePaper from '@/assets/imgs/home/resource-whitepaper.png';
-import resourceDocument from '@/assets/imgs/home/resource-document.png';
-import { heightToTop } from '@/utils/utils';
 import ActiveFQContext from '../../ActiveFQContext';
+import { SectionWrap } from './styled';
 
 const cardData = [{
   img: resourcePrice,
   title: 'Price',
-}, {
-  img: resourceWhitePaper,
-  title: 'White Paper',
-  onClick: () => {
-    window.open('/whitepaper.pdf');
-  },
-}, {
+},
+// {
+//   img: resourceWhitePaper,
+//   title: 'White Paper',
+//   onClick: () => {
+//     window.open('/whitepaper.pdf');
+//   },
+// },
+{
   img: resourceDocument,
   title: 'Development Doc',
   onClick: () => {
@@ -54,7 +55,7 @@ function Resource() {
       <div data-aos="fade-up">
         <Row gutter={[24, 24]} type="flex" className="!mt-10">
           {cardData.map((item) => (
-            <Col xl={8} lg={12} span={24} className="text-center" key={item.title}>
+            <Col xl={12} lg={12} span={24} className="text-center" key={item.title}>
               <StyledCard
                 onClick={() => item.onClick && item.onClick()}
                 nolinear
