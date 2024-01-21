@@ -1,9 +1,8 @@
-import { Toast, Typography } from '@douyinfe/semi-ui';
-import React from 'react';
-import { StyledIconWrap } from '@/components/layout/Header/styled';
-import { platform } from '@/components/layout/Header/config';
 import { uri as getStartedArrow } from '@/assets/imgs/arrow/getStartedArrow.svg';
 import bgImg from '@/assets/imgs/section1-bg.png';
+import { platform } from '@/components/layout/Header/config';
+import { StyledIconWrap } from '@/components/layout/Header/styled';
+import { Toast, Typography } from '@douyinfe/semi-ui';
 
 function Section1() {
   return (
@@ -15,7 +14,7 @@ function Section1() {
       <div className="relative z-2 p-2 xmd:py-24 xmd:order-2 text-center" data-aos="fade-up">
         <div className="relative z-10 pointer-events-none">
           <div className="text-[72px] xmd:text-[40px] font-bold max-w-[1200px]">
-            Creating 4,000,000,000 Human Jobs in 2030.
+            Creating 4,000,000,000 Human Jobs in 2050.
           </div>
           <Typography.Paragraph className="text-lg mt-11">A multi-chain DAO platform to facilitate completion of exceptional AI annotation work and other data services.</Typography.Paragraph>
         </div>
