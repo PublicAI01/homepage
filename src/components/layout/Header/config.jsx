@@ -1,11 +1,7 @@
 import Telegram from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
 import Twitter from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
-import { IconGithubLogo } from '@douyinfe/semi-icons';
-import classNames from 'classnames';
 // import Quora from '@/assets/imgs/header/Navigation-Bar/quora.svg';
 import Discord from '@/assets/imgs/header/Navigation-Bar/discord.svg';
-import Medium from '@/assets/imgs/header/Navigation-Bar/medium.svg';
-import IconYoutube from '@/assets/imgs/header/Navigation-Bar/youtube.svg';
 
 export const navs = [{
   text: 'Home',
@@ -32,31 +28,33 @@ export const platform = [{
   href: 'https://discord.gg/sQcS7Sh6ZD',
   com: Discord,
   text: 'Discord',
-}, {
-  href: 'https://medium.com/@contact_88042',
-  com: Medium,
-  text: 'Medium',
 },
-{
-  href: 'https://github.com/PublicAI01',
-  // eslint-disable-next-line react/no-unstable-nested-components
-  com: ({ width, className }) => (
-    <IconGithubLogo
-      className={classNames('text-[#D7D7D7]', className)}
-      style={{
-        fontSize: `${width}px`,
-      }}
-    />
-  ),
-  text: 'Github',
-},
+// {
+//   href: 'https://medium.com/@contact_88042',
+//   com: Medium,
+//   text: 'Medium',
+// },
+// {
+//   href: 'https://github.com/PublicAI01',
+//   // eslint-disable-next-line react/no-unstable-nested-components
+//   com: ({ width, className }) => (
+//     <IconGithubLogo
+//       className={classNames('text-[#D7D7D7]', className)}
+//       style={{
+//         fontSize: `${width}px`,
+//       }}
+//     />
+//   ),
+//   text: 'Github',
+// },
 {
   href: 'https://t.me/Public_AI',
   com: Telegram,
   text: 'Telegram',
 },
-{
-  href: 'https://www.youtube.com/@PublicAI_',
-  com: IconYoutube,
-  text: 'Youtube',
-}];
+// {
+//   href: 'https://www.youtube.com/@PublicAI_',
+//   com: IconYoutube,
+//   text: 'Youtube',
+// },
+];
