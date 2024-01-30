@@ -14,7 +14,7 @@ function Section1() {
       <div className="relative z-2 p-2 xmd:py-24 xmd:order-2 text-center" data-aos="fade-up">
         <div className="relative z-10 pointer-events-none">
           <div className="text-[72px] xmd:text-[40px] font-bold max-w-[1200px]">
-            Creating 4,000,000,000 Human Jobs in 2050.
+            Web3 AI Data Infrastructure, Create 4 Billion Jobs in 2050.
           </div>
           <Typography.Paragraph className="text-lg mt-11">A multi-chain DAO platform to facilitate completion of exceptional AI annotation work and other data services.</Typography.Paragraph>
         </div>

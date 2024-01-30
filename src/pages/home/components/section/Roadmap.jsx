@@ -4,11 +4,11 @@ import { Typography } from '@douyinfe/semi-ui';
 import { RoadMapCard, SectionWrap } from './styled';
 
 const cardData = [
-  { title: 'Q4 2023', text: 'Mobile testing version goes live, mobile RHFL annotation tool launches, PC annotation tool Xmed reaches 50% completion, annotation verification algorithm and zCloaK DID integration implemented.' },
-  { title: 'Q1 2024', text: 'Official mobile version released, data validation feature goes live, PC annotation tool Xmed launches, point cloud algorithm implemented, testing network goes live, airdrop activities planned.' },
-  { title: 'Q2 2024', text: 'Integration of multi-chain wallets on mobile, xStream streaming processing tool integrated on PC, voxel algorithm integration, ZKLink integration, mainnet launch.' },
-  { title: 'Q3 2024', text: 'Commence multimodal data generation model R&D, complete token staking system, develop data marketplace.' },
-  { title: 'Q4 2024', text: 'Launch multimodal data generation models, optimize security performance, launch data marketplace, API for data upload goes live.' },
+  { title: 'Q4 2023', text: '\'Train To Earn\' Testnet Application Launch<br />EVM Wallet Upgrade<br />Open-Source Datasets Upgrade<br />RHFL annotation tool develop<br />Xmed annotation tool develop' },
+  { title: 'Q1 2024', text: 'Byzantine data consensus algorithm Upgrade<br />AI Train Guild Function Launch <br />AI Bots Marketplace Launch<br />Trainer Level Function Upgrade <br />Task Reward Function Launch' },
+  { title: 'Q2 2024', text: 'Guild Prize Pool Launch<br />Multi-Chain Wallet Function Upgrade<br />DID Function Upgrade<br />xStream Streaming Processing Tool<br />Voxel Algorithm Integration & ZKlink Integration' },
+  { title: 'Q3 2024', text: 'Mainnet Launch<br />Ecosystem Growth <br />Genesis Airdrop<br />Token staking system<br />Data marketplace' },
+  { title: 'Q4 2024', text: 'AI Bots Marketplace Upgrade<br />Trainer Achievement and DID Tags system<br />API for data upload launch<br />TGE' },
 ];
 
 function Roadmap() {
@@ -22,7 +22,7 @@ function Roadmap() {
               <CardItem key={item.title}>
                 <RoadMapCard className="cursor-pointer">
                   <Typography.Title className="whitespace-normal !text-2xl">{item.title}</Typography.Title>
-                  <Typography.Paragraph className="mt-3 whitespace-normal text-base xmd:!text-sm">{item.text}</Typography.Paragraph>
+                  <p className="mt-3 whitespace-normal text-base xmd:!text-sm" dangerouslySetInnerHTML={{ __html: item.text }} />
                 </RoadMapCard>
               </CardItem>
             ))}

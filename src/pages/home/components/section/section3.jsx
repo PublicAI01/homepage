@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { Col, Row, Typography } from '@douyinfe/semi-ui';
-import { SectionWrap } from './styled';
 import img1 from '@/assets/imgs/howItWorks/img1.png';
 import img2 from '@/assets/imgs/howItWorks/img2.png';
 import img3 from '@/assets/imgs/howItWorks/img3.png';
+import { Col, Row, Typography } from '@douyinfe/semi-ui';
+import styled from 'styled-components';
+import { SectionWrap } from './styled';
 
 import Fragile1_IMG from '@/assets/imgs/Fragile/Fragile1.png';
 import Fragile2_IMG from '@/assets/imgs/Fragile/Fragile2.png';
@@ -13,7 +13,7 @@ import rightArrow from '@/assets/imgs/arrow/rightArrow.png';
 import { DEVICE } from '@/config/device';
 
 const ArrowBox = styled.div`
-  
+
   .arrow {
     width: 140px;
     margin-top: -90px;
@@ -29,7 +29,7 @@ const ArrowBox = styled.div`
     display: inline-block;
     width: 200px;
   }
-  
+
 
   @media ${DEVICE.nmd} {
     display: flex;
@@ -139,7 +139,7 @@ function Section3() {
           </div>
           <div className="text-center text-white/30">
             <p className="text-[32px] font-bold xmd:text-2xl">Fragile</p>
-            <p className="text-xl xmd:text-sm">Void-driven</p>
+            <p className="text-xl xmd:text-sm">Void Driven</p>
           </div>
         </StyledFragileWrap>
         <StyledSustainableWrap>
@@ -148,7 +148,7 @@ function Section3() {
           </div>
           <div className="text-center mt-3">
             <p className="text-4xl font-bold text-[#FFCE18] xmd:text-2xl">Sustainable</p>
-            <p className="text-xl text-white xmd:text-sm">Profit-driven</p>
+            <p className="text-xl text-white xmd:text-sm">AI Profit Driven</p>
           </div>
         </StyledSustainableWrap>
       </div>
