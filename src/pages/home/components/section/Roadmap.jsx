@@ -4,7 +4,7 @@ import { Typography } from '@douyinfe/semi-ui';
 import { RoadMapCard, SectionWrap } from './styled';
 
 const cardData = [
-  { title: 'Q4 2023', text: '\'Train To Earn\' Testnet Application Launch<br />EVM Wallet Upgrade<br />Open-Source Datasets Upgrade<br />RHFL annotation tool develop<br />Xmed annotation tool develop' },
+  { title: 'Q4 2023', text: '\'Train To Earn\' Testnet Application Launch<br />EVM Wallet Upgrade<br />Open-Source Datasets Upgrade<br />RLHF annotation tool develop<br />Xmed annotation tool develop' },
   { title: 'Q1 2024', text: 'Byzantine data consensus algorithm Upgrade<br />AI Train Guild Function Launch <br />AI Bots Marketplace Launch<br />Trainer Level Function Upgrade <br />Task Reward Function Launch' },
   { title: 'Q2 2024', text: 'Guild Prize Pool Launch<br />Multi-Chain Wallet Function Upgrade<br />DID Function Upgrade<br />xStream Streaming Processing Tool<br />Voxel Algorithm Integration & ZKlink Integration' },
   { title: 'Q3 2024', text: 'Mainnet Launch<br />Ecosystem Growth <br />Genesis Airdrop<br />Token staking system<br />Data marketplace' },
