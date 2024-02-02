@@ -2,6 +2,7 @@ import Telegram from '@/assets/imgs/header/Navigation-Bar/telegram.svg';
 import Twitter from '@/assets/imgs/header/Navigation-Bar/twitter.svg';
 // import Quora from '@/assets/imgs/header/Navigation-Bar/quora.svg';
 import Discord from '@/assets/imgs/header/Navigation-Bar/discord.svg';
+import Medium from '@/assets/imgs/header/Navigation-Bar/medium.svg';
 
 export const navs = [{
   text: 'Home',
@@ -29,11 +30,11 @@ export const platform = [{
   com: Discord,
   text: 'Discord',
 },
-// {
-//   href: 'https://medium.com/@contact_88042',
-//   com: Medium,
-//   text: 'Medium',
-// },
+{
+  href: 'https://medium.com/@contact_88042',
+  com: Medium,
+  text: 'Medium',
+},
 // {
 //   href: 'https://github.com/PublicAI01',
 //   // eslint-disable-next-line react/no-unstable-nested-components
@@ -48,7 +49,7 @@ export const platform = [{
 //   text: 'Github',
 // },
 {
-  href: 'https://t.me/Public_AI',
+  href: 'https://t.me/public_ai01',
   com: Telegram,
   text: 'Telegram',
 },
