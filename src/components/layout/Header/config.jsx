@@ -26,7 +26,7 @@ export const platform = [{
   com: Twitter,
   text: 'Twitter',
 }, {
-  href: 'https://discord.gg/sQcS7Sh6ZD',
+  href: 'https://discord.gg/EvPznrYf96',
   com: Discord,
   text: 'Discord',
 },
