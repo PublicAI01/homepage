@@ -74,16 +74,19 @@ function MobileSide(props, ref) {
         ))}
       </StyledIconWrap>
       <div className="text-center mt-2">
-        <LinearGradientBox
-          className="inline-block font-bold text-center rounded-full whitespace-nowrap"
-          onClick={() => {
-            setWalletsModalVisibleFn(true);
-          }}
+        <a
+          href="https://beta.publicai.io/"
+          rel="noreferrer"
+          target="_blank"
         >
-          <button className="hover:text-white/80 font-bold h-[42px] rounded-[inherit] !leading-[42px] w-[160px] px-2">
-            Connect
-          </button>
-        </LinearGradientBox>
+          <LinearGradientBox
+            className="inline-block font-bold text-center rounded-full whitespace-nowrap"
+          >
+            <button className="hover:text-white/80 font-bold h-[42px] rounded-[inherit] !leading-[42px] w-[160px] px-2">
+              Launch App
+            </button>
+          </LinearGradientBox>
+        </a>
       </div>
     </MySideSheet>
   );

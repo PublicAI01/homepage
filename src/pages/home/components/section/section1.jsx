@@ -2,7 +2,7 @@ import { uri as getStartedArrow } from '@/assets/imgs/arrow/getStartedArrow.svg'
 import bgImg from '@/assets/imgs/section1-bg.png';
 import { platform } from '@/components/layout/Header/config';
 import { StyledIconWrap } from '@/components/layout/Header/styled';
-import { Toast, Typography } from '@douyinfe/semi-ui';
+import { Typography } from '@douyinfe/semi-ui';
 
 function Section1() {
   return (
@@ -18,13 +18,15 @@ function Section1() {
           </div>
           <Typography.Paragraph className="text-lg mt-11">A multi-chain DAO platform to facilitate completion of exceptional AI annotation work and other data services.</Typography.Paragraph>
         </div>
-        <button
-          className="text-center mt-16 bg-button2 w-[200px] h-[56px] rounded-md hover:opacity-80 text-lg font-bold"
-          onClick={() => Toast.info('coming soon!')}
+        <a
+          href="https://beta.publicai.io/"
+          rel="noreferrer"
+          target="_blank"
+          className="text-center mt-16 mx-auto bg-button2 flex items-center justify-center w-[200px] h-[56px] rounded-md hover:opacity-80 text-lg font-bold"
         >
-          Get Started
-          <img src={getStartedArrow} alt="getStartedArrow" className="inline-block ml-4 mb-1" />
-        </button>
+          Launch App
+          <img src={getStartedArrow} alt="getStartedArrow" className="inline-block ml-4" />
+        </a>
       </div>
       <StyledIconWrap className="fixed right-5 flex-col z-50 xmd:right-1">
         {platform.map(({ href, com: Com, text }, i) => (

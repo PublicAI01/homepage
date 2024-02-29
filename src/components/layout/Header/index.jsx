@@ -11,7 +11,6 @@ import MobileSide from './MobileSide';
 import { navs } from './config';
 import { StyledNavLink } from './styled';
 
-import { omitText } from '@/utils/utils';
 
 function Header({ setWalletsModalVisibleFn }) {
   const sideRef = useRef();
@@ -52,16 +51,19 @@ function Header({ setWalletsModalVisibleFn }) {
           </ul>
         </div>
 
-        <LinearGradientBox
-          className="inline-block rounded-full whitespace-nowrap xmd:!hidden nmd:mr-8"
-          onClick={() => {
-            setWalletsModalVisibleFn(true);
-          }}
+        <a
+          href="https://beta.publicai.io/"
+          rel="noreferrer"
+          target="_blank"
         >
-          <button className="hover:text-white/80 font-bold !leading-[42px] w-[160px] h-[42px] px-2">
-            {solanaWalletState.connected ? omitText(solanaWalletState.publicKey.toString()) : 'Connect'}
-          </button>
-        </LinearGradientBox>
+          <LinearGradientBox
+            className="inline-block rounded-full whitespace-nowrap xmd:!hidden nmd:mr-8"
+          >
+            <button className="hover:text-white/80 font-bold !leading-[42px] w-[160px] h-[42px] px-2">
+              Launch App
+            </button>
+          </LinearGradientBox>
+        </a>
 
         <button
           className="nmd:hidden mr-4"
