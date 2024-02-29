@@ -1,5 +1,6 @@
 import resourceDocument from '@/assets/imgs/home/resource-document.png';
 import resourcePrice from '@/assets/imgs/home/resource-price.png';
+import resourceWhitePaper from '@/assets/imgs/home/resource-whitepaper.png';
 import { heightToTop } from '@/utils/utils';
 import {
   Col, Image, Row, Typography,
@@ -13,13 +14,13 @@ const cardData = [{
   img: resourcePrice,
   title: 'Price',
 },
-// {
-//   img: resourceWhitePaper,
-//   title: 'White Paper',
-//   onClick: () => {
-//     window.open('/whitepaper.pdf');
-//   },
-// },
+{
+  img: resourceWhitePaper,
+  title: 'Airdrop Guildline',
+  onClick: () => {
+    window.open('https://docs.publicai.io/publicai-documentation/');
+  },
+},
 {
   img: resourceDocument,
   title: 'Development Doc',
@@ -55,7 +56,7 @@ function Resource() {
       <div data-aos="fade-up">
         <Row gutter={[24, 24]} type="flex" className="!mt-10">
           {cardData.map((item) => (
-            <Col xl={12} lg={12} span={24} className="text-center" key={item.title}>
+            <Col xl={8} lg={12} span={24} className="text-center" key={item.title}>
               <StyledCard
                 onClick={() => item.onClick && item.onClick()}
                 nolinear

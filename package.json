@@ -24,6 +24,8 @@
     "browserify-zlib": "^0.2.0",
     "classnames": "^2.3.2",
     "dotenv": "^16.0.3",
+    "echarts": "^5.5.0",
+    "echarts-for-react": "^3.0.2",
     "ethers": "^5.7.2",
     "events": "^3.3.0",
     "iclipboard": "^1.0.1",

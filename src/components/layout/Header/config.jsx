@@ -14,6 +14,9 @@ export const navs = [{
   text: 'Roadmap',
   href: 'roadmap',
 }, {
+  text: 'Tokenomics',
+  href: 'tokenomics',
+}, {
   text: 'Partners',
   href: 'partners',
 }, {
@@ -26,9 +29,9 @@ export const platform = [{
   com: Twitter,
   text: 'Twitter',
 }, {
-  href: 'https://discord.gg/EvPznrYf96',
-  com: Discord,
-  text: 'Discord',
+  href: 'https://t.me/public_ai01',
+  com: Telegram,
+  text: 'Telegram',
 },
 {
   href: 'https://medium.com/@contact_88042',
@@ -49,9 +52,9 @@ export const platform = [{
 //   text: 'Github',
 // },
 {
-  href: 'https://t.me/public_ai01',
-  com: Telegram,
-  text: 'Telegram',
+  href: 'https://discord.gg/EvPznrYf96',
+  com: Discord,
+  text: 'Discord',
 },
 // {
 //   href: 'https://www.youtube.com/@PublicAI_',

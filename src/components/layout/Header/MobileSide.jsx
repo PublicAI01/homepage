@@ -1,8 +1,8 @@
-import { SideSheet, Toast } from '@douyinfe/semi-ui';
-import styled from 'styled-components';
+import LinearGradientBox from '@/components/comm/LinearGradientBox';
+import { SideSheet } from '@douyinfe/semi-ui';
 import classNames from 'classnames';
 import { forwardRef, useImperativeHandle, useState } from 'react';
-import LinearGradientBox from '@/components/comm/LinearGradientBox';
+import styled from 'styled-components';
 import { navs, platform } from './config';
 import { StyledIconWrap, StyledNavLink } from './styled';
 
@@ -52,6 +52,7 @@ function MobileSide(props, ref) {
             className={classNames('header__nav !w-full', {
               active: nav.text === 'Home',
               '!cursor-not-allowed': nav.disabled,
+              'xmd:hidden': nav.text === 'Tokenomics',
             })}
           >
             <a

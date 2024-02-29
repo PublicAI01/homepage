@@ -1,16 +1,15 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+import { uri as MenuButtonUri } from '@/assets/imgs/header/menubutton.svg';
+import LinearGradientBox from '@/components/comm/LinearGradientBox';
+import { useSolanaWalletProvider } from '@/provider/solanaWallet';
+import classNames from 'classnames';
 import {
-  useEffect,
-  useMemo, useRef, useState,
+  useMemo, useRef,
 } from 'react';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import { StyledNavLink } from './styled';
-import LinearGradientBox from '@/components/comm/LinearGradientBox';
-import { uri as MenuButtonUri } from '@/assets/imgs/header/menubutton.svg';
 import MobileSide from './MobileSide';
 import { navs } from './config';
-import { useSolanaWalletProvider } from '@/provider/solanaWallet';
+import { StyledNavLink } from './styled';
 
 import { omitText } from '@/utils/utils';
 

@@ -12,6 +12,7 @@ import Service from './components/section/Service';
 import Section1 from './components/section/section1';
 import Section2 from './components/section/section2';
 import Section3 from './components/section/section3';
+import { Tokenomics } from './components/section/tokenomics';
 
 function Home() {
   const wrapRef = useRef();
@@ -79,6 +80,7 @@ function Home() {
         <Section3 />
         <Service />
         <Roadmap />
+        <Tokenomics />
         {/* <News /> */}
         <Partners />
         <FQ />
