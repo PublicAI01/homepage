@@ -24,3 +24,6 @@ vite.config.js.timestamp*
 *.njsproj
 *.sln
 *.sw?
+
+deploy.sh
+publicai.pem

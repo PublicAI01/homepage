@@ -16,7 +16,7 @@ function Section1() {
           <div className="text-[72px] xmd:text-[40px] font-bold max-w-[1200px]">
             Web3 AI Data Infrastructure, Create 4 Billion Jobs in 2050.
           </div>
-          <Typography.Paragraph className="text-lg mt-11">A multi-chain DAO platform to facilitate completion of exceptional AI annotation work and other data services.</Typography.Paragraph>
+          <Typography.Paragraph className="text-lg mt-11">Enable Every Human: Contribute to AI and Share the Benefits.</Typography.Paragraph>
         </div>
         <a
           href="https://beta.publicai.io/"
