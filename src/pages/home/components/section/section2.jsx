@@ -1,9 +1,9 @@
-import {
-  Typography,
-} from '@douyinfe/semi-ui';
 import img1 from '@/assets/imgs/section2/1.png';
 import img2 from '@/assets/imgs/section2/2.png';
 import img3 from '@/assets/imgs/section2/3.png';
+import {
+  Typography,
+} from '@douyinfe/semi-ui';
 import { SectionWrap } from './styled';
 
 function Card(params) {
@@ -31,10 +31,9 @@ function Section2() {
         <div data-aos="fade-up">
           <Typography.Title className="text-black text-xl" heading={2}><span className="text-[#7A43FF] text-xl font-normal">About</span> PublicAI</Typography.Title>
           <Typography.Paragraph className="my-7 xmd:my-5 text-black text-lg xmd:text-base">
-            PublicAI is an open, decentralized platform that connects businesses and individuals with a global network of workers.
-            It simplifies the process of outsourcing a wide range of tasks, from data annotation to more complex research.
-            This platform allows organizations to tap into the collective skills of a vast,
-            structured workforce to enhance data analysis, and speed up the development of machine learning models.
+            PublicAI is a distributed AI network enables every human: contribute to AI and share the benefits that connects businesses and individuals with a global network of workers.
+            It simplifies the process of outsourcing a wide range of tasks, from data annotation to more complex research related to AI.
+            This platform allows organizations to tap into the collective skills of a vast, structured workforce to enhance data analysis, and speed up the development of machine learning models.
           </Typography.Paragraph>
         </div>
         <div>
