@@ -77,6 +77,7 @@ function Home() {
       <div className="scroll-smooth" ref={wrapRef}>
         <Section1 />
         <Section2 />
+        <Resource />
         <Section3 />
         <Service />
         <Roadmap />
@@ -84,7 +85,6 @@ function Home() {
         {/* <News /> */}
         <Partners />
         <FQ />
-        <Resource />
         <Footer />
       </div>
     </ActiveFQContext.Provider>

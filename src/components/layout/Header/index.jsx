@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { uri as MenuButtonUri } from '@/assets/imgs/header/menubutton.svg';
 import LinearGradientBox from '@/components/comm/LinearGradientBox';
-import { useSolanaWalletProvider } from '@/provider/solanaWallet';
 import classNames from 'classnames';
 import {
   useMemo, useRef,
@@ -11,10 +10,8 @@ import MobileSide from './MobileSide';
 import { navs } from './config';
 import { StyledNavLink } from './styled';
 
-
 function Header({ setWalletsModalVisibleFn }) {
   const sideRef = useRef();
-  const { state: solanaWalletState } = useSolanaWalletProvider();
 
   return (
     <header className="text-white nmd:h-[88px] xmd:py-4 bg-black fixed top-0 left-0 w-full z-40 xmd:h-[78px]">

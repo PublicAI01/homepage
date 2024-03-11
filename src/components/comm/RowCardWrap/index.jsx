@@ -1,6 +1,14 @@
 import classNames from 'classnames';
 import React, { useMemo, useRef } from 'react';
 
+import styled from 'styled-components';
+
+const StyledRowCardWrap = styled.div`
+  ::-webkit-scrollbar {
+    display: block;
+  }
+`;
+
 export default function RowCardWrap(props) {
   const { children, className } = props;
   const wrapRef = useRef();
@@ -14,8 +22,6 @@ export default function RowCardWrap(props) {
   };
 
   const _children = useMemo(() => React.Children.map(children, (child) => {
-    if (child.type.name !== 'CardItem') return child;
-
     const _child = React.cloneElement(child, {
       onClick: (event) => {
         onClickCard(event);
@@ -26,11 +32,11 @@ export default function RowCardWrap(props) {
   }), [children]);
 
   return (
-    <div
-      className={classNames('scroll-smooth flex items-stretch flex-row overflow-x-auto overflow-y-hidden', className)}
+    <StyledRowCardWrap
+      className={classNames('pb-4 scroll-smooth flex items-stretch flex-row overflow-x-auto overflow-y-hidden scrollbar scrollbar-h-2 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-track-[#eee] scrollbar-thumb-[#7A43FF]', className)}
       ref={wrapRef}
     >
       {_children}
-    </div>
+    </StyledRowCardWrap>
   );
 }

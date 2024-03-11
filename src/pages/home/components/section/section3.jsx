@@ -144,7 +144,7 @@ function Section3() {
         </StyledFragileWrap>
         <StyledSustainableWrap>
           <div className="text-center">
-            <img className="nmd:h-[100px] inline-block xmd:w-[230px] !max-w-none" src="/logo-text.svg" alt="logo" />
+            <img className="nmd:h-[100px] inline-block xmd:w-[230px] !max-w-none" src="/logo-text.png" alt="logo" />
           </div>
           <div className="text-center mt-3">
             <p className="text-4xl font-bold text-[#FFCE18] xmd:text-2xl">Sustainable</p>
