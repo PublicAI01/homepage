@@ -52,7 +52,7 @@ export const platform = [{
 //   text: 'Github',
 // },
 {
-  href: 'https://discord.gg/EvPznrYf96',
+  href: 'https://discord.com/invite/WbmwUNyrhs',
   com: Discord,
   text: 'Discord',
 },
