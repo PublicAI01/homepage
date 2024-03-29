@@ -39,7 +39,7 @@ const cardData = [{
 {
   img: resourceUserData,
   hoverImg: resourceUserDataHover,
-  title: 'User Data',
+  title: 'Dune',
   onClick: () => {
     window.open('https://dune.com/publicaiweb3/publicai-dashboard');
   },

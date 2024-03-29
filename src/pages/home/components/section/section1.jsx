@@ -1,5 +1,4 @@
 import { uri as getStartedArrow } from '@/assets/imgs/arrow/getStartedArrow.svg';
-import Equation from '@/assets/imgs/equation.svg';
 import bgImg from '@/assets/imgs/section1-bg.png';
 import { platform } from '@/components/layout/Header/config';
 import { StyledIconWrap } from '@/components/layout/Header/styled';
@@ -14,14 +13,11 @@ function Section1() {
       <img src={bgImg} alt="section1-bg" className="absolute z-0 object-none h-full" />
       <div className="relative z-2 p-2 xmd:py-24 xmd:order-2 text-center" data-aos="fade-up">
         <div className="relative z-10 pointer-events-none">
-          <Typography.Paragraph className="xmd:hidden font-poppins text-lg mb-2">Enable Every Human: Contribute to AI and Share the Benefits.</Typography.Paragraph>
           <div className="text-[72px] xmd:text-[40px] font-bold max-w-[1200px]">
-            Web3 AI Data Infrastructure, Create 4 Billion Data Jobs in 2050
+            Web3 AI Data Infrastructure, Create 4 Billion Data Jobs in 2050.
           </div>
-          <Typography.Paragraph className="md:hidden font-poppins text-lg mt-11">Enable Every Human: Contribute to AI and Share the Benefits.</Typography.Paragraph>
+          <Typography.Paragraph className="text-lg mt-11">Enable Every Human: Contribute to AI and Share the Benefits.</Typography.Paragraph>
         </div>
-        <p className="xmd:hidden mt-5 mb-2 text-white font-poppins text-base font-medium text-center"><span className="text-[#28CBA6]">P</span>ublicAI <span className="text-[#28CBA6]">C</span>onsensus RLHF <span className="text-[#28CBA6]">L</span>oss Function</p>
-        <Equation width="67%" height="100%" className="xmd:hidden" />
         <a
           href="https://beta.publicai.io/"
           rel="noreferrer"
