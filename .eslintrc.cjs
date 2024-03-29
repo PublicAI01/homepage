@@ -44,6 +44,7 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'off',
     'no-empty': 'off',
     'consistent-return': 'off',
+    'import/order': 'off',
     'import/extensions': 'off',
     'no-use-before-define': 'off',
     'no-underscore-dangle': 'off',

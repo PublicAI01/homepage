@@ -2,6 +2,8 @@ import resourceDocumentHover from '@/assets/imgs/home/resource-document-hover.pn
 import resourceDocument from '@/assets/imgs/home/resource-document.png';
 import resourcePriceHover from '@/assets/imgs/home/resource-price-hover.png';
 import resourcePrice from '@/assets/imgs/home/resource-price.png';
+import resourceUserDataHover from '@/assets/imgs/home/resource-user-data-hover.png';
+import resourceUserData from '@/assets/imgs/home/resource-user-data.png';
 import resourceWhitePaperHover from '@/assets/imgs/home/resource-whitepaper-hover.png';
 import resourceWhitePaper from '@/assets/imgs/home/resource-whitepaper.png';
 import { heightToTop } from '@/utils/utils';
@@ -33,6 +35,14 @@ const cardData = [{
   onClick: () => {
     window.open('https://github.com/PublicAI01');
   },
+},
+{
+  img: resourceUserData,
+  hoverImg: resourceUserDataHover,
+  title: 'User Data',
+  onClick: () => {
+    window.open('https://dune.com/publicaiweb3/publicai-dashboard');
+  },
 }];
 
 const StyledCard = styled.div`
@@ -56,7 +66,7 @@ function Resource() {
       <div data-aos="fade-up">
         <Row gutter={[24, 24]} type="flex" className="!mt-10">
           {cardData.map((item) => (
-            <Col xl={8} lg={12} span={24} className="text-center" key={item.title}>
+            <Col xl={6} lg={12} span={24} className="text-center" key={item.title}>
               <CardItem item={item} />
             </Col>
           ))}
