@@ -101,14 +101,37 @@ const StyledSustainableWrap = styled.div`
 
 `;
 
+const StyledSlogan = styled.p`
+  ::first-letter {
+    color: #28CBA6;
+  }
+`;
+
 function Section3() {
   return (
     <SectionWrap className="xmd:p-3 bg-black" id="how_it_works">
       <Typography.Title data-aos="fade-up">How it works</Typography.Title>
       <Layout.Content data-aos="fade-up" className="xmd:hidden mt-10 flex flex-col items-center">
-        <p className="mt-5 mb-2 text-white text-2xl font-bold text-center"><span className="text-[#28CBA6]">P</span>ublicAI <span className="text-[#28CBA6]">C</span>onsensus RLHF <span className="text-[#28CBA6]">L</span>oss Function</p>
+        <div className="flex items-center gap-2 mt-5 mb-2 text-white text-2xl font-bold text-center">
+          <StyledSlogan>
+            PublicAI
+          </StyledSlogan>
+          <StyledSlogan>
+            Consensus RLHF
+          </StyledSlogan>
+          <StyledSlogan>
+            Loss Function
+          </StyledSlogan>
+        </div>
         <PCL width="67%" height="100%" />
-        <p className="mt-5 mb-2 text-white text-2xl font-bold text-center"><span className="text-[#28CBA6]">R</span>ward Function</p>
+        <div className="flex items-center gap-2 mt-5 mb-2 text-white text-2xl font-bold text-center">
+          <StyledSlogan>
+            Reward
+          </StyledSlogan>
+          <StyledSlogan>
+            Function
+          </StyledSlogan>
+        </div>
         <RF width="32%" height="100%" />
       </Layout.Content>
       <Row type="flex" className="xmd:!mt-4 nmd:!mt-24" data-aos="fade-up">
