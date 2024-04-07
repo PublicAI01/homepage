@@ -4,6 +4,7 @@ import img3 from '@/assets/imgs/section2/3.png';
 import {
   Typography,
 } from '@douyinfe/semi-ui';
+import YouTube from 'react-youtube';
 import { SectionWrap } from './styled';
 
 function Card(params) {
@@ -36,7 +37,7 @@ function Section2() {
             This platform allows organizations to tap into the collective skills of a vast, structured workforce to enhance data analysis, and speed up the development of machine learning models.
           </Typography.Paragraph>
         </div>
-        <div>
+        <div className="pb-6 xmd:pb-0">
           <Card
             src={img1}
             alt="Competitive Workforce"
@@ -56,6 +57,14 @@ function Section2() {
             text="Via on-chain staking and liability mechanisms, PublicAI reduces work/cost redundancy required in traditional platforms."
           />
         </div>
+        <YouTube
+          videoId="i0U8uaUrILs"
+          className="bg-gray-400 xmd:mb-2 w-full h-[500px] xmd:h-[300px] rounded-md overflow-hidden"
+          opts={{
+            width: '100%',
+            height: '100%',
+          }}
+        />
       </div>
     </SectionWrap>
   );
