@@ -6,6 +6,7 @@ import ActiveFQContext from './ActiveFQContext';
 import FQ from './components/section/FQ';
 import { Footer } from './components/section/Footer';
 import Partners from './components/section/Partners';
+import PlatformData from './components/section/PlatformData';
 import Resource from './components/section/Resource';
 import Roadmap from './components/section/Roadmap';
 import Service from './components/section/Service';
@@ -76,8 +77,9 @@ function Home() {
     <ActiveFQContext.Provider value={value}>
       <div className="scroll-smooth" ref={wrapRef}>
         <Section1 />
-        <Section2 />
         <Resource />
+        <Section2 />
+        <PlatformData />
         <Section3 />
         <Service />
         <Roadmap />

@@ -7,10 +7,12 @@ import { Typography } from '@douyinfe/semi-ui';
 function Section1() {
   return (
     <div
-      className="flex justify-center items-center flex-wrap min-h-[calc(100vh_-_120px)] xmd:!pt-0 !pt-0"
+      className="flex justify-center items-center flex-wrap min-h-[calc(100vh_-_120px)] xmd:!pt-0 !pt-0 bg-center bg-no-repeat bg-cover"
       id="home"
+      style={{
+        backgroundImage: `url(${bgImg})`,
+      }}
     >
-      <img src={bgImg} alt="section1-bg" className="absolute z-0 object-none h-full" />
       <div className="relative z-2 p-2 xmd:py-24 xmd:order-2 text-center" data-aos="fade-up">
         <div className="relative z-10 pointer-events-none">
           <div className="text-[72px] xmd:text-[40px] font-bold max-w-[1200px]">
