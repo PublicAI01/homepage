@@ -1,12 +1,12 @@
+import ICON_PhantomWallet from '@/assets/imgs/wallet_icon.png';
+import { useSolanaWalletProvider } from '@/provider/solanaWallet';
+import { getSolanaProvider } from '@/utils/solanaWallet';
 import {
   Layout, Modal, Toast, Typography,
 } from '@douyinfe/semi-ui';
 import classNames from 'classnames';
 import { useEffect, useMemo, useState } from 'react';
 import Header from '../Header';
-import { useSolanaWalletProvider } from '@/provider/solanaWallet';
-import ICON_PhantomWallet from '@/assets/imgs/wallet_icon.png';
-import { getSolanaProvider } from '@/utils/solanaWallet';
 
 function BaseLayout(props) {
   const { children, className, contentClassName } = props;
@@ -53,7 +53,7 @@ function BaseLayout(props) {
       <Layout.Header>
         <Header setWalletsModalVisibleFn={setWalletsModalVisible} />
       </Layout.Header>
-      <Layout.Content className={classNames('bg-black/10 nmd:relative pt-[120px] overflow-hidden', contentClassName)}>
+      <Layout.Content className={classNames('bg-black/10 nmd:relative nmd:pt-[88px] xmd:pt-[78px] overflow-hidden', contentClassName)}>
         {children}
       </Layout.Content>
       <Modal

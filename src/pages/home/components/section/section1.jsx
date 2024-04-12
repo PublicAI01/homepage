@@ -7,7 +7,7 @@ import { Typography } from '@douyinfe/semi-ui';
 function Section1() {
   return (
     <div
-      className="flex justify-center items-center flex-wrap min-h-[calc(100vh_-_120px)] xmd:!pt-0 !pt-0 bg-center bg-no-repeat bg-cover"
+      className="flex justify-center items-center flex-wrap nmd:h-[calc(100vh_-_88px)] xmd:h-[calc(100vh_-_78px)] xmd:!pt-0 !pt-0 bg-center bg-no-repeat bg-cover"
       id="home"
       style={{
         backgroundImage: `url(${bgImg})`,
