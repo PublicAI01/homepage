@@ -1,5 +1,6 @@
 import { uri as getStartedArrow } from '@/assets/imgs/arrow/getStartedArrow.svg';
 import bgImg from '@/assets/imgs/section1-bg.png';
+import ChromeButton from '@/components/custom/ChromeButton';
 import { platform } from '@/components/layout/Header/config';
 import { StyledIconWrap } from '@/components/layout/Header/styled';
 import { Typography } from '@douyinfe/semi-ui';
@@ -20,15 +21,18 @@ function Section1() {
           </div>
           <Typography.Paragraph className="text-lg mt-11">Enable Every Human: Contribute to AI and Share the Benefits.</Typography.Paragraph>
         </div>
-        <a
-          href="https://beta.publicai.io/"
-          rel="noreferrer"
-          target="_blank"
-          className="text-center mt-16 mx-auto bg-button2 flex items-center justify-center w-[200px] h-[56px] rounded-md hover:opacity-80 text-lg font-bold"
-        >
-          Launch App
-          <img src={getStartedArrow} alt="getStartedArrow" className="inline-block ml-4" />
-        </a>
+        <div className="flex items-center justify-center mt-16 gap-10">
+          <ChromeButton />
+          <a
+            href="https://beta.publicai.io/"
+            rel="noreferrer"
+            target="_blank"
+            className="text-center bg-button2 flex items-center justify-center w-[200px] h-[56px] rounded-md hover:opacity-80 text-lg font-bold"
+          >
+            Launch App
+            <img src={getStartedArrow} alt="getStartedArrow" className="inline-block ml-4" />
+          </a>
+        </div>
       </div>
       <StyledIconWrap className="fixed right-5 flex-col z-50 xmd:right-1">
         {platform.map(({ href, com: Com, text }, i) => (

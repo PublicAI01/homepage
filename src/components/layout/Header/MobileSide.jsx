@@ -75,7 +75,7 @@ function MobileSide(props, ref) {
       </StyledIconWrap>
       <div className="text-center mt-2">
         <a
-          href="https://beta.publicai.io/"
+          href="https://docs.publicai.io/publicai-documentation"
           rel="noreferrer"
           target="_blank"
         >
@@ -83,7 +83,7 @@ function MobileSide(props, ref) {
             className="inline-block font-bold text-center rounded-full whitespace-nowrap"
           >
             <button className="hover:text-white/80 font-bold h-[42px] rounded-[inherit] !leading-[42px] w-[160px] px-2">
-              Launch App
+              Docs
             </button>
           </LinearGradientBox>
         </a>

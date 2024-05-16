@@ -49,7 +49,7 @@ function Header({ setWalletsModalVisibleFn }) {
         </div>
 
         <a
-          href="https://beta.publicai.io/"
+          href="https://docs.publicai.io/publicai-documentation"
           rel="noreferrer"
           target="_blank"
         >
@@ -57,7 +57,7 @@ function Header({ setWalletsModalVisibleFn }) {
             className="inline-block rounded-full whitespace-nowrap xmd:!hidden nmd:mr-8"
           >
             <button className="hover:text-white/80 font-bold !leading-[42px] w-[160px] h-[42px] px-2">
-              Launch App
+              Docs
             </button>
           </LinearGradientBox>
         </a>
