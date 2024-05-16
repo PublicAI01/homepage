@@ -23,7 +23,7 @@ const cardData = [{
 {
   img: resourceWhitePaper,
   hoverImg: resourceWhitePaperHover,
-  title: 'Airdrop Guildline',
+  title: 'Product Guideline',
   onClick: () => {
     window.open('https://docs.publicai.io/publicai-documentation/');
   },

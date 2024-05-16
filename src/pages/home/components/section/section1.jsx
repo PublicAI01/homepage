@@ -27,10 +27,10 @@ function Section1() {
             href="https://beta.publicai.io/"
             rel="noreferrer"
             target="_blank"
-            className="text-center bg-button2 flex items-center justify-center w-[200px] h-[56px] rounded-md hover:opacity-80 text-lg font-bold"
+            className="text-center bg-button2 flex items-center justify-center px-5 h-[56px] rounded-md hover:opacity-80 text-lg font-bold"
           >
-            Launch App
-            <img src={getStartedArrow} alt="getStartedArrow" className="inline-block ml-4" />
+            Launch Data Hub
+            <img src={getStartedArrow} alt="getStartedArrow" className="inline-block ml-3" />
           </a>
         </div>
       </div>
