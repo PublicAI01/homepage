@@ -13,10 +13,12 @@ export const navs = [{
 }, {
   text: 'Roadmap',
   href: 'roadmap',
-}, {
-  text: 'Tokenomics',
-  href: 'tokenomics',
-}, {
+},
+// {
+//   text: 'Tokenomics',
+//   href: 'tokenomics',
+// },
+{
   text: 'Partners',
   href: 'partners',
 }, {
