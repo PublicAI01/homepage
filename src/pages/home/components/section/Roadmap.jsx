@@ -29,7 +29,6 @@ const cardData = [
       'Finetuned Web3 Airdrop LLMs',
       'Chrome Browser X-Plugin',
       'DID Features Upgrade',
-      '$PUBLIC TGE & Listing',
     ].join('<br />'),
   },
   {
@@ -39,6 +38,7 @@ const cardData = [
       'AI DePIN Data Hub Online',
       'Token Staking Upgrade',
       'Dataset Marketplace Online',
+      '$PUBLIC TGE & Listing',
     ].join('<br />'),
   },
   {
