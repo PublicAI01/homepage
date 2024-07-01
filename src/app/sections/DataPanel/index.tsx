@@ -12,7 +12,7 @@ import workersData from '@/assets/svg/workers-data.svg?react';
 
 const DataPanel = () => {
 	return (
-		<section className="container flex items-center justify-around gap-16 mx-auto">
+		<section className="container flex items-center justify-around gap-16 mx-auto mt-20">
 			{[
 				{ Icon: workersData, title: 'Workers', data: '400K+' },
 				{ Icon: validatorsData, title: 'Validators', data: '300K+' },

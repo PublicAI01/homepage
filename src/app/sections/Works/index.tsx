@@ -14,7 +14,7 @@ import Title from '@/components/Title';
 
 const Works = () => {
 	return (
-		<section className="container flex flex-col items-center py-6 mx-auto bg-black">
+		<section className="container flex flex-col items-center py-6 mx-auto mt-20 bg-black">
 			<Title>How it works</Title>
 			<h6 className="text-2xl font-bold text-white my-9">
 				<b className={styles.slogan}>PublicAI</b>

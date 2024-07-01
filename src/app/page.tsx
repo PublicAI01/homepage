@@ -11,9 +11,10 @@ import Resource from './sections/Resource';
 export default function Home() {
 	return (
 		<main
-			className="relative flex flex-col gap-20"
+			className="relative overflow-y-auto scroll-smooth scrollbar-none"
 			style={{
 				marginTop: 'var(--header-height)',
+				height: 'calc(100svh - var(--header-height))',
 			}}>
 			<GridPattern className="-z-[1]" />
 

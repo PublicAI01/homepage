@@ -19,15 +19,13 @@ const Header = () => {
 			/>
 			<nav className={clsx('flex items-center justify-center', styles.nav)}>
 				<ul className="relative flex">
-					{['Home', 'Products', 'Partners', 'Resource'].map((nav, index) => (
+					{['Home', 'Partners', 'Resource', 'FAQ'].map((nav, index) => (
 						<li
 							key={index}
 							className="z-10 w-32 py-2 text-center list-none">
 							<a
 								className="text-base font-semibold text-white"
-								href={`#${nav.toLocaleLowerCase()}`}
-								target="_blank"
-								rel="noopener noreferrer">
+								href={`#${nav.toLocaleLowerCase()}`}>
 								{nav}
 							</a>
 						</li>
