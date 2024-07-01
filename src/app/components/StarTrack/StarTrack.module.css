@@ -1,0 +1,55 @@
+.track {
+	transform-style: preserve-3d;
+	width: var(--track-size);
+	height: var(--track-size);
+	border: solid 2px #fff;
+	border-radius: 50%;
+	animation: rotateTrack 20s linear infinite;
+}
+
+@keyframes rotateTrack {
+	0% {
+		transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) rotateZ(0);
+	}
+	100% {
+		transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) rotateZ(360deg);
+	}
+}
+
+.ball-container {
+	width: var(--ball-size);
+	height: var(--ball-size);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 50%;
+	margin-left: calc((var(--ball-size) / 2) * -1);
+	top: calc((var(--ball-size) / 2) * -1);
+	animation: rotateContainer 20s linear infinite;
+}
+
+@keyframes rotateContainer {
+	0% {
+		transform: rotateZ(0) rotateX(var(--revert-rotate-x));
+	}
+	100% {
+		transform: rotateZ(-360deg) rotateX(var(--revert-rotate-x));
+	}
+}
+
+.ball {
+	transform-style: preserve-3d;
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.ball-light {
+	transform-style: preserve-3d;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: var(--ball-color);
+}

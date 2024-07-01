@@ -1,0 +1,15 @@
+.card svg {
+	color: #fff;
+}
+
+.card h6 {
+	color: #fff;
+}
+
+.card:hover svg {
+	color: #000;
+}
+
+.card:hover h6 {
+	color: #000;
+}
