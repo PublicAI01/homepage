@@ -9,6 +9,7 @@ import developmentDoc from '@/assets/svg/development-doc.svg?react';
 import dune from '@/assets/svg/dune.svg?react';
 import productGuideline from '@/assets/svg/product-guideline.svg?react';
 import Title from '@/components/Title';
+import { DOCS_LINK, DUNE_LINK, GITHUB_LINK } from '@/constant';
 
 const Resource = () => {
 	return (
@@ -24,17 +25,17 @@ const Resource = () => {
 						{
 							Icon: productGuideline,
 							title: 'Product Guideline',
-							link: 'https://docs.publicai.io/publicai-documentation',
+							link: DOCS_LINK,
 						},
 						{
 							Icon: developmentDoc,
 							title: 'Development Doc',
-							link: 'https://github.com/PublicAI01',
+							link: GITHUB_LINK,
 						},
 						{
 							Icon: dune,
 							title: 'Dune',
-							link: 'https://dune.com/publicaiweb3/publicai-dashboard',
+							link: DUNE_LINK,
 						},
 					].map((item, index) => (
 						<a
