@@ -11,11 +11,11 @@ import Resource from './sections/Resource';
 export default function Home() {
 	return (
 		<main
-			className="relative"
+			className="relative pb-32"
 			style={{
 				marginTop: 'var(--header-height)',
 			}}>
-			<GridPattern className="-z-[1]" />
+			<GridPattern className="-z-1" />
 
 			<Index />
 			<About />

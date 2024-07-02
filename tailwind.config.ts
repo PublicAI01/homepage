@@ -8,6 +8,10 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			zIndex: {
+				'1': '1',
+				'2': '2',
+			},
 			colors: {
 				primary: '#4000C8',
 				b1: '#020202',

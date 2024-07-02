@@ -16,10 +16,10 @@ const Products = () => {
 			style={{
 				marginTop: 'var(--header-height)',
 			}}>
-			<GridPattern className="-z-[1]" />
+			<GridPattern className="-z-1" />
 
 			<Image
-				className="container absolute top-0 w-4/6 inset-x-[16.666667%] -z-[1]"
+				className="container absolute top-0 w-4/6 inset-x-[16.666667%] -z-1"
 				aria-hidden
 				src={ProductsCone}
 				alt="decorative pictures"

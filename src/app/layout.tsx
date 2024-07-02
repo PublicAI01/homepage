@@ -27,7 +27,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html
+			lang="en"
+			className="scroll-smooth">
 			<body className={clsx(jamjuree.className, 'bg-b1 scrollbar-none')}>
 				<Header />
 				{children}

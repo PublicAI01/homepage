@@ -44,7 +44,6 @@ const Works = () => {
 				<div className="flex h-10 w-28 mb-14">
 					<Image
 						className={styles['arrow-animate']}
-						layout="fixed"
 						src={arrowToRight}
 						alt="arrow to right"
 					/>
@@ -57,7 +56,6 @@ const Works = () => {
 				<div className="flex justify-end h-10 w-28 mb-14">
 					<Image
 						className={styles['arrow-animate']}
-						layout="fixed"
 						src={arrowToLeft}
 						alt="arrow to left"
 					/>
