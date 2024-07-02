@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={clsx(jamjuree.className, 'bg-b1')}>
+			<body className={clsx(jamjuree.className, 'bg-b1 scrollbar-none')}>
 				<Header />
 				{children}
 			</body>

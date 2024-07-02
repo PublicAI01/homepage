@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '@/app/components/Header/Header.module.css';
 import publicai from '@/assets/svg/publicai.svg';
 import { DOCS_LINK } from '@/constant';
-import { BORDER } from '@/constant/border';
+import { BORDER, BORDER_WITH_WHITE_BACKGROUND } from '@/constant/border';
 
 const Header = () => {
 	return (
@@ -28,7 +28,7 @@ const Header = () => {
 							className="z-10 w-32 py-2 text-center list-none">
 							<a
 								className="text-base font-semibold text-white"
-								href={`#${nav.toLocaleLowerCase()}`}>
+								href={`/#${nav.toLocaleLowerCase()}`}>
 								{nav}
 							</a>
 						</li>
@@ -41,17 +41,28 @@ const Header = () => {
 						aria-hidden></div>
 				</ul>
 			</nav>
-			<a
-				className="px-3 py-1.5 relative rounded text-g1 text-base font-semibold"
-				role="button"
-				href={DOCS_LINK}
-				target="_blank"
-				rel="external noreferrer"
-				style={{
-					background: `url(${BORDER})`,
-				}}>
-				Docs
-			</a>
+			<div className="flex items-center gap-5">
+				<a
+					className="relative px-4 py-2 text-base font-semibold rounded text-g1"
+					role="button"
+					href="/products"
+					style={{
+						background: `url(${BORDER})`,
+					}}>
+					Products
+				</a>
+				<a
+					className="relative px-4 py-2 text-base font-semibold text-black rounded"
+					role="button"
+					href={DOCS_LINK}
+					target="_blank"
+					rel="external noreferrer"
+					style={{
+						background: `url(${BORDER_WITH_WHITE_BACKGROUND})`,
+					}}>
+					Docs
+				</a>
+			</div>
 		</header>
 	);
 };

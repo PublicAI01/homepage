@@ -18,6 +18,22 @@ const BORDER =
 
 /**
  * ```html
+ * <svg width="100%" height="100%" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+ *  <rect x="2" y="2" width="100%" height="100%" style="width: calc(100% - 4px);height: calc(100% - 4px);" rx="4" stroke-width="2" stroke="url(#border)" stroke-linecap="round" />
+ *  <defs>
+ *    <linearGradient id="border" x1="0" y1="0" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+ *      <stop stop-color="#5708FE"/>
+ *      <stop offset="1" stop-color="#999"/>
+ *    </linearGradient>
+ *  </defs>
+ * </svg>
+ * ```
+ */
+const BORDER_WITH_WHITE_BACKGROUND =
+	'data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJ3aWR0aDpjYWxjKDEwMCUgLSA0cHgpO2hlaWdodDpjYWxjKDEwMCUgLSA0cHgpIiByeD0iNCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9InVybCgjYm9yZGVyKSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJib3JkZXIiIHkyPSIxMDAlIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agc3RvcC1jb2xvcj0iIzU3MDhGRSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzk5OSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg==';
+
+/**
+ * ```html
  * <svg width="100%" height="100%" fill="#0E100C" xmlns="http://www.w3.org/2000/svg">
  *  <rect x="2" y="2" width="100%" height="100%" style="width: calc(100% - 4px);height: calc(100% - 4px);" rx="4" stroke-width="2" stroke="url(#border)" stroke-linecap="round" />
  *  <defs>
@@ -62,4 +78,9 @@ const ARROW_WHITE_ROUNDED = '';
 const DATA_CARD_BORDER_WITH_ALPHA =
 	'data:image/svg+xml;base64,PHN2ZyBmaWxsPSJyZ2JhKDE1LCAxNSwgMTUsIDAuNSkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgeD0iMiIgeT0iMiIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9IndpZHRoOmNhbGMoMTAwJSAtIDRweCk7aGVpZ2h0OmNhbGMoMTAwJSAtIDRweCkiIHJ4PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9InVybCgjYm9yZGVyKSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJib3JkZXIiIHgyPSIwIiB5Mj0iMTAwJSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4xNSkiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9InJnYmEoMjU1LCAyNTUsIDI1NSwgMCkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48L3N2Zz4=';
 
-export { BORDER, DATA_CARD_BORDER_WITH_ALPHA, TITLE_BORDER };
+export {
+	BORDER,
+	BORDER_WITH_WHITE_BACKGROUND,
+	DATA_CARD_BORDER_WITH_ALPHA,
+	TITLE_BORDER,
+};

@@ -13,7 +13,9 @@ const config: Config = {
 				b1: '#020202',
 				b2: '#0E100C',
 				b3: '#0f0f0f',
+				b4: '#4c4c4c',
 				g1: '#e6e6e6',
+				p1: '#B08BFF',
 			},
 			animation: {
 				'card-flicker': 'card-flicker calc(var(--duration)*1s) 2 linear',

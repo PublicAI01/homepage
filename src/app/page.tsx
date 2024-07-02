@@ -11,10 +11,9 @@ import Resource from './sections/Resource';
 export default function Home() {
 	return (
 		<main
-			className="relative overflow-y-auto scroll-smooth scrollbar-none"
+			className="relative"
 			style={{
 				marginTop: 'var(--header-height)',
-				height: 'calc(100svh - var(--header-height))',
 			}}>
 			<GridPattern className="-z-[1]" />
 
