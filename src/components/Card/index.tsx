@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import type { CSSProperties, FC } from 'react';
 
-import competitiveWorkforce from '@/assets/svg/competitive-workforce.svg?react';
+import competitiveWorkforce from '@/assets/svg/builder-icon.svg?react';
 import costEfficiency from '@/assets/svg/cost-efficiency.svg?react';
 import mutualModalData from '@/assets/svg/mutual-modal-data.svg?react';
 import qualityControl from '@/assets/svg/quality-control.svg?react';

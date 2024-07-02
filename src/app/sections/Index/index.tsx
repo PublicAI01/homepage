@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 import StarTrack from '@/app/components/StarTrack';
-import indexBall from '@/assets/svg/index-ball.svg';
-import indexCone from '@/assets/svg/index-cone.svg';
+import indexBall from '@/assets/image/index-ball.png';
+import indexCone from '@/assets/image/index-cone.png';
 import Anchor from '@/components/Anchor';
 import Button from '@/components/Button';
 import { CHROME_EXTENSION_LINK, PUBLIC_AI_DATA_HUNTER_LINK } from '@/constant';
@@ -24,7 +24,7 @@ const Index = () => {
 				className="-z-2 absolute -right-[40%] size-full flex items-center justify-center"
 				aria-hidden>
 				<Image
-					className="-z-1 absolute w-[30vw] h-auto"
+					className="-z-1 absolute w-72 h-auto right-[45%]"
 					src={indexBall}
 					alt="ball image"
 					aria-hidden

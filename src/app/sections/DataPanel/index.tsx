@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import type { CSSProperties } from 'react';
 
-import buildersData from '@/assets/svg/builders-data.svg?react';
+import buildersData from '@/assets/svg/builder-icon.svg?react';
 import datasetSizeData from '@/assets/svg/dataset-size-data.svg?react';
 import partnersData from '@/assets/svg/partners-data.svg?react';
 import validatorsData from '@/assets/svg/validators-data.svg?react';
