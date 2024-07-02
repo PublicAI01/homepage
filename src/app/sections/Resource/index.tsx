@@ -4,10 +4,10 @@ import clsx from 'clsx';
 import type { CSSProperties } from 'react';
 import ReactYouTube from 'react-youtube';
 
-import styles from '@/app/sections/Resource/Resource.module.css';
 import developmentDoc from '@/assets/svg/development-doc.svg?react';
 import dune from '@/assets/svg/dune.svg?react';
 import productGuideline from '@/assets/svg/product-guideline.svg?react';
+import cardStyles from '@/components/Card/Card.module.css';
 import Title from '@/components/Title';
 import { DOCS_LINK, DUNE_LINK, GITHUB_LINK } from '@/constant';
 
@@ -44,8 +44,8 @@ const Resource = () => {
 							target="_blank"
 							rel="external noreferrer"
 							className={clsx(
-								styles.card,
-								'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/5 border-2 bg-b3 hover:border-white',
+								cardStyles.card,
+								'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors hover:border-white',
 							)}
 							style={
 								{
@@ -59,9 +59,9 @@ const Resource = () => {
 								e.currentTarget.classList.add('animate-card-flicker');
 							}}>
 							<item.Icon className="transition-colors size-10" />
-							<h6 className="mt-6 text-xl font-bold transition-colors">
+							<h1 className="mt-6 text-xl font-bold transition-colors">
 								{item.title}
-							</h6>
+							</h1>
 						</a>
 					))}
 				</section>

@@ -7,6 +7,7 @@ import styles from '@/app/products/sections/DataHub/DataHub.module.css';
 import datasetIcon from '@/assets/svg/dataset-icon.svg?react';
 import rewardIcon from '@/assets/svg/reward-icon.svg?react';
 import votingIcon from '@/assets/svg/voting-icon.svg?react';
+import cardStyles from '@/components/Card/Card.module.css';
 import Title from '@/components/Title';
 
 const DataHub = () => {
@@ -44,8 +45,8 @@ const DataHub = () => {
 					<article
 						key={index}
 						className={clsx(
-							styles.card,
-							'border rounded-xl bg-b2 border-white hover:bg-white p-7 flex-1 self-stretch',
+							cardStyles.card,
+							'border rounded-xl bg-b2 transition-colors border-white hover:bg-white p-7 flex-1 self-stretch',
 						)}
 						style={
 							{

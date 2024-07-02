@@ -3,12 +3,12 @@
 import clsx from 'clsx';
 import type { CSSProperties } from 'react';
 
-import styles from '@/app/sections/DataPanel/DataPanel.module.css';
 import buildersData from '@/assets/svg/builders-data.svg?react';
 import datasetSizeData from '@/assets/svg/dataset-size-data.svg?react';
 import partnersData from '@/assets/svg/partners-data.svg?react';
 import validatorsData from '@/assets/svg/validators-data.svg?react';
 import workersData from '@/assets/svg/workers-data.svg?react';
+import cardStyles from '@/components/Card/Card.module.css';
 
 const DataPanel = () => {
 	return (
@@ -23,8 +23,8 @@ const DataPanel = () => {
 				<article
 					key={index}
 					className={clsx(
-						styles.card,
-						'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/5 border-2 bg-b3 hover:border-white',
+						cardStyles.card,
+						'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors hover:border-white',
 					)}
 					style={
 						{
@@ -38,12 +38,12 @@ const DataPanel = () => {
 						e.currentTarget.classList.add('animate-card-flicker');
 					}}>
 					<item.Icon className="transition-colors size-10" />
-					<h6 className="my-4 text-xl font-bold transition-colors">
+					<h1 className="my-4 text-xl font-bold transition-colors">
 						{item.data}
-					</h6>
-					<p className="text-base font-normal transition-colors">
+					</h1>
+					<h2 className="text-base font-normal transition-colors">
 						{item.title}
-					</p>
+					</h2>
 				</article>
 			))}
 		</section>

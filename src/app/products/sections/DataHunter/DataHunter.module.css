@@ -28,27 +28,3 @@
 		border-color: currentColor;
 	}
 }
-
-.card svg {
-	color: #fff;
-}
-
-.card h1 {
-	color: #fff;
-}
-
-.card h2 {
-	color: #e6e6e6;
-}
-
-.card:hover svg {
-	color: #000;
-}
-
-.card:hover h1 {
-	color: #000;
-}
-
-.card:hover h2 {
-	color: #000;
-}
