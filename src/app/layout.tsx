@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { Bai_Jamjuree } from 'next/font/google';
 
 import Header from '@/app/components/Header';
+import MediaPlatform from '@/app/components/MediaPlatform';
 
 const jamjuree = Bai_Jamjuree({
 	weight: ['200', '300', '400', '500', '600', '700'],
@@ -32,6 +33,7 @@ export default function RootLayout({
 			className="scroll-smooth">
 			<body className={clsx(jamjuree.className, 'bg-b1 scrollbar-none')}>
 				<Header />
+				<MediaPlatform />
 				{children}
 			</body>
 		</html>
