@@ -41,6 +41,8 @@ const Resource = () => {
 						<a
 							key={index}
 							href={item.link}
+							target="_blank"
+							rel="external noreferrer"
 							className={clsx(
 								styles.card,
 								'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/5 border-2 bg-b3 hover:border-white',

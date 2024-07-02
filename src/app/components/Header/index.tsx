@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import styles from '@/app/components/Header/Header.module.css';
 import publicai from '@/assets/svg/publicai.svg';
+import { DOCS_LINK } from '@/constant';
 import { BORDER } from '@/constant/border';
 
 const Header = () => {
@@ -12,11 +13,13 @@ const Header = () => {
 			style={{
 				height: 'var(--header-height)',
 			}}>
-			<Image
-				className="w-auto h-8"
-				src={publicai}
-				alt="publicai logo"
-			/>
+			<a href="/">
+				<Image
+					className="w-auto h-8"
+					src={publicai}
+					alt="publicai logo"
+				/>
+			</a>
 			<nav className={clsx('flex items-center justify-center', styles.nav)}>
 				<ul className="relative flex">
 					{['Home', 'Partners', 'Resource', 'FAQ'].map((nav, index) => (
@@ -41,6 +44,9 @@ const Header = () => {
 			<a
 				className="px-3 py-1.5 relative rounded text-g1 text-base font-semibold"
 				role="button"
+				href={DOCS_LINK}
+				target="_blank"
+				rel="external noreferrer"
 				style={{
 					background: `url(${BORDER})`,
 				}}>

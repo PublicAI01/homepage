@@ -11,6 +11,8 @@ const Button: FC<{
 	return (
 		<a
 			href={href}
+			target="_blank"
+			rel="external noreferrer"
 			className={clsx(
 				'w-60 text-xl text-white py-2 font-medium text-center',
 				ButtonWrapper.className,
