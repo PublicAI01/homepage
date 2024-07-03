@@ -1,9 +1,10 @@
 'use client';
 
+import { YouTubeEmbed } from '@next/third-parties/google';
 import clsx from 'clsx';
 import type { CSSProperties } from 'react';
-import ReactYouTube from 'react-youtube';
 
+import styles from '@/app/sections/Resource/Resource.module.css';
 import developmentDoc from '@/assets/svg/development-doc.svg?react';
 import dune from '@/assets/svg/dune.svg?react';
 import productGuideline from '@/assets/svg/product-guideline.svg?react';
@@ -61,14 +62,13 @@ const Resource = () => {
 					</a>
 				))}
 			</section>
-			<ReactYouTube
-				videoId="i0U8uaUrILs"
-				className="bg-b3 w-full mt-8 md:mt-36 h-80 md:h-[600px] rounded-md overflow-hidden"
-				opts={{
-					width: '100%',
-					height: '100%',
-				}}
-			/>
+			<div
+				className={clsx(
+					styles['youtube-container'],
+					'bg-b3 rounded-xl overflow-hidden mt-8 md:mt-36 h-80 md:h-[600px]',
+				)}>
+				<YouTubeEmbed videoid="i0U8uaUrILs" />
+			</div>
 		</SectionWrapper>
 	);
 };

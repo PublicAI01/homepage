@@ -1,5 +1,6 @@
 import '@/app/globals.css';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Bai_Jamjuree } from 'next/font/google';
@@ -40,6 +41,7 @@ export default function RootLayout({
 					{children}
 				</div>
 			</body>
+			<GoogleAnalytics gaId="G-JMRE2DXFNN" />
 		</html>
 	);
 }
