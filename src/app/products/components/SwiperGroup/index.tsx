@@ -4,11 +4,13 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+import clsx from 'clsx';
 import Image, { type StaticImageData } from 'next/image';
 import type { FC } from 'react';
 import { Mousewheel, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import styles from '@/app/products/components/SwiperGroup/SwiperGroup.module.css';
 import HubPreview1 from '@/assets/image/hub-preview-1.png';
 import HubPreview2 from '@/assets/image/hub-preview-2.png';
 import HunterPreview1 from '@/assets/image/hunter-preview-1.png';
@@ -16,7 +18,7 @@ import HunterPreview2 from '@/assets/image/hunter-preview-2.png';
 
 const SwiperGroup = () => {
 	return (
-		<section className="container flex items-center gap-12 mx-auto">
+		<section className="container flex items-center gap-12 mx-auto flex-col md:flex-row">
 			<SwiperCard
 				title="Data Hunter"
 				subTitle="Seamless Data Collection"
@@ -41,14 +43,18 @@ const SwiperCard: FC<{
 	images: StaticImageData[];
 }> = ({ title, subTitle, content, images }) => {
 	return (
-		<article className="p-6 border border-white rounded-2xl bg-b3/65 w-[calc(50%_-_1.5rem)] self-stretch flex flex-col justify-between">
+		<article className="md:p-6 py-5 px-4 border border-white rounded-2xl bg-b3/65 max-md:mx-auto w-[var(--mobile-container-width)] md:w-[calc(50%_-_1.5rem)] self-stretch flex flex-col justify-between">
 			<div>
-				<h1 className="text-2xl font-bold text-white">{title}</h1>
-				<h2 className="text-2xl font-bold text-white">{subTitle}</h2>
-				<h3 className="my-3 text-base font-medium text-white">{content}</h3>
+				<h1 className="text-2xl font-semibold md:font-bold text-white">
+					{title}
+				</h1>
+				<h2 className="text-2xl font-semibold md:font-bold text-white">
+					{subTitle}
+				</h2>
+				<h3 className="my-3 text-base font-medium text-g1">{content}</h3>
 			</div>
 			<Swiper
-				className="max-w-xl"
+				className={clsx('md:max-w-xl max-w-full', styles.swiper)}
 				slidesPerView={1}
 				spaceBetween={0}
 				mousewheel
@@ -69,7 +75,7 @@ const SwiperCard: FC<{
 				{images.map((item, index) => (
 					<SwiperSlide key={index}>
 						<Image
-							className="w-auto mx-auto mb-6 border h-96 rounded-xl border-b4"
+							className="w-auto mx-auto mb-6 border h-48 md:h-96 rounded-xl border-b4"
 							src={item}
 							alt={`data hunter preview ${index}`}
 						/>

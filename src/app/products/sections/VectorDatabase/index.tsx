@@ -9,26 +9,27 @@ import mapping from '@/assets/svg/mapping-type.svg?react';
 import text from '@/assets/svg/text-type.svg?react';
 import video from '@/assets/svg/video-type.svg?react';
 import cardStyles from '@/components/Card/Card.module.css';
-import Title from '@/components/Title';
+import SectionWrapper from '@/components/SectionWrapper';
 
 const VectorDatabase = () => {
 	return (
-		<section className="container flex flex-col items-center mx-auto mt-40">
-			<Title>Vector Database</Title>
+		<SectionWrapper
+			className="md:mt-40"
+			title="Vector Database">
 			<section
 				className={clsx(
 					styles['animate-border'],
-					'w-full pt-5 pb-16 px-20 mt-8',
+					'w-full pt-5 p-5 md:pb-16 md:px-20 mt-8',
 				)}>
-				<h1 className="text-3xl font-bold text-center text-white">
+				<h1 className="text-xl md:text-3xl font-bold text-center text-white">
 					Application
 				</h1>
-				<h2 className="mt-2 mb-10 text-lg font-medium text-center text-white">
+				<h2 className="mt-2 mb-5 md:mb-10 text-sm md:text-lg font-medium text-center text-white">
 					A comprehensive collection of datasets meticulously curated to cater
 					to a wide array of industries and modalities, providing the foundation
 					for AI projects.
 				</h2>
-				<div className="flex items-center gap-32 lg:gap-20">
+				<div className="flex items-center max-md:gap-4 xl:gap-32 lg:gap-20 flex-col md:flex-row">
 					{[
 						{ Icon: text, title: 'Text' },
 						{ Icon: audio, title: 'Audio' },
@@ -60,7 +61,7 @@ const VectorDatabase = () => {
 					))}
 				</div>
 			</section>
-		</section>
+		</SectionWrapper>
 	);
 };
 

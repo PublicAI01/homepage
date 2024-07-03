@@ -11,7 +11,7 @@ const SideNav = () => {
 	return (
 		<aside
 			className={clsx(
-				'fixed w-screen transition-all translate-x-full h-dvh md:hidden',
+				'fixed w-screen transition-all translate-x-full h-screen md:hidden',
 				headerStyles['side-nav'],
 			)}
 			style={{

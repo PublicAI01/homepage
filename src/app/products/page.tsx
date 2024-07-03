@@ -7,7 +7,7 @@ import DataHunter from '@/app/products/sections/DataHunter';
 import Index from '@/app/products/sections/Index';
 import Showcase from '@/app/products/sections/Showcase';
 import VectorDatabase from '@/app/products/sections/VectorDatabase';
-import ProductsCone from '@/assets/image/products-cone.png';
+import productsCone from '@/assets/svg/products-cone.svg';
 
 const Products = () => {
 	return (
@@ -19,9 +19,9 @@ const Products = () => {
 			<GridPattern className="-z-1" />
 
 			<Image
-				className="container absolute top-0 w-4/6 inset-x-[16.666667%] -z-1"
+				className="absolute w-auto h-screen md:h-auto scale-150 md:scale-75 -top-[var(--header-height)] md:-top-80 md:w-4/6 md:inset-x-[16.666667%] -rotate-[25deg] -z-1"
 				aria-hidden
-				src={ProductsCone}
+				src={productsCone}
 				alt="decorative pictures"
 			/>
 
