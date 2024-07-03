@@ -13,13 +13,13 @@ import SectionWrapper from '@/components/SectionWrapper';
 const DataHunter = () => {
 	return (
 		<SectionWrapper title="Data Hunter">
-			<h1 className="md:text-lg text-base font-medium text-g1 mt-7 text-center">
+			<h3 className="md:text-lg text-base font-medium text-g1 mt-7 text-center">
 				Data Hunter empowers users to instantly contribute valuable data and
 				earn rewards{' '}
 				<b className={clsx(styles.typing, 'font-bold text-p1 block mx-auto')}>
 					with a simple click.
 				</b>
-			</h1>
+			</h3>
 
 			<section className="flex items-center gap-2 mt-10 md:mt-20 flex-col md:flex-row">
 				{[
@@ -60,12 +60,12 @@ const DataHunter = () => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
 						<item.Icon className="size-9 md:size-11" />
-						<h1 className="my-2 md:my-4 text-lg md:text-xl font-bold transition-colors">
+						<h6 className="my-2 md:my-4 text-lg md:text-xl font-bold transition-colors">
 							{item.title}
-						</h1>
-						<h2 className="text-xs font-medium transition-colors">
+						</h6>
+						<p className="text-xs font-medium transition-colors">
 							{item.content}
-						</h2>
+						</p>
 					</article>
 				))}
 			</section>

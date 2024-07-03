@@ -2,11 +2,11 @@
 	color: #fff;
 }
 
-.card h1 {
+.card h6 {
 	color: #fff;
 }
 
-.card h2 {
+.card p {
 	color: #e6e6e6;
 }
 
@@ -14,10 +14,10 @@
 	color: #000;
 }
 
-.card:hover h1 {
+.card:hover h6 {
 	color: #000;
 }
 
-.card:hover h2 {
+.card:hover p {
 	color: #000;
 }

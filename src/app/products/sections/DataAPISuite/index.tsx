@@ -14,12 +14,12 @@ const DataAPISuite = () => {
 		<SectionWrapper
 			className="md:mt-20"
 			title="Data API Suite">
-			<h1 className="mt-10 mb-2 text-xl md:text-3xl font-bold text-center text-white">
+			<h3 className="mt-10 mb-2 text-xl md:text-3xl font-bold text-center text-white">
 				Custom API Suite for Business
-			</h1>
-			<h2 className="text-sm md:text-lg font-medium text-center text-white">
+			</h3>
+			<h4 className="text-sm md:text-lg font-medium text-center text-white">
 				Enhance Your Business with Our Comprehensive Data Solutions.
-			</h2>
+			</h4>
 			<section className="flex items-center gap-3 mt-5 md:mt-10 md:flex-row flex-col">
 				{[
 					{
@@ -59,12 +59,12 @@ const DataAPISuite = () => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
 						<item.Icon className="size-10 md:size-16" />
-						<h1 className="my-2 md:my-4 text-lg md:text-xl font-bold transition-colors">
+						<h6 className="my-2 md:my-4 text-lg md:text-xl font-bold transition-colors">
 							{item.title}
-						</h1>
-						<h2 className="text-sm md:text-xs font-medium text-center transition-colors">
+						</h6>
+						<p className="text-sm md:text-xs font-medium text-center transition-colors">
 							{item.content}
-						</h2>
+						</p>
 					</article>
 				))}
 			</section>

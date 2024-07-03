@@ -11,7 +11,7 @@ const Index = () => {
 					<b className="block mb-2 text-3xl md:text-5xl">Building</b> Craft AI
 					with Collective Intelligence
 				</h1>
-				<h3 className="mt-3 mb-24 max-md:mt-12 text-sm md:text-xl font-light md:font-normal text-center text-white">
+				<h2 className="mt-3 mb-24 max-md:mt-12 text-sm md:text-xl font-light md:font-normal text-center text-white">
 					Harness the synergy of Data Hunter&apos;s seamless collection and Data
 					Hub&apos;s collaborative validation to{' '}
 					<b
@@ -21,7 +21,7 @@ const Index = () => {
 						)}>
 						supercharge AI with tailored large language models.
 					</b>
-				</h3>
+				</h2>
 			</div>
 			<SwiperGroup />
 		</section>

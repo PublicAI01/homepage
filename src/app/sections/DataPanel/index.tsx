@@ -39,12 +39,12 @@ const DataPanel = () => {
 						e.currentTarget.classList.add('animate-card-flicker');
 					}}>
 					<item.Icon className="transition-colors size-10" />
-					<h1 className="my-4 text-xl font-bold transition-colors">
+					<h6 className="my-4 text-xl font-bold transition-colors">
 						{item.data}
-					</h1>
-					<h2 className="text-base font-normal transition-colors">
+					</h6>
+					<p className="text-base font-normal transition-colors">
 						{item.title}
-					</h2>
+					</p>
 				</article>
 			))}
 		</SectionWrapper>

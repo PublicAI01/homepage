@@ -55,9 +55,9 @@ const Resource = () => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
 						<item.Icon className="transition-colors size-10" />
-						<h1 className="mt-6 text-xl font-bold transition-colors">
+						<h6 className="mt-6 text-xl font-bold transition-colors">
 							{item.title}
-						</h1>
+						</h6>
 					</a>
 				))}
 			</section>

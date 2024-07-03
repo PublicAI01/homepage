@@ -8,7 +8,7 @@ const Title: FC<{ className?: string; children: ReactNode }> = ({
 	children,
 }) => {
 	return (
-		<h1
+		<h2
 			className={clsx(
 				'md:w-80 w-60 text-xl md:text-3xl text-white py-1 font-bold text-center',
 				ButtonWrapper.className,
@@ -16,7 +16,7 @@ const Title: FC<{ className?: string; children: ReactNode }> = ({
 			)}
 			style={ButtonWrapper.titleStyle}>
 			{children}
-		</h1>
+		</h2>
 	);
 };
 
