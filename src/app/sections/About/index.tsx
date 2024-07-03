@@ -11,13 +11,14 @@ import dashArrowAnimateToBottom from '@/assets/svg/dash-arrow-animate-to-bottom.
 import dashArrowAnimateToLeft from '@/assets/svg/dash-arrow-animate-to-left.svg';
 import dashArrowAnimateToRight from '@/assets/svg/dash-arrow-animate-to-right.svg';
 import Card from '@/components/Card';
-import Title from '@/components/Title';
+import SectionWrapper from '@/components/SectionWrapper';
 
 const About = () => {
 	return (
-		<section className="flex flex-col items-center">
-			<Title>About PublicAI</Title>
-			<h3 className="container mt-12 text-base font-medium text-g1">
+		<SectionWrapper
+			title="About PublicAI"
+			marginTop={false}>
+			<h3 className="container mt-12 text-base font-medium text-g1 max-md:text-center">
 				PublicAI is a distributed AI network enables every human: contribute to
 				AI and share the benefits that connects businesses and individuals with
 				a global network of workers. It simplifies the process of outsourcing a
@@ -26,7 +27,7 @@ const About = () => {
 				collective skills of a vast, structured workforce to enhance data
 				analysis and speed up the development of machine learning models.
 			</h3>
-			<div className="container grid grid-cols-1 gap-8 mt-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+			<div className="container grid grid-cols-1 gap-8 mt-12 md:mt-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 				{[
 					{
 						title: 'Competitive Workforce',
@@ -57,11 +58,11 @@ const About = () => {
 			</div>
 			<section
 				className={clsx(
-					'container flex items-center p-12 mt-10',
+					'container flex items-center p-12 max-md:px-5 mt-10 flex-col md:flex-row',
 					styles['animate-border'],
 				)}>
 				<Swiper />
-				<div className="grid w-1/3 h-full grid-cols-3 grid-rows-2 gap-4">
+				<div className="grid w-full max-md:mt-10 md:w-1/3 h-full grid-cols-3 grid-rows-2 gap-4">
 					<div className="flex items-end justify-end size-full">
 						<Image
 							className="w-auto h-3/4"
@@ -114,7 +115,7 @@ const About = () => {
 					</div>
 				</div>
 			</section>
-		</section>
+		</SectionWrapper>
 	);
 };
 

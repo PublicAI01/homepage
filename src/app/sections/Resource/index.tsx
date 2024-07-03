@@ -7,17 +7,16 @@ import ReactYouTube from 'react-youtube';
 import developmentDoc from '@/assets/svg/development-doc.svg?react';
 import dune from '@/assets/svg/dune.svg?react';
 import productGuideline from '@/assets/svg/product-guideline.svg?react';
-import Anchor from '@/components/Anchor';
 import cardStyles from '@/components/Card/Card.module.css';
-import Title from '@/components/Title';
+import SectionWrapper from '@/components/SectionWrapper';
 import { DOCS_LINK, DUNE_LINK, GITHUB_LINK } from '@/constant';
 
 const Resource = () => {
 	return (
-		<section className="container relative flex flex-col items-center mx-auto mt-20">
-			<Anchor id="resource" />
-			<Title>Resource</Title>
-			<section className="flex items-center justify-center w-full mt-16 gap-28">
+		<SectionWrapper
+			title="Resource"
+			anchorId="resource">
+			<section className="flex flex-col items-center justify-center w-full mt-6 md:mt-16 gap-6 md:gap-28 md:flex-row">
 				{[
 					{
 						Icon: productGuideline,
@@ -64,13 +63,13 @@ const Resource = () => {
 			</section>
 			<ReactYouTube
 				videoId="i0U8uaUrILs"
-				className="bg-b3 w-full mt-36 h-[600px] rounded-md overflow-hidden"
+				className="bg-b3 w-full mt-8 md:mt-36 h-80 md:h-[600px] rounded-md overflow-hidden"
 				opts={{
 					width: '100%',
 					height: '100%',
 				}}
 			/>
-		</section>
+		</SectionWrapper>
 	);
 };
 

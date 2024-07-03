@@ -2,8 +2,7 @@ import clsx from 'clsx';
 import type { FC } from 'react';
 
 import styles from '@/app/sections/FAQ/FAQ.module.css';
-import Anchor from '@/components/Anchor';
-import Title from '@/components/Title';
+import SectionWrapper from '@/components/SectionWrapper';
 
 interface FAQItem {
 	title: string;
@@ -12,10 +11,10 @@ interface FAQItem {
 
 const FAQ = () => {
 	return (
-		<section className="container relative flex flex-col items-center mx-auto mt-20">
-			<Anchor id="faq" />
-			<Title>FAQ</Title>
-			<div className="flex flex-col gap-3 mt-9">
+		<SectionWrapper
+			title="FAQ"
+			anchorId="faq">
+			<section className="flex flex-col gap-3 mt-9">
 				{[
 					{
 						title: 'Is my data secure with PublicAI?',
@@ -55,8 +54,8 @@ const FAQ = () => {
 						item={item}
 					/>
 				))}
-			</div>
-		</section>
+			</section>
+		</SectionWrapper>
 	);
 };
 
@@ -68,12 +67,14 @@ const Collapsible: FC<{ item: FAQItem }> = ({ item }) => {
 				'rounded-xl cursor-pointer bg-b3 hover:bg-primary',
 			)}>
 			<details>
-				<summary className="text-xl font-medium text-white">
+				<summary className="text-lg md:text-xl font-medium text-white">
 					{item.title}
 				</summary>
 			</details>
 			<div>
-				<p className="text-lg font-normal text-white">{item.content}</p>
+				<p className="text-base md:text-lg font-normal text-white">
+					{item.content}
+				</p>
 			</div>
 		</article>
 	);

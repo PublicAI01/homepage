@@ -14,7 +14,7 @@ const Button: FC<{
 			target="_blank"
 			rel="external noreferrer"
 			className={clsx(
-				'w-60 text-xl text-white py-2 font-medium text-center',
+				'w-60 text-base md:text-xl text-white py-2 font-medium text-center',
 				ButtonWrapper.className,
 				theme === 'primary' && 'bg-primary',
 			)}

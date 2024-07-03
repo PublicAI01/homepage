@@ -8,9 +8,10 @@
 		content: '';
 		position: absolute;
 		z-index: -2;
-		left: -150%;
-		width: 400%;
-		height: 400%;
+		top: -200%;
+		left: -200%;
+		width: 500%;
+		height: 500%;
 		background: conic-gradient(#1f1f1f, #262626, #434343, #595959, #1f1f1f)
 			no-repeat;
 		animation: rotate 4s linear infinite;

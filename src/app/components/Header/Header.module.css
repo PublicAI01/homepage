@@ -21,3 +21,71 @@
 .nav ul li:nth-child(4).current ~ .slider {
 	left: 75%;
 }
+
+.nav-icon {
+	display: inline-block;
+	position: relative;
+	width: 30px;
+	height: 5px;
+	background-color: #ffffff;
+	transition-property: background-color, transform;
+	transition-duration: 300ms;
+
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		width: 30px;
+		height: 5px;
+		position: absolute;
+		background: #ffffff;
+		transition-property: margin, transform;
+		transition-duration: 300ms;
+	}
+
+	&::before {
+		margin-top: -10px;
+	}
+
+	&::after {
+		margin-top: 10px;
+	}
+}
+
+.switch:checked + header .nav-icon {
+	background: rgba(0, 0, 0, 0);
+	transform: rotate(135deg);
+
+	&::before {
+		margin-top: 0;
+		transform: rotate(90deg);
+	}
+
+	&::after {
+		margin-top: 0;
+		transform: rotate(180deg);
+	}
+}
+
+.switch ~ main {
+	transform: scale(1) translateX(0);
+	transition: all 300ms ease-in-out;
+}
+
+.switch:checked ~ main {
+	transform: scale(0.9) translateX(-90%);
+}
+
+.side-nav {
+	opacity: 0;
+}
+
+.switch:checked ~ .side-nav {
+	transform: translateX(20%);
+	opacity: 1;
+	background: rgba(2, 2, 2, 0.5);
+}
+
+.switch:checked ~ .side-media-platform {
+	display: none;
+}

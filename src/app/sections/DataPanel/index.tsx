@@ -9,10 +9,11 @@ import partnersData from '@/assets/svg/partners-data.svg?react';
 import validatorsData from '@/assets/svg/validators-data.svg?react';
 import workersData from '@/assets/svg/workers-data.svg?react';
 import cardStyles from '@/components/Card/Card.module.css';
+import SectionWrapper from '@/components/SectionWrapper';
 
 const DataPanel = () => {
 	return (
-		<section className="container flex items-center justify-around gap-16 mx-auto mt-20">
+		<SectionWrapper className="justify-around gap-7 md:gap-16 md:flex-row">
 			{[
 				{ Icon: workersData, title: 'Workers', data: '400K+' },
 				{ Icon: validatorsData, title: 'Validators', data: '300K+' },
@@ -46,7 +47,7 @@ const DataPanel = () => {
 					</h2>
 				</article>
 			))}
-		</section>
+		</SectionWrapper>
 	);
 };
 

@@ -8,15 +8,15 @@ const Title: FC<{ className?: string; children: ReactNode }> = ({
 	children,
 }) => {
 	return (
-		<h3
+		<h1
 			className={clsx(
-				'w-80 text-3xl text-white py-1 font-bold text-center',
+				'md:w-80 w-60 text-xl md:text-3xl text-white py-1 font-bold text-center',
 				ButtonWrapper.className,
 				className,
 			)}
 			style={ButtonWrapper.titleStyle}>
 			{children}
-		</h3>
+		</h1>
 	);
 };
 

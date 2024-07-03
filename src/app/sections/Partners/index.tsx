@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 
+import aboutStyles from '@/app/sections/About/About.module.css';
 import styles from '@/app/sections/Partners/Partners.module.css';
 import ZeroG from '@/assets/partners/0g.png';
 import ZeroXScope from '@/assets/partners/0x-scope.png';
@@ -28,25 +29,21 @@ import SolanaFoundation from '@/assets/partners/solana.png';
 import StabilityAI from '@/assets/partners/stability-ai.png';
 import StanfordUniversity from '@/assets/partners/stanford.png';
 import TheBlock from '@/assets/partners/the-block.png';
-import Anchor from '@/components/Anchor';
-import Title from '@/components/Title';
+import SectionWrapper from '@/components/SectionWrapper';
 import { DATA_CARD_BORDER_WITH_ALPHA } from '@/constant/border';
 
 const Partners = () => {
 	return (
-		<section
-			className={clsx(
-				styles['animate-border'],
-				'container mx-auto mt-20 flex flex-col items-center py-7 px-24 relative',
-			)}>
-			<Anchor id="partners" />
+		<SectionWrapper
+			className={clsx(aboutStyles['animate-border'], 'py-7 md:px-24')}
+			title="Partners"
+			anchorId="partners">
 			<div
 				aria-hidden
 				className={clsx(
 					styles['animate-shadow'],
 					'bg-primary/20 absolute inset-y-0 w-1/4 blur-[96px]',
 				)}></div>
-			<Title className="mb-10">Partners</Title>
 			{[
 				{
 					title: 'Trusted by Leading Investors',
@@ -97,11 +94,11 @@ const Partners = () => {
 			].map((group, index) => (
 				<section
 					key={index}
-					className="w-full mb-14">
-					<h3 className="mb-6 text-xl font-semibold text-white">
+					className="md:mb-14 mt-10 px-4 w-full flex flex-col">
+					<h3 className="mb-6 text-base md:text-xl font-semibold text-white">
 						{group.title}
 					</h3>
-					<div className="grid grid-cols-3 gap-6 gap-x-28">
+					<div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 md:gap-x-28">
 						{group.children.map((item, index) => (
 							<article
 								key={index}
@@ -110,7 +107,7 @@ const Partners = () => {
 									background: `url(${DATA_CARD_BORDER_WITH_ALPHA})`,
 								}}>
 								<Image
-									className="w-auto mx-auto h-11"
+									className="w-auto mx-auto h-7 md:h-11"
 									src={item.image}
 									alt={item.name}
 								/>
@@ -119,7 +116,7 @@ const Partners = () => {
 					</div>
 				</section>
 			))}
-		</section>
+		</SectionWrapper>
 	);
 };
 

@@ -1,5 +1,9 @@
 .collapsible {
 	--animation-duration: 0.25s;
+	--indicator-size: 2.25rem;
+	--padding-horizontal: 0.75rem;
+	--padding-vertical: 1rem;
+	--line-height: 1.75rem;
 }
 
 .collapsible details + div {
@@ -13,7 +17,9 @@
 .collapsible summary {
 	position: relative;
 	display: flex;
-	padding: 0.75rem 1rem;
+	padding: var(--padding-vertical)
+		calc(var(--indicator-size) + var(--padding-horizontal))
+		var(--padding-vertical) var(--padding-horizontal);
 }
 
 .collapsible summary::marker {
@@ -34,10 +40,13 @@
 	background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgZmlsbC1vcGFjaXR5PSIuMiIgY3g9IjE4IiBjeT0iMTgiIHI9IjE4Ii8+PHBhdGggZD0iTTE0LjM2MiAyNC4xNjlhMS4yMzUgMS4yMzUgMCAwIDEgMC0xLjc0N2w0LjY1Ny00LjY1Ny00LjY1Ny00LjY1N2ExLjIzNSAxLjIzNSAwIDEgMSAxLjc0Ni0xLjc0Nmw1LjUzIDUuNTNhMS4yMzUgMS4yMzUgMCAwIDEgMCAxLjc0NmwtNS41MyA1LjUzYTEuMjM1IDEuMjM1IDAgMCAxLTEuNzQ2IDB6Ii8+PC9nPjwvc3ZnPg==')
 		no-repeat;
 	background-size: 100% 100%;
-	width: 2.25rem;
-	height: 2.25rem;
-	top: 0.5rem;
-	right: 1rem;
+	width: var(--indicator-size);
+	height: var(--indicator-size);
+	top: calc(
+		(var(--line-height) + var(--padding-vertical) * 2 - var(--indicator-size)) /
+			2
+	);
+	right: var(--padding-horizontal);
 	transition: transform ease-in-out var(--animation-duration);
 }
 
@@ -46,7 +55,7 @@
 }
 
 .collapsible details[open] + div {
-	padding: 0 1rem 0.75rem;
+	padding: 0 var(--padding-horizontal) var(--padding-vertical);
 	grid-template-rows: 1fr;
 	opacity: 1;
 }

@@ -4,6 +4,7 @@
 
 :root {
 	--header-height: 4.125rem;
+	--mobile-container-width: calc(100vw - 2rem);
 }
 
 @layer utilities {

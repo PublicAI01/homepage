@@ -1,6 +1,6 @@
 const Swiper = () => {
 	return (
-		<div className="flex items-center w-2/3">
+		<div className="flex items-center md:w-2/3">
 			<div
 				dir="rtl"
 				className="relative overflow-y-scroll h-36 snap-y snap-mandatory scrollbar scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-track-rounded-full scrollbar-track-white/10 scrollbar-thumb-primary">
@@ -25,7 +25,7 @@ const Swiper = () => {
 						dir="auto"
 						key={index}
 						className="flex flex-col justify-between ml-6 h-36 snap-center snap-always">
-						<h5 className="text-4xl font-bold text-white transition-colors">
+						<h5 className="text-2xl md:text-4xl font-bold text-white transition-colors">
 							{item.title}
 						</h5>
 						<p className="text-sm font-medium text-white transition-colors">
