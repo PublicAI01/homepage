@@ -2,6 +2,7 @@
 
 import { YouTubeEmbed } from '@next/third-parties/google';
 import clsx from 'clsx';
+import Link from 'next/link';
 import type { CSSProperties } from 'react';
 
 import styles from '@/app/sections/Resource/Resource.module.css';
@@ -35,7 +36,7 @@ const Resource = () => {
 						link: DUNE_LINK,
 					},
 				].map((item, index) => (
-					<a
+					<Link
 						key={index}
 						href={item.link}
 						target="_blank"
@@ -59,7 +60,7 @@ const Resource = () => {
 						<h6 className="mt-6 text-xl font-bold transition-colors">
 							{item.title}
 						</h6>
-					</a>
+					</Link>
 				))}
 			</section>
 			<div

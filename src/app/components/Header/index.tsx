@@ -2,7 +2,9 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
-import { ChangeEventHandler, useEffect, useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { ChangeEventHandler, useEffect, useRef, useState } from 'react';
 
 import ButtonGroup from '@/app/components/Header/ButtonGroup';
 import styles from '@/app/components/Header/Header.module.css';
@@ -10,6 +12,8 @@ import publicai from '@/assets/svg/publicai.svg';
 import { NAV_LIST } from '@/constant';
 
 const Header = () => {
+	const pathname = usePathname();
+	const ioRef = useRef<IntersectionObserver>();
 	const [currentActiveNav, setCurrentActiveNav] = useState<string>();
 
 	const onNavActive = (entries: IntersectionObserverEntry[]) => {
@@ -27,23 +31,25 @@ const Header = () => {
 	};
 
 	useEffect(() => {
-		const homeEl = document.querySelector(`#${NAV_LIST[0].id}`);
+		if (pathname !== '/') {
+			ioRef.current?.disconnect();
+			setCurrentActiveNav(undefined);
+			return;
+		}
 
-		if (!homeEl) return;
-
-		const io = new IntersectionObserver(onNavActive, { threshold: 0.1 });
+		ioRef.current = new IntersectionObserver(onNavActive, { threshold: 0.1 });
 
 		for (let index = 0; index < NAV_LIST.length; index++) {
 			const el = document.querySelector(`#${NAV_LIST[index].id}`);
 			if (el) {
-				io.observe(el);
+				ioRef.current.observe(el);
 			}
 		}
 
 		return () => {
-			io.disconnect();
+			ioRef.current?.disconnect();
 		};
-	}, []);
+	}, [pathname]);
 
 	const onSideNavSwitchChange: ChangeEventHandler<HTMLInputElement> = (e) => {
 		if (e.currentTarget.checked) {
@@ -67,13 +73,13 @@ const Header = () => {
 				style={{
 					height: 'var(--header-height)',
 				}}>
-				<a href="/">
+				<Link href="/">
 					<Image
 						className="w-auto h-8"
 						src={publicai}
 						alt="publicai logo"
 					/>
-				</a>
+				</Link>
 				<nav
 					className={clsx(
 						'flex items-center justify-center max-md:hidden',
@@ -87,11 +93,11 @@ const Header = () => {
 									'z-10 w-32 py-2 text-center list-none',
 									currentActiveNav === nav.id && styles.current,
 								)}>
-								<a
+								<Link
 									className="text-base font-semibold text-white"
 									href={`/#${nav.id}`}>
 									{nav.label}
-								</a>
+								</Link>
 							</li>
 						))}
 						<div

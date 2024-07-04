@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from 'next/link';
 import type { FC } from 'react';
 
 import { DOCS_LINK } from '@/constant';
@@ -11,7 +12,7 @@ const ButtonGroup: FC<{ className?: string }> = ({ className }) => {
 				'flex flex-col md:flex-row items-center gap-5',
 				className,
 			)}>
-			<a
+			<Link
 				className="relative px-4 py-2 text-base font-semibold rounded text-g1 max-md:w-28 text-center"
 				role="button"
 				href="/products"
@@ -19,8 +20,8 @@ const ButtonGroup: FC<{ className?: string }> = ({ className }) => {
 					background: `url(${BORDER})`,
 				}}>
 				Products
-			</a>
-			<a
+			</Link>
+			<Link
 				className="relative px-4 py-2 text-base font-semibold text-black rounded max-md:w-28 text-center"
 				role="button"
 				href={DOCS_LINK}
@@ -30,7 +31,7 @@ const ButtonGroup: FC<{ className?: string }> = ({ className }) => {
 					background: `url(${BORDER_WITH_WHITE_BACKGROUND})`,
 				}}>
 				Docs
-			</a>
+			</Link>
 		</div>
 	);
 };

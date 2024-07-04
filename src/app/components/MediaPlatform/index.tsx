@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from 'next/link';
 
 import headerStyles from '@/app/components/Header/Header.module.css';
 import styles from '@/app/components/MediaPlatform/MediaPlatform.module.css';
@@ -12,7 +13,7 @@ const MediaPlatform = () => {
 				headerStyles['side-media-platform'],
 			)}>
 			{PLATFORMS.map((item, index) => (
-				<a
+				<Link
 					key={index}
 					className={clsx(
 						styles.platform,
@@ -25,7 +26,7 @@ const MediaPlatform = () => {
 					<p className="absolute text-2xl leading-6 -translate-x-full -translate-y-1/2 md:leading-9 md:text-4xl -left-2 text-g1 top-1/2">
 						{item.label}
 					</p>
-				</a>
+				</Link>
 			))}
 		</aside>
 	);

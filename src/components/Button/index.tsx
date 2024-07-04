@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from 'next/link';
 import type { FC, ReactNode } from 'react';
 
 import ButtonWrapper from '@/components/ButtonWrapper';
@@ -9,7 +10,7 @@ const Button: FC<{
 	theme?: 'outlined' | 'primary';
 }> = ({ children, href, theme = 'outlined' }) => {
 	return (
-		<a
+		<Link
 			href={href}
 			target="_blank"
 			rel="external noreferrer"
@@ -20,7 +21,7 @@ const Button: FC<{
 			)}
 			style={theme !== 'primary' ? ButtonWrapper.style : undefined}>
 			{children}
-		</a>
+		</Link>
 	);
 };
 

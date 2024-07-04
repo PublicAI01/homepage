@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import Link from 'next/link';
 
 import ButtonGroup from '@/app/components/Header/ButtonGroup';
 import headerStyles from '@/app/components/Header/Header.module.css';
@@ -23,7 +24,7 @@ const SideNav = () => {
 						<li
 							key={nav.id}
 							className="text-center list-none">
-							<a
+							<Link
 								className="text-base font-semibold text-white size-full block py-4"
 								href={`/#${nav.id}`}
 								onClick={() => {
@@ -32,7 +33,7 @@ const SideNav = () => {
 										?.click();
 								}}>
 								{nav.label}
-							</a>
+							</Link>
 						</li>
 					))}
 				</ul>
@@ -40,13 +41,13 @@ const SideNav = () => {
 			<ButtonGroup className="w-4/5" />
 			<address className="w-4/5 mt-20 flex items-center gap-4 justify-center">
 				{PLATFORMS.map((item, index) => (
-					<a
+					<Link
 						key={index}
 						href={item.link}
 						target="_blank"
 						rel="external noreferrer">
 						<item.Icon className="size-6 text-g1" />
-					</a>
+					</Link>
 				))}
 			</address>
 		</aside>
