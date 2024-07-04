@@ -27,6 +27,7 @@ const SideNav = () => {
 							<Link
 								className="text-base font-semibold text-white size-full block py-4"
 								href={`/#${nav.id}`}
+								aria-label={`to ${nav.label} section content`}
 								onClick={() => {
 									document
 										.querySelector<HTMLInputElement>(`.${headerStyles.switch}`)
@@ -45,7 +46,8 @@ const SideNav = () => {
 						key={index}
 						href={item.link}
 						target="_blank"
-						rel="external noreferrer">
+						rel="external noreferrer"
+						aria-label={`${item.label} link`}>
 						<item.Icon className="size-6 text-g1" />
 					</Link>
 				))}

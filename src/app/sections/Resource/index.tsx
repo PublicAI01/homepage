@@ -38,9 +38,6 @@ const Resource = () => {
 				].map((item, index) => (
 					<Link
 						key={index}
-						href={item.link}
-						target="_blank"
-						rel="external noreferrer"
 						className={clsx(
 							cardStyles.card,
 							'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors hover:border-white',
@@ -50,6 +47,10 @@ const Resource = () => {
 								'--duration': '0.4',
 							} as CSSProperties
 						}
+						href={item.link}
+						target="_blank"
+						rel="external noreferrer"
+						aria-label={`${item.title} link`}
 						onMouseEnter={(e) => {
 							e.currentTarget.classList.remove('animate-card-flicker');
 						}}

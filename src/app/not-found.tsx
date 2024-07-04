@@ -18,7 +18,8 @@ export default function NotFound() {
 			</p>
 			<Link
 				className="bg-primary rounded-full px-5 h-10 flex items-center justify-center text-white text-base font-normal"
-				href="/">
+				href="/"
+				aria-label="return to homepage">
 				Return Home
 			</Link>
 		</main>

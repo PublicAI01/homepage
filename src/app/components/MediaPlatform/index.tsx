@@ -21,7 +21,8 @@ const MediaPlatform = () => {
 					)}
 					href={item.link}
 					target="_blank"
-					rel="external noreferrer">
+					rel="external noreferrer"
+					aria-label={`${item.label} link`}>
 					<item.Icon className="transition-colors rounded-full size-8 md:size-9 text-g1 hover:text-white" />
 					<p className="absolute text-2xl leading-6 -translate-x-full -translate-y-1/2 md:leading-9 md:text-4xl -left-2 text-g1 top-1/2">
 						{item.label}

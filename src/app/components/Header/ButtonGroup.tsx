@@ -14,22 +14,24 @@ const ButtonGroup: FC<{ className?: string }> = ({ className }) => {
 			)}>
 			<Link
 				className="relative px-4 py-2 text-base font-semibold rounded text-g1 max-md:w-28 text-center"
-				role="button"
-				href="/products"
 				style={{
 					background: `url(${BORDER})`,
-				}}>
+				}}
+				role="button"
+				href="/products"
+				aria-label="to products page">
 				Products
 			</Link>
 			<Link
 				className="relative px-4 py-2 text-base font-semibold text-black rounded max-md:w-28 text-center"
+				style={{
+					background: `url(${BORDER_WITH_WHITE_BACKGROUND})`,
+				}}
 				role="button"
 				href={DOCS_LINK}
 				target="_blank"
 				rel="external noreferrer"
-				style={{
-					background: `url(${BORDER_WITH_WHITE_BACKGROUND})`,
-				}}>
+				aria-label="to documents website">
 				Docs
 			</Link>
 		</div>

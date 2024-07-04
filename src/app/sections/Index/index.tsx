@@ -60,10 +60,15 @@ const Index = () => {
 					Enable Every Human: Contribute to AI and Share the Benefits.
 				</h2>
 				<div className="flex flex-col items-center justify-center gap-5 md:gap-11 md:flex-row">
-					<Button href={CHROME_EXTENSION_LINK}>Download Data Hunter</Button>
 					<Button
+						href={CHROME_EXTENSION_LINK}
+						ariaLabel="to download data hunter chrome extension">
+						Download Data Hunter
+					</Button>
+					<Button
+						theme="primary"
 						href={PUBLIC_AI_DATA_HUNTER_LINK}
-						theme="primary">
+						ariaLabel="to data hub website">
 						Launch Data Hub
 					</Button>
 				</div>

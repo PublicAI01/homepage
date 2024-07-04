@@ -76,7 +76,9 @@ const Header = () => {
 				style={{
 					height: 'var(--header-height)',
 				}}>
-				<Link href="/">
+				<Link
+					href="/"
+					aria-label="return to homepage">
 					<Image
 						className="w-auto h-8"
 						src={publicai}
@@ -98,7 +100,8 @@ const Header = () => {
 								)}>
 								<Link
 									className="text-base font-semibold text-white"
-									href={`/#${nav.id}`}>
+									href={`/#${nav.id}`}
+									aria-label={`to ${nav.label} section content`}>
 									{nav.label}
 								</Link>
 							</li>
