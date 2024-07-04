@@ -61,9 +61,9 @@ const DataHub = () => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
 						<item.Icon className="size-9 md:size-11" />
-						<h6 className="my-2 md:my-4 text-xl font-bold transition-colors">
+						<h4 className="my-2 md:my-4 text-xl font-bold transition-colors">
 							{item.title}
-						</h6>
+						</h4>
 						<p className="text-xs font-medium transition-colors">
 							{item.content}
 						</p>

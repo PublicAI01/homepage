@@ -59,9 +59,9 @@ const DataAPISuite = () => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
 						<item.Icon className="size-10 md:size-16" />
-						<h6 className="my-2 md:my-4 text-lg md:text-xl font-bold transition-colors">
+						<h5 className="my-2 md:my-4 text-lg md:text-xl font-bold transition-colors">
 							{item.title}
-						</h6>
+						</h5>
 						<p className="text-sm md:text-xs font-medium text-center transition-colors">
 							{item.content}
 						</p>

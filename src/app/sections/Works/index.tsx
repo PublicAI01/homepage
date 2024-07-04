@@ -18,20 +18,20 @@ const Works = () => {
 			className="py-6 bg-black max-md:px-4"
 			title="How it works"
 			useMobileContainerWidth={false}>
-			<h6 className="text-lg md:text-2xl font-bold text-white my-6 md:my-9 text-center">
+			<h3 className="text-lg md:text-2xl font-bold text-white my-6 md:my-9 text-center">
 				<b className={styles.slogan}>PublicAI</b>
 				<b className={styles.slogan}>&nbsp;Consensus RLHF</b>
 				<b className={styles.slogan}>&nbsp;Loss Function</b>
-			</h6>
+			</h3>
 			<Image
 				className="md:w-2/3 w-full h-auto"
 				src={consensusFn}
 				alt="PublicAI consensus RLHF loss function"
 			/>
-			<h6 className="text-lg md:text-2xl text-center font-bold text-white my-6 md:my-9">
+			<h3 className="text-lg md:text-2xl text-center font-bold text-white my-6 md:my-9">
 				<p className={styles.slogan}>Reward</p>
 				<p className={styles.slogan}>&nbsp;Function</p>
-			</h6>
+			</h3>
 			<Image
 				className="md:w-1/3 w-full h-auto"
 				src={rewardFn}

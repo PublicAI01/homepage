@@ -1,23 +1,39 @@
-.card svg {
-	color: #fff;
-}
+.card {
+	& svg {
+		color: #fff;
+	}
 
-.card h6 {
-	color: #fff;
-}
+	& h3,
+	& h4,
+	& h5,
+	& strong,
+	& p {
+		&:not(:last-child) {
+			color: #fff;
+		}
 
-.card p {
-	color: #e6e6e6;
-}
+		&:last-child {
+			color: #e6e6e6;
+		}
+	}
 
-.card:hover svg {
-	color: #000;
-}
+	&:hover {
+		& svg {
+			color: #000;
+		}
 
-.card:hover h6 {
-	color: #000;
-}
+		& h3,
+		& h4,
+		& h5,
+		& strong,
+		& p {
+			&:not(:last-child) {
+				color: #000;
+			}
 
-.card:hover p {
-	color: #000;
+			&:last-child {
+				color: #000;
+			}
+		}
+	}
 }

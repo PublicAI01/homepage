@@ -54,9 +54,9 @@ const VectorDatabase = () => {
 								e.currentTarget.classList.add('animate-card-flicker');
 							}}>
 							<item.Icon className="size-11" />
-							<h6 className="mt-4 text-xl font-bold transition-colors">
+							<h5 className="mt-4 text-xl font-bold transition-colors">
 								{item.title}
-							</h6>
+							</h5>
 						</article>
 					))}
 				</div>

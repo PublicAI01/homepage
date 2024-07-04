@@ -18,7 +18,7 @@ const Resource = () => {
 		<SectionWrapper
 			title="Resource"
 			anchorId="resource">
-			<section className="flex flex-col items-center justify-center w-full mt-6 md:mt-16 gap-6 md:gap-28 md:flex-row">
+			<section className="flex flex-col items-center justify-center w-full mt-6 md:mt-16 gap-6 md:gap-28 md:flex-row px-20">
 				{[
 					{
 						Icon: productGuideline,
@@ -57,16 +57,16 @@ const Resource = () => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
 						<item.Icon className="transition-colors size-10" />
-						<h6 className="mt-6 text-xl font-bold transition-colors">
+						<h3 className="mt-6 text-xl font-bold transition-colors">
 							{item.title}
-						</h6>
+						</h3>
 					</Link>
 				))}
 			</section>
 			<div
 				className={clsx(
 					styles['youtube-container'],
-					'bg-b3 rounded-xl overflow-hidden mt-8 md:mt-36 h-80 md:h-[600px]',
+					'bg-b3 rounded-xl overflow-hidden mt-8 md:mt-28 h-80 md:h-[600px]',
 				)}>
 				<YouTubeEmbed videoid="i0U8uaUrILs" />
 			</div>

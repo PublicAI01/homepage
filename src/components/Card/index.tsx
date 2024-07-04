@@ -43,7 +43,7 @@ const Card: FC<{ item: CardItem }> = ({ item }) => {
 				e.currentTarget.classList.add('animate-card-flicker');
 			}}>
 			<Icon className="size-11" />
-			<h6 className="my-4 text-xl font-bold transition-colors">{item.title}</h6>
+			<h4 className="my-4 text-xl font-bold transition-colors">{item.title}</h4>
 			<p className="text-xs font-medium transition-colors">{item.content}</p>
 		</article>
 	);
