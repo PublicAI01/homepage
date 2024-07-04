@@ -12,7 +12,9 @@ import SectionWrapper from '@/components/SectionWrapper';
 
 const DataHub = () => {
 	return (
-		<SectionWrapper title="Data Hub">
+		<SectionWrapper
+			className="md:mt-40"
+			title="Data Hub">
 			<h3 className="text-sm md:text-lg font-medium text-center text-g1 mt-7">
 				Data Hub empowers users to earn tokens by validating datasets,{' '}
 				<b className={clsx(styles.typing, 'font-bold text-p1 block mx-auto')}>

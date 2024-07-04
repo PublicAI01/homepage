@@ -42,7 +42,7 @@ const Partners = () => {
 				aria-hidden
 				className={clsx(
 					styles['animate-shadow'],
-					'bg-primary/20 absolute inset-y-0 w-1/4 blur-[96px]',
+					'bg-primary/20 absolute md:inset-y-0 max-md:inset-x-0 md:w-1/4 max-md:h-1/6 blur-[96px]',
 				)}></div>
 			{[
 				{

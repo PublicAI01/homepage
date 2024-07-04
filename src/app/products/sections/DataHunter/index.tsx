@@ -12,7 +12,9 @@ import SectionWrapper from '@/components/SectionWrapper';
 
 const DataHunter = () => {
 	return (
-		<SectionWrapper title="Data Hunter">
+		<SectionWrapper
+			className="md:mt-40"
+			title="Data Hunter">
 			<h3 className="md:text-lg text-base font-medium text-g1 mt-7 text-center">
 				Data Hunter empowers users to instantly contribute valuable data and
 				earn rewards{' '}

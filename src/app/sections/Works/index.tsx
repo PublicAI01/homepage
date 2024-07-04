@@ -15,7 +15,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 const Works = () => {
 	return (
 		<SectionWrapper
-			className="py-6 bg-black"
+			className="py-6 bg-black max-md:px-4"
 			title="How it works"
 			useMobileContainerWidth={false}>
 			<h6 className="text-lg md:text-2xl font-bold text-white my-6 md:my-9 text-center">
@@ -24,7 +24,7 @@ const Works = () => {
 				<b className={styles.slogan}>&nbsp;Loss Function</b>
 			</h6>
 			<Image
-				className="md:w-2/3 w-4/5 h-auto"
+				className="md:w-2/3 w-full h-auto"
 				src={consensusFn}
 				alt="PublicAI consensus RLHF loss function"
 			/>
@@ -33,11 +33,11 @@ const Works = () => {
 				<p className={styles.slogan}>&nbsp;Function</p>
 			</h6>
 			<Image
-				className="md:w-2/3 w-4/5 h-auto"
+				className="md:w-1/3 w-full h-auto"
 				src={rewardFn}
 				alt="reward function"
 			/>
-			<section className="flex flex-col md:items-center justify-between my-16 md:flex-row">
+			<section className="flex flex-col md:items-center justify-between my-16 max-md:mb-6 max-md:mt-12 md:flex-row">
 				<_Block
 					className="flex-1"
 					image={requesters}

@@ -11,3 +11,15 @@
 		left: 100%;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	@keyframes move {
+		0% {
+			top: -16.666667%;
+		}
+
+		100% {
+			top: 100%;
+		}
+	}
+}

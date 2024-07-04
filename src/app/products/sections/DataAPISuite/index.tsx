@@ -12,7 +12,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 const DataAPISuite = () => {
 	return (
 		<SectionWrapper
-			className="md:mt-20"
+			className="md:mt-40"
 			title="Data API Suite">
 			<h3 className="mt-10 mb-2 text-xl md:text-3xl font-bold text-center text-white">
 				Custom API Suite for Business
