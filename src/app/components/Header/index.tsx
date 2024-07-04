@@ -37,7 +37,10 @@ const Header = () => {
 			return;
 		}
 
-		ioRef.current = new IntersectionObserver(onNavActive, { threshold: 0.1 });
+		ioRef.current = new IntersectionObserver(onNavActive, {
+			threshold: 0.3,
+			rootMargin: '66px 0px 0px 0px',
+		});
 
 		for (let index = 0; index < NAV_LIST.length; index++) {
 			const el = document.querySelector(`#${NAV_LIST[index].id}`);
