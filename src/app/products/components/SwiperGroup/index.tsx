@@ -18,75 +18,75 @@ import HunterPreview2 from '@/assets/image/hunter-preview-2.png';
 import SectionWrapper from '@/components/SectionWrapper';
 
 const SwiperGroup = () => {
-	return (
-		<SectionWrapper
-			className="gap-12 lg:flex-row"
-			marginTop={false}>
-			<SwiperCard
-				title="Data Hunter"
-				subTitle="Seamless Data Collection"
-				content="Collect, contribute, and empower AI learning instantly with simple click."
-				images={[HunterPreview1, HunterPreview2]}
-			/>
+  return (
+    <SectionWrapper
+      className="gap-12 lg:flex-row"
+      marginTop={false}>
+      <SwiperCard
+        title="Data Hunter"
+        subTitle="Seamless Data Collection"
+        content="Collect, contribute, and empower AI learning instantly with simple click."
+        images={[HunterPreview1, HunterPreview2]}
+      />
 
-			<SwiperCard
-				title="Data Hub"
-				subTitle="Collaborative AI Validation"
-				content="Participate in consensus-driven validation, enhance AI accuracy, refine AI models and earn rewards."
-				images={[HubPreview1, HubPreview2]}
-			/>
-		</SectionWrapper>
-	);
+      <SwiperCard
+        title="Data Hub"
+        subTitle="Collaborative AI Validation"
+        content="Participate in consensus-driven validation, enhance AI accuracy, refine AI models and earn rewards."
+        images={[HubPreview1, HubPreview2]}
+      />
+    </SectionWrapper>
+  );
 };
 
 const SwiperCard: FC<{
-	title: string;
-	subTitle: string;
-	content: string;
-	images: StaticImageData[];
+  title: string;
+  subTitle: string;
+  content: string;
+  images: StaticImageData[];
 }> = ({ title, subTitle, content, images }) => {
-	return (
-		<article className="lg:p-6 py-5 px-4 border border-white rounded-2xl bg-b3/65 lg:w-[calc(50%_-_1.5rem)] self-stretch flex flex-col justify-between">
-			<div>
-				<h3 className="text-2xl font-semibold text-white md:font-bold">
-					{title}
-				</h3>
-				<h4 className="text-2xl font-semibold text-white md:font-bold">
-					{subTitle}
-				</h4>
-				<p className="text-g1 my-3 text-base font-medium">{content}</p>
-			</div>
-			<Swiper
-				className={clsx('max-w-full', styles.swiper)}
-				slidesPerView={1}
-				spaceBetween={0}
-				mousewheel
-				navigation
-				pagination={{
-					clickable: true,
-				}}
-				modules={[Mousewheel, Navigation, Pagination]}
-				style={
-					{
-						'--swiper-navigation-color': '#fff',
-						'--swiper-pagination-color': '#fff',
-						'--swiper-pagination-bottom': '0',
-						'--swiper-pagination-bullet-inactive-color': '#fff',
-						'--swiper-pagination-bullet-inactive-opacity': '0.5',
-					} as React.CSSProperties
-				}>
-				{images.map((item, index) => (
-					<SwiperSlide key={index}>
-						<Image
-							className="border-b4 mx-auto w-auto h-48 mb-6 rounded-xl border md:h-96"
-							src={item}
-							alt={`data hunter preview ${index}`}
-						/>
-					</SwiperSlide>
-				))}
-			</Swiper>
-		</article>
-	);
+  return (
+    <article className="lg:p-6 py-5 px-4 border border-white rounded-2xl bg-b3/65 lg:w-[calc(50%_-_1.5rem)] self-stretch flex flex-col justify-between">
+      <div>
+        <h3 className="text-2xl font-semibold text-white md:font-bold">
+          {title}
+        </h3>
+        <h4 className="text-2xl font-semibold text-white md:font-bold">
+          {subTitle}
+        </h4>
+        <p className="text-g1 my-3 text-base font-medium">{content}</p>
+      </div>
+      <Swiper
+        className={clsx('max-w-full', styles.swiper)}
+        slidesPerView={1}
+        spaceBetween={0}
+        mousewheel
+        navigation
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Mousewheel, Navigation, Pagination]}
+        style={
+          {
+            '--swiper-navigation-color': '#fff',
+            '--swiper-pagination-color': '#fff',
+            '--swiper-pagination-bottom': '0',
+            '--swiper-pagination-bullet-inactive-color': '#fff',
+            '--swiper-pagination-bullet-inactive-opacity': '0.5',
+          } as React.CSSProperties
+        }>
+        {images.map((item, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              className="border-b4 mx-auto w-auto h-48 mb-6 rounded-xl border md:h-96"
+              src={item}
+              alt={`data hunter preview ${index}`}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </article>
+  );
 };
 
 export default SwiperGroup;

@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 :root {
-	--header-height: 4.125rem;
-	--mobile-container-width: calc(100vw - 2rem);
+  --header-height: 4.125rem;
+  --mobile-container-width: calc(100vw - 2rem);
 }
 
 @layer components {
-	.frosted-card {
-		@apply border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur;
-	}
+  .frosted-card {
+    @apply border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur;
+  }
 }
 
 @layer utilities {
-	.text-balance {
-		text-wrap: balance;
-	}
+  .text-balance {
+    text-wrap: balance;
+  }
 }

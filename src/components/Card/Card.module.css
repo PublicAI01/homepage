@@ -1,5 +1,5 @@
 .card svg {
-	color: #fff;
+  color: #fff;
 }
 
 .card h3:not(:last-child),
@@ -7,7 +7,7 @@
 .card h5:not(:last-child),
 .card strong:not(:last-child),
 .card p:not(:last-child) {
-	color: #fff;
+  color: #fff;
 }
 
 .card h3:last-child,
@@ -15,7 +15,7 @@
 .card h5:last-child,
 .card strong:last-child,
 .card p:last-child {
-	color: #e6e6e6;
+  color: #e6e6e6;
 }
 
 .card:hover svg,
@@ -24,5 +24,5 @@
 .card:hover h5,
 .card:hover strong,
 .card:hover p {
-	color: #000;
+  color: #000;
 }

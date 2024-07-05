@@ -4,26 +4,26 @@ const DOCS_LINK = 'https://docs.publicai.io/publicai-documentation';
 const DISCORD_LINK = 'https://discord.com/invite/WbmwUNyrhs';
 const MEDIUM_LINK = 'https://medium.com/@contact_88042';
 const CHROME_EXTENSION_LINK =
-	'https://chromewebstore.google.com/detail/icbbdjflabjciapbohkkkmaangfjaanl';
+  'https://chromewebstore.google.com/detail/icbbdjflabjciapbohkkkmaangfjaanl';
 const PUBLIC_AI_DATA_HUNTER_LINK = 'https://beta.publicai.io';
 const GITHUB_LINK = 'https://github.com/PublicAI01';
 const DUNE_LINK = 'https://dune.com/publicaiweb3/publicai-dashboard';
 const NAV_LIST = [
-	{ id: 'home', label: 'Home' },
-	{ id: 'partners', label: 'Partners' },
-	{ id: 'resource', label: 'Resource' },
-	{ id: 'faq', label: 'FAQ' },
+  { id: 'home', label: 'Home' },
+  { id: 'partners', label: 'Partners' },
+  { id: 'resource', label: 'Resource' },
+  { id: 'faq', label: 'FAQ' },
 ];
 
 export {
-	CHROME_EXTENSION_LINK,
-	DISCORD_LINK,
-	DOCS_LINK,
-	DUNE_LINK,
-	GITHUB_LINK,
-	MEDIUM_LINK,
-	NAV_LIST,
-	PUBLIC_AI_DATA_HUNTER_LINK,
-	TELEGRAM_LINK,
-	TWITTER_LINK,
+  CHROME_EXTENSION_LINK,
+  DISCORD_LINK,
+  DOCS_LINK,
+  DUNE_LINK,
+  GITHUB_LINK,
+  MEDIUM_LINK,
+  NAV_LIST,
+  PUBLIC_AI_DATA_HUNTER_LINK,
+  TELEGRAM_LINK,
+  TWITTER_LINK,
 };

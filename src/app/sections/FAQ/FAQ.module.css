@@ -1,65 +1,65 @@
 .collapsible {
-	--animation-duration: 0.25s;
-	--indicator-size: 2.25rem;
-	--padding-horizontal: 0.75rem;
-	--padding-vertical: 1rem;
-	--line-height: 1.75rem;
+  --animation-duration: 0.25s;
+  --indicator-size: 2.25rem;
+  --padding-horizontal: 0.75rem;
+  --padding-vertical: 1rem;
+  --line-height: 1.75rem;
 }
 
 .collapsible details + div {
-	display: grid;
-	transition: grid-template-rows ease-in-out var(--animation-duration);
-	overflow: hidden;
-	grid-template-rows: 0fr;
-	opacity: 0;
+  display: grid;
+  transition: grid-template-rows ease-in-out var(--animation-duration);
+  overflow: hidden;
+  grid-template-rows: 0fr;
+  opacity: 0;
 }
 
 .collapsible summary {
-	position: relative;
-	display: flex;
-	padding: var(--padding-vertical)
-		calc(var(--indicator-size) + var(--padding-horizontal))
-		var(--padding-vertical) var(--padding-horizontal);
+  position: relative;
+  display: flex;
+  padding: var(--padding-vertical)
+    calc(var(--indicator-size) + var(--padding-horizontal))
+    var(--padding-vertical) var(--padding-horizontal);
 }
 
 .collapsible summary::marker {
-	font-size: 0;
+  font-size: 0;
 }
 
 .collapsible summary::-moz-list-bullet {
-	font-size: 0;
+  font-size: 0;
 }
 
 .collapsible summary::-webkit-details-marker {
-	display: none;
+  display: none;
 }
 
 .collapsible summary::after {
-	content: '';
-	position: absolute;
-	background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgZmlsbC1vcGFjaXR5PSIuMiIgY3g9IjE4IiBjeT0iMTgiIHI9IjE4Ii8+PHBhdGggZD0iTTE0LjM2MiAyNC4xNjlhMS4yMzUgMS4yMzUgMCAwIDEgMC0xLjc0N2w0LjY1Ny00LjY1Ny00LjY1Ny00LjY1N2ExLjIzNSAxLjIzNSAwIDEgMSAxLjc0Ni0xLjc0Nmw1LjUzIDUuNTNhMS4yMzUgMS4yMzUgMCAwIDEgMCAxLjc0NmwtNS41MyA1LjUzYTEuMjM1IDEuMjM1IDAgMCAxLTEuNzQ2IDB6Ii8+PC9nPjwvc3ZnPg==')
-		no-repeat;
-	background-size: 100% 100%;
-	width: var(--indicator-size);
-	height: var(--indicator-size);
-	top: calc(
-		(var(--line-height) + var(--padding-vertical) * 2 - var(--indicator-size)) /
-			2
-	);
-	right: var(--padding-horizontal);
-	transition: transform ease-in-out var(--animation-duration);
+  content: '';
+  position: absolute;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgZmlsbC1vcGFjaXR5PSIuMiIgY3g9IjE4IiBjeT0iMTgiIHI9IjE4Ii8+PHBhdGggZD0iTTE0LjM2MiAyNC4xNjlhMS4yMzUgMS4yMzUgMCAwIDEgMC0xLjc0N2w0LjY1Ny00LjY1Ny00LjY1Ny00LjY1N2ExLjIzNSAxLjIzNSAwIDEgMSAxLjc0Ni0xLjc0Nmw1LjUzIDUuNTNhMS4yMzUgMS4yMzUgMCAwIDEgMCAxLjc0NmwtNS41MyA1LjUzYTEuMjM1IDEuMjM1IDAgMCAxLTEuNzQ2IDB6Ii8+PC9nPjwvc3ZnPg==')
+    no-repeat;
+  background-size: 100% 100%;
+  width: var(--indicator-size);
+  height: var(--indicator-size);
+  top: calc(
+    (var(--line-height) + var(--padding-vertical) * 2 - var(--indicator-size)) /
+      2
+  );
+  right: var(--padding-horizontal);
+  transition: transform ease-in-out var(--animation-duration);
 }
 
 .collapsible details[open] summary::after {
-	transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .collapsible details[open] + div {
-	padding: 0 var(--padding-horizontal) var(--padding-vertical);
-	grid-template-rows: 1fr;
-	opacity: 1;
+  padding: 0 var(--padding-horizontal) var(--padding-vertical);
+  grid-template-rows: 1fr;
+  opacity: 1;
 }
 
 .collapsible details + div p {
-	min-height: 0;
+  min-height: 0;
 }

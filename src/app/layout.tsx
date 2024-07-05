@@ -10,39 +10,39 @@ import MediaPlatform from '@/app/components/MediaPlatform';
 import SideNav from '@/app/components/SideNav';
 
 const jamjuree = Bai_Jamjuree({
-	weight: ['200', '300', '400', '500', '600', '700'],
-	display: 'swap',
-	subsets: ['latin'],
-	variable: '--font-jamjuree',
-	adjustFontFallback: false,
+  weight: ['200', '300', '400', '500', '600', '700'],
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-jamjuree',
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
-	title: 'PublicAI - Web3 AI Data Infrastructure',
-	description:
-		'Web3 based Train-To-Earn network enables every human to upgrade AI and earn rewards by completing data tasks.',
-	keywords:
-		'Public AI, data annotation, label to earn, decentralized, AI companies, training data, data labeling',
+  title: 'PublicAI - Web3 AI Data Infrastructure',
+  description:
+    'Web3 based Train-To-Earn network enables every human to upgrade AI and earn rewards by completing data tasks.',
+  keywords:
+    'Public AI, data annotation, label to earn, decentralized, AI companies, training data, data labeling',
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html
-			lang="en"
-			className="scroll-smooth scrollbar-none scroll-pt-[var(--header-height)] md:scroll-pt-20">
-			<body className={clsx(jamjuree.className, 'bg-b1')}>
-				<div className="overflow-hidden relative">
-					<Header />
-					<MediaPlatform />
-					<SideNav />
-					{children}
-				</div>
-			</body>
-			<GoogleAnalytics gaId="G-JMRE2DXFNN" />
-		</html>
-	);
+  return (
+    <html
+      lang="en"
+      className="scroll-smooth scrollbar-none scroll-pt-[var(--header-height)] md:scroll-pt-20">
+      <body className={clsx(jamjuree.className, 'bg-b1')}>
+        <div className="overflow-hidden relative">
+          <Header />
+          <MediaPlatform />
+          <SideNav />
+          {children}
+        </div>
+      </body>
+      <GoogleAnalytics gaId="G-JMRE2DXFNN" />
+    </html>
+  );
 }

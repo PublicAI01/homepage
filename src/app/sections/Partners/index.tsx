@@ -33,91 +33,91 @@ import SectionWrapper from '@/components/SectionWrapper';
 import { DATA_CARD_BORDER_WITH_ALPHA } from '@/constant/border';
 
 const Partners = () => {
-	return (
-		<SectionWrapper
-			className={clsx(aboutStyles['animate-border'], 'py-7 lg:px-24')}
-			title="Partners"
-			anchorId="partners">
-			<div
-				aria-hidden
-				className={clsx(
-					styles['animate-shadow'],
-					'bg-primary/20 blur-[96px] absolute max-md:h-1/6 max-md:inset-x-0 md:w-1/4 md:inset-y-0',
-				)}></div>
-			{[
-				{
-					title: 'Trusted by Leading Investors',
-					children: [
-						{ image: IOBCCapital, name: 'IOBC Capital' },
-						{ image: ForesightVentures, name: 'Foresight Ventures' },
-						{ image: SolanaFoundation, name: 'Solana Foundation' },
-					],
-				},
-				{
-					title: 'Trusted by Leading AI Industry Partners',
-					children: [
-						{ image: Midjourney, name: 'Midjourney' },
-						{ image: AmazonMechaincalTurk, name: 'Amazon Mechaincal Turk' },
-						{ image: HuggingFace, name: 'HuggingFace' },
-						{ image: StabilityAI, name: 'Stability.ai' },
-						{ image: AbakaAI, name: 'Abaka AI' },
-						{ image: StanfordUniversity, name: 'Stanford University' },
-					],
-				},
-				{
-					title: 'Trusted by Leading Web3 Industry Partners',
-					children: [
-						{ image: ZeroXScope, name: '0x Scope' },
-						{ image: MantaNetwork, name: 'Manta Network' },
-						{ image: Marlin, name: 'Marlin' },
-						{ image: AgentLayer, name: 'Agent Layer' },
-						{ image: Glacier, name: 'Glacier' },
-						{ image: Combo, name: 'Combo' },
-						{ image: ZeroG, name: '0G' },
-						{ image: Morph, name: 'Morph' },
-						{ image: Nesa, name: 'Nesa' },
-						{ image: FlockIO, name: 'Flock IO' },
-						{ image: Nimble, name: 'Nimble' },
-						{ image: IONet, name: 'IO.Net' },
-					],
-				},
-				{
-					title: 'Featured by Leading Media',
-					children: [
-						{ image: Bloomberg, name: 'Bloomberg' },
-						{ image: TheBlock, name: 'TheBlock' },
-						{ image: CoinDesk, name: 'CoinDesk' },
-						{ image: Cointelegraph, name: 'Cointelegraph' },
-						{ image: Decrypt, name: 'Decrypt' },
-					],
-				},
-			].map((group, index) => (
-				<section
-					key={index}
-					className="w-full flex flex-col px-4 mt-10 lg:mb-14 md:px-6">
-					<h3 className="mb-6 text-base font-semibold text-white md:text-xl">
-						{group.title}
-					</h3>
-					<div className="grid grid-cols-2 gap-4 lg:gap-x-28 md:grid-cols-3 md:gap-6">
-						{group.children.map((item, index) => (
-							<article
-								key={index}
-								className="py-2"
-								style={{
-									background: `url(${DATA_CARD_BORDER_WITH_ALPHA})`,
-								}}>
-								<Image
-									className="mx-auto w-auto h-7 lg:h-11 md:h-9"
-									src={item.image}
-									alt={item.name}
-								/>
-							</article>
-						))}
-					</div>
-				</section>
-			))}
-		</SectionWrapper>
-	);
+  return (
+    <SectionWrapper
+      className={clsx(aboutStyles['animate-border'], 'py-7 lg:px-24')}
+      title="Partners"
+      anchorId="partners">
+      <div
+        aria-hidden
+        className={clsx(
+          styles['animate-shadow'],
+          'bg-primary/20 blur-[96px] absolute max-md:h-1/6 max-md:inset-x-0 md:w-1/4 md:inset-y-0',
+        )}></div>
+      {[
+        {
+          title: 'Trusted by Leading Investors',
+          children: [
+            { image: IOBCCapital, name: 'IOBC Capital' },
+            { image: ForesightVentures, name: 'Foresight Ventures' },
+            { image: SolanaFoundation, name: 'Solana Foundation' },
+          ],
+        },
+        {
+          title: 'Trusted by Leading AI Industry Partners',
+          children: [
+            { image: Midjourney, name: 'Midjourney' },
+            { image: AmazonMechaincalTurk, name: 'Amazon Mechaincal Turk' },
+            { image: HuggingFace, name: 'HuggingFace' },
+            { image: StabilityAI, name: 'Stability.ai' },
+            { image: AbakaAI, name: 'Abaka AI' },
+            { image: StanfordUniversity, name: 'Stanford University' },
+          ],
+        },
+        {
+          title: 'Trusted by Leading Web3 Industry Partners',
+          children: [
+            { image: ZeroXScope, name: '0x Scope' },
+            { image: MantaNetwork, name: 'Manta Network' },
+            { image: Marlin, name: 'Marlin' },
+            { image: AgentLayer, name: 'Agent Layer' },
+            { image: Glacier, name: 'Glacier' },
+            { image: Combo, name: 'Combo' },
+            { image: ZeroG, name: '0G' },
+            { image: Morph, name: 'Morph' },
+            { image: Nesa, name: 'Nesa' },
+            { image: FlockIO, name: 'Flock IO' },
+            { image: Nimble, name: 'Nimble' },
+            { image: IONet, name: 'IO.Net' },
+          ],
+        },
+        {
+          title: 'Featured by Leading Media',
+          children: [
+            { image: Bloomberg, name: 'Bloomberg' },
+            { image: TheBlock, name: 'TheBlock' },
+            { image: CoinDesk, name: 'CoinDesk' },
+            { image: Cointelegraph, name: 'Cointelegraph' },
+            { image: Decrypt, name: 'Decrypt' },
+          ],
+        },
+      ].map((group, index) => (
+        <section
+          key={index}
+          className="w-full flex flex-col px-4 mt-10 lg:mb-14 md:px-6">
+          <h3 className="mb-6 text-base font-semibold text-white md:text-xl">
+            {group.title}
+          </h3>
+          <div className="grid grid-cols-2 gap-4 lg:gap-x-28 md:grid-cols-3 md:gap-6">
+            {group.children.map((item, index) => (
+              <article
+                key={index}
+                className="py-2"
+                style={{
+                  background: `url(${DATA_CARD_BORDER_WITH_ALPHA})`,
+                }}>
+                <Image
+                  className="mx-auto w-auto h-7 lg:h-11 md:h-9"
+                  src={item.image}
+                  alt={item.name}
+                />
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </SectionWrapper>
+  );
 };
 
 export default Partners;

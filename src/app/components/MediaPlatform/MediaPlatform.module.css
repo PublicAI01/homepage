@@ -1,7 +1,7 @@
 .platform p {
-	display: none;
+  display: none;
 }
 
 .platform:hover p {
-	display: inline-block;
+  display: inline-block;
 }

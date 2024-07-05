@@ -9,21 +9,21 @@ import Works from '@/app/sections/Works';
 import Resource from './sections/Resource';
 
 export default function Home() {
-	return (
-		<main
-			className="relative pb-32"
-			style={{
-				marginTop: 'var(--header-height)',
-			}}>
-			<GridPattern className="-z-1" />
+  return (
+    <main
+      className="relative pb-32"
+      style={{
+        marginTop: 'var(--header-height)',
+      }}>
+      <GridPattern className="-z-1" />
 
-			<Index />
-			<About />
-			<Works />
-			<DataPanel />
-			<Partners />
-			<Resource />
-			<FAQ />
-		</main>
-	);
+      <Index />
+      <About />
+      <Works />
+      <DataPanel />
+      <Partners />
+      <Resource />
+      <FAQ />
+    </main>
+  );
 }
