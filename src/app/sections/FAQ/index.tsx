@@ -64,7 +64,7 @@ const Collapsible: FC<{ item: FAQItem }> = ({ item }) => {
 		<article
 			className={clsx(
 				styles.collapsible,
-				'rounded-xl cursor-pointer bg-b3 hover:bg-primary',
+				'rounded-xl cursor-pointer transition-colors border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur hover:bg-primary',
 			)}>
 			<details>
 				<summary className="text-lg md:text-xl font-medium text-white">

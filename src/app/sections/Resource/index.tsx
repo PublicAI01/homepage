@@ -18,7 +18,7 @@ const Resource = () => {
 		<SectionWrapper
 			title="Resource"
 			anchorId="resource">
-			<section className="flex flex-col items-center justify-center w-full mt-6 md:mt-16 gap-6 md:gap-28 md:flex-row px-20">
+			<section className="flex flex-col items-center justify-center w-full mt-6 md:mt-16 gap-6 md:gap-28 md:flex-row md:px-20">
 				{[
 					{
 						Icon: productGuideline,
@@ -67,7 +67,7 @@ const Resource = () => {
 			<div
 				className={clsx(
 					styles['youtube-container'],
-					'bg-b3 rounded-xl overflow-hidden mt-8 md:mt-28 h-80 md:h-[600px]',
+					'bg-b3 rounded-xl overflow-hidden mt-8 md:mt-28 h-auto md:h-[600px]',
 				)}>
 				<YouTubeEmbed videoid="i0U8uaUrILs" />
 			</div>
