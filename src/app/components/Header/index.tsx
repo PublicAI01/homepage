@@ -102,11 +102,11 @@ const Header = () => {
 							<li
 								key={index}
 								className={clsx(
-									'z-10 w-32 py-2 text-center list-none',
+									'z-10 w-32 text-center list-none',
 									currentActiveNav === nav.id && styles.current,
 								)}>
 								<Link
-									className="text-base font-semibold text-white"
+									className="py-2 block text-base font-semibold text-white"
 									href={`/#${nav.id}`}
 									aria-label={`to ${nav.label} section content`}>
 									{nav.label}
