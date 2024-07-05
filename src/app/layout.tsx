@@ -14,6 +14,7 @@ const jamjuree = Bai_Jamjuree({
 	display: 'swap',
 	subsets: ['latin'],
 	variable: '--font-jamjuree',
+	adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function RootLayout({
 			lang="en"
 			className="scroll-smooth scrollbar-none scroll-pt-[var(--header-height)] md:scroll-pt-20">
 			<body className={clsx(jamjuree.className, 'bg-b1')}>
-				<div className="relative overflow-hidden">
+				<div className="overflow-hidden relative">
 					<Header />
 					<MediaPlatform />
 					<SideNav />
