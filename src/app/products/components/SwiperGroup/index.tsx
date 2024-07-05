@@ -15,10 +15,13 @@ import HubPreview1 from '@/assets/image/hub-preview-1.png';
 import HubPreview2 from '@/assets/image/hub-preview-2.png';
 import HunterPreview1 from '@/assets/image/hunter-preview-1.png';
 import HunterPreview2 from '@/assets/image/hunter-preview-2.png';
+import SectionWrapper from '@/components/SectionWrapper';
 
 const SwiperGroup = () => {
 	return (
-		<section className="container flex items-center gap-12 mx-auto flex-col md:flex-row">
+		<SectionWrapper
+			className="gap-12 lg:flex-row"
+			marginTop={false}>
 			<SwiperCard
 				title="Data Hunter"
 				subTitle="Seamless Data Collection"
@@ -32,7 +35,7 @@ const SwiperGroup = () => {
 				content="Participate in consensus-driven validation, enhance AI accuracy, refine AI models and earn rewards."
 				images={[HubPreview1, HubPreview2]}
 			/>
-		</section>
+		</SectionWrapper>
 	);
 };
 
@@ -43,7 +46,7 @@ const SwiperCard: FC<{
 	images: StaticImageData[];
 }> = ({ title, subTitle, content, images }) => {
 	return (
-		<article className="md:p-6 py-5 px-4 border border-white rounded-2xl bg-b3/65 max-md:mx-auto w-[var(--mobile-container-width)] md:w-[calc(50%_-_1.5rem)] self-stretch flex flex-col justify-between">
+		<article className="lg:p-6 py-5 px-4 border border-white rounded-2xl bg-b3/65 lg:w-[calc(50%_-_1.5rem)] self-stretch flex flex-col justify-between">
 			<div>
 				<h3 className="text-2xl font-semibold md:font-bold text-white">
 					{title}
@@ -54,7 +57,7 @@ const SwiperCard: FC<{
 				<p className="my-3 text-base font-medium text-g1">{content}</p>
 			</div>
 			<Swiper
-				className={clsx('md:max-w-xl max-w-full', styles.swiper)}
+				className={clsx('max-w-full', styles.swiper)}
 				slidesPerView={1}
 				spaceBetween={0}
 				mousewheel

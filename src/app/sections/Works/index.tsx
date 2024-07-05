@@ -24,7 +24,7 @@ const Works = () => {
 				<b className={styles.slogan}>&nbsp;Loss Function</b>
 			</h3>
 			<Image
-				className="md:w-2/3 w-full h-auto"
+				className="md:w-4/5 sm:w-2/3 w-full h-auto"
 				src={consensusFn}
 				alt="PublicAI consensus RLHF loss function"
 			/>
@@ -33,7 +33,7 @@ const Works = () => {
 				<p className={styles.slogan}>&nbsp;Function</p>
 			</h3>
 			<Image
-				className="md:w-1/3 w-full h-auto"
+				className="md:w-2/3 sm:w-1/3 w-full h-auto"
 				src={rewardFn}
 				alt="reward function"
 			/>
@@ -43,7 +43,7 @@ const Works = () => {
 					image={requesters}
 					content="Requesters have tasks they need to be completed"
 				/>
-				<div className="flex h-10 w-20 md:w-28 mb-14 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90">
+				<div className="flex h-6 w-20 md:w-28 md:h-10 mb-14 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90">
 					<Image
 						className={styles['arrow-animate']}
 						src={arrowToRight}
@@ -55,7 +55,7 @@ const Works = () => {
 					image={publicaiOutlined}
 					content="PublicAI Marketplace"
 				/>
-				<div className="flex justify-end w-20 h-10 md:w-28 mb-14 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90">
+				<div className="flex justify-end h-6 w-20 md:w-28 md:h-10 mb-14 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90">
 					<Image
 						className={styles['arrow-animate']}
 						src={arrowToLeft}
@@ -84,7 +84,7 @@ const _Block: FC<{ className?: string; image: string; content: string }> = ({
 				className,
 			)}>
 			<Image
-				className="h-auto w-20 md:w-28"
+				className="h-auto w-16 md:w-28"
 				src={image}
 				alt={content.toLocaleLowerCase()}
 			/>

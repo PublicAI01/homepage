@@ -18,7 +18,7 @@ const SideNav = () => {
 	return (
 		<aside
 			className={clsx(
-				'fixed w-screen transition-all translate-x-full h-screen md:hidden z-20',
+				'fixed w-screen transition-all translate-x-full h-screen lg:hidden z-20',
 				headerStyles['side-nav'],
 			)}
 			style={{
@@ -31,7 +31,7 @@ const SideNav = () => {
 							key={nav.id}
 							className="text-center list-none">
 							<Link
-								className="text-base font-semibold text-white size-full block py-4"
+								className="text-base md:text-xl font-semibold text-white size-full block py-4"
 								href={`/#${nav.id}`}
 								aria-label={`to ${nav.label} section content`}
 								onClick={closeSideNavFn}>
@@ -53,7 +53,7 @@ const SideNav = () => {
 						target="_blank"
 						rel="external noreferrer"
 						aria-label={`${item.label} link`}>
-						<item.Icon className="size-6 text-g1" />
+						<item.Icon className="size-6 md:size-10 text-g1" />
 					</Link>
 				))}
 			</address>

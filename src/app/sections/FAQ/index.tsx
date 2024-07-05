@@ -67,12 +67,12 @@ const Collapsible: FC<{ item: FAQItem }> = ({ item }) => {
 				'rounded-xl cursor-pointer transition-colors border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur hover:bg-primary',
 			)}>
 			<details>
-				<summary className="text-lg md:text-xl font-medium text-white">
+				<summary className="text-lg lg:text-xl font-medium text-white">
 					{item.title}
 				</summary>
 			</details>
 			<div>
-				<p className="text-base md:text-lg font-normal text-white">
+				<p className="text-base lg:text-lg font-normal text-white">
 					{item.content}
 				</p>
 			</div>

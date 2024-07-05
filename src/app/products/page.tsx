@@ -19,7 +19,7 @@ const Products = () => {
 			<GridPattern className="-z-1" />
 
 			<Image
-				className="absolute w-auto opacity-70 h-screen md:h-auto scale-150 md:scale-75 -top-[var(--header-height)] md:-top-80 md:w-4/6 md:inset-x-[16.666667%] -rotate-[25deg] -z-1"
+				className="absolute w-auto opacity-70 h-screen lg:h-auto scale-150 lg:scale-75 -top-[var(--header-height)] md:-top-80 md:w-2/3 md:inset-x-[16.666667%] -rotate-[25deg] -z-1"
 				aria-hidden
 				src={decorativeCone}
 				alt="decorative cone picture"

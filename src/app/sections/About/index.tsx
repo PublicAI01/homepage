@@ -27,7 +27,7 @@ const About = () => {
 				collective skills of a vast, structured workforce to enhance data
 				analysis and speed up the development of machine learning models.
 			</h3>
-			<div className="container grid grid-cols-1 gap-8 mt-12 md:mt-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+			<div className="container grid grid-cols-1 gap-8 md:gap-4 mt-12 lg:mt-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 				{[
 					{
 						title: 'Competitive Workforce',

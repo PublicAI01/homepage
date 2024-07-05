@@ -79,7 +79,7 @@ const Header = () => {
 				)}
 				aria-hidden></label>
 			<header
-				className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-4 md:px-24 bg-b1"
+				className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-4 lg:px-24 bg-b1"
 				style={{
 					height: 'var(--header-height)',
 				}}>
@@ -94,7 +94,7 @@ const Header = () => {
 				</Link>
 				<nav
 					className={clsx(
-						'flex items-center justify-center max-md:hidden',
+						'flex items-center justify-center max-lg:hidden',
 						styles.nav,
 					)}>
 					<ul className="relative flex">
@@ -122,10 +122,10 @@ const Header = () => {
 							aria-hidden></div>
 					</ul>
 				</nav>
-				<ButtonGroup className="max-md:hidden" />
+				<ButtonGroup className="max-lg:hidden" />
 				<label
 					htmlFor={styles.switch}
-					className={clsx(styles['nav-icon'], 'md:hidden')}></label>
+					className={clsx(styles['nav-icon'], 'lg:hidden')}></label>
 			</header>
 		</>
 	);

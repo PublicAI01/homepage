@@ -14,12 +14,12 @@ import SectionWrapper from '@/components/SectionWrapper';
 const VectorDatabase = () => {
 	return (
 		<SectionWrapper
-			className="md:mt-40"
+			className="lg:mt-40"
 			title="Vector Database">
 			<section
 				className={clsx(
 					aboutStyles['animate-border'],
-					'w-full pt-5 p-5 md:pb-16 md:px-20 mt-8',
+					'w-full pt-5 p-5 lg:pb-16 lg:px-20 mt-8',
 				)}>
 				<h3 className="text-xl md:text-3xl font-bold text-center text-white">
 					Application
@@ -29,7 +29,7 @@ const VectorDatabase = () => {
 					to a wide array of industries and modalities, providing the foundation
 					for AI projects.
 				</h4>
-				<div className="flex items-center max-md:gap-4 xl:gap-32 lg:gap-20 flex-col md:flex-row">
+				<div className="grid gap-4 2xl:gap-32 lg:gap-12 flex-col grid-cols-2 lg:grid-cols-4">
 					{[
 						{ Icon: text, title: 'Text' },
 						{ Icon: audio, title: 'Audio' },
@@ -40,7 +40,7 @@ const VectorDatabase = () => {
 							key={index}
 							className={clsx(
 								cardStyles.card,
-								'border rounded-xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors border-white/10 hover:bg-white py-6 px-8 flex-1 self-stretch flex flex-col items-center justify-center',
+								'border rounded-xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors border-white/10 hover:bg-white py-4 px-6 md:py-6 md:px-8 flex-1 self-stretch flex flex-col items-center justify-center',
 							)}
 							style={
 								{
@@ -53,8 +53,8 @@ const VectorDatabase = () => {
 							onMouseLeave={(e) => {
 								e.currentTarget.classList.add('animate-card-flicker');
 							}}>
-							<item.Icon className="size-11" />
-							<h5 className="mt-4 text-xl font-bold transition-colors">
+							<item.Icon className="size-9 md:size-11" />
+							<h5 className="mt-4 text-lg md:text-xl font-bold transition-colors">
 								{item.title}
 							</h5>
 						</article>

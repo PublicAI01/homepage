@@ -5,8 +5,8 @@ import styles from '@/app/products/sections/Index/Index.module.css';
 
 const Index = () => {
 	return (
-		<section className="flex flex-col justify-center md:min-h-screen">
-			<div className="flex flex-col max-md:pt-28 md:justify-center max-md:min-h-screen">
+		<section className="flex flex-col justify-center lg:min-h-screen">
+			<div className="flex flex-col max-lg:pt-28 lg:justify-center max-md:min-h-screen">
 				<h1 className="text-xl md:text-3xl font-semibold tracking-wide text-center text-white">
 					<b className="block mb-2 text-3xl md:text-5xl">Building</b> Craft AI
 					with Collective Intelligence

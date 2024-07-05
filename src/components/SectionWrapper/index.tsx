@@ -13,6 +13,7 @@ const SectionWrapper: FC<{
 	titleClassName?: string;
 	useMobileContainerWidth?: boolean;
 	marginTop?: boolean;
+	useFlexLayout?: boolean;
 }> = ({
 	children,
 	className,
@@ -20,14 +21,16 @@ const SectionWrapper: FC<{
 	anchorClassName,
 	title,
 	titleClassName,
+	useFlexLayout = true,
 	useMobileContainerWidth = true,
 	marginTop = true,
 }) => {
 	return (
 		<section
 			className={clsx(
-				'container flex flex-col items-center mx-auto',
-				useMobileContainerWidth && 'max-md:w-[var(--mobile-container-width)]',
+				'container mx-auto lg:w-[calc(100%_-_3rem)]',
+				useFlexLayout && 'flex flex-col items-center',
+				useMobileContainerWidth && 'max-lg:w-[var(--mobile-container-width)]',
 				marginTop && 'mt-12 md:mt-20',
 				anchorId && 'relative',
 				className,

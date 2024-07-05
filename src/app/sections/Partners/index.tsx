@@ -35,7 +35,7 @@ import { DATA_CARD_BORDER_WITH_ALPHA } from '@/constant/border';
 const Partners = () => {
 	return (
 		<SectionWrapper
-			className={clsx(aboutStyles['animate-border'], 'py-7 md:px-24')}
+			className={clsx(aboutStyles['animate-border'], 'py-7 lg:px-24')}
 			title="Partners"
 			anchorId="partners">
 			<div
@@ -94,11 +94,11 @@ const Partners = () => {
 			].map((group, index) => (
 				<section
 					key={index}
-					className="md:mb-14 mt-10 px-4 w-full flex flex-col">
+					className="lg:mb-14 mt-10 px-4 md:px-6 w-full flex flex-col">
 					<h3 className="mb-6 text-base md:text-xl font-semibold text-white">
 						{group.title}
 					</h3>
-					<div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 md:gap-x-28">
+					<div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-x-28">
 						{group.children.map((item, index) => (
 							<article
 								key={index}
@@ -107,7 +107,7 @@ const Partners = () => {
 									background: `url(${DATA_CARD_BORDER_WITH_ALPHA})`,
 								}}>
 								<Image
-									className="w-auto mx-auto h-7 md:h-11"
+									className="w-auto mx-auto h-7 md:h-9 lg:h-11"
 									src={item.image}
 									alt={item.name}
 								/>

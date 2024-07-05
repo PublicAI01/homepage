@@ -12,7 +12,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 const DataAPISuite = () => {
 	return (
 		<SectionWrapper
-			className="md:mt-40"
+			className="lg:mt-40"
 			title="Data API Suite">
 			<h3 className="mt-10 mb-2 text-xl md:text-3xl font-bold text-center text-white">
 				Custom API Suite for Business
@@ -45,7 +45,7 @@ const DataAPISuite = () => {
 						key={index}
 						className={clsx(
 							cardStyles.card,
-							'border rounded-xl bg-b2 transition-colors border-white hover:bg-white md:py-6 md:px-8 p-4 self-stretch flex flex-col items-center justify-center',
+							'border rounded-xl flex-1 bg-b2 transition-colors border-white hover:bg-white lg:py-6 lg:px-8 p-4 self-stretch flex flex-col items-center justify-center',
 						)}
 						style={
 							{
@@ -58,11 +58,11 @@ const DataAPISuite = () => {
 						onMouseLeave={(e) => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
-						<item.Icon className="size-10 md:size-16" />
-						<h5 className="my-2 md:my-4 text-lg md:text-xl font-bold transition-colors">
+						<item.Icon className="size-10 lg:size-16" />
+						<h5 className="my-2 lg:my-4 text-lg lg:text-xl text-center font-bold transition-colors">
 							{item.title}
 						</h5>
-						<p className="text-sm md:text-xs font-medium text-center transition-colors">
+						<p className="text-sm lg:text-xs font-medium text-center transition-colors">
 							{item.content}
 						</p>
 					</article>

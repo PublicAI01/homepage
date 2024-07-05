@@ -13,7 +13,9 @@ import SectionWrapper from '@/components/SectionWrapper';
 
 const DataPanel = () => {
 	return (
-		<SectionWrapper className="justify-around gap-7 md:gap-16 md:flex-row">
+		<SectionWrapper
+			className="gap-4 lg:gap-8 xl:gap-16 grid grid-cols-2 lg:grid-cols-5"
+			useFlexLayout={false}>
 			{[
 				{ Icon: workersData, title: 'Workers', data: '400K+' },
 				{ Icon: validatorsData, title: 'Validators', data: '300K+' },
@@ -25,7 +27,7 @@ const DataPanel = () => {
 					key={index}
 					className={clsx(
 						cardStyles.card,
-						'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors hover:border-white',
+						'flex flex-col pt-4 pb-3 lg:pt-7 lg:pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors hover:border-white',
 					)}
 					style={
 						{

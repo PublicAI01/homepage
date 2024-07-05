@@ -13,7 +13,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 const DataHunter = () => {
 	return (
 		<SectionWrapper
-			className="md:mt-40"
+			className="lg:mt-40"
 			title="Data Hunter">
 			<h3 className="md:text-lg text-base font-medium text-g1 mt-7 text-center">
 				Data Hunter empowers users to instantly contribute valuable data and
@@ -48,7 +48,7 @@ const DataHunter = () => {
 						key={index}
 						className={clsx(
 							cardStyles.card,
-							'border rounded-xl bg-b2 transition-colors border-white hover:bg-white p-4 md:p-7 self-stretch',
+							'border rounded-xl flex-1 bg-b2 transition-colors border-white hover:bg-white p-4 lg:p-7 self-stretch',
 						)}
 						style={
 							{
@@ -61,8 +61,8 @@ const DataHunter = () => {
 						onMouseLeave={(e) => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
-						<item.Icon className="size-9 md:size-11" />
-						<h4 className="my-2 md:my-4 text-lg md:text-xl font-bold transition-colors">
+						<item.Icon className="size-9 lg:size-11" />
+						<h4 className="my-2 lg:my-4 text-base lg:text-xl font-bold transition-colors">
 							{item.title}
 						</h4>
 						<p className="text-xs font-medium transition-colors">
