@@ -84,6 +84,7 @@ const Header = () => {
 					height: 'var(--header-height)',
 				}}>
 				<Link
+					className="h-[var(--header-height)] flex items-center"
 					href="/"
 					aria-label="return to homepage">
 					<Image

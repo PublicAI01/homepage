@@ -18,26 +18,26 @@ const Works = () => {
 			className="py-6 bg-black max-md:px-4"
 			title="How it works"
 			useMobileContainerWidth={false}>
-			<h3 className="text-lg md:text-2xl font-bold text-white my-6 md:my-9 text-center">
+			<h3 className="my-6 text-lg font-bold text-center text-white md:my-9 md:text-2xl">
 				<b className={styles.slogan}>PublicAI</b>
 				<b className={styles.slogan}>&nbsp;Consensus RLHF</b>
 				<b className={styles.slogan}>&nbsp;Loss Function</b>
 			</h3>
 			<Image
-				className="md:w-4/5 sm:w-2/3 w-full h-auto"
+				className="w-full h-auto md:w-4/5 sm:w-2/3"
 				src={consensusFn}
 				alt="PublicAI consensus RLHF loss function"
 			/>
-			<h3 className="text-lg md:text-2xl text-center font-bold text-white my-6 md:my-9">
+			<h3 className="my-6 text-lg font-bold text-center text-white md:my-9 md:text-2xl">
 				<p className={styles.slogan}>Reward</p>
 				<p className={styles.slogan}>&nbsp;Function</p>
 			</h3>
 			<Image
-				className="md:w-2/3 sm:w-1/3 w-full h-auto"
+				className="w-full h-auto md:w-2/3 sm:w-1/3"
 				src={rewardFn}
 				alt="reward function"
 			/>
-			<section className="flex flex-col md:items-center justify-between my-16 max-md:mb-6 max-md:mt-12 md:flex-row">
+			<section className="flex flex-col justify-between my-16 max-md:mt-12 max-md:mb-6 md:flex-row md:items-center">
 				<_Block
 					className="flex-1"
 					image={requesters}
@@ -80,15 +80,15 @@ const _Block: FC<{ className?: string; image: string; content: string }> = ({
 	return (
 		<article
 			className={clsx(
-				'flex md:flex-col w-full items-center max-md:px-4',
+				'w-full flex items-center max-md:px-4 md:flex-col',
 				className,
 			)}>
 			<Image
-				className="h-auto w-16 md:w-28"
+				className="w-16 h-auto md:w-28"
 				src={image}
 				alt={content.toLocaleLowerCase()}
 			/>
-			<p className="md:w-3/4 md:mt-12 max-md:ml-4 text-base md:text-center text-white">
+			<p className="text-base text-white max-md:ml-4 md:w-3/4 md:mt-12 md:text-center">
 				{content}
 			</p>
 		</article>

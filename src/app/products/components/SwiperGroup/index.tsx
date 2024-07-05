@@ -48,13 +48,13 @@ const SwiperCard: FC<{
 	return (
 		<article className="lg:p-6 py-5 px-4 border border-white rounded-2xl bg-b3/65 lg:w-[calc(50%_-_1.5rem)] self-stretch flex flex-col justify-between">
 			<div>
-				<h3 className="text-2xl font-semibold md:font-bold text-white">
+				<h3 className="text-2xl font-semibold text-white md:font-bold">
 					{title}
 				</h3>
-				<h4 className="text-2xl font-semibold md:font-bold text-white">
+				<h4 className="text-2xl font-semibold text-white md:font-bold">
 					{subTitle}
 				</h4>
-				<p className="my-3 text-base font-medium text-g1">{content}</p>
+				<p className="text-g1 my-3 text-base font-medium">{content}</p>
 			</div>
 			<Swiper
 				className={clsx('max-w-full', styles.swiper)}
@@ -78,7 +78,7 @@ const SwiperCard: FC<{
 				{images.map((item, index) => (
 					<SwiperSlide key={index}>
 						<Image
-							className="w-auto mx-auto mb-6 border h-48 md:h-96 rounded-xl border-b4"
+							className="border-b4 mx-auto w-auto h-48 mb-6 rounded-xl border md:h-96"
 							src={item}
 							alt={`data hunter preview ${index}`}
 						/>

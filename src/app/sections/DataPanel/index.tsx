@@ -14,7 +14,7 @@ import SectionWrapper from '@/components/SectionWrapper';
 const DataPanel = () => {
 	return (
 		<SectionWrapper
-			className="gap-4 lg:gap-8 xl:gap-16 grid grid-cols-2 lg:grid-cols-5"
+			className="grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-8 xl:gap-16"
 			useFlexLayout={false}>
 			{[
 				{ Icon: workersData, title: 'Workers', data: '400K+' },
@@ -27,7 +27,7 @@ const DataPanel = () => {
 					key={index}
 					className={clsx(
 						cardStyles.card,
-						'flex flex-col pt-4 pb-3 lg:pt-7 lg:pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors hover:border-white',
+						'flex flex-col pt-4 pb-3 lg:pt-7 lg:pb-4 items-center justify-center size-full hover:bg-white rounded-xl frosted-card transition-colors hover:border-white',
 					)}
 					style={
 						{
@@ -40,7 +40,7 @@ const DataPanel = () => {
 					onMouseLeave={(e) => {
 						e.currentTarget.classList.add('animate-card-flicker');
 					}}>
-					<item.Icon className="transition-colors size-10" />
+					<item.Icon className="size-10 transition-colors" />
 					<strong className="my-4 text-xl font-bold transition-colors">
 						{item.data}
 					</strong>

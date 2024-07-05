@@ -18,7 +18,7 @@ const About = () => {
 		<SectionWrapper
 			title="About PublicAI"
 			marginTop={false}>
-			<h3 className="container mt-12 text-base font-medium text-g1 max-md:text-center">
+			<h3 className="text-g1 container mt-12 text-base font-medium max-md:text-center">
 				PublicAI is a distributed AI network enables every human: contribute to
 				AI and share the benefits that connects businesses and individuals with
 				a global network of workers. It simplifies the process of outsourcing a
@@ -27,7 +27,7 @@ const About = () => {
 				collective skills of a vast, structured workforce to enhance data
 				analysis and speed up the development of machine learning models.
 			</h3>
-			<div className="container grid grid-cols-1 gap-8 md:gap-4 mt-12 lg:mt-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+			<div className="container grid grid-cols-1 gap-8 mt-12 lg:grid-cols-3 lg:mt-20 md:grid-cols-2 md:gap-4 xl:grid-cols-4">
 				{[
 					{
 						title: 'Competitive Workforce',
@@ -58,12 +58,12 @@ const About = () => {
 			</div>
 			<section
 				className={clsx(
-					'container flex items-center p-12 max-md:px-5 mt-10 flex-col md:flex-row',
+					'container flex flex-col items-center p-12 mt-10 max-md:px-5 md:flex-row',
 					styles['animate-border'],
 				)}>
 				<Swiper />
-				<div className="grid w-full max-md:mt-10 md:w-1/3 h-full grid-cols-3 grid-rows-2 gap-4">
-					<div className="flex items-end justify-end size-full">
+				<div className="w-full h-full grid grid-cols-3 grid-rows-2 gap-4 max-md:mt-10 md:w-1/3">
+					<div className="size-full flex justify-end items-end">
 						<Image
 							className="w-auto h-3/4"
 							src={dashArrowAnimateToRight}
@@ -73,14 +73,14 @@ const About = () => {
 
 					<div className="w-full h-0 pb-[100%] relative">
 						<Image
-							className="absolute inset-0 w-full h-auto"
+							className="w-full h-auto absolute inset-0"
 							src={dataCollection}
 							alt="data collection picture"
 							priority
 						/>
 					</div>
 
-					<div className="flex items-end size-full">
+					<div className="size-full flex items-end">
 						<Image
 							className="w-auto h-[70%]"
 							src={dashArrowAnimateToBottom}
@@ -90,14 +90,14 @@ const About = () => {
 
 					<div className="w-full h-0 pb-[100%] relative">
 						<Image
-							className="absolute inset-0 w-full h-auto"
+							className="w-full h-auto absolute inset-0"
 							src={modelEvaluation}
 							alt="modal evaluation picture"
 							priority
 						/>
 					</div>
 
-					<div className="flex items-center justify-center size-full">
+					<div className="size-full flex justify-center items-center">
 						<Image
 							className="w-[70%] h-auto"
 							src={dashArrowAnimateToLeft}
@@ -107,7 +107,7 @@ const About = () => {
 
 					<div className="w-full h-0 pb-[100%] relative">
 						<Image
-							className="absolute inset-0 w-full h-auto"
+							className="w-full h-auto absolute inset-0"
 							src={dataLabeling}
 							alt="data labeling picture"
 							priority
@@ -138,7 +138,7 @@ const _Card: FC<{
 						'linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(6,6,6,0) 100%)',
 				}}>
 				<p
-					className={clsx('text-xs font-bold text-white mb-3', titleClassName)}>
+					className={clsx('mb-3 text-xs font-bold text-white', titleClassName)}>
 					{title}
 				</p>
 				<Image

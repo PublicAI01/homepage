@@ -14,13 +14,13 @@ const DataAPISuite = () => {
 		<SectionWrapper
 			className="lg:mt-40"
 			title="Data API Suite">
-			<h3 className="mt-10 mb-2 text-xl md:text-3xl font-bold text-center text-white">
+			<h3 className="mt-10 mb-2 text-xl font-bold text-center text-white md:text-3xl">
 				Custom API Suite for Business
 			</h3>
-			<h4 className="text-sm md:text-lg font-medium text-center text-white">
+			<h4 className="text-sm font-medium text-center text-white md:text-lg">
 				Enhance Your Business with Our Comprehensive Data Solutions.
 			</h4>
-			<section className="flex items-center gap-3 mt-5 md:mt-10 md:flex-row flex-col">
+			<section className="flex flex-col items-center gap-3 mt-5 md:flex-row md:mt-10">
 				{[
 					{
 						Icon: searchCheck,
@@ -59,10 +59,10 @@ const DataAPISuite = () => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
 						<item.Icon className="size-10 lg:size-16" />
-						<h5 className="my-2 lg:my-4 text-lg lg:text-xl text-center font-bold transition-colors">
+						<h5 className="my-2 text-lg font-bold text-center transition-colors lg:my-4 lg:text-xl">
 							{item.title}
 						</h5>
-						<p className="text-sm lg:text-xs font-medium text-center transition-colors">
+						<p className="text-sm font-medium text-center transition-colors lg:text-xs">
 							{item.content}
 						</p>
 					</article>

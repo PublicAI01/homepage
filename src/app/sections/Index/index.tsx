@@ -9,7 +9,7 @@ import { CHROME_EXTENSION_LINK, PUBLIC_AI_DATA_HUNTER_LINK } from '@/constant';
 
 const Index = () => {
 	return (
-		<section className="relative flex flex-col items-center justify-center h-screen">
+		<section className="h-screen relative flex flex-col justify-center items-center">
 			<Anchor
 				className="max-md:scroll-mt-[100vh]"
 				id="home"
@@ -51,19 +51,19 @@ const Index = () => {
 			</div>
 			<article className="relative flex flex-col mb-24">
 				<div
-					className="absolute rounded-full size-12 md:size-24 bg-primary/80 top-1/2 -left-10 md:-left-1/4"
+					className="-left-10 bg-primary/80 size-12 absolute top-1/2 rounded-full md:-left-1/4 md:size-24"
 					style={{
 						clipPath: 'inset(0 30% 0 0)',
 					}}></div>
-				<div className="absolute rounded-full size-8 bg-primary/80 -top-1/4 max-md:right-0 md:-top-1/2 md:left-1/4"></div>
-				<div className="absolute rounded-full size-4 md:size-20 bg-primary/80 max-md:-bottom-12 md:-top-full md:-right-1/3"></div>
-				<h1 className="max-w-xs mx-auto text-2xl font-semibold tracking-wider text-center text-white md:max-w-4xl md:text-5xl">
+				<div className="-top-1/4 bg-primary/80 size-8 absolute rounded-full max-md:right-0 md:-top-1/2 md:left-1/4"></div>
+				<div className="bg-primary/80 size-4 absolute rounded-full max-md:-bottom-12 md:-top-full md:-right-1/3 md:size-20"></div>
+				<h1 className="mx-auto max-w-xs text-2xl font-semibold tracking-wider text-center text-white md:max-w-4xl md:text-5xl">
 					Web3 AI Data Infrastructure, create 4 Billion Data Jobs in 2050.
 				</h1>
-				<h2 className="mx-auto mt-3 mb-12 text-base font-normal text-center text-white md:mt-6 max-md:max-w-xs md:text-xl">
+				<h2 className="mx-auto mt-3 mb-12 text-base font-normal text-center text-white max-md:max-w-xs md:mt-6 md:text-xl">
 					Enable Every Human: Contribute to AI and Share the Benefits.
 				</h2>
-				<div className="flex flex-col items-center justify-center gap-5 md:gap-11 md:flex-row">
+				<div className="flex flex-col justify-center items-center gap-5 md:flex-row md:gap-11">
 					<Button
 						href={CHROME_EXTENSION_LINK}
 						ariaLabel="to download data hunter chrome extension">

@@ -18,7 +18,7 @@ const Resource = () => {
 		<SectionWrapper
 			title="Resource"
 			anchorId="resource">
-			<section className="flex flex-col items-center justify-center w-full mt-6 md:mt-16 gap-6 md:gap-12 lg:gap-28 md:flex-row lg:px-20">
+			<section className="w-full flex flex-col justify-center items-center gap-6 mt-6 lg:gap-28 lg:px-20 md:flex-row md:gap-12 md:mt-16">
 				{[
 					{
 						Icon: productGuideline,
@@ -40,7 +40,7 @@ const Resource = () => {
 						key={index}
 						className={clsx(
 							cardStyles.card,
-							'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors hover:border-white',
+							'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl frosted-card transition-colors hover:border-white',
 						)}
 						style={
 							{
@@ -57,7 +57,7 @@ const Resource = () => {
 						onMouseLeave={(e) => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
-						<item.Icon className="transition-colors size-10" />
+						<item.Icon className="size-10 transition-colors" />
 						<h3 className="mt-6 text-xl font-bold transition-colors">
 							{item.title}
 						</h3>
@@ -67,7 +67,7 @@ const Resource = () => {
 			<div
 				className={clsx(
 					styles['youtube-container'],
-					'bg-b3 rounded-xl overflow-hidden mt-8 md:mt-28 h-auto lg:h-[600px]',
+					'bg-b3 h-auto overflow-hidden mt-8 rounded-xl lg:h-[600px] md:mt-28',
 				)}>
 				<YouTubeEmbed videoid="i0U8uaUrILs" />
 			</div>

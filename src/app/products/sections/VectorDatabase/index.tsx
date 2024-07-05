@@ -19,17 +19,17 @@ const VectorDatabase = () => {
 			<section
 				className={clsx(
 					aboutStyles['animate-border'],
-					'w-full pt-5 p-5 lg:pb-16 lg:px-20 mt-8',
+					'w-full p-5 pt-5 mt-8 lg:px-20 lg:pb-16',
 				)}>
-				<h3 className="text-xl md:text-3xl font-bold text-center text-white">
+				<h3 className="text-xl font-bold text-center text-white md:text-3xl">
 					Application
 				</h3>
-				<h4 className="mt-2 mb-5 md:mb-10 text-sm md:text-lg font-medium text-center text-white">
+				<h4 className="mt-2 mb-5 text-sm font-medium text-center text-white md:mb-10 md:text-lg">
 					A comprehensive collection of datasets meticulously curated to cater
 					to a wide array of industries and modalities, providing the foundation
 					for AI projects.
 				</h4>
-				<div className="grid gap-4 2xl:gap-32 lg:gap-12 flex-col grid-cols-2 lg:grid-cols-4">
+				<div className="grid flex-col grid-cols-2 gap-4 2xl:gap-32 lg:grid-cols-4 lg:gap-12">
 					{[
 						{ Icon: text, title: 'Text' },
 						{ Icon: audio, title: 'Audio' },
@@ -40,7 +40,7 @@ const VectorDatabase = () => {
 							key={index}
 							className={clsx(
 								cardStyles.card,
-								'border rounded-xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur transition-colors border-white/10 hover:bg-white py-4 px-6 md:py-6 md:px-8 flex-1 self-stretch flex flex-col items-center justify-center',
+								'rounded-xl frosted-card transition-colors hover:bg-white py-4 px-6 md:py-6 md:px-8 flex-1 self-stretch flex flex-col items-center justify-center',
 							)}
 							style={
 								{
@@ -54,7 +54,7 @@ const VectorDatabase = () => {
 								e.currentTarget.classList.add('animate-card-flicker');
 							}}>
 							<item.Icon className="size-9 md:size-11" />
-							<h5 className="mt-4 text-lg md:text-xl font-bold transition-colors">
+							<h5 className="mt-4 text-lg font-bold transition-colors md:text-xl">
 								{item.title}
 							</h5>
 						</article>

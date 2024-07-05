@@ -12,11 +12,11 @@ const ButtonGroup: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
 	return (
 		<div
 			className={clsx(
-				'flex flex-col lg:flex-row items-center gap-5 md:gap-8 xl:gap-5',
+				'flex flex-col items-center gap-5 lg:flex-row md:gap-8 xl:gap-5',
 				className,
 			)}>
 			<Link
-				className="relative px-4 py-2 text-base md:text-xl font-semibold rounded text-g1 max-lg:w-28 text-center"
+				className="text-g1 relative px-4 py-2 text-base font-semibold text-center rounded max-lg:w-28 md:text-xl"
 				style={{
 					background: `url(${BORDER})`,
 				}}
@@ -28,7 +28,7 @@ const ButtonGroup: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
 				Products
 			</Link>
 			<Link
-				className="relative px-4 py-2 text-base md:text-xl font-semibold text-black rounded max-lg:w-28 text-center"
+				className="relative px-4 py-2 text-base font-semibold text-center text-black rounded max-lg:w-28 md:text-xl"
 				style={{
 					background: `url(${BORDER_WITH_WHITE_BACKGROUND})`,
 				}}

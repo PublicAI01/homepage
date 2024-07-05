@@ -15,14 +15,14 @@ const DataHub = () => {
 		<SectionWrapper
 			className="lg:mt-40"
 			title="Data Hub">
-			<h3 className="text-sm md:text-lg font-medium text-center text-g1 mt-7">
+			<h3 className="text-g1 mt-7 text-sm font-medium text-center md:text-lg">
 				Data Hub empowers users to earn tokens by validating datasets,{' '}
 				<b className={clsx(styles.typing, 'font-bold text-p1 block mx-auto')}>
 					fostering a decentralized Train-AI-To-Earn ecosystem.
 				</b>
 			</h3>
 
-			<section className="flex items-center gap-2 mt-10 md:mt-20 flex-col md:flex-row">
+			<section className="flex flex-col items-center gap-2 mt-10 md:flex-row md:mt-20">
 				{[
 					{
 						Icon: datasetIcon,
@@ -61,7 +61,7 @@ const DataHub = () => {
 							e.currentTarget.classList.add('animate-card-flicker');
 						}}>
 						<item.Icon className="size-9 lg:size-11" />
-						<h4 className="my-2 lg:my-4 text-base lg:text-xl font-bold transition-colors">
+						<h4 className="my-2 text-base font-bold transition-colors lg:my-4 lg:text-xl">
 							{item.title}
 						</h4>
 						<p className="text-xs font-medium transition-colors">

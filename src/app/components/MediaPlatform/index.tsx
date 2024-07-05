@@ -9,7 +9,7 @@ const MediaPlatform = () => {
 	return (
 		<aside
 			className={clsx(
-				'fixed z-50 flex flex-col gap-4 md:right-5 right-1 top-[50vh]',
+				'top-[50vh] fixed right-1 z-50 flex flex-col gap-4 md:right-5',
 				headerStyles['side-media-platform'],
 			)}>
 			{PLATFORMS.map((item, index) => (
@@ -23,8 +23,8 @@ const MediaPlatform = () => {
 					target="_blank"
 					rel="external noreferrer"
 					aria-label={`${item.label} link`}>
-					<item.Icon className="transition-colors rounded-full size-8 md:size-9 text-g1 hover:text-white" />
-					<p className="absolute text-2xl leading-6 -translate-x-full -translate-y-1/2 md:leading-9 md:text-4xl -left-2 text-g1 top-1/2">
+					<item.Icon className="text-g1 size-8 rounded-full transition-colors hover:text-white md:size-9" />
+					<p className="-left-2 -translate-x-full -translate-y-1/2 text-g1 absolute top-1/2 text-2xl leading-6 md:text-4xl md:leading-9">
 						{item.label}
 					</p>
 				</Link>
