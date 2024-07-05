@@ -43,7 +43,7 @@ const Works = () => {
 					image={requesters}
 					content="Requesters have tasks they need to be completed"
 				/>
-				<div className="flex h-10 w-20 md:w-28 mb-14 max-md:mt-14 max-md:rotate-90">
+				<div className="flex h-10 w-20 md:w-28 mb-14 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90">
 					<Image
 						className={styles['arrow-animate']}
 						src={arrowToRight}
@@ -55,7 +55,7 @@ const Works = () => {
 					image={publicaiOutlined}
 					content="PublicAI Marketplace"
 				/>
-				<div className="flex justify-end w-20 h-10 md:w-28 mb-14 max-md:mt-14 max-md:rotate-90">
+				<div className="flex justify-end w-20 h-10 md:w-28 mb-14 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90">
 					<Image
 						className={styles['arrow-animate']}
 						src={arrowToLeft}
