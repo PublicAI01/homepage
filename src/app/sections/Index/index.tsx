@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import StarTrack from '@/app/components/StarTrack';
 import indexBall from '@/assets/image/index-ball.png';
-import indexCone from '@/assets/image/index-cone.png';
+import decorativeCone from '@/assets/svg/decorative-cone.svg';
 import Anchor from '@/components/Anchor';
 import Button from '@/components/Button';
 import { CHROME_EXTENSION_LINK, PUBLIC_AI_DATA_HUNTER_LINK } from '@/constant';
@@ -15,16 +15,20 @@ const Index = () => {
 				className="top-0"
 			/>
 			<Image
-				className="absolute top-0 left-0 w-2/3 h-auto md:w-96"
-				src={indexCone}
-				alt="cone image"
+				className="absolute top-0 left-0 scale-150 md:scale-[2] opacity-70 -m-[33.333333%] w-2/3 h-auto md:w-96 md:-m-48"
+				src={decorativeCone}
+				style={{
+					clipPath: 'inset(50% 0 0 50%)',
+				}}
+				alt="decorative cone picture"
+				priority
 				aria-hidden
 			/>
 			<div
 				className="-z-2 absolute max-md:-bottom-1/4 -right-1/4 md:-right-[40%] size-full flex items-center justify-center"
 				aria-hidden>
 				<Image
-					className="absolute size-32 -z-1 md:size-72 right-[35%]"
+					className="absolute size-32 -z-1 md:size-72 max-md:right-[35%]"
 					src={indexBall}
 					alt="ball image"
 					aria-hidden
