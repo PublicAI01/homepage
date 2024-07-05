@@ -5,7 +5,10 @@ import type { FC } from 'react';
 import { DOCS_LINK } from '@/constant';
 import { BORDER, BORDER_WITH_WHITE_BACKGROUND } from '@/constant/border';
 
-const ButtonGroup: FC<{ className?: string }> = ({ className }) => {
+const ButtonGroup: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
+	className,
+	closeSideNavFn,
+}) => {
 	return (
 		<div
 			className={clsx(
@@ -19,7 +22,9 @@ const ButtonGroup: FC<{ className?: string }> = ({ className }) => {
 				}}
 				role="button"
 				href="/products"
-				aria-label="to products page">
+				aria-label="to products page"
+				prefetch
+				onClick={closeSideNavFn}>
 				Products
 			</Link>
 			<Link

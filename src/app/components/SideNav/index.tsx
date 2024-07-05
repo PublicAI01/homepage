@@ -9,6 +9,12 @@ import { NAV_LIST } from '@/constant';
 import { PLATFORMS } from '@/constant/platforms';
 
 const SideNav = () => {
+	const closeSideNavFn = () => {
+		document
+			.querySelector<HTMLInputElement>(`.${headerStyles.switch}`)
+			?.click();
+	};
+
 	return (
 		<aside
 			className={clsx(
@@ -28,18 +34,17 @@ const SideNav = () => {
 								className="text-base font-semibold text-white size-full block py-4"
 								href={`/#${nav.id}`}
 								aria-label={`to ${nav.label} section content`}
-								onClick={() => {
-									document
-										.querySelector<HTMLInputElement>(`.${headerStyles.switch}`)
-										?.click();
-								}}>
+								onClick={closeSideNavFn}>
 								{nav.label}
 							</Link>
 						</li>
 					))}
 				</ul>
 			</nav>
-			<ButtonGroup className="w-4/5" />
+			<ButtonGroup
+				className="w-4/5"
+				closeSideNavFn={closeSideNavFn}
+			/>
 			<address className="w-4/5 mt-20 flex items-center gap-4 justify-center">
 				{PLATFORMS.map((item, index) => (
 					<Link
