@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import type { CSSProperties } from 'react';
 
-import styles from '@/app/products/sections/VectorDatabase/VectorDatabase.module.css';
+import aboutStyles from '@/app/sections/About/About.module.css';
 import audio from '@/assets/svg/audio-type.svg?react';
 import mapping from '@/assets/svg/mapping-type.svg?react';
 import text from '@/assets/svg/text-type.svg?react';
@@ -18,7 +18,7 @@ const VectorDatabase = () => {
 			title="Vector Database">
 			<section
 				className={clsx(
-					styles['animate-border'],
+					aboutStyles['animate-border'],
 					'w-full pt-5 p-5 md:pb-16 md:px-20 mt-8',
 				)}>
 				<h3 className="text-xl md:text-3xl font-bold text-center text-white">

@@ -30,41 +30,41 @@
 	background-color: #ffffff;
 	transition-property: background-color, transform;
 	transition-duration: 300ms;
-
-	&::before,
-	&::after {
-		content: '';
-		display: block;
-		width: 30px;
-		height: 5px;
-		position: absolute;
-		background: #ffffff;
-		transition-property: margin, transform;
-		transition-duration: 300ms;
-	}
-
-	&::before {
-		margin-top: -10px;
-	}
-
-	&::after {
-		margin-top: 10px;
-	}
 }
 
-.switch:checked + header .nav-icon {
+.nav-icon::before,
+.nav-icon::after {
+	content: '';
+	display: block;
+	width: 30px;
+	height: 5px;
+	position: absolute;
+	background: #ffffff;
+	transition-property: margin, transform;
+	transition-duration: 300ms;
+}
+
+.nav-icon::before {
+	margin-top: -10px;
+}
+
+.nav-icon::after {
+	margin-top: 10px;
+}
+
+.switch:checked ~ header .nav-icon {
 	background: rgba(0, 0, 0, 0);
 	transform: rotate(135deg);
+}
 
-	&::before {
-		margin-top: 0;
-		transform: rotate(90deg);
-	}
+.switch:checked ~ header .nav-icon::before {
+	margin-top: 0;
+	transform: rotate(90deg);
+}
 
-	&::after {
-		margin-top: 0;
-		transform: rotate(180deg);
-	}
+.switch:checked ~ header .nav-icon::after {
+	margin-top: 0;
+	transform: rotate(180deg);
 }
 
 .switch ~ main {

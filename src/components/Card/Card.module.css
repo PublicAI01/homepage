@@ -1,39 +1,28 @@
-.card {
-	& svg {
-		color: #fff;
-	}
+.card svg {
+	color: #fff;
+}
 
-	& h3,
-	& h4,
-	& h5,
-	& strong,
-	& p {
-		&:not(:last-child) {
-			color: #fff;
-		}
+.card h3:not(:last-child),
+.card h4:not(:last-child),
+.card h5:not(:last-child),
+.card strong:not(:last-child),
+.card p:not(:last-child) {
+	color: #fff;
+}
 
-		&:last-child {
-			color: #e6e6e6;
-		}
-	}
+.card h3:last-child,
+.card h4:last-child,
+.card h5:last-child,
+.card strong:last-child,
+.card p:last-child {
+	color: #e6e6e6;
+}
 
-	&:hover {
-		& svg {
-			color: #000;
-		}
-
-		& h3,
-		& h4,
-		& h5,
-		& strong,
-		& p {
-			&:not(:last-child) {
-				color: #000;
-			}
-
-			&:last-child {
-				color: #000;
-			}
-		}
-	}
+.card:hover svg,
+.card:hover h3,
+.card:hover h4,
+.card:hover h5,
+.card:hover strong,
+.card:hover p {
+	color: #000;
 }

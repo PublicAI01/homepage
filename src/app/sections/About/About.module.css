@@ -3,31 +3,31 @@
 	z-index: 0;
 	border-radius: 10px;
 	overflow: hidden;
+}
 
-	&::before {
-		content: '';
-		position: absolute;
-		z-index: -2;
-		top: -200%;
-		left: -200%;
-		width: 500%;
-		height: 500%;
-		background: conic-gradient(#1f1f1f, #262626, #434343, #595959, #1f1f1f)
-			no-repeat;
-		animation: rotate 4s linear infinite;
-	}
+.animate-border::before {
+	content: '';
+	position: absolute;
+	z-index: -2;
+	top: -200%;
+	left: -200%;
+	width: 500%;
+	height: 500%;
+	background: conic-gradient(#1f1f1f, #262626, #434343, #595959, #1f1f1f)
+		no-repeat;
+	animation: rotate 4s linear infinite;
+}
 
-	&::after {
-		content: '';
-		position: absolute;
-		z-index: -1;
-		left: 6px;
-		top: 6px;
-		width: calc(100% - 12px);
-		height: calc(100% - 12px);
-		background: #0f0f0f;
-		border-radius: 5px;
-	}
+.animate-border::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	left: 6px;
+	top: 6px;
+	width: calc(100% - 12px);
+	height: calc(100% - 12px);
+	background: #0f0f0f;
+	border-radius: 5px;
 }
 
 @keyframes rotate {
