@@ -11,8 +11,8 @@ const Index = () => {
 	return (
 		<section className="relative flex flex-col items-center justify-center h-screen">
 			<Anchor
+				className="max-md:scroll-mt-[100vh]"
 				id="home"
-				className="top-0"
 			/>
 			<Image
 				className="absolute top-0 left-0 scale-150 md:scale-[2] opacity-70 -m-[33.333333%] w-2/3 h-auto md:w-96 md:-m-48"

@@ -1,10 +1,7 @@
 import clsx from 'clsx';
 import type { FC } from 'react';
 
-const Anchor: FC<{ className?: string; id: string }> = ({
-	className = '-top-20',
-	id,
-}) => {
+const Anchor: FC<{ className?: string; id: string }> = ({ className, id }) => {
 	return (
 		<div
 			aria-hidden

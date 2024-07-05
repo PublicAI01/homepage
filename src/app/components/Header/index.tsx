@@ -71,8 +71,15 @@ const Header = () => {
 				id={styles.switch}
 				onChange={onSideNavSwitchChange}
 			/>
+			<label
+				htmlFor={styles.switch}
+				className={clsx(
+					'transition-all z-50 duration-300 ease-in-out bg-white/5 backdrop-blur-sm fixed top-[var(--header-height)] left-0 w-1/5 bottom-0 h-full',
+					styles.mask,
+				)}
+				aria-hidden></label>
 			<header
-				className="fixed inset-x-0 top-0 z-10 flex items-center justify-between px-4 md:px-24 bg-b1"
+				className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-4 md:px-24 bg-b1"
 				style={{
 					height: 'var(--header-height)',
 				}}>
@@ -117,8 +124,8 @@ const Header = () => {
 				</nav>
 				<ButtonGroup className="max-md:hidden" />
 				<label
-					className={clsx(styles['nav-icon'], 'md:hidden')}
-					htmlFor={styles.switch}></label>
+					htmlFor={styles.switch}
+					className={clsx(styles['nav-icon'], 'md:hidden')}></label>
 			</header>
 		</>
 	);

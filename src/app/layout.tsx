@@ -32,8 +32,8 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className="scroll-smooth">
-			<body className={clsx(jamjuree.className, 'bg-b1 scrollbar-none')}>
+			className="scroll-smooth scrollbar-none scroll-pt-[var(--header-height)] md:scroll-pt-20">
+			<body className={clsx(jamjuree.className, 'bg-b1')}>
 				<div className="relative overflow-hidden">
 					<Header />
 					<MediaPlatform />
