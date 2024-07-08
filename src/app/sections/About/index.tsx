@@ -6,9 +6,13 @@ import styles from '@/app/sections/About/About.module.css';
 import dataCollection from '@/assets/image/data-collection.png';
 import dataLabeling from '@/assets/image/data-labeling.png';
 import modelEvaluation from '@/assets/image/modal-evaluation.png';
+import competitiveWorkforce from '@/assets/svg/builder-icon.svg?react';
+import costEfficiency from '@/assets/svg/cost-efficiency.svg?react';
 import dashArrowAnimateToBottom from '@/assets/svg/dash-arrow-animate-to-bottom.svg';
 import dashArrowAnimateToLeft from '@/assets/svg/dash-arrow-animate-to-left.svg';
 import dashArrowAnimateToRight from '@/assets/svg/dash-arrow-animate-to-right.svg';
+import mutualModalData from '@/assets/svg/mutual-modal-data.svg?react';
+import qualityControl from '@/assets/svg/quality-control.svg?react';
 import Card from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
 
@@ -29,21 +33,25 @@ const About = () => {
       <div className="container grid grid-cols-1 gap-8 mt-12 lg:grid-cols-3 lg:mt-20 md:grid-cols-2 md:gap-4 xl:grid-cols-4">
         {[
           {
+            Icon: competitiveWorkforce,
             title: 'Competitive Workforce',
             content:
               'Without barriers from international banking and central platforms, one can access to the best workers, from anywhere in the world.',
           },
           {
+            Icon: qualityControl,
             title: 'Quality Control',
             content:
               'Through DAO governance and QC oracle systems, one can rest assured that work will be done with meticulousness.',
           },
           {
+            Icon: costEfficiency,
             title: 'Cost Efficiency',
             content:
               'Via on-chain staking and liability mechanisms, PublicAI reduces work/cost redundancy required in traditional platforms.',
           },
           {
+            Icon: mutualModalData,
             title: 'Mutual Modal Data',
             content:
               "We support the collection and annotation of mutual modal data such as text, audio, video, and mapping data, providing the world's largest decentralized data collection/annotation platform.",
@@ -51,8 +59,10 @@ const About = () => {
         ].map((item, index) => (
           <Card
             key={index}
-            item={{ index, ...item }}
-          />
+            title={item.title}
+            content={item.content}>
+            {<item.Icon />}
+          </Card>
         ))}
       </div>
       <section

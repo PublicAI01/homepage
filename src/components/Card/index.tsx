@@ -1,35 +1,22 @@
 'use client';
 
 import clsx from 'clsx';
-import type { CSSProperties, FC } from 'react';
+import type { CSSProperties, FC, ReactNode } from 'react';
 
-import competitiveWorkforce from '@/assets/svg/builder-icon.svg?react';
-import costEfficiency from '@/assets/svg/cost-efficiency.svg?react';
-import mutualModalData from '@/assets/svg/mutual-modal-data.svg?react';
-import qualityControl from '@/assets/svg/quality-control.svg?react';
 import styles from '@/components/Card/Card.module.css';
 
-interface CardItem {
-  index: number;
+const Card: FC<{
+  className?: string;
+  children: ReactNode;
   title: string;
   content: string;
-}
-
-const ICON_LIST = [
-  competitiveWorkforce,
-  qualityControl,
-  costEfficiency,
-  mutualModalData,
-];
-
-const Card: FC<{ item: CardItem }> = ({ item }) => {
-  const Icon = ICON_LIST[item.index];
-
+}> = ({ className, children, title, content }) => {
   return (
     <article
       className={clsx(
-        'rounded-xl border border-white bg-b2 p-6 transition-colors hover:bg-white',
+        'rounded-xl border border-white bg-b2 p-4 xl:p-6 transition-colors hover:bg-white',
         styles.card,
+        className,
       )}
       style={
         {
@@ -42,9 +29,11 @@ const Card: FC<{ item: CardItem }> = ({ item }) => {
       onMouseLeave={(e) => {
         e.currentTarget.classList.add('animate-card-flicker');
       }}>
-      <Icon className="size-11" />
-      <h4 className="my-4 text-xl font-bold transition-colors">{item.title}</h4>
-      <p className="text-xs font-medium transition-colors">{item.content}</p>
+      {children}
+      <h5 className="my-4 text-lg font-bold transition-colors md:text-xl xl:text-2xl">
+        {title}
+      </h5>
+      <p className="text-base font-medium transition-colors">{content}</p>
     </article>
   );
 };

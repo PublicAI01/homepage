@@ -1,12 +1,7 @@
-'use client';
-
-import clsx from 'clsx';
-import type { CSSProperties } from 'react';
-
 import computerUpload from '@/assets/svg/computer-upload.svg?react';
 import electronicsBoard from '@/assets/svg/electronics-board.svg?react';
 import searchCheck from '@/assets/svg/search-check.svg?react';
-import cardStyles from '@/components/Card/Card.module.css';
+import Card from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
 
 const DataAPISuite = () => {
@@ -41,31 +36,13 @@ const DataAPISuite = () => {
               'Make informed, timely decisions with our real-time data processing capabilities.',
           },
         ].map((item, index) => (
-          <article
+          <Card
             key={index}
-            className={clsx(
-              cardStyles.card,
-              'border rounded-xl flex-1 bg-b2 transition-colors border-white hover:bg-white lg:py-6 lg:px-8 p-4 self-stretch flex flex-col items-center justify-center',
-            )}
-            style={
-              {
-                '--duration': '0.4',
-              } as CSSProperties
-            }
-            onMouseEnter={(e) => {
-              e.currentTarget.classList.remove('animate-card-flicker');
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.classList.add('animate-card-flicker');
-            }}>
-            <item.Icon className="size-10 lg:size-16" />
-            <h5 className="my-2 text-lg font-bold text-center transition-colors lg:my-4 lg:text-xl">
-              {item.title}
-            </h5>
-            <p className="text-sm font-medium text-center transition-colors lg:text-xs">
-              {item.content}
-            </p>
-          </article>
+            className="flex-1 self-stretch"
+            title={item.title}
+            content={item.content}>
+            {<item.Icon />}
+          </Card>
         ))}
       </section>
     </SectionWrapper>

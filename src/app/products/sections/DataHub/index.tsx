@@ -1,13 +1,10 @@
-'use client';
-
 import clsx from 'clsx';
-import type { CSSProperties } from 'react';
 
 import styles from '@/app/products/sections/DataHub/DataHub.module.css';
 import datasetIcon from '@/assets/svg/dataset-icon.svg?react';
 import rewardIcon from '@/assets/svg/reward-icon.svg?react';
 import votingIcon from '@/assets/svg/voting-icon.svg?react';
-import cardStyles from '@/components/Card/Card.module.css';
+import Card from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
 
 const DataHub = () => {
@@ -43,31 +40,13 @@ const DataHub = () => {
               'Earn $PUBLIC tokens when your responses align with the majority consensus.',
           },
         ].map((item, index) => (
-          <article
+          <Card
             key={index}
-            className={clsx(
-              cardStyles.card,
-              'border rounded-xl flex-1 bg-b2 transition-colors border-white hover:bg-white p-4 lg:p-7 self-stretch',
-            )}
-            style={
-              {
-                '--duration': '0.4',
-              } as CSSProperties
-            }
-            onMouseEnter={(e) => {
-              e.currentTarget.classList.remove('animate-card-flicker');
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.classList.add('animate-card-flicker');
-            }}>
-            <item.Icon className="size-9 lg:size-11" />
-            <h4 className="my-2 text-base font-bold transition-colors lg:my-4 lg:text-xl">
-              {item.title}
-            </h4>
-            <p className="text-xs font-medium transition-colors">
-              {item.content}
-            </p>
-          </article>
+            className="flex-1 self-stretch"
+            title={item.title}
+            content={item.content}>
+            {<item.Icon />}
+          </Card>
         ))}
       </section>
     </SectionWrapper>
