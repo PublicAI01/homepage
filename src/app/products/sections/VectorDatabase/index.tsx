@@ -1,30 +1,51 @@
 'use client';
 
 import clsx from 'clsx';
+import Image from 'next/image';
 import type { CSSProperties } from 'react';
 
+import styles from '@/app/products/sections/VectorDatabase/VectorDatabase.module.css';
 import aboutStyles from '@/app/sections/About/About.module.css';
 import audio from '@/assets/svg/audio-type.svg?react';
+import earth from '@/assets/svg/earth.svg';
 import mapping from '@/assets/svg/mapping-type.svg?react';
 import text from '@/assets/svg/text-type.svg?react';
 import video from '@/assets/svg/video-type.svg?react';
 import cardStyles from '@/components/Card/Card.module.css';
 import SectionWrapper from '@/components/SectionWrapper';
+import Title from '@/components/Title';
 
 const VectorDatabase = () => {
   return (
-    <SectionWrapper
-      className="lg:mt-40"
-      title="Vector Database">
+    <SectionWrapper className="relative lg:mt-40">
+      <Image
+        className="-top-[10%] w-3/5 absolute inset-x-[20%]"
+        src={earth}
+        alt="decorative earth picture"
+        aria-hidden
+      />
+      <div className="mb-10">
+        <h3 className="text-xl font-bold text-center text-white md:text-4xl">
+          Application
+        </h3>
+        <h4 className="my-2 text-2xl font-bold text-center text-white">
+          Empower your AI with seamless data management.
+        </h4>
+        <h5 className="text-xl font-medium text-center text-white">
+          Leverage the integration of Vector Database&apos;s rapid data
+          retrieval and Data API Suite&apos;s versatile data services to{' '}
+          <b className={clsx(styles.typing, 'font-bold text-p1 block mx-auto')}>
+            enhance AI applications with precise and actionable insights.
+          </b>
+        </h5>
+      </div>
       <section
         className={clsx(
           aboutStyles['animate-border'],
-          'w-full p-5 pt-5 mt-8 lg:px-20 lg:pb-16',
+          'w-full p-5 mt-8 lg:px-20 lg:py-16',
         )}>
-        <h3 className="text-xl font-bold text-center text-white md:text-3xl">
-          Application
-        </h3>
-        <h4 className="mt-2 mb-5 text-sm font-medium text-center text-white md:mb-10 md:text-lg">
+        <Title className="mx-auto">Vector Database</Title>
+        <h4 className="mx-auto max-w-3xl mt-14 mb-5 text-sm font-medium text-center text-white md:mb-10 md:text-xl">
           A comprehensive collection of datasets meticulously curated to cater
           to a wide array of industries and modalities, providing the foundation
           for AI projects.
