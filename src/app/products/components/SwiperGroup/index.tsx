@@ -13,6 +13,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from '@/app/products/components/SwiperGroup/SwiperGroup.module.css';
 import HubPreview1 from '@/assets/image/hub-preview-1.png';
 import HubPreview2 from '@/assets/image/hub-preview-2.png';
+import HubPreview3 from '@/assets/image/hub-preview-3.png';
+import HubPreview4 from '@/assets/image/hub-preview-4.png';
 import HunterPreview1 from '@/assets/image/hunter-preview-1.png';
 import HunterPreview2 from '@/assets/image/hunter-preview-2.png';
 import SectionWrapper from '@/components/SectionWrapper';
@@ -33,7 +35,7 @@ const SwiperGroup = () => {
         title="Data Hub"
         subTitle="Collaborative AI Validation"
         content="Participate in consensus-driven validation, enhance AI accuracy, refine AI models and earn rewards."
-        images={[HubPreview1, HubPreview2]}
+        images={[HubPreview1, HubPreview2, HubPreview3, HubPreview4]}
       />
     </SectionWrapper>
   );
