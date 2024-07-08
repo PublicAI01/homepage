@@ -11,7 +11,7 @@ const Index = () => {
           <b className="block mb-2 text-3xl md:text-5xl">Building</b> Craft AI
           with Collective Intelligence
         </h1>
-        <h2 className="mt-3 mb-24 text-sm font-light text-center text-white max-md:mt-12 md:text-xl md:font-normal">
+        <h2 className="mt-5 mb-10 text-sm font-light text-center text-white max-md:mt-12 md:text-xl md:font-normal">
           Harness the synergy of Data Hunter&apos;s seamless collection and Data
           Hub&apos;s collaborative validation to{' '}
           <b

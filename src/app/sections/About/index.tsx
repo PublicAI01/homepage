@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-import type { FC } from 'react';
 
 import Swiper from '@/app/components/Swiper';
 import styles from '@/app/sections/About/About.module.css';
@@ -18,7 +17,7 @@ const About = () => {
     <SectionWrapper
       title="About PublicAI"
       marginTop={false}>
-      <h3 className="text-g1 container mt-12 text-base font-medium max-md:text-center">
+      <h3 className="text-g1 container mt-12 text-base font-medium text-center md:text-3xl">
         PublicAI is a distributed AI network enables every human: contribute to
         AI and share the benefits that connects businesses and individuals with
         a global network of workers. It simplifies the process of outsourcing a
@@ -116,38 +115,6 @@ const About = () => {
         </div>
       </section>
     </SectionWrapper>
-  );
-};
-
-const _Card: FC<{
-  titleClassName?: string;
-  title: string;
-  imageClassName?: string;
-  image: string;
-}> = ({ titleClassName, title, imageClassName, image }) => {
-  return (
-    <div
-      className="w-full h-0 pb-[100%] relative rounded-xl border border-white/10 shadow-xl shadow-black/60"
-      style={{
-        background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, #181818 100%)',
-      }}>
-      <div
-        className="absolute inset-2.5 rounded border border-dashed border-white/10 flex flex-col items-center justify-center"
-        style={{
-          background:
-            'linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(6,6,6,0) 100%)',
-        }}>
-        <p
-          className={clsx('mb-3 text-xs font-bold text-white', titleClassName)}>
-          {title}
-        </p>
-        <Image
-          className={clsx('w-12 h-auto', imageClassName)}
-          src={image}
-          alt={`${title.toLocaleLowerCase()} image`}
-        />
-      </div>
-    </div>
   );
 };
 

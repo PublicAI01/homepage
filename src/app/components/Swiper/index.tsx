@@ -3,7 +3,7 @@ const Swiper = () => {
     <div className="flex items-center md:w-2/3">
       <div
         dir="rtl"
-        className="relative overflow-y-scroll h-36 snap-y snap-mandatory scrollbar scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-track-rounded-full scrollbar-track-white/10 scrollbar-thumb-primary">
+        className="scrollbar scrollbar-thumb-primary scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-track-white/10 scrollbar-w-1 h-36 overflow-y-scroll relative snap-y snap-mandatory">
         {[
           {
             title: 'Data Collection',
@@ -24,11 +24,11 @@ const Swiper = () => {
           <div
             dir="auto"
             key={index}
-            className="flex flex-col justify-between ml-6 h-36 snap-center snap-always">
-            <h5 className="text-2xl md:text-4xl font-bold text-white transition-colors">
+            className="h-36 flex flex-col justify-between py-2 ml-6 snap-center snap-always">
+            <h5 className="text-2xl font-bold text-white transition-colors md:text-4xl">
               {item.title}
             </h5>
-            <p className="text-sm font-medium text-white transition-colors">
+            <p className="text-lg font-medium text-white transition-colors">
               {item.content}
             </p>
           </div>

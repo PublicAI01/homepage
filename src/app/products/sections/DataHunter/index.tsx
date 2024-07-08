@@ -23,7 +23,7 @@ const DataHunter = () => {
         </b>
       </h3>
 
-      <section className="flex flex-col items-center gap-2 mt-10 md:flex-row md:mt-20">
+      <section className="w-full flex flex-col items-center gap-2 mt-10 md:flex-row md:mt-20">
         {[
           {
             Icon: datasetIcon,
