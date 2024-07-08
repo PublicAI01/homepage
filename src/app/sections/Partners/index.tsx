@@ -6,9 +6,9 @@ import styles from '@/app/sections/Partners/Partners.module.css';
 import ZeroG from '@/assets/partners/0g.png';
 import ZeroXScope from '@/assets/partners/0x-scope.png';
 import AbakaAI from '@/assets/partners/abaka-ai.png';
-import AgentLayer from '@/assets/partners/agent-layer.png';
 import AmazonMechaincalTurk from '@/assets/partners/amazon.png';
 import Bloomberg from '@/assets/partners/bloomberg.png';
+import chainbase from '@/assets/partners/chainbase.png';
 import CoinDesk from '@/assets/partners/coin-desk.png';
 import Cointelegraph from '@/assets/partners/cointelegraph.png';
 import Combo from '@/assets/partners/combo.png';
@@ -17,12 +17,15 @@ import FlockIO from '@/assets/partners/flock-io.png';
 import ForesightVentures from '@/assets/partners/foresight.png';
 import Glacier from '@/assets/partners/glacier.png';
 import HuggingFace from '@/assets/partners/hugging-face.png';
+import ibm from '@/assets/partners/ibm.png';
 import IONet from '@/assets/partners/io-net.png';
 import IOBCCapital from '@/assets/partners/iobc.png';
 import MantaNetwork from '@/assets/partners/manta.png';
 import Marlin from '@/assets/partners/marlin.png';
+import MassachusettsInstituteOfTechnology from '@/assets/partners/massachusetts.png';
 import Midjourney from '@/assets/partners/midjourney.png';
 import Morph from '@/assets/partners/morph.png';
+import NanYangTechnologicalUniversity from '@/assets/partners/nanyang.png';
 import Nesa from '@/assets/partners/nesa.png';
 import Nimble from '@/assets/partners/nimble.png';
 import SolanaFoundation from '@/assets/partners/solana.png';
@@ -56,12 +59,21 @@ const Partners = () => {
         {
           title: 'Trusted by Leading AI Industry Partners',
           children: [
+            { image: StanfordUniversity, name: 'Stanford University' },
+            {
+              image: NanYangTechnologicalUniversity,
+              name: 'NanYang Technological University',
+            },
+            {
+              image: MassachusettsInstituteOfTechnology,
+              name: 'Massachusetts Institute of Technology',
+            },
+            { image: StabilityAI, name: 'Stability.ai' },
+            { image: AbakaAI, name: 'Abaka AI' },
+            { image: ibm, name: 'IBM' },
             { image: Midjourney, name: 'Midjourney' },
             { image: AmazonMechaincalTurk, name: 'Amazon Mechaincal Turk' },
             { image: HuggingFace, name: 'HuggingFace' },
-            { image: StabilityAI, name: 'Stability.ai' },
-            { image: AbakaAI, name: 'Abaka AI' },
-            { image: StanfordUniversity, name: 'Stanford University' },
           ],
         },
         {
@@ -70,7 +82,8 @@ const Partners = () => {
             { image: ZeroXScope, name: '0x Scope' },
             { image: MantaNetwork, name: 'Manta Network' },
             { image: Marlin, name: 'Marlin' },
-            { image: AgentLayer, name: 'Agent Layer' },
+            { image: chainbase, name: 'chainbase' },
+            // { image: AgentLayer, name: 'Agent Layer' },
             { image: Glacier, name: 'Glacier' },
             { image: Combo, name: 'Combo' },
             { image: ZeroG, name: '0G' },
