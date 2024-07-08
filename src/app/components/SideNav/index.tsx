@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import ButtonGroup from '@/app/components/Header/ButtonGroup';
+import ButtonGroup from '@/app/components/ButtonGroup';
 import headerStyles from '@/app/components/Header/Header.module.css';
 import { NAV_LIST } from '@/constant';
 import { PLATFORMS } from '@/constant/platforms';
@@ -18,7 +18,7 @@ const SideNav = () => {
   return (
     <aside
       className={clsx(
-        'fixed w-screen transition-all translate-x-full h-screen lg:hidden z-20',
+        'w-screen h-screen fixed z-20 transition-all translate-x-full lg:hidden',
         headerStyles['side-nav'],
       )}
       style={{
@@ -29,9 +29,9 @@ const SideNav = () => {
           {NAV_LIST.map((nav) => (
             <li
               key={nav.id}
-              className="text-center list-none">
+              className="list-none text-center">
               <Link
-                className="text-base md:text-xl font-semibold text-white size-full block py-4"
+                className="size-full block py-4 text-base font-semibold text-white md:text-xl"
                 href={`/#${nav.id}`}
                 aria-label={`to ${nav.label} section content`}
                 onClick={closeSideNavFn}>
@@ -45,7 +45,7 @@ const SideNav = () => {
         className="w-4/5"
         closeSideNavFn={closeSideNavFn}
       />
-      <address className="w-4/5 mt-20 flex items-center gap-4 justify-center">
+      <address className="w-4/5 flex justify-center items-center gap-4 mt-20">
         {PLATFORMS.map((item, index) => (
           <Link
             key={index}
@@ -53,7 +53,7 @@ const SideNav = () => {
             target="_blank"
             rel="external noreferrer"
             aria-label={`${item.label} link`}>
-            <item.Icon className="size-6 md:size-10 text-g1" />
+            <item.Icon className="text-g1 size-6 md:size-10" />
           </Link>
         ))}
       </address>

@@ -1,0 +1,15 @@
+.path-switch ~ .products-btn {
+  translate: 0;
+}
+
+.path-switch:checked ~ .products-btn {
+  translate: 0 -100%;
+}
+
+.path-switch ~ .home-btn {
+  translate: 0 100%;
+}
+
+.path-switch:checked ~ .home-btn {
+  translate: 0 -100%;
+}

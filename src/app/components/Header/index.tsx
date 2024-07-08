@@ -4,9 +4,9 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChangeEventHandler, useEffect, useRef, useState } from 'react';
+import { type ChangeEventHandler, useEffect, useRef, useState } from 'react';
 
-import ButtonGroup from '@/app/components/Header/ButtonGroup';
+import ButtonGroup from '@/app/components/ButtonGroup';
 import styles from '@/app/components/Header/Header.module.css';
 import publicai from '@/assets/svg/publicai.svg';
 import { NAV_LIST } from '@/constant';
