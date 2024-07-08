@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Bai_Jamjuree } from 'next/font/google';
 
+import Footer from '@/app/components/Footer';
 import Header from '@/app/components/Header';
 import MediaPlatform from '@/app/components/MediaPlatform';
 import SideNav from '@/app/components/SideNav';
@@ -40,6 +41,7 @@ export default function RootLayout({
           <MediaPlatform />
           <SideNav />
           {children}
+          <Footer />
         </div>
       </body>
       <GoogleAnalytics gaId="G-JMRE2DXFNN" />
