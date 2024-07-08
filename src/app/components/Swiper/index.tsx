@@ -25,10 +25,10 @@ const Swiper = () => {
             dir="auto"
             key={index}
             className="h-36 flex flex-col justify-between py-2 ml-6 snap-center snap-always">
-            <h5 className="text-2xl font-bold text-white transition-colors md:text-4xl">
+            <h5 className="text-xl font-bold text-white transition-colors md:text-4xl">
               {item.title}
             </h5>
-            <p className="text-lg font-medium text-white transition-colors">
+            <p className="text-sm font-medium text-white transition-colors md:text-lg">
               {item.content}
             </p>
           </div>

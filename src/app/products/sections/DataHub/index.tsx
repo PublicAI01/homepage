@@ -12,7 +12,7 @@ const DataHub = () => {
     <SectionWrapper
       className="lg:mt-40"
       title="Data Hub">
-      <h3 className="text-g1 mt-7 text-sm font-medium text-center md:text-lg">
+      <h3 className="text-g1 mt-7 text-xs font-medium text-center md:text-lg">
         Data Hub empowers users to earn tokens by validating datasets,{' '}
         <b className={clsx(styles.typing, 'font-bold text-p1 block mx-auto')}>
           fostering a decentralized Train-AI-To-Earn ecosystem.

@@ -66,7 +66,7 @@ const Showcase = () => {
               <div className="frosted-card p-4 rounded border">
                 <item.Icon className="size-8 md:size-10" />
               </div>
-              <p className="mt-4 text-lg font-semibold sm:text-base">
+              <p className="mt-4 text-sm font-semibold md:text-lg">
                 {item.name}
               </p>
             </article>

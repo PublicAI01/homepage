@@ -19,19 +19,19 @@ const VectorDatabase = () => {
   return (
     <SectionWrapper className="relative lg:mt-40">
       <Image
-        className="-top-[10%] w-3/5 absolute inset-x-[20%]"
+        className="md:-top-[10%] md:w-3/5 absolute inset-x-0 md:inset-x-[20%]"
         src={earth}
         alt="decorative earth picture"
         aria-hidden
       />
-      <div className="mb-10">
+      <div className="md:mb-10">
         <h3 className="text-xl font-bold text-center text-white md:text-4xl">
           Application
         </h3>
-        <h4 className="my-2 text-2xl font-bold text-center text-white">
+        <h4 className="my-2 text-lg font-bold text-center text-white md:text-2xl">
           Empower your AI with seamless data management.
         </h4>
-        <h5 className="text-xl font-medium text-center text-white">
+        <h5 className="text-xs font-medium text-center text-white md:text-xl">
           Leverage the integration of Vector Database&apos;s rapid data
           retrieval and Data API Suite&apos;s versatile data services to{' '}
           <b className={clsx(styles.typing, 'font-bold text-p1 block mx-auto')}>
@@ -45,7 +45,7 @@ const VectorDatabase = () => {
           'w-full p-5 mt-8 lg:px-20 lg:py-16',
         )}>
         <Title className="mx-auto">Vector Database</Title>
-        <h4 className="mx-auto max-w-3xl mt-14 mb-5 text-sm font-medium text-center text-white md:mb-10 md:text-xl">
+        <h4 className="mx-auto max-w-3xl mt-7 mb-5 text-sm font-medium text-center text-white md:mt-14 md:mb-10 md:text-xl">
           A comprehensive collection of datasets meticulously curated to cater
           to a wide array of industries and modalities, providing the foundation
           for AI projects.
@@ -75,7 +75,7 @@ const VectorDatabase = () => {
                 e.currentTarget.classList.add('animate-card-flicker');
               }}>
               <item.Icon className="size-9 md:size-11" />
-              <h5 className="mt-4 text-lg font-bold transition-colors md:text-xl">
+              <h5 className="mt-4 text-base font-bold transition-colors md:text-xl">
                 {item.title}
               </h5>
             </article>

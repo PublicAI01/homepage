@@ -1,6 +1,10 @@
+.card {
+  --svg-size: 2.5rem;
+}
+
 .card svg {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--svg-size);
+  height: var(--svg-size);
   color: #fff;
 }
 
@@ -27,4 +31,10 @@
 .card:hover strong,
 .card:hover p {
   color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    --svg-size: 1.8rem;
+  }
 }

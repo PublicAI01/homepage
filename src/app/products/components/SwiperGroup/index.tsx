@@ -50,13 +50,15 @@ const SwiperCard: FC<{
   return (
     <article className="lg:p-6 py-5 px-4 border border-white rounded-2xl bg-b3/65 lg:w-[calc(50%_-_1.5rem)] self-stretch flex flex-col justify-between">
       <div>
-        <h3 className="text-2xl font-semibold text-white md:font-bold">
+        <h3 className="text-base font-semibold text-white lg:text-2xl md:font-bold">
           {title}
         </h3>
-        <h4 className="text-2xl font-semibold text-white md:font-bold">
+        <h4 className="text-base font-semibold text-white lg:text-2xl md:font-bold">
           {subTitle}
         </h4>
-        <p className="text-g1 my-3 text-base font-medium">{content}</p>
+        <p className="text-g1 my-3 text-sm font-medium lg:text-base">
+          {content}
+        </p>
       </div>
       <Swiper
         className={clsx('max-w-full', styles.swiper)}

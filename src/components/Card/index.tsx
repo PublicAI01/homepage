@@ -30,10 +30,12 @@ const Card: FC<{
         e.currentTarget.classList.add('animate-card-flicker');
       }}>
       {children}
-      <h5 className="my-4 text-lg font-bold transition-colors md:text-xl xl:text-2xl">
+      <h5 className="my-2 text-base font-bold transition-colors md:my-4 md:text-xl xl:text-2xl">
         {title}
       </h5>
-      <p className="text-base font-medium transition-colors">{content}</p>
+      <p className="text-sm font-medium transition-colors md:text-base">
+        {content}
+      </p>
     </article>
   );
 };

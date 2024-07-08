@@ -79,7 +79,7 @@ const Header = () => {
         )}
         aria-hidden></label>
       <header
-        className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-4 lg:px-24 bg-b1"
+        className="bg-b1 fixed inset-x-0 top-0 z-50 flex justify-between items-center px-4 lg:px-12 xl:px-24"
         style={{
           height: 'var(--header-height)',
         }}>
@@ -107,7 +107,7 @@ const Header = () => {
                   currentActiveNav === nav.id && styles.current,
                 )}>
                 <Link
-                  className="py-2 block text-base font-semibold text-white"
+                  className="block py-2 text-base font-semibold text-white"
                   href={`/#${nav.id}`}
                   aria-label={`to ${nav.label} section content`}>
                   {nav.label}
