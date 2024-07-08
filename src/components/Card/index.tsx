@@ -14,7 +14,7 @@ const Card: FC<{
   return (
     <article
       className={clsx(
-        'rounded-xl border border-white bg-b2 p-4 xl:p-6 transition-colors hover:bg-white',
+        'rounded-xl border border-white bg-b2 p-4 transition-colors hover:bg-white xl:p-6',
         styles.card,
         className,
       )}

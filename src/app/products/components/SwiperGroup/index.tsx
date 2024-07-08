@@ -48,15 +48,15 @@ const SwiperCard: FC<{
   images: StaticImageData[];
 }> = ({ title, subTitle, content, images }) => {
   return (
-    <article className="lg:p-6 py-5 px-4 border border-white rounded-2xl bg-b3/65 lg:w-[calc(50%_-_1.5rem)] self-stretch flex flex-col justify-between">
+    <article className="flex flex-col justify-between self-stretch rounded-2xl border border-white bg-b3/65 px-4 py-5 lg:w-[calc(50%_-_1.5rem)] lg:p-6">
       <div>
-        <h3 className="text-base font-semibold text-white lg:text-2xl md:font-bold">
+        <h3 className="text-base font-semibold text-white md:font-bold lg:text-2xl">
           {title}
         </h3>
-        <h4 className="text-base font-semibold text-white lg:text-2xl md:font-bold">
+        <h4 className="text-base font-semibold text-white md:font-bold lg:text-2xl">
           {subTitle}
         </h4>
-        <p className="text-g1 my-3 text-sm font-medium lg:text-base">
+        <p className="my-3 text-sm font-medium text-g1 lg:text-base">
           {content}
         </p>
       </div>
@@ -82,7 +82,7 @@ const SwiperCard: FC<{
         {images.map((item, index) => (
           <SwiperSlide key={index}>
             <Image
-              className="border-b4 mx-auto w-auto h-48 mb-6 rounded-xl border md:h-96"
+              className="mx-auto mb-6 h-48 w-auto rounded-xl border border-b4 md:h-96"
               src={item}
               alt={`data hunter preview ${index}`}
             />

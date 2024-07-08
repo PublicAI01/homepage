@@ -27,7 +27,7 @@ const DataPanel = () => {
           key={index}
           className={clsx(
             cardStyles.card,
-            'flex flex-col pt-4 pb-3 lg:pt-7 lg:pb-4 items-center justify-center size-full hover:bg-white rounded-xl frosted-card transition-colors hover:border-white',
+            'frosted-card flex size-full flex-col items-center justify-center rounded-xl pb-3 pt-4 transition-colors hover:border-white hover:bg-white lg:pb-4 lg:pt-7',
           )}
           style={
             {

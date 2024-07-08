@@ -7,17 +7,17 @@ const Index = () => {
   return (
     <section className="flex flex-col">
       <div className="flex flex-col pt-20 lg:pt-28">
-        <h1 className="text-xl font-semibold tracking-wide text-center text-white md:text-3xl">
-          <b className="block mb-2 text-3xl md:text-5xl">Building</b> Craft AI
+        <h1 className="text-center text-xl font-semibold tracking-wide text-white md:text-3xl">
+          <b className="mb-2 block text-3xl md:text-5xl">Building</b> Craft AI
           with Collective Intelligence
         </h1>
-        <h2 className="mt-5 mb-10 text-xs font-light text-center text-white max-md:mt-6 md:text-xl md:font-normal">
+        <h2 className="mb-10 mt-5 text-center text-xs font-light text-white max-md:mt-6 md:text-xl md:font-normal">
           Harness the synergy of Data Hunter&apos;s seamless collection and Data
           Hub&apos;s collaborative validation to{' '}
           <b
             className={clsx(
               styles.typing,
-              'text-p1 block font-bold mx-auto mt-3',
+              'mx-auto mt-3 block font-bold text-p1',
             )}>
             supercharge AI with tailored large language models.
           </b>

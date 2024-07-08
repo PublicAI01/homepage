@@ -10,7 +10,7 @@ const Title: FC<{ className?: string; children: ReactNode }> = ({
   return (
     <h2
       className={clsx(
-        'md:w-80 w-60 text-xl md:text-3xl text-white py-1 font-bold text-center',
+        'w-60 py-1 text-center text-xl font-bold text-white md:w-80 md:text-3xl',
         ButtonWrapper.className,
         className,
       )}

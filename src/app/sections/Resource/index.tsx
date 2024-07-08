@@ -18,7 +18,7 @@ const Resource = () => {
     <SectionWrapper
       title="Resource"
       anchorId="resource">
-      <section className="w-full flex flex-col justify-center items-center gap-6 mt-6 lg:gap-28 lg:px-20 md:flex-row md:gap-12 md:mt-16">
+      <section className="mt-6 flex w-full flex-col items-center justify-center gap-6 md:mt-16 md:flex-row md:gap-12 lg:gap-28 lg:px-20">
         {[
           {
             Icon: productGuideline,
@@ -40,7 +40,7 @@ const Resource = () => {
             key={index}
             className={clsx(
               cardStyles.card,
-              'flex flex-col pt-7 pb-4 items-center justify-center size-full hover:bg-white rounded-xl frosted-card transition-colors hover:border-white',
+              'frosted-card flex size-full flex-col items-center justify-center rounded-xl pb-4 pt-7 transition-colors hover:border-white hover:bg-white',
             )}
             style={
               {
@@ -67,7 +67,7 @@ const Resource = () => {
       <div
         className={clsx(
           styles['youtube-container'],
-          'bg-b3 h-auto overflow-hidden mt-8 rounded-xl lg:h-[600px] md:mt-28',
+          'mt-8 h-auto overflow-hidden rounded-xl bg-b3 md:mt-28 lg:h-[600px]',
         )}>
         <YouTubeEmbed videoid="i0U8uaUrILs" />
       </div>

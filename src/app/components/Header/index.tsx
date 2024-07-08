@@ -74,21 +74,21 @@ const Header = () => {
       <label
         htmlFor={styles.switch}
         className={clsx(
-          'transition-all z-50 duration-300 ease-in-out bg-white/5 backdrop-blur-sm fixed top-[var(--header-height)] left-0 w-1/5 bottom-0 h-full',
+          'fixed bottom-0 left-0 top-[var(--header-height)] z-50 h-full w-1/5 bg-white/5 backdrop-blur-sm transition-all duration-300 ease-in-out',
           styles.mask,
         )}
         aria-hidden></label>
       <header
-        className="bg-b1 fixed inset-x-0 top-0 z-50 flex justify-between items-center px-4 lg:px-12 xl:px-24"
+        className="fixed inset-x-0 top-0 z-50 flex items-center justify-between bg-b1 px-4 lg:px-12 xl:px-24"
         style={{
           height: 'var(--header-height)',
         }}>
         <Link
-          className="h-[var(--header-height)] flex items-center"
+          className="flex h-[var(--header-height)] items-center"
           href="/"
           aria-label="return to homepage">
           <Image
-            className="w-auto h-8"
+            className="h-8 w-auto"
             src={publicai}
             alt="publicai logo"
           />
@@ -103,7 +103,7 @@ const Header = () => {
               <li
                 key={index}
                 className={clsx(
-                  'z-10 w-32 text-center list-none',
+                  'z-10 w-32 list-none text-center',
                   currentActiveNav === nav.id && styles.current,
                 )}>
                 <Link
@@ -116,7 +116,7 @@ const Header = () => {
             ))}
             <div
               className={clsx(
-                'bg-primary w-1/4 h-full rounded absolute left-0 bottom-0',
+                'absolute bottom-0 left-0 h-full w-1/4 rounded bg-primary',
                 styles.slider,
                 !currentActiveNav && 'opacity-0',
               )}

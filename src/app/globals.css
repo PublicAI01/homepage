@@ -9,7 +9,7 @@
 
 @layer components {
   .frosted-card {
-    @apply border-white/10 border bg-gradient-to-r from-white/10 to-white/5 backdrop-blur;
+    @apply border border-white/10 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur;
   }
 }
 

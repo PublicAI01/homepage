@@ -14,7 +14,7 @@ const FAQ = () => {
     <SectionWrapper
       title="FAQ"
       anchorId="faq">
-      <section className="flex flex-col gap-3 mt-9">
+      <section className="mt-9 flex flex-col gap-3">
         {[
           {
             title: 'Is my data secure with PublicAI?',
@@ -64,7 +64,7 @@ const Collapsible: FC<{ item: FAQItem }> = ({ item }) => {
     <article
       className={clsx(
         styles.collapsible,
-        'rounded-xl cursor-pointer transition-colors frosted-card hover:bg-primary',
+        'frosted-card cursor-pointer rounded-xl transition-colors hover:bg-primary',
       )}>
       <details>
         <summary className="text-lg font-medium text-white lg:text-xl">

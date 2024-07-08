@@ -18,10 +18,10 @@ const ButtonGroup: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
   return (
     <div
       className={clsx(
-        'flex flex-col items-center gap-5 lg:flex-row md:gap-8 xl:gap-5',
+        'flex flex-col items-center gap-5 md:gap-8 lg:flex-row xl:gap-5',
         className,
       )}>
-      <div className="h-10 overflow-hidden flex flex-col md:h-11">
+      <div className="flex h-10 flex-col overflow-hidden md:h-11">
         <input
           className={clsx('hidden', styles['path-switch'])}
           type="checkbox"
@@ -33,7 +33,7 @@ const ButtonGroup: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
         />
         <Link
           className={clsx(
-            'text-g1 relative px-4 py-2 text-base font-semibold text-center rounded transition-all duration-300 max-lg:w-28 md:text-lg',
+            'relative rounded px-4 py-2 text-center text-base font-semibold text-g1 transition-all duration-300 max-lg:w-28 md:text-lg',
             styles['products-btn'],
           )}
           style={{
@@ -48,7 +48,7 @@ const ButtonGroup: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
         </Link>
         <Link
           className={clsx(
-            'text-g1 relative px-4 py-2 text-base font-semibold text-center rounded transition-all duration-300 max-lg:w-28 md:text-lg',
+            'relative rounded px-4 py-2 text-center text-base font-semibold text-g1 transition-all duration-300 max-lg:w-28 md:text-lg',
             styles['home-btn'],
           )}
           style={{
@@ -63,7 +63,7 @@ const ButtonGroup: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
         </Link>
       </div>
       <Link
-        className="relative px-4 py-2 text-base font-semibold text-center text-black rounded max-lg:w-28 md:text-lg"
+        className="relative rounded px-4 py-2 text-center text-base font-semibold text-black max-lg:w-28 md:text-lg"
         style={{
           background: `url(${BORDER_WITH_WHITE_BACKGROUND})`,
         }}

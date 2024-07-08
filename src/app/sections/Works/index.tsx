@@ -15,35 +15,35 @@ import SectionWrapper from '@/components/SectionWrapper';
 const Works = () => {
   return (
     <SectionWrapper
-      className="py-6 bg-black max-md:px-4"
+      className="bg-black py-6 max-md:px-4"
       title="How it works"
       useMobileContainerWidth={false}>
-      <h3 className="my-6 text-lg font-bold text-center text-white md:my-9 md:text-2xl">
+      <h3 className="my-6 text-center text-lg font-bold text-white md:my-9 md:text-2xl">
         <b className={styles.slogan}>PublicAI</b>
         <b className={styles.slogan}>&nbsp;Consensus RLHF</b>
         <b className={styles.slogan}>&nbsp;Loss Function</b>
       </h3>
       <Image
-        className="w-full h-auto md:w-4/5 sm:w-2/3"
+        className="h-auto w-full sm:w-2/3 md:w-4/5"
         src={consensusFn}
         alt="PublicAI consensus RLHF loss function"
       />
-      <h3 className="my-6 text-lg font-bold text-center text-white md:my-9 md:text-2xl">
+      <h3 className="my-6 text-center text-lg font-bold text-white md:my-9 md:text-2xl">
         <p className={styles.slogan}>Reward</p>
         <p className={styles.slogan}>&nbsp;Function</p>
       </h3>
       <Image
-        className="w-full h-auto md:w-2/3 sm:w-1/3"
+        className="h-auto w-full sm:w-1/3 md:w-2/3"
         src={rewardFn}
         alt="reward function"
       />
-      <section className="flex flex-col justify-between my-16 max-md:mt-12 max-md:mb-6 md:flex-row md:items-center">
+      <section className="my-16 flex flex-col justify-between max-md:mb-6 max-md:mt-12 md:flex-row md:items-center">
         <_Block
           className="flex-1"
           image={requesters}
           content="Requesters have tasks they need to be completed"
         />
-        <div className="flex h-6 w-20 md:w-28 md:h-10 mb-14 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90">
+        <div className="mb-14 flex h-6 w-20 max-md:ml-2.5 max-md:mt-14 max-md:rotate-90 md:h-10 md:w-28">
           <Image
             className={styles['arrow-animate']}
             src={arrowToRight}
@@ -55,7 +55,7 @@ const Works = () => {
           image={publicaiOutlined}
           content="PublicAI Marketplace"
         />
-        <div className="flex justify-end h-6 w-20 md:w-28 md:h-10 mb-14 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90">
+        <div className="mb-14 flex h-6 w-20 justify-end max-md:ml-2.5 max-md:mt-14 max-md:rotate-90 md:h-10 md:w-28">
           <Image
             className={styles['arrow-animate']}
             src={arrowToLeft}
@@ -80,15 +80,15 @@ const _Block: FC<{ className?: string; image: string; content: string }> = ({
   return (
     <article
       className={clsx(
-        'w-full flex items-center max-md:px-4 md:flex-col',
+        'flex w-full items-center max-md:px-4 md:flex-col',
         className,
       )}>
       <Image
-        className="w-16 h-auto md:w-28"
+        className="h-auto w-16 md:w-28"
         src={image}
         alt={content.toLocaleLowerCase()}
       />
-      <p className="text-base text-white max-md:ml-4 md:w-3/4 md:mt-12 md:text-center">
+      <p className="text-base text-white max-md:ml-4 md:mt-12 md:w-3/4 md:text-center">
         {content}
       </p>
     </article>

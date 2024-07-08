@@ -21,7 +21,7 @@ const About = () => {
     <SectionWrapper
       title="About PublicAI"
       marginTop={false}>
-      <h3 className="text-g1 container mt-12 text-base font-medium text-center md:text-3xl">
+      <h3 className="container mt-12 text-center text-base font-medium text-g1 md:text-3xl">
         PublicAI is a distributed AI network enables every human: contribute to
         AI and share the benefits that connects businesses and individuals with
         a global network of workers. It simplifies the process of outsourcing a
@@ -30,7 +30,7 @@ const About = () => {
         collective skills of a vast, structured workforce to enhance data
         analysis and speed up the development of machine learning models.
       </h3>
-      <div className="container grid grid-cols-1 gap-8 mt-12 lg:grid-cols-3 lg:mt-20 md:grid-cols-2 md:gap-4 xl:grid-cols-4">
+      <div className="container mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4 lg:mt-20 lg:grid-cols-3 xl:grid-cols-4">
         {[
           {
             Icon: competitiveWorkforce,
@@ -67,56 +67,56 @@ const About = () => {
       </div>
       <section
         className={clsx(
-          'container flex flex-col items-center p-12 mt-10 max-md:px-5 md:flex-row',
+          'container mt-10 flex flex-col items-center p-12 max-md:px-5 md:flex-row',
           styles['animate-border'],
         )}>
         <Swiper />
-        <div className="w-full h-full grid grid-cols-3 grid-rows-2 gap-4 max-md:mt-10 md:w-1/3">
-          <div className="size-full flex justify-end items-end">
+        <div className="grid h-full w-full grid-cols-3 grid-rows-2 gap-4 max-md:mt-10 md:w-1/3">
+          <div className="flex size-full items-end justify-end">
             <Image
-              className="w-auto h-3/4"
+              className="h-3/4 w-auto"
               src={dashArrowAnimateToRight}
               alt="bottom to left arrow"
             />
           </div>
 
-          <div className="w-full h-0 pb-[100%] relative">
+          <div className="relative h-0 w-full pb-[100%]">
             <Image
-              className="w-full h-auto absolute inset-0"
+              className="absolute inset-0 h-auto w-full"
               src={dataCollection}
               alt="data collection picture"
               priority
             />
           </div>
 
-          <div className="size-full flex items-end">
+          <div className="flex size-full items-end">
             <Image
-              className="w-auto h-[70%]"
+              className="h-[70%] w-auto"
               src={dashArrowAnimateToBottom}
               alt="right to bottom arrow"
             />
           </div>
 
-          <div className="w-full h-0 pb-[100%] relative">
+          <div className="relative h-0 w-full pb-[100%]">
             <Image
-              className="w-full h-auto absolute inset-0"
+              className="absolute inset-0 h-auto w-full"
               src={modelEvaluation}
               alt="modal evaluation picture"
               priority
             />
           </div>
 
-          <div className="size-full flex justify-center items-center">
+          <div className="flex size-full items-center justify-center">
             <Image
-              className="w-[70%] h-auto"
+              className="h-auto w-[70%]"
               src={dashArrowAnimateToLeft}
               alt="right to bottom arrow"
             />
           </div>
 
-          <div className="w-full h-0 pb-[100%] relative">
+          <div className="relative h-0 w-full pb-[100%]">
             <Image
-              className="w-full h-auto absolute inset-0"
+              className="absolute inset-0 h-auto w-full"
               src={dataLabeling}
               alt="data labeling picture"
               priority

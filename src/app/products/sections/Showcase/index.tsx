@@ -13,19 +13,19 @@ import SectionWrapper from '@/components/SectionWrapper';
 const Showcase = () => {
   return (
     <SectionWrapper
-      className="bg-b3 py-7 lg:py-14 lg:mt-40"
+      className="bg-b3 py-7 lg:mt-40 lg:py-14"
       title="Showcase"
       useMobileContainerWidth={false}>
       <section>
-        <h3 className="mt-14 text-xl font-bold text-center text-white lg:text-3xl">
+        <h3 className="mt-14 text-center text-xl font-bold text-white lg:text-3xl">
           AI Agents for Public Blockchains
         </h3>
-        <h5 className="mb-5 lg:mb-10 text-base lg:text-lg font-medium text-center text-white mt-7 lg:px-[20%] px-4">
+        <h5 className="mb-5 mt-7 px-4 text-center text-base font-medium text-white lg:mb-10 lg:px-[20%] lg:text-lg">
           We offer data services for various public blockchain networks,
           empowering them to create Custom AI Agents capable of executing
           diverse tasks from data analysis to automated decision-making.
         </h5>
-        <div className="container flex flex-wrap justify-center items-center gap-6 2xl:gap-20 lg:gap-10 xl:gap-14">
+        <div className="container flex flex-wrap items-center justify-center gap-6 lg:gap-10 xl:gap-14 2xl:gap-20">
           {[
             { image: berachain, name: 'berachain' },
             { image: ton, name: 'TON' },
@@ -33,9 +33,9 @@ const Showcase = () => {
           ].map((item, index) => (
             <article
               key={index}
-              className="frosted-card py-2.5 px-3 rounded-xl">
+              className="frosted-card rounded-xl px-3 py-2.5">
               <Image
-                className="w-auto h-9 md:h-11"
+                className="h-9 w-auto md:h-11"
                 src={item.image}
                 alt={item.name}
               />
@@ -44,15 +44,15 @@ const Showcase = () => {
         </div>
       </section>
       <section>
-        <h3 className="mt-16 text-xl font-bold text-center text-white lg:mt-32 lg:text-3xl">
+        <h3 className="mt-16 text-center text-xl font-bold text-white lg:mt-32 lg:text-3xl">
           Empowerment for AI Developers
         </h3>
-        <h5 className="mb-5 lg:mb-10 text-base lg:text-lg font-medium text-center text-white mt-7 lg:px-[20%] px-4">
+        <h5 className="mb-5 mt-7 px-4 text-center text-base font-medium text-white lg:mb-10 lg:px-[20%] lg:text-lg">
           Empower AI developers with the tools necessary to simplify the
           creation, deployment, and customization of AI Agents, streamlining the
           development process.
         </h5>
-        <div className="flex flex-wrap justify-center items-center gap-6 2xl:gap-20 lg:gap-10 xl:gap-14">
+        <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-10 xl:gap-14 2xl:gap-20">
           {[
             { Icon: AirdropAssistant, name: 'Airdrop Assistant' },
             { Icon: kLineTrader, name: 'K-Line Trader' },
@@ -63,7 +63,7 @@ const Showcase = () => {
             <article
               key={index}
               className="flex flex-col items-center text-white">
-              <div className="frosted-card p-4 rounded border">
+              <div className="frosted-card rounded border p-4">
                 <item.Icon className="size-8 md:size-10" />
               </div>
               <p className="mt-4 text-sm font-semibold md:text-lg">

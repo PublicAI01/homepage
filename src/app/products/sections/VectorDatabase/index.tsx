@@ -19,22 +19,22 @@ const VectorDatabase = () => {
   return (
     <SectionWrapper className="relative lg:mt-40">
       <Image
-        className="md:-top-[10%] md:w-3/5 absolute inset-x-0 md:inset-x-[20%]"
+        className="absolute inset-x-0 md:inset-x-[20%] md:-top-[10%] md:w-3/5"
         src={earth}
         alt="decorative earth picture"
         aria-hidden
       />
       <div className="md:mb-10">
-        <h3 className="text-xl font-bold text-center text-white md:text-4xl">
+        <h3 className="text-center text-xl font-bold text-white md:text-4xl">
           Application
         </h3>
-        <h4 className="my-2 text-lg font-bold text-center text-white md:text-2xl">
+        <h4 className="my-2 text-center text-lg font-bold text-white md:text-2xl">
           Empower your AI with seamless data management.
         </h4>
-        <h5 className="text-xs font-medium text-center text-white md:text-xl">
+        <h5 className="text-center text-xs font-medium text-white md:text-xl">
           Leverage the integration of Vector Database&apos;s rapid data
           retrieval and Data API Suite&apos;s versatile data services to{' '}
-          <b className={clsx(styles.typing, 'font-bold text-p1 block mx-auto')}>
+          <b className={clsx(styles.typing, 'mx-auto block font-bold text-p1')}>
             enhance AI applications with precise and actionable insights.
           </b>
         </h5>
@@ -42,15 +42,15 @@ const VectorDatabase = () => {
       <section
         className={clsx(
           aboutStyles['animate-border'],
-          'w-full p-5 mt-8 lg:px-20 lg:py-16',
+          'mt-8 w-full p-5 lg:px-20 lg:py-16',
         )}>
         <Title className="mx-auto">Vector Database</Title>
-        <h4 className="mx-auto max-w-3xl mt-7 mb-5 text-sm font-medium text-center text-white md:mt-14 md:mb-10 md:text-xl">
+        <h4 className="mx-auto mb-5 mt-7 max-w-3xl text-center text-sm font-medium text-white md:mb-10 md:mt-14 md:text-xl">
           A comprehensive collection of datasets meticulously curated to cater
           to a wide array of industries and modalities, providing the foundation
           for AI projects.
         </h4>
-        <div className="grid flex-col grid-cols-2 gap-4 2xl:gap-32 lg:grid-cols-4 lg:gap-12">
+        <div className="grid grid-cols-2 flex-col gap-4 lg:grid-cols-4 lg:gap-12 2xl:gap-32">
           {[
             { Icon: text, title: 'Text' },
             { Icon: audio, title: 'Audio' },
@@ -61,7 +61,7 @@ const VectorDatabase = () => {
               key={index}
               className={clsx(
                 cardStyles.card,
-                'rounded-xl frosted-card transition-colors hover:bg-white py-4 px-6 md:py-6 md:px-8 flex-1 self-stretch flex flex-col items-center justify-center',
+                'frosted-card flex flex-1 flex-col items-center justify-center self-stretch rounded-xl px-6 py-4 transition-colors hover:bg-white md:px-8 md:py-6',
               )}
               style={
                 {

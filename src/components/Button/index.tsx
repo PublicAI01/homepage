@@ -13,7 +13,7 @@ const Button: FC<{
   return (
     <Link
       className={clsx(
-        'w-60 text-base md:text-xl text-white py-2 font-medium text-center',
+        'w-60 py-2 text-center text-base font-medium text-white md:text-xl',
         ButtonWrapper.className,
         theme === 'primary' && 'bg-primary',
       )}
