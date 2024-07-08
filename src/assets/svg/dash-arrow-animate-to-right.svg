@@ -2,12 +2,8 @@
 <svg width="32px" height="69px" viewBox="0 0 32 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset='0' stop-color="#9c9c9c">
-        <animate attributeName='stop-color' values='rgba(255, 255, 255, 0);#9c9c9c' dur='2s' repeatCount='indefinite' />
-      </stop>
-      <stop offset="1" stop-color="rgba(255, 255, 255, 0)">
-        <animate attributeName='stop-color' values='#9c9c9c;rgba(255, 255, 255, 0)' dur='2s' repeatCount='indefinite' />
-      </stop>
+      <stop offset='0' stop-color="#9c9c9c" />
+      <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
     </linearGradient>
   </defs>
   <g stroke="none" stroke-width="1" fill="url(#gradient)" fill-rule="evenodd">
