@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <section className="flex flex-col">
       <div className="flex flex-col pt-16 lg:pt-28">
-        <h1 className="text-center text-xl font-semibold tracking-wide text-white md:text-3xl">
+        <h1 className="text-center text-lg font-semibold tracking-wide text-white md:text-3xl">
           <b className="mb-2 block text-3xl md:text-5xl">Building</b> Craft AI
           with Collective Intelligence
         </h1>

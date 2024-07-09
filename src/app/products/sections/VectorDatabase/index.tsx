@@ -26,19 +26,19 @@ const VectorDatabase = () => {
         aria-hidden
       />
       <div className="md:mb-10">
-        <h3 className="text-center text-2xl font-bold text-white md:text-4xl">
+        <h1 className="text-center text-3xl font-bold text-white md:text-5xl">
           Application
-        </h3>
-        <h4 className="my-2 text-center text-xl font-bold text-white md:text-3xl">
+        </h1>
+        <h2 className="my-2 text-center text-lg font-bold text-white md:text-3xl">
           Empower your AI with seamless data management
-        </h4>
-        <h5 className="text-center text-xs font-medium text-white md:text-xl">
+        </h2>
+        <h3 className="text-center text-xs font-medium text-white md:text-xl">
           Leverage the integration of Vector Database&apos;s rapid data
           retrieval and Data API Suite&apos;s versatile data services to{' '}
           <b className={cn(styles.typing, 'mx-auto block font-bold text-p1')}>
             enhance AI applications with precise and actionable insights.
           </b>
-        </h5>
+        </h3>
       </div>
       <section
         className={cn(

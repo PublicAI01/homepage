@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="64px" height="15px" viewBox="0 0 64 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
-    <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset='0' stop-color="#9c9c9c" />
-      <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
+    <linearGradient id="gradient" x1="100%" y1="0" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#393939" />
+      <stop offset="1" stop-color="#CDCDCD" />
     </linearGradient>
   </defs>
-  <g stroke="none" stroke-width="1" fill="url(#gradient)" fill-rule="evenodd">
-    <path d="M14.5,0.5 L14.5,6.5 L15.5,6.5 L15.5,8.5 L14.5,8.5 L14.5,14.5 L0.5,7.5 L14.5,0.5 Z M63.5,6.5 L63.5,8.5 L55.5,8.5 L55.5,6.5 L63.5,6.5 Z M51.5,6.5 L51.5,8.5 L43.5,8.5 L43.5,6.5 L51.5,6.5 Z M39.5,6.5 L39.5,8.5 L31.5,8.5 L31.5,6.5 L39.5,6.5 Z M27.5,6.5 L27.5,8.5 L19.5,8.5 L19.5,6.5 L27.5,6.5 Z" fill-rule="nonzero"></path>
+  <g stroke="none" stroke-width="1" fill="url(#gradient)">
+    <path d="M14.5,0.5 L14.5,6.5 L15.5,6.5 L15.5,8.5 L14.5,8.5 L14.5,14.5 L0.5,7.5 L14.5,0.5 Z M63.5,6.5 L63.5,8.5 L55.5,8.5 L55.5,6.5 L63.5,6.5 Z M51.5,6.5 L51.5,8.5 L43.5,8.5 L43.5,6.5 L51.5,6.5 Z M39.5,6.5 L39.5,8.5 L31.5,8.5 L31.5,6.5 L39.5,6.5 Z M27.5,6.5 L27.5,8.5 L19.5,8.5 L19.5,6.5 L27.5,6.5 Z"></path>
   </g>
 </svg>

@@ -35,7 +35,7 @@ const Works = () => {
         <p className={styles.slogan}>&nbsp;Function</p>
       </h3>
       <Image
-        className="h-auto w-full sm:w-1/3 md:w-2/3"
+        className="h-auto w-full sm:w-1/4 md:w-2/4"
         src={rewardFn}
         width={500}
         alt="reward function"
