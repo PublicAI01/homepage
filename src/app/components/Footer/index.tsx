@@ -5,9 +5,9 @@ const Footer = () => {
     <footer className="pt-5 md:pt-10">
       <div className="container relative mx-auto flex flex-col items-end">
         <section className="flex flex-col">
-          <h6 className="text-lg font-semibold text-white md:text-2xl">
+          <h3 className="text-lg font-semibold text-white md:text-2xl">
             Contact us
-          </h6>
+          </h3>
           <a
             href="mailto:contact@publicai.io"
             className="my-3 flex items-center py-2 text-white max-md:pr-4 md:my-6 md:py-4">

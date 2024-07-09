@@ -46,11 +46,11 @@ const VectorDatabase = () => {
           'mt-8 w-full p-5 lg:px-20 lg:py-16',
         )}>
         <Title className="mx-auto">Vector Database</Title>
-        <h4 className="mx-auto mb-5 mt-7 max-w-3xl text-center text-sm font-medium text-white md:mb-10 md:mt-14 md:text-xl">
+        <h3 className="mx-auto mb-5 mt-7 max-w-3xl text-center text-sm font-medium text-white md:mb-10 md:mt-14 md:text-xl">
           A comprehensive collection of datasets meticulously curated to cater
           to a wide array of industries and modalities, providing the foundation
           for AI projects.
-        </h4>
+        </h3>
         <div className="grid grid-cols-2 flex-col gap-4 lg:grid-cols-4 lg:gap-12 2xl:gap-32">
           {[
             { Icon: text, title: 'Text' },
@@ -76,9 +76,9 @@ const VectorDatabase = () => {
                 e.currentTarget.classList.add('animate-card-flicker');
               }}>
               <item.Icon className="size-9 md:size-11" />
-              <h5 className="mt-4 text-base font-bold transition-colors md:text-xl">
+              <h4 className="mt-4 text-base font-bold transition-colors md:text-xl">
                 {item.title}
-              </h5>
+              </h4>
             </article>
           ))}
         </div>

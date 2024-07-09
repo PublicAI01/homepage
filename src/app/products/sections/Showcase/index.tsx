@@ -21,11 +21,11 @@ const Showcase = () => {
         <h3 className="mt-14 text-center text-xl font-bold text-white lg:text-3xl">
           AI Agents for Public Blockchains
         </h3>
-        <h5 className="mb-5 mt-7 px-4 text-center text-base font-medium text-white lg:mb-10 lg:px-[20%] lg:text-lg">
+        <h4 className="mb-5 mt-7 px-4 text-center text-base font-medium text-white lg:mb-10 lg:px-[20%] lg:text-lg">
           We offer data services for various public blockchain networks,
           empowering them to create Custom AI Agents capable of executing
           diverse tasks from data analysis to automated decision-making.
-        </h5>
+        </h4>
         <div className="container flex flex-wrap items-center justify-center gap-6 lg:gap-10 xl:gap-14 2xl:gap-20">
           {[
             { image: berachain, name: 'berachain' },
@@ -49,11 +49,11 @@ const Showcase = () => {
         <h3 className="mt-16 text-center text-xl font-bold text-white lg:mt-32 lg:text-3xl">
           Empowerment for AI Developers
         </h3>
-        <h5 className="mb-5 mt-7 px-4 text-center text-base font-medium text-white lg:mb-10 lg:px-[20%] lg:text-lg">
+        <h4 className="mb-5 mt-7 px-4 text-center text-base font-medium text-white lg:mb-10 lg:px-[20%] lg:text-lg">
           Empower AI developers with the tools necessary to simplify the
           creation, deployment, and customization of AI Agents, streamlining the
           development process.
-        </h5>
+        </h4>
         <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-10 xl:gap-14 2xl:gap-20">
           {[
             { Icon: AirdropAssistant, name: 'Airdrop Assistant' },
