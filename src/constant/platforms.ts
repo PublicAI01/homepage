@@ -10,7 +10,7 @@ import {
 } from '@/constant';
 
 const PLATFORMS = [
-  { Icon: twitter, label: 'twitter', link: TWITTER_LINK },
+  { Icon: twitter, label: 'x', link: TWITTER_LINK },
   { Icon: telegram, label: 'telegram', link: TELEGRAM_LINK },
   { Icon: medium, label: 'medium', link: MEDIUM_LINK },
   { Icon: discord, label: 'discord', link: DISCORD_LINK },
