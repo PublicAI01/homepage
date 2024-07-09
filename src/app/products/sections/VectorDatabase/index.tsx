@@ -21,6 +21,7 @@ const VectorDatabase = () => {
       <Image
         className="absolute inset-x-0 md:inset-x-[20%] md:-top-[10%] md:w-3/5"
         src={earth}
+        height={500}
         alt="decorative earth picture"
         aria-hidden
       />

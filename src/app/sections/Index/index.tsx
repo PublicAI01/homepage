@@ -17,11 +17,11 @@ const Index = () => {
       <Image
         className="absolute left-0 top-0 -m-[33.333333%] h-auto w-2/3 scale-150 opacity-70 md:-m-48 md:w-96 md:scale-[2]"
         src={decorativeCone}
+        width={384}
         style={{
           clipPath: 'inset(50% 0 0 50%)',
         }}
         alt="decorative cone picture"
-        priority
         aria-hidden
       />
       <div
@@ -30,6 +30,8 @@ const Index = () => {
         <Image
           className="absolute -z-1 size-32 max-md:right-[35%] md:size-72"
           src={indexBall}
+          width={288}
+          height={288}
           alt="ball image"
           aria-hidden
         />

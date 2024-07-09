@@ -90,6 +90,7 @@ const Header = () => {
           <Image
             className="h-8 w-auto"
             src={publicai}
+            height={32}
             alt="publicai logo"
           />
         </Link>

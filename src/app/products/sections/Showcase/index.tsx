@@ -38,6 +38,7 @@ const Showcase = () => {
               <Image
                 className="h-9 w-auto md:h-11"
                 src={item.image}
+                height={44}
                 alt={item.name}
               />
             </article>

@@ -20,9 +20,10 @@ const Products = () => {
 
       <Image
         className="absolute -top-[var(--header-height)] -z-1 h-screen w-auto -rotate-[25deg] scale-150 opacity-70 md:inset-x-[16.666667%] md:-top-80 md:w-2/3 lg:h-auto lg:scale-75"
-        aria-hidden
         src={decorativeCone}
+        height={500}
         alt="decorative cone picture"
+        aria-hidden
       />
 
       <Index />

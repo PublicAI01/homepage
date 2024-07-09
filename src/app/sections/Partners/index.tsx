@@ -122,6 +122,7 @@ const Partners = () => {
                 <Image
                   className="mx-auto h-5 w-auto md:h-9 lg:h-11"
                   src={item.image}
+                  height={44}
                   alt={item.name}
                 />
               </article>

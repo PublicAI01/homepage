@@ -26,7 +26,9 @@ const Works = () => {
       <Image
         className="h-auto w-full sm:w-2/3 md:w-4/5"
         src={consensusFn}
+        width={500}
         alt="PublicAI consensus RLHF loss function"
+        priority
       />
       <h3 className="my-6 text-center text-lg font-bold text-white md:my-9 md:text-2xl">
         <p className={styles.slogan}>Reward</p>
@@ -35,7 +37,9 @@ const Works = () => {
       <Image
         className="h-auto w-full sm:w-1/3 md:w-2/3"
         src={rewardFn}
+        width={500}
         alt="reward function"
+        priority
       />
       <section className="my-16 flex flex-col justify-between max-md:mb-6 max-md:mt-12 md:flex-row md:items-center">
         <_Block
@@ -47,6 +51,8 @@ const Works = () => {
           <Image
             className={styles['arrow-animate']}
             src={arrowToRight}
+            width={112}
+            height={40}
             alt="arrow to right"
           />
         </div>
@@ -59,6 +65,8 @@ const Works = () => {
           <Image
             className={styles['arrow-animate']}
             src={arrowToLeft}
+            width={112}
+            height={40}
             alt="arrow to left"
           />
         </div>
@@ -86,6 +94,7 @@ const _Block: FC<{ className?: string; image: string; content: string }> = ({
       <Image
         className="h-auto w-16 md:w-28"
         src={image}
+        width={112}
         alt={content.toLocaleLowerCase()}
       />
       <p className="text-base text-white max-md:ml-4 md:mt-12 md:w-3/4 md:text-center">

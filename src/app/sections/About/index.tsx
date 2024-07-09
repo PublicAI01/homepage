@@ -76,6 +76,7 @@ const About = () => {
             <Image
               className="h-3/4 w-auto"
               src={dashArrowAnimateToRight}
+              height={120}
               alt="bottom to left arrow"
             />
           </div>
@@ -84,6 +85,8 @@ const About = () => {
             <Image
               className="absolute inset-0 h-auto w-full"
               src={dataCollection}
+              width={120}
+              height={120}
               alt="data collection picture"
               priority
             />
@@ -93,6 +96,7 @@ const About = () => {
             <Image
               className="h-[70%] w-auto"
               src={dashArrowAnimateToBottom}
+              height={120}
               alt="right to bottom arrow"
             />
           </div>
@@ -101,6 +105,8 @@ const About = () => {
             <Image
               className="absolute inset-0 h-auto w-full"
               src={modelEvaluation}
+              width={120}
+              height={120}
               alt="modal evaluation picture"
               priority
             />
@@ -110,6 +116,7 @@ const About = () => {
             <Image
               className="h-auto w-[70%]"
               src={dashArrowAnimateToLeft}
+              height={120}
               alt="right to bottom arrow"
             />
           </div>
@@ -118,6 +125,8 @@ const About = () => {
             <Image
               className="absolute inset-0 h-auto w-full"
               src={dataLabeling}
+              width={120}
+              height={120}
               alt="data labeling picture"
               priority
             />

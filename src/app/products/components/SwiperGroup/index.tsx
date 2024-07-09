@@ -84,6 +84,7 @@ const SwiperCard: FC<{
             <Image
               className="mx-auto mb-6 h-48 w-auto rounded-xl border border-b4 md:h-96"
               src={item}
+              height={384}
               alt={`data hunter preview ${index}`}
             />
           </SwiperSlide>
