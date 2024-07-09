@@ -22,9 +22,14 @@
   left: 75%;
 }
 
-.nav-icon {
+.nav-icon-container {
   --width: 30px;
   --height: 5px;
+  width: var(--width);
+  height: var(--width);
+}
+
+.nav-icon {
   display: inline-block;
   position: relative;
   width: var(--width);
@@ -105,7 +110,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .nav-icon {
+  .nav-icon-container {
     --width: 24px;
     --height: 4px;
   }

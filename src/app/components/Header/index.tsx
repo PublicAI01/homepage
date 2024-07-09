@@ -139,7 +139,14 @@ const Header = () => {
           <SwitchButton className={styles['path-switch-small']} />
           <label
             htmlFor={styles.switch}
-            className={clsx(styles['nav-icon'], 'cursor-pointer')}></label>
+            className={clsx(
+              'flex items-center justify-center',
+              styles['nav-icon-container'],
+            )}>
+            <div
+              className={styles['nav-icon']}
+              aria-hidden></div>
+          </label>
         </div>
       </header>
     </>
