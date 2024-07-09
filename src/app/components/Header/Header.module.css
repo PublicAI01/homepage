@@ -23,10 +23,12 @@
 }
 
 .nav-icon {
+  --width: 30px;
+  --height: 5px;
   display: inline-block;
   position: relative;
-  width: 30px;
-  height: 5px;
+  width: var(--width);
+  height: var(--height);
   background-color: #ffffff;
   transition-property: background-color, transform;
   transition-duration: 300ms;
@@ -36,8 +38,8 @@
 .nav-icon::after {
   content: '';
   display: block;
-  width: 30px;
-  height: 5px;
+  width: var(--width);
+  height: var(--height);
   position: absolute;
   background: #ffffff;
   transition-property: margin, transform;
@@ -45,11 +47,11 @@
 }
 
 .nav-icon::before {
-  margin-top: -10px;
+  margin-top: calc(var(--width) / 3 * -1);
 }
 
 .nav-icon::after {
-  margin-top: 10px;
+  margin-top: calc(var(--width) / 3);
 }
 
 .switch:checked ~ header .nav-icon {
@@ -96,4 +98,15 @@
 
 .switch:checked ~ .mask {
   transform: translate(0, 0);
+}
+
+.switch:checked ~ header .path-switch-small {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-icon {
+    --width: 24px;
+    --height: 4px;
+  }
 }

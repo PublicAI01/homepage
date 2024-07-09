@@ -18,3 +18,9 @@
     text-wrap: balance;
   }
 }
+
+@media screen and (max-width: 768px) {
+  :root {
+    --header-height: 3.75rem;
+  }
+}

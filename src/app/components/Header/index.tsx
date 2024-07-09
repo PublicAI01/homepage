@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { type ChangeEventHandler, useEffect, useRef, useState } from 'react';
 
 import ButtonGroup from '@/app/components/ButtonGroup';
+import SwitchButton from '@/app/components/ButtonGroup/SwitchButton';
 import styles from '@/app/components/Header/Header.module.css';
 import publicai from '@/assets/svg/publicai.svg';
 import { NAV_LIST } from '@/constant';
@@ -97,7 +98,7 @@ const Header = () => {
             }
           }}>
           <Image
-            className="h-8 w-auto"
+            className="h-6 w-auto md:h-8"
             src={publicai}
             height={32}
             alt="publicai logo"
@@ -134,9 +135,12 @@ const Header = () => {
           </ul>
         </nav>
         <ButtonGroup className="max-lg:hidden" />
-        <label
-          htmlFor={styles.switch}
-          className={clsx(styles['nav-icon'], 'lg:hidden')}></label>
+        <div className="flex items-center gap-3 lg:hidden">
+          <SwitchButton className={styles['path-switch-small']} />
+          <label
+            htmlFor={styles.switch}
+            className={clsx(styles['nav-icon'], 'cursor-pointer')}></label>
+        </div>
       </header>
     </>
   );
