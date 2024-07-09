@@ -19,18 +19,18 @@ const VectorDatabase = () => {
   return (
     <SectionWrapper className="relative lg:mt-40">
       <Image
-        className="absolute inset-x-0 md:inset-x-[20%] md:-top-[10%] md:w-3/5"
+        className="absolute inset-x-0 -z-1 md:inset-x-[20%] md:-top-[10%] md:w-3/5"
         src={earth}
         height={500}
         alt="decorative earth picture"
         aria-hidden
       />
       <div className="md:mb-10">
-        <h3 className="text-center text-xl font-bold text-white md:text-4xl">
+        <h3 className="text-center text-2xl font-bold text-white md:text-4xl">
           Application
         </h3>
-        <h4 className="my-2 text-center text-lg font-bold text-white md:text-2xl">
-          Empower your AI with seamless data management.
+        <h4 className="my-2 text-center text-xl font-bold text-white md:text-3xl">
+          Empower your AI with seamless data management
         </h4>
         <h5 className="text-center text-xs font-medium text-white md:text-xl">
           Leverage the integration of Vector Database&apos;s rapid data

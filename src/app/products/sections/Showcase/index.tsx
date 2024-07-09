@@ -49,12 +49,12 @@ const Showcase = () => {
         <h3 className="mt-16 text-center text-xl font-bold text-white lg:mt-32 lg:text-3xl">
           Empowerment for AI Developers
         </h3>
-        <h4 className="mb-5 mt-7 px-4 text-center text-base font-medium text-white lg:mb-10 lg:px-[20%] lg:text-lg">
+        <h4 className="mb-10 mt-7 px-4 text-center text-base font-medium text-white lg:px-[20%] lg:text-lg">
           Empower AI developers with the tools necessary to simplify the
           creation, deployment, and customization of AI Agents, streamlining the
           development process.
         </h4>
-        <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-10 xl:gap-14 2xl:gap-20">
+        <div className="mx-auto flex flex-wrap items-center justify-center gap-5 max-sm:w-4/5 lg:gap-10 xl:gap-14 2xl:gap-20">
           {[
             { Icon: AirdropAssistant, name: 'Airdrop Assistant' },
             { Icon: kLineTrader, name: 'K-Line Trader' },
@@ -73,7 +73,7 @@ const Showcase = () => {
                   )}
                 />
               </div>
-              <p className="mt-4 text-sm font-semibold md:text-lg">
+              <p className="mt-4 text-center text-xs font-semibold max-md:w-16 md:text-lg">
                 {item.name}
               </p>
             </article>

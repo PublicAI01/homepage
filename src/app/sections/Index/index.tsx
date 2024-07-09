@@ -9,7 +9,7 @@ import { CHROME_EXTENSION_LINK, PUBLIC_AI_DATA_HUNTER_LINK } from '@/constant';
 
 const Index = () => {
   return (
-    <section className="relative flex h-screen flex-col items-center justify-center">
+    <section className="relative flex h-dvh flex-col items-center justify-center">
       <Anchor
         className="max-md:scroll-mt-[100vh]"
         id="home"
