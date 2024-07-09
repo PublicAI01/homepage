@@ -18,7 +18,9 @@ const config: Config = {
         b2: '#0E100C',
         b3: '#0f0f0f',
         b4: '#4c4c4c',
+        b5: '#262626',
         g1: '#e6e6e6',
+        g2: '#98989A',
         p1: '#B08BFF',
       },
       animation: {
