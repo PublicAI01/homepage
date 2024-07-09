@@ -45,7 +45,7 @@ const Partners = () => {
         aria-hidden
         className={clsx(
           styles['animate-shadow'],
-          'absolute bg-primary/20 blur-[96px] max-md:inset-x-0 max-md:h-1/6 md:inset-y-0 md:w-1/4',
+          'absolute z-0 bg-primary/20 blur-[96px] max-md:inset-x-0 max-md:h-1/6 md:inset-y-0 md:w-1/4',
         )}></div>
       {[
         {
@@ -107,7 +107,7 @@ const Partners = () => {
       ].map((group, index) => (
         <section
           key={index}
-          className="mt-10 flex w-full flex-col px-4 md:px-6 lg:mb-14">
+          className="z-1 mt-10 flex w-full flex-col px-4 md:px-6 lg:mb-14">
           <h3 className="mb-6 text-base font-semibold text-white md:text-xl">
             {group.title}
           </h3>
@@ -120,7 +120,7 @@ const Partners = () => {
                   background: `url(${DATA_CARD_BORDER_WITH_ALPHA})`,
                 }}>
                 <Image
-                  className="mx-auto h-7 w-auto md:h-9 lg:h-11"
+                  className="mx-auto h-5 w-auto md:h-9 lg:h-11"
                   src={item.image}
                   alt={item.name}
                 />

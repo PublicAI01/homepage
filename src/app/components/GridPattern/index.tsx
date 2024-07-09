@@ -25,7 +25,7 @@ export function GridPattern({
   strokeDasharray = 0,
   numSquares = 50,
   className,
-  maxOpacity = 0.5,
+  maxOpacity = 0.4,
   duration = 4,
   repeatDelay = 0.5,
   ...props
@@ -144,7 +144,7 @@ export function GridPattern({
             height={height - 1}
             x={x * width + 1}
             y={y * height + 1}
-            fill="#fff"
+            fill="#bfbfbf"
             strokeWidth="0"
           />
         ))}

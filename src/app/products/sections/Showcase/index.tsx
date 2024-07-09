@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 
 import berachain from '@/assets/image/berachain.png';
@@ -64,7 +65,12 @@ const Showcase = () => {
               key={index}
               className="flex flex-col items-center text-white">
               <div className="frosted-card rounded border p-4">
-                <item.Icon className="size-8 md:size-10" />
+                <item.Icon
+                  className={clsx(
+                    'size-8 md:size-10',
+                    item.Icon.name === XTrendAnalyst.name && 'scale-75',
+                  )}
+                />
               </div>
               <p className="mt-4 text-sm font-semibold md:text-lg">
                 {item.name}

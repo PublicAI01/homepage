@@ -21,7 +21,7 @@ const About = () => {
     <SectionWrapper
       title="About PublicAI"
       marginTop={false}>
-      <h3 className="container mt-12 text-center text-base font-medium text-g1 md:text-3xl">
+      <h3 className="container mt-12 text-center text-base font-medium text-g1 md:text-2xl">
         PublicAI is a distributed AI network enables every human: contribute to
         AI and share the benefits that connects businesses and individuals with
         a global network of workers. It simplifies the process of outsourcing a
