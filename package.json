@@ -17,7 +17,8 @@
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.33.4",
-    "swiper": "^11.1.4"
+    "swiper": "^11.1.4",
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
