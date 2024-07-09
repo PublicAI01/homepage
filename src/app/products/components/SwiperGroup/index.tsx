@@ -4,7 +4,6 @@ import 'swiper/css/navigation';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import clsx from 'clsx';
 import Image, { type StaticImageData } from 'next/image';
 import type { FC } from 'react';
 import { Mousewheel, Navigation, Pagination } from 'swiper/modules';
@@ -18,6 +17,7 @@ import HubPreview4 from '@/assets/image/hub-preview-4.png';
 import HunterPreview1 from '@/assets/image/hunter-preview-1.png';
 import HunterPreview2 from '@/assets/image/hunter-preview-2.png';
 import SectionWrapper from '@/components/SectionWrapper';
+import { cn } from '@/utils';
 
 const SwiperGroup = () => {
   return (
@@ -61,7 +61,7 @@ const SwiperCard: FC<{
         </p>
       </div>
       <Swiper
-        className={clsx('max-w-full', styles.swiper)}
+        className={cn('max-w-full', styles.swiper)}
         slidesPerView={1}
         spaceBetween={0}
         mousewheel

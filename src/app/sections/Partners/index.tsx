@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Image from 'next/image';
 
 import aboutStyles from '@/app/sections/About/About.module.css';
@@ -34,16 +33,17 @@ import StanfordUniversity from '@/assets/partners/stanford.png';
 import TheBlock from '@/assets/partners/the-block.png';
 import SectionWrapper from '@/components/SectionWrapper';
 import { DATA_CARD_BORDER_WITH_ALPHA } from '@/constant/border';
+import { cn } from '@/utils';
 
 const Partners = () => {
   return (
     <SectionWrapper
-      className={clsx(aboutStyles['animate-border'], 'py-7 lg:px-24')}
+      className={cn(aboutStyles['animate-border'], 'py-7 lg:px-24')}
       title="Partners"
       anchorId="partners">
       <div
         aria-hidden
-        className={clsx(
+        className={cn(
           styles['animate-shadow'],
           'absolute z-0 bg-primary/20 blur-[96px] max-md:inset-x-0 max-md:h-1/6 md:inset-y-0 md:w-1/4',
         )}></div>

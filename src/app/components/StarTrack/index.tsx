@@ -1,7 +1,7 @@
-import clsx from 'clsx';
 import type { CSSProperties, FC } from 'react';
 
 import styles from '@/app/components/StarTrack/StarTrack.module.css';
+import { cn } from '@/utils';
 
 const StarTrack: FC<{
   className?: string;
@@ -20,7 +20,7 @@ const StarTrack: FC<{
 }) => {
   return (
     <div
-      className={clsx(styles.track, className)}
+      className={cn(styles.track, className)}
       style={
         {
           '--track-size-mobile': trackSize[0],

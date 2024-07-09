@@ -1,10 +1,10 @@
-import clsx from 'clsx';
 import Link from 'next/link';
 import { type FC } from 'react';
 
 import SwitchButton from '@/app/components/ButtonGroup/SwitchButton';
 import { DOCS_LINK } from '@/constant';
 import { BORDER_WITH_WHITE_BACKGROUND } from '@/constant/border';
+import { cn } from '@/utils';
 
 const ButtonGroup: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
   className,
@@ -12,7 +12,7 @@ const ButtonGroup: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
 }) => {
   return (
     <div
-      className={clsx(
+      className={cn(
         'flex flex-col items-center gap-5 md:gap-8 lg:flex-row xl:gap-5',
         className,
       )}>

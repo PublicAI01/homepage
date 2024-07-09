@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import type { FC, ReactNode } from 'react';
 
 import Anchor from '@/components/Anchor';
 import Title from '@/components/Title';
+import { cn } from '@/utils';
 
 const SectionWrapper: FC<{
   children: ReactNode;
@@ -27,7 +27,7 @@ const SectionWrapper: FC<{
 }) => {
   return (
     <section
-      className={clsx(
+      className={cn(
         'container mx-auto lg:w-[calc(100%_-_3rem)]',
         useFlexLayout && 'flex flex-col items-center',
         useMobileContainerWidth && 'max-lg:w-[var(--mobile-container-width)]',

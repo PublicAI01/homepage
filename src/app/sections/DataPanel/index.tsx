@@ -1,6 +1,5 @@
 'use client';
 
-import clsx from 'clsx';
 import type { CSSProperties } from 'react';
 
 import buildersData from '@/assets/svg/builder-icon.svg?react';
@@ -10,6 +9,7 @@ import validatorsData from '@/assets/svg/validators-data.svg?react';
 import workersData from '@/assets/svg/workers-data.svg?react';
 import cardStyles from '@/components/Card/Card.module.css';
 import SectionWrapper from '@/components/SectionWrapper';
+import { cn } from '@/utils';
 
 const DataPanel = () => {
   return (
@@ -25,7 +25,7 @@ const DataPanel = () => {
       ].map((item, index) => (
         <article
           key={index}
-          className={clsx(
+          className={cn(
             cardStyles.card,
             'frosted-card flex size-full flex-col items-center justify-center rounded-xl pb-3 pt-4 transition-colors hover:border-white hover:bg-white lg:pb-4 lg:pt-7',
           )}

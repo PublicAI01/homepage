@@ -1,21 +1,21 @@
-import clsx from 'clsx';
 import Link from 'next/link';
 
 import headerStyles from '@/app/components/Header/Header.module.css';
 import styles from '@/app/components/MediaPlatform/MediaPlatform.module.css';
 import { PLATFORMS } from '@/constant/platforms';
+import { cn } from '@/utils';
 
 const MediaPlatform = () => {
   return (
     <aside
-      className={clsx(
+      className={cn(
         'fixed right-1 top-[50vh] z-50 flex flex-col gap-4 md:right-5',
         headerStyles['side-media-platform'],
       )}>
       {PLATFORMS.map((item, index) => (
         <Link
           key={index}
-          className={clsx(
+          className={cn(
             styles.platform,
             'relative transition-transform md:hover:scale-150',
           )}

@@ -1,6 +1,5 @@
 'use client';
 
-import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -11,6 +10,7 @@ import SwitchButton from '@/app/components/ButtonGroup/SwitchButton';
 import styles from '@/app/components/Header/Header.module.css';
 import publicai from '@/assets/svg/publicai.svg';
 import { NAV_LIST } from '@/constant';
+import { cn } from '@/utils';
 
 const Header = () => {
   const pathname = usePathname();
@@ -66,7 +66,7 @@ const Header = () => {
   return (
     <>
       <input
-        className={clsx('hidden', styles.switch)}
+        className={cn('hidden', styles.switch)}
         type="checkbox"
         name={styles.switch}
         id={styles.switch}
@@ -74,7 +74,7 @@ const Header = () => {
       />
       <label
         htmlFor={styles.switch}
-        className={clsx(
+        className={cn(
           'fixed bottom-0 left-0 top-[var(--header-height)] z-50 h-full w-1/5 bg-white/5 backdrop-blur-sm transition-all duration-300 ease-in-out',
           styles.mask,
         )}
@@ -105,7 +105,7 @@ const Header = () => {
           />
         </Link>
         <nav
-          className={clsx(
+          className={cn(
             'flex items-center justify-center max-lg:hidden',
             styles.nav,
           )}>
@@ -113,7 +113,7 @@ const Header = () => {
             {NAV_LIST.map((nav, index) => (
               <li
                 key={index}
-                className={clsx(
+                className={cn(
                   'z-10 w-32 list-none text-center',
                   currentActiveNav === nav.id && styles.current,
                 )}>
@@ -126,7 +126,7 @@ const Header = () => {
               </li>
             ))}
             <div
-              className={clsx(
+              className={cn(
                 'absolute bottom-0 left-0 h-full w-1/4 rounded bg-primary',
                 styles.slider,
                 !currentActiveNav && 'opacity-0',
@@ -139,7 +139,7 @@ const Header = () => {
           <SwitchButton className={styles['path-switch-small']} />
           <label
             htmlFor={styles.switch}
-            className={clsx(
+            className={cn(
               'flex items-center justify-center',
               styles['nav-icon-container'],
             )}>

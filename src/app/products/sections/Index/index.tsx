@@ -1,7 +1,6 @@
-import clsx from 'clsx';
-
 import SwiperGroup from '@/app/products/components/SwiperGroup';
 import styles from '@/app/products/sections/Index/Index.module.css';
+import { cn } from '@/utils';
 
 const Index = () => {
   return (
@@ -15,7 +14,7 @@ const Index = () => {
           Harness the synergy of Data Hunter&apos;s seamless collection and Data
           Hub&apos;s collaborative validation to{' '}
           <b
-            className={clsx(
+            className={cn(
               styles.typing,
               'mx-auto mt-3 block font-bold text-p1',
             )}>

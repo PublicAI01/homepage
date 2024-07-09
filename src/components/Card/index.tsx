@@ -1,9 +1,9 @@
 'use client';
 
-import clsx from 'clsx';
 import type { CSSProperties, FC, ReactNode } from 'react';
 
 import styles from '@/components/Card/Card.module.css';
+import { cn } from '@/utils';
 
 const Card: FC<{
   className?: string;
@@ -13,7 +13,7 @@ const Card: FC<{
 }> = ({ className, children, title, content }) => {
   return (
     <article
-      className={clsx(
+      className={cn(
         'rounded-xl border border-white bg-b2 p-4 transition-colors hover:bg-white xl:p-6',
         styles.card,
         className,

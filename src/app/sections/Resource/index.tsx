@@ -1,7 +1,6 @@
 'use client';
 
 import { YouTubeEmbed } from '@next/third-parties/google';
-import clsx from 'clsx';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 
@@ -12,6 +11,7 @@ import productGuideline from '@/assets/svg/product-guideline.svg?react';
 import cardStyles from '@/components/Card/Card.module.css';
 import SectionWrapper from '@/components/SectionWrapper';
 import { DOCS_LINK, DUNE_LINK, GITHUB_LINK } from '@/constant';
+import { cn } from '@/utils';
 
 const Resource = () => {
   return (
@@ -38,7 +38,7 @@ const Resource = () => {
         ].map((item, index) => (
           <Link
             key={index}
-            className={clsx(
+            className={cn(
               cardStyles.card,
               'frosted-card flex size-full flex-col items-center justify-center rounded-xl pb-4 pt-7 transition-colors hover:border-white hover:bg-white',
             )}
@@ -65,7 +65,7 @@ const Resource = () => {
         ))}
       </section>
       <div
-        className={clsx(
+        className={cn(
           styles['youtube-container'],
           'mt-8 h-auto overflow-hidden rounded-xl bg-b3 md:mt-28 lg:h-[600px]',
         )}>

@@ -1,8 +1,9 @@
 'use client';
 
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
+
+import { cn } from '@/utils';
 
 interface GridPatternProps {
   width?: number;
@@ -99,7 +100,7 @@ export function GridPattern({
     <svg
       ref={containerRef}
       aria-hidden="true"
-      className={clsx(
+      className={cn(
         'pointer-events-none absolute inset-0 size-full stroke-white/10',
         className,
       )}

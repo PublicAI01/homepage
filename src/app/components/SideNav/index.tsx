@@ -1,12 +1,12 @@
 'use client';
 
-import clsx from 'clsx';
 import Link from 'next/link';
 
 import ButtonGroup from '@/app/components/ButtonGroup';
 import headerStyles from '@/app/components/Header/Header.module.css';
 import { NAV_LIST } from '@/constant';
 import { PLATFORMS } from '@/constant/platforms';
+import { cn } from '@/utils';
 
 const SideNav = () => {
   const closeSideNavFn = () => {
@@ -17,7 +17,7 @@ const SideNav = () => {
 
   return (
     <aside
-      className={clsx(
+      className={cn(
         'fixed z-20 h-screen w-screen translate-x-full transition-all lg:hidden',
         headerStyles['side-nav'],
       )}

@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Image from 'next/image';
 
 import Swiper from '@/app/components/Swiper';
@@ -15,6 +14,7 @@ import mutualModalData from '@/assets/svg/mutual-modal-data.svg?react';
 import qualityControl from '@/assets/svg/quality-control.svg?react';
 import Card from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
+import { cn } from '@/utils';
 
 const About = () => {
   return (
@@ -66,7 +66,7 @@ const About = () => {
         ))}
       </div>
       <section
-        className={clsx(
+        className={cn(
           'container mt-10 flex flex-col items-center p-12 max-md:px-5 md:flex-row',
           styles['animate-border'],
         )}>

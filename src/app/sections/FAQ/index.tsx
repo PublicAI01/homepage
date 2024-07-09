@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import type { FC } from 'react';
 
 import styles from '@/app/sections/FAQ/FAQ.module.css';
 import SectionWrapper from '@/components/SectionWrapper';
+import { cn } from '@/utils';
 
 interface FAQItem {
   title: string;
@@ -62,7 +62,7 @@ const FAQ = () => {
 const Collapsible: FC<{ item: FAQItem }> = ({ item }) => {
   return (
     <article
-      className={clsx(
+      className={cn(
         styles.collapsible,
         'frosted-card cursor-pointer rounded-xl transition-colors hover:bg-primary',
       )}>

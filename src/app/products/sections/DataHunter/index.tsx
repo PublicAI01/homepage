@@ -1,11 +1,10 @@
-import clsx from 'clsx';
-
 import styles from '@/app/products/sections/DataHunter/DataHunter.module.css';
 import datasetIcon from '@/assets/svg/dataset-icon.svg?react';
 import rewardIcon from '@/assets/svg/reward-icon.svg?react';
 import trackingIcon from '@/assets/svg/tracking-icon.svg?react';
 import Card from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
+import { cn } from '@/utils';
 
 const DataHunter = () => {
   return (
@@ -15,7 +14,7 @@ const DataHunter = () => {
       <h3 className="mt-7 text-center text-base font-medium text-g1 md:text-lg">
         Data Hunter empowers users to instantly contribute valuable data and
         earn rewards{' '}
-        <b className={clsx(styles.typing, 'mx-auto block font-bold text-p1')}>
+        <b className={cn(styles.typing, 'mx-auto block font-bold text-p1')}>
           with a simple click.
         </b>
       </h3>

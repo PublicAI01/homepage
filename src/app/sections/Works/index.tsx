@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Image from 'next/image';
 import type { FC } from 'react';
 
@@ -11,6 +10,7 @@ import requesters from '@/assets/svg/requesters.svg';
 import rewardFn from '@/assets/svg/reward-fn.svg';
 import workers from '@/assets/svg/workers.svg';
 import SectionWrapper from '@/components/SectionWrapper';
+import { cn } from '@/utils';
 
 const Works = () => {
   return (
@@ -87,7 +87,7 @@ const _Block: FC<{ className?: string; image: string; content: string }> = ({
 }) => {
   return (
     <article
-      className={clsx(
+      className={cn(
         'flex w-full items-center max-md:px-4 md:flex-col',
         className,
       )}>

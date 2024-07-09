@@ -1,6 +1,5 @@
 'use client';
 
-import clsx from 'clsx';
 import Image from 'next/image';
 import type { CSSProperties } from 'react';
 
@@ -14,6 +13,7 @@ import video from '@/assets/svg/video-type.svg?react';
 import cardStyles from '@/components/Card/Card.module.css';
 import SectionWrapper from '@/components/SectionWrapper';
 import Title from '@/components/Title';
+import { cn } from '@/utils';
 
 const VectorDatabase = () => {
   return (
@@ -35,13 +35,13 @@ const VectorDatabase = () => {
         <h5 className="text-center text-xs font-medium text-white md:text-xl">
           Leverage the integration of Vector Database&apos;s rapid data
           retrieval and Data API Suite&apos;s versatile data services to{' '}
-          <b className={clsx(styles.typing, 'mx-auto block font-bold text-p1')}>
+          <b className={cn(styles.typing, 'mx-auto block font-bold text-p1')}>
             enhance AI applications with precise and actionable insights.
           </b>
         </h5>
       </div>
       <section
-        className={clsx(
+        className={cn(
           aboutStyles['animate-border'],
           'mt-8 w-full p-5 lg:px-20 lg:py-16',
         )}>
@@ -60,7 +60,7 @@ const VectorDatabase = () => {
           ].map((item, index) => (
             <article
               key={index}
-              className={clsx(
+              className={cn(
                 cardStyles.card,
                 'frosted-card flex flex-1 flex-col items-center justify-center self-stretch rounded-xl px-6 py-4 transition-colors hover:bg-white md:px-8 md:py-6',
               )}
