@@ -2,7 +2,7 @@ import Mail from '@/assets/svg/mail.svg?react';
 
 const Footer = () => {
   return (
-    <footer className="pt-5 md:pt-10">
+    <footer className="bg-b1 pt-5 md:pt-10">
       <div className="container relative mx-auto flex flex-col items-end">
         <section className="flex flex-col">
           <h3 className="text-lg font-semibold text-white md:text-2xl">

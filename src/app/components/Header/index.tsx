@@ -86,7 +86,16 @@ const Header = () => {
         <Link
           className="flex h-[var(--header-height)] items-center"
           href="/"
-          aria-label="return to homepage">
+          aria-label="return to homepage"
+          onClick={() => {
+            const switchEl = document.querySelector<HTMLInputElement>(
+              `.${styles.switch}`,
+            );
+
+            if (switchEl?.checked) {
+              switchEl?.click();
+            }
+          }}>
           <Image
             className="h-8 w-auto"
             src={publicai}

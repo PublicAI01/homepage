@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { Bai_Jamjuree } from 'next/font/google';
 
 import Footer from '@/app/components/Footer';
+import GridPattern from '@/app/components/GridPattern';
 import Header from '@/app/components/Header';
 import MediaPlatform from '@/app/components/MediaPlatform';
 import SideNav from '@/app/components/SideNav';
@@ -15,6 +16,7 @@ const jamjuree = Bai_Jamjuree({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-jamjuree',
+  preload: true,
   adjustFontFallback: false,
 });
 
@@ -37,6 +39,7 @@ export default function RootLayout({
       className="scroll-pt-[var(--header-height)] scroll-smooth scrollbar-none md:scroll-pt-20">
       <body className={clsx(jamjuree.className, 'bg-b1')}>
         <div className="relative overflow-hidden">
+          <GridPattern className="top-[var(--header-height)] -z-1" />
           <Header />
           <MediaPlatform />
           <SideNav />

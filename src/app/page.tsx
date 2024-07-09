@@ -1,4 +1,3 @@
-import GridPattern from '@/app/components/GridPattern';
 import About from '@/app/sections/About';
 import DataPanel from '@/app/sections/DataPanel';
 import FAQ from '@/app/sections/FAQ';
@@ -15,8 +14,6 @@ export default function Home() {
       style={{
         marginTop: 'var(--header-height)',
       }}>
-      <GridPattern className="-z-1" />
-
       <Index />
       <About />
       <Works />

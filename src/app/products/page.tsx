@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import GridPattern from '@/app/components/GridPattern';
 import DataAPISuite from '@/app/products/sections/DataAPISuite';
 import DataHub from '@/app/products/sections/DataHub';
 import DataHunter from '@/app/products/sections/DataHunter';
@@ -16,8 +15,6 @@ const Products = () => {
       style={{
         marginTop: 'var(--header-height)',
       }}>
-      <GridPattern className="-z-1" />
-
       <Image
         className="absolute -top-[var(--header-height)] -z-1 h-screen w-auto -rotate-[25deg] scale-150 opacity-70 md:inset-x-[16.666667%] md:-top-80 md:w-2/3 lg:h-auto lg:scale-75"
         src={decorativeCone}
