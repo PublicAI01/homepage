@@ -1,15 +1,21 @@
 import Image from 'next/image';
 
 import StarTrack from '@/app/components/StarTrack';
+import styles from '@/app/sections/Index/Index.module.css';
 import indexBall from '@/assets/image/index-ball.png';
 import decorativeCone from '@/assets/svg/decorative-cone.svg';
 import Anchor from '@/components/Anchor';
 import Button from '@/components/Button';
 import { CHROME_EXTENSION_LINK, PUBLIC_AI_DATA_HUNTER_LINK } from '@/constant';
+import { cn } from '@/utils';
 
 const Index = () => {
   return (
-    <section className="relative flex h-dvh flex-col items-center justify-center">
+    <section
+      className={cn(
+        'relative flex flex-col items-center justify-center',
+        styles.section,
+      )}>
       <Anchor
         className="max-md:scroll-mt-[100vh]"
         id="home"
