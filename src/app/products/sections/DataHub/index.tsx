@@ -13,7 +13,8 @@ const DataHub = () => {
       title="Data Hub">
       <h3 className="mt-7 text-center text-xs font-medium text-g1 md:text-lg">
         Data Hub empowers users to earn tokens by validating datasets,{' '}
-        <b className={cn(styles.typing, 'mx-auto block font-bold text-p1')}>
+        <b
+          className={cn(styles.typing, 'mx-auto mt-3 block font-bold text-p1')}>
           fostering a decentralized Train-AI-To-Earn ecosystem.
         </b>
       </h3>

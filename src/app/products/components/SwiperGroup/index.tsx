@@ -48,8 +48,8 @@ const SwiperCard: FC<{
   images: StaticImageData[];
 }> = ({ title, subTitle, content, images }) => {
   return (
-    <article className="flex flex-col justify-between self-stretch rounded-2xl border border-white bg-b3/65 px-4 py-5 lg:w-[calc(50%_-_1.5rem)] lg:p-6">
-      <div>
+    <div className="flex flex-col justify-between self-stretch rounded-2xl border border-white bg-b3/65 px-4 py-5 lg:w-[calc(50%_-_1.5rem)] lg:p-6">
+      <hgroup>
         <h3 className="text-base font-semibold text-white md:font-bold lg:text-2xl">
           {title}
         </h3>
@@ -59,7 +59,7 @@ const SwiperCard: FC<{
         <p className="my-3 text-sm font-medium text-g1 lg:text-base">
           {content}
         </p>
-      </div>
+      </hgroup>
       <Swiper
         className={cn('max-w-full', styles.swiper)}
         slidesPerView={1}
@@ -90,7 +90,7 @@ const SwiperCard: FC<{
           </SwiperSlide>
         ))}
       </Swiper>
-    </article>
+    </div>
   );
 };
 

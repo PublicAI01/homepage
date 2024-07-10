@@ -57,7 +57,7 @@ const Index = () => {
           ballSize={['0.5rem', '1rem']}
         />
       </div>
-      <article className="relative mb-24 flex flex-col">
+      <div className="relative mb-24 flex flex-col">
         <div
           className="absolute -left-10 top-1/2 size-12 rounded-full bg-primary/80 md:-left-1/4 md:size-24"
           style={{
@@ -84,7 +84,7 @@ const Index = () => {
             Launch Data Hub
           </Button>
         </div>
-      </article>
+      </div>
     </section>
   );
 };

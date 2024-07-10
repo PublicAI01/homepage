@@ -109,7 +109,7 @@ const Header = () => {
             'flex items-center justify-center max-lg:hidden',
             styles.nav,
           )}>
-          <ul className="relative flex">
+          <menu className="relative flex">
             {NAV_LIST.map((nav, index) => (
               <li
                 key={index}
@@ -132,7 +132,7 @@ const Header = () => {
                 !currentActiveNav && 'opacity-0',
               )}
               aria-hidden></div>
-          </ul>
+          </menu>
         </nav>
         <ButtonGroup className="max-lg:hidden" />
         <div className="flex items-center gap-3 lg:hidden">

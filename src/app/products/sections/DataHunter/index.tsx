@@ -14,7 +14,8 @@ const DataHunter = () => {
       <h3 className="mt-7 text-center text-base font-medium text-g1 md:text-lg">
         Data Hunter empowers users to instantly contribute valuable data and
         earn rewards{' '}
-        <b className={cn(styles.typing, 'mx-auto block font-bold text-p1')}>
+        <b
+          className={cn(styles.typing, 'mx-auto mt-3 block font-bold text-p1')}>
           with a simple click.
         </b>
       </h3>

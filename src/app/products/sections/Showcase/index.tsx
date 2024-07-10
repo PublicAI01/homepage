@@ -32,7 +32,7 @@ const Showcase = () => {
             { image: ton, name: 'TON' },
             { image: bnbChain, name: 'BNB chain' },
           ].map((item, index) => (
-            <article
+            <div
               key={index}
               className="frosted-card rounded-xl px-3 py-2.5">
               <Image
@@ -41,7 +41,7 @@ const Showcase = () => {
                 height={44}
                 alt={item.name}
               />
-            </article>
+            </div>
           ))}
         </div>
       </section>
@@ -62,7 +62,7 @@ const Showcase = () => {
             { Icon: OnChainExpert, name: 'On-chain Expert' },
             { Icon: XTrendAnalyst, name: 'X Trend Analyst' },
           ].map((item, index) => (
-            <article
+            <div
               key={index}
               className="flex flex-col items-center text-white">
               <div className="frosted-card rounded border p-4">
@@ -76,7 +76,7 @@ const Showcase = () => {
               <p className="mt-4 text-center text-xs font-semibold max-md:w-16 md:text-lg">
                 {item.name}
               </p>
-            </article>
+            </div>
           ))}
         </div>
       </section>

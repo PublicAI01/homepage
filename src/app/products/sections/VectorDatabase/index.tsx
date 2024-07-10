@@ -25,25 +25,29 @@ const VectorDatabase = () => {
         alt="decorative earth picture"
         aria-hidden
       />
-      <div className="md:mb-10">
-        <h1 className="text-center text-3xl font-bold text-white md:text-5xl">
+      <hgroup className="mb-10">
+        <h1 className="mb-2 text-center text-3xl font-bold text-white md:text-5xl">
           Application
         </h1>
-        <h2 className="my-2 text-center text-lg font-bold text-white md:text-3xl">
+        <h2 className="text-center text-lg font-bold text-white md:text-3xl">
           Empower your AI with seamless data management
         </h2>
-        <h3 className="text-center text-xs font-medium text-white md:text-xl">
+        <h3 className="mt-5 text-center text-xs font-medium text-white max-md:mt-6 md:text-xl">
           Leverage the integration of Vector Database&apos;s rapid data
           retrieval and Data API Suite&apos;s versatile data services to{' '}
-          <b className={cn(styles.typing, 'mx-auto block font-bold text-p1')}>
+          <b
+            className={cn(
+              styles.typing,
+              'mx-auto mt-3 block font-bold text-p1',
+            )}>
             enhance AI applications with precise and actionable insights.
           </b>
         </h3>
-      </div>
+      </hgroup>
       <section
         className={cn(
           aboutStyles['animate-border'],
-          'mt-8 w-full p-5 lg:px-20 lg:py-16',
+          'w-full p-5 lg:px-20 lg:py-16',
         )}>
         <Title className="mx-auto">Vector Database</Title>
         <h3 className="mx-auto mb-5 mt-7 max-w-3xl text-center text-sm font-medium text-white md:mb-10 md:mt-14 md:text-xl">
@@ -58,7 +62,7 @@ const VectorDatabase = () => {
             { Icon: video, title: 'Video' },
             { Icon: mapping, title: 'Mapping' },
           ].map((item, index) => (
-            <article
+            <div
               key={index}
               className={cn(
                 cardStyles.card,
@@ -79,7 +83,7 @@ const VectorDatabase = () => {
               <h4 className="mt-4 text-base font-bold transition-colors md:text-xl">
                 {item.title}
               </h4>
-            </article>
+            </div>
           ))}
         </div>
       </section>

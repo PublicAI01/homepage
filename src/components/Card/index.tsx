@@ -12,7 +12,7 @@ const Card: FC<{
   content: string;
 }> = ({ className, children, title, content }) => {
   return (
-    <article
+    <div
       className={cn(
         'rounded-xl border border-white bg-b2 p-4 transition-colors hover:bg-white xl:p-6',
         styles.card,
@@ -36,7 +36,7 @@ const Card: FC<{
       <p className="text-sm font-medium transition-colors md:text-base">
         {content}
       </p>
-    </article>
+    </div>
   );
 };
 

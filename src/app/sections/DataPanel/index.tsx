@@ -23,7 +23,7 @@ const DataPanel = () => {
         { Icon: datasetSizeData, title: 'Dataset Size', data: '100T+' },
         { Icon: partnersData, title: 'Partners', data: '50+' },
       ].map((item, index) => (
-        <article
+        <div
           key={index}
           className={cn(
             cardStyles.card,
@@ -47,7 +47,7 @@ const DataPanel = () => {
           <h3 className="text-base font-normal transition-colors">
             {item.title}
           </h3>
-        </article>
+        </div>
       ))}
     </SectionWrapper>
   );

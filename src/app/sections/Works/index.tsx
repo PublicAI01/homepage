@@ -86,7 +86,7 @@ const _Block: FC<{ className?: string; image: string; content: string }> = ({
   content,
 }) => {
   return (
-    <article
+    <div
       className={cn(
         'flex w-full items-center max-md:px-4 md:flex-col',
         className,
@@ -100,7 +100,7 @@ const _Block: FC<{ className?: string; image: string; content: string }> = ({
       <p className="text-base text-white max-md:ml-4 md:mt-12 md:w-3/4 md:text-center">
         {content}
       </p>
-    </article>
+    </div>
   );
 };
 

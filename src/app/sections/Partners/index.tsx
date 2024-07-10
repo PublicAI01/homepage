@@ -113,7 +113,7 @@ const Partners = () => {
           </h3>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:gap-x-28">
             {group.children.map((item, index) => (
-              <article
+              <div
                 key={index}
                 className="py-2"
                 style={{
@@ -125,7 +125,7 @@ const Partners = () => {
                   height={44}
                   alt={item.name}
                 />
-              </article>
+              </div>
             ))}
           </div>
         </section>

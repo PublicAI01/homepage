@@ -61,7 +61,7 @@ const FAQ = () => {
 
 const Collapsible: FC<{ item: FAQItem }> = ({ item }) => {
   return (
-    <article
+    <div
       className={cn(
         styles.collapsible,
         'frosted-card cursor-pointer rounded-xl transition-colors hover:bg-primary',
@@ -76,7 +76,7 @@ const Collapsible: FC<{ item: FAQItem }> = ({ item }) => {
           {item.content}
         </p>
       </div>
-    </article>
+    </div>
   );
 };
 

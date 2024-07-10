@@ -5,10 +5,12 @@ import { cn } from '@/utils';
 const Index = () => {
   return (
     <section className="flex flex-col">
-      <div className="flex flex-col pt-16 lg:pt-28">
+      <hgroup className="flex flex-col pt-16 lg:pt-28">
         <h1 className="text-center text-lg font-semibold tracking-wide text-white md:text-3xl">
-          <b className="mb-2 block text-3xl md:text-5xl">Building</b> Craft AI
-          with Collective Intelligence
+          <em className="mb-2 block text-3xl not-italic md:text-5xl">
+            Building
+          </em>{' '}
+          Craft AI with Collective Intelligence
         </h1>
         <h2 className="mx-4 mb-10 mt-5 text-center text-xs font-light text-white max-md:mt-6 md:text-xl md:font-normal">
           Harness the synergy of Data Hunter&apos;s seamless collection and Data
@@ -21,7 +23,7 @@ const Index = () => {
             supercharge AI with tailored large language models.
           </b>
         </h2>
-      </div>
+      </hgroup>
       <SwiperGroup />
     </section>
   );
