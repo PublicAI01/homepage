@@ -1,0 +1,17 @@
+.container div[data-overlayscrollbars-viewport] {
+  scroll-snap-type: y mandatory;
+}
+
+.os-theme {
+  box-sizing: border-box;
+  --os-size: 10px;
+  --os-padding-perpendicular: 2px;
+  --os-padding-axis: 2px;
+  --os-track-border-radius: 10px;
+  --os-handle-interactive-area-offset: 4px;
+  --os-handle-border-radius: 10px;
+  --os-handle-bg: #4000c8;
+  --os-handle-bg-hover: #4000c8;
+  --os-handle-bg-active: #4000c8;
+  --os-track-bg: rgb(255 255 255 / 0.1);
+}
