@@ -22,13 +22,10 @@ const About = () => {
       title="About PublicAI"
       marginTop={false}>
       <h3 className="container mt-12 text-center text-base font-medium text-g1 md:text-2xl">
-        PublicAI is a distributed AI network enables every human: contribute to
-        AI and share the benefits that connects businesses and individuals with
-        a global network of workers. It simplifies the process of outsourcing a
-        wide range of tasks, from data annotation to more complex research
-        related to AI. This platform allows organizations to tap into the
-        collective skills of a vast, structured workforce to enhance data
-        analysis and speed up the development of machine learning models.
+        AI data infra: open to every human contributing data to train AI and
+        sharing the revenue. The team includes world-class AI scientists, IEEE
+        fellows, professors, and PhDs from Stanford and CUHK. Our mission is to
+        monetize all human knowledge to train Public AGI.
       </h3>
       <div className="container mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4 lg:mt-20 lg:grid-cols-3 xl:grid-cols-4">
         {[
@@ -67,7 +64,7 @@ const About = () => {
       </div>
       <section
         className={cn(
-          'container mt-10 flex flex-col items-center p-12 max-md:px-5 md:flex-row',
+          'container mt-10 flex flex-col items-center p-12 max-md:px-5 md:flex-row md:gap-2 lg:gap-4',
           styles['animate-border'],
         )}>
         <Swiper />
