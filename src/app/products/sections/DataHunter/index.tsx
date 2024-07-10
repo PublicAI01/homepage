@@ -10,7 +10,8 @@ const DataHunter = () => {
   return (
     <SectionWrapper
       className="lg:mt-40"
-      title="Data Hunter">
+      title="Data Hunter"
+      anchorId="hunter">
       <h3 className="mt-7 text-center text-base font-medium text-g1 md:text-lg">
         Data Hunter empowers users to instantly contribute valuable data and
         earn rewards{' '}

@@ -8,7 +8,8 @@ const DataAPISuite = () => {
   return (
     <SectionWrapper
       className="lg:mt-40"
-      title="Data API Suite">
+      title="Data API Suite"
+      anchorId="api">
       <h3 className="mb-2 mt-10 text-center text-xl font-bold text-white md:text-3xl">
         Custom API Suite for Business
       </h3>

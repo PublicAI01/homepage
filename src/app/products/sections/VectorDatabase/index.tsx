@@ -17,7 +17,9 @@ import { cn } from '@/utils';
 
 const VectorDatabase = () => {
   return (
-    <SectionWrapper className="relative lg:mt-40">
+    <SectionWrapper
+      className="relative lg:mt-40"
+      anchorId="database">
       <Image
         className="absolute inset-x-0 -z-1 md:inset-x-[20%] md:-top-[10%] md:w-3/5"
         src={earth}

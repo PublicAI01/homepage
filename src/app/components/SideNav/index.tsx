@@ -32,7 +32,7 @@ const SideNav = () => {
               className="list-none text-center">
               <Link
                 className="block size-full py-4 text-base font-semibold text-white md:text-xl"
-                href={`/#${nav.id}`}
+                href={nav.href}
                 aria-label={`to ${nav.label} section content`}
                 onClick={closeSideNavFn}>
                 {nav.label}
@@ -41,10 +41,7 @@ const SideNav = () => {
           ))}
         </ul>
       </nav>
-      <ButtonGroup
-        className="w-4/5"
-        closeSideNavFn={closeSideNavFn}
-      />
+      <ButtonGroup className="w-4/5" />
       <address className="mt-20 flex w-4/5 items-center justify-center gap-4">
         {PLATFORMS.map((item, index) => (
           <Link

@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import { type ChangeEventHandler, useEffect, useRef, useState } from 'react';
 
 import ButtonGroup from '@/app/components/ButtonGroup';
-import SwitchButton from '@/app/components/ButtonGroup/SwitchButton';
 import styles from '@/app/components/Header/Header.module.css';
 import publicai from '@/assets/svg/publicai.svg';
 import { NAV_LIST } from '@/constant';
@@ -114,29 +113,58 @@ const Header = () => {
               <li
                 key={index}
                 className={cn(
-                  'z-10 w-32 list-none text-center',
+                  'relative z-10 list-none text-center',
                   currentActiveNav === nav.id && styles.current,
+                  pathname === nav.href && styles.current,
                 )}>
                 <Link
                   className="block py-2 text-base font-semibold text-white"
-                  href={`/#${nav.id}`}
+                  href={nav.href}
                   aria-label={`to ${nav.label} section content`}>
                   {nav.label}
                 </Link>
+                {nav.children.length > 0 && (
+                  <div className={styles['nav-panel']}>
+                    <div className={styles['nav-panel-arrow']}></div>
+                    <div className={styles['nav-panel-container']}>
+                      {nav.children.map((group, index) => (
+                        <div
+                          key={index}
+                          className="m-4 flex flex-col gap-4">
+                          <div className="mb-2 flex items-center">
+                            <group.Icon className="mr-4 size-7 text-white" />
+                            <p className="text-lg font-semibold text-white">
+                              {group.title}
+                            </p>
+                          </div>
+                          {group.children.map((child, index) => (
+                            <Link
+                              key={index}
+                              className="ml-11 block text-left text-base font-normal text-white"
+                              href={child.href}
+                              aria-label={`to ${nav.label} ${child.label} section content`}>
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
             <div
               className={cn(
                 'absolute bottom-0 left-0 h-full w-1/4 rounded bg-primary',
                 styles.slider,
-                !currentActiveNav && 'opacity-0',
+                !currentActiveNav && pathname !== '/products' && 'opacity-0',
               )}
               aria-hidden></div>
           </menu>
         </nav>
         <ButtonGroup className="max-lg:hidden" />
         <div className="flex items-center gap-3 lg:hidden">
-          <SwitchButton className={styles['path-switch-small']} />
+          {/* <SwitchButton className={styles['path-switch-small']} /> */}
           <label
             htmlFor={styles.switch}
             className={cn(

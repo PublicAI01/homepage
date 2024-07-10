@@ -16,6 +16,7 @@ const Showcase = () => {
     <SectionWrapper
       className="bg-b3 py-7 lg:mt-40 lg:py-14"
       title="Showcase"
+      anchorId="showcase"
       useMobileContainerWidth={false}>
       <section>
         <h3 className="mt-14 text-center text-xl font-bold text-white lg:text-3xl">
@@ -34,7 +35,7 @@ const Showcase = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="frosted-card rounded-xl px-3 py-2.5">
+              className="rounded-xl border border-white/5 bg-gradient-to-br from-white/15 to-black/5 px-3 py-2.5 backdrop-blur">
               <Image
                 className="h-9 w-auto md:h-11"
                 src={item.image}
@@ -54,10 +55,10 @@ const Showcase = () => {
           creation, deployment, and customization of AI Agents, streamlining the
           development process.
         </h4>
-        <div className="mx-auto flex flex-wrap items-center justify-center gap-5 max-sm:w-4/5 lg:gap-10 xl:gap-14 2xl:gap-20">
+        <div className="mx-auto flex flex-wrap items-center justify-center gap-8 max-sm:w-4/5 lg:gap-10 xl:gap-14 2xl:gap-20">
           {[
             { Icon: AirdropAssistant, name: 'Airdrop Assistant' },
-            { Icon: kLineTrader, name: 'K-Line Trader' },
+            { Icon: kLineTrader, name: 'Crypto Trader' },
             { Icon: AIProfessor, name: 'AI Professor' },
             { Icon: OnChainExpert, name: 'On-chain Expert' },
             { Icon: XTrendAnalyst, name: 'X Trend Analyst' },
@@ -65,7 +66,7 @@ const Showcase = () => {
             <div
               key={index}
               className="flex flex-col items-center text-white">
-              <div className="frosted-card rounded border p-4">
+              <div className="rounded border border-white/5 bg-gradient-to-br from-white/15 to-black/5 p-4 backdrop-blur">
                 <item.Icon
                   className={cn(
                     'size-8 md:size-10',

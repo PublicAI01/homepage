@@ -10,7 +10,8 @@ const DataHub = () => {
   return (
     <SectionWrapper
       className="lg:mt-40"
-      title="Data Hub">
+      title="Data Hub"
+      anchorId="hub">
       <h3 className="mt-7 text-center text-xs font-medium text-g1 md:text-lg">
         Data Hub empowers users to earn tokens by validating datasets,{' '}
         <b
