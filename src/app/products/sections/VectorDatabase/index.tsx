@@ -21,7 +21,7 @@ const VectorDatabase = () => {
       className="relative lg:mt-40"
       anchorId="database">
       <Image
-        className="absolute inset-x-0 -z-1 md:inset-x-[20%] md:-top-[10%] md:w-3/5"
+        className="absolute inset-x-0 -z-1 opacity-40 md:inset-x-[20%] md:-top-[10%] md:w-3/5"
         src={earth}
         height={500}
         alt="decorative earth picture"
