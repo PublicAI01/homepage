@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { type ChangeEventHandler, useEffect, useRef, useState } from 'react';
 
 import ButtonGroup from '@/app/components/ButtonGroup';
+import SwitchButton from '@/app/components/ButtonGroup/SwitchButton';
 import styles from '@/app/components/Header/Header.module.css';
 import publicai from '@/assets/svg/publicai.svg';
 import { NAV_LIST } from '@/constant';
@@ -125,7 +126,9 @@ const Header = () => {
                 </Link>
                 {nav.children.length > 0 && (
                   <div className={styles['nav-panel']}>
-                    <div className={styles['nav-panel-arrow']}></div>
+                    <div
+                      className={styles['nav-panel-arrow']}
+                      aria-hidden></div>
                     <div className={styles['nav-panel-container']}>
                       {nav.children.map((group, index) => (
                         <div
@@ -157,14 +160,13 @@ const Header = () => {
               className={cn(
                 'absolute bottom-0 left-0 h-full w-1/4 rounded bg-primary',
                 styles.slider,
-                !currentActiveNav && pathname !== '/products' && 'opacity-0',
               )}
               aria-hidden></div>
           </menu>
         </nav>
         <ButtonGroup className="max-lg:hidden" />
         <div className="flex items-center gap-3 lg:hidden">
-          {/* <SwitchButton className={styles['path-switch-small']} /> */}
+          <SwitchButton className={styles['path-switch-small']} />
           <label
             htmlFor={styles.switch}
             className={cn(
