@@ -60,6 +60,17 @@
   opacity: 1;
 }
 
-.collapsible details + div p {
+.collapsible details + div span {
   min-height: 0;
+}
+
+.collapsible details + div span ul {
+  list-style-type: disc;
+  padding-inline-start: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .collapsible details + div span ul {
+    padding-inline-start: 1rem;
+  }
 }

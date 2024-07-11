@@ -22,10 +22,13 @@ const About = () => {
       title="About PublicAI"
       marginTop={false}>
       <h3 className="container mt-12 text-center text-base font-medium text-g1 md:text-2xl">
-        AI data infra: open to every human contributing data to train AI and
-        sharing the revenue. The team includes world-class AI scientists, IEEE
-        fellows, professors, and PhDs from Stanford and CUHK. Our mission is to
-        monetize all human knowledge to train Public AGI.
+        PublicAI is a distributed AI network that enables every human to
+        contribute to AI and share the benefits. It connects businesses and
+        individuals with a global network of workers, simplifying the process of
+        outsourcing various tasks, ranging from data annotation to complex AI
+        research. This platform allows organizations to tap into the collective
+        skills of a vast, structured workforce, enhancing data analysis and
+        accelerating the development of machine learning models.
       </h3>
       <div className="container mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4 lg:mt-20 lg:grid-cols-3 xl:grid-cols-4">
         {[
@@ -33,25 +36,25 @@ const About = () => {
             Icon: competitiveWorkforce,
             title: 'Competitive Workforce',
             content:
-              'Without barriers from international banking and central platforms, one can access to the best workers, from anywhere in the world.',
+              'Access the best talent from around the world without the barriers of international banking and central platforms.',
           },
           {
             Icon: qualityControl,
             title: 'Quality Control',
             content:
-              'Through DAO governance and QC oracle systems, one can rest assured that work will be done with meticulousness.',
+              'Ensure smooth dataset delivery using on-chain staking systems. Leveraging access tests and SBT to verify the capabilities of Validators in specialized data annotation fields.',
           },
           {
             Icon: costEfficiency,
             title: 'Cost Efficiency',
             content:
-              'Via on-chain staking and liability mechanisms, PublicAI reduces work/cost redundancy required in traditional platforms.',
+              "Reduced work and cost redundancy with PublicAI's on-chain staking and liability mechanisms, outperforming traditional platforms.",
           },
           {
             Icon: mutualModalData,
             title: 'Mutual Modal Data',
             content:
-              "We support the collection and annotation of mutual modal data such as text, audio, video, and mapping data, providing the world's largest decentralized data collection/annotation platform.",
+              "We provide the world's largest decentralized platform for collecting and annotating multi-modal data, including text, audio, video, and mapping data.",
           },
         ].map((item, index) => (
           <Card

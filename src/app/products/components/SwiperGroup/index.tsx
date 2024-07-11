@@ -27,14 +27,14 @@ const SwiperGroup = () => {
       <SwiperCard
         title="Data Hunter"
         subTitle="Seamless Data Collection"
-        content="Collect, contribute, and empower AI learning instantly with simple click."
+        content="Collect, contribute, and empower AI learning instantly with a simple click."
         images={[HunterPreview1, HunterPreview2]}
       />
 
       <SwiperCard
         title="Data Hub"
         subTitle="Collaborative AI Validation"
-        content="Participate in consensus-driven validation, enhance AI accuracy, refine AI models and earn rewards."
+        content="Participate in consensus-driven validation, enhance AI accuracy, refine AI models, and earn rewards."
         images={[HubPreview1, HubPreview2, HubPreview3, HubPreview4]}
       />
     </SectionWrapper>

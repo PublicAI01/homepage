@@ -41,17 +41,17 @@ const Swiper = () => {
           {
             title: 'Data Collection',
             content:
-              'AI Builders are sourcing and curating high-quality content from social media. Use the Data Hunter plugin to contribute social media and GPT conversation content.',
+              'AI Builders source and curate high-quality content from social media. Contribute social media and GPT conversation content using the Data Hunter plugin.',
           },
           {
             title: 'Data Labeling',
             content:
-              'Deliver high-quality, cost-effective data labeling through an AI-assisted workflow featuring pre labeling by AI Assistants and thorough verification by AI Validators.',
+              'Deliver high-quality, cost-effective data labeling through an AI-assisted workflow: AI Assistants pre-label data, followed by thorough verification by AI Validators.',
           },
           {
             title: 'Model Evaluation',
             content:
-              'Analyze the performance of your AI models. Explore model metrics, identify model weaknesses and evaluate your model on scenario tests.',
+              "Analyze your AI models' performance: explore model metrics, identify weaknesses, and evaluate models using scenario tests.",
           },
         ].map((item, index) => (
           <div

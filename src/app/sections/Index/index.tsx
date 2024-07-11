@@ -66,10 +66,10 @@ const Index = () => {
         <div className="absolute -top-1/4 size-8 rounded-full bg-primary/80 max-md:right-0 md:-top-1/2 md:left-1/4"></div>
         <div className="absolute size-4 rounded-full bg-primary/80 max-md:-bottom-12 md:-right-1/3 md:-top-full md:size-20"></div>
         <h1 className="mx-auto max-w-xs text-center text-2xl font-semibold tracking-wider text-white md:max-w-4xl md:text-5xl">
-          Web3 AI Data Infrastructure, create 4 Billion Data Jobs in 2050.
+          Web3 AI Data Infrastructure: Creating 4 Billion Data Jobs by 2050
         </h1>
         <h2 className="mx-auto mb-12 mt-3 text-center text-base font-normal text-white max-md:max-w-xs md:mt-6 md:text-xl">
-          Enable Every Human: Contribute to AI and Share the Benefits.
+          Empowering Every Human to Contribute to AI and Share the Benefits.
         </h2>
         <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-11">
           <Button

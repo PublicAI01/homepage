@@ -12,7 +12,7 @@ const DataHunter = () => {
       className="lg:mt-40"
       title="Data Hunter"
       anchorId="hunter">
-      <h3 className="mt-7 text-center text-base font-medium text-g1 md:text-lg">
+      <h3 className="mt-7 text-center text-xs font-medium text-g1 md:text-lg">
         Data Hunter empowers users to instantly contribute valuable data and
         earn rewards{' '}
         <b
@@ -27,13 +27,13 @@ const DataHunter = () => {
             Icon: datasetIcon,
             title: 'Seamless Data Collection',
             content:
-              'Collect high-quality data from social media and ChatGPT conversation with a click of a button.',
+              'Collect high-quality data from social media and ChatGPT conversations with the click of a button.',
           },
           {
             Icon: rewardIcon,
             title: 'Instant Reward System',
             content:
-              'Earn $PUBLIC tokens on the spot for every approved data upload.',
+              'Earn $PUBLIC tokens instantly for every approved data upload.',
           },
           {
             Icon: trackingIcon,
