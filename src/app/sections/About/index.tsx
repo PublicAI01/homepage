@@ -22,13 +22,12 @@ const About = () => {
       title="About PublicAI"
       marginTop={false}>
       <h3 className="container mt-12 text-center text-base font-medium text-g1 md:text-2xl">
-        PublicAI is a distributed AI network that enables every human to
-        contribute to AI and share the benefits. It connects businesses and
-        individuals with a global network of workers, simplifying the process of
-        outsourcing various tasks, ranging from data annotation to complex AI
-        research. This platform allows organizations to tap into the collective
-        skills of a vast, structured workforce, enhancing data analysis and
-        accelerating the development of machine learning models.
+        PublicAI - AI data infra: open to every human contributing data to train
+        AI and sharing the revenue. The team includes world-class AI scientists,
+        IEEE fellows, professors, and PhDs from Stanford and CUHK. Has settled
+        down a 10 million dollars collaboration with the world&apos;s largest
+        self-driving car data provider ABAKA.AI. Mission is to monetize all
+        human knowledge to train Public AGI.
       </h3>
       <div className="container mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4 lg:mt-20 lg:grid-cols-3 xl:grid-cols-4">
         {[

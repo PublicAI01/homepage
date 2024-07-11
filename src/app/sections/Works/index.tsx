@@ -45,7 +45,7 @@ const Works = () => {
         <_Block
           className="flex-1"
           image={requesters}
-          content="Requesters have tasks they need to be completed"
+          content="Requesters have tasks that need to be completed"
         />
         <div className="mb-14 flex h-6 w-20 max-md:ml-2.5 max-md:mt-14 max-md:rotate-90 md:h-10 md:w-28">
           <Image
