@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import DataAPISuite from '@/app/products/sections/DataAPISuite';
@@ -7,6 +8,14 @@ import Index from '@/app/products/sections/Index';
 import Showcase from '@/app/products/sections/Showcase';
 import VectorDatabase from '@/app/products/sections/VectorDatabase';
 import decorativeCone from '@/assets/svg/decorative-cone.svg';
+
+export const metadata: Metadata = {
+  title: 'PublicAI Product - Data Hunter and Data Hub',
+  description:
+    'Use the Data Hunter Chrome Extension to collect Twitter and ChatGPT data, validate and label text data, TTS data, and graphic data in the Data Hub, and earn cryptocurrency rewards.',
+  keywords:
+    'Public AI, data annotation, label to earn, decentralized, AI companies, AI training, data labeling, data collection',
+};
 
 const Products = () => {
   return (
