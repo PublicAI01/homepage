@@ -1,10 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import type { CSSProperties } from 'react';
+import { type CSSProperties } from 'react';
 
 import styles from '@/app/products/sections/VectorDatabase/VectorDatabase.module.css';
 import aboutStyles from '@/app/sections/About/About.module.css';
+import vectorDatabasePicture from '@/assets/image/vector-database-picture.png';
+import zeroG from '@/assets/partners/0G.png';
+import glacier from '@/assets/partners/GLACIER.png';
+import solana from '@/assets/partners/solana.png';
 import audio from '@/assets/svg/audio-type.svg?react';
 import earth from '@/assets/svg/earth.svg';
 import mapping from '@/assets/svg/mapping-type.svg?react';
@@ -85,6 +89,33 @@ const VectorDatabase = () => {
               <h4 className="mt-4 text-base font-bold transition-colors md:text-xl">
                 {item.title}
               </h4>
+            </div>
+          ))}
+        </div>
+        <div className="frosted-card my-5 rounded-xl px-2 py-5 md:my-14 md:px-7">
+          <Image
+            className="h-auto w-full"
+            src={vectorDatabasePicture}
+            height={500}
+            alt="publicai vector database process description picture"
+            priority
+          />
+        </div>
+        <div className="container flex flex-wrap items-center justify-center gap-6 md:justify-between lg:gap-10 xl:gap-14 2xl:gap-20">
+          {[
+            { image: solana, name: 'solana' },
+            { image: glacier, name: 'glacier' },
+            { image: zeroG, name: '0G' },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="rounded-xl border border-white/5 bg-gradient-to-br from-white/15 to-black/5 px-3 py-2.5 backdrop-blur">
+              <Image
+                className="mx-auto h-9 w-auto md:h-11"
+                src={item.image}
+                height={44}
+                alt={item.name}
+              />
             </div>
           ))}
         </div>

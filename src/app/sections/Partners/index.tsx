@@ -27,7 +27,7 @@ import Morph from '@/assets/partners/Morph.png';
 import NanYangTechnologicalUniversity from '@/assets/partners/NANYANG.png';
 import Nesa from '@/assets/partners/nesa.png';
 import Nimble from '@/assets/partners/Nimble.png';
-import SolanaFoundation from '@/assets/partners/SOLANA.png';
+import SolanaFoundation from '@/assets/partners/solana-foundation.png';
 import StabilityAI from '@/assets/partners/stability.ai.png';
 import StanfordUniversity from '@/assets/partners/Standford.png';
 import TheBlock from '@/assets/partners/THE-BLOCK.png';
