@@ -14,7 +14,7 @@ const DataAPISuite = () => {
         Custom API Suite for Business
       </h3>
       <h4 className="text-center text-sm font-medium text-white md:text-lg">
-        Enhance Your Business with Our Comprehensive Data Solutions.
+        Enhance your business with our comprehensive data solutions.
       </h4>
       <section className="mt-5 flex flex-col items-center gap-3 md:mt-10 md:flex-row">
         {[

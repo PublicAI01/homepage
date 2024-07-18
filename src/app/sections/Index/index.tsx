@@ -58,11 +58,7 @@ const Index = () => {
         />
       </div>
       <div className="relative mb-24 flex flex-col">
-        <div
-          className="absolute -left-10 top-1/2 size-12 rounded-full bg-primary/80 md:-left-1/4 md:size-24"
-          style={{
-            clipPath: 'inset(0 30% 0 0)',
-          }}></div>
+        <div className="absolute -left-10 top-1/2 size-12 rounded-full bg-primary/80 md:-left-1/4 md:size-24"></div>
         <div className="absolute -top-1/4 size-8 rounded-full bg-primary/80 max-md:right-0 md:-top-1/2 md:left-1/4"></div>
         <div className="absolute size-4 rounded-full bg-primary/80 max-md:-bottom-12 md:-right-1/3 md:-top-full md:size-20"></div>
         <h1 className="mx-auto max-w-xs text-center text-2xl font-semibold tracking-wider text-white md:max-w-4xl md:text-5xl">

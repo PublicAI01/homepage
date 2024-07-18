@@ -24,10 +24,8 @@ const About = () => {
       <h3 className="container mt-12 text-center text-base font-medium text-g1 md:text-2xl">
         PublicAI - AI data infra: open to every human contributing data to train
         AI and sharing the revenue. The team includes world-class AI scientists,
-        IEEE fellows, professors, and PhDs from Stanford and CUHK. Has settled
-        down a 10 million dollars collaboration with the world&apos;s largest
-        self-driving car data provider ABAKA.AI. Mission is to monetize all
-        human knowledge to train Public AGI.
+        IEEE fellows, professors, and PhDs. Mission is to monetize all human
+        knowledge to train Public AGI.
       </h3>
       <div className="container mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4 lg:mt-20 lg:grid-cols-3 xl:grid-cols-4">
         {[
