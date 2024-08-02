@@ -6,7 +6,11 @@ import decorativeCone from '@/assets/svg/decorative-cone.svg';
 import indexBall from '@/assets/svg/earth.svg';
 import Anchor from '@/components/Anchor';
 import Button from '@/components/Button';
-import { CHROME_EXTENSION_LINK, PUBLIC_AI_DATA_HUNTER_LINK } from '@/constant';
+import {
+  CHROME_EXTENSION_LINK,
+  PUBLIC_AI_DATA_HUNTER_LINK,
+  TELEGRAM_MINI_APP_LINK,
+} from '@/constant';
 import { cn } from '@/utils';
 
 const Index = () => {
@@ -78,6 +82,12 @@ const Index = () => {
             href={PUBLIC_AI_DATA_HUNTER_LINK}
             ariaLabel="to data hub website">
             Launch Data Hub
+          </Button>
+          <Button
+            theme="normal"
+            href={TELEGRAM_MINI_APP_LINK}
+            ariaLabel="to ai arena mini app">
+            Open AI Arena
           </Button>
         </div>
       </div>
