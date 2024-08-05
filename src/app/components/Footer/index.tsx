@@ -36,7 +36,7 @@ const Footer = () => {
           </address>
         </section>
         <span className="mb-2.5 mt-5 text-center text-sm text-g2 md:mt-7 md:text-base">
-          © {new Date().getFullYear()} PublicAI All Rights Reserved
+          © {new Date().getFullYear()} PublicAI Inc All Rights Reserved
         </span>
       </div>
     </footer>
