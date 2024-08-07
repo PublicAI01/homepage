@@ -21,6 +21,7 @@ const config: Config = {
         b5: '#262626',
         g1: '#e6e6e6',
         g2: '#98989A',
+        g3: '#B9B9B9',
         p1: '#B08BFF',
       },
       animation: {

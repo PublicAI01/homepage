@@ -25,6 +25,7 @@ const NAV_LIST = [
         children: [
           { id: 'hunter', href: '/products#hunter', label: 'Data Hunter' },
           { id: 'hub', href: '/products#hub', label: 'Data Hub' },
+          { id: 'arena', href: '/products#arena', label: 'PublicAI Arena' },
         ],
       },
       {

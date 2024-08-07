@@ -10,6 +10,8 @@ import { Mousewheel, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from '@/app/products/components/SwiperGroup/SwiperGroup.module.css';
+import ArenaPreview1 from '@/assets/image/arena-preview-1.png';
+import ArenaPreview2 from '@/assets/image/arena-preview-2.png';
 import HubPreview1 from '@/assets/image/hub-preview-1.png';
 import HubPreview2 from '@/assets/image/hub-preview-2.png';
 import HubPreview3 from '@/assets/image/hub-preview-3.png';
@@ -21,23 +23,34 @@ import { cn } from '@/utils';
 
 const SwiperGroup = () => {
   return (
-    <SectionWrapper
-      className="gap-12 lg:flex-row"
-      marginTop={false}>
-      <SwiperCard
-        title="Data Hunter"
-        subTitle="Seamless Data Collection"
-        content="Collect, contribute, and empower AI learning instantly with a simple click."
-        images={[HunterPreview1, HunterPreview2]}
-      />
+    <>
+      <SectionWrapper
+        className="gap-12 lg:flex-row"
+        marginTop={false}>
+        <SwiperCard
+          title="Data Hunter"
+          subTitle="Seamless Data Collection"
+          content="Collect, contribute, and empower AI learning instantly with a simple click."
+          images={[HunterPreview1, HunterPreview2]}
+        />
 
-      <SwiperCard
-        title="Data Hub"
-        subTitle="Collaborative AI Validation"
-        content="Participate in consensus-driven validation, enhance AI accuracy, refine AI models, and earn rewards."
-        images={[HubPreview1, HubPreview2, HubPreview3, HubPreview4]}
-      />
-    </SectionWrapper>
+        <SwiperCard
+          title="Data Hub"
+          subTitle="Collaborative AI Validation"
+          content="Participate in consensus-driven validation, enhance AI accuracy, refine AI models, and earn rewards."
+          images={[HubPreview1, HubPreview2, HubPreview3, HubPreview4]}
+        />
+      </SectionWrapper>
+      <SectionWrapper>
+        <SwiperCard
+          title="PublicAI Arena"
+          subTitle="Innovative Model Evaluation"
+          content="Engage in interactive AI experiences and contribute to the evolution of AI models through collective intelligence."
+          images={[ArenaPreview1, ArenaPreview2]}
+          isBlock
+        />
+      </SectionWrapper>
+    </>
   );
 };
 
@@ -46,9 +59,14 @@ const SwiperCard: FC<{
   subTitle: string;
   content: string;
   images: StaticImageData[];
-}> = ({ title, subTitle, content, images }) => {
+  isBlock?: boolean;
+}> = ({ title, subTitle, content, images, isBlock = false }) => {
   return (
-    <div className="flex flex-col justify-between self-stretch rounded-2xl border border-white bg-b3/65 px-4 py-5 lg:w-[calc(50%_-_1.5rem)] lg:p-6">
+    <div
+      className={cn(
+        'flex flex-col justify-between self-stretch rounded-2xl border border-white bg-b3/65 px-4 py-5 lg:w-[calc(50%_-_1.5rem)] lg:p-6',
+        isBlock && 'lg:w-full lg:flex-row lg:items-center lg:px-32 xl:px-48',
+      )}>
       <hgroup>
         <h3 className="text-base font-semibold text-white md:font-bold lg:text-2xl">
           {title}
@@ -61,7 +79,7 @@ const SwiperCard: FC<{
         </p>
       </hgroup>
       <Swiper
-        className={cn('max-w-full', styles.swiper)}
+        className={cn('max-w-full', isBlock && 'lg:w-1/2', styles.swiper)}
         slidesPerView={1}
         spaceBetween={0}
         mousewheel
@@ -77,14 +95,18 @@ const SwiperCard: FC<{
             '--swiper-pagination-bottom': '0',
             '--swiper-pagination-bullet-inactive-color': '#fff',
             '--swiper-pagination-bullet-inactive-opacity': '0.5',
+            '--swiper-navigation-sides-offset': '0',
           } as React.CSSProperties
         }>
         {images.map((item, index) => (
           <SwiperSlide key={index}>
             <Image
-              className="mx-auto mb-6 h-48 w-auto rounded-xl border border-b4 md:h-96"
+              className={cn(
+                'mx-auto mb-6 h-48 w-auto rounded-xl border border-b4 md:h-96',
+                isBlock && 'h-[560px]',
+              )}
               src={item}
-              height={384}
+              height={isBlock ? 560 : 384}
               alt={`data hunter preview ${index}`}
             />
           </SwiperSlide>

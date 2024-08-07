@@ -5,6 +5,7 @@ import DataAPISuite from '@/app/products/sections/DataAPISuite';
 import DataHub from '@/app/products/sections/DataHub';
 import DataHunter from '@/app/products/sections/DataHunter';
 import Index from '@/app/products/sections/Index';
+import PublicAIArena from '@/app/products/sections/PublicAIArena';
 import Showcase from '@/app/products/sections/Showcase';
 import VectorDatabase from '@/app/products/sections/VectorDatabase';
 import decorativeCone from '@/assets/svg/decorative-cone.svg';
@@ -35,6 +36,7 @@ const Products = () => {
       <Index />
       <DataHunter />
       <DataHub />
+      <PublicAIArena />
       <VectorDatabase />
       <DataAPISuite />
       <Showcase />
