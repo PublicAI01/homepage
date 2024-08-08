@@ -16,6 +16,7 @@ import FlockIO from '@/assets/partners/flock-io.png';
 import ForesightVentures from '@/assets/partners/foresight.png';
 import Glacier from '@/assets/partners/glacier.png';
 import HuggingFace from '@/assets/partners/hugging-face.png';
+import HumanCode from '@/assets/partners/human-code.png';
 import ibm from '@/assets/partners/ibm.png';
 import IONet from '@/assets/partners/io-net.png';
 import IOBCCapital from '@/assets/partners/iobc-capital.png';
@@ -25,7 +26,6 @@ import Midjourney from '@/assets/partners/midjourney.png';
 import MassachusettsInstituteOfTechnology from '@/assets/partners/mit.png';
 import Morph from '@/assets/partners/morph.png';
 import NanYangTechnologicalUniversity from '@/assets/partners/nanyang.png';
-import Nesa from '@/assets/partners/nesa.png';
 import Nimble from '@/assets/partners/nimble.png';
 import SolanaFoundation from '@/assets/partners/solana-foundation.png';
 import StabilityAI from '@/assets/partners/stability-ai.png';
@@ -88,7 +88,8 @@ const Partners = () => {
             { image: Combo, name: 'Combo' },
             { image: ZeroG, name: '0G' },
             { image: Morph, name: 'Morph' },
-            { image: Nesa, name: 'Nesa' },
+            // { image: Nesa, name: 'Nesa' },
+            { image: HumanCode, name: 'HumanCode' },
             { image: FlockIO, name: 'Flock IO' },
             { image: Nimble, name: 'Nimble' },
             { image: IONet, name: 'IO.Net' },
