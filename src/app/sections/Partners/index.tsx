@@ -26,11 +26,14 @@ import Midjourney from '@/assets/partners/midjourney.png';
 import MassachusettsInstituteOfTechnology from '@/assets/partners/mit.png';
 import Morph from '@/assets/partners/morph.png';
 import NanYangTechnologicalUniversity from '@/assets/partners/nanyang.png';
+import Near from '@/assets/partners/near.png';
 import Nimble from '@/assets/partners/nimble.png';
 import SolanaFoundation from '@/assets/partners/solana-foundation.png';
 import StabilityAI from '@/assets/partners/stability-ai.png';
 import StanfordUniversity from '@/assets/partners/standford.png';
+import Story from '@/assets/partners/story.png';
 import TheBlock from '@/assets/partners/the-block.png';
+import ZKPass from '@/assets/partners/zk-pass.png';
 import SectionWrapper from '@/components/SectionWrapper';
 import { DATA_CARD_BORDER_WITH_ALPHA } from '@/constant/border';
 import { cn } from '@/utils';
@@ -79,6 +82,9 @@ const Partners = () => {
         {
           title: 'Trusted by Leading Web3 Industry Partners',
           children: [
+            { image: Near, name: 'Near' },
+            { image: Story, name: 'Story' },
+            { image: ZeroG, name: '0G' },
             { image: ZeroXScope, name: '0x Scope' },
             { image: MantaNetwork, name: 'Manta Network' },
             { image: Marlin, name: 'Marlin' },
@@ -86,7 +92,7 @@ const Partners = () => {
             // { image: AgentLayer, name: 'Agent Layer' },
             { image: Glacier, name: 'Glacier' },
             { image: Combo, name: 'Combo' },
-            { image: ZeroG, name: '0G' },
+            { image: ZKPass, name: 'zkPass' },
             { image: Morph, name: 'Morph' },
             // { image: Nesa, name: 'Nesa' },
             { image: HumanCode, name: 'HumanCode' },
