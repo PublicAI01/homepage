@@ -65,7 +65,8 @@ const SwiperCard: FC<{
     <div
       className={cn(
         'flex flex-col justify-between self-stretch rounded-2xl border border-white bg-b3/65 px-4 py-5 lg:w-[calc(50%_-_1.5rem)] lg:p-6',
-        isBlock && 'lg:w-full lg:flex-row lg:items-center lg:px-32 xl:px-48',
+        isBlock &&
+          'lg:w-full lg:flex-row lg:items-center lg:gap-12 lg:px-32 xl:gap-20 xl:px-48',
       )}>
       <hgroup>
         <h3 className="text-base font-semibold text-white md:font-bold lg:text-2xl">
