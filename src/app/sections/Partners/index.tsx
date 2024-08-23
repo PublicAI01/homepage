@@ -9,6 +9,7 @@ import AmazonMechaincalTurk from '@/assets/partners/amazon.png';
 import Bloomberg from '@/assets/partners/bloomberg.png';
 import Catizen from '@/assets/partners/catizen.png';
 import chainbase from '@/assets/partners/chainbase.png';
+import Chasm from '@/assets/partners/chasm.png';
 import CoinDesk from '@/assets/partners/coin-desk.png';
 import Cointelegraph from '@/assets/partners/cointelegraph.png';
 import Combo from '@/assets/partners/combo.png';
@@ -34,7 +35,6 @@ import Nimble from '@/assets/partners/nimble.png';
 import SolanaFoundation from '@/assets/partners/solana-foundation.png';
 import StabilityAI from '@/assets/partners/stability-ai.png';
 import StanfordUniversity from '@/assets/partners/standford.png';
-import Story from '@/assets/partners/story.png';
 import TheBlock from '@/assets/partners/the-block.png';
 import ZKPass from '@/assets/partners/zk-pass.png';
 import SectionWrapper from '@/components/SectionWrapper';
@@ -86,7 +86,8 @@ const Partners = () => {
           title: 'Trusted by Leading Web3 Industry Partners',
           children: [
             { image: Near, name: 'Near' },
-            { image: Story, name: 'Story' },
+            { image: chainbase, name: 'chainbase' },
+            // { image: Story, name: 'Story' },
             { image: ZeroG, name: '0G' },
             { image: Hyperbolic, name: 'Hyperbolic' },
             { image: Catizen, name: 'Catizen' },
@@ -94,7 +95,7 @@ const Partners = () => {
             { image: ZeroXScope, name: '0x Scope' },
             { image: MantaNetwork, name: 'Manta Network' },
             { image: Marlin, name: 'Marlin' },
-            { image: chainbase, name: 'chainbase' },
+            { image: Chasm, name: 'Chasm' },
             // { image: AgentLayer, name: 'Agent Layer' },
             { image: Glacier, name: 'Glacier' },
             { image: Combo, name: 'Combo' },
