@@ -6,13 +6,13 @@ import ZeroG from '@/assets/partners/0g.png';
 import ZeroXScope from '@/assets/partners/0x-scope.png';
 import AbakaAI from '@/assets/partners/abaka-ai.png';
 import AmazonMechaincalTurk from '@/assets/partners/amazon.png';
+import Autonomys from '@/assets/partners/autonomys.png';
 import Bloomberg from '@/assets/partners/bloomberg.png';
 import Catizen from '@/assets/partners/catizen.png';
 import chainbase from '@/assets/partners/chainbase.png';
 import Chasm from '@/assets/partners/chasm.png';
 import CoinDesk from '@/assets/partners/coin-desk.png';
 import Cointelegraph from '@/assets/partners/cointelegraph.png';
-import Combo from '@/assets/partners/combo.png';
 import Decrypt from '@/assets/partners/decrypt.png';
 import FlockIO from '@/assets/partners/flock-io.png';
 import ForesightVentures from '@/assets/partners/foresight.png';
@@ -29,8 +29,8 @@ import Midjourney from '@/assets/partners/midjourney.png';
 import MassachusettsInstituteOfTechnology from '@/assets/partners/mit.png';
 import Morph from '@/assets/partners/morph.png';
 import NanYangTechnologicalUniversity from '@/assets/partners/nanyang.png';
+import Narra from '@/assets/partners/narra.png';
 import Near from '@/assets/partners/near.png';
-import Nesa from '@/assets/partners/nesa.png';
 import Nimble from '@/assets/partners/nimble.png';
 import SolanaFoundation from '@/assets/partners/solana-foundation.png';
 import StabilityAI from '@/assets/partners/stability-ai.png';
@@ -91,14 +91,14 @@ const Partners = () => {
             { image: ZeroG, name: '0G' },
             { image: Hyperbolic, name: 'Hyperbolic' },
             { image: Catizen, name: 'Catizen' },
-            { image: Nesa, name: 'Nesa' },
+            { image: Autonomys, name: 'Autonomys' },
             { image: ZeroXScope, name: '0x Scope' },
             { image: MantaNetwork, name: 'Manta Network' },
             { image: Marlin, name: 'Marlin' },
             { image: Chasm, name: 'Chasm' },
             // { image: AgentLayer, name: 'Agent Layer' },
             { image: Glacier, name: 'Glacier' },
-            { image: Combo, name: 'Combo' },
+            { image: Narra, name: 'Narra' },
             { image: ZKPass, name: 'zkPass' },
             { image: Morph, name: 'Morph' },
             { image: HumanCode, name: 'HumanCode' },
