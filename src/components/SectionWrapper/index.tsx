@@ -1,12 +1,9 @@
-import type { FC, ReactNode } from 'react';
-
 import Anchor from '@/components/Anchor';
 import Title from '@/components/Title';
 import { cn } from '@/utils';
 
-const SectionWrapper: FC<{
-  children: ReactNode;
-  className?: string;
+interface SectionWrapperProps extends React.ComponentProps<'section'> {
+  children: React.ReactNode;
   anchorId?: string;
   anchorClassName?: string;
   title?: string;
@@ -14,17 +11,22 @@ const SectionWrapper: FC<{
   useMobileContainerWidth?: boolean;
   marginTop?: boolean;
   useFlexLayout?: boolean;
-}> = ({
-  children,
-  className,
-  anchorId,
-  anchorClassName,
-  title,
-  titleClassName,
-  useFlexLayout = true,
-  useMobileContainerWidth = true,
-  marginTop = true,
-}) => {
+}
+
+const SectionWrapper = (props: SectionWrapperProps) => {
+  const {
+    className,
+    children,
+    anchorId,
+    anchorClassName,
+    title,
+    titleClassName,
+    useFlexLayout = true,
+    useMobileContainerWidth = true,
+    marginTop = true,
+    ...rest
+  } = props;
+
   return (
     <section
       className={cn(
@@ -34,7 +36,8 @@ const SectionWrapper: FC<{
         marginTop && 'mt-12 md:mt-20',
         anchorId && 'relative',
         className,
-      )}>
+      )}
+      {...rest}>
       {anchorId && (
         <Anchor
           className={anchorClassName}

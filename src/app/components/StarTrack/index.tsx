@@ -1,28 +1,34 @@
-import type { CSSProperties, FC } from 'react';
+import type { CSSProperties } from 'react';
 
 import styles from '@/app/components/StarTrack/StarTrack.module.css';
 import { cn } from '@/utils';
 
-const StarTrack: FC<{
-  className?: string;
+interface StarTrackProps extends React.ComponentProps<'div'> {
   trackSize?: [string] | [string, string];
   rotateX?: [string] | [string, string];
   rotateY?: [string] | [string, string];
   ballSize?: [string] | [string, string];
   ballColor?: [string] | [string, string];
-}> = ({
-  className,
-  trackSize = ['600px'],
-  rotateX = ['75deg'],
-  rotateY = ['160deg'],
-  ballSize = ['1rem'],
-  ballColor = ['#fff'],
-}) => {
+}
+
+const StarTrack = (props: StarTrackProps) => {
+  const {
+    className,
+    style,
+    trackSize = ['600px'],
+    rotateX = ['75deg'],
+    rotateY = ['160deg'],
+    ballSize = ['1rem'],
+    ballColor = ['#fff'],
+    ...rest
+  } = props;
+
   return (
     <div
       className={cn(styles.track, className)}
       style={
         {
+          ...style,
           '--track-size-mobile': trackSize[0],
           '--track-size-desktop': trackSize[1] ?? trackSize[0],
           '--rotate-x-mobile': rotateX[0],
@@ -30,7 +36,8 @@ const StarTrack: FC<{
           '--rotate-y-mobile': rotateY[0],
           '--rotate-y-desktop': rotateY[0] ?? rotateY[1],
         } as CSSProperties
-      }>
+      }
+      {...rest}>
       <div
         className={styles['ball-container']}
         style={

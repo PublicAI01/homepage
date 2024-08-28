@@ -1,15 +1,15 @@
 import Link from 'next/link';
-import type { FC, ReactNode } from 'react';
 
 import ButtonWrapper from '@/components/ButtonWrapper';
 import { cn } from '@/utils';
 
-const Button: FC<{
-  children: ReactNode;
-  href: string;
-  ariaLabel: string;
+interface ButtonProps extends React.ComponentProps<typeof Link> {
   theme?: 'outlined' | 'primary' | 'normal';
-}> = ({ children, href, ariaLabel, theme = 'outlined' }) => {
+}
+
+const Button = (props: ButtonProps) => {
+  const { className, style, theme = 'outlined', children, ...rest } = props;
+
   return (
     <Link
       className={cn(
@@ -18,13 +18,15 @@ const Button: FC<{
         theme === 'primary' && 'bg-primary',
         theme === 'normal' && 'border-2 border-primary bg-white text-black',
       )}
-      style={
-        !['primary', 'normal'].includes(theme) ? ButtonWrapper.style : undefined
-      }
-      href={href}
+      style={{
+        ...(!['primary', 'normal'].includes(theme)
+          ? ButtonWrapper.style
+          : undefined),
+        ...style,
+      }}
       target="_blank"
       rel="external noreferrer"
-      aria-label={ariaLabel}>
+      {...rest}>
       {children}
     </Link>
   );

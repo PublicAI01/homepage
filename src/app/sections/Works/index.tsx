@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import type { FC } from 'react';
 
 import styles from '@/app/sections/Works/Works.module.css';
 import arrowToLeft from '@/assets/svg/arrow-to-left.svg';
@@ -80,17 +79,21 @@ const Works = () => {
   );
 };
 
-const _Block: FC<{ className?: string; image: string; content: string }> = ({
-  className,
-  image,
-  content,
-}) => {
+interface _BlockProps extends React.ComponentProps<'div'> {
+  image: string;
+  content: string;
+}
+
+const _Block = (props: _BlockProps) => {
+  const { className, image, content, ...rest } = props;
+
   return (
     <div
       className={cn(
         'flex w-full items-center max-md:px-4 md:flex-col',
         className,
-      )}>
+      )}
+      {...rest}>
       <Image
         className="h-auto w-16 md:w-28"
         src={image}

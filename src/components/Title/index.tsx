@@ -1,12 +1,13 @@
-import type { FC, ReactNode } from 'react';
-
 import ButtonWrapper from '@/components/ButtonWrapper';
 import { cn } from '@/utils';
 
-const Title: FC<{ className?: string; children: ReactNode }> = ({
-  className,
-  children,
-}) => {
+interface TitleProps extends React.ComponentProps<'h2'> {
+  children: React.ReactNode;
+}
+
+const Title = (props: TitleProps) => {
+  const { className, style, children, ...rest } = props;
+
   return (
     <h2
       className={cn(
@@ -14,7 +15,8 @@ const Title: FC<{ className?: string; children: ReactNode }> = ({
         ButtonWrapper.className,
         className,
       )}
-      style={ButtonWrapper.titleStyle}>
+      style={{ ...ButtonWrapper.titleStyle, ...style }}
+      {...rest}>
       {children}
     </h2>
   );

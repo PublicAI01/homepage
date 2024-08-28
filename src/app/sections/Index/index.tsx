@@ -74,19 +74,19 @@ const Index = () => {
         <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-11">
           <Button
             href={CHROME_EXTENSION_LINK}
-            ariaLabel="to download data hunter chrome extension">
+            aria-label="to download data hunter chrome extension">
             Download Data Hunter
           </Button>
           <Button
             theme="primary"
             href={PUBLIC_AI_DATA_HUNTER_LINK}
-            ariaLabel="to data hub website">
+            aria-label="to data hub website">
             Launch Data Hub
           </Button>
           <Button
             theme="normal"
             href={TELEGRAM_MINI_APP_LINK}
-            ariaLabel="to ai arena mini app">
+            aria-label="to ai arena mini app">
             Open AI Arena
           </Button>
         </div>

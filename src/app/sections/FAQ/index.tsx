@@ -1,12 +1,10 @@
-import type { FC, ReactNode } from 'react';
-
 import styles from '@/app/sections/FAQ/FAQ.module.css';
 import SectionWrapper from '@/components/SectionWrapper';
 import { cn } from '@/utils';
 
 interface FAQItem {
   title: string;
-  content: ReactNode;
+  content: React.ReactNode;
 }
 
 const FAQ = () => {
@@ -154,13 +152,20 @@ const FAQ = () => {
   );
 };
 
-const Collapsible: FC<{ item: FAQItem }> = ({ item }) => {
+interface CollapsibleProps extends React.ComponentProps<'div'> {
+  item: FAQItem;
+}
+
+const Collapsible = (props: CollapsibleProps) => {
+  const { className, item, ...rest } = props;
   return (
     <div
       className={cn(
         styles.collapsible,
         'frosted-card cursor-pointer rounded-xl transition-colors hover:bg-primary',
-      )}>
+        className,
+      )}
+      {...rest}>
       <details>
         <summary className="text-base font-medium text-white md:text-lg lg:text-xl">
           {item.title}

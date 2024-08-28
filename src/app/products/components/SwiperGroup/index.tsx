@@ -5,7 +5,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import Image, { type StaticImageData } from 'next/image';
-import type { FC } from 'react';
 import { Mousewheel, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -54,20 +53,33 @@ const SwiperGroup = () => {
   );
 };
 
-const SwiperCard: FC<{
+interface SwiperCardProps extends React.ComponentProps<'div'> {
   title: string;
   subTitle: string;
   content: string;
   images: StaticImageData[];
   isBlock?: boolean;
-}> = ({ title, subTitle, content, images, isBlock = false }) => {
+}
+
+const SwiperCard = (props: SwiperCardProps) => {
+  const {
+    className,
+    title,
+    subTitle,
+    content,
+    images,
+    isBlock = false,
+    ...rest
+  } = props;
   return (
     <div
       className={cn(
         'flex flex-col justify-between self-stretch rounded-2xl border border-white bg-b3/65 px-4 py-5 lg:w-[calc(50%_-_1.5rem)] lg:p-6',
         isBlock &&
           'lg:w-full lg:flex-row lg:items-center lg:gap-12 lg:px-32 xl:gap-20 xl:px-48',
-      )}>
+        className,
+      )}
+      {...rest}>
       <hgroup>
         <h3 className="text-base font-semibold text-white md:font-bold lg:text-2xl">
           {title}

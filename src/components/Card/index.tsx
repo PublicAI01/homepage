@@ -1,16 +1,20 @@
 'use client';
 
-import type { CSSProperties, FC, ReactNode } from 'react';
+import type { CSSProperties } from 'react';
 
 import styles from '@/components/Card/Card.module.css';
 import { cn } from '@/utils';
 
-const Card: FC<{
-  className?: string;
-  children: ReactNode;
+interface CardProps
+  extends Omit<React.ComponentProps<'div'>, 'onMouseEnter' | 'onMouseLeave'> {
+  children: React.ReactNode;
   title: string;
   content: string;
-}> = ({ className, children, title, content }) => {
+}
+
+const Card = (props: CardProps) => {
+  const { className, style, children, title, content, ...rest } = props;
+
   return (
     <div
       className={cn(
@@ -21,6 +25,7 @@ const Card: FC<{
       style={
         {
           '--duration': '0.4',
+          ...style,
         } as CSSProperties
       }
       onMouseEnter={(e) => {
@@ -28,7 +33,8 @@ const Card: FC<{
       }}
       onMouseLeave={(e) => {
         e.currentTarget.classList.add('animate-card-flicker');
-      }}>
+      }}
+      {...rest}>
       {children}
       <h4 className="my-2 text-base font-bold transition-colors md:my-4 md:text-xl xl:text-2xl">
         {title}

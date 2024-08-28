@@ -2,17 +2,19 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { type FC } from 'react';
 
 import styles from '@/app/components/ButtonGroup/SwitchButton.module.css';
 import headerStyles from '@/app/components/Header/Header.module.css';
 import { BORDER } from '@/constant/border';
 import { cn } from '@/utils';
 
-const SwitchButton: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
-  className,
-  closeSideNavFn,
-}) => {
+interface SwitchButtonProps extends React.ComponentProps<'div'> {
+  closeSideNavFn?: () => void;
+}
+
+const SwitchButton = (props: SwitchButtonProps) => {
+  const { className, closeSideNavFn, ...rest } = props;
+
   const pathname = usePathname();
 
   const isSmall = className?.includes(headerStyles['path-switch-small']);
@@ -28,7 +30,8 @@ const SwitchButton: FC<{ className?: string; closeSideNavFn?: () => void }> = ({
         'flex h-10 flex-col overflow-hidden md:h-11',
         className,
         isSmall && 'h-7',
-      )}>
+      )}
+      {...rest}>
       <input
         className={cn('hidden', styles['path-switch'])}
         type="checkbox"

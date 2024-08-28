@@ -1,5 +1,3 @@
-import type { FC, SVGProps } from 'react';
-
 import styles from '@/app/products/sections/PublicAIArena/PublicAIArena.module.css';
 import chatBox from '@/assets/svg/chat-box.svg?react';
 import computer from '@/assets/svg/computer.svg?react';
@@ -70,21 +68,24 @@ const PublicAIArena = () => {
 };
 
 interface CardItem {
-  Icon: FC<SVGProps<SVGElement>>;
+  Icon: React.FunctionComponent<React.ComponentProps<'svg'>>;
   title: string;
   content: string;
 }
 
-const Panel: FC<{
-  className?: string;
+interface PanelProps extends React.ComponentProps<'section'> {
   title: string;
   subTitle: string;
   desc: string;
   cards: CardItem[];
-}> = ({ className, title, subTitle, desc, cards }) => {
+}
+
+const Panel = (props: PanelProps) => {
+  const { className, title, subTitle, desc, cards, ...rest } = props;
   return (
     <section
-      className={cn('container mx-auto flex flex-col items-center', className)}>
+      className={cn('container mx-auto flex flex-col items-center', className)}
+      {...rest}>
       <h4 className="mb-2 text-xl font-semibold text-p1 md:text-3xl lg:mb-7">
         {title}
       </h4>
