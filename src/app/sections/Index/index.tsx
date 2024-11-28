@@ -69,7 +69,7 @@ const Index = () => {
           Web3 AI Data Infrastructure: Creating 4 Billion Data Jobs by 2050
         </h1>
         <h2 className="mx-auto mb-12 mt-3 text-center text-base font-normal text-white max-md:max-w-xs md:mt-6 md:text-xl">
-          Empowering Every Human to Contribute to AI and Share the Benefits.
+          Powering Exceptional AI with Equitable Global Expertise.
         </h2>
         <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-11">
           <Button
