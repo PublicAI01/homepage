@@ -6,11 +6,7 @@ import decorativeCone from '@/assets/svg/decorative-cone.svg';
 import indexBall from '@/assets/svg/earth.svg';
 import Anchor from '@/components/Anchor';
 import Button from '@/components/Button';
-import {
-  CHROME_EXTENSION_LINK,
-  PUBLIC_AI_DATA_HUNTER_LINK,
-  TELEGRAM_MINI_APP_LINK,
-} from '@/constant';
+import { CHROME_EXTENSION_LINK, PUBLIC_AI_DATA_HUNTER_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 const Index = () => {
@@ -69,7 +65,7 @@ const Index = () => {
           Web3 AI Data Infrastructure: Creating 4 Billion Data Jobs by 2050
         </h1>
         <h2 className="mx-auto mb-12 mt-3 text-center text-base font-normal text-white max-md:max-w-xs md:mt-6 md:text-xl">
-          Powering Exceptional AI with Equitable Global Expertise.
+          Powering Exceptional AI with Equitable Global Expertise
         </h2>
         <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-11">
           <Button
@@ -83,12 +79,12 @@ const Index = () => {
             aria-label="to data hub website">
             Launch Data Hub
           </Button>
-          <Button
+          {/* <Button
             theme="normal"
             href={TELEGRAM_MINI_APP_LINK}
             aria-label="to ai arena mini app">
             Open AI Arena
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>
