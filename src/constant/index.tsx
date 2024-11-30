@@ -2,7 +2,7 @@ import chip from '@/assets/svg/chip.svg?react';
 import puzzle from '@/assets/svg/puzzle.svg?react';
 
 const TWITTER_LINK = 'https://twitter.com/PublicAI_';
-const TELEGRAM_LINK = 'https://t.me/public_ai01';
+const TELEGRAM_LINK = 'https://t.me/PublicAINews';
 const DOCS_LINK = 'https://docs.publicai.io/publicai-documentation';
 const DISCORD_LINK = 'https://discord.com/invite/WbmwUNyrhs';
 const MEDIUM_LINK = 'https://medium.com/@contact_88042';
