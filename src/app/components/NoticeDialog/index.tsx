@@ -4,19 +4,26 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 const NoticeDialog = () => {
-  const [visible, setVisible] = useState(true);
-
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    if (visible) {
+    setMounted(true);
+
+    return () => setMounted(false);
+  }, []);
+
+  const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    if (mounted && visible) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
-  }, [visible]);
+  }, [mounted, visible]);
 
   return (
     <>
-      {visible &&
+      {mounted &&
+        visible &&
         createPortal(
           <>
             <dialog
