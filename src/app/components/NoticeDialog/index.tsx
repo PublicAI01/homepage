@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import { DISCORD_LINK, TELEGRAM_LINK, TWITTER_LINK } from '@/constant';
+
 const NoticeDialog = () => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -34,44 +36,56 @@ const NoticeDialog = () => {
               }}>
               <article className="prose prose-sm rounded-xl border border-white/10 bg-b2 px-6 py-4 prose-a:text-primary prose-li:marker:text-red-500 max-md:mx-4">
                 <h1 className="text-center text-sm font-bold text-red-500 md:text-lg">
-                  Urgent Security Alert: Compromised X Account 🚨
+                  Urgent Announcement
                 </h1>
                 <div className="text-xs font-medium text-white md:text-base">
                   <b>
-                    Important Notice: Our official X account @PublicAI_ has been
-                    compromised. We are working diligently to regain control. ⚠️
-                    Please DO NOT trust any messages posted by the @PublicAI_
-                    account during this time.
+                    Our X account @PublicAI_ has been compromised. DO NOT trust
+                    any messages posted by the @PublicAI_ account during this
+                    time.
                   </b>
                   <p>Specifically:</p>
                   <ul>
-                    <li>DO NOT click on any links shared by the account. 🔗</li>
+                    <li>DO NOT click on any links shared by the account.</li>
                     <li>
-                      DO NOT purchase any tokens or cryptocurrencies promoted by
-                      the account. 💰 These are likely fraudulent.
-                    </li>
-                    <li>
-                      DO NOT share personal information with the account. 🔒
+                      DO NOT purchase any tokens or CA promoted by the account.
                     </li>
                   </ul>
                   <p>
-                    Rest assured, our product and platform remain fully
-                    functional and secure. This issue only affects our X
-                    account.
+                    Our product and platform remain fully functional and secure.
+                    For updated communication while we recover our X please
+                    follow our backup X account, telegram, and discord:
                   </p>
-                  <p>
-                    We appreciate your understanding and are taking all
-                    necessary steps to restore the account to its normal, secure
-                    state. We will notify you as soon as the account is
-                    recovered. In the meantime, please refer to our official{' '}
-                    <a
-                      href="https://t.me/PublicAINews"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      Telegram Channel
-                    </a>{' '}
-                    for accurate information and updates.
-                  </p>
+                  <ul>
+                    <li>
+                      <a
+                        href={TWITTER_LINK}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        @PublicAIData
+                      </a>{' '}
+                      X backup account
+                    </li>
+                    <li>
+                      <a
+                        href={TELEGRAM_LINK}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        t.me/PublicAINews
+                      </a>{' '}
+                      announcements
+                    </li>
+                    <li>
+                      <a
+                        href={DISCORD_LINK}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        discord.gg/PublicAI
+                      </a>{' '}
+                      announcements
+                    </li>
+                  </ul>
+                  <p>Thank you for your continued support!</p>
                 </div>
               </article>
             </dialog>
