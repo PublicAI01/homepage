@@ -34,7 +34,7 @@ const NoticeDialog = () => {
               onClick={() => {
                 setVisible(false);
               }}>
-              <article className="prose prose-sm rounded-xl border border-white/10 bg-b2 px-6 py-4 prose-a:text-primary prose-li:marker:text-red-500 max-md:mx-4">
+              <article className="prose prose-sm rounded-xl border border-white/10 bg-b2 px-6 py-4 prose-a:text-white prose-li:marker:text-red-500 max-md:mx-4">
                 <h1 className="text-center text-sm font-bold text-red-500 md:text-lg">
                   Urgent Announcement
                 </h1>
