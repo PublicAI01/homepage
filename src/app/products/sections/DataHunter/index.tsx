@@ -12,11 +12,11 @@ const DataHunter = () => {
       className="lg:mt-40"
       title="Data Hunter"
       anchorId="hunter">
-      <h3 className="mt-7 text-center text-xs font-medium text-g1 md:text-lg">
+      <h3 className="text-g1 mt-7 text-center text-xs font-medium md:text-lg">
         Data Hunter empowers users to instantly contribute valuable data and
         earn rewards{' '}
         <b
-          className={cn(styles.typing, 'mx-auto mt-3 block font-bold text-p1')}>
+          className={cn(styles.typing, 'text-p1 mx-auto mt-3 block font-bold')}>
           with a simple click.
         </b>
       </h3>

@@ -20,7 +20,7 @@ const SwitchButton = (props: SwitchButtonProps) => {
   const isSmall = className?.includes(headerStyles['path-switch-small']);
 
   const btnClassName = cn(
-    'relative rounded px-4 py-2 text-center text-base font-semibold text-g1 transition-all duration-300 max-lg:w-28 lg:text-lg',
+    'text-g1 relative rounded-sm px-4 py-2 text-center text-base font-semibold transition-all duration-300 max-lg:w-28 lg:text-lg',
     isSmall && 'max-md:w-20 max-md:px-2 max-md:py-1 max-md:text-sm',
   );
 

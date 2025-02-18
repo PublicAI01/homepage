@@ -10,20 +10,20 @@ import { cn } from '@/utils';
 const PublicAIArena = () => {
   return (
     <SectionWrapper
-      className="!w-full !max-w-full lg:mt-40"
+      className="w-full! max-w-full! lg:mt-40"
       title="PublicAI Arena"
       anchorId="arena"
       useMobileContainerWidth={false}>
-      <h3 className="mt-7 text-center text-xs font-medium text-g1 md:text-lg">
+      <h3 className="text-g1 mt-7 text-center text-xs font-medium md:text-lg">
         PublicAI Arena empowers a global community of AI enthusiasts to enhance
         AI models and earn rewards through{' '}
         <b
-          className={cn(styles.typing, 'mx-auto mt-3 block font-bold text-p1')}>
+          className={cn(styles.typing, 'text-p1 mx-auto mt-3 block font-bold')}>
           interactive validation and data contribution.
         </b>
       </h3>
 
-      <section className="mt-10 flex w-full flex-col gap-6 bg-b3 py-4 max-md:px-4 md:mt-20 md:gap-9 lg:pb-24 lg:pt-9">
+      <section className="bg-b3 mt-10 flex w-full flex-col gap-6 py-4 max-md:px-4 md:mt-20 md:gap-9 lg:pt-9 lg:pb-24">
         <Panel
           title="PublicAI Arena - Chat"
           subTitle="Interactive AI Model Comparison & Evaluation"
@@ -86,13 +86,13 @@ const Panel = (props: PanelProps) => {
     <section
       className={cn('container mx-auto flex flex-col items-center', className)}
       {...rest}>
-      <h4 className="mb-2 text-xl font-semibold text-p1 md:text-3xl lg:mb-7">
+      <h4 className="text-p1 mb-2 text-xl font-semibold md:text-3xl lg:mb-7">
         {title}
       </h4>
       <h5 className="text-center text-xs font-normal text-white md:text-xl">
         {subTitle}
       </h5>
-      <h6 className="text-center text-xs font-normal text-g3 md:text-xl md:text-white">
+      <h6 className="text-g3 text-center text-xs font-normal md:text-xl md:text-white">
         {desc}
       </h6>
       <div className="mt-5 flex w-full flex-col items-center gap-2 md:mt-10 md:flex-row">

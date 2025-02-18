@@ -16,7 +16,7 @@ const ButtonGroup = (props: ButtonGroupProps) => {
       )}
       {...rest}>
       <Link
-        className="relative rounded px-4 py-2 text-center text-base font-semibold text-black max-lg:w-28 md:text-lg"
+        className="relative rounded-sm px-4 py-2 text-center text-base font-semibold text-black max-lg:w-28 md:text-lg"
         style={{
           background: `url(${BORDER_WITH_WHITE_BACKGROUND})`,
         }}

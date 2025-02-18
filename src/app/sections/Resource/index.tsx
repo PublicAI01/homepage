@@ -40,13 +40,8 @@ const Resource = () => {
             key={index}
             className={cn(
               cardStyles.card,
-              'frosted-card flex size-full flex-col items-center justify-center rounded-xl pb-4 pt-7 transition-colors hover:border-white hover:bg-white',
+              'frosted-card flex size-full flex-col items-center justify-center rounded-xl pt-7 pb-4 transition-colors hover:border-white hover:bg-white',
             )}
-            style={
-              {
-                '--duration': '0.4',
-              } as CSSProperties
-            }
             href={item.link}
             target="_blank"
             rel="external noreferrer"
@@ -67,7 +62,7 @@ const Resource = () => {
       <div
         className={cn(
           styles['youtube-container'],
-          'mt-8 h-auto overflow-hidden rounded-xl bg-b3 md:mt-28 lg:h-[600px]',
+          'bg-b3 mt-8 h-auto overflow-hidden rounded-xl md:mt-28 lg:h-[600px]',
         )}>
         <YouTubeEmbed videoid="i0U8uaUrILs" />
       </div>

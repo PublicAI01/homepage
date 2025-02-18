@@ -44,7 +44,7 @@ const VectorDatabase = () => {
           <b
             className={cn(
               styles.typing,
-              'mx-auto mt-3 block font-bold text-p1',
+              'text-p1 mx-auto mt-3 block font-bold',
             )}>
             enhance AI applications with precise and actionable insights.
           </b>
@@ -56,7 +56,7 @@ const VectorDatabase = () => {
           'w-full p-5 lg:px-20 lg:py-16',
         )}>
         <Title className="mx-auto">Vector Database</Title>
-        <h3 className="mx-auto mb-5 mt-7 max-w-3xl text-center text-sm font-medium text-white md:mb-10 md:mt-14 md:text-xl">
+        <h3 className="mx-auto mt-7 mb-5 max-w-3xl text-center text-sm font-medium text-white md:mt-14 md:mb-10 md:text-xl">
           A comprehensive collection of datasets meticulously curated to cater
           to a wide array of industries and modalities, providing the foundation
           for AI projects.
@@ -74,11 +74,6 @@ const VectorDatabase = () => {
                 cardStyles.card,
                 'frosted-card flex flex-1 flex-col items-center justify-center self-stretch rounded-xl px-6 py-4 transition-colors hover:bg-white md:px-8 md:py-6',
               )}
-              style={
-                {
-                  '--duration': '0.4',
-                } as CSSProperties
-              }
               onMouseEnter={(e) => {
                 e.currentTarget.classList.remove('animate-card-flicker');
               }}
@@ -109,7 +104,7 @@ const VectorDatabase = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="rounded-xl border border-white/5 bg-gradient-to-br from-white/15 to-black/5 px-3 py-2.5 backdrop-blur">
+              className="rounded-xl border border-white/5 bg-linear-to-br from-white/15 to-black/5 px-3 py-2.5 backdrop-blur-sm">
               <Image
                 className="mx-auto h-9 w-auto md:h-11"
                 src={item.image}

@@ -50,7 +50,7 @@ const SideNav = () => {
             target="_blank"
             rel="external noreferrer"
             aria-label={`${item.label} link`}>
-            <item.Icon className="size-6 text-g1 md:size-10" />
+            <item.Icon className="text-g1 size-6 md:size-10" />
           </Link>
         ))}
       </address>

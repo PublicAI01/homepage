@@ -162,7 +162,7 @@ const Collapsible = (props: CollapsibleProps) => {
     <div
       className={cn(
         styles.collapsible,
-        'frosted-card cursor-pointer rounded-xl transition-colors hover:bg-primary',
+        'frosted-card hover:bg-primary cursor-pointer rounded-xl transition-colors',
         className,
       )}
       {...rest}>

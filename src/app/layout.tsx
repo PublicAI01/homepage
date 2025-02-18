@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="scroll-pt-[var(--header-height)] scroll-smooth scrollbar-none md:scroll-pt-20">
+      className="supports-scrollbars:scrollbar:hidden scroll-pt-[var(--header-height)] scroll-smooth md:scroll-pt-20">
       <body className={cn(jamjuree.className, 'bg-b1')}>
         <div className="relative overflow-hidden">
           <GridPattern className="top-[var(--header-height)] -z-1" />

@@ -1,22 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin "@tailwindcss/typography";
+
+@variant supports-scrollbars (@supports selector(::-webkit-scrollbar));
+@variant scrollbar (&::-webkit-scrollbar);
+@variant scrollbar-track (&::-webkit-scrollbar-track);
+@variant scrollbar-thumb (&::-webkit-scrollbar-thumb);
+
+@utility frosted-card {
+  @apply border border-white/10 bg-linear-to-r from-white/10 to-white/5 backdrop-blur-sm;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@theme {
+  --color-primary: #4000c8;
+  --color-b1: #020202;
+  --color-b2: #0e100c;
+  --color-b3: #0f0f0f;
+  --color-b4: #4c4c4c;
+  --color-b5: #262626;
+  --color-g1: #e6e6e6;
+  --color-g2: #98989a;
+  --color-g3: #b9b9b9;
+  --color-p1: #b08bff;
+
+  --animate-card-flicker: card-flicker 0.4s 2 linear;
+  @keyframes card-flicker {
+    from,
+    to {
+      background-color: #000;
+    }
+
+    33% {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
 
 :root {
   --header-height: 4.125rem;
   --mobile-container-width: calc(100vw - 2rem);
-}
-
-@layer components {
-  .frosted-card {
-    @apply border border-white/10 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }
 
 @media screen and (max-width: 768px) {

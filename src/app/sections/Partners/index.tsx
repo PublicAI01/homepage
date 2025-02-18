@@ -51,7 +51,7 @@ const Partners = () => {
         aria-hidden
         className={cn(
           styles['animate-shadow'],
-          'absolute z-0 bg-primary/20 blur-[96px] max-md:inset-x-0 max-md:h-1/6 md:inset-y-0 md:w-1/4',
+          'bg-primary/20 absolute z-0 blur-[96px] max-md:inset-x-0 max-md:h-1/6 md:inset-y-0 md:w-1/4',
         )}></div>
       {[
         {
@@ -135,7 +135,6 @@ const Partners = () => {
                 <Image
                   className="mx-auto h-6 w-auto md:h-9 lg:h-11"
                   src={item.image}
-                  height={44}
                   alt={item.name}
                 />
               </div>

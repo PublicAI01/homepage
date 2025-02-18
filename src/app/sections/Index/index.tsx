@@ -21,7 +21,7 @@ const Index = () => {
         id="home"
       />
       <Image
-        className="absolute left-0 top-0 -m-[33.333333%] h-auto w-2/3 scale-150 opacity-70 md:-m-48 md:w-96 md:scale-[2]"
+        className="absolute top-0 left-0 -m-[33.333333%] h-auto w-2/3 scale-150 opacity-70 md:-m-48 md:w-96 md:scale-2"
         src={decorativeCone}
         width={384}
         style={{
@@ -58,13 +58,13 @@ const Index = () => {
         />
       </div>
       <div className="relative mb-24 flex flex-col">
-        <div className="absolute -left-10 top-1/2 size-12 rounded-full bg-primary/80 md:-left-1/4 md:size-24"></div>
-        <div className="absolute -top-1/4 size-8 rounded-full bg-primary/80 max-md:right-0 md:-top-1/2 md:left-1/4"></div>
-        <div className="absolute size-4 rounded-full bg-primary/80 max-md:-bottom-12 md:-right-1/3 md:-top-full md:size-20"></div>
+        <div className="bg-primary/80 absolute top-1/2 -left-10 size-12 rounded-full md:-left-1/4 md:size-24"></div>
+        <div className="bg-primary/80 absolute -top-1/4 size-8 rounded-full max-md:right-0 md:-top-1/2 md:left-1/4"></div>
+        <div className="bg-primary/80 absolute size-4 rounded-full max-md:-bottom-12 md:-top-full md:-right-1/3 md:size-20"></div>
         <h1 className="mx-auto max-w-xs text-center text-2xl font-semibold tracking-wider text-white md:max-w-4xl md:text-5xl">
           Web3 AI Data Infrastructure: Creating 4 Billion Data Jobs by 2050
         </h1>
-        <h2 className="mx-auto mb-12 mt-3 text-center text-base font-normal text-white max-md:max-w-xs md:mt-6 md:text-xl">
+        <h2 className="mx-auto mt-3 mb-12 text-center text-base font-normal text-white max-md:max-w-xs md:mt-6 md:text-xl">
           Powering Exceptional AI with Equitable Global Expertise
         </h2>
         <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-11">

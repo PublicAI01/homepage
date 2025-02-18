@@ -12,13 +12,13 @@ const Index = () => {
           </em>{' '}
           Craft AI with Collective Intelligence
         </h1>
-        <h2 className="mx-4 mb-10 mt-5 text-center text-xs font-light text-white max-md:mt-6 md:text-xl md:font-normal">
+        <h2 className="mx-4 mt-5 mb-10 text-center text-xs font-light text-white max-md:mt-6 md:text-xl md:font-normal">
           Harness the synergy of Data Hunter&apos;s seamless collection and Data
           Hub&apos;s collaborative validation to{' '}
           <b
             className={cn(
               styles.typing,
-              'mx-auto mt-3 block font-bold text-p1',
+              'text-p1 mx-auto mt-3 block font-bold',
             )}>
             supercharge AI with tailored large language models.
           </b>

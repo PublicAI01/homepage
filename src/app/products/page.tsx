@@ -26,7 +26,7 @@ const Products = () => {
         marginTop: 'var(--header-height)',
       }}>
       <Image
-        className="absolute -top-[calc(var(--header-height)_*_1.5)] -z-1 h-screen w-auto -rotate-[25deg] scale-150 opacity-70 md:inset-x-[16.666667%] md:-top-80 md:w-2/3 lg:h-auto lg:scale-75"
+        className="absolute -top-[calc(var(--header-height)_*_1.5)] -z-1 h-screen w-auto scale-150 -rotate-[25deg] opacity-70 md:inset-x-[16.666667%] md:-top-80 md:w-2/3 lg:h-auto lg:scale-75"
         src={decorativeCone}
         height={500}
         alt="decorative cone picture"
