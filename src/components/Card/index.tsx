@@ -18,16 +18,10 @@ const Card = (props: CardProps) => {
   return (
     <div
       className={cn(
-        'rounded-xl border border-white bg-b2 p-4 transition-colors hover:bg-white xl:p-6',
+        'bg-b2 rounded-xl border border-white p-4 transition-colors hover:bg-white xl:p-6',
         styles.card,
         className,
       )}
-      style={
-        {
-          '--duration': '0.4',
-          ...style,
-        } as CSSProperties
-      }
       onMouseEnter={(e) => {
         e.currentTarget.classList.remove('animate-card-flicker');
       }}

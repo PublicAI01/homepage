@@ -74,7 +74,7 @@ const SwiperCard = (props: SwiperCardProps) => {
   return (
     <div
       className={cn(
-        'flex flex-col justify-between self-stretch rounded-2xl border border-white bg-b3/65 px-4 py-5 lg:w-[calc(50%_-_1.5rem)] lg:p-6',
+        'bg-b3/65 flex flex-col justify-between self-stretch rounded-2xl border border-white px-4 py-5 lg:w-[calc(50%_-_1.5rem)] lg:p-6',
         isBlock &&
           'lg:w-full lg:flex-row lg:items-center lg:gap-12 lg:px-32 xl:gap-20 xl:px-48',
         className,
@@ -87,7 +87,7 @@ const SwiperCard = (props: SwiperCardProps) => {
         <h4 className="text-base font-semibold text-white md:font-bold lg:text-2xl">
           {subTitle}
         </h4>
-        <p className="my-3 text-sm font-medium text-g1 lg:text-base">
+        <p className="text-g1 my-3 text-sm font-medium lg:text-base">
           {content}
         </p>
       </hgroup>
@@ -115,7 +115,7 @@ const SwiperCard = (props: SwiperCardProps) => {
           <SwiperSlide key={index}>
             <Image
               className={cn(
-                'mx-auto mb-6 h-48 w-auto rounded-xl border border-b4 md:h-96',
+                'border-b4 mx-auto mb-6 h-48 w-auto rounded-xl border md:h-96',
                 isBlock && 'h-[560px]',
               )}
               src={item}

@@ -17,7 +17,7 @@ export default function NotFound() {
         The page is not found. Please check if the URL is correct.
       </p>
       <Link
-        className="flex h-10 items-center justify-center rounded-full bg-primary px-5 text-base font-normal text-white"
+        className="bg-primary flex h-10 items-center justify-center rounded-full px-5 text-base font-normal text-white"
         href="/"
         aria-label="return to homepage">
         Return Home

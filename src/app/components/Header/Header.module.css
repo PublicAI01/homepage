@@ -134,7 +134,7 @@
 }
 
 .switch:checked ~ .side-nav {
-  transform: translateX(20%);
+  transform: translateX(-80%);
   opacity: 1;
   background: #020202;
 }

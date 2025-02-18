@@ -10,7 +10,7 @@ const DataAPISuite = () => {
       className="lg:mt-40"
       title="Data API Suite"
       anchorId="api">
-      <h3 className="mb-2 mt-10 text-center text-xl font-bold text-white md:text-3xl">
+      <h3 className="mt-10 mb-2 text-center text-xl font-bold text-white md:text-3xl">
         Custom API Suite for Business
       </h3>
       <h4 className="text-center text-sm font-medium text-white md:text-lg">

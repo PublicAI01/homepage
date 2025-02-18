@@ -21,7 +21,7 @@ const About = () => {
     <SectionWrapper
       title="About PublicAI"
       marginTop={false}>
-      <h3 className="container mt-12 text-center text-base font-medium text-g1 md:text-2xl">
+      <h3 className="text-g1 container mt-12 text-center text-base font-medium md:text-2xl">
         PublicAI - AI data infra: open to every human contributing data to train
         AI and sharing the revenue. The team includes world-class AI scientists,
         IEEE fellows, professors, and PhDs. Mission is to monetize all human

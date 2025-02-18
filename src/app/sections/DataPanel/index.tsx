@@ -27,13 +27,8 @@ const DataPanel = () => {
           key={index}
           className={cn(
             cardStyles.card,
-            'frosted-card flex size-full flex-col items-center justify-center rounded-xl pb-3 pt-4 transition-colors hover:border-white hover:bg-white lg:pb-4 lg:pt-7',
+            'frosted-card flex size-full flex-col items-center justify-center rounded-xl pt-4 pb-3 transition-colors hover:border-white hover:bg-white lg:pt-7 lg:pb-4',
           )}
-          style={
-            {
-              '--duration': '0.4',
-            } as CSSProperties
-          }
           onMouseEnter={(e) => {
             e.currentTarget.classList.remove('animate-card-flicker');
           }}

@@ -22,7 +22,7 @@ const Showcase = () => {
         <h3 className="mt-14 text-center text-xl font-bold text-white lg:text-3xl">
           AI Agents for Public Blockchains
         </h3>
-        <h4 className="mb-5 mt-7 px-4 text-center text-base font-medium text-white lg:mb-10 lg:px-[20%] lg:text-lg">
+        <h4 className="mt-7 mb-5 px-4 text-center text-base font-medium text-white lg:mb-10 lg:px-[20%] lg:text-lg">
           We offer data services for various public blockchain networks,
           empowering them to create Custom AI Agents capable of executing
           diverse tasks from data analysis to automated decision-making.
@@ -35,7 +35,7 @@ const Showcase = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="rounded-xl border border-white/5 bg-gradient-to-br from-white/15 to-black/5 px-3 py-2.5 backdrop-blur">
+              className="rounded-xl border border-white/5 bg-linear-to-br from-white/15 to-black/5 px-3 py-2.5 backdrop-blur-sm">
               <Image
                 className="h-9 w-auto md:h-11"
                 src={item.image}
@@ -50,7 +50,7 @@ const Showcase = () => {
         <h3 className="mt-16 text-center text-xl font-bold text-white lg:mt-32 lg:text-3xl">
           Empowerment for AI Developers
         </h3>
-        <h4 className="mb-10 mt-7 px-4 text-center text-base font-medium text-white lg:px-[20%] lg:text-lg">
+        <h4 className="mt-7 mb-10 px-4 text-center text-base font-medium text-white lg:px-[20%] lg:text-lg">
           Empower AI developers with the tools necessary to simplify the
           creation, deployment, and customization of AI Agents, streamlining the
           development process.
@@ -66,7 +66,7 @@ const Showcase = () => {
             <div
               key={index}
               className="flex flex-col items-center text-white">
-              <div className="rounded border border-white/5 bg-gradient-to-br from-white/15 to-black/5 p-4 backdrop-blur">
+              <div className="rounded-sm border border-white/5 bg-linear-to-br from-white/15 to-black/5 p-4 backdrop-blur-sm">
                 <item.Icon
                   className={cn(
                     'size-8 md:size-10',

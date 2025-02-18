@@ -14,7 +14,7 @@ import { cn } from '@/utils';
 
 const Header = () => {
   const pathname = usePathname();
-  const ioRef = useRef<IntersectionObserver>();
+  const ioRef = useRef<IntersectionObserver>(undefined);
   const [currentActiveNav, setCurrentActiveNav] = useState<string>();
 
   const onNavActive = (entries: IntersectionObserverEntry[]) => {
@@ -75,12 +75,12 @@ const Header = () => {
       <label
         htmlFor={styles.switch}
         className={cn(
-          'fixed bottom-0 left-0 top-[var(--header-height)] z-50 h-full w-1/5 bg-white/5 backdrop-blur-sm transition-all duration-300 ease-in-out',
+          'fixed top-[var(--header-height)] bottom-0 left-0 z-50 h-full w-1/5 bg-white/5 backdrop-blur-xs transition-all duration-300 ease-in-out',
           styles.mask,
         )}
         aria-hidden></label>
       <header
-        className="fixed inset-x-0 top-0 z-50 flex items-center justify-between bg-b1 px-4 lg:px-12 xl:px-24"
+        className="bg-b1 fixed inset-x-0 top-0 z-50 flex items-center justify-between px-4 lg:px-12 xl:px-24"
         style={{
           height: 'var(--header-height)',
         }}>
@@ -158,7 +158,7 @@ const Header = () => {
             ))}
             <div
               className={cn(
-                'absolute bottom-0 left-0 h-full w-1/4 rounded bg-primary',
+                'bg-primary absolute bottom-0 left-0 h-full w-1/4 rounded-sm',
                 styles.slider,
               )}
               aria-hidden></div>

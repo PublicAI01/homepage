@@ -40,13 +40,13 @@ const Works = () => {
         alt="reward function"
         priority
       />
-      <section className="my-16 flex flex-col justify-between max-md:mb-6 max-md:mt-12 md:flex-row md:items-center">
+      <section className="my-16 flex flex-col justify-between max-md:mt-12 max-md:mb-6 md:flex-row md:items-center">
         <_Block
           className="flex-1"
           image={requesters}
           content="Requesters have tasks that need to be completed"
         />
-        <div className="mb-14 flex h-6 w-20 max-md:ml-2.5 max-md:mt-14 max-md:rotate-90 md:h-10 md:w-28">
+        <div className="mb-14 flex h-6 w-20 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90 md:h-10 md:w-28">
           <Image
             className={styles['arrow-animate']}
             src={arrowToRight}
@@ -60,7 +60,7 @@ const Works = () => {
           image={publicaiOutlined}
           content="PublicAI Marketplace"
         />
-        <div className="mb-14 flex h-6 w-20 justify-end max-md:ml-2.5 max-md:mt-14 max-md:rotate-90 md:h-10 md:w-28">
+        <div className="mb-14 flex h-6 w-20 justify-end max-md:mt-14 max-md:ml-2.5 max-md:rotate-90 md:h-10 md:w-28">
           <Image
             className={styles['arrow-animate']}
             src={arrowToLeft}
