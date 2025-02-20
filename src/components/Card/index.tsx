@@ -1,7 +1,5 @@
 'use client';
 
-import type { CSSProperties } from 'react';
-
 import styles from '@/components/Card/Card.module.css';
 import { cn } from '@/utils';
 

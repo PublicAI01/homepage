@@ -18,12 +18,9 @@ const SideNav = () => {
   return (
     <aside
       className={cn(
-        'fixed z-20 h-screen w-screen translate-x-full transition-all lg:hidden',
+        'pt-header-height fixed z-20 h-screen w-screen translate-x-full transition-all lg:hidden',
         headerStyles['side-nav'],
-      )}
-      style={{
-        paddingTop: 'var(--header-height)',
-      }}>
+      )}>
       <nav className="w-4/5">
         <ul className="my-4 flex flex-col">
           {NAV_LIST.map((nav) => (
@@ -41,7 +38,10 @@ const SideNav = () => {
           ))}
         </ul>
       </nav>
-      <ButtonGroup className="w-4/5" />
+      <ButtonGroup
+        className="w-4/5"
+        closeSideNavFn={closeSideNavFn}
+      />
       <address className="mt-20 flex w-4/5 items-center justify-center gap-4">
         {PLATFORMS.map((item, index) => (
           <Link

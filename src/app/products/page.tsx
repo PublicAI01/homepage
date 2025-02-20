@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 
 import DataAPISuite from '@/app/products/sections/DataAPISuite';
 import DataHub from '@/app/products/sections/DataHub';
@@ -8,7 +7,6 @@ import Index from '@/app/products/sections/Index';
 import PublicAIArena from '@/app/products/sections/PublicAIArena';
 import Showcase from '@/app/products/sections/Showcase';
 import VectorDatabase from '@/app/products/sections/VectorDatabase';
-import decorativeCone from '@/assets/svg/decorative-cone.svg';
 
 export const metadata: Metadata = {
   title: 'PublicAI Product - Data Hunter and Data Hub',
@@ -20,19 +18,7 @@ export const metadata: Metadata = {
 
 const Products = () => {
   return (
-    <main
-      className="relative pb-32"
-      style={{
-        marginTop: 'var(--header-height)',
-      }}>
-      <Image
-        className="absolute -top-[calc(var(--header-height)_*_1.5)] -z-1 h-screen w-auto scale-150 -rotate-[25deg] opacity-70 md:inset-x-[16.666667%] md:-top-80 md:w-2/3 lg:h-auto lg:scale-75"
-        src={decorativeCone}
-        height={500}
-        alt="decorative cone picture"
-        aria-hidden
-      />
-
+    <>
       <Index />
       <DataHunter />
       <DataHub />
@@ -40,7 +26,7 @@ const Products = () => {
       <VectorDatabase />
       <DataAPISuite />
       <Showcase />
-    </main>
+    </>
   );
 };
 

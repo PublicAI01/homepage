@@ -6,7 +6,7 @@ import { PLATFORMS } from '@/constant/platforms';
 const Footer = () => {
   return (
     <footer className="pt-5 md:pt-5">
-      <div className="relative container mx-auto flex flex-col max-lg:w-[var(--mobile-container-width)]">
+      <div className="relative container mx-auto flex flex-col max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
         <h3 className="text-lg font-semibold text-white md:text-2xl">
           Contact us
         </h3>

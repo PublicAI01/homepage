@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <section
       className={cn(
-        'relative flex flex-col items-center justify-center',
+        'relative flex flex-col items-center justify-center overflow-hidden',
         styles.section,
       )}>
       <Anchor
@@ -21,7 +21,7 @@ const Index = () => {
         id="home"
       />
       <Image
-        className="absolute top-0 left-0 -m-[33.333333%] h-auto w-2/3 scale-150 opacity-70 md:-m-48 md:w-96 md:scale-2"
+        className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 opacity-70 md:scale-150"
         src={decorativeCone}
         width={384}
         style={{
@@ -31,7 +31,7 @@ const Index = () => {
         aria-hidden
       />
       <div
-        className="absolute -right-1/4 -z-2 flex size-full items-center justify-center max-md:-bottom-1/4 md:-right-[40%]"
+        className="absolute -right-2/5 flex size-full items-center justify-center max-md:-bottom-1/4 md:[clip-path:inset(0_40%_0_0)]"
         aria-hidden>
         <Image
           className="absolute -z-1 size-32 max-md:right-[35%] md:size-72"
@@ -42,18 +42,15 @@ const Index = () => {
           aria-hidden
         />
         <StarTrack
-          className="absolute"
-          trackSize={['140vw', '100vw']}
+          className="absolute w-[140%] pb-[140%] md:w-full md:pb-[100%]"
           ballSize={['0.5rem', '1rem']}
         />
         <StarTrack
-          className="absolute"
-          trackSize={['100vw', '70vw']}
+          className="absolute w-[100%] pb-[100%] md:w-[70%] md:pb-[70%]"
           ballSize={['0.5rem', '1rem']}
         />
         <StarTrack
-          className="absolute"
-          trackSize={['60vw', '40vw']}
+          className="absolute w-[60%] pb-[60%] md:w-[40%] md:pb-[40%]"
           ballSize={['0.5rem', '1rem']}
         />
       </div>

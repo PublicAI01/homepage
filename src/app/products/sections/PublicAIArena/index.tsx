@@ -23,7 +23,7 @@ const PublicAIArena = () => {
         </b>
       </h3>
 
-      <section className="bg-b3 mt-10 flex w-full flex-col gap-6 py-4 max-md:px-4 md:mt-20 md:gap-9 lg:pt-9 lg:pb-24">
+      <section className="bg-b3 max-md:px-mobile-padding-x mt-10 flex w-full flex-col gap-6 py-4 md:mt-20 md:gap-9 lg:pt-9 lg:pb-24">
         <Panel
           title="PublicAI Arena - Chat"
           subTitle="Interactive AI Model Comparison & Evaluation"

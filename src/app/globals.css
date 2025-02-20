@@ -27,6 +27,9 @@
   --color-g3: #b9b9b9;
   --color-p1: #b08bff;
 
+  --spacing-header-height: 4.125rem;
+  --spacing-mobile-padding-x: 1rem;
+
   --animate-card-flicker: card-flicker 0.4s 2 linear;
   @keyframes card-flicker {
     from,
@@ -40,13 +43,8 @@
   }
 }
 
-:root {
-  --header-height: 4.125rem;
-  --mobile-container-width: calc(100vw - 2rem);
-}
-
 @media screen and (max-width: 768px) {
   :root {
-    --header-height: 3.75rem;
+    --spacing-header-height: 3.75rem;
   }
 }

@@ -30,9 +30,10 @@ const SectionWrapper = (props: SectionWrapperProps) => {
   return (
     <section
       className={cn(
-        'container mx-auto lg:w-[calc(100%_-_3rem)]',
+        'container mx-auto',
         useFlexLayout && 'flex flex-col items-center',
-        useMobileContainerWidth && 'max-lg:w-[var(--mobile-container-width)]',
+        useMobileContainerWidth &&
+          'max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]',
         marginTop && 'mt-12 md:mt-20',
         anchorId && 'relative',
         className,

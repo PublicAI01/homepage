@@ -37,17 +37,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="supports-scrollbars:scrollbar:hidden scroll-pt-[var(--header-height)] scroll-smooth md:scroll-pt-20">
-      <body className={cn(jamjuree.className, 'bg-b1')}>
-        <div className="relative overflow-hidden">
-          <GridPattern className="top-[var(--header-height)] -z-1" />
-          <Header />
-          <MediaPlatform />
-          <SideNav />
-          {children}
-          <Footer />
-          <NoticeDialog />
-        </div>
+      className="supports-scrollbars:scrollbar:hidden scroll-pt-header-height scroll-smooth md:scroll-pt-20">
+      <body
+        className={cn(
+          jamjuree.className,
+          'bg-b1 relative flex min-h-svh flex-col pb-8',
+        )}>
+        <GridPattern className="top-header-height -z-1 h-[calc(100%-var(--spacing-header-height))]" />
+        <Header />
+        <MediaPlatform />
+        <SideNav />
+        <main className="pt-header-height relative flex-1">{children}</main>
+        <Footer />
+        <NoticeDialog />
       </body>
       <GoogleAnalytics gaId="G-JMRE2DXFNN" />
     </html>

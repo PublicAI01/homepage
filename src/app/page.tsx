@@ -8,11 +8,7 @@ import Works from '@/app/sections/Works';
 
 export default function Home() {
   return (
-    <main
-      className="relative pb-32"
-      style={{
-        marginTop: 'var(--header-height)',
-      }}>
+    <>
       <Index />
       <About />
       <Works />
@@ -20,6 +16,6 @@ export default function Home() {
       <Partners />
       <Resource />
       <FAQ />
-    </main>
+    </>
   );
 }

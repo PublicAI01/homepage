@@ -2,7 +2,6 @@
 
 import { YouTubeEmbed } from '@next/third-parties/google';
 import Link from 'next/link';
-import type { CSSProperties } from 'react';
 
 import styles from '@/app/sections/Resource/Resource.module.css';
 import developmentDoc from '@/assets/svg/development-doc.svg?react';
