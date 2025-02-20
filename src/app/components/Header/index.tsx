@@ -75,17 +75,13 @@ const Header = () => {
       <label
         htmlFor={styles.switch}
         className={cn(
-          'fixed top-[var(--header-height)] bottom-0 left-0 z-50 h-full w-1/5 bg-white/5 backdrop-blur-xs transition-all duration-300 ease-in-out',
+          'top-header-height fixed bottom-0 left-0 z-50 h-full w-1/5 bg-white/5 backdrop-blur-xs transition-all duration-300 ease-in-out',
           styles.mask,
         )}
         aria-hidden></label>
-      <header
-        className="bg-b1 fixed inset-x-0 top-0 z-50 flex items-center justify-between px-4 lg:px-12 xl:px-24"
-        style={{
-          height: 'var(--header-height)',
-        }}>
+      <header className="bg-b1 h-header-height fixed inset-x-0 top-0 z-50 flex items-center justify-between px-4 lg:px-12 xl:px-24">
         <Link
-          className="flex h-[var(--header-height)] items-center"
+          className="flex h-full items-center"
           href="/"
           aria-label="return to homepage"
           onClick={() => {

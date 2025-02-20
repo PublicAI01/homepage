@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { type CSSProperties } from 'react';
 
 import styles from '@/app/products/sections/VectorDatabase/VectorDatabase.module.css';
 import aboutStyles from '@/app/sections/About/About.module.css';

@@ -1,7 +1,5 @@
 'use client';
 
-import type { CSSProperties } from 'react';
-
 import buildersData from '@/assets/svg/builder-icon.svg?react';
 import datasetSizeData from '@/assets/svg/dataset-size-data.svg?react';
 import partnersData from '@/assets/svg/partners-data.svg?react';

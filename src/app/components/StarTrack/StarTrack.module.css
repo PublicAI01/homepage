@@ -1,12 +1,9 @@
 .track {
-  --track-size: var(--track-size-desktop);
   --rotate-x: var(--rotate-x-desktop);
   --rotate-y: var(--rotate-y-desktop);
   --ball-size: var(--ball-size-desktop);
 
   transform-style: preserve-3d;
-  width: var(--track-size);
-  height: var(--track-size);
   border: solid 2px #fff;
   border-radius: 50%;
   animation: rotateTrack 20s linear infinite;
@@ -65,7 +62,6 @@
 
 @media screen and (max-width: 768px) {
   .track {
-    --track-size: var(--track-size-mobile);
     --rotate-x: var(--rotate-x-mobile);
     --rotate-y: var(--rotate-y-mobile);
     --ball-size: var(--ball-size-mobile);
