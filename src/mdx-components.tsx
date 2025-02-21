@@ -55,6 +55,7 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
 
 function RoundedImage(props: ImageProps) {
   const { alt, ...rest } = props;
+  const [, ext] = (props.src ?? '').toString().split('.');
 
   return (
     <Image
@@ -63,6 +64,7 @@ function RoundedImage(props: ImageProps) {
       width={700}
       height={394}
       placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(700, 394))}`}
+      unoptimized={ext.toLocaleLowerCase() === 'gif'}
       {...rest}
     />
   );
