@@ -26,7 +26,7 @@ export function GridPattern({
   strokeDasharray = 0,
   numSquares = 50,
   className,
-  maxOpacity = 0.4,
+  maxOpacity = 0.2,
   duration = 4,
   repeatDelay = 0.5,
   ...props
@@ -75,7 +75,7 @@ export function GridPattern({
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
-      for (let entry of entries) {
+      for (const entry of entries) {
         setDimensions({
           width: entry.contentRect.width,
           height: entry.contentRect.height,

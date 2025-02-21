@@ -1,11 +1,13 @@
 import { MetadataRoute } from 'next';
 
+import { baseUrl } from '@/app/sitemap';
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://publicai.io/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

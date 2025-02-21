@@ -1,6 +1,10 @@
+import createMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg'),
@@ -26,4 +30,11 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+  },
+});
+
+export default withMDX(nextConfig);

@@ -1,18 +1,22 @@
 import { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://publicai.io',
-      lastModified: new Date(),
+import { getBlogPosts } from '@/app/blog/utils';
+
+export const baseUrl = 'https://publicai.io';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const routes = ['', '/products', '/blog'].map<MetadataRoute.Sitemap[number]>(
+    (route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: new Date().toISOString().split('T')[0],
       changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://publicai.io/products',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-  ];
+    }),
+  );
+
+  const blogs = (await getBlogPosts()).map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.metadata.publishedAt,
+  }));
+
+  return [...routes, ...blogs];
 }
