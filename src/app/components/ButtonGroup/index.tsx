@@ -1,13 +1,15 @@
 import Link from 'next/link';
 
 import { DOCS_LINK } from '@/constant';
-import { BORDER_WITH_WHITE_BACKGROUND } from '@/constant/border';
+import { BORDER, BORDER_WITH_WHITE_BACKGROUND } from '@/constant/border';
 import { cn } from '@/utils';
 
-interface ButtonGroupProps extends React.ComponentProps<'div'> {}
+interface ButtonGroupProps extends React.ComponentProps<'div'> {
+  closeSideNavFn?: () => void;
+}
 
 const ButtonGroup = (props: ButtonGroupProps) => {
-  const { className, ...rest } = props;
+  const { className, closeSideNavFn, ...rest } = props;
   return (
     <div
       className={cn(
@@ -15,6 +17,17 @@ const ButtonGroup = (props: ButtonGroupProps) => {
         className,
       )}
       {...rest}>
+      <Link
+        className="relative rounded-sm px-4 py-2 text-center text-base font-semibold text-white max-lg:w-28 md:text-lg"
+        style={{
+          background: `url(${BORDER})`,
+        }}
+        role="button"
+        href="/blog"
+        aria-label="to blog list"
+        onClick={closeSideNavFn}>
+        Blog
+      </Link>
       <Link
         className="relative rounded-sm px-4 py-2 text-center text-base font-semibold text-black max-lg:w-28 md:text-lg"
         style={{
