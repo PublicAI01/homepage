@@ -25,21 +25,21 @@ const DataHunter = () => {
         {[
           {
             Icon: datasetIcon,
-            title: 'Seamless Data Collection',
+            title: 'Effortless AI Contribution',
             content:
-              'Collect high-quality data from social media and ChatGPT conversations with the click of a button.',
+              'This seamless Chrome extension lets you contribute to AI development effortlessly—just log in with your PublicAI Data Hub account and start earning.',
           },
           {
             Icon: rewardIcon,
-            title: 'Instant Reward System',
+            title: 'Engage or Earn Passively',
             content:
-              'Earn $PUBLIC tokens instantly for every approved data upload.',
+              'Reply to high-quality tweets on X using the AI Reply feature, or passively collect points by keeping your browser open. ',
           },
           {
             Icon: trackingIcon,
-            title: 'Real-Time Contribution Tracking',
+            title: 'Monitor Your Impact',
             content:
-              'Monitor the progress and impact of your uploads in real-time.',
+              'Track your daily gains in the Data Hub Dashboard and watch your impact grow.',
           },
         ].map((item, index) => (
           <Card
