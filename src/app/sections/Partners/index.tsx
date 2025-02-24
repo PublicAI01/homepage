@@ -31,7 +31,9 @@ import Morph from '@/assets/partners/morph.png';
 import NanYangTechnologicalUniversity from '@/assets/partners/nanyang.png';
 import Narra from '@/assets/partners/narra.png';
 import Near from '@/assets/partners/near.png';
+import NearFoundation from '@/assets/partners/near-foundation.png';
 import Nimble from '@/assets/partners/nimble.png';
+import SBA from '@/assets/partners/sba.png';
 import SolanaFoundation from '@/assets/partners/solana-foundation.png';
 import StabilityAI from '@/assets/partners/stability-ai.png';
 import StanfordUniversity from '@/assets/partners/standford.png';
@@ -44,7 +46,10 @@ import { cn } from '@/utils';
 const Partners = () => {
   return (
     <SectionWrapper
-      className={cn(aboutStyles['animate-border'], 'py-7 lg:px-24')}
+      className={cn(
+        aboutStyles['animate-border'],
+        '3xl:px-24 py-7 md:px-12 xl:px-16 2xl:px-20',
+      )}
       title="Partners"
       anchorId="partners">
       <div
@@ -57,9 +62,11 @@ const Partners = () => {
         {
           title: 'Trusted by Leading Investors',
           children: [
+            { image: SBA, name: 'Stanford Blockchain Accelerator' },
+            { image: SolanaFoundation, name: 'Solana Foundation' },
+            { image: NearFoundation, name: 'NEAR Foundation' },
             { image: IOBCCapital, name: 'IOBC Capital' },
             { image: ForesightVentures, name: 'Foresight Ventures' },
-            { image: SolanaFoundation, name: 'Solana Foundation' },
           ],
         },
         {
@@ -133,8 +140,9 @@ const Partners = () => {
                   background: `url(${DATA_CARD_BORDER_WITH_ALPHA})`,
                 }}>
                 <Image
-                  className="mx-auto h-6 w-auto md:h-9 lg:h-11"
+                  className="3xl:h-11 mx-auto h-6 w-auto md:h-9 xl:h-10"
                   src={item.image}
+                  height={44}
                   alt={item.name}
                 />
               </div>
