@@ -9,47 +9,48 @@ import { Mousewheel, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from '@/app/products/components/SwiperGroup/SwiperGroup.module.css';
-import ArenaPreview1 from '@/assets/image/arena-preview-1.png';
-import ArenaPreview2 from '@/assets/image/arena-preview-2.png';
 import HubPreview1 from '@/assets/image/hub-preview-1.png';
 import HubPreview2 from '@/assets/image/hub-preview-2.png';
 import HubPreview3 from '@/assets/image/hub-preview-3.png';
 import HubPreview4 from '@/assets/image/hub-preview-4.png';
+import HubPreview5 from '@/assets/image/hub-preview-5.png';
 import HunterPreview1 from '@/assets/image/hunter-preview-1.png';
 import HunterPreview2 from '@/assets/image/hunter-preview-2.png';
+import HunterPreview3 from '@/assets/image/hunter-preview-3.png';
+import HunterPreview4 from '@/assets/image/hunter-preview-4.png';
 import SectionWrapper from '@/components/SectionWrapper';
 import { cn } from '@/utils';
 
 const SwiperGroup = () => {
   return (
-    <>
-      <SectionWrapper
-        className="gap-12 lg:flex-row"
-        marginTop={false}>
-        <SwiperCard
-          title="Data Hunter"
-          subTitle="Seamless Data Collection"
-          content="Collect, contribute, and empower AI learning instantly with a simple click."
-          images={[HunterPreview1, HunterPreview2]}
-        />
+    <SectionWrapper
+      className="gap-12 lg:flex-row"
+      marginTop={false}>
+      <SwiperCard
+        title="Data Hub"
+        subTitle="Upload & Vote for Rewards"
+        content="Validate datasets, share unique insights, and earn PublicAI Points as you power a Web3 pipeline tackling real-world challenges."
+        images={[
+          HubPreview1,
+          HubPreview2,
+          HubPreview3,
+          HubPreview4,
+          HubPreview5,
+        ]}
+      />
 
-        <SwiperCard
-          title="Data Hub"
-          subTitle="Collaborative AI Validation"
-          content="Participate in consensus-driven validation, enhance AI accuracy, refine AI models, and earn rewards."
-          images={[HubPreview1, HubPreview2, HubPreview3, HubPreview4]}
-        />
-      </SectionWrapper>
-      <SectionWrapper>
-        <SwiperCard
-          title="PublicAI Arena"
-          subTitle="Innovative Model Evaluation"
-          content="Engage in interactive AI experiences and contribute to the evolution of AI models through collective intelligence."
-          images={[ArenaPreview1, ArenaPreview2]}
-          isBlock
-        />
-      </SectionWrapper>
-    </>
+      <SwiperCard
+        title="Data Hunter"
+        subTitle="Seamless Data Collection"
+        content="Collect, contribute, and empower AI learning instantly with a simple click."
+        images={[
+          HunterPreview1,
+          HunterPreview2,
+          HunterPreview3,
+          HunterPreview4,
+        ]}
+      />
+    </SectionWrapper>
   );
 };
 
@@ -115,7 +116,7 @@ const SwiperCard = (props: SwiperCardProps) => {
           <SwiperSlide key={index}>
             <Image
               className={cn(
-                'border-b4 mx-auto mb-6 h-48 w-auto rounded-xl border md:h-96',
+                'border-b4 3xl:h-96 mx-auto mb-6 h-40 w-auto rounded-xl border md:h-48 lg:h-60 xl:h-72 2xl:h-84',
                 isBlock && 'h-[560px]',
               )}
               src={item}
