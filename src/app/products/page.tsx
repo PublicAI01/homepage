@@ -4,7 +4,6 @@ import DataAPISuite from '@/app/products/sections/DataAPISuite';
 import DataHub from '@/app/products/sections/DataHub';
 import DataHunter from '@/app/products/sections/DataHunter';
 import Index from '@/app/products/sections/Index';
-import PublicAIArena from '@/app/products/sections/PublicAIArena';
 import Showcase from '@/app/products/sections/Showcase';
 import VectorDatabase from '@/app/products/sections/VectorDatabase';
 
@@ -20,9 +19,8 @@ const Products = () => {
   return (
     <>
       <Index />
-      <DataHunter />
       <DataHub />
-      <PublicAIArena />
+      <DataHunter />
       <VectorDatabase />
       <DataAPISuite />
       <Showcase />
