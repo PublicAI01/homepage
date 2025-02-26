@@ -14,7 +14,7 @@ import { cn } from '@/utils';
 const Showcase = () => {
   return (
     <SectionWrapper
-      className="bg-b3 py-7 lg:mt-40 lg:py-14"
+      className="bg-b3 py-7 md:mt-40 lg:py-14"
       title="Showcase"
       anchorId="showcase"
       useMobileContainerWidth={false}>

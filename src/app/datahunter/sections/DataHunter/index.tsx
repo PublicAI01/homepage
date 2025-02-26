@@ -1,4 +1,4 @@
-import styles from '@/app/products/sections/DataHunter/DataHunter.module.css';
+import styles from '@/app/datahunter/sections/DataHunter/DataHunter.module.css';
 import datasetIcon from '@/assets/svg/dataset-icon.svg?react';
 import rewardIcon from '@/assets/svg/reward-icon.svg?react';
 import trackingIcon from '@/assets/svg/tracking-icon.svg?react';
@@ -8,11 +8,8 @@ import { cn } from '@/utils';
 
 const DataHunter = () => {
   return (
-    <SectionWrapper
-      className="lg:mt-40"
-      title="Data Hunter"
-      anchorId="hunter">
-      <h3 className="text-g1 mt-7 text-center text-xs font-medium md:text-lg">
+    <SectionWrapper className="mt-5 lg:mt-10">
+      <h3 className="text-g1 text-center text-xs font-medium md:text-lg">
         Data Hunter empowers users to instantly contribute valuable data and
         earn rewards{' '}
         <b

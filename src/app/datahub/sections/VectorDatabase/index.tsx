@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-import styles from '@/app/products/sections/VectorDatabase/VectorDatabase.module.css';
+import styles from '@/app/datahub/sections/VectorDatabase/VectorDatabase.module.css';
 import aboutStyles from '@/app/sections/About/About.module.css';
 import vectorDatabasePicture from '@/assets/image/vector-database-picture.png';
 import zeroG from '@/assets/partners/0g.png';

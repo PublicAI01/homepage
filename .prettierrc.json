@@ -6,5 +6,6 @@
   "bracketSameLine": true,
   "singleAttributePerLine": true,
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindFunctions": ["clsx", "cn"]
+  "tailwindAttributes": ["buttonClassName"],
+  "tailwindFunctions": ["cn"]
 }

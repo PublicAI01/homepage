@@ -40,7 +40,6 @@ import StanfordUniversity from '@/assets/partners/standford.png';
 import TheBlock from '@/assets/partners/the-block.png';
 import ZKPass from '@/assets/partners/zk-pass.png';
 import SectionWrapper from '@/components/SectionWrapper';
-import { DATA_CARD_BORDER_WITH_ALPHA } from '@/constant/border';
 import { cn } from '@/utils';
 
 const Partners = () => {
@@ -135,10 +134,7 @@ const Partners = () => {
             {group.children.map((item, index) => (
               <div
                 key={index}
-                className="py-2"
-                style={{
-                  background: `url(${DATA_CARD_BORDER_WITH_ALPHA})`,
-                }}>
+                className="frosted-card rounded-lg py-1.5">
                 <Image
                   className="3xl:h-11 mx-auto h-6 w-auto md:h-9 xl:h-10"
                   src={item.image}

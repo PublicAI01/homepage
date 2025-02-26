@@ -11,6 +11,10 @@
   @apply border border-white/10 bg-linear-to-r from-white/10 to-white/5 backdrop-blur-sm;
 }
 
+@utility visually-hidden {
+  @apply absolute -m-px size-px overflow-hidden border-none p-0 whitespace-nowrap outline-0 outline-offset-0 [clip-path:inset(100%)] [clip:rect(0_0_0_0)];
+}
+
 @utility text-balance {
   text-wrap: balance;
 }

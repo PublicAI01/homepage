@@ -1,4 +1,4 @@
-import styles from '@/app/products/sections/DataHub/DataHub.module.css';
+import styles from '@/app/datahub/sections/DataHub/DataHub.module.css';
 import datasetIcon from '@/assets/svg/dataset-icon.svg?react';
 import rewardIcon from '@/assets/svg/reward-icon.svg?react';
 import votingIcon from '@/assets/svg/voting-icon.svg?react';
@@ -8,11 +8,8 @@ import { cn } from '@/utils';
 
 const DataHub = () => {
   return (
-    <SectionWrapper
-      className="lg:mt-40"
-      title="Data Hub"
-      anchorId="hub">
-      <h3 className="text-g1 mt-7 text-center text-xs font-medium md:text-lg">
+    <SectionWrapper className="mt-5 lg:mt-10">
+      <h3 className="text-g1 text-center text-xs font-medium md:text-lg">
         Data Hub empowers users to earn tokens by validating datasets,{' '}
         <b
           className={cn(styles.typing, 'text-p1 mx-auto mt-3 block font-bold')}>

@@ -38,10 +38,7 @@ const SideNav = () => {
           ))}
         </ul>
       </nav>
-      <ButtonGroup
-        className="w-4/5"
-        closeSideNavFn={closeSideNavFn}
-      />
+      <ButtonGroup className="w-4/5" />
       <address className="mt-20 flex w-4/5 items-center justify-center gap-4">
         {PLATFORMS.map((item, index) => (
           <Link

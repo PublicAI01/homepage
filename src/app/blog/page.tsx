@@ -49,13 +49,13 @@ export default async function Page() {
                 <div className="flex flex-1 flex-col justify-center self-stretch">
                   <time
                     dateTime={post.metadata.publishedAt}
-                    className="text-xs text-white/80 tabular-nums md:text-base">
+                    className="text-p1 text-xs tabular-nums md:text-base">
                     {formatDate(post.metadata.publishedAt, false)}
                   </time>
-                  <p className="text-sm tracking-tight text-white md:text-lg">
+                  <p className="text-base font-bold tracking-tight text-white md:text-lg">
                     {post.metadata.title}
                   </p>
-                  <p className="text-xs text-white/80 max-md:line-clamp-2 md:text-base">
+                  <p className="text-xs text-white/60 max-md:line-clamp-2 md:text-base">
                     {post.metadata.summary}
                   </p>
                 </div>

@@ -1,15 +1,13 @@
 import Link from 'next/link';
 
-import { DOCS_LINK } from '@/constant';
-import { BORDER, BORDER_WITH_WHITE_BACKGROUND } from '@/constant/border';
+import { PUBLIC_AI_DATA_HUB_DASHBOARD_LINK } from '@/constant';
+import { BORDER_WITH_WHITE_BACKGROUND } from '@/constant/border';
 import { cn } from '@/utils';
 
-interface ButtonGroupProps extends React.ComponentProps<'div'> {
-  closeSideNavFn?: () => void;
-}
+interface ButtonGroupProps extends React.ComponentProps<'div'> {}
 
 const ButtonGroup = (props: ButtonGroupProps) => {
-  const { className, closeSideNavFn, ...rest } = props;
+  const { className, ...rest } = props;
   return (
     <div
       className={cn(
@@ -18,27 +16,16 @@ const ButtonGroup = (props: ButtonGroupProps) => {
       )}
       {...rest}>
       <Link
-        className="relative rounded-sm px-4 py-2 text-center text-base font-semibold text-white max-lg:w-28 md:text-lg"
-        style={{
-          background: `url(${BORDER})`,
-        }}
-        role="button"
-        href="/blog"
-        aria-label="to blog list"
-        onClick={closeSideNavFn}>
-        Blog
-      </Link>
-      <Link
         className="relative rounded-sm px-4 py-2 text-center text-base font-semibold text-black max-lg:w-28 md:text-lg"
         style={{
           background: `url(${BORDER_WITH_WHITE_BACKGROUND})`,
         }}
         role="button"
-        href={DOCS_LINK}
+        href={PUBLIC_AI_DATA_HUB_DASHBOARD_LINK}
         target="_blank"
         rel="external noreferrer"
-        aria-label="to documents website">
-        Docs
+        aria-label="go to the data hub website dashboard page">
+        Dashboard
       </Link>
     </div>
   );

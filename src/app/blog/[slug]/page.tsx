@@ -113,7 +113,7 @@ export default async function Page({
           }}
         />
         <dl>
-          <dt className="text-[0px]">Published on</dt>
+          <dt className="visually-hidden">Published on</dt>
           <dd className="text-base leading-6 font-medium text-gray-400">
             <time dateTime={post.metadata.publishedAt}>
               {formatDate(post.metadata.publishedAt)}

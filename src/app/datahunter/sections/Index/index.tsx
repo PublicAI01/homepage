@@ -1,7 +1,11 @@
 import Image from 'next/image';
 
-import SwiperGroup from '@/app/products/components/SwiperGroup';
-import styles from '@/app/products/sections/Index/Index.module.css';
+import SwiperCard from '@/app/components/SwiperCard';
+import styles from '@/app/datahunter/sections/Index/Index.module.css';
+import HunterPreview1 from '@/assets/image/hunter-preview-1.png';
+import HunterPreview2 from '@/assets/image/hunter-preview-2.png';
+import HunterPreview3 from '@/assets/image/hunter-preview-3.png';
+import HunterPreview4 from '@/assets/image/hunter-preview-4.png';
 import decorativeCone from '@/assets/svg/decorative-cone.svg';
 import { cn } from '@/utils';
 
@@ -18,23 +22,32 @@ const Index = () => {
       <hgroup className="flex flex-col pt-16 lg:pt-28">
         <h1 className="text-center text-lg font-semibold tracking-wide text-white md:text-3xl">
           <em className="mb-2 block text-3xl not-italic md:text-5xl">
-            Building
+            PublicAI Data Hunter
           </em>{' '}
-          Craft AI with Collective Intelligence
+          Earn While You Browse
         </h1>
-        <h2 className="mx-4 mt-5 mb-10 text-center text-xs font-light text-white max-md:mt-6 md:text-xl md:font-normal">
-          Harness the synergy of Data Hunter&apos;s seamless collection and Data
-          Hub&apos;s collaborative validation to{' '}
+        <h2 className="mx-4 my-5 text-center text-xs font-light text-white md:text-xl md:font-normal">
           <b
             className={cn(
               styles.typing,
               'text-p1 mx-auto mt-3 block font-bold',
             )}>
-            supercharge AI with tailored large language models.
+            Turn daily browsing into a rewarding AI-building journey!
           </b>
         </h2>
       </hgroup>
-      <SwiperGroup />
+      <SwiperCard
+        title="Data Hunter"
+        subTitle="Seamless Data Collection"
+        content="Collect, contribute, and empower AI learning instantly with a simple click."
+        images={[
+          HunterPreview1,
+          HunterPreview2,
+          HunterPreview3,
+          HunterPreview4,
+        ]}
+        imageAltPrefix="data hunter preview"
+      />
     </section>
   );
 };
