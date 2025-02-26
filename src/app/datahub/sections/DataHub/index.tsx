@@ -9,7 +9,7 @@ import { cn } from '@/utils';
 const DataHub = () => {
   return (
     <SectionWrapper className="mt-5 lg:mt-10">
-      <h3 className="text-g1 text-center text-xs font-medium md:text-lg">
+      <h3 className="text-g1 mt-10 text-center text-xs font-medium md:mt-20 md:text-lg">
         Data Hub empowers users to earn tokens by validating datasets,{' '}
         <b
           className={cn(styles.typing, 'text-p1 mx-auto mt-3 block font-bold')}>
@@ -17,7 +17,7 @@ const DataHub = () => {
         </b>
       </h3>
 
-      <section className="mt-10 flex w-full flex-col items-center gap-2 md:mt-20 md:flex-row">
+      <section className="mt-5 flex w-full flex-col items-center gap-2 md:mt-10 md:flex-row">
         {[
           {
             Icon: datasetIcon,

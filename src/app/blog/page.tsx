@@ -52,7 +52,7 @@ export default async function Page() {
                     className="text-p1 text-xs tabular-nums md:text-base">
                     {formatDate(post.metadata.publishedAt, false)}
                   </time>
-                  <p className="text-base font-bold tracking-tight text-white md:text-lg">
+                  <p className="text-base font-semibold tracking-tight text-white md:text-lg">
                     {post.metadata.title}
                   </p>
                   <p className="text-xs text-white/60 max-md:line-clamp-2 md:text-base">
