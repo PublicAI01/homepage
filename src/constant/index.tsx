@@ -1,4 +1,4 @@
-const TWITTER_LINK = 'https://x.com/PublicAIData';
+const TWITTER_LINK = 'https://x.com/PublicAI_';
 const TELEGRAM_LINK = 'https://t.me/PublicAINews';
 const DOCS_LINK =
   'https://docs.publicai.io/publicai-documentation?utm_source=homepage';

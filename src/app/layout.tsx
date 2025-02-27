@@ -8,7 +8,6 @@ import Footer from '@/app/components/Footer';
 import GridPattern from '@/app/components/GridPattern';
 import Header from '@/app/components/Header';
 import MediaPlatform from '@/app/components/MediaPlatform';
-import NoticeDialog from '@/app/components/NoticeDialog';
 import SideNav from '@/app/components/SideNav';
 import { cn } from '@/utils';
 
@@ -49,7 +48,6 @@ export default function RootLayout({
         <SideNav />
         <main className="pt-header-height relative flex-1">{children}</main>
         <Footer />
-        <NoticeDialog />
       </body>
       <GoogleAnalytics gaId="G-JMRE2DXFNN" />
     </html>
