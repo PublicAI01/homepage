@@ -34,9 +34,6 @@ export interface VerifyActionState {
   result: boolean;
 }
 
-const sleep = async (ms: number | undefined = 3000) =>
-  new Promise((resolve) => setTimeout(resolve, ms));
-
 interface VerifyFormProps extends React.ComponentProps<'form'> {}
 
 const VerifyForm = (props: VerifyFormProps) => {
@@ -48,9 +45,8 @@ const VerifyForm = (props: VerifyFormProps) => {
   const [state, formAction] = useActionState<VerifyActionState | undefined>(
     async () => {
       if (!query) return;
-      await sleep(5000);
       const response = await fetch(
-        `${process.env.NEXT_BASE_URL}/api/common/verify`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/common/verify`,
         {
           method: 'POST',
           body: JSON.stringify({ type, name: query }),
