@@ -11,8 +11,7 @@ const Title = (props: TitleProps) => {
   return (
     <h2
       className={cn(
-        'w-60 py-1 text-center text-xl font-bold text-white md:w-80 md:text-3xl',
-        ButtonWrapper.className,
+        'app-shadow w-60 py-1 text-center text-xl font-bold text-white shadow-white md:w-80 md:text-3xl',
         className,
       )}
       style={{ ...ButtonWrapper.titleStyle, ...style }}
