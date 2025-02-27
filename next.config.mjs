@@ -28,6 +28,14 @@ const nextConfig = {
 
     return config;
   },
+  rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://192.168.1.13:8000/api/:path*',
+      },
+    ];
+  },
 };
 
 const withMDX = createMDX({

@@ -13,8 +13,7 @@ const Button = (props: ButtonProps) => {
   return (
     <Link
       className={cn(
-        'w-60 py-2 text-center text-base font-medium text-white md:text-xl',
-        ButtonWrapper.className,
+        'app-shadow w-60 py-2 text-center text-base font-medium text-white shadow-white md:text-xl',
         theme === 'primary' && 'bg-primary',
         theme === 'normal' && 'border-primary border-2 bg-white text-black',
       )}

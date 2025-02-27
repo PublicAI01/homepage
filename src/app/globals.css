@@ -7,6 +7,10 @@
 @variant scrollbar-track (&::-webkit-scrollbar-track);
 @variant scrollbar-thumb (&::-webkit-scrollbar-thumb);
 
+@utility app-shadow {
+  @apply shadow-primary rounded-md shadow-[0.125rem_0.125rem_0_0];
+}
+
 @utility frosted-card {
   @apply border border-white/10 bg-linear-to-r from-white/10 to-white/5 backdrop-blur-sm;
 }

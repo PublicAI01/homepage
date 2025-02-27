@@ -1,13 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { type ChangeEventHandler } from 'react';
 
 import ButtonGroup from '@/app/components/ButtonGroup';
 import styles from '@/app/components/Header/Header.module.css';
-import publicai from '@/assets/svg/publicai.svg';
+import PublicAI from '@/assets/svg/publicai.svg?react';
 import { NAV_LIST } from '@/constant';
 import { cn } from '@/utils';
 
@@ -52,11 +51,9 @@ const Header = () => {
               switchEl?.click();
             }
           }}>
-          <Image
-            className="h-6 w-auto md:h-8"
-            src={publicai}
-            height={32}
-            alt="publicai logo"
+          <PublicAI
+            className="h-6 w-auto text-white md:h-8"
+            aria-label="publicai logo"
           />
         </Link>
         <nav
