@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const OfficialVerification = () => {
   return (
     <ErrorBoundary errorComponent={Error}>
-      <section className="relative container mx-auto flex-1 pt-20 max-sm:overflow-hidden md:pt-40">
+      <section className="relative container mx-auto flex-1 py-20 max-sm:overflow-hidden md:pt-40">
         <Image
           className="absolute inset-x-1/10 top-0 -z-1 h-auto w-4/5 scale-120 rotate-100 opacity-30 md:inset-x-3/20 md:-top-60 md:w-7/10 lg:scale-80"
           src={decorativeCone}
