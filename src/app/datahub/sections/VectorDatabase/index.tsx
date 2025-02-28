@@ -69,7 +69,7 @@ const VectorDatabase = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="frosted-card app-card flex flex-1 flex-col items-center justify-center self-stretch rounded-xl px-6 py-4 hover:bg-white md:px-8 md:py-6"
+              className="frosted-card app-card flex flex-1 flex-col items-center justify-center self-stretch rounded-xl px-6 py-4 md:px-8 md:py-6"
               {...flickerProps}>
               <item.Icon className="size-9 md:size-11" />
               <h4 className="mt-4 text-base font-bold md:text-xl">

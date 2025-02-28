@@ -22,7 +22,7 @@ const DataPanel = () => {
       ].map((item, index) => (
         <div
           key={index}
-          className="frosted-card app-card flex size-full flex-col items-center justify-center rounded-xl pt-4 pb-3 lg:pt-7 lg:pb-4"
+          className="frosted-card app-card flex flex-col items-center justify-center rounded-xl pt-4 pb-3 lg:pt-7 lg:pb-4"
           {...flickerProps}>
           <item.Icon className="size-10" />
           <strong className="my-4 text-xl font-bold">{item.data}</strong>
