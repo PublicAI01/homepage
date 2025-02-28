@@ -31,7 +31,7 @@ docker ps
 Stop last run image:
 
 ```bash
-docker container stop [IMAGE ID]
+docker container stop [CONTAINER ID]
 ```
 
 Run latest image:
@@ -43,5 +43,13 @@ docker run -p 3000:3000 homepage-docker
 Remove last container:
 
 ```bash
-docker container rm [IMAGE ID]
+docker container rm [CONTAINER ID]
+```
+
+Clear cache:
+
+```bash
+docker system prune -af  # force clear all unused assets
+docker volume prune -f   # clear unused volume
+docker builder prune -f  # clear unused build cache
 ```
