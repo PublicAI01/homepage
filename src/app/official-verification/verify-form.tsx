@@ -15,9 +15,9 @@ import Search from '@/assets/svg/search.svg?react';
 import { cn } from '@/utils';
 
 const QUERY_TYPE_LIST = [
-  { label: 'Email', value: 0 },
-  { label: 'X(Twitter)', value: 1 },
   { label: 'Telegram', value: 2 },
+  { label: 'X(Twitter)', value: 1 },
+  { label: 'Email', value: 0 },
 ] as const;
 type QueryType = (typeof QUERY_TYPE_LIST)[number]['value'];
 const QUERY_TYPE_MAP = QUERY_TYPE_LIST.reduce(
