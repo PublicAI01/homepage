@@ -10,7 +10,7 @@ const Footer = () => {
         <h3 className="text-lg font-semibold text-white md:text-2xl">
           Contact us
         </h3>
-        <section className="relative my-2.5 flex w-full flex-col justify-between gap-2.5 lg:flex-row lg:items-center">
+        <section className="relative my-2.5 flex w-full flex-col justify-between gap-2.5 xl:flex-row xl:items-center">
           <a
             href="mailto:contact@publicai.io"
             className="border-b5 bg-b1 flex w-min items-center self-stretch rounded-lg border p-2 text-white md:px-4">
@@ -19,7 +19,7 @@ const Footer = () => {
               contact@publicai.io
             </p>
           </a>
-          <ul className="flex items-center gap-1.5 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+          <ul className="flex items-center gap-1.5 px-1 md:px-2 xl:absolute xl:top-1/2 xl:left-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
             {[
               {
                 label: 'Privacy Policy',

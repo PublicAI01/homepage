@@ -46,7 +46,9 @@ export default function RootLayout({
         <Header />
         <MediaPlatform />
         <SideNav />
-        <main className="pt-header-height relative flex-1">{children}</main>
+        <main className="pt-header-height relative flex flex-1 flex-col items-stretch">
+          {children}
+        </main>
         <Footer />
       </body>
       <GoogleAnalytics gaId="G-JMRE2DXFNN" />

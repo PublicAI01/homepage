@@ -15,6 +15,10 @@
   @apply border border-white/10 bg-linear-to-r from-white/10 to-white/5 backdrop-blur-sm;
 }
 
+@utility app-card {
+  @apply text-white transition-all hover:border-white hover:bg-white [&>*]:transition-colors [&>*]:last:text-[#e6e6e6] hover:[&>*]:text-black [&>svg]:size-7 md:[&>svg]:size-10;
+}
+
 @utility visually-hidden {
   @apply absolute -m-px size-px overflow-hidden border-none p-0 whitespace-nowrap outline-0 outline-offset-0 [clip-path:inset(100%)] [clip:rect(0_0_0_0)];
 }

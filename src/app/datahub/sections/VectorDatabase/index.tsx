@@ -13,7 +13,7 @@ import earth from '@/assets/svg/earth.svg';
 import mapping from '@/assets/svg/mapping-type.svg?react';
 import text from '@/assets/svg/text-type.svg?react';
 import video from '@/assets/svg/video-type.svg?react';
-import cardStyles from '@/components/Card/Card.module.css';
+import { flickerProps } from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
 import Title from '@/components/Title';
 import { cn } from '@/utils';
@@ -69,18 +69,10 @@ const VectorDatabase = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className={cn(
-                cardStyles.card,
-                'frosted-card flex flex-1 flex-col items-center justify-center self-stretch rounded-xl px-6 py-4 transition-colors hover:bg-white md:px-8 md:py-6',
-              )}
-              onMouseEnter={(e) => {
-                e.currentTarget.classList.remove('animate-card-flicker');
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.classList.add('animate-card-flicker');
-              }}>
+              className="frosted-card app-card flex flex-1 flex-col items-center justify-center self-stretch rounded-xl px-6 py-4 hover:bg-white md:px-8 md:py-6"
+              {...flickerProps}>
               <item.Icon className="size-9 md:size-11" />
-              <h4 className="mt-4 text-base font-bold transition-colors md:text-xl">
+              <h4 className="mt-4 text-base font-bold md:text-xl">
                 {item.title}
               </h4>
             </div>
