@@ -1,8 +1,7 @@
 import Image from 'next/image';
 
-import berachain from '@/assets/image/berachain.png';
-import bnbChain from '@/assets/image/bnb-chain.png';
-import ton from '@/assets/image/ton.png';
+import nearChain from '@/assets/image/near-chain.png';
+import solanaChain from '@/assets/image/solana-chain.png';
 import AIProfessor from '@/assets/svg/ai-professor.svg?react';
 import AirdropAssistant from '@/assets/svg/airdrop.svg?react';
 import kLineTrader from '@/assets/svg/k-line.svg?react';
@@ -29,9 +28,8 @@ const Showcase = () => {
         </h4>
         <div className="container flex flex-wrap items-center justify-center gap-6 lg:gap-10 xl:gap-14 2xl:gap-20">
           {[
-            { image: berachain, name: 'berachain' },
-            { image: ton, name: 'TON' },
-            { image: bnbChain, name: 'BNB chain' },
+            { image: solanaChain, name: 'Solana' },
+            { image: nearChain, name: 'NEAR' },
           ].map((item, index) => (
             <div
               key={index}
