@@ -3,7 +3,7 @@ const TELEGRAM_LINK = 'https://t.me/PublicAINews';
 const DOCS_LINK =
   'https://docs.publicai.io/publicai-documentation?utm_source=homepage';
 const DISCORD_LINK = 'https://discord.gg/dhgAGNX8H9';
-const MEDIUM_LINK = 'https://medium.com/@contact_88042';
+const MEDIUM_LINK = 'https://medium.com/@publicai';
 const CHROME_EXTENSION_LINK =
   'https://chromewebstore.google.com/detail/icbbdjflabjciapbohkkkmaangfjaanl';
 const PUBLIC_AI_DATA_HUB_LINK = 'https://beta.publicai.io?utm_source=homepage';
