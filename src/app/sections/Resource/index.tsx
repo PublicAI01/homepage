@@ -3,18 +3,17 @@
 import { YouTubeEmbed } from '@next/third-parties/google';
 import Link from 'next/link';
 
-import styles from '@/app/sections/Resource/Resource.module.css';
 import developmentDoc from '@/assets/svg/development-doc.svg?react';
 import dune from '@/assets/svg/dune.svg?react';
 import productGuideline from '@/assets/svg/product-guideline.svg?react';
 import { flickerProps } from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
 import { DOCS_LINK, DUNE_LINK, GITHUB_LINK } from '@/constant';
-import { cn } from '@/utils';
 
 const Resource = () => {
   return (
     <SectionWrapper
+      className="[&>[data-ntpc]]:w-full!"
       title="Resource"
       anchorId="resource">
       <section className="mt-6 flex w-full flex-col items-center justify-center gap-6 md:mt-16 md:flex-row md:gap-12 lg:gap-28 lg:px-20">
@@ -48,13 +47,13 @@ const Resource = () => {
           </Link>
         ))}
       </section>
-      <div
-        className={cn(
-          styles['youtube-container'],
-          'bg-b3 mt-8 h-auto overflow-hidden rounded-xl md:mt-28 lg:h-[600px]',
-        )}>
-        <YouTubeEmbed videoid="i0U8uaUrILs" />
-      </div>
+      <YouTubeEmbed
+        {...{
+          class:
+            'w-full h-auto max-w-none! rounded-xl overflow-hidden bg-b3 mt-8 md:mt-28 lg:h-150',
+        }}
+        videoid="i0U8uaUrILs"
+      />
     </SectionWrapper>
   );
 };

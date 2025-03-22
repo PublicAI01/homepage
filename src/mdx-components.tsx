@@ -1,3 +1,4 @@
+import { YouTubeEmbed } from '@next/third-parties/google';
 import type { MDXComponents } from 'mdx/types';
 import Image, { ImageProps } from 'next/image';
 import Link from 'next/link';
@@ -102,6 +103,22 @@ function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
   return Heading;
 }
 
+function YouTube(props: { id?: string }) {
+  if (!props.id) {
+    return <></>;
+  }
+
+  return (
+    <YouTubeEmbed
+      {...{
+        class:
+          'w-full h-auto max-w-none! rounded-lg overflow-hidden 2xl:mt-8 xl:mt-7 lg:mt-6 md:mt-5 mt-4',
+      }}
+      videoid={props.id}
+    />
+  );
+}
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: createHeading(1),
@@ -112,6 +129,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h6: createHeading(6),
     img: RoundedImage,
     a: CustomLink,
+    YouTube,
     ...components,
   };
 }
