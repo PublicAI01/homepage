@@ -52,7 +52,7 @@ const EmblaCarousel = (props: EmblaCarouselProps) => {
         <div className="-ml-[var(--carousel-gap)] flex [touch-action:pan-y_pinch-zoom] items-center">
           {slides.map((item, index) => (
             <div
-              className="min-w-0 flex-[0_0_100%] [transform:translate3d(0,0,0)] pl-[var(--carousel-gap)]"
+              className="min-w-0 flex-[0_0_100%] [transform:translate3d(0,0,0)] pl-[var(--carousel-gap)] will-change-transform"
               key={index}>
               <Image
                 className="border-b4 h-auto w-full rounded-xl border"
