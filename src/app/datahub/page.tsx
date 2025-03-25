@@ -4,7 +4,9 @@ import DataAPISuite from '@/app/datahub/sections/DataAPISuite';
 import DataHubWidget from '@/app/datahub/sections/DataHub';
 import Index from '@/app/datahub/sections/Index';
 import VectorDatabase from '@/app/datahub/sections/VectorDatabase';
+import Button from '@/components/Button';
 import SectionWrapper from '@/components/SectionWrapper';
+import { PUBLIC_AI_DATA_HUB_LINK } from '@/constant';
 
 export const metadata: Metadata = {
   title: 'PublicAI Data Hub',
@@ -19,6 +21,17 @@ const DataHub = () => {
     <>
       <Index />
       <DataHubWidget />
+      <SectionWrapper className="relative md:mt-40">
+        <Button
+          theme="primary"
+          href={PUBLIC_AI_DATA_HUB_LINK}
+          aria-label="to data hub website">
+          Launch Now
+        </Button>
+        <h3 className="mt-5 text-center text-base font-semibold text-white lg:text-3xl">
+          Shape the future of AI, one click at a time!
+        </h3>
+      </SectionWrapper>
       <VectorDatabase />
       <DataAPISuite />
       <SectionWrapper className="mt-24 md:mt-40">
