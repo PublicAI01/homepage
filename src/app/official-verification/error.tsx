@@ -1,12 +1,8 @@
 'use client';
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
+import type { ErrorComponent } from 'next/dist/client/components/error-boundary';
+
+const Error: ErrorComponent = ({ error, reset }) => {
   return (
     <section className="flex flex-1 flex-col items-center justify-center">
       <h2 className="text-xl font-bold text-white md:text-3xl">
@@ -23,4 +19,6 @@ export default function Error({
       </button>
     </section>
   );
-}
+};
+
+export default Error;
