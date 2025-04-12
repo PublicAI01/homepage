@@ -12,6 +12,7 @@ const PUBLIC_AI_DATA_HUB_DASHBOARD_LINK =
 const GITHUB_LINK = 'https://github.com/PublicAI01';
 const DUNE_LINK = 'https://dune.com/publicaiweb3/publicai-dashboard';
 const TELEGRAM_MINI_APP_LINK = 'https://t.me/publicai_bot';
+const SUPPORT_EMAIL_ADDRESS = 'support@publicai.io';
 const NAV_LIST = [
   { id: 'datahub', href: '/datahub', label: 'Data Hub' },
   { id: 'datahunter', href: '/datahunter', label: 'Data Hunter' },
@@ -29,6 +30,7 @@ export {
   NAV_LIST,
   PUBLIC_AI_DATA_HUB_DASHBOARD_LINK,
   PUBLIC_AI_DATA_HUB_LINK,
+  SUPPORT_EMAIL_ADDRESS,
   TELEGRAM_LINK,
   TELEGRAM_MINI_APP_LINK,
   TWITTER_LINK,

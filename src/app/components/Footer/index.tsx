@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import Mail from '@/assets/svg/mail.svg?react';
+import { SUPPORT_EMAIL_ADDRESS } from '@/constant';
 import { PLATFORMS } from '@/constant/platforms';
 
 const Footer = () => {
@@ -12,11 +13,11 @@ const Footer = () => {
         </h3>
         <section className="relative my-2.5 flex w-full flex-col justify-between gap-2.5 xl:flex-row xl:items-center">
           <a
-            href="mailto:contact@publicai.io"
+            href={`mailto:${SUPPORT_EMAIL_ADDRESS}`}
             className="border-b5 bg-b1 flex w-min items-center self-stretch rounded-lg border p-2 text-white md:px-4">
             <Mail className="text-primary size-4 md:size-6" />
             <p className="text-g1 ml-2 text-base md:text-xl">
-              contact@publicai.io
+              {SUPPORT_EMAIL_ADDRESS}
             </p>
           </a>
           <ul className="flex items-center gap-1.5 px-1 md:px-2 xl:absolute xl:top-1/2 xl:left-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
