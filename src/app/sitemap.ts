@@ -11,6 +11,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/datahunter',
     '/blog',
     '/official-verification',
+    '/privacy',
+    '/terms',
   ].map<MetadataRoute.Sitemap[number]>((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0],

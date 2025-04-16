@@ -24,12 +24,12 @@ const Footer = () => {
             {[
               {
                 label: 'Privacy Policy',
-                href: 'privacy.html',
+                href: 'privacy',
                 'aria-label': 'go to the privacy policy page',
               },
               {
                 label: 'Terms of Service',
-                href: 'terms-of-service.html',
+                href: 'terms',
                 'aria-label': 'go to the terms of service page',
               },
               {
