@@ -27,3 +27,15 @@ export function toBase64(str: string) {
     ? Buffer.from(str).toString('base64')
     : window.btoa(str);
 }
+
+export function preciseTimeout(callback: () => void, delay: number) {
+  const start = performance.now();
+  function check(timestamp: number) {
+    if (timestamp - start >= delay) {
+      callback();
+    } else {
+      requestAnimationFrame(check);
+    }
+  }
+  requestAnimationFrame(check);
+}
