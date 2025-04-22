@@ -10,37 +10,36 @@
     "prettier": "exec prettier . --write"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.0",
-    "@next/third-parties": "15.2.4",
+    "@headlessui/react": "^2.2.2",
+    "@next/third-parties": "15.3.1",
     "clsx": "^2.1.1",
-    "embla-carousel-react": "^8.5.2",
-    "embla-carousel-wheel-gestures": "^8.0.1",
-    "framer-motion": "^12.6.2",
-    "next": "15.2.4",
+    "embla-carousel-react": "^8.6.0",
+    "embla-carousel-wheel-gestures": "^8.0.2",
+    "framer-motion": "^12.7.4",
+    "next": "15.3.1",
     "overlayscrollbars": "^2.11.1",
     "overlayscrollbars-react": "^0.5.6",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "sharp": "^0.33.5",
-    "tailwind-merge": "^3.0.2",
-    "tailwindcss-animate": "^1.0.7"
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "sharp": "^0.34.1",
+    "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/eslint-plugin-next": "^15.2.4",
-    "@next/mdx": "^15.2.4",
+    "@next/eslint-plugin-next": "^15.3.1",
+    "@next/mdx": "^15.3.1",
     "@svgr/webpack": "^8.1.0",
-    "@tailwindcss/postcss": "^4.0.17",
+    "@tailwindcss/postcss": "^4.1.4",
     "@tailwindcss/typography": "^0.5.16",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22",
-    "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4",
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2",
     "eslint": "^9",
-    "eslint-config-next": "15.2.4",
-    "eslint-plugin-react": "^7.37.4",
+    "eslint-config-next": "15.3.1",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.1.4",
@@ -48,14 +47,14 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "remark-gfm": "^4.0.1",
-    "tailwindcss": "^4.0.17",
+    "tailwindcss": "^4.1.4",
     "typescript": "^5"
   },
-  "packageManager": "pnpm@10.7.0",
+  "packageManager": "pnpm@10.9.0",
   "pnpm": {
     "overrides": {
-      "@types/react": "19.0.12",
-      "@types/react-dom": "19.0.4"
+      "@types/react": "19.1.2",
+      "@types/react-dom": "19.1.2"
     }
   }
 }
