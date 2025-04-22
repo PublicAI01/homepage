@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <section className="prose prose-invert mx-auto max-w-[85ch]!">
+    <section className="prose prose-invert max-md:prose-sm max-md:px-mobile-padding-x max-md:w-screen md:mx-auto md:max-w-[85ch]!">
       <h1>PublicAI PRIVACY POLICY</h1>
       <p>Last Updated: Nov 7, 2024</p>
 
@@ -632,7 +632,9 @@ export default function Page() {
         </li>
         <li>
           For individuals in Switzerland:{' '}
-          <Link href="https://www.edoeb.admin.ch/edoeb/en/home/the-fdpic/contact.html">
+          <Link
+            className="hyphens-auto"
+            href="https://www.edoeb.admin.ch/edoeb/en/home/the-fdpic/contact.html">
             https://www.edoeb.admin.ch/edoeb/en/home/the-fdpic/contact.html
           </Link>
         </li>

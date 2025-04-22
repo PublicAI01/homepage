@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <section className="prose prose-invert mx-auto max-w-[85ch]!">
+    <section className="prose prose-invert max-md:prose-sm max-md:px-mobile-padding-x max-md:w-screen md:mx-auto md:max-w-[85ch]!">
       <h1>PublicAI TERMS OF SERVICE</h1>
       <p>Last Updated: Nov 7, 2024</p>
       <p>
