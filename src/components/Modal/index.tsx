@@ -55,7 +55,7 @@ const Modal = (props: ModalProps) => {
   useEffect(() => {
     setMounted(true);
     if (visible) {
-      requestIdleCallback(() => {
+      requestAnimationFrame(() => {
         addEventListener({ once: true });
         handleOpen();
       });
