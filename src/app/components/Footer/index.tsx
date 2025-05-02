@@ -24,17 +24,17 @@ const Footer = () => {
             {[
               {
                 label: 'Privacy Policy',
-                href: 'privacy',
+                href: '/privacy',
                 'aria-label': 'go to the privacy policy page',
               },
               {
                 label: 'Terms of Service',
-                href: 'terms',
+                href: '/terms',
                 'aria-label': 'go to the terms of service page',
               },
               {
                 label: 'PublicAI Verify',
-                href: 'official-verification',
+                href: '/official-verification',
                 'aria-label': 'go to the official verification page',
               },
             ].map((item, index) => (
