@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { SUPPORT_EMAIL_ADDRESS } from '@/constant';
 
 export const metadata: Metadata = {
-  title: 'PublicAI Privacy Policy',
+  title: 'PublicAI Data Privacy Policy',
   description:
     'Web3 based Train-To-Earn network enables every human to upgrade AI and earn rewards by completing data tasks.',
   keywords:
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section className="prose prose-invert max-md:prose-sm max-md:px-mobile-padding-x max-md:w-screen md:mx-auto md:max-w-[85ch]!">
-      <h1>PublicAI PRIVACY POLICY</h1>
-      <p>Last Updated: Nov 7, 2024</p>
+      <h1>PublicAI Data PRIVACY POLICY</h1>
+      <p>Last Updated: May 2, 2025</p>
 
       <p>
         At PublicAI (referred to here as “we”, “us” or “our”), we are dedicated
@@ -68,9 +68,10 @@ export default function Page() {
             </li>
             <li>
               Data that you voluntarily submit to us for the purpose of AI
-              training, including but not limited to photos, texts, social media
-              information, the information you provided during our AI training
-              process, and other media files (&quot;Training Data&quot;)
+              training, including but not limited to photos, texts, audio,
+              video, and social media information, etc, the information you
+              provided during our AI training process, and other media files
+              (&quot;Training Data&quot;)
             </li>
           </ul>
         </li>
