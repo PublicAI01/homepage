@@ -19,17 +19,22 @@
 
 .nav menu li:nth-child(2):hover ~ div.slider,
 .nav menu li:nth-child(2).current ~ .slider {
-  left: 25%;
+  left: 20%;
 }
 
 .nav menu li:nth-child(3):hover ~ div.slider,
 .nav menu li:nth-child(3).current ~ .slider {
-  left: 50%;
+  left: 40%;
 }
 
 .nav menu li:nth-child(4):hover ~ div.slider,
 .nav menu li:nth-child(4).current ~ .slider {
-  left: 75%;
+  left: 60%;
+}
+
+.nav menu li:nth-child(5):hover ~ div.slider,
+.nav menu li:nth-child(5).current ~ .slider {
+  left: 80%;
 }
 
 .nav menu li .nav-panel {
