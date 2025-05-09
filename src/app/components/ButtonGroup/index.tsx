@@ -1,7 +1,10 @@
 import Link from 'next/link';
 
 import { PUBLIC_AI_DATA_HUB_DASHBOARD_LINK } from '@/constant';
-import { BORDER_WITH_WHITE_BACKGROUND } from '@/constant/border';
+import {
+  BORDER_WITH_PURPLE_BACKGROUND,
+  BORDER_WITH_WHITE_BACKGROUND,
+} from '@/constant/border';
 import { cn } from '@/utils';
 
 interface ButtonGroupProps extends React.ComponentProps<'div'> {}
@@ -15,6 +18,18 @@ const ButtonGroup = (props: ButtonGroupProps) => {
         className,
       )}
       {...rest}>
+      <Link
+        className="relative rounded-sm px-4 py-2 text-center text-base font-semibold text-white max-lg:w-28 md:text-lg"
+        style={{
+          background: `url(${BORDER_WITH_PURPLE_BACKGROUND})`,
+        }}
+        role="button"
+        href="/business.pdf"
+        target="_blank"
+        rel="external noreferrer"
+        aria-label="go to the PublicAI Business PDF">
+        Business
+      </Link>
       <Link
         className="relative rounded-sm px-4 py-2 text-center text-base font-semibold text-black max-lg:w-28 md:text-lg"
         style={{
