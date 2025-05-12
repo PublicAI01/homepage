@@ -67,7 +67,7 @@ const VerifyForm = (props: VerifyFormProps) => {
     { query: '', result: false },
   );
   const [isVerified, label] = useMemo(
-    () => [state?.result ?? false, QUERY_TYPE_LIST[type].label],
+    () => [state?.result ?? false, QUERY_TYPE_MAP[type]],
     [state?.result, type],
   );
 
