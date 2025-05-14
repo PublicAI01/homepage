@@ -123,7 +123,7 @@ export default async function Page({
         <h1 className="text-center text-xl font-extrabold tracking-tight text-gray-100 sm:text-2xl md:text-3xl">
           {post.metadata.title}
         </h1>
-        <article className="prose prose-invert max-w-[85ch]!">
+        <article className="prose prose-invert prose-figcaption:text-center max-w-[85ch]!">
           <post.MDX />
         </article>
       </section>
