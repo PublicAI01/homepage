@@ -1,5 +1,5 @@
 const TWITTER_LINK = 'https://x.com/PublicAI_';
-const TELEGRAM_LINK = 'https://t.me/PublicAINews';
+const TELEGRAM_LINK = 'https://t.me/public_ai01';
 const DOCS_LINK =
   'https://docs.publicai.io/publicai-documentation?utm_source=homepage';
 const DISCORD_LINK = 'https://discord.gg/dhgAGNX8H9';
