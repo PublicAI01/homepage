@@ -9,6 +9,7 @@ import requesters from '@/assets/svg/requesters.svg';
 import rewardFn from '@/assets/svg/reward-fn.svg';
 import workers from '@/assets/svg/workers.svg';
 import SectionWrapper from '@/components/SectionWrapper';
+import { PUBLIC_AI_DATA_HUB_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 const Works = () => {
@@ -44,7 +45,8 @@ const Works = () => {
         <_Block
           className="flex-1"
           image={requesters}
-          content="Requesters have tasks that need to be completed"
+          content="Clients make requests for specialized, on-demand data"
+          link={{ title: 'Request Data', url: '/business.pdf' }}
         />
         <div className="mb-14 flex h-6 w-20 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90 md:h-10 md:w-28">
           <Image
@@ -72,7 +74,8 @@ const Works = () => {
         <_Block
           className="flex-1"
           image={workers}
-          content="Workers want to earn money and work on interesting tasks"
+          content="Community earns rewards by working on interesting tasks"
+          link={{ title: 'Get Started', url: PUBLIC_AI_DATA_HUB_LINK }}
         />
       </section>
     </SectionWrapper>
@@ -82,15 +85,16 @@ const Works = () => {
 interface _BlockProps extends React.ComponentProps<'div'> {
   image: string;
   content: string;
+  link?: { title: string; url: string };
 }
 
 const _Block = (props: _BlockProps) => {
-  const { className, image, content, ...rest } = props;
+  const { className, image, content, link, ...rest } = props;
 
   return (
     <div
       className={cn(
-        'flex w-full items-center max-md:px-4 md:flex-col',
+        'flex w-full items-center gap-1.5 max-md:px-4 md:flex-col',
         className,
       )}
       {...rest}>
@@ -100,9 +104,20 @@ const _Block = (props: _BlockProps) => {
         width={112}
         alt={content.toLocaleLowerCase()}
       />
-      <p className="text-base text-white max-md:ml-4 md:mt-12 md:w-3/4 md:text-center">
-        {content}
-      </p>
+      <div className="flex flex-col items-center gap-1 md:gap-2">
+        <p className="text-base text-white max-md:ml-4 md:mt-12 md:w-3/4 md:text-center">
+          {content}
+        </p>
+        {link && (
+          <a
+            className="text-p1/80 text-center text-xs underline md:text-sm"
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer">
+            {link.title}
+          </a>
+        )}
+      </div>
     </div>
   );
 };

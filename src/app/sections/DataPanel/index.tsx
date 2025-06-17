@@ -14,7 +14,7 @@ const DataPanel = () => {
       className="grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-8 xl:gap-16"
       useFlexLayout={false}>
       {[
-        { Icon: workersData, title: 'Workers', data: '400K+' },
+        { Icon: workersData, title: 'Workers', data: '900K+' },
         { Icon: validatorsData, title: 'Validators', data: '300K+' },
         { Icon: buildersData, title: 'Builders', data: '200K+' },
         { Icon: datasetSizeData, title: 'Dataset Size', data: '100T+' },
