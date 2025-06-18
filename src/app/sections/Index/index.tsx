@@ -64,20 +64,18 @@ const Index = () => {
         <h2 className="mx-auto mt-3 mb-12 text-center text-base font-normal text-white max-md:max-w-xs md:mt-6 md:text-xl">
           Powering Exceptional AI with Equitable Global Expertise
         </h2>
-        <div className="flex flex-col items-center justify-center gap-2 md:gap-4">
+        <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-11">
           <Button
+            href={CHROME_EXTENSION_LINK}
+            aria-label="to download data hunter chrome extension">
+            Download Data Hunter
+          </Button>
+          <Button
+            theme="primary"
             href={PUBLIC_AI_DATA_HUB_LINK}
             aria-label="to data hub website">
             Launch Data Hub
           </Button>
-          <a
-            className="text-p1/80 text-center text-sm underline"
-            href={CHROME_EXTENSION_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="to download data hunter chrome extension">
-            Download Data Hunter
-          </a>
         </div>
       </div>
     </section>
