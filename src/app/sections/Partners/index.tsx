@@ -14,7 +14,6 @@ import chainbase from '@/assets/partners/chainbase.png';
 import Chasm from '@/assets/partners/chasm.png';
 import CoinDesk from '@/assets/partners/coin-desk.png';
 import Cointelegraph from '@/assets/partners/cointelegraph.png';
-import CSP from '@/assets/partners/csp.png';
 import Decrypt from '@/assets/partners/decrypt.png';
 import FlockIO from '@/assets/partners/flock-io.png';
 import ForesightVentures from '@/assets/partners/foresight-ventures.png';
@@ -38,6 +37,7 @@ import Narra from '@/assets/partners/narra.png';
 import Near from '@/assets/partners/near.png';
 import NearFoundation from '@/assets/partners/near-foundation.png';
 import Nimble from '@/assets/partners/nimble.png';
+import SBA from '@/assets/partners/sba.png';
 import SolanaFoundation from '@/assets/partners/solana-foundation.png';
 import StabilityAI from '@/assets/partners/stability-ai.png';
 import StanfordUniversity from '@/assets/partners/standford.png';
@@ -72,16 +72,14 @@ const Partners = () => {
           title: 'Trusted by Leading Investors',
           children: [
             { image: Stc, name: 'Stc Group' },
-            {
-              image: BBF,
-              name: 'Blockchain Builders Fund & Stanford Blockchain Accelerator',
-            },
+            { image: BBF, name: 'Blockchain Builders Fund' },
+            { image: SBA, name: 'Stanford Blockchain Accelerator' },
             { image: Tykhe, name: 'Tykhe Block Ventures' },
             { image: NearFoundation, name: 'NEAR Foundation' },
             { image: TAISU, name: 'TAISU' },
             { image: MHVentures, name: 'MH Ventures' },
             { image: YGG, name: 'Yield Guild Games' },
-            { image: CSP, name: 'CSP DAO' },
+            // { image: KineticKollective, name: 'Kinetic Kollective' },
             { image: IBCGroup, name: 'IBC Invest Incubate Accelerate' },
             { image: WhitewaterLabs, name: 'Whitewater Labs' },
             { image: G20, name: 'G20 Group' },
@@ -163,6 +161,7 @@ const Partners = () => {
                   src={item.image}
                   height={44}
                   alt={item.name}
+                  title={item.name}
                 />
               </div>
             ))}
