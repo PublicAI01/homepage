@@ -36,6 +36,7 @@ import NanYangTechnologicalUniversity from '@/assets/partners/nanyang.png';
 import Narra from '@/assets/partners/narra.png';
 import Near from '@/assets/partners/near.png';
 import NearFoundation from '@/assets/partners/near-foundation.png';
+import Nexus from '@/assets/partners/nexus.png';
 import Nimble from '@/assets/partners/nimble.png';
 import SBA from '@/assets/partners/sba.png';
 import SolanaFoundation from '@/assets/partners/solana-foundation.png';
@@ -117,7 +118,7 @@ const Partners = () => {
             // { image: Story, name: 'Story' },
             { image: ZeroG, name: '0G' },
             { image: Hyperbolic, name: 'Hyperbolic' },
-            { image: Catizen, name: 'Catizen' },
+            { image: Nexus, name: 'Nexus' },
             { image: Autonomys, name: 'Autonomys' },
             { image: ZeroXScope, name: '0x Scope' },
             { image: MantaNetwork, name: 'Manta Network' },
@@ -132,6 +133,7 @@ const Partners = () => {
             { image: FlockIO, name: 'Flock IO' },
             { image: Nimble, name: 'Nimble' },
             { image: IONet, name: 'IO.Net' },
+            { image: Catizen, name: 'Catizen' },
           ],
         },
         {
