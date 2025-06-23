@@ -8,9 +8,9 @@ interface SectionWrapperProps extends React.ComponentProps<'section'> {
   anchorClassName?: string;
   title?: string;
   titleClassName?: string;
+  useFlexLayout?: boolean;
   useMobileContainerWidth?: boolean;
   marginTop?: boolean;
-  useFlexLayout?: boolean;
 }
 
 const SectionWrapper = (props: SectionWrapperProps) => {

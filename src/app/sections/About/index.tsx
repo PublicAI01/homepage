@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
+import borderStyles from '@/app/components/AnimatedBorder/AnimatedBorder.module.css';
 import Swiper from '@/app/components/Swiper';
-import styles from '@/app/sections/About/About.module.css';
 import dataCollection from '@/assets/image/data-collection.png';
 import dataLabeling from '@/assets/image/data-labeling.png';
 import modelEvaluation from '@/assets/image/modal-evaluation.png';
@@ -64,8 +64,8 @@ const About = () => {
       </div>
       <section
         className={cn(
+          borderStyles['animated-border'],
           'container mt-10 flex flex-col items-center p-12 max-md:px-5 md:flex-row md:gap-2 lg:gap-4',
-          styles['animate-border'],
         )}>
         <Swiper />
         <div className="grid h-full w-full grid-cols-3 grid-rows-2 gap-4 max-md:mt-10 md:w-1/3">

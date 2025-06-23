@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import aboutStyles from '@/app/sections/About/About.module.css';
+import borderStyles from '@/app/components/AnimatedBorder/AnimatedBorder.module.css';
 import styles from '@/app/sections/Partners/Partners.module.css';
 import ZeroG from '@/assets/partners/0g.png';
 import ZeroXScope from '@/assets/partners/0x-scope.png';
@@ -57,7 +57,8 @@ const Partners = () => {
   return (
     <SectionWrapper
       className={cn(
-        aboutStyles['animate-border'],
+        borderStyles['animated-border'],
+        'will-change-[transform,opacity]',
         '3xl:px-24 py-7 md:px-12 xl:px-16 2xl:px-20',
       )}
       title="Partners"
@@ -65,8 +66,8 @@ const Partners = () => {
       <div
         aria-hidden
         className={cn(
-          styles['animate-shadow'],
-          'bg-primary/20 absolute z-0 blur-[96px] max-md:inset-x-0 max-md:h-1/6 md:inset-y-0 md:w-1/4',
+          styles['animated-shadow'],
+          'bg-primary/20 absolute z-0 blur-3xl max-md:inset-x-0 max-md:h-1/6 md:inset-y-0 md:w-1/4',
         )}></div>
       {[
         {

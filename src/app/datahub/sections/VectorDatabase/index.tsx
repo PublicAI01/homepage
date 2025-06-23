@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 
+import borderStyles from '@/app/components/AnimatedBorder/AnimatedBorder.module.css';
 import styles from '@/app/datahub/sections/VectorDatabase/VectorDatabase.module.css';
-import aboutStyles from '@/app/sections/About/About.module.css';
 import vectorDatabasePicture from '@/assets/image/vector-database-picture.png';
 import zeroG from '@/assets/partners/0g.png';
 import glacier from '@/assets/partners/glacier.png';
@@ -51,7 +51,7 @@ const VectorDatabase = () => {
       </hgroup>
       <section
         className={cn(
-          aboutStyles['animate-border'],
+          borderStyles['animated-border'],
           'w-full p-5 lg:px-20 lg:py-16',
         )}>
         <Title className="mx-auto">Vector Database</Title>

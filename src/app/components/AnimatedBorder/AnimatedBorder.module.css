@@ -1,46 +1,46 @@
-.animate-border {
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.animated-border {
   --border-width: 6px;
   --border-radius: 10px;
+  --inner-border-radius: calc(var(--border-radius) - var(--border-width));
+  --inner-inset-size: 4px;
   position: relative;
-  z-index: 0;
-  border-radius: var(--border-radius);
-  overflow: hidden;
+  border: calc(var(--border-width) + var(--inner-inset-size)) solid transparent;
+  clip-path: inset(0 round var(--border-radius));
+  border-image: conic-gradient(
+      from var(--angle),
+      #1f1f1f,
+      #262626,
+      #434343,
+      #595959,
+      #1f1f1f
+    )
+    1;
+  animation: rotate-border 4s linear infinite;
 }
 
-.animate-border::before {
-  content: '';
-  position: absolute;
-  z-index: -2;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  width: 600%;
-  height: 600%;
-  background: conic-gradient(#1f1f1f, #262626, #434343, #595959, #1f1f1f)
-    no-repeat;
-  animation: rotate 4s linear infinite;
-}
-
-.animate-border::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  left: var(--border-width);
-  top: var(--border-width);
-  width: calc(100% - calc(var(--border-width) * 2));
-  height: calc(100% - calc(var(--border-width) * 2));
-  background: #0f0f0f;
-  border-radius: calc(var(--border-radius) - var(--border-width));
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(1turn);
+@keyframes rotate-border {
+  to {
+    --angle: 360deg;
   }
 }
 
+.animated-border::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  inset: calc(var(--inner-inset-size) * -1);
+  background-color: var(--color-b3);
+  border-radius: var(--inner-border-radius);
+}
+
 @media screen and (max-width: 768px) {
-  .animate-border {
+  .animated-border {
     --border-width: 3px;
   }
 }
