@@ -4,6 +4,7 @@ import Image, { ImageProps } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import { baseUrl } from '@/app/sitemap';
 import { shimmer, toBase64 } from '@/utils';
 
 function handleLink(href?: string) {
@@ -11,14 +12,22 @@ function handleLink(href?: string) {
     return href;
   }
 
+  const isOriginallyAbsolute = /^(?:[a-z]+:)?\/\//i.test(href);
+
   try {
-    const url = new URL(href);
+    const url = new URL(href, baseUrl);
+
     const searchParams = new URLSearchParams(url.search);
     searchParams.set('utm_source', 'homepage');
     url.search = searchParams.toString();
-    return url.toString();
+
+    if (isOriginallyAbsolute) {
+      return url.toString();
+    } else {
+      return url.pathname + url.search + url.hash;
+    }
   } catch {
-    return undefined;
+    return href;
   }
 }
 
