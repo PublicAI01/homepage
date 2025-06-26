@@ -25,7 +25,6 @@ const Modal = (props: ModalProps) => {
   const [open, setOpen] = useState(visible);
 
   const handleClose = useCallback(() => {
-    document.body.classList.remove('overflow-hidden');
     preciseTimeout(() => {
       setOpen(false);
     }, 300);
@@ -38,9 +37,6 @@ const Modal = (props: ModalProps) => {
 
   const handleOpen = useCallback(() => {
     dialogRef.current?.showModal();
-    if (dialogRef.current) {
-      document.body.classList.add('overflow-hidden');
-    }
   }, []);
 
   const addEventListener = useCallback(

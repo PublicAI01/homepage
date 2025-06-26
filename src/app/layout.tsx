@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={cn(
           jamjuree.className,
-          'bg-b1 relative flex min-h-svh flex-col pb-8',
+          'bg-b1 relative flex min-h-svh flex-col pb-8 has-open:overflow-hidden',
         )}>
         <GridPattern className="top-header-height -z-1 h-[calc(100%-var(--spacing-header-height))]" />
         <Header />
