@@ -19,7 +19,7 @@ import { cn } from '@/utils';
 const About = () => {
   return (
     <SectionWrapper
-      title="About PublicAI"
+      title="Why PublicAI"
       marginTop={false}>
       <h3 className="text-g1 container mt-12 text-center text-base font-medium md:text-2xl">
         PublicAI - AI data infra: open to every human contributing data to train

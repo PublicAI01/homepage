@@ -68,13 +68,13 @@ const Index = () => {
           <Button
             href={CHROME_EXTENSION_LINK}
             aria-label="to download data hunter chrome extension">
-            Download Data Hunter
+            Earn with DataHunter
           </Button>
           <Button
             theme="primary"
             href={PUBLIC_AI_DATA_HUB_LINK}
             aria-label="to data hub website">
-            Launch Data Hub
+            Join DataHub
           </Button>
         </div>
       </div>
