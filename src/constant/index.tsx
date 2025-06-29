@@ -18,7 +18,11 @@ const NAV_LIST = [
   { id: 'datahunter', href: '/datahunter', label: 'Data Hunter' },
   { id: 'blog', href: '/blog', label: 'Blog' },
   { id: 'docs', href: DOCS_LINK, label: 'Documentation' },
-  { id: 'business', href: '/business.pdf', label: 'Business' },
+  {
+    id: 'business',
+    href: 'https://s698ir3bvhh.typeform.com/to/Lr98Gtdi',
+    label: 'Business',
+  },
 ] as const;
 
 export {
