@@ -34,25 +34,16 @@ const Index = () => {
         className="absolute -right-2/5 flex size-full items-center justify-center max-md:-bottom-1/4 md:[clip-path:inset(0_40%_0_0)]"
         aria-hidden>
         <Image
-          className="absolute -z-1 size-32 max-md:right-[35%] md:size-72"
+          className="absolute -z-1 size-32 max-md:right-7/20 md:size-72"
           src={indexBall}
           width={288}
           height={288}
           alt="ball image"
           aria-hidden
         />
-        <StarTrack
-          className="absolute w-[140%] pb-[140%] md:w-full md:pb-[100%]"
-          ballSize={['0.5rem', '1rem']}
-        />
-        <StarTrack
-          className="absolute w-[100%] pb-[100%] md:w-[70%] md:pb-[70%]"
-          ballSize={['0.5rem', '1rem']}
-        />
-        <StarTrack
-          className="absolute w-[60%] pb-[60%] md:w-[40%] md:pb-[40%]"
-          ballSize={['0.5rem', '1rem']}
-        />
+        <StarTrack className="absolute w-6/5 md:w-3/5" />
+        <StarTrack className="absolute w-9/10 md:w-9/20" />
+        <StarTrack className="absolute w-3/5 md:w-3/10" />
       </div>
       <div className="relative mb-24 flex flex-col">
         <div className="bg-primary/80 absolute top-1/2 -left-10 size-12 rounded-full md:-left-1/4 md:size-24"></div>
