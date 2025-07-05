@@ -1,0 +1,79 @@
+# .github/workflows/deploy.yml
+
+name: Build and Deploy on Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci_check:
+    name: Code Check, Test & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run ESLint
+        run: pnpm lint
+
+      - name: Build project
+        run: pnpm build
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy on server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            cd homepage
+
+            git pull origin main
+            git checkout ${{ github.sha }}
+
+            echo "Installing dependencies with pnpm..."
+            pnpm install --frozen-lockfile
+
+            IMAGE_NAME=homepage:${{ github.sha }}
+            CONTAINER_NAME=homepage-container
+
+            echo "Building Docker image on server..."
+            docker build -t $IMAGE_NAME .
+
+            echo "Stopping and removing old container..."
+            if [ "$(docker ps -q -f name=$CONTAINER_NAME)" ]; then
+                docker stop $CONTAINER_NAME
+                docker rm $CONTAINER_NAME
+            fi
+
+            echo "Starting new container..."
+            docker run -d -p 3000:3000 --name $CONTAINER_NAME --restart always $IMAGE_NAME
+
+            echo "Pruning old images..."
+            docker image prune -f
+
+            echo "Deployment successful!"

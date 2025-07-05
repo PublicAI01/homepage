@@ -37,7 +37,7 @@ docker container stop [CONTAINER ID]
 Run latest image:
 
 ```bash
-docker run -p 3000:3000 homepage-docker
+docker run -d -p 3000:3000 --name homepage-container --restart always homepage-docker
 ```
 
 Remove last container:
