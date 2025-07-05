@@ -2,7 +2,7 @@ const TWITTER_LINK = 'https://x.com/PublicAI_';
 const TELEGRAM_LINK = 'https://t.me/public_ai01';
 const DOCS_LINK =
   'https://docs.publicai.io/publicai-documentation?utm_source=homepage';
-const DISCORD_LINK = 'https://discord.gg/dhgAGNX8H9';
+const DISCORD_LINK = 'https://discord.gg/publicai';
 const MEDIUM_LINK = 'https://medium.com/@publicai';
 const CHROME_EXTENSION_LINK =
   'https://chromewebstore.google.com/detail/icbbdjflabjciapbohkkkmaangfjaanl';
