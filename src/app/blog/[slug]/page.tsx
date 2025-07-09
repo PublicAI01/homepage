@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const {
     title,
     publishedAt: publishedTime,
+    lastUpdated: modifiedTime,
     summary: description,
     image,
   } = post.metadata;
@@ -45,6 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: 'article',
       publishedTime,
+      modifiedTime,
       url: `${baseUrl}/blog/${post.slug}`,
       images: [
         {
@@ -92,7 +94,7 @@ export default async function Page({
               '@type': 'BlogPosting',
               headline: post.metadata.title,
               datePublished: post.metadata.publishedAt,
-              dateModified: post.metadata.publishedAt,
+              dateModified: post.metadata.lastUpdated,
               description: post.metadata.summary,
               image: post.metadata.image
                 ? `${baseUrl}${post.metadata.image}`
@@ -126,6 +128,16 @@ export default async function Page({
         <article className="prose prose-invert prose-figcaption:text-center max-w-[85ch]!">
           <post.MDX />
         </article>
+        <dl className="my-8 flex w-full items-center gap-2 italic">
+          <dt className="text-base font-light text-gray-400">
+            Last updated on
+          </dt>
+          <dd className="text-base leading-6 font-medium text-gray-400">
+            <time dateTime={post.metadata.lastUpdated}>
+              {new Date(post.metadata.lastUpdated).toLocaleString('en')}
+            </time>
+          </dd>
+        </dl>
       </section>
     </>
   );

@@ -6,6 +6,7 @@ import { cache } from 'react';
 type Metadata = {
   title: string;
   publishedAt: string;
+  lastUpdated: string;
   summary: string;
   image?: string;
 };
@@ -29,8 +30,19 @@ async function getMDXData(dir: string) {
             const { default: MDX, metadata } = await import(
               `@/app/blog/posts/${slug}.mdx`
             );
+            const stats = await fs.promises.stat(path.join(dir, file));
+            const publishedAt = stats.ctime.toISOString();
+            const lastUpdated = stats.mtime.toISOString();
 
-            resolve({ metadata, slug, MDX });
+            resolve({
+              metadata: {
+                ...metadata,
+                publishedAt: metadata.publishedAt ?? publishedAt,
+                lastUpdated,
+              },
+              slug,
+              MDX,
+            });
           } catch (error) {
             reject(error);
           }
