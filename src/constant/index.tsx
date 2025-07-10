@@ -13,6 +13,7 @@ const GITHUB_LINK = 'https://github.com/PublicAI01';
 const DUNE_LINK = 'https://dune.com/publicaiweb3/publicai-dashboard';
 const TELEGRAM_MINI_APP_LINK = 'https://t.me/publicai_bot';
 const SUPPORT_EMAIL_ADDRESS = 'support@publicai.io';
+const BUSINESS_LINK = 'https://s698ir3bvhh.typeform.com/to/Lr98Gtdi';
 const NAV_LIST = [
   { id: 'datahub', href: '/datahub', label: 'Data Hub' },
   { id: 'datahunter', href: '/datahunter', label: 'Data Hunter' },
@@ -20,12 +21,13 @@ const NAV_LIST = [
   { id: 'docs', href: DOCS_LINK, label: 'Documentation' },
   {
     id: 'business',
-    href: 'https://s698ir3bvhh.typeform.com/to/Lr98Gtdi',
+    href: BUSINESS_LINK,
     label: 'Business',
   },
 ] as const;
 
 export {
+  BUSINESS_LINK,
   CHROME_EXTENSION_LINK,
   DISCORD_LINK,
   DOCS_LINK,
