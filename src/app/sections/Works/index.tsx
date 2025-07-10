@@ -3,12 +3,14 @@ import Image from 'next/image';
 import styles from '@/app/sections/Works/Works.module.css';
 import arrowToLeft from '@/assets/svg/arrow-to-left.svg';
 import arrowToRight from '@/assets/svg/arrow-to-right.svg';
-import consensusFn from '@/assets/svg/consensus-fn.svg';
+import DataCollection from '@/assets/svg/data-collection.svg?react';
+import DataLabeling from '@/assets/svg/data-labeling.svg?react';
+import ModelEvaluation from '@/assets/svg/model-evaluation.svg?react';
 import publicaiOutlined from '@/assets/svg/publicai-outlined.svg';
 import requesters from '@/assets/svg/requesters.svg';
-import rewardFn from '@/assets/svg/reward-fn.svg';
 import workers from '@/assets/svg/workers.svg';
 import Button from '@/components/Button';
+import { Card2 } from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
 import { PUBLIC_AI_DATA_HUB_LINK } from '@/constant';
 import { cn } from '@/utils';
@@ -19,29 +21,6 @@ const Works = () => {
       className="bg-black py-6 max-md:px-4"
       title="How it works"
       useMobileContainerWidth={false}>
-      <h3 className="my-6 text-center text-lg font-bold text-white md:my-9 md:text-2xl">
-        <b className={styles.slogan}>PublicAI</b>
-        <b className={styles.slogan}>&nbsp;Consensus RLHF</b>
-        <b className={styles.slogan}>&nbsp;Loss Function</b>
-      </h3>
-      <Image
-        className="h-auto w-full sm:w-2/3 md:w-4/5"
-        src={consensusFn}
-        width={500}
-        alt="PublicAI consensus RLHF loss function"
-        priority
-      />
-      <h3 className="my-6 text-center text-lg font-bold text-white md:my-9 md:text-2xl">
-        <p className={styles.slogan}>Reward</p>
-        <p className={styles.slogan}>&nbsp;Function</p>
-      </h3>
-      <Image
-        className="h-auto w-full sm:w-1/4 md:w-2/4"
-        src={rewardFn}
-        width={500}
-        alt="reward function"
-        priority
-      />
       <section className="my-16 flex flex-col justify-between max-md:mt-12 max-md:mb-6 md:flex-row md:items-center">
         <_Block
           className="flex-1"
@@ -53,7 +32,7 @@ const Works = () => {
             'aria-label': 'to business pdf',
           }}
         />
-        <div className="mb-14 flex h-6 w-20 max-md:mt-14 max-md:ml-2.5 max-md:rotate-90 md:h-10 md:w-28">
+        <div className="flex h-6 w-20 max-md:mt-14 max-md:mb-14 max-md:ml-2.5 max-md:rotate-90 md:h-10 md:w-28 md:-translate-y-[150%]">
           <Image
             className={styles['arrow-animate']}
             src={arrowToRight}
@@ -67,7 +46,7 @@ const Works = () => {
           image={publicaiOutlined}
           content="PublicAI Marketplace"
         />
-        <div className="mb-14 flex h-6 w-20 justify-end max-md:mt-14 max-md:ml-2.5 max-md:rotate-90 md:h-10 md:w-28">
+        <div className="flex h-6 w-20 justify-end max-md:mt-14 max-md:mb-14 max-md:ml-2.5 max-md:rotate-90 md:h-10 md:w-28 md:-translate-y-[150%]">
           <Image
             className={styles['arrow-animate']}
             src={arrowToLeft}
@@ -81,11 +60,41 @@ const Works = () => {
           image={workers}
           content="Community earns rewards by working on interesting tasks"
           link={{
-            children: 'Get Started',
+            children: 'Earn on Data Hub',
             href: PUBLIC_AI_DATA_HUB_LINK,
             'aria-label': 'to data hub website',
           }}
         />
+      </section>
+
+      <section className="3xl:px-40 my-6 grid w-full grid-cols-1 gap-6 md:my-15 md:grid-cols-3 md:px-8 lg:gap-9 lg:px-16 xl:gap-12 xl:px-24 2xl:gap-15 2xl:px-32">
+        {[
+          {
+            Icon: DataCollection,
+            title: 'Data Collection',
+            content:
+              'AI Builders source and curate high-quality content from social media. Contribute social media and GPT conversation content using the Data Hunter plugin.',
+          },
+          {
+            Icon: DataLabeling,
+            title: 'Data Labeling',
+            content:
+              'Deliver high-quality, cost-effective data labeling through an AI-assisted workflow: AI Assistants pre-label data, followed by thorough verification by AI Validators.',
+          },
+          {
+            Icon: ModelEvaluation,
+            title: 'Model Evaluation',
+            content:
+              "Analyze your AI models' performance: explore model metrics, identify weaknesses, and evaluate models using scenario tests.",
+          },
+        ].map((item, index) => (
+          <Card2
+            key={index}
+            title={item.title}
+            content={item.content}>
+            <item.Icon className="mt-7.5 h-auto w-18 self-end text-white" />
+          </Card2>
+        ))}
       </section>
     </SectionWrapper>
   );
@@ -106,7 +115,7 @@ const _Block = (props: _BlockProps) => {
   return (
     <div
       className={cn(
-        'relative flex w-full items-center gap-1.5 max-md:px-4 md:flex-col',
+        'flex w-full items-center gap-1.5 self-stretch max-md:px-4 md:flex-col',
         className,
       )}
       {...rest}>
@@ -117,14 +126,15 @@ const _Block = (props: _BlockProps) => {
         alt={content.toLocaleLowerCase()}
       />
       <div className="flex flex-col items-center max-md:gap-1">
-        <p className="mb-1 text-base text-white max-md:ml-4 md:mt-12 md:mb-2 md:w-3/4 md:text-center">
+        <p className="mb-1 text-base text-white max-md:ml-4 md:mt-8 md:mb-2 md:w-3/4 md:text-center">
           {content}
         </p>
         {link && (
           <Button
-            className="w-fit px-4 md:absolute md:bottom-0 md:translate-y-full"
-            {...link}
-          />
+            className="w-fit px-4 shadow-none after:z-0"
+            {...link}>
+            <span className="relative z-1">{link.children}</span>
+          </Button>
         )}
       </div>
     </div>
