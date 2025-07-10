@@ -67,7 +67,7 @@ const Partners = () => {
         aria-hidden
         className={cn(
           styles['animated-shadow'],
-          'bg-primary/20 absolute z-0 blur-3xl max-md:inset-x-0 max-md:h-1/6 md:inset-y-0 md:w-1/4',
+          'from-b3 absolute inset-[calc(var(--inner-inset-size)*-1)] -z-1 rounded-[var(--inner-border-radius)] bg-linear-52 to-[#7439FF]/40 bg-size-[400%_400%] blur-3xl',
         )}></div>
       {[
         {
