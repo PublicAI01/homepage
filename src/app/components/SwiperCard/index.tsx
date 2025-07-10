@@ -1,9 +1,9 @@
 'use client';
 
-import { type StaticImageData } from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 
 import EmblaCarousel from '@/app/components/EmblaCarousel';
-import { cn } from '@/utils';
+import { cn, shimmer, toBase64 } from '@/utils';
 
 interface SwiperCardProps extends React.ComponentProps<'div'> {
   title: string;
@@ -43,8 +43,16 @@ const SwiperCard = (props: SwiperCardProps) => {
       </hgroup>
       <EmblaCarousel
         className="md:mx-auto md:w-3/5"
-        imageAltPrefix={imageAltPrefix}
         slides={images}
+        slideBuilder={(item, index) => (
+          <Image
+            className="border-b4 h-auto w-full rounded-xl border"
+            src={item}
+            height={640}
+            placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(960, 640))}`}
+            alt={`${imageAltPrefix} ${index + 1}`}
+          />
+        )}
       />
     </div>
   );

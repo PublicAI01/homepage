@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { formatDate, getBlogPosts } from '@/app/blog/utils';
+import { getBlogPosts } from '@/app/blog/utils';
 import { baseUrl } from '@/app/sitemap';
 import ArrowLeft from '@/assets/svg/arrow-left.svg?react';
 import ScrollToTop from '@/components/ScrollToTop';
+import { formatDate } from '@/utils';
 
 type Props = {
   params: Promise<{ slug: string }>;

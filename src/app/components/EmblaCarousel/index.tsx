@@ -1,6 +1,5 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
-import Image, { type StaticImageData } from 'next/image';
 import React from 'react';
 
 import {
@@ -12,21 +11,23 @@ import {
   DotButton,
   useDotButton,
 } from '@/app/components/EmblaCarousel/EmblaCarouselDotButton';
-import { cn, shimmer, toBase64 } from '@/utils';
+import { cn } from '@/utils';
 
 type EmblaOptionsType = Exclude<
   Parameters<typeof useEmblaCarousel>[0],
   undefined
 >;
 
-interface EmblaCarouselProps extends React.ComponentProps<'section'> {
-  slides: StaticImageData[];
+interface EmblaCarouselProps<T> extends React.ComponentProps<'section'> {
   options?: EmblaOptionsType;
-  imageAltPrefix: string;
+  slides: T[];
+  slideClassName?: string;
+  slideBuilder: (item: T, index: number) => React.ReactNode;
 }
 
-const EmblaCarousel = (props: EmblaCarouselProps) => {
-  const { className, slides, options, imageAltPrefix } = props;
+const EmblaCarousel = <T,>(props: EmblaCarouselProps<T>) => {
+  const { className, options, slides, slideClassName, slideBuilder, ...rest } =
+    props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     WheelGesturesPlugin(),
   ]);
@@ -42,7 +43,9 @@ const EmblaCarousel = (props: EmblaCarouselProps) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className={cn('relative', className)}>
+    <section
+      className={cn('relative', className)}
+      {...rest}>
       <div
         className="overflow-hidden rounded-xl [--carousel-gap:calc(var(--spacing)*4)] md:[--carousel-gap:calc(var(--spacing)*5)]"
         ref={emblaRef}
@@ -52,15 +55,12 @@ const EmblaCarousel = (props: EmblaCarouselProps) => {
         <div className="-ml-[var(--carousel-gap)] flex [touch-action:pan-y_pinch-zoom] items-center">
           {slides.map((item, index) => (
             <div
-              className="min-w-0 flex-[0_0_100%] pl-[var(--carousel-gap)] will-change-scroll"
+              className={cn(
+                'min-w-0 flex-[0_0_100%] pl-[var(--carousel-gap)] will-change-scroll',
+                slideClassName,
+              )}
               key={index}>
-              <Image
-                className="border-b4 h-auto w-full rounded-xl border"
-                src={item}
-                height={640}
-                placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(960, 640))}`}
-                alt={`${imageAltPrefix} ${index + 1}`}
-              />
+              {slideBuilder(item, index)}
             </div>
           ))}
         </div>
@@ -79,18 +79,20 @@ const EmblaCarousel = (props: EmblaCarouselProps) => {
         aria-label="next picture"
       />
 
-      <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-full flex-wrap items-center justify-center gap-2 pt-2">
+      <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-full flex-wrap items-center justify-center pt-2">
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
             onClick={() => onDotButtonClick(index)}
-            className={cn(
-              'size-2.5 cursor-pointer touch-manipulation appearance-none rounded-full bg-[#515151] md:size-3',
-              index === selectedIndex && 'bg-[#d9d9d9]',
-            )}
+            className="cursor-pointer touch-manipulation appearance-none p-1"
             aria-label={`picture ${index + 1}`}
-            aria-current={index === selectedIndex}
-          />
+            aria-current={index === selectedIndex}>
+            <div
+              className={cn(
+                'size-2.5 rounded-full bg-[#515151] md:size-3',
+                index === selectedIndex && 'bg-[#d9d9d9]',
+              )}></div>
+          </DotButton>
         ))}
       </div>
     </section>

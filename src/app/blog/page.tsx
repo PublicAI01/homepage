@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { formatDate, getBlogPosts } from '@/app/blog/utils';
+import { getBlogPosts } from '@/app/blog/utils';
 import SectionWrapper from '@/components/SectionWrapper';
+import { formatDate } from '@/utils';
 import { shimmer, toBase64 } from '@/utils';
 
 export const metadata = {
@@ -35,7 +36,8 @@ export default async function Page() {
             <li key={post.slug}>
               <Link
                 className="mb-4 flex items-center gap-4 border-b border-[#37169C] pb-4 md:mb-5 md:gap-5 md:pb-5"
-                href={`/blog/${post.slug}`}>
+                href={`/blog/${post.slug}`}
+                aria-label={`check out the blog "${post.metadata.title}"`}>
                 {post.metadata.image && (
                   <Image
                     className="w-20 rounded-md md:w-40"
