@@ -1,6 +1,5 @@
 'use client';
 
-import { YouTubeEmbed } from '@next/third-parties/google';
 import Link from 'next/link';
 
 import developmentDoc from '@/assets/svg/development-doc.svg?react';
@@ -10,10 +9,12 @@ import { flickerProps } from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
 import { DOCS_LINK, DUNE_LINK, GITHUB_LINK } from '@/constant';
 
+/**
+ * @deprecated Remove on 2025-07-09
+ */
 const Resource = () => {
   return (
     <SectionWrapper
-      className="[&>[data-ntpc]]:w-full!"
       title="Resource"
       anchorId="resource">
       <section className="mt-6 flex w-full flex-col items-center justify-center gap-6 md:mt-16 md:flex-row md:gap-12 lg:gap-28 lg:px-20">
@@ -47,13 +48,6 @@ const Resource = () => {
           </Link>
         ))}
       </section>
-      <YouTubeEmbed
-        {...{
-          class:
-            'w-full h-auto max-w-none! rounded-xl overflow-hidden bg-b3 mt-8 md:mt-28 lg:h-150',
-        }}
-        videoid="i0U8uaUrILs"
-      />
     </SectionWrapper>
   );
 };

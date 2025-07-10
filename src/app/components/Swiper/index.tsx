@@ -8,6 +8,9 @@ import { useEffect, useRef } from 'react';
 import styles from '@/app/components/Swiper/Swiper.module.css';
 import { cn } from '@/utils';
 
+/**
+ * @deprecated Deprecated on 2025-07-09
+ */
 const Swiper = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [initialize] = useOverlayScrollbars({
