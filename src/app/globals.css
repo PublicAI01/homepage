@@ -16,7 +16,7 @@
 }
 
 @utility app-card {
-  @apply text-white transition-all hover:border-white hover:bg-white [&>*]:transition-colors [&>*]:last:text-[#e6e6e6] hover:[&>*]:text-black [&>svg]:size-7 md:[&>svg]:size-10;
+  @apply text-white transition-all duration-1000 hover:border-white hover:bg-white [&>*]:transition-colors [&>*]:last:text-[#e6e6e6] hover:[&>*]:text-black [&>svg]:size-7 md:[&>svg]:size-10;
 }
 
 @utility visually-hidden {
