@@ -15,10 +15,11 @@ const About = () => {
       title="Why PublicAI"
       marginTop={false}>
       <h3 className="text-g1 container mt-12 text-center text-base font-medium md:text-2xl">
-        PublicAI - AI data infra: open to every human contributing data to train
-        AI and sharing the revenue. The team includes world-class AI scientists,
-        IEEE fellows, professors, and PhDs. Mission is to monetize all human
-        knowledge to train Public AGI.
+        PublicAI has secured $10 million in funding to build the human layer of
+        AI, enabling people worldwide to earn through data contributions.
+        Leveraging a decentralized network of 1.2M+ verified contributors, the
+        PublicAI Data Hub ensures unparalleled data quality through rigorous
+        skill validation and a stake-slashing mechanism.
       </h3>
       <YouTubeEmbed
         {...{

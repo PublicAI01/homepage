@@ -50,10 +50,11 @@ const Index = () => {
         <div className="bg-primary/80 absolute -top-1/4 size-8 rounded-full max-md:right-0 md:-top-1/2 md:left-1/4"></div>
         <div className="bg-primary/80 absolute size-4 rounded-full max-md:-bottom-12 md:-top-full md:-right-1/3 md:size-20"></div>
         <h1 className="mx-auto max-w-xs text-center text-2xl font-semibold tracking-wider text-white md:max-w-4xl md:text-5xl">
-          Building Human Layer of AI
+          Building the Human Layer of AI
         </h1>
         <h2 className="mx-auto mt-3 mb-12 text-center text-base font-normal text-white max-md:max-w-xs md:mt-6 md:text-xl">
-          Powering Exceptional AI with Equitable Global Expertise
+          Get paid for contributing your expertise and experience to power
+          exceptional AI.
         </h2>
         <div className="flex flex-col items-center justify-center gap-5 md:gap-8">
           <Button
