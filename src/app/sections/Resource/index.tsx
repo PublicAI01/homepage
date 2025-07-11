@@ -1,11 +1,8 @@
-'use client';
-
 import Link from 'next/link';
 
 import developmentDoc from '@/assets/svg/development-doc.svg?react';
 import dune from '@/assets/svg/dune.svg?react';
 import productGuideline from '@/assets/svg/product-guideline.svg?react';
-import { flickerProps } from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
 import { DOCS_LINK, DUNE_LINK, GITHUB_LINK } from '@/constant';
 
@@ -41,8 +38,7 @@ const Resource = () => {
             href={item.link}
             target="_blank"
             rel="external noreferrer"
-            aria-label={`${item.title} link`}
-            {...flickerProps}>
+            aria-label={`${item.title} link`}>
             <item.Icon className="size-10" />
             <h3 className="mt-6 text-xl font-bold">{item.title}</h3>
           </Link>
