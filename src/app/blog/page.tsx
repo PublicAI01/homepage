@@ -40,10 +40,10 @@ export default async function Page() {
                 aria-label={`check out the blog "${post.metadata.title}"`}>
                 {post.metadata.image && (
                   <Image
-                    className="w-20 rounded-md md:w-40"
+                    className="aspect-video w-20 rounded-md md:w-40"
                     width={160}
-                    height={107}
-                    placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(160, 107))}`}
+                    height={90}
+                    placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(160, 90))}`}
                     src={post.metadata.image}
                     alt={`${post.metadata.title} cover picture`}
                   />
