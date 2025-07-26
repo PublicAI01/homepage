@@ -4,8 +4,6 @@ import SwiperCard from '@/app/components/SwiperCard';
 import styles from '@/app/datahunter/sections/Index/Index.module.css';
 import HunterPreview1 from '@/assets/image/hunter-preview-1.png';
 import HunterPreview2 from '@/assets/image/hunter-preview-2.png';
-import HunterPreview3 from '@/assets/image/hunter-preview-3.png';
-import HunterPreview4 from '@/assets/image/hunter-preview-4.png';
 import decorativeCone from '@/assets/svg/decorative-cone.svg';
 import { cn } from '@/utils';
 
@@ -39,13 +37,8 @@ const Index = () => {
       <SwiperCard
         title="Data Hunter"
         subTitle="Seamless Data Collection"
-        content="Collect, contribute, and empower AI learning instantly with a simple click."
-        images={[
-          HunterPreview1,
-          HunterPreview2,
-          HunterPreview3,
-          HunterPreview4,
-        ]}
+        content="Validate user data and activate AI-powered outreach — all in one click."
+        images={[HunterPreview1, HunterPreview2]}
         imageAltPrefix="data hunter preview"
       />
     </section>

@@ -10,8 +10,8 @@ const DataHunter = () => {
   return (
     <SectionWrapper className="mt-5 lg:mt-10">
       <h3 className="text-g1 mt-10 text-center text-xs font-medium md:mt-20 md:text-lg">
-        Data Hunter empowers users to instantly contribute valuable data and
-        earn rewards{' '}
+        Data Hunter ensures high-quality AI training data and boosts reach
+        through smart AI interactions{' '}
         <b
           className={cn(styles.typing, 'text-p1 mx-auto mt-3 block font-bold')}>
           with a simple click.
