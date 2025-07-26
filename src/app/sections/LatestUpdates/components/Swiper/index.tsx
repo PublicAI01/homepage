@@ -44,13 +44,13 @@ const Swiper = (props: { blogs: SimpleBlogData[] }) => {
       className="mt-9 md:w-9/10"
       options={{ loop: true }}
       slides={allBlogs}
-      slideClassName="max-lg:flex-[0_0_70%]"
+      slideClassName="max-lg:flex-[0_0_70%] self-stretch"
       slideBuilder={(item, index) => {
         const isArray = Array.isArray(item);
         return (
           <section
             className={cn(
-              'grid grid-cols-3 gap-2 md:gap-7',
+              'grid h-full grid-cols-3 gap-2 md:gap-7',
               isArray ? 'grid-cols-3' : 'grid-cols-1',
             )}
             aria-label={`group ${index + 1} of blogs`}>
