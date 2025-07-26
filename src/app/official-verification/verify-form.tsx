@@ -72,7 +72,7 @@ const VerifyForm = (props: VerifyFormProps) => {
   );
 
   return (
-    <>
+    <search>
       <form
         className={cn(
           'mx-auto flex flex-col items-center gap-3.5 max-sm:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))] lg:w-4/5 lg:flex-row lg:gap-15',
@@ -158,7 +158,7 @@ const VerifyForm = (props: VerifyFormProps) => {
           Ok
         </button>
       </Modal>
-    </>
+    </search>
   );
 };
 
