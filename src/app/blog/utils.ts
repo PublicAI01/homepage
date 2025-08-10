@@ -20,13 +20,12 @@ async function getMDXData(dir: string) {
               `@/app/blog/posts/${slug}.mdx`
             );
             const stats = await fs.promises.stat(path.join(dir, file));
-            const publishedAt = stats.ctime.toISOString();
             const lastUpdated = stats.mtime.toISOString();
 
             resolve({
               metadata: {
                 ...metadata,
-                publishedAt: metadata.publishedAt ?? publishedAt,
+                publishedAt: metadata.publishedAt,
                 lastUpdated,
               },
               slug,
