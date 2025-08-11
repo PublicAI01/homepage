@@ -1,11 +1,15 @@
 import { type ClassValue, clsx } from 'clsx';
+import type { ImageProps } from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function shimmer(w: number, h: number) {
+export function shimmer(
+  w: Required<ImageProps>['width'],
+  h: Required<ImageProps>['height'],
+) {
   return `
     <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>

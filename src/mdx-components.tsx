@@ -1,6 +1,6 @@
 import { YouTubeEmbed } from '@next/third-parties/google';
 import type { MDXComponents } from 'mdx/types';
-import Image, { ImageProps } from 'next/image';
+import Image, { type ImageProps } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -64,16 +64,16 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
 }
 
 function RoundedImage(props: ImageProps) {
-  const { alt, ...rest } = props;
+  const { alt = '', width = 700, height = 394, ...rest } = props;
   const [, ext] = (props.src ?? '').toString().split('.');
 
   return (
     <Image
       className="mx-auto rounded-lg"
       alt={alt}
-      width={700}
-      height={394}
-      placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(700, 394))}`}
+      width={width}
+      height={height}
+      placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`}
       unoptimized={ext.toLocaleLowerCase() === 'gif'}
       {...rest}
     />
@@ -137,6 +137,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h5: createHeading(5),
     h6: createHeading(6),
     img: RoundedImage,
+    Image: RoundedImage,
     a: CustomLink,
     YouTube,
     ...components,
