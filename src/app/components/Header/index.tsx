@@ -33,7 +33,7 @@ const Header = () => {
       <label
         htmlFor={styles.switch}
         className={cn(
-          'top-header-height fixed bottom-0 left-0 z-50 h-full w-1/5 bg-white/5 backdrop-blur-xs transition-all duration-300 ease-in-out',
+          'top-header-height fixed bottom-0 left-0 z-50 h-full w-1/6 bg-white/5 backdrop-blur-xs transition-all duration-300 ease-in-out',
           styles.mask,
         )}
         aria-hidden></label>
@@ -72,7 +72,7 @@ const Header = () => {
                 <Link
                   className="block py-2 text-base font-semibold text-white"
                   href={nav.href}
-                  {...(['docs', 'business'].includes(nav.id) && {
+                  {...(['docs', 'business', 'token'].includes(nav.id) && {
                     target: '_blank',
                     rel: 'external noreferrer',
                   })}
@@ -84,7 +84,7 @@ const Header = () => {
             ))}
             <div
               className={cn(
-                'absolute bottom-0 left-0 h-full w-1/5 rounded-sm',
+                'absolute bottom-0 left-0 h-full w-1/6 rounded-sm',
                 styles.slider,
               )}
               aria-hidden></div>
