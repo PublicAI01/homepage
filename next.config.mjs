@@ -28,6 +28,9 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [new URL('https://token.publicai.io/buyback/**')],
+  },
   rewrites() {
     return [
       {
