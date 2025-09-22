@@ -6,6 +6,13 @@ type Metadata = {
   lastUpdated: string;
   summary: string;
   image?: string;
+  /**
+   * Markets Insider
+   * Yahoo! Finance
+   * Associated Press
+   * MarketWatch
+   */
+  slugs?: [string, string, string, string];
 };
 
 type BlogData = {

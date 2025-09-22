@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { getBlogPosts } from '@/app/blog/utils';
+import AsSeenIn from '@/app/components/AsSeenIn';
 import { baseUrl } from '@/app/sitemap';
 import ArrowLeft from '@/assets/svg/arrow-left.svg?react';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -139,6 +140,7 @@ export default async function Page({
             </time>
           </dd>
         </dl>
+        {post.metadata.slugs && <AsSeenIn slugs={post.metadata.slugs} />}
       </section>
     </>
   );

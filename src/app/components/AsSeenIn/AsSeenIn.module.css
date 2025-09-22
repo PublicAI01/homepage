@@ -1,0 +1,179 @@
+/* As Seen In Widget Styles */
+.as-seen-in-widget {
+  max-width: 100%;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+  /* background-color: #fff; */
+  text-align: center;
+  position: relative;
+  max-width: 1066px;
+  /* margin: 0 auto; Center align when embedded */
+  box-sizing: border-box;
+}
+
+.as-seen-in-logos-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.as-seen-in-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px 30px; /* increased horizontal gap for more breathing room */
+  row-gap: 0;
+  flex: 1;
+  padding: 0 20px; /* add left/right padding for breathing room */
+}
+
+.as-seen-in-widget h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.as-seen-in-widget h3::before,
+.as-seen-in-widget h3::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.3;
+  width: calc(
+    50% - 20px - 60px - 60px
+  ); /* 50% minus 20px gap minus half heading width estimate minus 60px padding */
+}
+
+.as-seen-in-widget h3::before {
+  left: 60px;
+}
+
+.as-seen-in-widget h3::after {
+  right: 60px;
+}
+
+.as-seen-in-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    25% - 22.5px
+  ); /* 25% minus gaps: (30px * 3 gaps) / 4 logos = 22.5px per logo */
+  max-width: 200px;
+  height: 100px;
+  padding: 0;
+  /* background-color: #fff; */
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.as-seen-in-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
+  filter: grayscale(100%);
+  transition: filter 0.2s ease;
+}
+
+.as-seen-in-logo:hover img {
+  filter: grayscale(0%);
+}
+
+/* Color logo mode - show logos in full color */
+.as-seen-in-widget.color-logos .as-seen-in-logo img {
+  filter: none !important;
+}
+
+.as-seen-in-widget.color-logos .as-seen-in-logo:hover img {
+  filter: none !important;
+}
+
+/* Hide rails mode - hide decorative side frames */
+.as-seen-in-widget.hide-rails .as-seen-in-rail {
+  display: none !important;
+}
+
+/* Medium screens - scale down logos but keep 4 per row */
+@media (max-width: 1020px) {
+  .as-seen-in-logo {
+    height: 80px; /* Slightly smaller height */
+  }
+}
+
+/* Small screens - scale down further */
+@media (max-width: 900px) {
+  .as-seen-in-logo {
+    height: 70px;
+  }
+
+  .as-seen-in-widget {
+    padding: 35px 25px;
+  }
+}
+
+/* Mobile responsive - 2x2 grid on small screens */
+@media (max-width: 768px) {
+  .as-seen-in-logos {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .as-seen-in-logo {
+    width: calc(50% - 7.5px); /* 2 columns with gap */
+    max-width: 180px;
+    height: 90px;
+  }
+
+  .as-seen-in-widget {
+    padding: 30px 20px;
+  }
+
+  .as-seen-in-widget h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .as-seen-in-rail {
+    display: none; /* Hide decorative rails on mobile */
+  }
+}
+
+/* Very small screens - single column */
+@media (max-width: 480px) {
+  .as-seen-in-logos {
+    grid-template-columns: 1fr;
+  }
+
+  .as-seen-in-logo {
+    min-width: 120px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .as-seen-in-logo {
+    border: 1px solid #fff;
+    box-shadow: none;
+  }
+
+  .as-seen-in-logo img {
+    filter: none;
+  }
+}
