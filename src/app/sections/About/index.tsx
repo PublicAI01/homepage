@@ -17,7 +17,7 @@ const About = () => {
       <h3 className="text-g1 container mt-12 text-center text-base font-medium md:text-2xl">
         PublicAI has secured $10 million in funding to build the human layer of
         AI, enabling people worldwide to earn through data contributions.
-        Leveraging a decentralized network of 1.2M+ verified contributors, the
+        Leveraging a decentralized network of 3.5M+ verified contributors, the
         PublicAI Data Hub ensures unparalleled data quality through rigorous
         skill validation and a stake-slashing mechanism.
       </h3>
