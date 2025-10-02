@@ -5,13 +5,17 @@ import validatorsData from '@/assets/svg/validators-data.svg?react';
 import workersData from '@/assets/svg/workers-data.svg?react';
 import SectionWrapper from '@/components/SectionWrapper';
 
-const DataPanel = () => {
+const DataPanel = ({ workers }: Readonly<{ workers: Readonly<number> }>) => {
   return (
     <SectionWrapper
       className="grid grid-cols-2 gap-4 lg:grid-cols-5 lg:gap-8 xl:gap-16"
       useFlexLayout={false}>
       {[
-        { Icon: workersData, title: 'Workers', data: '3M+' },
+        {
+          Icon: workersData,
+          title: 'Workers',
+          data: `${Intl.NumberFormat('en', { notation: 'compact' }).format(workers)}+`,
+        },
         { Icon: validatorsData, title: 'Validators', data: '300K+' },
         { Icon: buildersData, title: 'Builders', data: '200K+' },
         { Icon: datasetSizeData, title: 'Dataset Size', data: '100T+' },

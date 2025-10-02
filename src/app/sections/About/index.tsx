@@ -8,6 +8,8 @@ import qualityControl from '@/assets/svg/quality-control.svg?react';
 import Card from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
 
+const WORKERS = 3500000;
+
 const About = () => {
   return (
     <SectionWrapper
@@ -17,9 +19,11 @@ const About = () => {
       <h3 className="text-g1 container mt-12 text-center text-base font-medium md:text-2xl">
         PublicAI has secured $10 million in funding to build the human layer of
         AI, enabling people worldwide to earn through data contributions.
-        Leveraging a decentralized network of 3.5M+ verified contributors, the
-        PublicAI Data Hub ensures unparalleled data quality through rigorous
-        skill validation and a stake-slashing mechanism.
+        Leveraging a decentralized network of{' '}
+        {Intl.NumberFormat('en', { notation: 'compact' }).format(WORKERS)}+
+        verified contributors, the PublicAI Data Hub ensures unparalleled data
+        quality through rigorous skill validation and a stake-slashing
+        mechanism.
       </h3>
       <YouTubeEmbed
         {...{
@@ -28,7 +32,7 @@ const About = () => {
         }}
         videoid="i0U8uaUrILs"
       />
-      <DataPanel />
+      <DataPanel workers={WORKERS} />
       <div className="container mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4 lg:mt-20 lg:grid-cols-3 xl:grid-cols-4">
         {[
           {
