@@ -134,7 +134,9 @@ const VerifyForm = (props: VerifyFormProps) => {
         }
         bodyClassName="prose prose-sm prose-invert text-center"
         visible={visible}
-        setVisible={setVisible}>
+        close={() => {
+          setVisible(false);
+        }}>
         <h2>{isVerified ? `Verified ${label}` : `Unverified ${label}`}</h2>
         <strong className="text-p1">{state?.query ?? '--'}</strong>
         <h3

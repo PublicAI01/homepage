@@ -39,9 +39,19 @@ export const useDotButton = (
   useEffect(() => {
     if (!emblaApi) return;
 
-    onInit(emblaApi);
-    onSelect(emblaApi);
-    emblaApi.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect);
+    const id = requestAnimationFrame(() => {
+      onInit(emblaApi);
+      onSelect(emblaApi);
+    });
+    const handler = emblaApi
+      .on('reInit', onInit)
+      .on('reInit', onSelect)
+      .on('select', onSelect);
+
+    return () => {
+      cancelAnimationFrame(id);
+      handler.clear();
+    };
   }, [emblaApi, onInit, onSelect]);
 
   return {

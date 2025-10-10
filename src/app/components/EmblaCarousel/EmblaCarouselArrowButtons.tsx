@@ -43,8 +43,13 @@ export const usePrevNextButtons = (
   useEffect(() => {
     if (!emblaApi) return;
 
-    onSelect(emblaApi);
-    emblaApi.on('reInit', onSelect).on('select', onSelect);
+    const id = requestAnimationFrame(() => onSelect(emblaApi));
+    const handler = emblaApi.on('reInit', onSelect).on('select', onSelect);
+
+    return () => {
+      cancelAnimationFrame(id);
+      handler.clear();
+    };
   }, [emblaApi, onSelect]);
 
   return {

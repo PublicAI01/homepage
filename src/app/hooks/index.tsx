@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 
 const useMediaQuery = (query: string) => {
-  const [matches, setMatches] = useState(false);
+  const getMatch = () =>
+    typeof window !== 'undefined' ? window.matchMedia(query).matches : false;
+
+  const [matches, setMatches] = useState(getMatch);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia(query);
+    if (typeof window === 'undefined') return;
 
-    setMatches(mediaQuery.matches);
+    const mediaQuery = window.matchMedia(query);
 
     const abortCtrl = new AbortController();
     mediaQuery.addEventListener(
@@ -25,4 +28,12 @@ const useMediaQuery = (query: string) => {
   return matches;
 };
 
-export { useMediaQuery };
+const useIsClient = () => {
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+};
+
+export { useIsClient, useMediaQuery };

@@ -78,71 +78,67 @@ export default async function Page({
   }
 
   return (
-    <>
-      <ScrollToTop />
-      <section className="mx-auto mb-6 flex max-w-[85ch] flex-col items-center max-md:px-[calc(var(--spacing-mobile-padding-x)*2)] md:mb-10">
-        <Link
-          className="my-2 self-start"
-          href="/blog"
-          aria-label="return to blog list">
-          <ArrowLeft className="h-auto w-6 text-neutral-200 md:w-8" />
-        </Link>
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'BlogPosting',
-              headline: post.metadata.title,
-              datePublished: post.metadata.publishedAt,
-              dateModified: post.metadata.lastUpdated,
-              description: post.metadata.summary,
-              image: post.metadata.image
-                ? `${baseUrl}${post.metadata.image}`
-                : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-              url: `${baseUrl}/blog/${post.slug}`,
-              author: {
-                '@type': 'Organization',
-                name: 'PublicAI',
-                url: baseUrl,
-                logo: {
-                  '@type': 'ImageObject',
-                  url: `${baseUrl}/favicon.ico`,
-                  height: '32',
-                  width: '32',
-                },
+    <section className="mx-auto mb-6 flex max-w-[85ch] flex-col items-center max-md:px-[calc(var(--spacing-mobile-padding-x)*2)] md:mb-10">
+      <Link
+        className="my-2 self-start"
+        href="/blog"
+        aria-label="return to blog list">
+        <ArrowLeft className="h-auto w-6 text-neutral-200 md:w-8" />
+      </Link>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.metadata.title,
+            datePublished: post.metadata.publishedAt,
+            dateModified: post.metadata.lastUpdated,
+            description: post.metadata.summary,
+            image: post.metadata.image
+              ? `${baseUrl}${post.metadata.image}`
+              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            url: `${baseUrl}/blog/${post.slug}`,
+            author: {
+              '@type': 'Organization',
+              name: 'PublicAI',
+              url: baseUrl,
+              logo: {
+                '@type': 'ImageObject',
+                url: `${baseUrl}/favicon.ico`,
+                height: '32',
+                width: '32',
               },
-            }),
-          }}
-        />
-        <dl>
-          <dt className="visually-hidden">Published on</dt>
-          <dd className="text-base leading-6 font-medium text-gray-400">
-            <time dateTime={post.metadata.publishedAt}>
-              {formatDate(post.metadata.publishedAt)}
-            </time>
-          </dd>
-        </dl>
-        <h1 className="text-center text-xl font-extrabold tracking-tight text-gray-100 sm:text-2xl md:text-3xl">
-          {post.metadata.title}
-        </h1>
-        <article className="prose prose-invert prose-figcaption:text-center max-w-[85ch]!">
-          <post.MDX />
-        </article>
-        <dl className="my-8 flex w-full items-center gap-2 italic">
-          <dt className="text-base font-light text-gray-400">
-            Last updated on
-          </dt>
-          <dd className="text-base leading-6 font-medium text-gray-400">
-            <time dateTime={post.metadata.lastUpdated}>
-              {new Date(post.metadata.lastUpdated).toLocaleString('en')}
-            </time>
-          </dd>
-        </dl>
-        {post.metadata.slugs && <AsSeenIn slugs={post.metadata.slugs} />}
-      </section>
-    </>
+            },
+          }),
+        }}
+      />
+      <dl>
+        <dt className="visually-hidden">Published on</dt>
+        <dd className="text-base leading-6 font-medium text-gray-400">
+          <time dateTime={post.metadata.publishedAt}>
+            {formatDate(post.metadata.publishedAt)}
+          </time>
+        </dd>
+      </dl>
+      <h1 className="text-center text-xl font-extrabold tracking-tight text-gray-100 sm:text-2xl md:text-3xl">
+        {post.metadata.title}
+      </h1>
+      <article className="prose prose-invert prose-figcaption:text-center max-w-[85ch]!">
+        <post.MDX />
+      </article>
+      <dl className="my-8 flex w-full items-center gap-2 italic">
+        <dt className="text-base font-light text-gray-400">Last updated on</dt>
+        <dd className="text-base leading-6 font-medium text-gray-400">
+          <time dateTime={post.metadata.lastUpdated}>
+            {new Date(post.metadata.lastUpdated).toLocaleString('en')}
+          </time>
+        </dd>
+      </dl>
+      {post.metadata.slugs && <AsSeenIn slugs={post.metadata.slugs} />}
+      <ScrollToTop />
+    </section>
   );
 }
 

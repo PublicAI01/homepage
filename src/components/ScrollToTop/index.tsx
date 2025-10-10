@@ -3,59 +3,55 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import { useIsClient } from '@/app/hooks';
 import BackToTop from '@/assets/svg/back-to-top.svg?react';
 import { cn } from '@/utils';
 
 const ScrollToTop = () => {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-
-    return () => setMounted(false);
-  }, []);
+  const isClient = useIsClient();
 
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
+    if (typeof window === 'undefined') return;
+
+    const abortCtrl = new AbortController();
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        setVisible(window.scrollY > 300);
+      },
+      { signal: abortCtrl.signal },
+    );
+
+    return () => {
+      abortCtrl.abort();
     };
-
-    window.addEventListener('scroll', toggleVisibility);
-
-    return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
-  return (
+  if (!isClient || typeof window === 'undefined') return null;
+
+  return createPortal(
     <>
-      {mounted &&
-        createPortal(
-          <>
-            <button
-              className={cn(
-                'fixed right-5 bottom-5 size-10 cursor-pointer rounded-full bg-neutral-400/60 opacity-0 transition-opacity duration-300 md:right-10 md:bottom-10',
-                visible ? 'opacity-100' : '-z-10',
-              )}
-              type="button"
-              onClick={scrollToTop}
-              aria-label="scroll to top">
-              <BackToTop className="m-auto h-auto w-8 text-white" />
-            </button>
-          </>,
-          document.body,
+      <button
+        className={cn(
+          'fixed right-5 bottom-5 size-10 cursor-pointer rounded-full bg-neutral-400/60 opacity-0 transition-opacity duration-300 md:right-10 md:bottom-10',
+          visible ? 'opacity-100' : '-z-10',
         )}
-    </>
+        type="button"
+        onClick={scrollToTop}
+        aria-label="scroll to top">
+        <BackToTop className="m-auto h-auto w-8 text-white" />
+      </button>
+    </>,
+    document.body,
   );
 };
 
