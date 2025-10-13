@@ -18,7 +18,7 @@ const SideNav = () => {
   return (
     <aside
       className={cn(
-        'pt-header-height fixed z-20 h-screen w-screen translate-x-full transition-all lg:hidden',
+        'pt-header-height fixed z-20 h-screen w-screen translate-x-full transition-all xl:hidden',
         headerStyles['side-nav'],
       )}>
       <nav className="w-4/5">

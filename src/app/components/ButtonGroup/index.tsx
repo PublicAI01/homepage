@@ -9,7 +9,7 @@ const ButtonGroup = (props: ButtonGroupProps) => {
   return (
     <div
       className={cn(
-        'flex flex-col items-center gap-5 md:gap-8 lg:flex-row xl:gap-5',
+        'flex flex-col items-center gap-5 md:gap-8 xl:flex-row xl:gap-5',
         className,
       )}
       {...rest}>

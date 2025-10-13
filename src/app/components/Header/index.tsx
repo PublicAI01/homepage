@@ -58,7 +58,7 @@ const Header = () => {
         </Link>
         <nav
           className={cn(
-            'flex items-center justify-center max-lg:hidden',
+            'flex items-center justify-center max-xl:hidden',
             styles.nav,
           )}>
           <menu className="relative flex">
@@ -72,7 +72,7 @@ const Header = () => {
                 <Link
                   className="block py-2 text-base font-semibold text-white"
                   href={nav.href}
-                  {...(['docs', 'business', 'token'].includes(nav.id) && {
+                  {...(['docs', 'token'].includes(nav.id) && {
                     target: '_blank',
                     rel: 'external noreferrer',
                   })}
@@ -90,11 +90,11 @@ const Header = () => {
               aria-hidden></div>
           </menu>
         </nav>
-        <ButtonGroup className="max-lg:hidden" />
+        <ButtonGroup className="max-xl:hidden" />
         <label
           htmlFor={styles.switch}
           className={cn(
-            'flex items-center justify-center lg:hidden',
+            'flex items-center justify-center xl:hidden',
             styles['nav-icon-container'],
           )}>
           <div
