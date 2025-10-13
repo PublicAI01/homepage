@@ -116,21 +116,21 @@ export default async function Page({
       />
       <dl>
         <dt className="visually-hidden">Published on</dt>
-        <dd className="text-base leading-6 font-medium text-gray-400">
+        <dd className="text-base leading-6 font-medium text-white/60">
           <time dateTime={post.metadata.publishedAt}>
             {formatDate(post.metadata.publishedAt)}
           </time>
         </dd>
       </dl>
-      <h1 className="text-center text-xl font-extrabold tracking-tight text-gray-100 sm:text-2xl md:text-3xl">
+      <h1 className="text-center text-xl font-extrabold tracking-tight sm:text-2xl md:text-3xl">
         {post.metadata.title}
       </h1>
       <article className="prose prose-invert prose-figcaption:text-center max-w-[85ch]!">
         <post.MDX />
       </article>
       <dl className="my-8 flex w-full items-center gap-2 italic">
-        <dt className="text-base font-light text-gray-400">Last updated on</dt>
-        <dd className="text-base leading-6 font-medium text-gray-400">
+        <dt className="text-base font-light text-white/60">Last updated on</dt>
+        <dd className="text-base leading-6 font-medium text-white/60">
           <time dateTime={post.metadata.lastUpdated}>
             {new Date(post.metadata.lastUpdated).toLocaleString('en')}
           </time>
