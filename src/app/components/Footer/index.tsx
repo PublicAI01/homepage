@@ -8,13 +8,11 @@ const Footer = () => {
   return (
     <footer className="pt-10 md:pt-20">
       <div className="relative container mx-auto flex flex-col max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
-        <h3 className="text-lg font-semibold text-white md:text-2xl">
-          Contact us
-        </h3>
+        <h3 className="text-lg font-semibold md:text-2xl">Contact us</h3>
         <section className="relative my-2.5 flex w-full flex-col justify-between gap-2.5 xl:flex-row xl:items-center">
           <a
             href={`mailto:${SUPPORT_EMAIL_ADDRESS}`}
-            className="border-b5 bg-b1 flex w-min items-center self-stretch rounded-lg border p-2 text-white md:px-4">
+            className="frosted-card flex w-min items-center self-stretch rounded-lg p-2 md:px-4">
             <Mail className="text-primary size-4 md:size-6" />
             <p className="text-g1 ml-2 text-base md:text-xl">
               {SUPPORT_EMAIL_ADDRESS}
@@ -50,7 +48,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <address className="border-b5 bg-b1 flex w-max items-center gap-2 rounded-lg border p-2 md:px-4">
+          <address className="frosted-card flex w-max items-center gap-2 rounded-lg p-2 md:px-4">
             <p className="text-g1 text-base font-normal not-italic md:mr-2 md:text-xl">
               Stay Connected
             </p>
