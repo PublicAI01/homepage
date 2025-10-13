@@ -10,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/datahub',
     '/datahunter',
     '/blog',
+    '/client',
     '/official-verification',
     '/privacy',
     '/terms',

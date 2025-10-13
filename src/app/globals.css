@@ -39,8 +39,54 @@
   --color-g3: #b9b9b9;
   --color-p1: #b08bff;
 
+  --color-black-alpha-50: rgb(255 255 255 / 4%);
+  --color-black-alpha-100: rgb(255 255 255 / 6%);
+  --color-black-alpha-200: rgb(255 255 255 / 8%);
+  --color-black-alpha-300: rgb(255 255 255 / 16%);
+  --color-black-alpha-400: rgb(255 255 255 / 24%);
+  --color-black-alpha-500: rgb(255 255 255 / 36%);
+  --color-black-alpha-600: rgb(255 255 255 / 48%);
+  --color-black-alpha-700: rgb(255 255 255 / 64%);
+  --color-black-alpha-800: rgb(255 255 255 / 80%);
+  --color-black-alpha-900: rgb(255 255 255 / 92%);
+  --color-black-alpha-950: #ffffff;
+
+  --color-white-alpha-50: rgb(0 0 0 / 4%);
+  --color-white-alpha-100: rgb(0 0 0 / 6%);
+  --color-white-alpha-200: rgb(0 0 0 / 8%);
+  --color-white-alpha-300: rgb(0 0 0 / 16%);
+  --color-white-alpha-400: rgb(0 0 0 / 24%);
+  --color-white-alpha-500: rgb(0 0 0 / 36%);
+  --color-white-alpha-600: rgb(0 0 0 / 48%);
+  --color-white-alpha-700: rgb(0 0 0 / 64%);
+  --color-white-alpha-800: rgb(0 0 0 / 80%);
+  --color-white-alpha-900: rgb(0 0 0 / 92%);
+  --color-white-alpha-950: #000000;
+
+  --color-gray-100: #1c1f2b;
+  --color-gray-200: #2a2e3c;
+  --color-gray-300: #394052;
+  --color-gray-400: #4f566b;
+  --color-gray-500: #6c7385;
+  --color-gray-600: #8a92a5;
+  --color-gray-700: #aeb4c8;
+  --color-gray-800: #d2d6e0;
+  --color-gray-900: #f0f4f8;
+
+  --color-purple-400: #9385ff;
+  --color-purple-500: #7b61ff;
+  --color-purple-900: #e9e8ff;
+
+  --font-darker-grotesque: 'Darker Grotesque', 'Darker Grotesque Fallback';
+
   --spacing-header-height: 4.125rem;
   --spacing-mobile-padding-x: 1rem;
+
+  --radius-20: 1.25rem;
+  --radius-18: 1.125rem;
+  --radius-14: 0.875rem;
+  --radius-12: 0.75rem;
+  --radius-10: 0.625rem;
 
   --animate-card-flicker: card-flicker 0.4s 2 linear;
   @keyframes card-flicker {

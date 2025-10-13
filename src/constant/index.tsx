@@ -22,7 +22,7 @@ const NAV_LIST = [
   { id: 'docs', href: DOCS_LINK, label: 'Documentation' },
   {
     id: 'business',
-    href: BUSINESS_LINK,
+    href: '/client',
     label: 'Business',
   },
   {

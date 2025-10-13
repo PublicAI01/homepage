@@ -2,7 +2,7 @@ import '@/app/globals.css';
 
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
-import { Bai_Jamjuree } from 'next/font/google';
+import { Bai_Jamjuree, Darker_Grotesque } from 'next/font/google';
 
 import Footer from '@/app/components/Footer';
 import GridPattern from '@/app/components/GridPattern';
@@ -18,6 +18,11 @@ const jamjuree = Bai_Jamjuree({
   variable: '--font-jamjuree',
   preload: true,
   adjustFontFallback: false,
+});
+
+const grotesque = Darker_Grotesque({
+  variable: '--font-darker-grotesque',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -40,7 +45,8 @@ export default function RootLayout({
       <body
         className={cn(
           jamjuree.className,
-          'bg-b1 relative flex min-h-svh flex-col pb-8 has-open:overflow-hidden',
+          grotesque.variable,
+          'bg-b1 relative flex min-h-svh flex-col pb-8 text-white antialiased has-open:overflow-hidden',
         )}>
         <GridPattern className="top-header-height -z-1 h-[calc(100%-var(--spacing-header-height))]" />
         <Header />
