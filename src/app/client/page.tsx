@@ -5,7 +5,6 @@ import Demo1 from '@/assets/image/demo1.png';
 import Demo2 from '@/assets/image/demo2.png';
 import Demo3 from '@/assets/image/demo3.png';
 import BBF from '@/assets/partners/bbf.png';
-import Chasm from '@/assets/partners/chasm.png';
 import ForesightVentures from '@/assets/partners/foresight-ventures.png';
 import G20 from '@/assets/partners/g20.png';
 import IBCGroup from '@/assets/partners/ibc-group.png';
@@ -15,7 +14,6 @@ import SolanaFoundation from '@/assets/partners/solana-foundation.png';
 import Stc from '@/assets/partners/stc.png';
 import TAISU from '@/assets/partners/taisu.png';
 import AudioWave from '@/assets/svg/audio-wave.svg?react';
-import CHASM from '@/assets/svg/chasm.svg?react';
 import DataCollection from '@/assets/svg/data-collection.svg?react';
 import Earth from '@/assets/svg/earth-pixel.svg?react';
 import Flag from '@/assets/svg/flag.svg?react';
@@ -54,7 +52,7 @@ export default function Client() {
         <div className="flex flex-1 flex-col justify-center gap-6 self-stretch">
           <hgroup className="flex flex-col gap-3">
             <h1 className="text-black-alpha-950 text-3xl font-medium text-balance md:text-4xl lg:text-5xl 2xl:text-6xl">
-              Unlock the World’s Most Comprehensive ASR
+              Unlock the World’s Best ASR
               <sup className="font-light">*</sup> and TTS
               <sup className="font-light">*</sup> Datasets
             </h1>
@@ -151,7 +149,6 @@ export default function Client() {
             { title: 'STCGroup', Icon: StcGroup },
             { title: 'MHVentures', Icon: MhVentures },
             { title: 'NEARFoundation', Icon: NearFoundation },
-            { title: 'CHASM', Icon: CHASM },
           ].map(({ title, Icon }) => (
             <li key={title}>
               <Icon className="h-12 w-auto md:h-14 lg:h-16 xl:h-18 2xl:h-20" />
@@ -426,7 +423,6 @@ export default function Client() {
           {[
             { image: BBF, name: 'Blockchain Builders Fund' },
             { image: MHVentures, name: 'MH Ventures' },
-            { image: Chasm, name: 'Chasm' },
             { image: IBCGroup, name: 'IBC Invest Incubate Accelerate' },
             { image: ForesightVentures, name: 'Foresight Ventures' },
             { image: G20, name: 'G20 Group' },
