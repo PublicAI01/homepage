@@ -118,8 +118,9 @@ export default function Client() {
                 'min-w-30 md:min-w-40',
                 'gap-1.5 lg:gap-6 lg:not-last:pr-6',
                 'max-lg:bg-b2 max-lg:rounded-10 max-lg:border max-lg:p-3',
+                'hover:text-p1 transition-colors duration-500',
               )}>
-              <h5 className="font-darker-grotesque text-p1 text-5xl font-semibold lg:text-6xl 2xl:text-7xl">
+              <h5 className="font-darker-grotesque text-5xl font-semibold lg:text-6xl 2xl:text-7xl">
                 {Intl.NumberFormat('en', { notation: 'compact' }).format(value)}
                 +
               </h5>
@@ -150,7 +151,9 @@ export default function Client() {
             { title: 'MHVentures', Icon: MhVentures },
             { title: 'NEARFoundation', Icon: NearFoundation },
           ].map(({ title, Icon }) => (
-            <li key={title}>
+            <li
+              key={title}
+              className="text-black-alpha-800 transition-colors duration-500 hover:text-white">
               <Icon className="h-12 w-auto md:h-14 lg:h-16 xl:h-18 2xl:h-20" />
             </li>
           ))}
@@ -249,11 +252,14 @@ export default function Client() {
           ].map(({ title, value }) => (
             <li
               key={title}
-              className="bg-b2 rounded-10 rounded-se-20 flex min-w-30 flex-1 flex-col justify-between border border-white p-3 md:rounded-se-4xl xl:p-6">
+              className={cn(
+                'rounded-10 rounded-se-20 flex min-w-30 flex-1 flex-col justify-between border border-white p-3 md:rounded-se-4xl xl:p-6',
+                'bg-b2 group transition-colors duration-500 hover:bg-[#4f13cc]',
+              )}>
               <h3 className="text-xs font-light md:text-base xl:text-lg">
                 {title}
               </h3>
-              <em className="font-darker-grotesque text-p1 text-right text-4xl font-semibold not-italic lg:text-5xl 2xl:text-7xl">
+              <em className="font-darker-grotesque text-p1 text-right text-4xl font-semibold not-italic group-hover:text-white lg:text-5xl 2xl:text-7xl">
                 {Intl.NumberFormat('en', { style: 'percent' }).format(value)}
               </em>
             </li>
@@ -292,11 +298,12 @@ export default function Client() {
                 'border-black-alpha-700 flex min-w-30 flex-1 flex-col self-stretch',
                 'gap-1.5 lg:gap-6 lg:not-last:border-r lg:not-last:pr-6',
                 'max-lg:frosted-card max-lg:rounded-10 max-lg:border max-lg:p-3',
+                'hover:text-p1 transition-colors duration-500',
               )}>
               <h3 className="text-base font-medium lg:text-xl xl:text-2xl">
                 {title}
               </h3>
-              <p className="text-black-alpha-800 text-xs font-light text-balance lg:text-base xl:text-lg">
+              <p className="text-xs font-light text-balance opacity-80 lg:text-base xl:text-lg">
                 {description}
               </p>
             </li>
@@ -343,11 +350,12 @@ export default function Client() {
             <li
               key={title}
               className={cn(
-                'bg-b2 rounded-10 border-black-alpha-700 flex flex-1 flex-col gap-2 self-stretch border p-4 md:p-6',
+                'rounded-10 border-black-alpha-700 flex flex-1 flex-col gap-2 self-stretch border p-4 md:p-6',
                 'min-w-30 md:min-w-60',
+                'bg-b2 transition-colors duration-500 hover:bg-white hover:text-black',
               )}>
               <div className="mb-3 flex aspect-square size-fit items-center justify-center rounded-full bg-purple-400 p-3">
-                <Icon className="h-auto w-6 md:w-8" />
+                <Icon className="h-auto w-6 text-white md:w-8" />
               </div>
               <h3 className="text-base font-medium md:text-lg">{title}</h3>
               <p className="text-xs font-light md:text-sm xl:text-base">
@@ -417,7 +425,7 @@ export default function Client() {
         </h2>
         <ul
           className={cn(
-            'flex flex-1 flex-wrap items-center justify-center',
+            'flex flex-1 flex-wrap items-center',
             'gap-3 md:gap-4 lg:gap-5 xl:gap-6 2xl:gap-7',
           )}>
           {[
