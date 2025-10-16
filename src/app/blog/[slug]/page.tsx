@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    keywords: post.metadata.keywords,
     openGraph: {
       title,
       description,
@@ -91,7 +92,7 @@ export default async function Page({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
+            '@type': 'Article',
             headline: post.metadata.title,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.lastUpdated,
@@ -111,6 +112,8 @@ export default async function Page({
                 width: '32',
               },
             },
+            about: post.metadata.keywords,
+            keywords: post.metadata.keywords,
           }),
         }}
       />
@@ -137,6 +140,19 @@ export default async function Page({
         </dd>
       </dl>
       {post.metadata.slugs && <AsSeenIn slugs={post.metadata.slugs} />}
+      {post.metadata.keywords && (
+        <aside aria-label="blog tags">
+          <ul className="flex w-full flex-wrap items-center gap-3">
+            {post.metadata.keywords.map((tag) => (
+              <li
+                key={tag}
+                className="frosted-card rounded-full px-2 py-1.5 md:px-3 md:py-2 lg:px-4">
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
       <ScrollToTop />
     </section>
   );

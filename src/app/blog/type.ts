@@ -6,6 +6,7 @@ type Metadata = {
   lastUpdated: string;
   summary: string;
   image?: string;
+  keywords?: string[];
   /**
    * Markets Insider
    * Yahoo! Finance
