@@ -139,16 +139,31 @@ export default async function Page({
               href: 'https://www.perplexity.ai/search/new?q=',
             },
             { ai: 'Claude', href: 'https://claude.ai/new?q=' },
-            { ai: 'Grok', href: 'https://x.com/i/grok?text=' },
-          ].map(({ ai, href }) => (
-            <Button
-              key={ai}
-              className="w-auto px-2 py-1 text-xs shadow-none md:text-sm"
-              href={`${href}Provide a short, shareable post summarizing the key message of [${baseUrl}/blog/${post.slug}]. Focus on how PublicAI rewards real human voices to build better AI models, then craft a 2–3 sentence post suitable for X or LinkedIn with the hashtag #PublicAI.`}
-              aria-label={`Explore this content with ${ai}`}>
-              {ai}
-            </Button>
-          ))}
+            {
+              ai: 'Grok',
+              href: 'https://x.com/i/grok?text=',
+              generatePrompts: (blogUrl: string) =>
+                `Summarize the key message of [${blogUrl}]. Focus on how PublicAI rewards real people for guiding our AI streamer Nimpet. Then craft a short post for X with the hashtags #PublicAI and #NimpetAI — use the handle @PublicAI_ (with underscore) if you mention PublicAI.`,
+            },
+          ].map(({ ai, href, generatePrompts }) => {
+            const blogUrl = `${baseUrl}/blog/${post.slug}`;
+            const fullUrl = new URL(
+              `${href}${generatePrompts?.(blogUrl) ?? `Summarize the key message of [${blogUrl}]. Focus on how PublicAI rewards real people for guiding our AI streamer Nimpet. Then craft a short post for X with the hashtags #PublicAI and #NimpetAI.`}`.replaceAll(
+                '#',
+                '%23',
+              ),
+            ).toString();
+
+            return (
+              <Button
+                key={ai}
+                className="w-auto px-2 py-1 text-xs shadow-none md:text-sm"
+                href={fullUrl}
+                aria-label={`Explore this content with ${ai}`}>
+                {ai}
+              </Button>
+            );
+          })}
         </div>
       </div>
       <article className="prose prose-invert prose-figcaption:text-center max-w-[85ch]!">
