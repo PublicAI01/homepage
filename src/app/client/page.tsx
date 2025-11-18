@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import ButtonGroup from '@/app/client/components/button-group';
 import Demo1 from '@/assets/image/demo1.png';
 import Demo2 from '@/assets/image/demo2.png';
 import Demo3 from '@/assets/image/demo3.png';
@@ -24,13 +25,11 @@ import Record from '@/assets/svg/record.svg?react';
 import Stack from '@/assets/svg/stack.svg?react';
 import StcGroup from '@/assets/svg/stc.svg?react';
 import Voting from '@/assets/svg/voting-icon.svg?react';
-import Button from '@/components/Button';
 import SectionWrapper from '@/components/SectionWrapper';
-import { BUSINESS_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 export const metadata: Metadata = {
-  title: 'PublicAI - Web3 AI Data Infrastructure',
+  title: 'PublicAI - Power Smarter AI with Real Human Data',
   description:
     'PublicAI provides high-quality ASR (Automatic Speech Recognition) and TTS (Text-to-Speech) datasets to improve the accuracy and performance of AI systems, such as speech recognition, voice assistants, and multilingual AI applications.',
   keywords:
@@ -64,27 +63,7 @@ export default function Client() {
             Unlock the Power of Data for Your Business
           </h2>
           <div className="flex items-center gap-4">
-            <Button
-              className={cn(
-                'w-fit text-xs',
-                'px-3 py-2 xl:px-3.5 xl:py-2.5 2xl:px-4 2xl:py-3',
-              )}
-              theme="primary"
-              href={BUSINESS_LINK}
-              target="_blank"
-              aria-label="fill in the business cooperation form">
-              Connect with our AI experts
-            </Button>
-            <Button
-              className={cn(
-                'w-fit text-xs',
-                'px-3 py-2 xl:px-3.5 xl:py-2.5 2xl:px-4 2xl:py-3',
-              )}
-              target="_blank"
-              href="/business.pdf"
-              aria-label="to business pdf">
-              Power Your AI
-            </Button>
+            <ButtonGroup />
           </div>
         </div>
         <div className="flex-1">

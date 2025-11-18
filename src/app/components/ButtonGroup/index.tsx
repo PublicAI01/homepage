@@ -1,3 +1,7 @@
+'use client';
+
+import { sendGAEvent } from '@next/third-parties/google';
+
 import Button from '@/components/Button';
 import { BUSINESS_LINK } from '@/constant';
 import { cn } from '@/utils';
@@ -16,7 +20,13 @@ const ButtonGroup = (props: ButtonGroupProps) => {
       <Button
         className="w-auto px-3 shadow-none"
         href={BUSINESS_LINK}
-        aria-label="fill in the business cooperation form">
+        aria-label="fill in the business cooperation form"
+        onClick={() => {
+          sendGAEvent('event', 'buttonClicked', {
+            button_name: 'Book a Demo',
+            screen_name: 'homepage/header',
+          });
+        }}>
         Book a Demo
       </Button>
     </div>
