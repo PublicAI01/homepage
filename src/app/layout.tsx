@@ -46,7 +46,7 @@ export default function RootLayout({
         className={cn(
           jamjuree.className,
           grotesque.variable,
-          'bg-b1 relative flex min-h-svh flex-col pb-8 text-white antialiased has-open:overflow-hidden',
+          'bg-b1 has-dialog-open:overflow-hidden relative flex min-h-svh flex-col pb-8 text-white antialiased',
         )}>
         <GridPattern className="top-header-height -z-1 h-[calc(100%-var(--spacing-header-height))]" />
         <Header />

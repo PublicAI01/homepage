@@ -1,11 +1,12 @@
 @import 'tailwindcss';
 
-@plugin "@tailwindcss/typography";
+@plugin '@tailwindcss/typography';
 
-@variant supports-scrollbars (@supports selector(::-webkit-scrollbar));
-@variant scrollbar (&::-webkit-scrollbar);
-@variant scrollbar-track (&::-webkit-scrollbar-track);
-@variant scrollbar-thumb (&::-webkit-scrollbar-thumb);
+@custom-variant supports-scrollbars (@supports selector(::-webkit-scrollbar));
+@custom-variant scrollbar (&::-webkit-scrollbar);
+@custom-variant scrollbar-track (&::-webkit-scrollbar-track);
+@custom-variant scrollbar-thumb (&::-webkit-scrollbar-thumb);
+@custom-variant has-dialog-open (&:has(dialog:is([open], :popover-open, :open)));
 
 @utility app-shadow {
   @apply shadow-primary rounded-md shadow-[0.125rem_0.125rem_0_0];
@@ -16,7 +17,7 @@
 }
 
 @utility app-card {
-  @apply text-white transition-all duration-1000 hover:border-white hover:bg-white [&>*]:transition-colors [&>*]:last:text-[#e6e6e6] hover:[&>*]:text-black [&>svg]:size-7 md:[&>svg]:size-10;
+  @apply *:last:text-g1 text-white transition-all duration-1000 *:transition-colors hover:border-white hover:bg-white hover:*:text-black [&>svg]:size-7 md:[&>svg]:size-10;
 }
 
 @utility visually-hidden {
