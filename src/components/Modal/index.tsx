@@ -107,7 +107,7 @@ function Modal(
       ref={dialogRef}>
       <section
         className={cn(
-          'flex flex-col items-center gap-4 md:gap-8',
+          'flex flex-col items-center gap-4 md:gap-6',
           bodyClassName,
         )}
         role="dialog">
