@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 import SwiperCard from '@/app/components/SwiperCard';
 import styles from '@/app/datahunter/sections/Index/Index.module.css';
+import decorativeCone from '@/assets/image/decorative-cone.svg';
 import HunterPreview1 from '@/assets/image/hunter-preview-1.png';
 import HunterPreview2 from '@/assets/image/hunter-preview-2.png';
-import decorativeCone from '@/assets/svg/decorative-cone.svg';
 import { cn } from '@/utils';
 
 const Index = () => {

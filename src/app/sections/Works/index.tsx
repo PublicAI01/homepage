@@ -1,14 +1,14 @@
 import Image from 'next/image';
 
 import styles from '@/app/sections/Works/Works.module.css';
-import arrowToLeft from '@/assets/svg/arrow-to-left.svg';
-import arrowToRight from '@/assets/svg/arrow-to-right.svg';
+import arrowToLeft from '@/assets/image/arrow-to-left.svg';
+import arrowToRight from '@/assets/image/arrow-to-right.svg';
+import publicaiOutlined from '@/assets/image/publicai-outlined.svg';
+import requesters from '@/assets/image/requesters.svg';
+import workers from '@/assets/image/workers.svg';
 import DataCollection from '@/assets/svg/data-collection.svg?react';
 import DataLabeling from '@/assets/svg/data-labeling.svg?react';
 import ModelEvaluation from '@/assets/svg/model-evaluation.svg?react';
-import publicaiOutlined from '@/assets/svg/publicai-outlined.svg';
-import requesters from '@/assets/svg/requesters.svg';
-import workers from '@/assets/svg/workers.svg';
 import Button from '@/components/Button';
 import { Card2 } from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';

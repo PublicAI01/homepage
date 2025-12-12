@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 import borderStyles from '@/app/components/AnimatedBorder/AnimatedBorder.module.css';
 import styles from '@/app/datahub/sections/VectorDatabase/VectorDatabase.module.css';
+import earth from '@/assets/image/earth.svg';
 import vectorDatabasePicture from '@/assets/image/vector-database-picture.png';
 import zeroG from '@/assets/partners/0g.png';
 import glacier from '@/assets/partners/glacier.png';
 import solana from '@/assets/partners/solana.png';
 import audio from '@/assets/svg/audio-type.svg?react';
-import earth from '@/assets/svg/earth.svg';
 import mapping from '@/assets/svg/mapping-type.svg?react';
 import text from '@/assets/svg/text-type.svg?react';
 import video from '@/assets/svg/video-type.svg?react';

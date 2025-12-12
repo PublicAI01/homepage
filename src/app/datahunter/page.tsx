@@ -4,7 +4,7 @@ import Image from 'next/image';
 import DataHunterWidget from '@/app/datahunter/sections/DataHunter';
 import Index from '@/app/datahunter/sections/Index';
 import Showcase from '@/app/datahunter/sections/Showcase';
-import earth from '@/assets/svg/earth.svg';
+import earth from '@/assets/image/earth.svg';
 import Button from '@/components/Button';
 import SectionWrapper from '@/components/SectionWrapper';
 import { CHROME_EXTENSION_LINK } from '@/constant';

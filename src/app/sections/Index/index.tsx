@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 import StarTrack from '@/app/components/StarTrack';
 import styles from '@/app/sections/Index/Index.module.css';
-import decorativeCone from '@/assets/svg/decorative-cone.svg';
-import indexBall from '@/assets/svg/earth.svg';
+import decorativeCone from '@/assets/image/decorative-cone.svg';
+import indexBall from '@/assets/image/earth.svg';
 import Anchor from '@/components/Anchor';
 import Button from '@/components/Button';
 import { CHROME_EXTENSION_LINK, PUBLIC_AI_DATA_HUB_LINK } from '@/constant';

@@ -2,12 +2,12 @@ import Image from 'next/image';
 
 import SwiperCard from '@/app/components/SwiperCard';
 import styles from '@/app/datahub/sections/Index/Index.module.css';
+import decorativeCone from '@/assets/image/decorative-cone.svg';
 import HubPreview1 from '@/assets/image/hub-preview-1.png';
 import HubPreview2 from '@/assets/image/hub-preview-2.png';
 import HubPreview3 from '@/assets/image/hub-preview-3.png';
 import HubPreview4 from '@/assets/image/hub-preview-4.png';
 import HubPreview5 from '@/assets/image/hub-preview-5.png';
-import decorativeCone from '@/assets/svg/decorative-cone.svg';
 import { cn } from '@/utils';
 
 const Index = () => {

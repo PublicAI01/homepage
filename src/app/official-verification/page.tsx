@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import Error from '@/app/official-verification/error';
 import VerifyForm from '@/app/official-verification/verify-form';
-import decorativeCone from '@/assets/svg/decorative-cone.svg';
+import decorativeCone from '@/assets/image/decorative-cone.svg';
 import PublicAI from '@/assets/svg/publicai.svg?react';
 
 export const metadata: Metadata = {
