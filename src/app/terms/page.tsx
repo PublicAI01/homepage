@@ -15,7 +15,14 @@ export default function Page() {
   return (
     <section className="prose prose-invert max-md:prose-sm max-md:px-mobile-padding-x max-md:w-screen md:mx-auto md:max-w-[85ch]!">
       <h1>PublicAI TERMS OF SERVICE</h1>
-      <p>Last Updated: Nov 7, 2024</p>
+      <p>
+        Last Updated:{' '}
+        {Intl.DateTimeFormat('en', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }).format(new Date(Date.UTC(2025, 11, 13)))}
+      </p>
       <p>
         Thanks for your interest in PublicAI, the new generation Web3 AI Data
         Infrastructure, we are dedicated to empowering users to reclaim control
@@ -137,6 +144,58 @@ export default function Page() {
           or trademarks that are confusingly similar) without our express prior
           written approval, which we may withhold at our discretion for any
           reason.
+        </li>
+      </ul>
+
+      <h2>STAKING AND REWARDS</h2>
+      <h3>Staking Safety and Slashing Policy</h3>
+      <p>
+        When you stake tokens to participate in data contribution activities on
+        the Service:
+      </p>
+      <ul>
+        <li>
+          <b>Standard Quality Issues:</b> You will not lose your staked amount
+          for subpar or low-quality uploads. We understand that data quality can
+          vary, and honest mistakes or technical issues may occur.
+        </li>
+        <li>
+          <b>Malicious Activity:</b> However, malicious uploads, fraudulent
+          submissions, or attempts to manipulate the system will result in a
+          permanent ban from the Service and 100% slashing of your staked
+          collateral. Malicious activity includes, but is not limited to,
+          intentionally submitting false data, gaming reward systems, or
+          attempting to deceive quality assurance mechanisms.
+        </li>
+      </ul>
+
+      <h3>Account Bans and Consequences</h3>
+      <p>
+        If your account is permanently banned for violations of these Terms:
+      </p>
+      <ul>
+        <li>You will permanently lose access to your user account</li>
+        <li>All staked funds associated with your account will be forfeited</li>
+        <li>
+          All unredeemed rewards will be permanently lost and cannot be
+          recovered
+        </li>
+        <li>
+          You may not create new accounts or attempt to circumvent the ban
+        </li>
+      </ul>
+
+      <h3>Prohibition on Multi-Account Usage</h3>
+      <ul>
+        <li>Creating or operating multiple accounts is strictly prohibited</li>
+        <li>
+          Using multiple accounts to increase rewards, circumvent limitations,
+          or manipulate the Service (&quot;farming&quot;) is forbidden
+        </li>
+        <li>
+          Any user found operating multiple accounts will have all associated
+          accounts permanently banned and all staked funds and rewards forfeited
+          across all accounts
         </li>
       </ul>
 
