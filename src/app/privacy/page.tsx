@@ -15,7 +15,14 @@ export default function Page() {
   return (
     <section className="prose prose-invert max-md:prose-sm max-md:px-mobile-padding-x max-md:w-screen md:mx-auto md:max-w-[85ch]!">
       <h1>PublicAI Data PRIVACY POLICY</h1>
-      <p>Last Updated: May 2, 2025</p>
+      <p>
+        Last Updated:{' '}
+        {Intl.DateTimeFormat('en', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }).format(new Date(Date.UTC(2026, 0, 7)))}
+      </p>
 
       <p>
         At PublicAI (referred to here as “we”, “us” or “our”), we are dedicated
@@ -23,8 +30,8 @@ export default function Page() {
         control over your data rights and to receive fair rewards for the data
         you choose to share. We believe in transparency, privacy, and ensuring
         that you benefit directly from the value of your data. This Privacy
-        Policy governs your use of the Data Hunter, Data Hub, Open AI Arena, the
-        Website located at <Link href="/">https://publicai.io/</Link> (the
+        Policy governs your use of the Data Hunter, Data Hub, Public AI Arena,
+        the Website located at <Link href="/">https://publicai.io/</Link> (the
         “Site”) and other products or services provided by us via the Site
         (collectively, the “Services”).
       </p>
@@ -46,6 +53,85 @@ export default function Page() {
         from individuals. At times, we may collect information about an
         individual from other sources and third parties, even before our first
         direct interaction.
+      </p>
+
+      <h2>USE OF USER-UPLOADED DATA FOR AI MODEL TRAINING</h2>
+
+      <p>
+        To provide, maintain, and continuously improve our services and
+        artificial intelligence technologies, <strong>PublicAI</strong> may use
+        content uploaded, submitted, generated, or otherwise provided by users
+        in connection with the training and development of artificial
+        intelligence models.
+      </p>
+
+      <h3>1. Definition and Scope of User-Uploaded Data</h3>
+      <p>
+        “User-Uploaded Data” refers to any data or content provided by users in
+        the course of using the Services, including but not limited to text,
+        images, audio, video, files, annotations, interaction records, and any
+        derived data, such as processed, transformed, anonymized, or aggregated
+        data.
+      </p>
+
+      <h3>2. Purposes of Use</h3>
+      <p>User-Uploaded Data may be used for the following purposes:</p>
+      <ul>
+        <li>
+          Training, testing, validating, evaluating, optimizing, and improving
+          artificial intelligence models, algorithms, and related technologies;
+        </li>
+        <li>
+          Enhancing model performance in understanding, generation, prediction,
+          and analysis;
+        </li>
+        <li>
+          Developing, improving, or expanding existing or future products,
+          features, and services;
+        </li>
+        <li>
+          Conducting research, technical validation, and quality assurance
+          related to artificial intelligence.
+        </li>
+      </ul>
+
+      <h3>3. License and Grant of Rights</h3>
+      <p>
+        To the extent permitted by applicable law, by using the Services and
+        uploading any data, users hereby knowingly and voluntarily grant{' '}
+        <strong>PublicAI</strong>, its affiliates, partners, and service
+        providers a worldwide, non-exclusive, irrevocable, royalty-free license
+        to copy, store, use, process, analyze, transform, aggregate, derive
+        from, and otherwise utilize User-Uploaded Data for the purposes
+        described above, including artificial intelligence model training and
+        technological development.
+      </p>
+
+      <h3>4. Duration of Authorization</h3>
+      <p>
+        Unless otherwise required by applicable law or unless the user lawfully
+        exercises and completes a data deletion request, the authorization
+        described above is granted on a perpetual basis, effective from the date
+        the User-Uploaded Data is first provided.
+      </p>
+
+      <h3>5. Privacy Protection and De-Identification</h3>
+      <p>
+        Before or during the use of User-Uploaded Data for AI model training, we
+        may apply de-identification, anonymization, or aggregation techniques to
+        reduce the risk of identifying individuals. We will protect personal
+        information in accordance with this Privacy Policy and applicable data
+        protection laws, and will implement reasonable technical and
+        organizational safeguards.
+      </p>
+
+      <h3>6. User Rights</h3>
+      <p>
+        Nothing in this section limits users’ rights to access, correct, delete,
+        or otherwise control their personal data as provided under applicable
+        law and other sections of this Privacy Policy. For details on how to
+        exercise these rights, please refer to the “User Rights” section or
+        equivalent provisions of this Privacy Policy.
       </p>
 
       <h3>WHAT INFORMATION WE COLLECT</h3>
