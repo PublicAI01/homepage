@@ -12,6 +12,14 @@ function handleLink(href?: string) {
     return href;
   }
 
+  const protocolMatch = href.match(/^([a-z][\w+.-]*):/i);
+  const protocol = protocolMatch?.[1]?.toLowerCase();
+  const isHttpLike = protocol === 'http' || protocol === 'https';
+
+  if (protocol && !isHttpLike) {
+    return href;
+  }
+
   const isOriginallyAbsolute = /^(?:[a-z]+:)?\/\//i.test(href);
 
   try {
