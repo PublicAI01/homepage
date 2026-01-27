@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     image,
   } = post.metadata;
   const ogImage = image
-    ? `${baseUrl}${image}`
+    ? `${baseUrl}${image}`.replace('_cover', '')
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
@@ -52,17 +52,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime,
       modifiedTime,
       url: `${baseUrl}/blog/${post.slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
+      images: {
+        url: ogImage,
+        width: 1400,
+        height: 788,
+      },
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [ogImage],
+      images: {
+        url: ogImage,
+        width: 1400,
+        height: 788,
+      },
     },
   };
 }
