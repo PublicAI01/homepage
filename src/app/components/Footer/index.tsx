@@ -65,7 +65,8 @@ const Footer = () => {
           </address>
         </section>
         <span className="text-g2 mt-5 mb-2.5 text-center text-sm md:mt-7 md:text-base">
-          © {new Date().getFullYear()} MetaBlock US Limited All Rights Reserved
+          © {new Date().getFullYear()} PublicAI Foundation, Cayman Islands All
+          Rights Reserved
         </span>
       </div>
     </footer>
