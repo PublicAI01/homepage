@@ -72,7 +72,7 @@ const Header = () => {
                 <Link
                   className="block py-2 text-base font-semibold text-white"
                   href={nav.href}
-                  {...(['docs', 'token'].includes(nav.id) && {
+                  {...(['docs', 'token', 'gateway'].includes(nav.id) && {
                     target: '_blank',
                     rel: 'external noreferrer',
                   })}
@@ -84,7 +84,7 @@ const Header = () => {
             ))}
             <div
               className={cn(
-                'absolute bottom-0 left-0 h-full w-1/6 rounded-sm',
+                'absolute bottom-0 left-0 h-full w-1/7 rounded-sm',
                 styles.slider,
               )}
               aria-hidden></div>

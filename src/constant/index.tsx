@@ -15,7 +15,9 @@ const TELEGRAM_MINI_APP_LINK = 'https://t.me/publicai_bot';
 const SUPPORT_EMAIL_ADDRESS = 'support@publicai.io';
 const BUSINESS_LINK = 'https://publicai.typeform.com/to/Lr98Gtdi';
 const TOKEN_WEBSITE_LINK = 'https://token.publicai.io?utm_source=homepage';
+const GATEWAY_LINK = 'https://gateway.publicai.io?utm_source=homepage';
 const NAV_LIST = [
+  { id: 'gateway', href: GATEWAY_LINK, label: 'Gateway' },
   { id: 'datahub', href: '/datahub', label: 'Data Hub' },
   { id: 'datahunter', href: '/datahunter', label: 'Data Hunter' },
   { id: 'blog', href: '/blog', label: 'Blog' },

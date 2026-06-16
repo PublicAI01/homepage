@@ -19,27 +19,32 @@
 
 .nav menu li:nth-child(2):hover ~ div.slider,
 .nav menu li:nth-child(2).current ~ .slider {
-  left: calc(1 / 6 * 100%);
+  left: calc(1 / 7 * 100%);
 }
 
 .nav menu li:nth-child(3):hover ~ div.slider,
 .nav menu li:nth-child(3).current ~ .slider {
-  left: calc(2 / 6 * 100%);
+  left: calc(2 / 7 * 100%);
 }
 
 .nav menu li:nth-child(4):hover ~ div.slider,
 .nav menu li:nth-child(4).current ~ .slider {
-  left: calc(3 / 6 * 100%);
+  left: calc(3 / 7 * 100%);
 }
 
 .nav menu li:nth-child(5):hover ~ div.slider,
 .nav menu li:nth-child(5).current ~ .slider {
-  left: calc(4 / 6 * 100%);
+  left: calc(4 / 7 * 100%);
 }
 
 .nav menu li:nth-child(6):hover ~ div.slider,
 .nav menu li:nth-child(6).current ~ .slider {
-  left: calc(5 / 6 * 100%);
+  left: calc(5 / 7 * 100%);
+}
+
+.nav menu li:nth-child(6):hover ~ div.slider,
+.nav menu li:nth-child(6).current ~ .slider {
+  left: calc(6 / 7 * 100%);
 }
 
 .nav menu li .nav-panel {
