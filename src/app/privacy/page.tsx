@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const lastUpdated = new Date(Date.UTC(2026, 0, 8));
+  const lastUpdated = new Date(Date.UTC(2026, 5, 21));
   return (
     <section className="mx-auto mb-6 flex max-w-[85ch] flex-col items-center max-md:px-[calc(var(--spacing-mobile-padding-x)*2)] md:mb-10">
       <article className="prose prose-invert prose-figcaption:text-center max-w-[85ch]!">

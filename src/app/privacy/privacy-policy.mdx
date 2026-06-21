@@ -1,185 +1,174 @@
-At PublicAI (referred to here as "we", "us" or "our"), we are dedicated to empowering you ("you" and "your" or "Users", as relevant) to reclaim control over your data rights and to receive fair rewards for the data you choose to share. We believe in transparency, privacy, and ensuring that you benefit directly from the value of your data. This Privacy Policy governs your use of PublicAI DataHub, PublicAI AI Arena, PublicAI DataHunter, the Website located at https://publicai.io/ (the "Site") and other products or services provided by us via the Site (collectively, the "Services").
+This Privacy Policy (this "Policy") describes how PublicAI ("PublicAI," the "Company," "we," "our," or "us") collects, uses, discloses, and protects information in connection with the Services. PublicAI is an AI access and governance platform: **PublicAI Personal** helps individual users access AI more affordably and reliably by aggregating multiple AI providers with price optimization and automatic failover, and **PublicAI Team** provides organizations with a private AI workspace to govern members, budgets, model access, provider keys, usage visibility, and privacy protection. This Policy applies to your use of our website, applications, application programming interfaces, and associated products (collectively, the "Services"). By accessing or using the Services, you ("User," "you," or "your") acknowledge that you have read and agree to this Policy and our Terms of Service.
 
-This Privacy Policy describes how we collect, use, and disclose your information when you use our Services. Please note that we do not control websites, applications, or services operated by third parties, and we are not responsible for their actions.
+This Policy governs how we handle personal information. Contractual matters — including dispute resolution, indemnification, limitation of liability, and force majeure — are governed exclusively by our Terms of Service and are not duplicated here.
 
-## OUR COLLECTION OF YOUR INFORMATION
+---
 
-Sometimes we collect your information automatically when you interact with our services, and sometimes we collect your information directly from individuals. At times, we may collect information about an individual from other sources and third parties, even before our first direct interaction.
+## 1. Scope
 
-## WHAT INFORMATION WE COLLECT
+This Policy applies to all Services offered by PublicAI and its affiliates, including services provided through third-party sites such as analytics and infrastructure providers. It does not apply to services governed by a separate privacy policy that does not incorporate this Policy by reference.
 
-We may collect the following information individuals provide in connection with our services:
+This Policy does **not** apply to:
 
-1. Information you provide
+- the information practices of other companies or organizations that advertise or link to the Services; or
+- services offered by other companies or individuals, including the external AI provider APIs and upstream model providers accessed through the Services.
 
-- Blockchain related information, such as wallet information, account balances, and on-chain transaction information
-- Your basic information, including name, email, social media handles, business name and other information you provide to us ("Basic User Information")
-- Data that you voluntarily submit to us through PublicAI DataHub, AI Arena, or DataHunter for AI training purposes, including but not limited to photos, texts, audio, video, social media information, and other media files ("Training Data")
+Where you use the Services to route requests to an upstream AI provider, that provider's own privacy policy governs how it processes the data it receives. PublicAI does not control, and is not responsible for, the data practices of upstream providers.
 
-2. Information collected automatically
+### Controller and processor roles
 
-- Browser and Device Information
-- IP address/derived location information
-- Other device characteristics or identifiers (e.g. plugins, the network you connect to)
+- For **PublicAI Personal**, PublicAI generally acts as the **controller** of your personal information.
+- For **PublicAI Team**, the customer organization is generally the **controller** of personal information processed within its workspace, and PublicAI acts as a **processor** acting on the customer's documented instructions. In that case, the customer's agreement and our Data Processing Addendum (Section 9) govern, and this Policy describes our practices as processor.
 
-3. Information we obtain from third parties
+---
 
-- Information from Analytics Providers: browser fingerprint, device information, and IP address
-- Error Tracking Data: automated error monitoring and diagnostic capture
+## 2. Information We Collect
 
-## OUR USE OF YOUR INFORMATION
+- **Automatically collected information.** We use third-party tools that collect information through cookies for analytics and communication purposes. This includes cookies used to store User preferences, IP addresses, browser user-agent strings, and request header information collected for anti-spam and abuse-prevention purposes.
+- **Account information.** Email addresses and, for PublicAI Team, workspace and member identifiers may be used to identify and authenticate Users and administrators.
+- **Payment information.** Payments are processed through third-party payment platforms that may retain identifying details. PublicAI does not store your full financial account information on its servers.
+- **Usage metadata.** To operate routing, governance, budgeting, and billing, PublicAI records usage metadata, including the requesting User or workspace, the model and provider used, token counts, cost, latency, request status, and timestamps. This metadata is used to deliver usage visibility, enforce budget and model policies, and produce billing records.
+- **Provider keys (BYOK).** Where you bring your own upstream provider keys, those keys are stored in encrypted form and used solely to route your requests in accordance with your governance configuration. The bring-your-own-key model lets your organization retain ownership of its upstream AI accounts while using PublicAI as a governance layer.
 
-We use the information we collect to:
+### TEE-based privacy protection and per-request signaling
 
-- Manage our organization and its day-to-day operations
-- Communicate with individuals, including via email and social media
-- Market our services to individuals
-- Administer, provide, maintain, improve, and personalize our products and services
-- Facilitate transactions and individual benefits and services, including customer support
-- Identify and analyze how individuals use our services
-- Monitor and analyze trends, usage, and activities in connection with our services
-- Test, enhance, update, and monitor the services, or diagnose or fix technology problems
-- Help maintain the safety, security, and integrity of our property and services
-- Defend, protect, or enforce our rights or applicable contracts and agreements
-- Detect, prevent, investigate, or provide notice of fraud or unlawful activity
-- Comply with legal obligations
+The PublicAI routing layer may operate within a Trusted Execution Environment ("TEE"). Because not every route is necessarily TEE-protected, PublicAI signals the protection status of each request so that the promise is verifiable in practice rather than ambiguous:
 
-## DE-IDENTIFICATION AND DATA PROCESSING FOR AI TRAINING
+- **Per-request indication.** Each API response includes a field indicating whether the request was routed through a TEE-protected path (for example, a `tee_protected` boolean and the identifier of the attested configuration). The same status is surfaced in the usage dashboard for each logged request.
+- **Per-model and per-route availability.** Model and route listings indicate whether TEE-protected routing is available for that model or provider. Where a workspace policy requires TEE protection, requests that cannot be served over a TEE-protected path are failed or blocked rather than silently downgraded.
+- **Attestation reference.** For TEE-protected requests, the attested configuration can be independently verified through remote attestation as described in Section 4.
 
-De-identification Processing:
+For routing paths protected by a TEE:
 
-Before using any User-Uploaded Data (including Training Data) for AI model training purposes, we implement de-identification, anonymization, or aggregation techniques to protect user privacy. All user-contributed content used for AI training undergoes de-identification processing to ensure it cannot be traced back to specific individuals.
+- **Data in transmission.** Prompts, inputs, and outputs routed through the protected layer are encrypted in transit, and the PublicAI routing layer cannot access the plaintext content.
+- **Data in use.** Routing computation occurs within the secure TEE, and PublicAI does not access the memory, CPU state, or runtime data of the protected routing layer.
+- **Data in storage.** Any temporary data within the TEE is encrypted and isolated from general PublicAI infrastructure.
+- **Prompt and response privacy.** For TEE-protected routing, PublicAI does not collect, log, or store the plaintext content of your prompts or responses, and such interactions remain confidential by design at the routing layer.
 
-Our de-identification measures include:
+For requests that are **not** TEE-protected, the applicable upstream provider and any intermediary may process request and response content under their own terms; PublicAI's handling of such content is limited to what is necessary to route the request and to record the usage metadata described above.
 
-- Removing or masking personally identifiable information (PII) such as names, email addresses, phone numbers, and other direct identifiers
-- Applying aggregation and statistical techniques to prevent re-identification
-- Implementing technical safeguards to separate user identity from training data
+---
 
-While we employ these measures to protect your privacy, please note that no de-identification method is absolutely foolproof. We continuously update our techniques to align with industry best practices and applicable data protection standards.
+## 3. Purposes of Processing
 
-## OUR DISCLOSURE OF YOUR INFORMATION
+PublicAI collects the minimum data necessary to operate and improve the Services. The purposes of processing include:
 
-We disclose the information we collect to:
+1. **Delivering the Services** — routing requests across AI providers, optimizing for price and availability, performing automatic failover, and providing unified API access.
+2. **Governance (PublicAI Team)** — enforcing member permissions, budget and token limits, model access policies, and provider-key routing rules, and giving administrators visibility into who is using AI, which models are used, and at what cost.
+3. **Maintaining service integrity** — detecting spam, abuse, fraud, or downtime.
+4. **Improving routing and reliability** — measuring provider performance to improve price, stability, and failover behavior.
+5. **Communicating with Users** — regarding critical updates, service changes, and billing.
+6. **Complying with legal obligations** — and preventing fraud.
 
-AI Training Partners and Third-Party Commercial Use:
+---
 
-We may share your de-identified Training Data with qualified third parties that require user-provided data to develop, train, or enhance AI models and systems. These recipients may include:
+## 4. Verifiable Privacy and Remote Attestation
 
-- Third-party commercial AI companies and LLM developers building or improving AI models
-- AI research institutions and laboratories (such as university research groups and independent AI labs) conducting technical research
-- Enterprise customers and AI product companies (including translation services, voice agent platforms, and robotics companies) who license our data services for their AI development needs
-- Technology partners and collaborators working on AI model training and iteration
+The Services are designed so that privacy protection is technically verifiable rather than dependent on a policy promise alone. For TEE-protected routing, PublicAI may provide remote attestation evidence enabling customers to verify that the routing layer is running the expected, privacy-preserving configuration and cannot access plaintext prompts or responses. The per-request and per-model signals described in Section 2 allow you to confirm, for any given request, whether TEE protection was applied.
 
-Important Disclosure: These third parties may use the de-identified data for commercial AI model training and technical improvement, and the data usage is not limited to PublicAI internal purposes. The trained AI models, model weights, and AI-generated outputs belong to the third-party developers, not to the original data contributors.
+PublicAI does not represent that upstream model providers are unable to access the data you choose to send to them, and does not present its privacy capabilities as unverifiable claims.
 
-All third-party data sharing is conducted under appropriate data protection agreements requiring recipients to:
+---
 
-- Use the data only for specified AI training and research purposes
-- Implement appropriate security measures
-- Comply with applicable data protection laws
-- Not attempt to re-identify individuals from de-identified data
+## 5. Data Retention
 
-Other Third-Party Disclosures:
+PublicAI retains personal information only for as long as necessary for the purposes described in this Policy. The following baseline retention periods apply unless a longer period is required to comply with law, resolve disputes, or enforce our agreements, or unless a customer's Data Processing Addendum specifies otherwise:
 
-- Identity Verification Providers: For identity verification services
-- Event, Promotion and Other Business Partners: In connection with relevant events or services
-- Data Analytics Providers: To facilitate analytics services
-- Other Service Providers: Web hosting, payment processing, fraud prevention, customer service, marketing services
-- Business Transaction or Reorganization: In connection with mergers, acquisitions, or sales of assets
-- Legal Obligations and Rights: To comply with laws, legal process, or protect rights and safety
-- Otherwise with Consent or Direction: With your explicit consent
+| Data category                                                                              | Retention period                                                              |
+| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| Plaintext prompt and response content routed over TEE-protected paths                      | Not retained                                                                  |
+| Usage metadata (user/workspace, model, provider, tokens, cost, latency, status, timestamp) | Up to **[24 months]**, then deleted or aggregated                             |
+| Account and workspace identifiers                                                          | Duration of the account, then deleted within **[90 days]** of account closure |
+| Billing and transaction records                                                            | As required by applicable tax and accounting law (typically **[7 years]**)    |
+| IP and security logs                                                                       | Up to **[6 months]** for anti-spam and abuse prevention                       |
+| Support communications                                                                     | Up to **[24 months]** after the matter is resolved                            |
 
-## COOKIES AND RELATED TECHNOLOGIES
+Bracketed periods are configurable defaults; the current values are published in our documentation and may be adjusted for individual customers under a Data Processing Addendum. Plaintext prompt and response content routed through TEE-protected paths is **not** retained by PublicAI under any circumstances.
 
-We and our third-party providers may use cookies, web beacons, pixels, embedded scripts, and similar technologies to automatically collect your information. For example, our services use Google Analytics to collect and view reports about website traffic. Individuals can learn more at Google's [privacy policy](https://policies.google.com/privacy) and [opt-out options](https://tools.google.com/dlpage/gaoptout).
+---
 
-## CHOICE RELATING TO THE USE OF COOKIES ON OUR PLATFORM SERVICES
+## 6. Your Privacy Rights
 
-Most browsers allow you to: (1) change settings to notify you when you receive a cookie; (2) disable existing cookies; or (3) automatically reject cookies. Please note that doing so may negatively impact your experience using our website.
+Depending on your location (including under the EU/UK GDPR, the California Consumer Privacy Act as amended by the CPRA, and similar laws), you may have the right to:
 
-## CHILDREN'S PERSONAL INFORMATION
+- **access** the personal information we hold about you and obtain a copy;
+- **correct** inaccurate or incomplete personal information;
+- **delete** your personal information;
+- **port** your personal information to another service in a structured, machine-readable format;
+- **restrict or object to** certain processing;
+- **withdraw consent** where processing is based on consent; and
+- **not be discriminated against** for exercising these rights.
 
-Our services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If a child under 13 has provided personal information to us, we encourage the parent or guardian to contact us to request removal.
+PublicAI does **not** sell or "share" personal information for cross-context behavioral advertising as those terms are defined under California law.
 
-## LINKS TO THIRD-PARTY WEBSITE OR SERVICES
+**How to exercise your rights.** Individuals may submit a request through our privacy request channel (published at our website's privacy contact page) or by contacting our privacy team. We will verify your identity and respond within the timeframe required by applicable law (for example, **45 days** under the CCPA, extendable as permitted, and **one month** under the GDPR). You may use an authorized agent where the law allows.
 
-Our services may include links to third-party websites, plug-ins, and applications. This Privacy Policy does not apply to third-party websites and services, and we are not responsible for their practices.
+**For PublicAI Team (processor context).** Where PublicAI processes personal information as a processor on behalf of a customer organization, we will route any rights request we receive directly to the relevant customer and assist that customer in responding, as set out in our Data Processing Addendum. End users of a Team workspace should generally direct their requests to the controller organization.
 
-## INFORMATION FOR CALIFORNIA RESIDENTS
+**Appeals.** Where required by law, if we decline a request you may appeal by contacting our privacy team; we will respond within the period the applicable law prescribes. You may also lodge a complaint with your local supervisory authority or regulator.
 
-Residents of California have certain rights under the California Consumer Privacy Act ("CCPA").
+---
 
-1. Information Collection and Usage
+## 7. International Data Transfers
 
-Categories of Personal Information we collect:
+PublicAI and its service providers may process personal information in countries other than the one in which you reside, including the United States. Where we transfer personal information across borders, we rely on an appropriate transfer mechanism, which may include the European Commission's Standard Contractual Clauses, the UK International Data Transfer Addendum, an adequacy decision, or another lawful mechanism. A copy of the relevant safeguards is available on request through our privacy team. For TEE-protected routing, plaintext prompt and response content is not accessible to PublicAI in any location.
 
-- Contact and account registration information
-- Financial or payment information
-- Transaction information
-- Customer service information
-- Web browser, mobile device, or internet connection information
+---
 
-2. The Right to Opt Out of Personal Information Sales
+## 8. Disclosure of Information
 
-Consumers can opt out by:
+PublicAI does **not** sell, lease, or trade your personal information.
 
-- Adjusting cookie settings
-- Clicking "unsubscribe" in marketing emails
+PublicAI may disclose information only in the following circumstances:
 
-3. The Right to Access
+- with your explicit consent;
+- to trusted sub-processors and service providers operating under contractual obligations, as described in Section 9;
+- to the upstream AI providers necessary to fulfill your routed requests;
+- to comply with law enforcement or regulatory requirements; and
+- in connection with a business reorganization or transfer, with notice.
 
-Consumers can request details about personal information collected in the past 12 months.
+---
 
-4. The Right to Deletion
+## 9. Sub-Processors and Data Processing Addendum
 
-Consumers can request deletion of personal information, subject to certain legal exceptions.
+PublicAI engages third-party sub-processors to provide the Services, including infrastructure and hosting providers, TEE hardware providers, payment processors, analytics providers, and communication providers. PublicAI imposes data protection obligations on each sub-processor that are no less protective than those in this Policy and the applicable Data Processing Addendum. A current list of sub-processors, including each sub-processor's name, function, and processing location, is **available to PublicAI Team customers on request** through our privacy team.
 
-5. How to Exercise Access and Deletion Rights
+For PublicAI Team customers, a **Data Processing Addendum ("DPA")** — incorporating the Standard Contractual Clauses where applicable — is **available on request** and, once executed, forms part of the customer's agreement. The DPA governs processing roles, security measures, sub-processor change notifications, audit rights, breach notification timelines, and assistance with data subject requests. Customers with an executed DPA receive advance notice of sub-processor changes in accordance with that DPA.
 
-Contact us at [support@publicai.io](mailto:support@publicai.io).
+---
 
-6. The Right to Nondiscrimination
+## 10. Security and Breach Notification
 
-We will not discriminate against you for exercising CCPA rights.
+PublicAI maintains administrative, technical, and organizational measures designed to protect personal information, including encryption in transit, encryption of stored secrets and provider keys, access controls, and TEE-based isolation for protected routing paths.
 
-7. Authorized Agents
+If PublicAI becomes aware of a personal data breach affecting your personal information, we will notify affected Users and, for PublicAI Team, the relevant customer organization (as controller) **without undue delay** and, where required by applicable law, within the legally mandated timeframe (for example, **72 hours** of becoming aware, under the GDPR, for notification to the relevant authority or controller). Our notice will describe, to the extent known, the nature of the breach, the categories of data affected, the likely consequences, and the measures taken or proposed. This is in addition to your obligation to notify us promptly of any security issue you suspect.
 
-We may request verification of your agent's authorization.
+---
 
-8. "Shine the Light"
+## 11. Children's Privacy
 
-California residents can request a list of third parties that received personal information for direct marketing.
+The Services are not directed to children. You must meet the minimum age requirements set out in our Terms of Service to use the Services. PublicAI does not knowingly collect personal information from children below the applicable minimum age. If we learn that we have collected such information without required parental consent, we will delete it. Because AI services may raise heightened obligations for minors under laws such as COPPA and equivalent regimes, organizations deploying PublicAI Team to populations that may include minors are responsible for obtaining any required consents.
 
-## ADDITIONAL DISCLOSURES FOR INDIVIDUALS IN EUROPE
+---
 
-If you are located in the European Economic Area ("EEA"), the United Kingdom, or Switzerland, you have certain rights under applicable data protection laws.
+## 12. Third-Party Services
 
-1. Legal Basis for Processing
+The Services connect to external AI model APIs and infrastructure providers, which are governed by their own terms. PublicAI does not guarantee the privacy, accuracy, or availability of outputs from third-party sources.
 
-We process your personal data based on:
+---
 
-- Performance of our contract with you
-- Legitimate business interests
-- Legal compliance obligations
-- Your consent (which you may withdraw at any time)
+## 13. Governing Law
 
-2. Data Retention
+This Policy shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict-of-law principles. This governing-law provision concerns the interpretation of this Policy only; dispute resolution between you and PublicAI is governed by the Terms of Service.
 
-We store personal data for as long as necessary to carry out collection purposes and meet legal obligations.
+---
 
-3. Data Subject Requests
+## 14. Contact
 
-You have the right to request access, portability, correction, erasure, and to object to or restrict certain processing. Contact us at [support@publicai.io](mailto:support@publicai.io).
+If you have questions or requests relating to this Policy, or wish to exercise your privacy rights, please contact our privacy team through the privacy contact channel published on our website.
 
-4. Questions or Complaints
+---
 
-You have the right to lodge a complaint with your local Data Protection Authority.
+## 15. Changes to this Policy
 
-## UPDATES TO THIS PRIVACY POLICY
-
-We will update this Privacy Policy from time to time. When we make changes, we will update the "Last Updated" date. Material changes will be communicated via email, prominent posting, or other appropriate channels.
-
-## CONTACT US
-
-For questions or requests regarding this Privacy Policy, please email [support@publicai.io](mailto:support@publicai.io).
+PublicAI may update this Policy from time to time and will indicate the date of the latest revision. If changes are material, PublicAI will provide a more prominent notice, which may include notification by email. Your continued use of the Services after any update constitutes acceptance of the revised Policy. If you do not agree to the changes, you must discontinue use of the Services.
