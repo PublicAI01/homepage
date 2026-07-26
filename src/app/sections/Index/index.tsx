@@ -5,8 +5,6 @@ import styles from '@/app/sections/Index/Index.module.css';
 import decorativeCone from '@/assets/image/decorative-cone.svg';
 import indexBall from '@/assets/image/earth.svg';
 import Anchor from '@/components/Anchor';
-import Button from '@/components/Button';
-import { CHROME_EXTENSION_LINK, PUBLIC_AI_DATA_HUB_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 const Index = () => {
@@ -52,23 +50,10 @@ const Index = () => {
         <h1 className="mx-auto max-w-xs text-center text-2xl font-semibold tracking-wider text-white md:max-w-4xl md:text-5xl">
           Building the Human Layer of AI
         </h1>
-        <h2 className="mx-auto mt-3 mb-12 text-center text-base font-normal text-white max-md:max-w-xs md:mt-6 md:text-xl">
+        <h2 className="mx-auto mt-3 text-center text-base font-normal text-white max-md:max-w-xs md:mt-6 md:text-xl">
           Get paid for contributing your expertise and experience to power
           exceptional AI.
         </h2>
-        <div className="flex flex-col items-center justify-center gap-5 md:gap-8">
-          <Button
-            theme="primary"
-            href={PUBLIC_AI_DATA_HUB_LINK}
-            aria-label="to data hub website">
-            Earn on Data Hub
-          </Button>
-          <Button
-            href={CHROME_EXTENSION_LINK}
-            aria-label="to download data hunter chrome extension">
-            Data Hunter Extension
-          </Button>
-        </div>
       </div>
     </section>
   );
