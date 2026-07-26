@@ -12,7 +12,6 @@ import ModelEvaluation from '@/assets/svg/model-evaluation.svg?react';
 import Button from '@/components/Button';
 import { Card2 } from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
-import { PUBLIC_AI_DATA_HUB_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 const Works = () => {
@@ -59,11 +58,7 @@ const Works = () => {
           className="flex-1"
           image={workers}
           content="Community earns rewards by working on interesting tasks"
-          link={{
-            children: 'Earn on Trajector',
-            href: PUBLIC_AI_DATA_HUB_LINK,
-            'aria-label': 'to trajector website',
-          }}
+          comingSoon="Earn on Trajector"
         />
       </section>
 
@@ -107,10 +102,11 @@ interface _BlockProps extends React.ComponentProps<'div'> {
     React.ComponentProps<typeof Button>,
     'href' | 'children' | 'aria-label'
   >;
+  comingSoon?: string;
 }
 
 const _Block = (props: _BlockProps) => {
-  const { className, image, content, link, ...rest } = props;
+  const { className, image, content, link, comingSoon, ...rest } = props;
 
   return (
     <div
@@ -129,12 +125,27 @@ const _Block = (props: _BlockProps) => {
         <p className="mb-1 text-base text-white max-md:ml-4 md:mt-8 md:mb-2 md:w-3/4 md:text-center">
           {content}
         </p>
-        {link && (
-          <Button
-            className="w-fit px-4 shadow-none after:z-0"
-            {...link}>
-            <span className="relative z-1">{link.children}</span>
-          </Button>
+        {comingSoon ? (
+          <div className="flex flex-col items-center gap-1.5">
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              className="w-fit cursor-not-allowed rounded-sm bg-[#4808FE]/40 px-4 py-2 text-base font-medium text-white/60 shadow-[0.125rem_0.125rem_0_0] shadow-white/30 select-none">
+              {comingSoon}
+            </button>
+            <span className="bg-primary/20 text-p1 rounded-full px-2 py-0.5 text-[0.625rem] font-semibold whitespace-nowrap uppercase">
+              Coming soon
+            </span>
+          </div>
+        ) : (
+          link && (
+            <Button
+              className="w-fit px-4 shadow-none after:z-0"
+              {...link}>
+              <span className="relative z-1">{link.children}</span>
+            </Button>
+          )
         )}
       </div>
     </div>
