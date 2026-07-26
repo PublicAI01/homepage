@@ -60,9 +60,9 @@ const Works = () => {
           image={workers}
           content="Community earns rewards by working on interesting tasks"
           link={{
-            children: 'Earn on Data Hub',
+            children: 'Earn on Trajector',
             href: PUBLIC_AI_DATA_HUB_LINK,
-            'aria-label': 'to data hub website',
+            'aria-label': 'to trajector website',
           }}
         />
       </section>
