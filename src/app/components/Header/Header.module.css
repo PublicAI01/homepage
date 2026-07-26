@@ -3,43 +3,34 @@
 }
 
 .nav menu li {
-  --nav-width: 8rem;
+  --nav-width: 10rem;
   width: var(--nav-width);
 }
 
-.nav menu li:hover ~ .slider,
+.nav menu li.coming-soon {
+  cursor: default;
+}
+
+/* The Trajector item is a non-interactive "coming soon" placeholder, so it
+   should not trigger the hover slider. */
+.nav menu li:not(.coming-soon):hover ~ .slider,
 .nav menu li.current ~ .slider {
   background-color: var(--color-primary);
 }
 
-.nav menu li:nth-child(1):hover ~ div.slider,
+.nav menu li:nth-child(1):not(.coming-soon):hover ~ div.slider,
 .nav menu li:nth-child(1).current ~ .slider {
   left: 0;
 }
 
-.nav menu li:nth-child(2):hover ~ div.slider,
+.nav menu li:nth-child(2):not(.coming-soon):hover ~ div.slider,
 .nav menu li:nth-child(2).current ~ .slider {
-  left: calc(1 / 6 * 100%);
+  left: calc(1 / 3 * 100%);
 }
 
-.nav menu li:nth-child(3):hover ~ div.slider,
+.nav menu li:nth-child(3):not(.coming-soon):hover ~ div.slider,
 .nav menu li:nth-child(3).current ~ .slider {
-  left: calc(2 / 6 * 100%);
-}
-
-.nav menu li:nth-child(4):hover ~ div.slider,
-.nav menu li:nth-child(4).current ~ .slider {
-  left: calc(3 / 6 * 100%);
-}
-
-.nav menu li:nth-child(5):hover ~ div.slider,
-.nav menu li:nth-child(5).current ~ .slider {
-  left: calc(4 / 6 * 100%);
-}
-
-.nav menu li:nth-child(6):hover ~ div.slider,
-.nav menu li:nth-child(6).current ~ .slider {
-  left: calc(5 / 6 * 100%);
+  left: calc(2 / 3 * 100%);
 }
 
 .nav menu li .nav-panel {
