@@ -23,19 +23,32 @@ const SideNav = () => {
       )}>
       <nav className="w-4/5">
         <ul className="my-4 flex flex-col">
-          {NAV_LIST.map((nav) => (
-            <li
-              key={nav.id}
-              className="list-none text-center">
-              <Link
-                className="block size-full py-4 text-base font-semibold text-white md:text-xl"
-                href={nav.href}
-                aria-label={`to ${nav.label} section content`}
-                onClick={closeSideNavFn}>
-                {nav.label}
-              </Link>
-            </li>
-          ))}
+          {NAV_LIST.map((nav) =>
+            nav.comingSoon ? (
+              <li
+                key={nav.id}
+                className="flex list-none items-center justify-center gap-2 py-4 text-center select-none">
+                <span className="text-base font-semibold text-white/50 md:text-xl">
+                  {nav.label}
+                </span>
+                <span className="bg-primary/20 text-p1 rounded-full px-2 py-0.5 text-[0.625rem] font-semibold whitespace-nowrap uppercase">
+                  Coming soon
+                </span>
+              </li>
+            ) : (
+              <li
+                key={nav.id}
+                className="list-none text-center">
+                <Link
+                  className="block size-full py-4 text-base font-semibold text-white md:text-xl"
+                  href={nav.href}
+                  aria-label={`to ${nav.label} section content`}
+                  onClick={closeSideNavFn}>
+                  {nav.label}
+                </Link>
+              </li>
+            ),
+          )}
         </ul>
       </nav>
       <ButtonGroup className="w-4/5" />
