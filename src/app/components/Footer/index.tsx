@@ -1,7 +1,11 @@
 import Link from 'next/link';
 
 import Mail from '@/assets/svg/mail.svg?react';
-import { SUPPORT_EMAIL_ADDRESS } from '@/constant';
+import {
+  DOCS_LINK,
+  SUPPORT_EMAIL_ADDRESS,
+  TOKEN_WEBSITE_LINK,
+} from '@/constant';
 import { PLATFORMS } from '@/constant/platforms';
 
 const Footer = () => {
@@ -21,18 +25,33 @@ const Footer = () => {
           <ul className="flex items-center gap-1.5 px-1 md:px-2 xl:absolute xl:top-1/2 xl:left-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
             {[
               {
+                label: 'Datahub documentation',
+                href: DOCS_LINK,
+                external: true,
+                'aria-label': 'go to the Datahub documentation',
+              },
+              {
+                label: 'Token',
+                href: TOKEN_WEBSITE_LINK,
+                external: true,
+                'aria-label': 'go to the token website',
+              },
+              {
                 label: 'Privacy Policy',
                 href: '/privacy',
+                external: false,
                 'aria-label': 'go to the privacy policy page',
               },
               {
                 label: 'Terms of Service',
                 href: '/terms',
+                external: false,
                 'aria-label': 'go to the terms of service page',
               },
               {
                 label: 'PublicAI Verify',
                 href: '/official-verification',
+                external: false,
                 'aria-label': 'go to the official verification page',
               },
             ].map((item, index) => (
@@ -42,7 +61,11 @@ const Footer = () => {
                 <Link
                   href={item.href}
                   className="text-g1 text-sm underline md:text-base"
-                  aria-label={item['aria-label']}>
+                  aria-label={item['aria-label']}
+                  {...(item.external && {
+                    target: '_blank',
+                    rel: 'external noreferrer',
+                  })}>
                   {item.label}
                 </Link>
               </li>

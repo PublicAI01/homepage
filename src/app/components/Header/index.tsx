@@ -62,29 +62,41 @@ const Header = () => {
             styles.nav,
           )}>
           <menu className="relative flex">
-            {NAV_LIST.map((nav, index) => (
-              <li
-                key={index}
-                className={cn(
-                  'relative z-10 list-none text-center',
-                  pathname === nav.href && styles.current,
-                )}>
-                <Link
-                  className="block py-2 text-base font-semibold text-white"
-                  href={nav.href}
-                  {...(['docs', 'token'].includes(nav.id) && {
-                    target: '_blank',
-                    rel: 'external noreferrer',
-                  })}
-                  aria-label={`to ${nav.label} page`}
-                  aria-current={pathname === nav.href ? 'page' : undefined}>
-                  {nav.label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LIST.map((nav, index) =>
+              nav.comingSoon ? (
+                <li
+                  key={index}
+                  className={cn(
+                    'relative z-10 flex list-none cursor-default items-center justify-center gap-1.5 py-2 text-center select-none',
+                    styles['coming-soon'],
+                  )}>
+                  <span className="text-base font-semibold text-white/50">
+                    {nav.label}
+                  </span>
+                  <span className="bg-primary/20 text-p1 rounded-full px-1.5 py-0.5 text-[0.625rem] font-semibold whitespace-nowrap uppercase">
+                    Coming soon
+                  </span>
+                </li>
+              ) : (
+                <li
+                  key={index}
+                  className={cn(
+                    'relative z-10 list-none text-center',
+                    pathname === nav.href && styles.current,
+                  )}>
+                  <Link
+                    className="block py-2 text-base font-semibold text-white"
+                    href={nav.href}
+                    aria-label={`to ${nav.label} page`}
+                    aria-current={pathname === nav.href ? 'page' : undefined}>
+                    {nav.label}
+                  </Link>
+                </li>
+              ),
+            )}
             <div
               className={cn(
-                'absolute bottom-0 left-0 h-full w-1/6 rounded-sm',
+                'absolute bottom-0 left-0 h-full w-1/3 rounded-sm',
                 styles.slider,
               )}
               aria-hidden></div>

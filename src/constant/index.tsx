@@ -15,20 +15,16 @@ const TELEGRAM_MINI_APP_LINK = 'https://t.me/publicai_bot';
 const SUPPORT_EMAIL_ADDRESS = 'support@publicai.io';
 const BUSINESS_LINK = 'https://publicai.typeform.com/to/Lr98Gtdi';
 const TOKEN_WEBSITE_LINK = 'https://token.publicai.io?utm_source=homepage';
+// TODO: replace with the final Trajector URL and drop `comingSoon` once live.
+const TRAJECTOR_LINK = '#';
 const NAV_LIST = [
-  { id: 'datahub', href: '/datahub', label: 'Data Hub' },
-  { id: 'datahunter', href: '/datahunter', label: 'Data Hunter' },
-  { id: 'blog', href: '/blog', label: 'Blog' },
-  { id: 'docs', href: DOCS_LINK, label: 'Documentation' },
+  { id: 'trajector', href: TRAJECTOR_LINK, label: 'Trajector', comingSoon: true },
+  { id: 'blog', href: '/blog', label: 'Blog', comingSoon: false },
   {
     id: 'business',
     href: '/client',
     label: 'Business',
-  },
-  {
-    id: 'token',
-    href: TOKEN_WEBSITE_LINK,
-    label: 'Token',
+    comingSoon: false,
   },
 ] as const;
 
@@ -46,5 +42,7 @@ export {
   SUPPORT_EMAIL_ADDRESS,
   TELEGRAM_LINK,
   TELEGRAM_MINI_APP_LINK,
+  TOKEN_WEBSITE_LINK,
+  TRAJECTOR_LINK,
   TWITTER_LINK,
 };
