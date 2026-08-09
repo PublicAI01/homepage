@@ -1,11 +1,7 @@
 import Link from 'next/link';
 
 import Mail from '@/assets/svg/mail.svg?react';
-import {
-  DOCS_LINK,
-  SUPPORT_EMAIL_ADDRESS,
-  TOKEN_WEBSITE_LINK,
-} from '@/constant';
+import { SUPPORT_EMAIL_ADDRESS, TOKEN_WEBSITE_LINK } from '@/constant';
 import { PLATFORMS } from '@/constant/platforms';
 
 const Footer = () => {
@@ -24,12 +20,6 @@ const Footer = () => {
           </a>
           <ul className="flex items-center gap-1.5 px-1 md:px-2 xl:absolute xl:top-1/2 xl:left-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
             {[
-              {
-                label: 'Datahub documentation',
-                href: DOCS_LINK,
-                external: true,
-                'aria-label': 'go to the Datahub documentation',
-              },
               {
                 label: 'Token',
                 href: TOKEN_WEBSITE_LINK,
