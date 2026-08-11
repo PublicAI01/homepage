@@ -87,6 +87,10 @@ const Header = () => {
                   <Link
                     className="block py-2 text-base font-semibold text-white"
                     href={nav.href}
+                    {...(nav.href.startsWith('http') && {
+                      target: '_blank',
+                      rel: 'external noreferrer',
+                    })}
                     aria-label={`to ${nav.label} page`}
                     aria-current={pathname === nav.href ? 'page' : undefined}>
                     {nav.label}
