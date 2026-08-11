@@ -42,6 +42,10 @@ const SideNav = () => {
                 <Link
                   className="block size-full py-4 text-base font-semibold text-white md:text-xl"
                   href={nav.href}
+                  {...(nav.href.startsWith('http') && {
+                    target: '_blank',
+                    rel: 'external noreferrer',
+                  })}
                   aria-label={`to ${nav.label} section content`}
                   onClick={closeSideNavFn}>
                   {nav.label}
