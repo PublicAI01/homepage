@@ -5,6 +5,8 @@ import styles from '@/app/sections/Index/Index.module.css';
 import decorativeCone from '@/assets/image/decorative-cone.svg';
 import indexBall from '@/assets/image/earth.svg';
 import Anchor from '@/components/Anchor';
+import Button from '@/components/Button';
+import { TRAJECTOR_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 const Index = () => {
@@ -54,17 +56,13 @@ const Index = () => {
           Get paid for contributing your expertise and experience to power
           exceptional AI.
         </h2>
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 md:mt-12">
-          <button
-            type="button"
-            disabled
-            aria-disabled="true"
-            className="relative w-60 cursor-not-allowed rounded-sm bg-[#4808FE]/40 py-2 text-center text-base font-medium text-white/60 shadow-[0.125rem_0.125rem_0_0] shadow-white/30 select-none md:text-xl">
+        <div className="mt-10 flex flex-col items-center justify-center md:mt-12">
+          <Button
+            theme="primary"
+            href={TRAJECTOR_LINK}
+            aria-label="to trajector website">
             Earn on Trajector
-          </button>
-          <span className="bg-primary/20 text-p1 rounded-full px-2 py-0.5 text-[0.625rem] font-semibold whitespace-nowrap uppercase">
-            Coming soon
-          </span>
+          </Button>
         </div>
       </div>
     </section>
