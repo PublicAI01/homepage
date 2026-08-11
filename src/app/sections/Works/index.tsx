@@ -12,6 +12,7 @@ import ModelEvaluation from '@/assets/svg/model-evaluation.svg?react';
 import Button from '@/components/Button';
 import { Card2 } from '@/components/Card';
 import SectionWrapper from '@/components/SectionWrapper';
+import { TRAJECTOR_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 const Works = () => {
@@ -58,7 +59,11 @@ const Works = () => {
           className="flex-1"
           image={workers}
           content="Community earns rewards by working on interesting tasks"
-          comingSoon="Earn on Trajector"
+          link={{
+            children: 'Earn on Trajector',
+            href: TRAJECTOR_LINK,
+            'aria-label': 'to trajector website',
+          }}
         />
       </section>
 
