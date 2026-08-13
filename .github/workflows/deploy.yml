@@ -7,20 +7,32 @@ on:
     branches:
       - main
 
+# Serialize deployments; queue rather than cancel a run already in progress.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  # GHCR image names must be lowercase.
+  IMAGE_REPO: ghcr.io/publicai01/homepage
+  CONTAINER_NAME: homepage-container
+  # Image tags to retain. Must be >= 2 so a rollback target stays available.
+  KEEP_IMAGES: 3
+
 jobs:
   ci_check:
-    name: Code Check, Test & Build
+    name: Lint & Typecheck
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6.0.10
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7.0.0
         with:
           node-version: '20'
           cache: 'pnpm'
@@ -31,49 +43,138 @@ jobs:
       - name: Run ESLint
         run: pnpm lint
 
-      - name: Build project
-        run: pnpm build
+      # Type checking only; the production build runs in build_push.
+      - name: Typecheck
+        run: pnpm exec tsc --noEmit
 
-  deploy:
+  build_push:
+    name: Build & Push Image
+    needs: ci_check # Do not build if lint or types fail.
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4.2.0
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v4.6.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v7.3.0
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64
+          tags: |
+            ${{ env.IMAGE_REPO }}:${{ github.sha }}
+            ${{ env.IMAGE_REPO }}:latest
+          # Build cache is kept in GitHub Actions Cache (10 GB, LRU-evicted).
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: false
+
+  deploy:
+    name: Deploy
+    needs: build_push # Do not deploy if the image was not pushed.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+
+    steps:
       - name: Deploy on server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.2.5
+        env:
+          IMAGE: ${{ env.IMAGE_REPO }}:${{ github.sha }}
+          IMAGE_REPO: ${{ env.IMAGE_REPO }}
+          CONTAINER_NAME: ${{ env.CONTAINER_NAME }}
+          KEEP_IMAGES: ${{ env.KEEP_IMAGES }}
+          GHCR_USER: ${{ github.actor }}
+          # Short-lived token; expires when this job finishes.
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
+          script_stop: true # Abort the remote script on the first failure.
+          envs: IMAGE,IMAGE_REPO,CONTAINER_NAME,KEEP_IMAGES,GHCR_USER,GHCR_TOKEN
           script: |
-            export PATH="$HOME/.local/share/pnpm:$PATH"
+            set -euo pipefail
 
-            cd homepage
+            echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
+            trap 'docker logout ghcr.io >/dev/null 2>&1 || true' EXIT
 
-            git pull origin main
-            git checkout ${{ github.sha }}
+            probe() { curl -fsS -o /dev/null --max-time 3 http://127.0.0.1:3000/; }
 
-            echo "Installing dependencies with pnpm..."
-            pnpm install --frozen-lockfile
+            health_check() {
+              for i in $(seq 1 30); do
+                if probe; then echo "Health check passed (attempt $i)"; return 0; fi
+                sleep 2
+              done
+              return 1
+            }
 
-            IMAGE_NAME=homepage:${{ github.sha }}
-            CONTAINER_NAME=homepage-container
+            start_container() {
+              docker rm -f "$CONTAINER_NAME" >/dev/null 2>&1 || true
+              docker run -d \
+                --name "$CONTAINER_NAME" \
+                --restart always \
+                -p 3000:3000 \
+                --log-driver json-file \
+                --log-opt max-size=10m --log-opt max-file=3 \
+                "$1"
+            }
 
-            echo "Building Docker image on server..."
-            docker build -t $IMAGE_NAME .
+            # Remember the currently running image so we can roll back to it.
+            PREV_IMAGE="$(docker inspect -f '{{.Config.Image}}' "$CONTAINER_NAME" 2>/dev/null || true)"
+            echo "Previous image: ${PREV_IMAGE:-<none>}"
 
-            echo "Stopping and removing old container..."
-            if [ "$(docker ps -q -f name=$CONTAINER_NAME)" ]; then
-                docker stop $CONTAINER_NAME
-                docker rm $CONTAINER_NAME
-            fi
+            echo "Pulling $IMAGE ..."
+            docker pull "$IMAGE"
 
             echo "Starting new container..."
-            docker run -d -p 3000:3000 --name $CONTAINER_NAME --restart always $IMAGE_NAME
+            start_container "$IMAGE"
 
-            echo "Pruning old images..."
+            if ! health_check; then
+              echo "::error::Health check failed for $IMAGE"
+              docker logs --tail 200 "$CONTAINER_NAME" 2>&1 || true
+
+              if [ -n "$PREV_IMAGE" ] && docker image inspect "$PREV_IMAGE" >/dev/null 2>&1; then
+                echo "Rolling back to $PREV_IMAGE ..."
+                start_container "$PREV_IMAGE"
+                if health_check; then
+                  echo "Rollback OK - site is serving the previous version, but this deploy failed."
+                else
+                  echo "::error::Rollback is also unhealthy - manual intervention required."
+                fi
+              else
+                echo "::error::No previous image available to roll back to."
+                docker rm -f "$CONTAINER_NAME" >/dev/null 2>&1 || true
+              fi
+              exit 1
+            fi
+
+            # Retain only the newest $KEEP_IMAGES tags. `docker images` lists
+            # newest-first, so everything past the cut-off is safe to drop.
+            # Tagged images are not dangling, so `image prune` cannot remove
+            # them on its own.
+            echo "Cleaning up old images (keeping newest $KEEP_IMAGES)..."
+            docker images "$IMAGE_REPO" --format '{{.Repository}}:{{.Tag}}' \
+              | grep -v ':latest$' \
+              | tail -n +$((KEEP_IMAGES + 1)) \
+              | xargs -r -n1 docker rmi -f >/dev/null 2>&1 || true
+
+            docker container prune -f
             docker image prune -f
 
-            echo "Deployment successful!"
+            echo "Deployment successful: $IMAGE"
