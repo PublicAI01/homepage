@@ -26,11 +26,6 @@ const Works = () => {
           className="flex-1"
           image={requesters}
           content="Clients make requests for specialized, on-demand data"
-          link={{
-            children: 'Request Data',
-            href: '/business.pdf',
-            'aria-label': 'to business pdf',
-          }}
         />
         <div className="flex h-6 w-20 max-md:mt-14 max-md:mb-14 max-md:ml-2.5 max-md:rotate-90 md:h-10 md:w-28 md:-translate-y-[150%]">
           <Image
