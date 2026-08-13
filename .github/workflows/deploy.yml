@@ -44,8 +44,12 @@ jobs:
         run: pnpm lint
 
       # Type checking only; the production build runs in build_push.
+      # `next typegen` emits next-env.d.ts and .next/types, which are
+      # gitignored and needed to resolve image and route module types.
       - name: Typecheck
-        run: pnpm exec tsc --noEmit
+        run: |
+          pnpm exec next typegen
+          pnpm exec tsc --noEmit
 
   build_push:
     name: Build & Push Image
