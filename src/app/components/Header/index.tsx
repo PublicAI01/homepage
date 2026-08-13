@@ -100,7 +100,7 @@ const Header = () => {
             )}
             <div
               className={cn(
-                'absolute bottom-0 left-0 h-full w-1/3 rounded-sm',
+                'absolute bottom-0 left-0 h-full w-1/4 rounded-sm',
                 styles.slider,
               )}
               aria-hidden></div>
