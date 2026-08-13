@@ -110,15 +110,16 @@ jobs:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
-          script_stop: true # Abort the remote script on the first failure.
           envs: IMAGE,IMAGE_REPO,CONTAINER_NAME,KEEP_IMAGES,GHCR_USER,GHCR_TOKEN
           script: |
+            # Required: without set -e a failed command would not fail the job.
             set -euo pipefail
 
             echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
             trap 'docker logout ghcr.io >/dev/null 2>&1 || true' EXIT
 
-            probe() { curl -fsS -o /dev/null --max-time 3 http://127.0.0.1:3000/; }
+            # No -S: early attempts fail while the container boots.
+            probe() { curl -fs -o /dev/null --max-time 3 http://127.0.0.1:3000/; }
 
             health_check() {
               for i in $(seq 1 30); do
