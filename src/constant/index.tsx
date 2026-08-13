@@ -16,11 +16,19 @@ const SUPPORT_EMAIL_ADDRESS = 'support@publicai.io';
 const BUSINESS_LINK = 'https://publicai.typeform.com/to/Lr98Gtdi';
 const TOKEN_WEBSITE_LINK = 'https://token.publicai.io?utm_source=homepage';
 const TRAJECTOR_LINK = 'https://trajector.publicai.io/';
+const DOCUMENT_LINK =
+  'https://docs.publicai.io/publicai-documentation/publicai-trajector-cli';
 const NAV_LIST = [
   {
     id: 'trajector',
     href: TRAJECTOR_LINK,
     label: 'Trajector',
+    comingSoon: false,
+  },
+  {
+    id: 'document',
+    href: DOCUMENT_LINK,
+    label: 'Document',
     comingSoon: false,
   },
   { id: 'blog', href: '/blog', label: 'Blog', comingSoon: false },
