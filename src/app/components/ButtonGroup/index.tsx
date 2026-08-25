@@ -3,7 +3,6 @@
 import { sendGAEvent } from '@next/third-parties/google';
 
 import Button from '@/components/Button';
-import { BUSINESS_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 interface ButtonGroupProps extends React.ComponentProps<'div'> {}
@@ -19,7 +18,7 @@ const ButtonGroup = (props: ButtonGroupProps) => {
       {...rest}>
       <Button
         className="w-auto px-3 shadow-none"
-        href={BUSINESS_LINK}
+        href="/business"
         aria-label="fill in the business cooperation form"
         onClick={() => {
           sendGAEvent('event', 'buttonClicked', {

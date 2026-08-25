@@ -44,23 +44,17 @@ const VerifyForm = (props: VerifyFormProps) => {
   const [state, formAction] = useActionState<VerifyActionState | undefined>(
     async () => {
       if (!query) return;
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/common/verify`,
-        {
-          method: 'POST',
-          body: JSON.stringify({ type, name: query }),
-        },
-      );
+      const response = await fetch('/api/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, name: query }),
+      });
       if (response.ok) {
-        const result = (await response.json()) as {
-          code?: number;
-          data?: { result: boolean };
-          msg?: string;
-        };
+        const result = (await response.json()) as { result?: boolean };
         setVisible(true);
         return {
           query,
-          result: result.data?.result ?? false,
+          result: result.result ?? false,
         };
       }
     },

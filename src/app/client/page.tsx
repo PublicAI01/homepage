@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 
 import Button from '@/components/Button';
-import { BUSINESS_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 export const metadata: Metadata = {
@@ -12,10 +11,15 @@ export const metadata: Metadata = {
     'agent trajectory data, coding agents, AI training data, Claude Code sessions, trajectory dataset, model training, model evaluation, PublicAI, Trajector',
 };
 
-const PANEL = 'rounded-xl border border-[#2C2C31] bg-white/[0.045] backdrop-blur-sm';
+const PANEL =
+  'rounded-xl border border-[#2C2C31] bg-white/[0.045] backdrop-blur-sm';
 
 const specimen = [
-  { t: '00:00', k: 'user', body: <>fix the flaky retry logic in the sync worker</> },
+  {
+    t: '00:00',
+    k: 'user',
+    body: <>fix the flaky retry logic in the sync worker</>,
+  },
   { t: '00:04', k: 'tool_use', body: <>read src/sync/worker.ts</> },
   {
     t: '00:19',
@@ -179,8 +183,9 @@ export default function Client() {
             it.
           </p>
           <Button
+            className="px-2"
             theme="primary"
-            href={BUSINESS_LINK}
+            href="/business"
             aria-label="book a demo">
             Book a Demo
           </Button>
@@ -335,7 +340,7 @@ export default function Client() {
         <p className="mb-6 text-[#D9D7E0]">Start with a scoped pilot batch.</p>
         <Button
           theme="primary"
-          href={BUSINESS_LINK}
+          href="/business"
           aria-label="book a demo">
           Book a Demo
         </Button>

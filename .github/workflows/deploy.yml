@@ -43,6 +43,9 @@ jobs:
       - name: Run ESLint
         run: pnpm lint
 
+      - name: Run unit tests
+        run: pnpm test
+
       # Type checking only; the production build runs in build_push.
       # `next typegen` emits next-env.d.ts and .next/types, which are
       # gitignored and needed to resolve image and route module types.
@@ -106,11 +109,18 @@ jobs:
           GHCR_USER: ${{ github.actor }}
           # Short-lived token; expires when this job finishes.
           GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Runtime-only configuration; never baked into the image.
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
+          CONTACT_EMAIL_TO: ${{ secrets.CONTACT_EMAIL_TO }}
+          OFFICIAL_ACCOUNTS_JSON: ${{ secrets.OFFICIAL_ACCOUNTS_JSON }}
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
-          envs: IMAGE,IMAGE_REPO,CONTAINER_NAME,KEEP_IMAGES,GHCR_USER,GHCR_TOKEN
+          envs: IMAGE,IMAGE_REPO,CONTAINER_NAME,KEEP_IMAGES,GHCR_USER,GHCR_TOKEN,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_REGION,RECAPTCHA_SECRET_KEY,CONTACT_EMAIL_TO,OFFICIAL_ACCOUNTS_JSON
           script: |
             # Required: without set -e a failed command would not fail the job.
             set -euo pipefail
@@ -131,10 +141,15 @@ jobs:
 
             start_container() {
               docker rm -f "$CONTAINER_NAME" >/dev/null 2>&1 || true
+              # Value-less -e flags inherit from the SSH session env, so
+              # secret values never appear in the command line or ps. The
+              # rollback path reuses this function and inherits the same env.
               docker run -d \
                 --name "$CONTAINER_NAME" \
                 --restart always \
                 -p 3000:3000 \
+                -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION \
+                -e RECAPTCHA_SECRET_KEY -e CONTACT_EMAIL_TO -e OFFICIAL_ACCOUNTS_JSON \
                 --log-driver json-file \
                 --log-opt max-size=10m --log-opt max-file=3 \
                 "$1"

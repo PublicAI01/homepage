@@ -3,7 +3,6 @@
 import { sendGAEvent } from '@next/third-parties/google';
 
 import Button from '@/components/Button';
-import { BUSINESS_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 function ButtonGroup() {
@@ -15,8 +14,7 @@ function ButtonGroup() {
           'px-3 py-2 xl:px-3.5 xl:py-2.5 2xl:px-4 2xl:py-3',
         )}
         theme="primary"
-        href={BUSINESS_LINK}
-        target="_blank"
+        href="/business"
         aria-label="fill in the business cooperation form"
         onClick={() => {
           sendGAEvent('event', 'buttonClicked', {

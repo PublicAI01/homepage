@@ -9,6 +9,8 @@ interface ButtonProps extends React.ComponentProps<typeof Link> {
 
 const Button = (props: ButtonProps) => {
   const { className, style, theme = 'outlined', children, ...rest } = props;
+  const isExternal =
+    typeof rest.href === 'string' && /^https?:/.test(rest.href);
 
   return (
     <Link
@@ -27,8 +29,8 @@ const Button = (props: ButtonProps) => {
         ...style,
       }}
       role="button"
-      target="_blank"
-      rel="external noreferrer"
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'external noreferrer' : undefined}
       {...rest}>
       {children}
     </Link>
