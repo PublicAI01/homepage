@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "exec eslint .",
+    "test": "vitest run",
     "prettier": "exec prettier . --write"
   },
   "dependencies": {
+    "@aws-sdk/client-sesv2": "^3.1116.0",
     "@headlessui/react": "^2.2.9",
     "@next/third-parties": "16.0.10",
     "clsx": "^2.1.1",
@@ -33,6 +35,7 @@
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/typography": "^0.5.19",
+    "@types/grecaptcha": "^3.0.9",
     "@types/mdx": "^2.0.13",
     "@types/node": "^25",
     "@types/react": "19.2.7",
@@ -48,7 +51,8 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "remark-gfm": "^4.0.1",
     "tailwindcss": "^4.1.18",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.11"
   },
   "packageManager": "pnpm@10.25.0",
   "pnpm": {
