@@ -41,7 +41,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="supports-scrollbars:scrollbar:hidden scroll-pt-header-height scroll-smooth md:scroll-pt-20">
+      className="supports-scrollbars:scrollbar:hidden scroll-pt-header-height scroll-smooth md:scroll-pt-20"
+      data-scroll-behavior="smooth">
       <body
         className={cn(
           jamjuree.className,
