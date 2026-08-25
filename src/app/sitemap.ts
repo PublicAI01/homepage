@@ -7,6 +7,7 @@ export const baseUrl = 'https://publicai.io';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [
     '',
+    '/business',
     '/datahub',
     '/datahunter',
     '/blog',

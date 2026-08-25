@@ -107,3 +107,9 @@
     --spacing-header-height: 3.75rem;
   }
 }
+
+/* The reCAPTCHA badge is replaced by the required attribution text
+   rendered next to the form's submit button. */
+.grecaptcha-badge {
+  visibility: hidden;
+}

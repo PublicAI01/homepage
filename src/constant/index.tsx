@@ -13,7 +13,6 @@ const GITHUB_LINK = 'https://github.com/PublicAI01';
 const DUNE_LINK = 'https://dune.com/publicaiweb3/publicai-dashboard';
 const TELEGRAM_MINI_APP_LINK = 'https://t.me/publicai_bot';
 const SUPPORT_EMAIL_ADDRESS = 'support@publicai.io';
-const BUSINESS_LINK = 'https://publicai.typeform.com/to/Lr98Gtdi';
 const TOKEN_WEBSITE_LINK = 'https://token.publicai.io?utm_source=homepage';
 const TRAJECTOR_LINK = 'https://trajector.publicai.io/';
 const DOCUMENT_LINK =
@@ -41,7 +40,6 @@ const NAV_LIST = [
 ] as const;
 
 export {
-  BUSINESS_LINK,
   CHROME_EXTENSION_LINK,
   DISCORD_LINK,
   DOCS_LINK,
