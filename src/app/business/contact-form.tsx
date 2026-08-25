@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { useState } from 'react';
 
 import Select from '@/app/business/select';
-import { SUPPORT_EMAIL_ADDRESS } from '@/constant';
+import { OFFICE_EMAIL_ADDRESS } from '@/constant';
 import { COMPANY_TYPES, RECAPTCHA_CONTACT_ACTION } from '@/constant/contact';
 import { COUNTRIES } from '@/constant/countries';
 import { cn } from '@/utils';
@@ -67,8 +67,8 @@ const ErrorBanner = ({ error }: { error: SubmitError }) => (
         email{' '}
         <a
           className="text-p1 underline"
-          href={`mailto:${SUPPORT_EMAIL_ADDRESS}`}>
-          {SUPPORT_EMAIL_ADDRESS}
+          href={`mailto:${OFFICE_EMAIL_ADDRESS}`}>
+          {OFFICE_EMAIL_ADDRESS}
         </a>
         .
       </>

@@ -13,6 +13,7 @@ const GITHUB_LINK = 'https://github.com/PublicAI01';
 const DUNE_LINK = 'https://dune.com/publicaiweb3/publicai-dashboard';
 const TELEGRAM_MINI_APP_LINK = 'https://t.me/publicai_bot';
 const SUPPORT_EMAIL_ADDRESS = 'support@publicai.io';
+const OFFICE_EMAIL_ADDRESS = 'Office@publicai.io';
 const TOKEN_WEBSITE_LINK = 'https://token.publicai.io?utm_source=homepage';
 const TRAJECTOR_LINK = 'https://trajector.publicai.io/';
 const DOCUMENT_LINK =
@@ -47,6 +48,7 @@ export {
   GITHUB_LINK,
   MEDIUM_LINK,
   NAV_LIST,
+  OFFICE_EMAIL_ADDRESS,
   PUBLIC_AI_DATA_HUB_DASHBOARD_LINK,
   PUBLIC_AI_DATA_HUB_LINK,
   SUPPORT_EMAIL_ADDRESS,
