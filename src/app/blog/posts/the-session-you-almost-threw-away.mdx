@@ -1,0 +1,54 @@
+export const metadata = {
+  title: 'The session you almost threw away is the artifact',
+  publishedAt: '2026-09-01',
+  summary:
+    'Failures, retries, and fixes are the useful part of a Claude Code session. You already have them. Trajector pays for the real path from code you own or that is open source.',
+  image: '/images/V5mRT.jpg',
+  keywords: [
+    'Trajector',
+    'PublicAI',
+    'Claude Code',
+    'claude-fable-5',
+    'claude-opus-5',
+    'coding trajectories',
+    'AI training data',
+  ],
+};
+
+The session you almost threw away is the artifact.
+
+Failures, retries, and fixes are the useful part. You already have them.
+
+Open your last useful Claude Code transcript. Not the one you would paste into a launch thread. The one from Thursday night. Maybe it was Fable 5. Maybe it was Opus 5. The model name is not what makes it useful.
+
+It will not look like a benchmark. You asked for a migration. The agent listed the wrong files. You narrowed the scope. It wrote a test that failed for a stupid reason. You said so. It reverted. It tried a second approach. The type checker still yelled. You pasted one error. Then it landed.
+
+That is a real coding session. It is also the session most “coding data” pipelines throw away, because it is ugly.
+
+The industry has a cheaper substitute: the staged bounty. Someone is paid to sit down with a toy repo, write a prompt that already knows the answer shape, and produce a clean trace. The trace looks like competence. It does not look like Tuesday. It has no dead ends that were actually dead. It has no “wait, that file is generated, do not touch it.” It has no human interrupting an agent that was about to rewrite a lockfile.
+
+Claude Code people know this in their bones, whether they pin Fable 5 or Opus 5 for the hard hour. The product is not a chatbot with a folder attached. The product is an agent that can spend that hour in your tree, call tools, read test output, and change its mind. The value is in the path, not the final diff. Anyone can zip a final diff. Almost nobody can recreate the path without living it.
+
+This is why the “just dump the repo into a model” pitch keeps dying in group chats. A repo is state. A coding session is work. Work includes the mistakes. If you strip the mistakes to make the data prettier, you deleted the part that is scarce.
+
+There is a second reason Claude Code developers should care. Once you accept that the messy session is the artifact, you have to decide who gets to see it. Employer code you do not own is not yours to donate. Secrets do not belong in a training set. A side project you own, or an open source tree, is a different conversation. That distinction is not legal theater. It is how you stay employable.
+
+## Where Trajector fits
+
+Trajector pays for the path of a real coding session from code you own or that is open source. During beta that means `claude-fable-5` and `claude-opus-5` only. Other models are rejected and earn nothing. It does not pay you to invent a prettier version of the afternoon.
+
+A coding session is the path of the run: your prompts, the model’s replies including thinking, the tool calls, and what those tools returned. That is what Trajector records on an enabled project, after secrets are stripped on your laptop.
+
+Acceptance is not “you uploaded it.” Read the [accepted, held, and rejected](https://docs.publicai.io/publicai-documentation/publicai-trajector-cli/rewards) rules. Thin sessions with no real prompt, no tool call, and no file change get held. Quality gates exist. Fragments that already live inside another session get held. Forged runs, secrets that survive the laptop pass and fail the server’s second scan, and the same content uploaded from more than one account are rejected. Rejected means earn nothing.
+
+That filter is the point. If Trajector paid every “hi, write me a function” ping, the messy Thursday night session would be worth the same as noise. It is not.
+
+Collection is opt-in per project. You type yes on a repo you own or that is open source. Off projects have no capture path. Unredacted data never leaves the machine.
+
+PublicAI collects human-made training data. Trajector is the developer slice. The deal is plain. Real work from a real Fable 5 or Opus 5 session is what has value. You already produced it while shipping. If that session is owned or open source, opted in, and accepted, it can pay.
+
+Keep the ugly transcript. That is the product.
+
+Switch inside a session with `/model claude-opus-5` or `/model claude-fable-5`.
+
+[Start with Trajector](https://trajector.publicai.io/)
