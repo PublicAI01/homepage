@@ -28,7 +28,7 @@ const NAV_LIST = [
   {
     id: 'document',
     href: DOCUMENT_LINK,
-    label: 'Document',
+    label: 'Docs',
     comingSoon: false,
   },
   { id: 'blog', href: '/blog', label: 'Blog', comingSoon: false },

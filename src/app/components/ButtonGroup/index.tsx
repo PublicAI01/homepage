@@ -19,14 +19,14 @@ const ButtonGroup = (props: ButtonGroupProps) => {
       <Button
         className="w-auto px-3 shadow-none"
         href="/business"
-        aria-label="fill in the business cooperation form"
+        aria-label="request a pilot"
         onClick={() => {
           sendGAEvent('event', 'buttonClicked', {
-            button_name: 'Book a Demo',
+            button_name: 'Request a pilot',
             screen_name: 'homepage/header',
           });
         }}>
-        Book a Demo
+        Request a pilot
       </Button>
     </div>
   );

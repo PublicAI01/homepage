@@ -8,12 +8,11 @@ import Button from '@/components/Button';
 import { cn } from '@/utils';
 
 export const metadata: Metadata = {
-  title:
-    'Trajector for labs — Real coding-agent trajectories, with the corrections',
+  title: 'Trajector for labs — Real-world training signals for coding agents',
   description:
-    'Trajector licenses consented coding-agent sessions from live codebases — prompts, tool calls, diffs, human corrections, and the commits that record what survived. SFT data, preference data, and RL environments for AI labs.',
+    'Trajector licenses consented coding-agent sessions from live codebases — prompts, tool calls, diffs, human corrections, and the commits that record what survived.',
   keywords:
-    'agent trajectory data, coding agents, SFT data, preference data, RL environments, AI training data, Claude Code sessions, PublicAI, Trajector',
+    'agent trajectory data, coding agents, outcome-labeled trajectories, human correction data, AI training data, Claude Code sessions, PublicAI, Trajector',
 };
 
 const PANEL =
@@ -141,7 +140,7 @@ const compare: CompareRow[] = [
       { mark: 'no', text: 'Rare — tasks are designed to be completed' },
       {
         mark: 'yes',
-        text: 'Labeled, with the developer’s own reason where they gave one',
+        text: 'Extracted as events, quality-scored, in the developer’s own words',
       },
     ],
   },
@@ -158,7 +157,7 @@ const compare: CompareRow[] = [
     cells: [
       { mark: 'part', text: 'Present, unfiltered' },
       { mark: 'no', text: 'Filtered out' },
-      { mark: 'yes', text: 'Kept and labeled as their own product' },
+      { mark: 'yes', text: 'Kept and labeled' },
     ],
   },
   {
@@ -212,92 +211,83 @@ const CompareValue = ({ mark, text }: CompareCell) => (
   </span>
 );
 
-interface Product {
-  stage: string;
-  title: string;
-  plain: string;
-  points: string[];
-  pitch: string;
+const LABELS = [
+  'accepted',
+  'overwritten',
+  'test_passed',
+  'committed',
+  'reverted',
+  'human_correction',
+  'reasoning_retained',
+  'decision_supervised',
+];
+
+interface View {
+  name: string;
+  text: string;
   unit: string;
-  unitNote: string;
-  /** Top rule and price pill colors for this product. */
-  accent: { rule: string; pill: string };
+  /** Only the corrections view carries the worked example. */
+  example?: boolean;
 }
 
-const products: Product[] = [
+const views: View[] = [
   {
-    stage: 'For SFT and mid-training',
-    title: 'SFT data',
-    plain:
-      'The same recording, with a label on every line the agent wrote: it survived to the commit, or it was thrown away.',
-    points: [
-      'Nothing removed. Wrong attempts, failing test runs, and retries stay in, because the loop is what the model has to learn.',
-      'Survival label on every agent edit: kept, rewritten, or discarded, at line level.',
-      'Session outcome attached: test results and the linked commit where present.',
-      'Slice by label: accepted lines only, whole sessions, or the error-and-recovery loop on its own.',
-    ],
-    pitch: 'Raw data you have to grade yourself. This arrives graded.',
-    unit: 'Priced per session',
-    unitNote:
-      'Volume tiers. Filterable by language, repo visibility, agent, and model version.',
-    accent: {
-      rule: 'border-t-p1',
-      pill: 'border-p1/40 bg-p1/10 text-p1',
-    },
+    name: 'SFT-ready',
+    text: 'Frontier-model sessions with retained lines and linked commits.',
+    unit: 'per session',
   },
   {
-    stage: 'For preference training and reward models',
-    title: 'Preference data',
-    plain:
-      'The moment the agent said “done” and the developer said “no”, cut out and placed side by side.',
-    points: [
-      'Rejected attempt and accepted attempt, aligned as one pair.',
-      'The developer’s own words, plus a labeled reason. In the session above: misdiagnosed root cause, persistence vs. refill math.',
-      'Rejections from developers on their own projects, on their own deadlines. Not paid raters on staged tasks.',
-      'Teaches the model which plans a real person turns down, and when it should have asked.',
-    ],
-    pitch:
-      'Others sell ratings. We sell the moment a real person said no on a real project.',
-    unit: 'Priced per pair',
-    unitNote:
-      'Human-audited subset available at a premium, with reported label accuracy.',
-    accent: {
-      rule: 'border-t-[#E5695E]',
-      pill: 'border-[#E5695E]/40 bg-[#E5695E]/10 text-[#F08A8A]',
-    },
+    name: 'Human corrections',
+    text: 'Events where a developer rejected an agent action and a later attempt was accepted. Quality-scored, any model.',
+    unit: 'per event',
+    example: true,
   },
   {
-    stage: 'For reinforcement learning',
-    title: 'RL environments',
-    plain:
-      'The same recording, turned into a level the model can play again and again.',
-    points: [
-      'Repo reset to the commit before the agent touched it, in a container that builds.',
-      'The developer’s original prompt as the task statement.',
-      'The tests that gated the real commit as the verifier: pass scores, fail does not.',
-      'Resettable and repeatable. Each environment hand-checked for a clear task and a verifier that actually covers the change.',
-    ],
-    pitch:
-      'Other environments are invented problems. Ours are bugs that actually happened.',
-    unit: 'Priced per environment, plus per rollout',
-    unitNote:
-      'One-time license for the task set; usage fee for managed rollouts.',
-    accent: {
-      rule: 'border-t-[#6EE7A0]',
-      pill: 'border-[#6EE7A0]/40 bg-[#6EE7A0]/10 text-[#6EE7A0]',
-    },
+    name: 'Preference pairs',
+    text: 'Rejected and preferred actions from correction events, aligned.',
+    unit: 'per pair',
+  },
+  {
+    name: 'Failure recovery',
+    text: 'Sessions containing a failed test or error followed by a passing fix.',
+    unit: 'per session',
+  },
+  {
+    name: 'Verified outcomes',
+    text: 'Sessions with a passing test run and a linked commit.',
+    unit: 'per session',
   },
 ];
+
+const CorrectionExample = () => (
+  <div className="text-code rounded-lg border border-[#2C2C31] bg-[#161618] p-4 font-mono">
+    <dl className="flex flex-col gap-2.5">
+      <div>
+        <dt className={cn('text-micro mb-0.5', REJECT)}>rejected</dt>
+        <dd className="text-[#D9D7E0]">Persist counter state in Redis.</dd>
+      </div>
+      <div>
+        <dt className="text-micro mb-0.5 text-[#D9D7E0]">human</dt>
+        <dd className="text-white">
+          “No, that’s not it. Refill uses wall clock. Clamp it instead.”
+        </dd>
+      </div>
+      <div>
+        <dt className={cn('text-micro mb-0.5', ACCEPT)}>preferred</dt>
+        <dd className="text-[#D9D7E0]">
+          Clamp elapsed time to the window on first tick.
+        </dd>
+      </div>
+    </dl>
+    <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
+      reason: wrong root-cause diagnosis · outcome: tests passed, patch retained
+      · quality: 84/100
+    </p>
+  </div>
+);
 
 const PILL =
   'text-caption self-start rounded-full border px-3 py-1 font-medium whitespace-nowrap';
-
-const ladder = [
-  ['Raw sessions', 'You see the process, not what was right.'],
-  ['SFT data', 'You know what was right.'],
-  ['Preference data', 'You know why a person said no.'],
-  ['RL environments', 'The model tries it and is scored automatically.'],
-];
 
 const levers = [
   {
@@ -310,7 +300,7 @@ const levers = [
   },
   {
     title: 'Freshness',
-    text: 'Sessions on a model version from its first 30 days carry a premium: that is when labs most want to see real behavior.',
+    text: 'Sessions from a model version’s first 30 days carry a premium.',
   },
   {
     title: 'License scope',
@@ -322,7 +312,26 @@ const levers = [
   },
   {
     title: 'Verification depth',
-    text: 'Automated labels by default. Human-audited subsets and hand-verified environments as paid upgrades.',
+    text: 'Automated labels by default. Human-audited subsets as paid upgrades.',
+  },
+  {
+    title: 'Reasoning coverage',
+    text: 'Sessions with original reasoning preserved carry a premium. Generated decision rationale is an optional enrichment, labeled as such.',
+  },
+];
+
+const buying = [
+  {
+    title: 'Scope',
+    text: 'You choose the view, the distribution, the batch size, and the acceptance criteria: schema validity, scrub pass, and label accuracy on a sample you draw. Optional enrichments are selected here.',
+  },
+  {
+    title: 'Pilot',
+    text: 'We deliver one batch. You run acceptance on it and pay only for the units that pass. Rejected units are replaced or excluded from the invoice.',
+  },
+  {
+    title: 'Standing agreement',
+    text: 'Recurring deliveries at the cadence you set, under the same acceptance terms and unit price. Fresh sessions and new model versions reach standing buyers first.',
   },
 ];
 
@@ -345,7 +354,7 @@ const pipeline = [
   },
   {
     title: 'Score',
-    text: 'Every session scored for resolution; a sampled subset human-reviewed and the accuracy reported.',
+    text: 'Sessions scored for resolution; correction events scored for quality. Audited subsets available.',
   },
 ];
 
@@ -405,13 +414,12 @@ export default function ForLabs() {
             Trajectory data for AI labs
           </p>
           <h1 className="text-display mb-5 font-bold text-white">
-            Coding-agent sessions from real work, including every time the
-            developer said no.
+            Real developer work, transformed into training signals for coding
+            agents.
           </h1>
           <p className="text-lede mb-7 max-w-[48ch] text-[#D9D7E0]">
-            Complete, consented trajectories from live codebases: prompts, tool
-            calls, diffs, the human corrections, and the commits that record
-            what survived.
+            Trajector captures real-world coding-agent interactions and turns
+            them into outcome-labeled trajectories with built-in training views.
           </p>
           <div className="flex flex-wrap gap-3">
             <Button
@@ -430,53 +438,57 @@ export default function ForLabs() {
           </div>
           <p className="text-g2 text-body-sm mt-7">
             <b className="font-medium text-white">Coverage today:</b> Claude
-            Code. Codex, Cursor, Gemini CLI and OpenCode are captured through
-            the same layer and added as they pass acceptance.
+            Code.
           </p>
         </div>
 
-        <div
-          className="text-code overflow-hidden rounded-2xl border border-[#2C2C31] bg-[#161618] font-mono shadow-[0_24px_60px_rgba(8,4,20,0.5)]"
-          aria-label="Example trajectory">
-          <div className="text-micro flex flex-wrap items-center justify-between gap-2 bg-[#1E1E22] px-4 py-2.5 text-[#78758A]">
-            <span>
-              <b className="font-medium text-[#D9D7E0]">session_9c2e.jsonl</b> ·
-              claude-code · claude-sonnet-4-6
-            </span>
-            <span>repo: private · go</span>
+        <div>
+          <div
+            className="text-code overflow-hidden rounded-2xl border border-[#2C2C31] bg-[#161618] font-mono shadow-[0_24px_60px_rgba(8,4,20,0.5)]"
+            aria-label="Example trajectory">
+            <div className="text-micro flex flex-wrap items-center justify-between gap-2 bg-[#1E1E22] px-4 py-2.5 text-[#78758A]">
+              <span>
+                <b className="font-medium text-[#D9D7E0]">session_9c2e.jsonl</b>{' '}
+                · claude-code · claude-sonnet-4-6
+              </span>
+              <span>repo: private · go</span>
+            </div>
+            <ol className="py-3">
+              {transcript.map((ev, i) => {
+                const tone = ev.tone ?? 'plain';
+                return (
+                  <li
+                    key={i}
+                    className={cn(
+                      'grid grid-cols-[40px_1fr] gap-x-2.5 border-l-[3px] px-4 py-1.5 sm:grid-cols-[44px_84px_1fr]',
+                      toneRow[tone],
+                    )}>
+                    <span className="text-[#78758A] max-sm:row-span-2">
+                      {ev.t}
+                    </span>
+                    <span className={toneKey[tone]}>{ev.k}</span>
+                    <span className="text-[#D9D7E0] max-sm:col-start-2">
+                      {ev.body}
+                    </span>
+                  </li>
+                );
+              })}
+            </ol>
+            <div className="text-micro flex flex-wrap gap-x-4 gap-y-1 border-t border-white/8 px-4 py-3 text-[#78758A]">
+              <span>
+                <b className={cn('font-medium', REJECT)}>1 correction event</b>,
+                extracted
+              </span>
+              <span>
+                <b className={cn('font-medium', ACCEPT)}>5 of 16</b> agent lines
+                retained
+              </span>
+              <span>commit linked · tests passed</span>
+            </div>
           </div>
-          <ol className="py-3">
-            {transcript.map((ev, i) => {
-              const tone = ev.tone ?? 'plain';
-              return (
-                <li
-                  key={i}
-                  className={cn(
-                    'grid grid-cols-[40px_1fr] gap-x-2.5 border-l-[3px] px-4 py-1.5 sm:grid-cols-[44px_84px_1fr]',
-                    toneRow[tone],
-                  )}>
-                  <span className="text-[#78758A] max-sm:row-span-2">
-                    {ev.t}
-                  </span>
-                  <span className={toneKey[tone]}>{ev.k}</span>
-                  <span className="text-[#D9D7E0] max-sm:col-start-2">
-                    {ev.body}
-                  </span>
-                </li>
-              );
-            })}
-          </ol>
-          <div className="text-micro flex flex-wrap gap-x-4 gap-y-1 border-t border-white/8 px-4 py-3 text-[#78758A]">
-            <span>
-              <b className={cn('font-medium', REJECT)}>1 correction turn</b>,
-              labeled
-            </span>
-            <span>
-              <b className={cn('font-medium', ACCEPT)}>5 of 16</b> agent lines
-              survived to commit
-            </span>
-            <span>commit linked</span>
-          </div>
+          <p className="text-g2 text-caption mt-3">
+            One real interaction. Multiple training signals.
+          </p>
         </div>
       </header>
 
@@ -484,10 +496,7 @@ export default function ForLabs() {
       <section
         className={SECTION}
         id="why">
-        <SectionHeading
-          title="What you can’t get from a public dataset or a vendor’s task farm"
-          lede="Free research corpora prove the demand. Staged-task vendors prove the budget. Neither can hand you the moment a developer rejects the agent’s plan inside a codebase that matters to them."
-        />
+        <SectionHeading title="How Trajector data compares" />
         {/* Desktop: one table. Mobile: one card per dimension, no sideways scroll. */}
         <div className={cn(PANEL, 'overflow-hidden max-md:hidden')}>
           <table className="text-body-sm w-full border-collapse text-left">
@@ -588,125 +597,81 @@ export default function ForLabs() {
         id="products">
         <SectionHeading
           title="What we license"
-          lede="Three products, each built on the one below it. Buy the layer your pipeline needs."
+          lede="One dataset. Cut the way your pipeline needs."
         />
 
-        <div
-          className={cn(
-            PANEL,
-            'flex flex-col gap-4 border-l-4 border-l-white/40 px-5 py-5 md:flex-row md:items-center md:gap-8',
-          )}>
-          <div className="shrink-0 md:w-48">
-            <span className="text-micro text-g2 mb-1 block tracking-[0.14em] uppercase">
-              Base layer
-            </span>
-            <b className="text-subheading block font-semibold text-white">
-              Raw sessions
-            </b>
-          </div>
-          <p className="text-body-sm flex-1 text-[#D9D7E0]">
-            The complete record of a developer working with a coding agent:
-            every prompt, file read, edit, command, and output, in order.
-            Consented, scrubbed, and deduplicated JSONL. Every product below is
-            cut from this.
+        <p className="text-body-sm text-[#D9D7E0]">
+          <b className="font-semibold text-white">Source:</b> permissioned
+          real-world coding-agent trajectories — conversations, tool calls, code
+          edits, commands, and execution results, scrubbed on the contributor’s
+          machine.
+        </p>
+
+        <article className={cn(PANEL, 'border-t-p1 mt-6 border-t-4 p-6')}>
+          <h3 className="text-subheading mb-2 font-semibold text-white">
+            Outcome-Labeled Trajectories
+          </h3>
+          <p className="text-body mb-4 text-[#D9D7E0]">
+            The complete work record, where every step knows what happened to
+            it.
           </p>
-          <span
-            className={cn(
-              PILL,
-              'shrink-0 border-white/15 bg-white/5 text-white md:self-center',
-            )}>
-            Priced per token
-          </span>
-        </div>
+          <p className="text-g2 text-body-sm max-w-[80ch]">
+            Real coding-agent trajectories with acceptance, test, commit,
+            retention, and human-correction labels on every turn. Nothing is
+            cut: failed attempts, reverts, corrections, and abandoned sessions
+            stay in, labeled. Original reasoning is preserved where the client
+            kept it; generated decision rationale is available as an option,
+            labeled separately.
+          </p>
 
-        <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-3">
-          {products.map((product) => (
-            <article
-              key={product.title}
-              className={cn(
-                PANEL,
-                'flex flex-col border-t-4 p-6 lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:gap-y-4',
-                product.accent.rule,
-              )}>
-              <div>
-                <span className="text-micro text-g2 mb-1 block tracking-[0.14em] uppercase">
-                  {product.stage}
-                </span>
-                <h3 className="text-subheading mb-2 font-semibold text-white">
-                  {product.title}
-                </h3>
-                <p className="text-body text-[#D9D7E0]">{product.plain}</p>
-              </div>
-              <ul className="mt-5 list-none lg:mt-0">
-                {product.points.map((point) => (
-                  <li
-                    key={point}
-                    className="text-g2 text-body-sm border-t border-white/6 py-2 first:border-t-0">
-                    {point}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-p1 text-body-sm mt-4 font-medium lg:mt-0">
-                {product.pitch}
-              </p>
-              <div className="mt-5 flex flex-col gap-2.5 border-t border-white/8 pt-5 lg:mt-0">
-                <span className={cn(PILL, product.accent.pill)}>
-                  {product.unit}
-                </span>
-                <p className="text-g2 text-caption">{product.unitNote}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <ol className="mt-8 grid grid-cols-1 md:grid-cols-4">
-          {ladder.map(([name, text], i) => {
-            const last = i === ladder.length - 1;
-            return (
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {LABELS.map((label) => (
               <li
-                key={name}
-                className="flex gap-4 pb-8 last:pb-0 md:flex-col md:gap-3 md:pr-6 md:pb-0">
-                <div className="flex flex-col items-center md:w-full md:flex-row">
-                  <span className="border-primary bg-b1 text-p1 text-caption flex size-7 shrink-0 items-center justify-center rounded-full border font-semibold">
-                    {i + 1}
-                  </span>
+                key={label}
+                className="text-caption rounded-md border border-white/10 bg-white/5 px-2 py-1 font-mono text-[#D9D7E0]">
+                {label}
+              </li>
+            ))}
+          </ul>
+
+          <h4 className="text-micro text-g2 mt-8 mb-1 tracking-[0.14em] uppercase">
+            Training views
+          </h4>
+          <dl>
+            {views.map((view) => (
+              <div
+                key={view.name}
+                className="border-t border-white/8 py-4">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <dt className="text-body font-semibold text-white">
+                    {view.name}
+                  </dt>
                   <span
                     className={cn(
-                      'from-primary w-px flex-1 bg-linear-to-b md:h-px md:w-auto md:bg-linear-to-r',
-                      last ? 'to-transparent max-md:hidden' : 'to-white/10',
-                    )}
-                    aria-hidden
-                  />
+                      PILL,
+                      'border-p1/40 bg-p1/10 text-p1 font-mono',
+                    )}>
+                    {view.unit}
+                  </span>
                 </div>
-                <div>
-                  <div
-                    className="mb-3 flex items-end gap-1"
-                    aria-hidden>
-                    {ladder.map((_, level) => (
-                      <span
-                        key={level}
-                        className={cn(
-                          'w-1.5 rounded-sm',
-                          level <= i ? 'bg-p1' : 'bg-white/10',
-                        )}
-                        style={{ height: `${6 + level * 4}px` }}
-                      />
-                    ))}
-                  </div>
-                  <b className="text-body mb-1 block font-semibold text-white">
-                    {name}
-                  </b>
-                  <p className="text-g2 text-body-sm">{text}</p>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
-        <p className="text-g2 text-body-sm mt-6">
-          Each layer is one step closer to going straight into your training
-          pipeline, and priced one step higher. Every product can be scoped by
-          distribution: private repos only, a language or stack, sessions with
-          at least one correction, or sessions on a named model version.
+                <dd className="text-g2 text-body-sm mt-1 max-w-[80ch]">
+                  {view.text}
+                </dd>
+                {view.example ? (
+                  <dd className="mt-3">
+                    <CorrectionExample />
+                  </dd>
+                ) : null}
+              </div>
+            ))}
+          </dl>
+        </article>
+
+        <p className="text-body-sm mt-6 text-[#D9D7E0]">
+          <b className="font-semibold text-white">
+            Views are filters on the same dataset.
+          </b>{' '}
+          Full-dataset access includes all of them.
         </p>
       </section>
 
@@ -716,7 +681,7 @@ export default function ForLabs() {
         id="pricing">
         <SectionHeading
           title="What moves the price"
-          lede="Volume is the smallest lever. These are the ones that matter."
+          lede="Unit prices are quoted against the scope of each batch."
         />
         <div className="grid grid-cols-1 gap-x-12 md:grid-cols-2">
           {levers.map(({ title, text }) => (
@@ -730,17 +695,31 @@ export default function ForLabs() {
             </div>
           ))}
         </div>
-        <div className={cn(PANEL, 'text-body-sm mt-8 px-5 py-4')}>
-          <b className="font-semibold text-white">
-            No list prices, on purpose.
-          </b>{' '}
-          <span className="text-[#D9D7E0]">
-            Pilot batches are quoted against the scope above. A pilot is
-            typically a few thousand SFT sessions or a few hundred preference
-            pairs in a distribution you choose, delivered in two weeks, with the
-            option to extend to a standing subscription.
-          </span>
-        </div>
+      </section>
+
+      {/* ===================== HOW BUYING WORKS ===================== */}
+      <section
+        className={SECTION}
+        id="buying">
+        <SectionHeading
+          title="How buying works"
+          lede="Deliveries are billed per accepted unit."
+        />
+        <ol className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {buying.map(({ title, text }, i) => (
+            <li
+              key={title}
+              className={cn(PANEL, 'p-5')}>
+              <span className="border-primary bg-b1 text-p1 text-caption mb-3 flex size-7 items-center justify-center rounded-full border font-semibold">
+                {i + 1}
+              </span>
+              <b className="text-body mb-1 block font-semibold text-white">
+                {title}
+              </b>
+              <p className="text-g2 text-body-sm">{text}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       {/* ===================== SAMPLE ===================== */}
@@ -750,7 +729,7 @@ export default function ForLabs() {
         <div>
           <SectionHeading
             title="Start with the sample"
-            lede="300 preference pairs from public repos, fully scrubbed, under a research license. Run your own analysis before anyone books a call."
+            lede="Ten correction events from public repos, fully scrubbed, under a research license. Enough to audit the schema and the labeling, not enough to train on."
           />
           <Button
             className="w-auto px-4 text-base"
@@ -760,56 +739,56 @@ export default function ForLabs() {
             Request the sample
           </Button>
           <p className="text-g2 text-body-sm mt-6">
-            If you publish on it, cite the dataset card. If you want the
-            private-repo version, that is the pilot.
+            If you publish on it, cite the dataset card. Private-repo data is
+            available through a pilot.
           </p>
         </div>
         <pre className="text-code overflow-auto rounded-2xl border border-[#2C2C31] bg-[#161618] p-5 font-mono text-[#D9D7E0]">
           {'{\n'}
           {'  '}
-          <Key>&quot;pair_id&quot;</Key>: &quot;9c2e-t4&quot;,{'\n'}
-          {'  '}
+          <Key>&quot;event_id&quot;</Key>: &quot;9c2e-t4&quot;,{' '}
           <Key>&quot;session_id&quot;</Key>: &quot;9c2e&quot;,{'\n'}
           {'  '}
-          <Key>&quot;agent&quot;</Key>: &quot;claude-code&quot;,{' '}
-          <Key>&quot;model&quot;</Key>: &quot;claude-sonnet-4-6&quot;,{'\n'}
-          {'  '}
+          <Key>&quot;task_context&quot;</Key>: {'{\n'}
+          {'    '}
+          <Key>&quot;task&quot;</Key>: &quot;rate limiter lets bursts through
+          after a restart&quot;,{'\n'}
+          {'    '}
           <Key>&quot;repo_visibility&quot;</Key>: &quot;public&quot;,{' '}
-          <Key>&quot;language&quot;</Key>: &quot;go&quot;,{'\n'}
-          {'  '}
-          <Key>&quot;rejected&quot;</Key>:{'  { '}
-          <Key>&quot;turn&quot;</Key>: 3, <Key>&quot;diff&quot;</Key>:
-          &quot;...&quot;, <Key>&quot;survived_lines&quot;</Key>: 0{' },\n'}
-          {'  '}
-          <Key>&quot;accepted&quot;</Key>:{'  { '}
-          <Key>&quot;turn&quot;</Key>: 5, <Key>&quot;diff&quot;</Key>:
-          &quot;...&quot;, <Key>&quot;survived_lines&quot;</Key>: 5{' },\n'}
-          {'  '}
-          <Key>&quot;correction&quot;</Key>: {'{\n'}
-          {'    '}
-          <Key>&quot;user_text&quot;</Key>: &quot;no, that&apos;s not it. refill
-          uses wall clock...&quot;,{'\n'}
-          {'    '}
-          <Key>&quot;stated_reason&quot;</Key>:{' '}
-          <Comment>{'// contributor-supplied, optional'}</Comment>
-          {'\n'}
-          {'      '}&quot;the elapsed calc assumed continuous uptime&quot;,
-          {'\n'}
-          {'    '}
-          <Key>&quot;inferred_reason&quot;</Key>: &quot;wrong root cause:
-          persistence vs refill math&quot;,{'\n'}
-          {'    '}
-          <Key>&quot;confidence&quot;</Key>: 0.86,{'\n'}
-          {'    '}
-          <Key>&quot;failure_mode&quot;</Key>:
-          &quot;misdiagnosed_root_cause&quot;,{'\n'}
-          {'    '}
-          <Key>&quot;intent&quot;</Key>: &quot;fix&quot;{'\n'}
+          <Key>&quot;language&quot;</Key>: &quot;go&quot;{'\n'}
           {'  },\n'}
+          {'  '}
+          <Key>&quot;trajectory_context&quot;</Key>: {'{\n'}
+          {'    '}
+          <Key>&quot;turn&quot;</Key>: 3, <Key>&quot;agent&quot;</Key>:
+          &quot;claude-code&quot;, <Key>&quot;model&quot;</Key>:
+          &quot;claude-sonnet-4-6&quot;{'\n'}
+          {'  },\n'}
+          {'  '}
+          <Key>&quot;rejected_action&quot;</Key>:{'  { '}
+          <Key>&quot;diff&quot;</Key>: &quot;...&quot;,{' '}
+          <Key>&quot;retained_lines&quot;</Key>: 0{' },\n'}
+          {'  '}
+          <Key>&quot;human_feedback&quot;</Key>: &quot;no, that&apos;s not it.
+          refill uses wall clock...&quot;,{'\n'}
+          {'  '}
+          <Key>&quot;preferred_action&quot;</Key>: {'{ '}
+          <Key>&quot;diff&quot;</Key>: &quot;...&quot;,{' '}
+          <Key>&quot;retained_lines&quot;</Key>: 5{' },\n'}
           {'  '}
           <Key>&quot;outcome&quot;</Key>:{' { '}
           <Key>&quot;commit&quot;</Key>: &quot;7d21f4a&quot;,{' '}
-          <Key>&quot;tests&quot;</Key>: &quot;pass&quot;{' },\n'}
+          <Key>&quot;tests&quot;</Key>: &quot;pass&quot;,{' '}
+          <Key>&quot;patch_retained&quot;</Key>: true{' },\n'}
+          {'  '}
+          <Key>&quot;correction_reason&quot;</Key>:
+          &quot;wrong_root_cause_diagnosis&quot;,{'\n'}
+          {'  '}
+          <Key>&quot;quality_score&quot;</Key>: 84,{'\n'}
+          {'  '}
+          <Key>&quot;reasoning_source&quot;</Key>: &quot;original&quot;,{' '}
+          <Comment>{'// original | generated | none'}</Comment>
+          {'\n'}
           {'  '}
           <Key>&quot;audited&quot;</Key>: false{'\n'}
           {'}'}
