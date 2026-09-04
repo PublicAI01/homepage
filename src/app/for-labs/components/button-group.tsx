@@ -19,7 +19,7 @@ function ButtonGroup() {
         onClick={() => {
           sendGAEvent('event', 'buttonClicked', {
             button_name: 'Connect with our AI experts',
-            screen_name: 'homepage/client',
+            screen_name: 'homepage/for-labs',
           });
         }}>
         Connect with our AI experts
@@ -35,7 +35,7 @@ function ButtonGroup() {
         onClick={() => {
           sendGAEvent('event', 'buttonClicked', {
             button_name: 'Power Your AI',
-            screen_name: 'homepage/client',
+            screen_name: 'homepage/for-labs',
           });
         }}>
         Power Your AI

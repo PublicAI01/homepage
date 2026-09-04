@@ -4,6 +4,9 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   output: 'standalone',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  async redirects() {
+    return [{ source: '/client', destination: '/for-labs', permanent: true }];
+  },
   turbopack: {
     rules: {
       '*.svg': [

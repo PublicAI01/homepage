@@ -20,9 +20,9 @@ const DOCUMENT_LINK =
   'https://docs.publicai.io/publicai-documentation/publicai-trajector-cli';
 const NAV_LIST = [
   {
-    id: 'trajector',
+    id: 'contribute',
     href: TRAJECTOR_LINK,
-    label: 'Trajector',
+    label: 'Contribute',
     comingSoon: false,
   },
   {
@@ -33,9 +33,9 @@ const NAV_LIST = [
   },
   { id: 'blog', href: '/blog', label: 'Blog', comingSoon: false },
   {
-    id: 'business',
-    href: '/client',
-    label: 'Business',
+    id: 'for-labs',
+    href: '/for-labs',
+    label: 'For Labs',
     comingSoon: false,
   },
 ] as const;
