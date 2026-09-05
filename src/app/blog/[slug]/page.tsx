@@ -83,6 +83,10 @@ export default async function Page({
     notFound();
   }
 
+  const blogUrl = `${baseUrl}/blog/${post.slug}`;
+  const explainPrompt = `Read "${post.metadata.title}" (${blogUrl}). Explain its key points in plain language, why they matter, and what PublicAI is building.`;
+  const sharePrompt = `Summarize the key message of "${post.metadata.title}" (${blogUrl}). Then craft a short post for X about it with the hashtag #PublicAI. Use the handle @PublicAI_ (with underscore) if you mention PublicAI.`;
+
   return (
     <section className="mx-auto mb-6 flex max-w-[85ch] flex-col items-center max-md:px-[calc(var(--spacing-mobile-padding-x)*2)] md:mb-10">
       <Link
@@ -134,28 +138,32 @@ export default async function Page({
         {post.metadata.title}
       </h1>
       <div className="flex flex-col items-center justify-center">
-        <p className="my-3">Explore this content with Al:</p>
+        <p className="my-3">Explore this content with AI:</p>
         <div className="flex items-center gap-3">
           {[
-            { ai: 'ChatGPT', href: 'https://chat.openai.com/?q=' },
+            {
+              ai: 'ChatGPT',
+              href: 'https://chat.openai.com/?q=',
+              prompt: explainPrompt,
+            },
             {
               ai: 'Perplexity',
               href: 'https://www.perplexity.ai/search/new?q=',
+              prompt: explainPrompt,
             },
-            { ai: 'Claude', href: 'https://claude.ai/new?q=' },
+            {
+              ai: 'Claude',
+              href: 'https://claude.ai/new?q=',
+              prompt: explainPrompt,
+            },
             {
               ai: 'Grok',
               href: 'https://x.com/i/grok?text=',
-              generatePrompts: (blogUrl: string) =>
-                `Summarize the key message of [${blogUrl}]. Focus on how PublicAI rewards real people for guiding our AI streamer Nimpet. Then craft a short post for X with the hashtags #PublicAI and #NimpetAI — use the handle @PublicAI_ (with underscore) if you mention PublicAI.`,
+              prompt: sharePrompt,
             },
-          ].map(({ ai, href, generatePrompts }) => {
-            const blogUrl = `${baseUrl}/blog/${post.slug}`;
+          ].map(({ ai, href, prompt }) => {
             const fullUrl = new URL(
-              `${href}${generatePrompts?.(blogUrl) ?? `Summarize the key message of [${blogUrl}]. Focus on how PublicAI rewards real people for guiding our AI streamer Nimpet. Then craft a short post for X with the hashtags #PublicAI and #NimpetAI.`}`.replaceAll(
-                '#',
-                '%23',
-              ),
+              `${href}${prompt}`.replaceAll('#', '%23'),
             ).toString();
 
             return (
