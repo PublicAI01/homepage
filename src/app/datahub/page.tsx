@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     'Data Hub is redefining AI by decentralizing data sourcing, validation, and application. Our platform ensures AI systems reflect the diversity, culture, and authenticity of real-world contributors, eliminating uniformity and bias. Contributors play a vital role—validating datasets, sourcing unique data, or sharing niche expertise —and are rewarded with PublicAI Points for their meaningful efforts. Join our global movement to build dynamic, inclusive AI that benefits everyone through a powerful Web3 pipeline.',
   keywords:
     'decentralized data sourcing, AI training, diversity in AI, avoiding bias, contributor rewards, Web3 pipeline, PublicAI Points, global AI movement, inclusive technology, decentralized ecosystem',
+  robots: { index: false, follow: false },
 };
 
 const DataHub = () => {

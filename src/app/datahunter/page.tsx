@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     'Data Hunter is a seamless Chrome extension that empowers users to contribute to AI development while earning rewards effortlessly. Simply log in with your PublicAI account, and you can actively engage by replying to high-quality tweets using the AI Reply feature or passively collect points by keeping your browser open. Your contributions help shape the future of AI, and you can track your daily gains in the Data Hub Dashboard.',
   keywords:
     'data collection, AI development, Chrome extension, earn rewards, AI Reply feature, passive earning, PublicAI points, decentralized AI, Web3 tool, tweet engagement',
+  robots: { index: false, follow: false },
 };
 
 const DataHunter = () => {
