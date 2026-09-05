@@ -15,7 +15,7 @@ const TELEGRAM_MINI_APP_LINK = 'https://t.me/publicai_bot';
 const SUPPORT_EMAIL_ADDRESS = 'support@publicai.io';
 const OFFICE_EMAIL_ADDRESS = 'Office@publicai.io';
 const TOKEN_WEBSITE_LINK = 'https://token.publicai.io?utm_source=homepage';
-const TRAJECTOR_LINK = 'https://trajector.publicai.io/';
+const TRAJECTOR_LINK = 'https://trajector.publicai.io/?utm_source=homepage';
 const TRAJECTOR_PRIVACY_LINK =
   'https://trajector.publicai.io/privacy?utm_source=homepage';
 const TRAJECTOR_TERMS_LINK =
