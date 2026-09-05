@@ -1,33 +1,25 @@
 import { type Metadata } from 'next';
 
+import LegalDocument from '@/app/components/LegalDocument';
 import MDX from '@/app/privacy/privacy-policy.mdx';
+import { TRAJECTOR_PRIVACY_LINK } from '@/constant';
 
 export const metadata: Metadata = {
-  title: 'PublicAI Data Privacy Policy',
+  title: 'PublicAI Website Privacy Policy',
   description:
-    'Web3 based Train-To-Earn network enables every human to upgrade AI and earn rewards by completing data tasks.',
-  keywords:
-    'Public AI, data annotation, label to earn, decentralized, AI companies, training data, data labeling',
+    'How PublicAI Foundation collects and uses information on the publicai.io website. Trajector has its own privacy policy.',
 };
 
 export default function Page() {
-  const lastUpdated = new Date(Date.UTC(2026, 0, 8));
   return (
-    <section className="mx-auto mb-6 flex max-w-[85ch] flex-col items-center max-md:px-[calc(var(--spacing-mobile-padding-x)*2)] md:mb-10">
-      <article className="prose prose-invert prose-figcaption:text-center max-w-[85ch]!">
-        <h1>PublicAI Data PRIVACY POLICY</h1>
-        <p className="font-medium text-white">
-          Last Updated on:{' '}
-          <time dateTime={lastUpdated.toLocaleString()}>
-            {Intl.DateTimeFormat('en', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            }).format(lastUpdated)}
-          </time>
-        </p>
-        <MDX />
-      </article>
-    </section>
+    <LegalDocument
+      title="PublicAI Website Privacy Policy"
+      lastUpdated={new Date(Date.UTC(2026, 8, 5))}
+      productDocument={{
+        label: 'Privacy Policy',
+        href: TRAJECTOR_PRIVACY_LINK,
+      }}>
+      <MDX />
+    </LegalDocument>
   );
 }

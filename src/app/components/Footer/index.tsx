@@ -18,7 +18,7 @@ const Footer = () => {
               {SUPPORT_EMAIL_ADDRESS}
             </p>
           </a>
-          <ul className="flex items-center gap-1.5 px-1 md:px-2 xl:absolute xl:top-1/2 xl:left-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
+          <ul className="flex flex-wrap items-center gap-x-1.5 gap-y-1 px-1 md:px-2 xl:absolute xl:top-1/2 xl:left-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2">
             {[
               {
                 label: 'Token',
@@ -27,16 +27,10 @@ const Footer = () => {
                 'aria-label': 'go to the token website',
               },
               {
-                label: 'Privacy Policy',
-                href: '/privacy',
+                label: 'Legal',
+                href: '/legal',
                 external: false,
-                'aria-label': 'go to the privacy policy page',
-              },
-              {
-                label: 'Terms of Service',
-                href: '/terms',
-                external: false,
-                'aria-label': 'go to the terms of service page',
+                'aria-label': 'go to the legal documents page',
               },
               {
                 label: 'PublicAI Verify',
@@ -78,8 +72,8 @@ const Footer = () => {
           </address>
         </section>
         <span className="text-g2 mt-5 mb-2.5 text-center text-sm md:mt-7 md:text-base">
-          © {new Date().getFullYear()} PublicAI Foundation, Cayman Islands All
-          Rights Reserved
+          © {new Date().getFullYear()} PublicAI Foundation, Cayman Islands. All
+          rights reserved.
         </span>
       </div>
     </footer>
