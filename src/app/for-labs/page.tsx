@@ -224,8 +224,8 @@ const LABELS = [
   'committed',
   'reverted',
   'human_correction',
-  'reasoning_retained',
-  'decision_supervised',
+  'reasoning_original',
+  'reasoning_generated',
 ];
 
 interface View {
@@ -319,9 +319,9 @@ const levers: Lever[] = [
     note: 'First-30-day slices carry a premium.',
   },
   {
-    title: 'Reasoning coverage',
-    text: 'Original reasoning preserved where the client kept it. Generated decision rationale is available as an enrichment and always labeled as generated, never mixed in silently.',
-    note: 'Reasoning-preserved slices carry a premium.',
+    title: 'Reasoning provenance',
+    text: 'Every turn carries chain-of-thought, but you decide the mix: filter to sessions whose original think blocks survived, or take reconstructed rationale alongside them. Both are labeled by source.',
+    note: 'Original-only slices carry a premium; reconstruction is priced per session.',
   },
   {
     title: 'Verification depth',
@@ -647,9 +647,7 @@ export default function ForLabs() {
               Real coding-agent trajectories with acceptance, test, commit,
               retention, and human-correction labels on every turn. Nothing is
               cut: failed attempts, reverts, corrections, and abandoned sessions
-              stay in, labeled. Original reasoning is preserved where the client
-              kept it; generated decision rationale is available as an option,
-              labeled separately.
+              stay in, labeled.
             </p>
 
             <ul className="mt-5 flex max-w-[76ch] flex-wrap gap-2">
@@ -661,6 +659,29 @@ export default function ForLabs() {
                 </li>
               ))}
             </ul>
+
+            <div className="border-p1/25 bg-p1/6 mt-6 max-w-[76ch] rounded-lg border p-4">
+              <b className="text-body mb-1 block font-semibold text-white">
+                Chain-of-thought on every turn.
+              </b>
+              <p className="text-g2 text-body-sm">
+                Where the client preserved the agent’s original{' '}
+                <code className="text-code text-p1 font-mono">think</code>{' '}
+                blocks, they ship verbatim as{' '}
+                <code className="text-code text-p1 font-mono">
+                  reasoning_source: original
+                </code>
+                . Where the agent emitted none, we reconstruct the decision
+                rationale from the observed action sequence and ship it in the
+                same field as{' '}
+                <code className="text-code text-p1 font-mono">generated</code>.
+                Every turn carries reasoning; every turn declares where it came
+                from. Synthetic rationale is never passed off as original.
+              </p>
+              <p className="text-caption mt-2 text-[#78758A]">
+                Reconstruction is an optional enrichment, priced per session.
+              </p>
+            </div>
 
             <h4 className="text-micro text-g2 mt-8 mb-1 tracking-[0.14em] uppercase">
               Training views
