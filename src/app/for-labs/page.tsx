@@ -20,6 +20,12 @@ const PANEL =
 
 const SECTION = 'border-t border-white/8 py-16 lg:py-20';
 
+/** Prose column. Tables and grids stay full width; running text does not. */
+const READABLE = 'max-w-4xl';
+
+/** Comfortable line length for body copy inside a READABLE block. */
+const MEASURE = 'max-w-[68ch]';
+
 const ACCEPT = 'text-[#6EE7A0]';
 const REJECT = 'text-[#F08A8A]';
 
@@ -260,7 +266,7 @@ const views: View[] = [
 ];
 
 const CorrectionExample = () => (
-  <div className="text-code rounded-lg border border-[#2C2C31] bg-[#161618] p-4 font-mono">
+  <div className="text-code max-w-[76ch] rounded-lg border border-[#2C2C31] bg-[#161618] p-4 font-mono">
     <dl className="flex flex-col gap-2.5">
       <div>
         <dt className={cn('text-micro mb-0.5', REJECT)}>rejected</dt>
@@ -289,50 +295,70 @@ const CorrectionExample = () => (
 const PILL =
   'text-caption self-start rounded-full border px-3 py-1 font-medium whitespace-nowrap';
 
-const levers = [
+interface Lever {
+  title: string;
+  text: string;
+  /** Pricing consequence, kept subordinate to the capability itself. */
+  note: string;
+}
+
+const levers: Lever[] = [
   {
-    title: 'Distribution scarcity',
-    text: 'Private repos over public. Uncommon languages and stacks over mainstream. Enterprise-scale monorepos over side projects.',
+    title: 'Repository reach',
+    text: 'Private repositories, uncommon languages and stacks, and enterprise-scale monorepos — not only the public, mainstream slice that public corpora already cover.',
+    note: 'Scarcer distributions cost more.',
   },
   {
     title: 'Signal density',
-    text: 'Sessions with corrections over clean runs. Failure-and-recovery over first-try success. Abandoned sessions priced on their own.',
+    text: 'Sessions carrying corrections, failure-and-recovery loops, and abandoned attempts. The turns a clean first-try run never produces.',
+    note: 'Denser slices cost more.',
   },
   {
-    title: 'Freshness',
-    text: 'Sessions from a model version’s first 30 days carry a premium.',
-  },
-  {
-    title: 'License scope',
-    text: 'Non-exclusive by default. Time-boxed exclusivity on a slice, or full exclusivity, priced accordingly.',
-  },
-  {
-    title: 'Targeted collection',
-    text: 'Name the distribution you need. We raise contributor incentives on it and deliver a scoped batch. Quoted per project.',
-  },
-  {
-    title: 'Verification depth',
-    text: 'Automated labels by default. Human-audited subsets as paid upgrades.',
+    title: 'Model recency',
+    text: 'Sessions from a model version’s first 30 days, when a lab most needs to see how its newest release behaves in real codebases.',
+    note: 'First-30-day slices carry a premium.',
   },
   {
     title: 'Reasoning coverage',
-    text: 'Sessions with original reasoning preserved carry a premium. Generated decision rationale is an optional enrichment, labeled as such.',
+    text: 'Original reasoning preserved where the client kept it. Generated decision rationale is available as an enrichment and always labeled as generated, never mixed in silently.',
+    note: 'Reasoning-preserved slices carry a premium.',
+  },
+  {
+    title: 'Verification depth',
+    text: 'Automated labels on every unit, with human-audited subsets when you need a measured accuracy figure rather than a claimed one.',
+    note: 'Audited subsets are an upgrade.',
+  },
+  {
+    title: 'Targeted collection',
+    text: 'Name a distribution we do not hold enough of. We raise contributor incentives on it and collect against your spec.',
+    note: 'Quoted per project.',
+  },
+  {
+    title: 'License scope',
+    text: 'Non-exclusive by default, so the same batch stays available to others. Time-boxed exclusivity on a slice, or full exclusivity, where a lab needs it.',
+    note: 'Exclusivity is priced separately.',
   },
 ];
 
 const buying = [
   {
     title: 'Scope',
-    text: 'You choose the view, the distribution, the batch size, and the acceptance criteria: schema validity, scrub pass, and label accuracy on a sample you draw. Optional enrichments are selected here.',
+    text: 'You set the view, the distribution, the batch size, and the acceptance criteria you will judge it by.',
   },
   {
     title: 'Pilot',
-    text: 'We deliver one batch. You run acceptance on it and pay only for the units that pass. Rejected units are replaced or excluded from the invoice.',
+    text: 'One batch. You run your acceptance on it and pay only for the units that pass.',
   },
   {
     title: 'Standing agreement',
-    text: 'Recurring deliveries at the cadence you set, under the same acceptance terms and unit price. Fresh sessions and new model versions reach standing buyers first.',
+    text: 'Recurring deliveries at your cadence, same terms. Fresh sessions reach standing buyers first.',
   },
+];
+
+const corpus = [
+  { figure: '10B+', label: 'tokens' },
+  { figure: '10,000+', label: 'sessions' },
+  { figure: 'Opus 5+', label: 'frontier models' },
 ];
 
 const pipeline = [
@@ -595,131 +621,155 @@ export default function ForLabs() {
       <section
         className={SECTION}
         id="products">
-        <SectionHeading
-          title="What we license"
-          lede="One dataset. Cut the way your pipeline needs."
-        />
+        <div className={cn(READABLE, 'mx-auto')}>
+          <SectionHeading
+            title="What we license"
+            lede="One dataset. Cut the way your pipeline needs."
+          />
 
-        <p className="text-body-sm text-[#D9D7E0]">
-          <b className="font-semibold text-white">Source:</b> permissioned
-          real-world coding-agent trajectories — conversations, tool calls, code
-          edits, commands, and execution results, scrubbed on the contributor’s
-          machine.
-        </p>
-
-        <article className={cn(PANEL, 'border-t-p1 mt-6 border-t-4 p-6')}>
-          <h3 className="text-subheading mb-2 font-semibold text-white">
-            Outcome-Labeled Trajectories
-          </h3>
-          <p className="text-body mb-4 text-[#D9D7E0]">
-            The complete work record, where every step knows what happened to
-            it.
-          </p>
-          <p className="text-g2 text-body-sm max-w-[80ch]">
-            Real coding-agent trajectories with acceptance, test, commit,
-            retention, and human-correction labels on every turn. Nothing is
-            cut: failed attempts, reverts, corrections, and abandoned sessions
-            stay in, labeled. Original reasoning is preserved where the client
-            kept it; generated decision rationale is available as an option,
-            labeled separately.
+          <p className={cn('text-body-sm text-[#D9D7E0]', MEASURE)}>
+            <b className="font-semibold text-white">Source:</b> permissioned
+            real-world coding-agent trajectories — conversations, tool calls,
+            code edits, commands, and execution results, scrubbed on the
+            contributor’s machine.
           </p>
 
-          <ul className="mt-5 flex flex-wrap gap-2">
-            {LABELS.map((label) => (
-              <li
-                key={label}
-                className="text-caption rounded-md border border-white/10 bg-white/5 px-2 py-1 font-mono text-[#D9D7E0]">
-                {label}
-              </li>
-            ))}
-          </ul>
+          <article
+            className={cn(PANEL, 'border-t-p1 mt-6 border-t-4 p-6 lg:p-8')}>
+            <h3 className="text-subheading mb-2 font-semibold text-white">
+              Outcome-Labeled Trajectories
+            </h3>
+            <p className={cn('text-body mb-4 text-[#D9D7E0]', MEASURE)}>
+              The complete work record, where every step knows what happened to
+              it.
+            </p>
+            <p className={cn('text-g2 text-body-sm', MEASURE)}>
+              Real coding-agent trajectories with acceptance, test, commit,
+              retention, and human-correction labels on every turn. Nothing is
+              cut: failed attempts, reverts, corrections, and abandoned sessions
+              stay in, labeled. Original reasoning is preserved where the client
+              kept it; generated decision rationale is available as an option,
+              labeled separately.
+            </p>
 
-          <h4 className="text-micro text-g2 mt-8 mb-1 tracking-[0.14em] uppercase">
-            Training views
-          </h4>
-          <dl>
-            {views.map((view) => (
-              <div
-                key={view.name}
-                className="border-t border-white/8 py-4">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <dt className="text-body font-semibold text-white">
-                    {view.name}
-                  </dt>
-                  <span
-                    className={cn(
-                      PILL,
-                      'border-p1/40 bg-p1/10 text-p1 font-mono',
-                    )}>
-                    {view.unit}
-                  </span>
-                </div>
-                <dd className="text-g2 text-body-sm mt-1 max-w-[80ch]">
-                  {view.text}
-                </dd>
-                {view.example ? (
-                  <dd className="mt-3">
-                    <CorrectionExample />
+            <ul className="mt-5 flex max-w-[76ch] flex-wrap gap-2">
+              {LABELS.map((label) => (
+                <li
+                  key={label}
+                  className="text-caption rounded-md border border-white/10 bg-white/5 px-2 py-1 font-mono text-[#D9D7E0]">
+                  {label}
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="text-micro text-g2 mt-8 mb-1 tracking-[0.14em] uppercase">
+              Training views
+            </h4>
+            <dl>
+              {views.map((view) => (
+                <div
+                  key={view.name}
+                  className="border-t border-white/8 py-4">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <dt className="text-body font-semibold text-white">
+                      {view.name}
+                    </dt>
+                    <span
+                      className={cn(
+                        PILL,
+                        'border-p1/40 bg-p1/10 text-p1 font-mono',
+                      )}>
+                      {view.unit}
+                    </span>
+                  </div>
+                  <dd className={cn('text-g2 text-body-sm mt-1', MEASURE)}>
+                    {view.text}
                   </dd>
-                ) : null}
-              </div>
-            ))}
-          </dl>
-        </article>
+                  {view.example ? (
+                    <dd className="mt-3">
+                      <CorrectionExample />
+                    </dd>
+                  ) : null}
+                </div>
+              ))}
+            </dl>
+          </article>
 
-        <p className="text-body-sm mt-6 text-[#D9D7E0]">
-          <b className="font-semibold text-white">
-            Views are filters on the same dataset.
-          </b>{' '}
-          Full-dataset access includes all of them.
-        </p>
+          <p className={cn('text-body-sm mt-6 text-[#D9D7E0]', MEASURE)}>
+            <b className="font-semibold text-white">
+              Views are filters on the same dataset.
+            </b>{' '}
+            Full-dataset access includes all of them.
+          </p>
+        </div>
       </section>
 
-      {/* ===================== PRICING ===================== */}
+      {/* ===================== PIPELINE ===================== */}
       <section
         className={SECTION}
-        id="pricing">
+        id="pipeline">
         <SectionHeading
-          title="What moves the price"
-          lede="Unit prices are quoted against the scope of each batch."
+          title="Accepted before it reaches you"
+          lede="Every session passes five gates. What fails, you never see and never pay for."
         />
-        <div className="grid grid-cols-1 gap-x-12 md:grid-cols-2">
-          {levers.map(({ title, text }) => (
+
+        <dl className="mb-10 flex flex-wrap gap-x-16 gap-y-6">
+          {corpus.map(({ figure, label }) => (
+            <div key={label}>
+              <dt className="text-heading font-bold text-white">{figure}</dt>
+              <dd className="text-g2 text-body-sm mt-0.5">{label}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="text-g2 text-body-sm mb-10 max-w-[68ch]">
+          Already collected and processed through the pipeline below, and
+          open-sourced. Private-repo data runs the same five gates.
+        </p>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {pipeline.map(({ title, text }, i) => (
             <div
               key={title}
-              className="border-t border-white/8 py-5">
-              <b className="text-body mb-1 block font-semibold text-white">
+              className={cn(PANEL, 'p-4')}>
+              <span className="text-micro mb-1.5 block tracking-[0.08em] text-[#78758A]">
+                0{i + 1}
+              </span>
+              <b className="text-body-sm mb-1 block font-medium text-white">
                 {title}
               </b>
-              <p className="text-g2 text-body-sm">{text}</p>
+              <p className="text-g2 text-caption">{text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ===================== HOW BUYING WORKS ===================== */}
+      {/* ===================== RIGHTS ===================== */}
       <section
         className={SECTION}
-        id="buying">
-        <SectionHeading
-          title="How buying works"
-          lede="Deliveries are billed per accepted unit."
-        />
-        <ol className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {buying.map(({ title, text }, i) => (
-            <li
+        id="rights">
+        <SectionHeading title="Rights you can build on" />
+        <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2">
+          {rights.map(({ Icon, title, text }) => (
+            <div
               key={title}
-              className={cn(PANEL, 'p-5')}>
-              <span className="border-primary bg-b1 text-p1 text-caption mb-3 flex size-7 items-center justify-center rounded-full border font-semibold">
-                {i + 1}
+              className={cn(PANEL, 'flex items-start gap-4 p-5')}>
+              <span
+                className={cn(
+                  'flex size-10 shrink-0 items-center justify-center rounded-lg border border-[#6EE7A0]/30 bg-[#6EE7A0]/10',
+                  ACCEPT,
+                )}
+                aria-hidden>
+                <Icon className="size-5" />
               </span>
-              <b className="text-body mb-1 block font-semibold text-white">
-                {title}
-              </b>
-              <p className="text-g2 text-body-sm">{text}</p>
-            </li>
+              <div>
+                <b className="text-body mb-1 block font-semibold text-white">
+                  {title}
+                </b>
+                <p className="text-g2 text-caption">{text}</p>
+              </div>
+            </div>
           ))}
-        </ol>
+        </div>
       </section>
 
       {/* ===================== SAMPLE ===================== */}
@@ -795,58 +845,52 @@ export default function ForLabs() {
         </pre>
       </section>
 
-      {/* ===================== PIPELINE ===================== */}
+      {/* ===================== PRICING ===================== */}
       <section
         className={SECTION}
-        id="pipeline">
+        id="pricing">
         <SectionHeading
-          title="Accepted before it reaches you"
-          lede="Every session passes five gates. What fails, you never see and never pay for."
+          title="What you can scope"
+          lede="Every batch is cut to a spec you set. These are the dimensions you can move, and what each one does to the unit price."
         />
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {pipeline.map(({ title, text }, i) => (
+        <div className="grid grid-cols-1 gap-x-12 md:grid-cols-2">
+          {levers.map(({ title, text, note }) => (
             <div
               key={title}
-              className={cn(PANEL, 'p-4')}>
-              <span className="text-micro mb-1.5 block tracking-[0.08em] text-[#78758A]">
-                0{i + 1}
-              </span>
-              <b className="text-body-sm mb-1 block font-medium text-white">
+              className="border-t border-white/8 py-5">
+              <b className="text-body mb-1 block font-semibold text-white">
                 {title}
               </b>
-              <p className="text-g2 text-caption">{text}</p>
+              <p className="text-g2 text-body-sm">{text}</p>
+              <p className="text-caption mt-1.5 text-[#78758A]">{note}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ===================== RIGHTS ===================== */}
+      {/* ===================== HOW BUYING WORKS ===================== */}
       <section
         className={SECTION}
-        id="rights">
-        <SectionHeading title="Rights you can build on" />
-        <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2">
-          {rights.map(({ Icon, title, text }) => (
-            <div
+        id="buying">
+        <SectionHeading
+          title="How buying works"
+          lede="Deliveries are billed per accepted unit."
+        />
+        <ol className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {buying.map(({ title, text }, i) => (
+            <li
               key={title}
-              className={cn(PANEL, 'flex items-start gap-4 p-5')}>
-              <span
-                className={cn(
-                  'flex size-10 shrink-0 items-center justify-center rounded-lg border border-[#6EE7A0]/30 bg-[#6EE7A0]/10',
-                  ACCEPT,
-                )}
-                aria-hidden>
-                <Icon className="size-5" />
+              className={cn(PANEL, 'p-5')}>
+              <span className="border-primary bg-b1 text-p1 text-caption mb-3 flex size-7 items-center justify-center rounded-full border font-semibold">
+                {i + 1}
               </span>
-              <div>
-                <b className="text-body mb-1 block font-semibold text-white">
-                  {title}
-                </b>
-                <p className="text-g2 text-caption">{text}</p>
-              </div>
-            </div>
+              <b className="text-body mb-1 block font-semibold text-white">
+                {title}
+              </b>
+              <p className="text-g2 text-body-sm">{text}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
       {/* ===================== PILOT ===================== */}
