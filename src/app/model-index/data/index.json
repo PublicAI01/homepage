@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T08:06:05.399Z",
+  "generatedAt": "2026-09-06T08:19:55.725Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -15,6 +15,20 @@
       "kind": "board",
       "source": "LMArena Text",
       "group": "lmarena"
+    },
+    {
+      "id": "artificial-analysis",
+      "name": "Artificial Analysis Intelligence Index",
+      "publisher": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/leaderboards/models",
+      "retrievedAt": "2026-09-06",
+      "metric": "index",
+      "category": "General",
+      "domain": "General intelligence",
+      "caveat": "A composite of ten evaluations Artificial Analysis runs itself, under one harness. Only fully evaluated models are indexed: rows the site stars as estimates (not every component run independently, or based on the lab’s own claims) are left out. Several components (Terminal-Bench among them) are also indexed on their own boards, so the two overlap.",
+      "kind": "board",
+      "source": "Artificial Analysis",
+      "group": "artificial-analysis"
     },
     {
       "id": "terminal-bench",
@@ -1212,7 +1226,7 @@
     {
       "id": "k2-horizon-375b-a23b",
       "name": "K2 Horizon 375B A23B",
-      "org": "IFM (MBZUAI)"
+      "org": "MBZUAI Institute of Foundation Models"
     },
     {
       "id": "gemini-3-deep-think-2-26",
@@ -1363,6 +1377,11 @@
       "id": "dolphin-2-2-1-mistral-7b",
       "name": "Dolphin 2.2.1 Mistral 7B",
       "org": "Mistral"
+    },
+    {
+      "id": "qwen3-8-2-4t-a95b",
+      "name": "Qwen3.8 2.4T A95B",
+      "org": "Alibaba"
     },
     {
       "id": "qwen2-5-coder-32b-instruct",
@@ -1785,6 +1804,11 @@
       "org": "NVIDIA"
     },
     {
+      "id": "granite-4-2-3b",
+      "name": "Granite 4.2 3B",
+      "org": "IBM"
+    },
+    {
       "id": "nemotron-3-ultra-550b-a55b",
       "name": "Nemotron 3 Ultra 550B A55B",
       "org": "NVIDIA"
@@ -1923,6 +1947,16 @@
       "id": "step-3",
       "name": "Step 3",
       "org": "Stepfun"
+    },
+    {
+      "id": "ling-3-0-flash",
+      "name": "Ling 3.0 Flash",
+      "org": "InclusionAI"
+    },
+    {
+      "id": "ling-3-0-tiny",
+      "name": "Ling 3.0 Tiny",
+      "org": "InclusionAI"
     },
     {
       "id": "granite-3-0-2b-instruct",
@@ -2365,12 +2399,17 @@
       "org": "IBM"
     },
     {
-      "id": "granite-4-2-3b",
+      "id": "granite-4-2-8b",
+      "name": "Granite 4.2 8B",
+      "org": "IBM"
+    },
+    {
+      "id": "granite-4-2-3b-2",
       "name": "Granite 4.2.3b",
       "org": "IBM"
     },
     {
-      "id": "granite-4-2-8b",
+      "id": "granite-4-2-8b-2",
       "name": "Granite 4.2.8b",
       "org": "IBM"
     },
@@ -2410,8 +2449,8 @@
       "org": "SpaceXAI"
     },
     {
-      "id": "claude-haiku-4-5",
-      "name": "Claude Haiku 4.5",
+      "id": "claude-4-5-haiku",
+      "name": "Claude 4.5 Haiku",
       "org": "Anthropic"
     },
     {
@@ -2642,6 +2681,11 @@
     {
       "id": "gpt-6-astra",
       "name": "GPT-6 Astra",
+      "org": "OpenAI"
+    },
+    {
+      "id": "gpt-6-astra-non-reasoning",
+      "name": "GPT-6 Astra (Non-reasoning)",
       "org": "OpenAI"
     },
     {
@@ -3306,6 +3350,12 @@
     },
     {
       "modelId": "deepseek-v4-flash-0731",
+      "benchmarkId": "artificial-analysis",
+      "raw": 41,
+      "sourceLabel": "DeepSeek V4 Flash 0731 (max)"
+    },
+    {
+      "modelId": "deepseek-v4-flash-0731",
       "benchmarkId": "arc-agi-2",
       "raw": 61.4,
       "sourceLabel": "DeepSeek V4 Flash 0731 (Max)"
@@ -3385,6 +3435,12 @@
       "raw": 1250,
       "stderr": 7,
       "sourceLabel": "command-r-08-2024"
+    },
+    {
+      "modelId": "deepseek-v4-pro-0813",
+      "benchmarkId": "artificial-analysis",
+      "raw": 42,
+      "sourceLabel": "DeepSeek V4 Pro 0813 (max)"
     },
     {
       "modelId": "deepseek-v4-pro-0813",
@@ -3718,6 +3774,12 @@
     },
     {
       "modelId": "muse-spark-1-2",
+      "benchmarkId": "artificial-analysis",
+      "raw": 47,
+      "sourceLabel": "Muse Spark 1.2 (xhigh)"
+    },
+    {
+      "modelId": "muse-spark-1-2",
       "benchmarkId": "livebench",
       "raw": 78,
       "sourceLabel": "Muse Spark 1.2 xHigh Effort"
@@ -3763,6 +3825,12 @@
       "benchmarkId": "livebench-instruction-following",
       "raw": 74.3,
       "sourceLabel": "Muse Spark 1.2 xHigh Effort"
+    },
+    {
+      "modelId": "muse-spark-1-3",
+      "benchmarkId": "artificial-analysis",
+      "raw": 53,
+      "sourceLabel": "Muse Spark 1.3 (max)"
     },
     {
       "modelId": "muse-spark-1-3",
@@ -4023,6 +4091,12 @@
       "sourceLabel": "gpt-oss-120b"
     },
     {
+      "modelId": "gpt-oss-120b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 16,
+      "sourceLabel": "gpt-oss-120b (high)"
+    },
+    {
       "modelId": "ernie-5-0-preview-1203",
       "benchmarkId": "lmarena",
       "raw": 1449,
@@ -4154,6 +4228,12 @@
       "raw": 1333,
       "stderr": 9,
       "sourceLabel": "step-2-16k-exp-202412"
+    },
+    {
+      "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 38,
+      "sourceLabel": "K2 Horizon 375B A23B"
     },
     {
       "modelId": "k2-horizon-375b-a23b",
@@ -4648,6 +4728,12 @@
       "sourceLabel": "dolphin-2.2.1-mistral-7b"
     },
     {
+      "modelId": "qwen3-8-2-4t-a95b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 47,
+      "sourceLabel": "Qwen3.8 2.4T A95B"
+    },
+    {
       "modelId": "qwen2-5-coder-32b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1270,
@@ -4746,6 +4832,12 @@
       "raw": 1468,
       "stderr": 4,
       "sourceLabel": "mimo-v2.5-pro"
+    },
+    {
+      "modelId": "mimo-v2-5-pro",
+      "benchmarkId": "artificial-analysis",
+      "raw": 33,
+      "sourceLabel": "MiMo-V2.5-Pro"
     },
     {
       "modelId": "mimo-v2-5",
@@ -5278,6 +5370,12 @@
     },
     {
       "modelId": "qwen3-8-27b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 41,
+      "sourceLabel": "Qwen3.8 27B (xhigh)"
+    },
+    {
+      "modelId": "qwen3-8-27b",
       "benchmarkId": "livebench",
       "raw": 75.3,
       "sourceLabel": "Qwen3.8 27Bopen"
@@ -5612,6 +5710,12 @@
       "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 11,
+      "sourceLabel": "Granite 4.2 3B"
+    },
+    {
       "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "livebench",
       "raw": 67.4,
@@ -5788,6 +5892,12 @@
     },
     {
       "modelId": "kimi-k3",
+      "benchmarkId": "artificial-analysis",
+      "raw": 50,
+      "sourceLabel": "Kimi K3 (max)"
+    },
+    {
+      "modelId": "kimi-k3",
       "benchmarkId": "arc-agi-2",
       "raw": 60.4,
       "sourceLabel": "Kimi K3 (Max)"
@@ -5848,11 +5958,23 @@
       "sourceLabel": "mistral-large-3"
     },
     {
+      "modelId": "mistral-large-3",
+      "benchmarkId": "artificial-analysis",
+      "raw": 11,
+      "sourceLabel": "Mistral Large 3"
+    },
+    {
       "modelId": "minimax-m3",
       "benchmarkId": "lmarena",
       "raw": 1443,
       "stderr": 4,
       "sourceLabel": "minimax-m3"
+    },
+    {
+      "modelId": "minimax-m3",
+      "benchmarkId": "artificial-analysis",
+      "raw": 36,
+      "sourceLabel": "MiniMax-M3"
     },
     {
       "modelId": "minimax-m3",
@@ -6212,6 +6334,18 @@
       "sourceLabel": "step-3"
     },
     {
+      "modelId": "ling-3-0-flash",
+      "benchmarkId": "artificial-analysis",
+      "raw": 27,
+      "sourceLabel": "Ling 3.0 Flash"
+    },
+    {
+      "modelId": "ling-3-0-tiny",
+      "benchmarkId": "artificial-analysis",
+      "raw": 16,
+      "sourceLabel": "Ling 3.0 Tiny"
+    },
+    {
       "modelId": "granite-3-0-2b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1156,
@@ -6301,6 +6435,12 @@
       "raw": 1487,
       "stderr": 3,
       "sourceLabel": "gemini-3.1-pro-preview"
+    },
+    {
+      "modelId": "gemini-3-1-pro-preview",
+      "benchmarkId": "artificial-analysis",
+      "raw": 37,
+      "sourceLabel": "Gemini 3.1 Pro Preview"
     },
     {
       "modelId": "gemini-3-1-pro-preview",
@@ -6534,6 +6674,12 @@
       "raw": 1457,
       "stderr": 5,
       "sourceLabel": "gemini-3.5-flash-lite"
+    },
+    {
+      "modelId": "gemini-3-5-flash-lite",
+      "benchmarkId": "artificial-analysis",
+      "raw": 28,
+      "sourceLabel": "Gemini 3.5 Flash-Lite"
     },
     {
       "modelId": "gemini-3-5-flash-lite",
@@ -6826,6 +6972,12 @@
     },
     {
       "modelId": "gemini-3-6-flash",
+      "benchmarkId": "artificial-analysis",
+      "raw": 40,
+      "sourceLabel": "Gemini 3.6 Flash"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
       "benchmarkId": "arc-agi-2",
       "raw": 60.4,
       "sourceLabel": "Gemini 3.6 Flash (High)"
@@ -6952,6 +7104,12 @@
       "raw": 1491,
       "stderr": 8,
       "sourceLabel": "gemini-3.7-flash-high"
+    },
+    {
+      "modelId": "gemini-3-7-flash",
+      "benchmarkId": "artificial-analysis",
+      "raw": 45,
+      "sourceLabel": "Gemini 3.7 Flash (high)"
     },
     {
       "modelId": "gemini-3-7-flash",
@@ -7093,6 +7251,12 @@
     },
     {
       "modelId": "gemini-3-8-flash",
+      "benchmarkId": "artificial-analysis",
+      "raw": 47,
+      "sourceLabel": "Gemini 3.8 Flash (high)"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
       "benchmarkId": "terminal-bench",
       "raw": 19.1,
       "stderr": 3.4,
@@ -7201,6 +7365,12 @@
       "raw": 1480,
       "stderr": 6,
       "sourceLabel": "qwen3.8-max"
+    },
+    {
+      "modelId": "qwen3-8",
+      "benchmarkId": "artificial-analysis",
+      "raw": 47,
+      "sourceLabel": "Qwen3.8 Max"
     },
     {
       "modelId": "qwen3-8",
@@ -7725,111 +7895,117 @@
       "sourceLabel": "granite-4.1-8b"
     },
     {
-      "modelId": "granite-4-2-3b",
+      "modelId": "granite-4-2-8b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 14,
+      "sourceLabel": "Granite 4.2 8B"
+    },
+    {
+      "modelId": "granite-4-2-3b-2",
       "benchmarkId": "lmarena",
       "raw": 1296,
       "stderr": 12,
       "sourceLabel": "granite-4.2-3b"
     },
     {
-      "modelId": "granite-4-2-3b",
+      "modelId": "granite-4-2-3b-2",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 5.6,
       "sourceLabel": "Granite 4.2-3B"
     },
     {
-      "modelId": "granite-4-2-3b",
+      "modelId": "granite-4-2-3b-2",
       "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
       "raw": 13.9,
       "sourceLabel": "Granite 4.2-3B"
     },
     {
-      "modelId": "granite-4-2-3b",
+      "modelId": "granite-4-2-3b-2",
       "benchmarkId": "ifm-k2-horizon:scicode",
       "raw": 24.9,
       "sourceLabel": "Granite 4.2-3B"
     },
     {
-      "modelId": "granite-4-2-3b",
+      "modelId": "granite-4-2-3b-2",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 55.9,
       "sourceLabel": "Granite 4.2-3B"
     },
     {
-      "modelId": "granite-4-2-3b",
+      "modelId": "granite-4-2-3b-2",
       "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
       "raw": 32.2,
       "sourceLabel": "Granite 4.2-3B"
     },
     {
-      "modelId": "granite-4-2-3b",
+      "modelId": "granite-4-2-3b-2",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
       "raw": 57.2,
       "sourceLabel": "Granite 4.2-3B"
     },
     {
-      "modelId": "granite-4-2-3b",
+      "modelId": "granite-4-2-3b-2",
       "benchmarkId": "ifm-k2-horizon:hle",
       "raw": 6.6,
       "sourceLabel": "Granite 4.2-3B"
     },
     {
-      "modelId": "granite-4-2-3b",
+      "modelId": "granite-4-2-3b-2",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
       "raw": 50.8,
       "sourceLabel": "Granite 4.2-3B"
     },
     {
-      "modelId": "granite-4-2-8b",
+      "modelId": "granite-4-2-8b-2",
       "benchmarkId": "lmarena",
       "raw": 1288,
       "stderr": 11,
       "sourceLabel": "granite-4.2-8b"
     },
     {
-      "modelId": "granite-4-2-8b",
+      "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 7.6,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b",
+      "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
       "raw": 18.4,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b",
+      "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:scicode",
       "raw": 30.4,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b",
+      "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:aa-lcr",
       "raw": 43.3,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b",
+      "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
       "raw": 47.67,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b",
+      "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
       "raw": 66.48,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b",
+      "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:hle",
       "raw": 9.7,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b",
+      "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
       "raw": 48.43,
       "sourceLabel": "Granite 4.2-8B"
@@ -7931,6 +8107,12 @@
     },
     {
       "modelId": "grok-4-5",
+      "benchmarkId": "artificial-analysis",
+      "raw": 45,
+      "sourceLabel": "Grok 4.5 (high)"
+    },
+    {
+      "modelId": "grok-4-5",
       "benchmarkId": "terminal-bench",
       "raw": 12.4,
       "stderr": 2.6,
@@ -7992,7 +8174,13 @@
       "sourceLabel": "Grok 4.5"
     },
     {
-      "modelId": "claude-haiku-4-5",
+      "modelId": "claude-4-5-haiku",
+      "benchmarkId": "artificial-analysis",
+      "raw": 22,
+      "sourceLabel": "Claude 4.5 Haiku"
+    },
+    {
+      "modelId": "claude-4-5-haiku",
       "benchmarkId": "arc-agi-2",
       "raw": 4,
       "sourceLabel": "Claude Haiku 4.5 (Thinking 32K)"
@@ -8077,6 +8265,12 @@
       "raw": 1461,
       "stderr": 10,
       "sourceLabel": "grok-4.6-high"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "artificial-analysis",
+      "raw": 51,
+      "sourceLabel": "Grok 4.6 (high)"
     },
     {
       "modelId": "grok-4-6",
@@ -8422,6 +8616,12 @@
     },
     {
       "modelId": "claude-fable-5",
+      "benchmarkId": "artificial-analysis",
+      "raw": 53,
+      "sourceLabel": "Claude Fable 5 (with fallback)"
+    },
+    {
+      "modelId": "claude-fable-5",
       "benchmarkId": "terminal-bench",
       "raw": 44.5,
       "stderr": 3.8,
@@ -8556,6 +8756,12 @@
     },
     {
       "modelId": "claude-opus-5",
+      "benchmarkId": "artificial-analysis",
+      "raw": 54,
+      "sourceLabel": "Claude Opus 5 (max)"
+    },
+    {
+      "modelId": "claude-opus-5",
       "benchmarkId": "terminal-bench",
       "raw": 51.8,
       "stderr": 3.4,
@@ -8622,6 +8828,12 @@
       "raw": 1462,
       "stderr": 5,
       "sourceLabel": "claude-sonnet-5-high"
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "artificial-analysis",
+      "raw": 45,
+      "sourceLabel": "Claude Sonnet 5 (max)"
     },
     {
       "modelId": "claude-sonnet-5",
@@ -8782,6 +8994,12 @@
       "raw": 1504,
       "stderr": 11,
       "sourceLabel": "claude-fable-5.1-max"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "artificial-analysis",
+      "raw": 57,
+      "sourceLabel": "Claude Fable 5.1 (max with fallback)"
     },
     {
       "modelId": "claude-fable-5-1",
@@ -9172,6 +9390,12 @@
     },
     {
       "modelId": "glm-5-3-flash",
+      "benchmarkId": "artificial-analysis",
+      "raw": 46,
+      "sourceLabel": "GLM-5.3-Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
       "benchmarkId": "livebench",
       "raw": 71.6,
       "sourceLabel": "GLM-5.3 Flashopen"
@@ -9224,6 +9448,12 @@
       "raw": 1482,
       "stderr": 7,
       "sourceLabel": "glm-5.3-max"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "artificial-analysis",
+      "raw": 49,
+      "sourceLabel": "GLM-5.3 (max)"
     },
     {
       "modelId": "glm-5-3",
@@ -9553,6 +9783,12 @@
     },
     {
       "modelId": "gpt-5-6-luna",
+      "benchmarkId": "artificial-analysis",
+      "raw": 43,
+      "sourceLabel": "GPT-5.6 Luna (max)"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
       "benchmarkId": "terminal-bench",
       "raw": 17.3,
       "stderr": 2.8,
@@ -9724,6 +9960,12 @@
     },
     {
       "modelId": "gpt-5-6-sol",
+      "benchmarkId": "artificial-analysis",
+      "raw": 51,
+      "sourceLabel": "GPT-5.6 Sol (max)"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
       "benchmarkId": "terminal-bench",
       "raw": 37.3,
       "stderr": 3.8,
@@ -9790,6 +10032,12 @@
       "raw": 1466,
       "stderr": 5,
       "sourceLabel": "gpt-5.6-terra-xhigh"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
+      "benchmarkId": "artificial-analysis",
+      "raw": 47,
+      "sourceLabel": "GPT-5.6 Terra (max)"
     },
     {
       "modelId": "gpt-5-6-terra",
@@ -9945,6 +10193,12 @@
     },
     {
       "modelId": "gpt-6-astra",
+      "benchmarkId": "artificial-analysis",
+      "raw": 55,
+      "sourceLabel": "GPT-6 Astra (max)"
+    },
+    {
+      "modelId": "gpt-6-astra",
       "benchmarkId": "terminal-bench",
       "raw": 58.2,
       "stderr": 2.8,
@@ -10004,6 +10258,12 @@
       "benchmarkId": "livebench-instruction-following",
       "raw": 75.6,
       "sourceLabel": "GPT-6 Astra Max Effort"
+    },
+    {
+      "modelId": "gpt-6-astra-non-reasoning",
+      "benchmarkId": "artificial-analysis",
+      "raw": 48,
+      "sourceLabel": "GPT-6 Astra (Non-reasoning)"
     },
     {
       "modelId": "chatglm-6b",
@@ -10227,6 +10487,12 @@
       "sourceLabel": "muse-glimmer"
     },
     {
+      "modelId": "muse-glimmer",
+      "benchmarkId": "artificial-analysis",
+      "raw": 24,
+      "sourceLabel": "Muse Glimmer (high)"
+    },
+    {
       "modelId": "ibm-granite-h-small",
       "benchmarkId": "lmarena",
       "raw": 1285,
@@ -10265,6 +10531,12 @@
       "raw": 1439,
       "stderr": 5,
       "sourceLabel": "inkling"
+    },
+    {
+      "modelId": "inkling",
+      "benchmarkId": "artificial-analysis",
+      "raw": 32,
+      "sourceLabel": "Inkling"
     },
     {
       "modelId": "inkling",

@@ -32,25 +32,31 @@ export interface Weighting {
 export const WEIGHTING: Weighting[] = [
   {
     benchmarkId: 'lmarena',
-    weight: 30,
+    weight: 25,
     rationale:
       'Largest evidence base of any board — millions of blind votes across hundreds of models — and the widest coverage. Discounted because preference tracks style as well as correctness.',
   },
   {
-    benchmarkId: 'livebench',
+    benchmarkId: 'artificial-analysis',
     weight: 25,
+    rationale:
+      'Ten evaluations across agents, coding, reasoning and knowledge, run by one third party under one harness on ~300 models, with a confidence interval under ±1%. Discounted because it is itself a composite whose components overlap other boards here.',
+  },
+  {
+    benchmarkId: 'livebench',
+    weight: 20,
     rationale:
       'Broad, refreshed to resist contamination, and covers reasoning, coding, maths and instruction following in one place.',
   },
   {
     benchmarkId: 'terminal-bench',
-    weight: 25,
+    weight: 15,
     rationale:
-      'Measures completed agentic work, not answers, and publishes error bars. Discounted because the agent scaffold is part of the score.',
+      'Measures completed agentic work, not answers, and publishes error bars. Discounted because the agent scaffold is part of the score and the board is small.',
   },
   {
     benchmarkId: 'arc-agi-2',
-    weight: 20,
+    weight: 15,
     rationale:
       'Hard and far from saturated, which keeps it discriminating at the top. Discounted for being one narrow skill and highly sensitive to reasoning-effort tier.',
   },
@@ -107,6 +113,10 @@ export const categoryRank = (c: string) => {
 /** Short badge and tone per recognised board, shown beside every model. */
 export const SOURCE_BADGE: Record<string, { code: string; tone: string }> = {
   lmarena: { code: 'LM', tone: 'border-p1/40 bg-p1/15 text-p1' },
+  'artificial-analysis': {
+    code: 'AA',
+    tone: 'border-[#F0B4A2]/40 bg-[#F0B4A2]/15 text-[#F0B4A2]',
+  },
   'terminal-bench': {
     code: 'TB',
     tone: 'border-[#6EE7A0]/40 bg-[#6EE7A0]/15 text-[#6EE7A0]',
