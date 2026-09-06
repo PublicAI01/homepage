@@ -60,6 +60,11 @@ export interface AggregateRow {
   perBenchmark: NormalizedScore[];
   /** How many recognised boards (not measures, not reports) scored this model. */
   covered: number;
+  /** Distinct publishers behind those boards. Two of Artificial Analysis's boards are one publisher's word. */
+  publishers: number;
+  /** Recognised boards with a figure in each domain and category, so a vertical can rank on its own evidence. */
+  boardsByDomain: Record<string, number>;
+  boardsByCategory: Record<string, number>;
   /** How many recognised boards carry weight. */
   coverable: number;
   /** How many reports ✱ scored this model. Informational; never confers rank. */
@@ -151,7 +156,7 @@ export interface AggregateInput {
   overall?: Set<string>;
   /** Prior weight as a fraction of the weight in scope. 0 = plain weighted mean. */
   priorFraction?: number;
-  /** Boards a model must be scored by to be ranked. */
+  /** Independent publishers whose boards must score a model for it to be ranked. */
   minSources?: number;
   /** When false, published error bars are ignored and every score counts equally. */
   useConfidence?: boolean;
@@ -170,6 +175,7 @@ export function aggregate({
   const weighted = benchmarks.filter((b) => (weights[b.id] ?? 0) > 0);
   const overallIds = overall ?? new Set(weighted.map((b) => b.id));
   const boardOf = new Map(benchmarks.map((b) => [b.id, b.group]));
+  const publisherOf = new Map(benchmarks.map((b) => [b.id, b.publisher]));
   const kindOf = new Map(benchmarks.map((b) => [b.id, b.kind]));
   const domainOf = new Map(benchmarks.map((b) => [b.id, b.domain]));
   const categoryOf = new Map(benchmarks.map((b) => [b.id, b.category]));
@@ -264,11 +270,34 @@ export function aggregate({
       ).score;
     }
 
-    const covered = new Set(
-      contributing
-        .filter((s) => kindOf.get(s.benchmarkId) !== 'report')
-        .map((s) => boardOf.get(s.benchmarkId)),
+    const boardScores = contributing.filter(
+      (s) => kindOf.get(s.benchmarkId) !== 'report',
+    );
+    const covered = new Set(boardScores.map((s) => boardOf.get(s.benchmarkId)))
+      .size;
+    const publishers = new Set(
+      boardScores.map((s) => publisherOf.get(s.benchmarkId)),
     ).size;
+    const boardsIn = (pick: (id: string) => string | undefined) => {
+      const out: Record<string, number> = {};
+      for (const s of boardScores) {
+        const k = pick(s.benchmarkId);
+        if (k === undefined) continue;
+        out[k] = (out[k] ?? 0) + 1;
+      }
+      // Count boards, not measures: LiveBench's eight columns are one board.
+      const seen = new Map<string, Set<string>>();
+      for (const s of boardScores) {
+        const k = pick(s.benchmarkId);
+        if (k === undefined) continue;
+        if (!seen.has(k)) seen.set(k, new Set());
+        seen.get(k)!.add(boardOf.get(s.benchmarkId)!);
+      }
+      for (const [k, v] of seen) out[k] = v.size;
+      return out;
+    };
+    const boardsByDomain = boardsIn((id) => domainOf.get(id));
+    const boardsByCategory = boardsIn((id) => categoryOf.get(id));
     const reports = new Set(
       contributing
         .filter((s) => kindOf.get(s.benchmarkId) === 'report')
@@ -282,10 +311,15 @@ export function aggregate({
       byCategory,
       perBenchmark,
       covered,
+      publishers,
+      boardsByDomain,
+      boardsByCategory,
       coverable,
       reports,
       evidence: overallWeight > 0 ? evidence / overallWeight : 0,
-      ranked: covered >= minSources,
+      // Ranked on the word of at least `minSources` independent publishers,
+      // not boards: one publisher's several leaderboards agree with itself.
+      ranked: publishers >= minSources,
       dispersion: stdDev(inOverall.map((s) => s.normalized)),
     };
   });

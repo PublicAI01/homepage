@@ -78,6 +78,18 @@ const keyOf = (row: AggregateRow, k: RankKey): number | null => {
   return row.byDomain[k.domain] ?? null;
 };
 
+/**
+ * Overall ranks on independent publishers; a category or domain ranks any
+ * model a recognised board has measured in that scope, on that measurement.
+ * Reports alone never rank anywhere.
+ */
+const eligible = (row: AggregateRow, k: RankKey): boolean =>
+  k.level === 'overall'
+    ? row.ranked
+    : k.level === 'category'
+      ? (row.boardsByCategory[k.category] ?? 0) > 0
+      : (row.boardsByDomain[k.domain] ?? 0) > 0;
+
 const rankLabel = (k: RankKey) =>
   k.level === 'overall'
     ? 'Overall'
@@ -107,7 +119,7 @@ export function SourceBadge({
       title={label}
       aria-label={label}
       className={cn(
-        'text-micro inline-flex h-5 min-w-7 items-center justify-center rounded border px-1 font-mono font-semibold tracking-wide',
+        'text-micro inline-flex h-5 min-w-6 items-center justify-center rounded border px-0.5 font-mono font-semibold tracking-wide',
         present
           ? badge.tone
           : 'border-dashed border-white/12 text-white/25 opacity-70',
@@ -213,13 +225,26 @@ export default function IndexTable({
       out = [...out]
         // A model with no figure in this scope is not "last": it is absent.
         .filter((r) => keyOf(r, rankKey) !== null)
-        .sort((a, b) => Number(b.ranked) - Number(a.ranked) || by(a, b));
+        .sort(
+          (a, b) =>
+            Number(eligible(b, rankKey)) - Number(eligible(a, rankKey)) ||
+            by(a, b),
+        );
     }
     return out;
   }, [rows, query, org, minBoards, mustHave, rankKey, sourcesScoring]);
 
   const rankedCount = rows.filter((r) => r.ranked).length;
   const shown = filtered.slice(0, PAGE);
+  // Position in the list on screen, for rows eligible in this scope. On
+  // Overall that is the model's rank; in a scope it is its place there.
+  const positionOf = useMemo(() => {
+    const m = new Map<string, number>();
+    if (rankKey.level === 'overall') return rankOf;
+    let n = 0;
+    for (const r of filtered) if (eligible(r, rankKey)) m.set(r.model.id, ++n);
+    return m;
+  }, [filtered, rankKey, rankOf]);
   const coverable = rows[0]?.coverable ?? boards.length;
   const catalogDate = catalogs[0]?.retrievedAt;
 
@@ -247,8 +272,8 @@ export default function IndexTable({
         scope,
         // Position within this scope, not the Overall rank: a chart titled
         // "Coding" numbered 1, 3, 4, 8 would read as an error.
-        rows: top.map((r, i) => ({
-          rank: r.ranked ? i + 1 : null,
+        rows: top.map((r) => ({
+          rank: positionOf.get(r.model.id) ?? null,
           name: r.model.name,
           org: r.model.org,
           score: keyOf(r, rankKey) ?? 0,
@@ -438,22 +463,22 @@ export default function IndexTable({
         <table className="text-body-sm w-full border-collapse text-left whitespace-nowrap">
           <thead>
             <tr className="text-micro bg-white/4 tracking-[0.1em] text-[#78758A] uppercase">
-              <th className="w-10 px-3 py-3 font-medium">#</th>
-              <th className="px-3 py-3 font-medium">Model</th>
+              <th className="w-10 px-2.5 py-3 font-medium">#</th>
+              <th className="px-2.5 py-3 font-medium">Model</th>
               <th
                 className={cn(
-                  'px-3 py-3 text-right font-medium',
+                  'px-2.5 py-3 text-right font-medium',
                   rankKey.level === 'overall' && 'text-white',
                 )}>
                 Index
               </th>
               {rankKey.level !== 'overall' ? (
-                <th className="px-3 py-3 text-right font-medium text-white">
+                <th className="max-w-28 px-2.5 py-3 text-right leading-tight font-medium whitespace-normal text-white">
                   {rankLabel(rankKey)}
                 </th>
               ) : null}
-              <th className="px-3 py-3 font-medium">Sources</th>
-              <th className="w-8 px-3 py-3" />
+              <th className="px-2.5 py-3 font-medium">Sources</th>
+              <th className="w-8 px-2.5 py-3" />
             </tr>
           </thead>
           <tbody>
@@ -462,6 +487,8 @@ export default function IndexTable({
                 key={row.model.id}
                 row={row}
                 rank={rankOf.get(row.model.id)}
+                position={positionOf.get(row.model.id)}
+                inScope={eligible(row, rankKey)}
                 rankKey={rankKey}
                 taxonomy={taxonomy}
                 boards={boards}
@@ -488,12 +515,14 @@ export default function IndexTable({
 
       <p className="text-caption text-g2 mt-3 max-w-[76ch]">
         Scores are 0–100 standardized: 50 is average across the models listed,
-        not an absolute grade. Thin evidence is pulled toward 50. A model scored
-        by fewer than {MIN_SOURCES} recognised boards is listed as provisional
-        without a rank; figures from reports ✱ shape category and domain columns
-        only. A filled badge means that source scored the model; hover for the
-        figure. Open a row for the model card: scores by domain, how to call it,
-        and every source figure.
+        not an absolute grade. Thin evidence is pulled toward 50. Overall ranks
+        a model once {MIN_SOURCES} independent publishers’ boards have scored
+        it; until then it is provisional, without a rank. A category or domain
+        ranks any model a recognised board has measured there; figures from
+        reports ✱ shape those columns but never rank a model on their own. A
+        filled badge means that source scored the model; hover for the figure.
+        Open a row for the model card: scores by domain, how to call it, and
+        every source figure.
         {filtered.length > shown.length
           ? ` The first ${PAGE} of ${filtered.length} are shown; narrow the filters to see the rest.`
           : ''}
@@ -505,6 +534,8 @@ export default function IndexTable({
 function Row({
   row,
   rank,
+  position,
+  inScope,
   rankKey,
   taxonomy,
   boards,
@@ -515,6 +546,8 @@ function Row({
 }: {
   row: AggregateRow;
   rank: number | undefined;
+  position: number | undefined;
+  inScope: boolean;
   rankKey: RankKey;
   taxonomy: [string, string[]][];
   boards: BoardView[];
@@ -538,40 +571,48 @@ function Row({
         )}
         onClick={onToggle}
         aria-expanded={open}>
-        <td className="text-g2 px-3 py-2.5 font-mono">
-          {rank ?? (
-            <span title="Provisional — not enough recognised boards">—</span>
+        <td className="text-g2 px-2.5 py-2.5 font-mono">
+          {position ?? (
+            <span
+              title={
+                rankKey.level === 'overall'
+                  ? `Provisional — fewer than ${MIN_SOURCES} independent publishers`
+                  : 'No recognised board measures this model here; report figures only'
+              }>
+              —
+            </span>
           )}
         </td>
-        <td className="px-3 py-2.5">
+        {/* Names wrap; the table never scrolls sideways because one label is long. */}
+        <td className="min-w-52 px-2.5 py-2.5 whitespace-normal">
           <b
             className={cn(
               'font-semibold',
-              row.ranked ? 'text-white' : 'text-[#B9B7C4]',
+              inScope ? 'text-white' : 'text-[#B9B7C4]',
             )}>
             {row.model.name}
           </b>
           <span className="text-g2 ml-2 text-xs">{row.model.org}</span>
-          {!row.ranked ? (
+          {!inScope ? (
             <span className="text-micro ml-2 rounded border border-white/12 px-1 py-px text-[#78758A]">
-              provisional
+              {rankKey.level === 'overall' ? 'provisional' : 'report only'}
             </span>
           ) : null}
         </td>
         <td
           className={cn(
-            'px-3 py-2.5 text-right font-mono font-semibold',
+            'px-2.5 py-2.5 text-right font-mono font-semibold',
             row.ranked ? INDEX_TONE : 'text-[#78758A]',
           )}>
           {fmt(row.score)}
         </td>
         {rankKey.level !== 'overall' ? (
-          <td className="px-3 py-2.5 text-right font-mono text-white">
+          <td className="px-2.5 py-2.5 text-right font-mono text-white">
             {fmt(keyOf(row, rankKey))}
           </td>
         ) : null}
-        <td className="px-3 py-2.5">
-          <span className="flex items-center gap-1">
+        <td className="px-2.5 py-2.5">
+          <span className="flex items-center gap-0.5">
             {boards.map((b) => {
               const s = scored.get(b.headline.id);
               return (
@@ -587,7 +628,7 @@ function Row({
               <span
                 title={reportsScoring.map((r) => r.name).join(' · ')}
                 className={cn(
-                  'text-micro inline-flex h-5 min-w-7 items-center justify-center rounded border px-1 font-mono font-semibold',
+                  'text-micro inline-flex h-5 min-w-6 items-center justify-center rounded border px-0.5 font-mono font-semibold',
                   REPORT_BADGE.tone,
                 )}>
                 ✱{reportsScoring.length > 1 ? reportsScoring.length : ''}
@@ -602,7 +643,7 @@ function Row({
             </span>
           </span>
         </td>
-        <td className="text-g2 px-3 py-2.5">
+        <td className="text-g2 px-2.5 py-2.5">
           <span
             aria-hidden
             className="inline-block transition-transform duration-200"
@@ -716,7 +757,8 @@ function ModelCard({
             </>
           ) : (
             <span className="text-[#F5C86B]">
-              Provisional — fewer than {MIN_SOURCES} recognised boards.{' '}
+              Provisional — fewer than {MIN_SOURCES} independent
+              publishers.{' '}
             </span>
           )}
           Scored by{' '}
@@ -915,7 +957,7 @@ function ChannelCard({
   return (
     <div
       className={cn(
-        'rounded-lg border px-3 py-2.5',
+        'rounded-lg border px-2.5 py-2.5',
         recommended
           ? 'border-primary/50 bg-primary/[0.08]'
           : 'border-white/10 bg-white/[0.03]',

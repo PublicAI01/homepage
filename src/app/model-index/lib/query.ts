@@ -101,6 +101,14 @@ export const scopeLabel = (s: Scope) =>
       ? s.category
       : s.domain;
 
+/** Overall ranks on independent publishers; a scope ranks on a recognised board's measurement in that scope. */
+const eligible = (r: AggregateRow, s: Scope): boolean =>
+  s.level === 'overall'
+    ? r.ranked
+    : s.level === 'category'
+      ? (r.boardsByCategory[s.category] ?? 0) > 0
+      : (r.boardsByDomain[s.domain] ?? 0) > 0;
+
 const scopeScore = (r: AggregateRow, s: Scope): number | null =>
   s.level === 'overall'
     ? r.score
@@ -146,7 +154,12 @@ export interface ModelSummary {
   index: number | null;
   /** The figure the list is ranked by, when a scope other than Overall was asked for. */
   scopeScore?: number | null;
+  /** Ranked Overall: scored by boards from at least two independent publishers. */
   ranked: boolean;
+  /** Ranked in the requested scope: a recognised board measured the model there. Equals `ranked` for Overall. */
+  rankedInScope: boolean;
+  /** Position in the returned list among rankedInScope rows; null for the rest. */
+  position: number | null;
   /** Recognised boards scoring the model, out of those that could. */
   covered: number;
   coverable: number;
@@ -181,6 +194,8 @@ function summarize(r: AggregateRow, scope: Scope): ModelSummary {
       ? { scopeScore: r1(scopeScore(r, scope)) }
       : {}),
     ranked: r.ranked,
+    rankedInScope: eligible(r, scope),
+    position: null,
     covered: r.covered,
     coverable: r.coverable,
     reports: r.reports,
@@ -276,17 +291,24 @@ export function rankModels(q: RankQuery = {}) {
   if (scope.level !== 'overall') {
     const by = compareScores<AggregateRow>((r) => scopeScore(r, scope));
     out = [...out].sort(
-      (a, b) => Number(b.ranked) - Number(a.ranked) || by(a, b),
+      (a, b) =>
+        Number(eligible(b, scope)) - Number(eligible(a, scope)) || by(a, b),
     );
   }
+  let n = 0;
+  const models = out.slice(0, limit).map((r) => {
+    const m = summarize(r, scope);
+    if (m.rankedInScope) m.position = ++n;
+    return m;
+  });
   return {
     generatedAt,
     scope: scopeLabel(scope),
     level: scope.level,
     minBoards,
     total: out.length,
-    models: out.slice(0, limit).map((r) => summarize(r, scope)),
-    note: 'Scores are 0–100 standardized across the models each source lists; 50 is that measure’s average, not a grade. Models below minBoards recognised boards are provisional and carry no rank. This is a snapshot dated generatedAt, not a live feed; every figure links to its publisher.',
+    models,
+    note: 'Scores are 0–100 standardized across the models each source lists; 50 is that measure’s average, not a grade. Overall ranks a model once boards from two independent publishers have scored it; a category or domain ranks any model a recognised board measured there. Report (✱) figures never rank a model on their own. This is a snapshot dated generatedAt, not a live feed; every figure links to its publisher.',
   };
 }
 
@@ -336,7 +358,7 @@ export function describeIndex() {
       'Each measure is z-scored across the models its source lists and mapped to 0–100 (mean 50, sd 15).',
       'Where a source publishes an error bar, the figure’s weight is discounted by how wide it is relative to the board’s spread.',
       `A model absent from a source is excluded from that term, never imputed; a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the in-scope weight pulls thin evidence toward 50.`,
-      `A model needs ${MIN_SOURCES} recognised boards to be ranked; otherwise it is provisional.`,
+      `Overall ranks a model once boards from ${MIN_SOURCES} independent publishers have scored it; otherwise it is provisional. A category or domain ranks any model a recognised board has measured there.`,
       `Reports (launch posts, blogs) are marked ✱, carry ${REPORT_WEIGHT}% of a board’s share in their domain only, and never enter the Overall index.`,
     ],
     overallWeighting: boards

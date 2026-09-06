@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T09:04:57.587Z",
+  "generatedAt": "2026-09-06T18:30:46.245Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -29,6 +29,34 @@
       "kind": "board",
       "source": "Artificial Analysis",
       "group": "artificial-analysis"
+    },
+    {
+      "id": "aa-gdpval",
+      "name": "GDPval-AA",
+      "publisher": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
+      "retrievedAt": "2026-09-06",
+      "metric": "elo",
+      "category": "Agents",
+      "domain": "Professional tasks",
+      "caveat": "Pairwise-graded outputs on economically valuable knowledge-work tasks, run by Artificial Analysis and reported as an Elo with a confidence interval. Same publisher as the Intelligence Index and AA-Briefcase, so the three are one independent voice.",
+      "kind": "board",
+      "source": "GDPval-AA",
+      "group": "aa-gdpval"
+    },
+    {
+      "id": "aa-briefcase",
+      "name": "AA-Briefcase",
+      "publisher": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/evaluations/aa-briefcase",
+      "retrievedAt": "2026-09-06",
+      "metric": "elo",
+      "category": "Agents",
+      "domain": "Agentic knowledge work",
+      "caveat": "Agentic knowledge-work tasks run by Artificial Analysis and reported as an Elo with a confidence interval. Same publisher as the Intelligence Index and GDPval-AA, so the three are one independent voice.",
+      "kind": "board",
+      "source": "AA-Briefcase",
+      "group": "aa-briefcase"
     },
     {
       "id": "terminal-bench",
@@ -578,6 +606,14 @@
     }
   ],
   "models": [
+    {
+      "id": "grok-build-0-1-0616",
+      "name": "Grok Build 0.1 0616",
+      "org": "SpaceXAI",
+      "access": {
+        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
+      }
+    },
     {
       "id": "zephyr-orpo-141b-a35b-v0-1",
       "name": "Zephyr Orpo 141B A35B V0.1",
@@ -1341,6 +1377,17 @@
       }
     },
     {
+      "id": "deepseek-r1-jan-25",
+      "name": "DeepSeek R1 (Jan '25)",
+      "org": "DeepSeek",
+      "access": {
+        "official": {
+          "name": "DeepSeek API",
+          "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
+    {
       "id": "llama-3-1-nemotron-ultra-253b-v1",
       "name": "Llama 3.1 Nemotron Ultra 253B V1",
       "org": "NVIDIA",
@@ -1375,6 +1422,8 @@
         }
       }
     },
+    { "id": "celeris-1", "name": "Celeris 1", "org": "Celeris" },
+    { "id": "kat-coder-pro-v1", "name": "KAT-Coder-Pro V1", "org": "KwaiKAT" },
     {
       "id": "deepseek-r1",
       "name": "DeepSeek R1",
@@ -1485,6 +1534,7 @@
         }
       }
     },
+    { "id": "apodex-1-1", "name": "Apodex 1.1", "org": "Apodex" },
     {
       "id": "muse-spark-1-1",
       "name": "Muse Spark 1.1",
@@ -1524,6 +1574,28 @@
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "magistral-medium-1-2",
+      "name": "Magistral Medium 1.2",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
+      "id": "magistral-small-1-2",
+      "name": "Magistral Small 1.2",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
         }
       }
     },
@@ -1732,6 +1804,17 @@
       }
     },
     {
+      "id": "qwen3-5-122b-a10b-2",
+      "name": "Qwen3.5 122B A10B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
       "id": "amazon-nova-experimental-chat-10-20",
       "name": "Amazon Nova Experimental Chat 10 20",
       "org": "Amazon",
@@ -1794,6 +1877,14 @@
         "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
       }
     },
+    {
+      "id": "nemotron-3-super-120b-a12b",
+      "name": "Nemotron 3 Super 120B A12B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
     { "id": "dolly-v2-12b", "name": "Dolly V2 12B", "org": "Other" },
     {
       "id": "gemma-3-12b-it",
@@ -1817,7 +1908,23 @@
         }
       }
     },
+    {
+      "id": "gemma-4-12b-2",
+      "name": "Gemma 4 12B",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
     { "id": "oasst-pythia-12b", "name": "Oasst Pythia 12B", "org": "Other" },
+    {
+      "id": "hypernova-60b-2605-high-based-on-gpt-oss-120b",
+      "name": "HyperNova 60B 2605 (high, based on gpt-oss-120b)",
+      "org": "Multiverse Computing"
+    },
     {
       "id": "gpt-oss-120b",
       "name": "GPT OSS 120B",
@@ -1922,6 +2029,28 @@
         }
       }
     },
+    {
+      "id": "ministral-3-14b",
+      "name": "Ministral 3 14B",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
+      "id": "qwen3-14b",
+      "name": "Qwen3 14B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
     { "id": "rwkv-4-raven-14b", "name": "RWKV 4 Raven 14B", "org": "Other" },
     {
       "id": "qwen-14b-chat",
@@ -1988,7 +2117,24 @@
         }
       }
     },
+    {
+      "id": "qwen3-5-397b-a17b-2",
+      "name": "Qwen3.5 397B A17B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
     { "id": "falcon-180b-chat", "name": "Falcon 180B Chat", "org": "Other" },
+    {
+      "id": "k2-think-v2",
+      "name": "K2 Think V2",
+      "org": "IFM (MBZUAI)",
+      "access": { "official": { "name": "IFM", "url": "https://ifm.ai" } }
+    },
     {
       "id": "internlm2-5-20b-chat",
       "name": "Internlm2_5 20B Chat",
@@ -2010,6 +2156,17 @@
       "name": "K2 Horizon 375B A23B",
       "org": "IFM (MBZUAI)",
       "access": { "official": { "name": "IFM", "url": "https://ifm.ai" } }
+    },
+    {
+      "id": "solar-open2-250b",
+      "name": "Solar Open2 250B",
+      "org": "Upstage",
+      "access": {
+        "official": {
+          "name": "Upstage Console",
+          "url": "https://console.upstage.ai"
+        }
+      }
     },
     {
       "id": "gemini-3-deep-think-2-26",
@@ -2034,6 +2191,25 @@
       }
     },
     {
+      "id": "nemotron-cascade-2-30b-a3b",
+      "name": "Nemotron Cascade 2 30B A3B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "qwen3-5-2b",
+      "name": "Qwen3.5 2B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
       "id": "k2-horizon-3-7b",
       "name": "K2 Horizon 3.7B",
       "org": "IFM (MBZUAI)",
@@ -2050,6 +2226,17 @@
       "name": "K2 Horizon MoVA 36B A4B",
       "org": "IFM (MBZUAI)",
       "access": { "official": { "name": "IFM", "url": "https://ifm.ai" } }
+    },
+    {
+      "id": "gemma-4-e2b",
+      "name": "Gemma 4 E2B",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
     },
     {
       "id": "nous-hermes-2-mixtral-8x7b-dpo",
@@ -2104,6 +2291,7 @@
         }
       }
     },
+    { "id": "a-x-k2", "name": "A.X K2", "org": "SK Telecom" },
     { "id": "athene-v2-chat", "name": "Athene V2 Chat", "org": "Other" },
     {
       "id": "gemma-2b-it",
@@ -2124,6 +2312,44 @@
         "official": {
           "name": "DeepSeek API",
           "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
+    {
+      "id": "kat-coder-pro-v2",
+      "name": "KAT Coder Pro V2",
+      "org": "KwaiKAT",
+      "access": {
+        "openrouter": {
+          "id": "kwaipilot/kat-coder-pro-v2",
+          "url": "https://openrouter.ai/kwaipilot/kat-coder-pro-v2",
+          "contextLength": 262144,
+          "inputPerM": 0.3,
+          "outputPerM": 1.2,
+          "listedAt": "2026-03-27",
+          "modalities": ["text"]
+        }
+      }
+    },
+    {
+      "id": "devstral-2",
+      "name": "Devstral 2",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
+      "id": "devstral-small-2",
+      "name": "Devstral Small 2",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
         }
       }
     },
@@ -2236,6 +2462,26 @@
       }
     },
     {
+      "id": "nex-n2-pro",
+      "name": "Nex N2 Pro",
+      "org": "Nex AGI",
+      "access": {
+        "openrouter": {
+          "id": "nex-agi/nex-n2-pro",
+          "url": "https://openrouter.ai/nex-agi/nex-n2-pro",
+          "contextLength": 262144,
+          "inputPerM": 0.25,
+          "outputPerM": 1,
+          "listedAt": "2026-06-08",
+          "modalities": ["text", "image"]
+        },
+        "weights": {
+          "huggingFaceId": "nex-agi/Nex-N2-Pro",
+          "url": "https://huggingface.co/nex-agi/Nex-N2-Pro"
+        }
+      }
+    },
+    {
       "id": "palm-2",
       "name": "Palm 2",
       "org": "Google",
@@ -2257,6 +2503,7 @@
         }
       }
     },
+    { "id": "k-exaone-2-0", "name": "K-EXAONE 2.0", "org": "LG AI Research" },
     {
       "id": "gemini-2-0-flash",
       "name": "Gemini 2.0 Flash",
@@ -2287,6 +2534,48 @@
         "official": {
           "name": "inclusionAI on GitHub",
           "url": "https://github.com/inclusionAI"
+        }
+      }
+    },
+    {
+      "id": "nova-2-0-lite",
+      "name": "Nova 2.0 Lite",
+      "org": "Amazon",
+      "access": {
+        "official": {
+          "name": "Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock"
+        }
+      }
+    },
+    {
+      "id": "longcat-2-0",
+      "name": "LongCat 2.0",
+      "org": "LongCat",
+      "access": {
+        "openrouter": {
+          "id": "meituan/longcat-2.0",
+          "url": "https://openrouter.ai/meituan/longcat-2.0",
+          "contextLength": 1048756,
+          "inputPerM": 0.3,
+          "outputPerM": 1.2,
+          "listedAt": "2026-07-20",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "meituan-longcat/LongCat-2.0",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-2.0"
+        }
+      }
+    },
+    {
+      "id": "nova-2-0-pro-preview",
+      "name": "Nova 2.0 Pro Preview",
+      "org": "Amazon",
+      "access": {
+        "official": {
+          "name": "Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock"
         }
       }
     },
@@ -2412,6 +2701,16 @@
       }
     },
     {
+      "id": "agnes-2-5-pro-alpha",
+      "name": "Agnes 2.5 Pro Alpha",
+      "org": "Sapiens AI"
+    },
+    {
+      "id": "agnes-2-5-pro-beta",
+      "name": "Agnes 2.5 Pro Beta",
+      "org": "Sapiens AI"
+    },
+    {
       "id": "deepseek-v2-5",
       "name": "DeepSeek V2.5",
       "org": "DeepSeek",
@@ -2454,8 +2753,8 @@
       }
     },
     {
-      "id": "gemini-2-5-pro-preview-thinking-1k",
-      "name": "Gemini 2.5 Pro (Preview, Thinking 1K)",
+      "id": "gemini-2-5-pro-preview",
+      "name": "Gemini 2.5 Pro (Preview)",
       "org": "Google",
       "access": {
         "official": {
@@ -2513,6 +2812,17 @@
           "huggingFaceId": "moonshotai/Kimi-K2.5",
           "url": "https://huggingface.co/moonshotai/Kimi-K2.5"
         },
+        "official": {
+          "name": "Moonshot AI Platform",
+          "url": "https://platform.moonshot.ai/docs"
+        }
+      }
+    },
+    {
+      "id": "kimi-k2-5-2",
+      "name": "Kimi K2.5",
+      "org": "Moonshot",
+      "access": {
         "official": {
           "name": "Moonshot AI Platform",
           "url": "https://platform.moonshot.ai/docs"
@@ -2602,7 +2912,19 @@
         }
       }
     },
+    { "id": "lfm2-5-2-6b", "name": "LFM2.5.2.6B", "org": "Liquid AI" },
     { "id": "chatglm2-6b", "name": "Chatglm2.6b", "org": "Other" },
+    {
+      "id": "ling-2-6-flash",
+      "name": "Ling 2.6 Flash",
+      "org": "InclusionAI",
+      "access": {
+        "official": {
+          "name": "inclusionAI on GitHub",
+          "url": "https://github.com/inclusionAI"
+        }
+      }
+    },
     {
       "id": "kimi-k2-6",
       "name": "Kimi K2.6",
@@ -2624,6 +2946,17 @@
         "official": {
           "name": "Moonshot AI Platform",
           "url": "https://platform.moonshot.ai/docs"
+        }
+      }
+    },
+    {
+      "id": "ring-2-6-1t",
+      "name": "Ring 2.6.1T",
+      "org": "InclusionAI",
+      "access": {
+        "official": {
+          "name": "inclusionAI on GitHub",
+          "url": "https://github.com/inclusionAI"
         }
       }
     },
@@ -2950,6 +3283,17 @@
       }
     },
     {
+      "id": "gpt-5-5-instant-june-2026",
+      "name": "GPT-5.5 Instant (June 2026)",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
       "id": "gpt-5-2-chat-latest-20260210",
       "name": "GPT-5.2 Chat Latest 20260210",
       "org": "OpenAI",
@@ -2970,6 +3314,11 @@
           "url": "https://api-docs.deepseek.com"
         }
       }
+    },
+    {
+      "id": "jt-4-1-flash-236b-a21b",
+      "name": "JT-4.1 Flash 236B A21B",
+      "org": "China Mobile"
     },
     {
       "id": "qwen3-235b-a22b-instruct-2507",
@@ -3013,6 +3362,17 @@
           "huggingFaceId": "Qwen/Qwen3-235B-A22B-Thinking-2507",
           "url": "https://huggingface.co/Qwen/Qwen3-235B-A22B-Thinking-2507"
         },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen3-235b-a22b-2507",
+      "name": "Qwen3 235B A22B 2507",
+      "org": "Alibaba",
+      "access": {
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
@@ -3121,6 +3481,17 @@
         "official": {
           "name": "Mistral AI docs",
           "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
+      "id": "deepseek-v3-dec-24",
+      "name": "DeepSeek V3 (Dec '24)",
+      "org": "DeepSeek",
+      "access": {
+        "official": {
+          "name": "DeepSeek API",
+          "url": "https://api-docs.deepseek.com"
         }
       }
     },
@@ -3235,6 +3606,17 @@
       }
     },
     {
+      "id": "qwen3-30b-a3b-2507",
+      "name": "Qwen3 30B A3B 2507",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
       "id": "mistral-medium-2508",
       "name": "Mistral Medium 2508",
       "org": "Mistral",
@@ -3263,6 +3645,41 @@
           "huggingFaceId": "google/gemma-4-26B-A4B-it",
           "url": "https://huggingface.co/google/gemma-4-26B-A4B-it"
         },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "gemma-4-26b-a4b-2",
+      "name": "Gemma 4 26B A4B",
+      "org": "Google",
+      "access": {
+        "openrouter": {
+          "id": "google/gemma-4-26b-a4b-it",
+          "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
+          "contextLength": 262144,
+          "inputPerM": 0.07,
+          "outputPerM": 0.34,
+          "listedAt": "2026-04-03",
+          "modalities": ["image", "text", "video"]
+        },
+        "weights": {
+          "huggingFaceId": "google/gemma-4-26B-A4B-it",
+          "url": "https://huggingface.co/google/gemma-4-26B-A4B-it"
+        },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "diffusiongemma-26b-a4b",
+      "name": "DiffusionGemma 26B A4B",
+      "org": "Google",
+      "access": {
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
@@ -3310,8 +3727,8 @@
       }
     },
     {
-      "id": "qwen-3-6-27b",
-      "name": "Qwen 3.6 27B",
+      "id": "qwen3-6-27b",
+      "name": "Qwen3.6 27B",
       "org": "Alibaba",
       "access": {
         "openrouter": {
@@ -3327,6 +3744,17 @@
           "huggingFaceId": "Qwen/Qwen3.6-27B",
           "url": "https://huggingface.co/Qwen/Qwen3.6-27B"
         },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen3-6-27b-2",
+      "name": "Qwen3.6 27B",
+      "org": "Alibaba",
+      "access": {
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
@@ -3355,6 +3783,22 @@
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
+      }
+    },
+    {
+      "id": "nvidia-nemotron-3-nano-30b-a3b",
+      "name": "NVIDIA Nemotron 3 Nano 30B A3B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "nemotron-3-nano-omni-30b-a3b-reasoning",
+      "name": "Nemotron 3 Nano Omni 30B A3B Reasoning",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
       }
     },
     {
@@ -3430,6 +3874,28 @@
       }
     },
     {
+      "id": "qwen3-next-80b-a3b-2",
+      "name": "Qwen3 Next 80B A3B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "ministral-3-3b",
+      "name": "Ministral 3 3B",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
       "id": "llama-3-1-tulu-3-70b",
       "name": "Llama 3.1 Tulu 3 70B",
       "org": "Ai2",
@@ -3500,6 +3966,17 @@
       }
     },
     {
+      "id": "qwen3-6-35b-a3b-2",
+      "name": "Qwen3.6 35B A3B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
       "id": "olmo-3-32b-think",
       "name": "Olmo 3 32B Think",
       "org": "Ai2",
@@ -3530,6 +4007,17 @@
       }
     },
     {
+      "id": "qwen3-32b-2",
+      "name": "Qwen3 32B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
       "id": "qwen3-coder-480b-a35b-instruct",
       "name": "Qwen3 Coder 480B A35B Instruct",
       "org": "Alibaba",
@@ -3540,7 +4028,7 @@
         }
       }
     },
-    { "id": "g9v3-39a5b", "name": "G9v3 39A5B", "org": "Other" },
+    { "id": "g9v3-39a5b", "name": "G9v3 39A5B", "org": "AI9Stars" },
     {
       "id": "nvidia-nemotron-3-ultra-550b-a55b-nvfp4",
       "name": "NVIDIA Nemotron 3 Ultra 550B A55B Nvfp4",
@@ -3569,6 +4057,25 @@
       }
     },
     {
+      "id": "nvidia-nemotron-3-nano-4b",
+      "name": "NVIDIA Nemotron 3 Nano 4B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "granite-4-1-3b",
+      "name": "Granite 4.1 3B",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
+        }
+      }
+    },
+    {
       "id": "granite-4-2-3b",
       "name": "Granite 4.2 3B",
       "org": "IBM",
@@ -3588,6 +4095,14 @@
       }
     },
     {
+      "id": "nemotron-3-ultra-550b-a55b-2",
+      "name": "Nemotron 3 Ultra 550B A55B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
       "id": "llama-3-70b-instruct",
       "name": "Llama 3 70B Instruct",
       "org": "Meta",
@@ -3599,11 +4114,62 @@
       }
     },
     {
+      "id": "ministral-3-8b",
+      "name": "Ministral 3 8B",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
+      "id": "qwen3-8b",
+      "name": "Qwen3 8B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
       "id": "grok-3-mini-beta",
       "name": "Grok 3 Mini Beta",
       "org": "SpaceXAI",
       "access": {
         "official": { "name": "xAI API", "url": "https://docs.x.ai" }
+      }
+    },
+    {
+      "id": "motif-3-beta",
+      "name": "Motif 3 (Beta)",
+      "org": "Motif Technologies"
+    },
+    {
+      "id": "qwen3-coder-next",
+      "name": "Qwen3 Coder Next",
+      "org": "Alibaba",
+      "access": {
+        "openrouter": {
+          "id": "qwen/qwen3-coder-next",
+          "url": "https://openrouter.ai/qwen/qwen3-coder-next",
+          "contextLength": 262144,
+          "inputPerM": 0.12,
+          "outputPerM": 0.8,
+          "listedAt": "2026-02-04",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3-Coder-Next",
+          "url": "https://huggingface.co/Qwen/Qwen3-Coder-Next"
+        },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
       }
     },
     {
@@ -3868,6 +4434,7 @@
         }
       }
     },
+    { "id": "motif-3", "name": "Motif 3", "org": "Motif Technologies" },
     {
       "id": "nemotron-3-super",
       "name": "Nemotron 3 Super",
@@ -3969,6 +4536,26 @@
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "solar-pro-3",
+      "name": "Solar Pro 3",
+      "org": "Upstage",
+      "access": {
+        "openrouter": {
+          "id": "upstage/solar-pro-3",
+          "url": "https://openrouter.ai/upstage/solar-pro-3",
+          "contextLength": 131072,
+          "inputPerM": 0.15,
+          "outputPerM": 0.6,
+          "listedAt": "2026-01-27",
+          "modalities": ["text"]
+        },
+        "official": {
+          "name": "Upstage Console",
+          "url": "https://console.upstage.ai"
         }
       }
     },
@@ -4134,6 +4721,30 @@
       }
     },
     {
+      "id": "deepseek-v3-1-terminus-2",
+      "name": "DeepSeek V3.1 Terminus",
+      "org": "DeepSeek",
+      "access": {
+        "openrouter": {
+          "id": "deepseek/deepseek-v3.1-terminus",
+          "url": "https://openrouter.ai/deepseek/deepseek-v3.1-terminus",
+          "contextLength": 163840,
+          "inputPerM": 0.27,
+          "outputPerM": 1,
+          "listedAt": "2025-09-22",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "deepseek-ai/DeepSeek-V3.1-Terminus",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus"
+        },
+        "official": {
+          "name": "DeepSeek API",
+          "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
+    {
       "id": "deepseek-v3-1",
       "name": "DeepSeek V3.1",
       "org": "DeepSeek",
@@ -4154,6 +4765,26 @@
         "official": {
           "name": "DeepSeek API",
           "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
+    {
+      "id": "gemini-3-1-flash-lite",
+      "name": "Gemini 3.1 Flash-Lite",
+      "org": "Google",
+      "access": {
+        "openrouter": {
+          "id": "google/gemini-3.1-flash-lite",
+          "url": "https://openrouter.ai/google/gemini-3.1-flash-lite",
+          "contextLength": 1048576,
+          "inputPerM": 0.25,
+          "outputPerM": 1.5,
+          "listedAt": "2026-05-07",
+          "modalities": ["text", "image", "video", "file", "audio"]
+        },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
         }
       }
     },
@@ -4194,6 +4825,37 @@
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "mistral-medium-3-1",
+      "name": "Mistral Medium 3.1",
+      "org": "Mistral",
+      "access": {
+        "openrouter": {
+          "id": "mistralai/mistral-medium-3.1",
+          "url": "https://openrouter.ai/mistralai/mistral-medium-3.1",
+          "contextLength": 131072,
+          "inputPerM": 0.4,
+          "outputPerM": 2,
+          "listedAt": "2025-08-13",
+          "modalities": ["text", "image", "file"]
+        },
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
+      "id": "mistral-small-3-1",
+      "name": "Mistral Small 3.1",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
         }
       }
     },
@@ -4279,6 +4941,41 @@
       }
     },
     {
+      "id": "deepseek-v3-2-2",
+      "name": "DeepSeek V3.2",
+      "org": "DeepSeek",
+      "access": {
+        "openrouter": {
+          "id": "deepseek/deepseek-v3.2",
+          "url": "https://openrouter.ai/deepseek/deepseek-v3.2",
+          "contextLength": 163840,
+          "inputPerM": 0.269,
+          "outputPerM": 0.4,
+          "listedAt": "2025-12-01",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "deepseek-ai/DeepSeek-V3.2",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2"
+        },
+        "official": {
+          "name": "DeepSeek API",
+          "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
+    {
+      "id": "mistral-small-3-2",
+      "name": "Mistral Small 3.2",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
       "id": "llama-3-2-1b-instruct",
       "name": "Llama 3.2.1b Instruct",
       "org": "Meta",
@@ -4324,7 +5021,7 @@
         }
       }
     },
-    { "id": "g9v3-3b", "name": "G9v3.3B", "org": "Other" },
+    { "id": "g9v3-3b", "name": "G9v3.3B", "org": "AI9Stars" },
     {
       "id": "gemma-3-4b-it",
       "name": "Gemma 3.4B It",
@@ -4333,6 +5030,17 @@
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "qwen3-5-9b",
+      "name": "Qwen3.5 9B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       }
     },
@@ -4421,6 +5129,38 @@
       }
     },
     {
+      "id": "claude-3-5-haiku",
+      "name": "Claude 3.5 Haiku",
+      "org": "Anthropic",
+      "access": {
+        "official": {
+          "name": "Claude Developer Platform",
+          "url": "https://docs.claude.com"
+        }
+      }
+    },
+    {
+      "id": "nemotron-3-5-lightning",
+      "name": "Nemotron 3.5 Lightning",
+      "org": "NVIDIA",
+      "access": {
+        "openrouter": {
+          "id": "nvidia/nemotron-3.5-lightning",
+          "url": "https://openrouter.ai/nvidia/nemotron-3.5-lightning",
+          "contextLength": 262144,
+          "inputPerM": 0.08,
+          "outputPerM": 0.2,
+          "listedAt": "2026-08-11",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+          "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16"
+        },
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
       "id": "mistral-medium-3-5",
       "name": "Mistral Medium 3.5",
       "org": "Mistral",
@@ -4464,7 +5204,7 @@
       }
     },
     {
-      "id": "qwen3-5-2b",
+      "id": "qwen3-5-2b-2",
       "name": "Qwen3.5.2B",
       "org": "Alibaba",
       "access": {
@@ -4486,7 +5226,7 @@
       }
     },
     {
-      "id": "qwen3-5-9b",
+      "id": "qwen3-5-9b-2",
       "name": "Qwen3.5.9B",
       "org": "Alibaba",
       "access": {
@@ -4602,6 +5342,30 @@
       }
     },
     {
+      "id": "step-3-7-flash",
+      "name": "Step 3.7 Flash",
+      "org": "StepFun",
+      "access": {
+        "openrouter": {
+          "id": "stepfun/step-3.7-flash",
+          "url": "https://openrouter.ai/stepfun/step-3.7-flash",
+          "contextLength": 262144,
+          "inputPerM": 0.2,
+          "outputPerM": 1.15,
+          "listedAt": "2026-05-28",
+          "modalities": ["text", "image", "video"]
+        },
+        "weights": {
+          "huggingFaceId": "stepfun-ai/Step-3.7-Flash",
+          "url": "https://huggingface.co/stepfun-ai/Step-3.7-Flash"
+        },
+        "official": {
+          "name": "StepFun Platform",
+          "url": "https://platform.stepfun.com"
+        }
+      }
+    },
+    {
       "id": "qwen3-7-plus",
       "name": "Qwen3.7 Plus",
       "org": "Alibaba",
@@ -4633,8 +5397,8 @@
       }
     },
     {
-      "id": "qwen-3-7",
-      "name": "Qwen 3.7",
+      "id": "qwen3-7",
+      "name": "Qwen3.7",
       "org": "Alibaba",
       "access": {
         "openrouter": {
@@ -4684,8 +5448,8 @@
       }
     },
     {
-      "id": "qwen-3-8-flash-next",
-      "name": "Qwen 3.8 Flash Next",
+      "id": "qwen3-8-flash-next",
+      "name": "Qwen3.8 Flash Next",
       "org": "Alibaba",
       "access": {
         "official": {
@@ -4702,6 +5466,17 @@
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "granite-4-1-30b",
+      "name": "Granite 4.1 30B",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
         }
       }
     },
@@ -4788,6 +5563,30 @@
       }
     },
     {
+      "id": "gemma-4-31b-2",
+      "name": "Gemma 4 31B",
+      "org": "Google",
+      "access": {
+        "openrouter": {
+          "id": "google/gemma-4-31b-it",
+          "url": "https://openrouter.ai/google/gemma-4-31b-it",
+          "contextLength": 262144,
+          "inputPerM": 0.09,
+          "outputPerM": 0.34,
+          "listedAt": "2026-04-02",
+          "modalities": ["image", "text", "video"]
+        },
+        "weights": {
+          "huggingFaceId": "google/gemma-4-31B-it",
+          "url": "https://huggingface.co/google/gemma-4-31B-it"
+        },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
       "id": "c4ai-aya-expanse-32b",
       "name": "C4ai Aya Expanse 32B",
       "org": "Cohere",
@@ -4816,6 +5615,11 @@
           "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       }
+    },
+    {
+      "id": "exaone-4-5-33b",
+      "name": "EXAONE 4.5 33B",
+      "org": "LG AI Research"
     },
     { "id": "guanaco-33b", "name": "Guanaco 33B", "org": "Other" },
     { "id": "vicuna-33b", "name": "Vicuna 33B", "org": "Other" },
@@ -4847,6 +5651,17 @@
     {
       "id": "gemma-4-e4b",
       "name": "Gemma 4-E4B",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "gemma-4-e4b-2",
+      "name": "Gemma 4 E4B",
       "org": "Google",
       "access": {
         "official": {
@@ -4918,6 +5733,17 @@
       }
     },
     {
+      "id": "deepseek-v4-flash-vision",
+      "name": "DeepSeek V4 Flash Vision",
+      "org": "DeepSeek",
+      "access": {
+        "official": {
+          "name": "DeepSeek API",
+          "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
+    {
       "id": "deepseek-v4-pro-high-preview",
       "name": "DeepSeek V4 Pro High Preview",
       "org": "DeepSeek",
@@ -4956,8 +5782,28 @@
       }
     },
     {
+      "id": "gpt-4",
+      "name": "GPT-4",
+      "org": "OpenAI",
+      "access": {
+        "openrouter": {
+          "id": "openai/gpt-4",
+          "url": "https://openrouter.ai/openai/gpt-4",
+          "contextLength": 8191,
+          "inputPerM": 30,
+          "outputPerM": 60,
+          "listedAt": "2023-05-28",
+          "modalities": ["text"]
+        },
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
       "id": "gpt-4o-mini",
-      "name": "GPT-4o Mini",
+      "name": "GPT-4o mini",
       "org": "OpenAI",
       "access": {
         "openrouter": {
@@ -5080,6 +5926,30 @@
       }
     },
     {
+      "id": "mistral-small-4",
+      "name": "Mistral Small 4",
+      "org": "Mistral",
+      "access": {
+        "openrouter": {
+          "id": "mistralai/mistral-small-2603",
+          "url": "https://openrouter.ai/mistralai/mistral-small-2603",
+          "contextLength": 262144,
+          "inputPerM": 0.15,
+          "outputPerM": 0.6,
+          "listedAt": "2026-03-16",
+          "modalities": ["text", "image"]
+        },
+        "weights": {
+          "huggingFaceId": "mistralai/Mistral-Small-4-119B-2603",
+          "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"
+        },
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
       "id": "claude-opus-4",
       "name": "Claude Opus 4",
       "org": "Anthropic",
@@ -5144,6 +6014,26 @@
       }
     },
     {
+      "id": "claude-4-sonnet",
+      "name": "Claude 4 Sonnet",
+      "org": "Anthropic",
+      "access": {
+        "openrouter": {
+          "id": "anthropic/claude-sonnet-4",
+          "url": "https://openrouter.ai/anthropic/claude-sonnet-4",
+          "contextLength": 1000000,
+          "inputPerM": 3,
+          "outputPerM": 15,
+          "listedAt": "2025-05-22",
+          "modalities": ["image", "text", "file"]
+        },
+        "official": {
+          "name": "Claude Developer Platform",
+          "url": "https://docs.claude.com"
+        }
+      }
+    },
+    {
       "id": "claude-sonnet-4",
       "name": "Claude Sonnet 4",
       "org": "Anthropic",
@@ -5193,7 +6083,7 @@
     },
     {
       "id": "gpt-4-1-mini",
-      "name": "GPT-4.1 Mini",
+      "name": "GPT-4.1 mini",
       "org": "OpenAI",
       "access": {
         "openrouter": {
@@ -5213,7 +6103,7 @@
     },
     {
       "id": "gpt-4-1-nano",
-      "name": "GPT-4.1 Nano",
+      "name": "GPT-4.1 nano",
       "org": "OpenAI",
       "access": {
         "openrouter": {
@@ -5297,10 +6187,19 @@
       }
     },
     {
-      "id": "grok-4-20-reasoning",
-      "name": "Grok 4.20 (Reasoning)",
+      "id": "grok-4-20",
+      "name": "Grok 4.20",
       "org": "SpaceXAI",
       "access": {
+        "openrouter": {
+          "id": "x-ai/grok-4.20",
+          "url": "https://openrouter.ai/x-ai/grok-4.20",
+          "contextLength": 2000000,
+          "inputPerM": 1.25,
+          "outputPerM": 2.5,
+          "listedAt": "2026-03-31",
+          "modalities": ["text", "image", "file"]
+        },
         "official": { "name": "xAI API", "url": "https://docs.x.ai" }
       }
     },
@@ -5433,6 +6332,26 @@
       }
     },
     {
+      "id": "claude-4-5-haiku-2",
+      "name": "Claude 4.5 Haiku",
+      "org": "Anthropic",
+      "access": {
+        "openrouter": {
+          "id": "anthropic/claude-haiku-4.5",
+          "url": "https://openrouter.ai/anthropic/claude-haiku-4.5",
+          "contextLength": 200000,
+          "inputPerM": 1,
+          "outputPerM": 5,
+          "listedAt": "2025-10-15",
+          "modalities": ["text", "image", "file"]
+        },
+        "official": {
+          "name": "Claude Developer Platform",
+          "url": "https://docs.claude.com"
+        }
+      }
+    },
+    {
       "id": "opus-4-5",
       "name": "Opus 4.5",
       "org": "Anthropic",
@@ -5445,6 +6364,26 @@
           "outputPerM": 25,
           "listedAt": "2025-11-24",
           "modalities": ["file", "image", "text"]
+        },
+        "official": {
+          "name": "Claude Developer Platform",
+          "url": "https://docs.claude.com"
+        }
+      }
+    },
+    {
+      "id": "claude-4-5-sonnet",
+      "name": "Claude 4.5 Sonnet",
+      "org": "Anthropic",
+      "access": {
+        "openrouter": {
+          "id": "anthropic/claude-sonnet-4.5",
+          "url": "https://openrouter.ai/anthropic/claude-sonnet-4.5",
+          "contextLength": 1000000,
+          "inputPerM": 3,
+          "outputPerM": 15,
+          "listedAt": "2025-09-29",
+          "modalities": ["text", "image", "file"]
         },
         "official": {
           "name": "Claude Developer Platform",
@@ -5474,6 +6413,27 @@
     },
     {
       "id": "glm-4-6",
+      "name": "GLM-4.6",
+      "org": "Z.ai",
+      "access": {
+        "openrouter": {
+          "id": "z-ai/glm-4.6",
+          "url": "https://openrouter.ai/z-ai/glm-4.6",
+          "contextLength": 204800,
+          "inputPerM": 0.55,
+          "outputPerM": 2.2,
+          "listedAt": "2025-09-30",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "zai-org/GLM-4.6",
+          "url": "https://huggingface.co/zai-org/GLM-4.6"
+        },
+        "official": { "name": "Z.ai API", "url": "https://docs.z.ai" }
+      }
+    },
+    {
+      "id": "glm-4-6-2",
       "name": "GLM-4.6",
       "org": "Z.ai",
       "access": {
@@ -5625,6 +6585,27 @@
       }
     },
     {
+      "id": "glm-4-7-2",
+      "name": "GLM-4.7",
+      "org": "Z.ai",
+      "access": {
+        "openrouter": {
+          "id": "z-ai/glm-4.7",
+          "url": "https://openrouter.ai/z-ai/glm-4.7",
+          "contextLength": 204800,
+          "inputPerM": 0.4,
+          "outputPerM": 1.75,
+          "listedAt": "2025-12-22",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "zai-org/GLM-4.7",
+          "url": "https://huggingface.co/zai-org/GLM-4.7"
+        },
+        "official": { "name": "Z.ai API", "url": "https://docs.z.ai" }
+      }
+    },
+    {
       "id": "claude-opus-4-7",
       "name": "Claude Opus 4.7",
       "org": "Anthropic",
@@ -5663,6 +6644,11 @@
           "url": "https://docs.claude.com"
         }
       }
+    },
+    {
+      "id": "quasar-438b-max-based-on-glm-5-2",
+      "name": "Quasar 438B (max, based on GLM-5.2)",
+      "org": "Multiverse Computing"
     },
     {
       "id": "gpt-5-chat",
@@ -5906,6 +6892,27 @@
       }
     },
     {
+      "id": "glm-5-1-2",
+      "name": "GLM-5.1",
+      "org": "Z.ai",
+      "access": {
+        "openrouter": {
+          "id": "z-ai/glm-5.1",
+          "url": "https://openrouter.ai/z-ai/glm-5.1",
+          "contextLength": 204800,
+          "inputPerM": 0.966,
+          "outputPerM": 3.036,
+          "listedAt": "2026-04-07",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "zai-org/GLM-5.1",
+          "url": "https://huggingface.co/zai-org/GLM-5.1"
+        },
+        "official": { "name": "Z.ai API", "url": "https://docs.z.ai" }
+      }
+    },
+    {
       "id": "gpt-5-1",
       "name": "GPT-5.1",
       "org": "OpenAI",
@@ -6023,6 +7030,26 @@
       "name": "GPT-5.3 Chat Latest",
       "org": "OpenAI",
       "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "gpt-5-3-codex",
+      "name": "GPT-5.3 Codex",
+      "org": "OpenAI",
+      "access": {
+        "openrouter": {
+          "id": "openai/gpt-5.3-codex",
+          "url": "https://openrouter.ai/openai/gpt-5.3-codex",
+          "contextLength": 400000,
+          "inputPerM": 1.75,
+          "outputPerM": 14,
+          "listedAt": "2026-02-24",
+          "modalities": ["text", "image", "file"]
+        },
         "official": {
           "name": "OpenAI Platform",
           "url": "https://platform.openai.com/docs"
@@ -6282,17 +7309,6 @@
         }
       }
     },
-    {
-      "id": "gpt-6-astra-non-reasoning",
-      "name": "GPT-6 Astra (Non-reasoning)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
     { "id": "chatglm-6b", "name": "Chatglm 6B", "org": "Other" },
     {
       "id": "deepseek-llm-67b-chat",
@@ -6379,6 +7395,27 @@
         }
       }
     },
+    {
+      "id": "command-a",
+      "name": "Command A+",
+      "org": "Cohere",
+      "access": {
+        "openrouter": {
+          "id": "cohere/command-a",
+          "url": "https://openrouter.ai/cohere/command-a",
+          "contextLength": 256000,
+          "inputPerM": 2.5,
+          "outputPerM": 10,
+          "listedAt": "2025-03-13",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "CohereForAI/c4ai-command-a-03-2025",
+          "url": "https://huggingface.co/CohereForAI/c4ai-command-a-03-2025"
+        },
+        "official": { "name": "Cohere docs", "url": "https://docs.cohere.com" }
+      }
+    },
     { "id": "ox-alpha", "name": "Ox Alpha", "org": "Other" },
     {
       "id": "gemini-pro-dev-api",
@@ -6401,6 +7438,14 @@
       "id": "longcat-flash-chat",
       "name": "Longcat Flash Chat",
       "org": "Meituan"
+    },
+    {
+      "id": "north-mini-code",
+      "name": "North Mini Code",
+      "org": "Cohere",
+      "access": {
+        "official": { "name": "Cohere docs", "url": "https://docs.cohere.com" }
+      }
     },
     {
       "id": "codex-mini-latest",
@@ -6434,6 +7479,7 @@
       "name": "DBRX Instruct Preview",
       "org": "Other"
     },
+    { "id": "k-exaone", "name": "K EXAONE", "org": "LG AI Research" },
     {
       "id": "gemini-pro",
       "name": "Gemini Pro",
@@ -6551,7 +7597,7 @@
     {
       "id": "trinity-large",
       "name": "Trinity Large",
-      "org": "Other",
+      "org": "Arcee AI",
       "access": {
         "openrouter": {
           "id": "arcee-ai/trinity-large-thinking",
@@ -6637,6 +7683,13 @@
     { "id": "nvarc", "name": "NVARC", "org": "Other" }
   ],
   "scores": [
+    {
+      "modelId": "grok-build-0-1-0616",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1142,
+      "stderr": 15,
+      "sourceLabel": "Grok Build 0.1 0616"
+    },
     {
       "modelId": "zephyr-orpo-141b-a35b-v0-1",
       "benchmarkId": "lmarena",
@@ -6937,6 +7990,13 @@
       "sourceLabel": "deepseek-v3-0324"
     },
     {
+      "modelId": "deepseek-v3-0324",
+      "benchmarkId": "aa-gdpval",
+      "raw": 276,
+      "stderr": 19,
+      "sourceLabel": "DeepSeek V3 0324"
+    },
+    {
       "modelId": "olmo-2-0325-32b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1251,
@@ -7088,6 +8148,20 @@
     },
     {
       "modelId": "deepseek-v4-flash-0731",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1471,
+      "stderr": 15,
+      "sourceLabel": "DeepSeek V4 Flash 0731 (Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "deepseek-v4-flash-0731",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1263,
+      "stderr": 7,
+      "sourceLabel": "DeepSeek V4 Flash 0731 (Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "deepseek-v4-flash-0731",
       "benchmarkId": "arc-agi-2",
       "raw": 61.4,
       "sourceLabel": "DeepSeek V4 Flash 0731 (Max)"
@@ -7173,6 +8247,20 @@
       "benchmarkId": "artificial-analysis",
       "raw": 42,
       "sourceLabel": "DeepSeek V4 Pro 0813 (max)"
+    },
+    {
+      "modelId": "deepseek-v4-pro-0813",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1497,
+      "stderr": 15,
+      "sourceLabel": "DeepSeek V4 Pro 0813 (Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "deepseek-v4-pro-0813",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1269,
+      "stderr": 7.5,
+      "sourceLabel": "DeepSeek V4 Pro 0813 (Reasoning, Max Effort)"
     },
     {
       "modelId": "deepseek-v4-pro-0813",
@@ -7292,6 +8380,13 @@
       "sourceLabel": "hunyuan-t1-20250711"
     },
     {
+      "modelId": "deepseek-r1-jan-25",
+      "benchmarkId": "aa-gdpval",
+      "raw": 480,
+      "stderr": 19,
+      "sourceLabel": "DeepSeek R1 (Jan '25)"
+    },
+    {
       "modelId": "llama-3-1-nemotron-ultra-253b-v1",
       "benchmarkId": "lmarena",
       "raw": 1347,
@@ -7359,6 +8454,34 @@
       "benchmarkId": "ifm-k2-horizon:livecodebench-v6",
       "raw": 33.52,
       "sourceLabel": "OpenBMB-1B"
+    },
+    {
+      "modelId": "celeris-1",
+      "benchmarkId": "aa-gdpval",
+      "raw": 484,
+      "stderr": 21,
+      "sourceLabel": "Celeris-1"
+    },
+    {
+      "modelId": "celeris-1",
+      "benchmarkId": "aa-briefcase",
+      "raw": 178,
+      "stderr": 11.5,
+      "sourceLabel": "Celeris-1"
+    },
+    {
+      "modelId": "kat-coder-pro-v1",
+      "benchmarkId": "aa-gdpval",
+      "raw": 848,
+      "stderr": 16,
+      "sourceLabel": "KAT-Coder-Pro V1"
+    },
+    {
+      "modelId": "kat-coder-pro-v1",
+      "benchmarkId": "aa-briefcase",
+      "raw": 607,
+      "stderr": 9,
+      "sourceLabel": "KAT-Coder-Pro V1"
     },
     {
       "modelId": "deepseek-r1",
@@ -7429,11 +8552,32 @@
       "sourceLabel": "amazon-nova-pro-v1.0"
     },
     {
+      "modelId": "apodex-1-1",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1276,
+      "stderr": 17,
+      "sourceLabel": "Apodex 1.1"
+    },
+    {
       "modelId": "muse-spark-1-1",
       "benchmarkId": "lmarena",
       "raw": 1492,
       "stderr": 5,
       "sourceLabel": "muse-spark-1.1"
+    },
+    {
+      "modelId": "muse-spark-1-1",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1298,
+      "stderr": 16,
+      "sourceLabel": "Muse Spark 1.1 (xhigh)"
+    },
+    {
+      "modelId": "muse-spark-1-1",
+      "benchmarkId": "aa-briefcase",
+      "raw": 865,
+      "stderr": 9.5,
+      "sourceLabel": "Muse Spark 1.1 (xhigh)"
     },
     {
       "modelId": "muse-spark-1-1",
@@ -7498,6 +8642,20 @@
       "sourceLabel": "gemma-1.1-7b-it"
     },
     {
+      "modelId": "magistral-medium-1-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 363,
+      "stderr": 18,
+      "sourceLabel": "Magistral Medium 1.2"
+    },
+    {
+      "modelId": "magistral-small-1-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 214,
+      "stderr": 19,
+      "sourceLabel": "Magistral Small 1.2"
+    },
+    {
       "modelId": "muse-spark-1-2",
       "benchmarkId": "lmarena",
       "raw": 1499,
@@ -7508,6 +8666,20 @@
       "modelId": "muse-spark-1-2",
       "benchmarkId": "artificial-analysis",
       "raw": 47,
+      "sourceLabel": "Muse Spark 1.2 (xhigh)"
+    },
+    {
+      "modelId": "muse-spark-1-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1527,
+      "stderr": 15,
+      "sourceLabel": "Muse Spark 1.2 (xhigh)"
+    },
+    {
+      "modelId": "muse-spark-1-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1346,
+      "stderr": 6.5,
       "sourceLabel": "Muse Spark 1.2 (xhigh)"
     },
     {
@@ -7562,6 +8734,20 @@
       "modelId": "muse-spark-1-3",
       "benchmarkId": "artificial-analysis",
       "raw": 53,
+      "sourceLabel": "Muse Spark 1.3 (max)"
+    },
+    {
+      "modelId": "muse-spark-1-3",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1720,
+      "stderr": 20,
+      "sourceLabel": "Muse Spark 1.3 (max)"
+    },
+    {
+      "modelId": "muse-spark-1-3",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1559,
+      "stderr": 10.5,
       "sourceLabel": "Muse Spark 1.3 (max)"
     },
     {
@@ -7717,6 +8903,20 @@
       "sourceLabel": "qwen3.5-122b-a10b"
     },
     {
+      "modelId": "qwen3-5-122b-a10b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 834,
+      "stderr": 18,
+      "sourceLabel": "Qwen3.5 122B A10B (Non-reasoning)"
+    },
+    {
+      "modelId": "qwen3-5-122b-a10b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 928,
+      "stderr": 15,
+      "sourceLabel": "Qwen3.5 122B A10B (Reasoning)"
+    },
+    {
       "modelId": "amazon-nova-experimental-chat-10-20",
       "benchmarkId": "lmarena",
       "raw": 1350,
@@ -7757,6 +8957,20 @@
       "raw": 1361,
       "stderr": 7,
       "sourceLabel": "nvidia-nemotron-3-super-120b-a12b"
+    },
+    {
+      "modelId": "nemotron-3-super-120b-a12b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 646,
+      "stderr": 16,
+      "sourceLabel": "Nemotron 3 Super 120B A12B (Reasoning)"
+    },
+    {
+      "modelId": "nemotron-3-super-120b-a12b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
+      "sourceLabel": "Nemotron 3 Super 120B A12B (Reasoning)"
     },
     {
       "modelId": "dolly-v2-12b",
@@ -7809,11 +9023,32 @@
       "sourceLabel": "Gemma 4-12B"
     },
     {
+      "modelId": "gemma-4-12b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 593,
+      "stderr": 20,
+      "sourceLabel": "Gemma 4 12B (Reasoning)"
+    },
+    {
       "modelId": "oasst-pythia-12b",
       "benchmarkId": "lmarena",
       "raw": 1023,
       "stderr": 11,
       "sourceLabel": "oasst-pythia-12b"
+    },
+    {
+      "modelId": "hypernova-60b-2605-high-based-on-gpt-oss-120b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 606,
+      "stderr": 19,
+      "sourceLabel": "HyperNova 60B 2605 (high, based on gpt-oss-120b)"
+    },
+    {
+      "modelId": "hypernova-60b-2605-high-based-on-gpt-oss-120b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 261,
+      "stderr": 11.5,
+      "sourceLabel": "HyperNova 60B 2605 (high, based on gpt-oss-120b)"
     },
     {
       "modelId": "gpt-oss-120b",
@@ -7826,6 +9061,20 @@
       "modelId": "gpt-oss-120b",
       "benchmarkId": "artificial-analysis",
       "raw": 16,
+      "sourceLabel": "gpt-oss-120b (high)"
+    },
+    {
+      "modelId": "gpt-oss-120b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 746,
+      "stderr": 16,
+      "sourceLabel": "gpt-oss-120b (high)"
+    },
+    {
+      "modelId": "gpt-oss-120b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
       "sourceLabel": "gpt-oss-120b (high)"
     },
     {
@@ -7899,6 +9148,34 @@
       "sourceLabel": "wizardlm-13b"
     },
     {
+      "modelId": "ministral-3-14b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 434,
+      "stderr": 17,
+      "sourceLabel": "Ministral 3 14B"
+    },
+    {
+      "modelId": "ministral-3-14b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 162,
+      "stderr": 10.5,
+      "sourceLabel": "Ministral 3 14B"
+    },
+    {
+      "modelId": "qwen3-14b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 189,
+      "stderr": 19,
+      "sourceLabel": "Qwen3 14B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-14b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
+      "sourceLabel": "Qwen3 14B (Reasoning)"
+    },
+    {
       "modelId": "rwkv-4-raven-14b",
       "benchmarkId": "lmarena",
       "raw": 1042,
@@ -7941,11 +9218,39 @@
       "sourceLabel": "qwen3.5-397b-a17b"
     },
     {
+      "modelId": "qwen3-5-397b-a17b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 907,
+      "stderr": 15,
+      "sourceLabel": "Qwen3.5 397B A17B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-5-397b-a17b-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 564,
+      "stderr": 9,
+      "sourceLabel": "Qwen3.5 397B A17B (Reasoning)"
+    },
+    {
       "modelId": "falcon-180b-chat",
       "benchmarkId": "lmarena",
       "raw": 1147,
       "stderr": 17,
       "sourceLabel": "falcon-180b-chat"
+    },
+    {
+      "modelId": "k2-think-v2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 329,
+      "stderr": 18,
+      "sourceLabel": "K2 Think V2"
+    },
+    {
+      "modelId": "k2-think-v2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 52,
+      "stderr": 11,
+      "sourceLabel": "K2 Think V2"
     },
     {
       "modelId": "internlm2-5-20b-chat",
@@ -7965,6 +9270,20 @@
       "modelId": "k2-horizon-375b-a23b",
       "benchmarkId": "artificial-analysis",
       "raw": 38,
+      "sourceLabel": "K2 Horizon 375B A23B"
+    },
+    {
+      "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1413,
+      "stderr": 20,
+      "sourceLabel": "K2 Horizon 375B A23B"
+    },
+    {
+      "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1306,
+      "stderr": 9,
       "sourceLabel": "K2 Horizon 375B A23B"
     },
     {
@@ -8076,6 +9395,13 @@
       "sourceLabel": "K2-Horizon-375B-A23B"
     },
     {
+      "modelId": "solar-open2-250b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1055,
+      "stderr": 18,
+      "sourceLabel": "Solar Open2 250B"
+    },
+    {
       "modelId": "gemini-3-deep-think-2-26",
       "benchmarkId": "arc-agi-2",
       "raw": 84.6,
@@ -8087,6 +9413,20 @@
       "raw": 1289,
       "stderr": 3,
       "sourceLabel": "gemma-2-27b-it"
+    },
+    {
+      "modelId": "nemotron-cascade-2-30b-a3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 449,
+      "stderr": 21,
+      "sourceLabel": "Nemotron Cascade 2 30B A3B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 167,
+      "stderr": 21,
+      "sourceLabel": "Qwen3.5 2B (Reasoning)"
     },
     {
       "modelId": "k2-horizon-3-7b",
@@ -8245,6 +9585,13 @@
       "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
     },
     {
+      "modelId": "gemma-4-e2b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 37,
+      "stderr": 21,
+      "sourceLabel": "Gemma 4 E2B (Reasoning)"
+    },
+    {
       "modelId": "nous-hermes-2-mixtral-8x7b-dpo",
       "benchmarkId": "lmarena",
       "raw": 1164,
@@ -8328,6 +9675,13 @@
       "sourceLabel": "qwen2-72b-instruct"
     },
     {
+      "modelId": "a-x-k2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1047,
+      "stderr": 18,
+      "sourceLabel": "A.X-K2"
+    },
+    {
       "modelId": "athene-v2-chat",
       "benchmarkId": "lmarena",
       "raw": 1314,
@@ -8349,11 +9703,39 @@
       "sourceLabel": "deepseek-coder-v2"
     },
     {
+      "modelId": "kat-coder-pro-v2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 846,
+      "stderr": 18,
+      "sourceLabel": "KAT Coder Pro V2"
+    },
+    {
+      "modelId": "devstral-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 690,
+      "stderr": 17,
+      "sourceLabel": "Devstral 2"
+    },
+    {
+      "modelId": "devstral-small-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 681,
+      "stderr": 17,
+      "sourceLabel": "Devstral Small 2"
+    },
+    {
       "modelId": "mimo-v2-flash",
       "benchmarkId": "lmarena",
       "raw": 1386,
       "stderr": 6,
       "sourceLabel": "mimo-v2-flash (thinking)"
+    },
+    {
+      "modelId": "mimo-v2-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 790,
+      "stderr": 19,
+      "sourceLabel": "MiMo-V2-Flash (Non-reasoning)"
     },
     {
       "modelId": "kimi-k2-thinking-turbo",
@@ -8384,6 +9766,20 @@
       "sourceLabel": "mercury-2"
     },
     {
+      "modelId": "mercury-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 647,
+      "stderr": 19,
+      "sourceLabel": "Mercury 2"
+    },
+    {
+      "modelId": "mercury-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 286,
+      "stderr": 10.5,
+      "sourceLabel": "Mercury 2"
+    },
+    {
       "modelId": "mimo-v2-omni",
       "benchmarkId": "lmarena",
       "raw": 1430,
@@ -8398,6 +9794,13 @@
       "sourceLabel": "mimo-v2-pro"
     },
     {
+      "modelId": "nex-n2-pro",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1178,
+      "stderr": 15,
+      "sourceLabel": "Nex-N2-Pro"
+    },
+    {
       "modelId": "palm-2",
       "benchmarkId": "lmarena",
       "raw": 1138,
@@ -8410,6 +9813,13 @@
       "raw": 1456,
       "stderr": 3,
       "sourceLabel": "dola-seed-2.0-pro"
+    },
+    {
+      "modelId": "k-exaone-2-0",
+      "benchmarkId": "aa-gdpval",
+      "raw": 922,
+      "stderr": 19,
+      "sourceLabel": "K-EXAONE 2.0"
     },
     {
       "modelId": "gemini-2-0-flash",
@@ -8430,6 +9840,27 @@
       "raw": 1321,
       "stderr": 7,
       "sourceLabel": "ring-flash-2.0"
+    },
+    {
+      "modelId": "nova-2-0-lite",
+      "benchmarkId": "aa-gdpval",
+      "raw": 538,
+      "stderr": 17,
+      "sourceLabel": "Nova 2.0 Lite (high)"
+    },
+    {
+      "modelId": "longcat-2-0",
+      "benchmarkId": "aa-gdpval",
+      "raw": 968,
+      "stderr": 16,
+      "sourceLabel": "LongCat 2.0"
+    },
+    {
+      "modelId": "nova-2-0-pro-preview",
+      "benchmarkId": "aa-gdpval",
+      "raw": 631,
+      "stderr": 16,
+      "sourceLabel": "Nova 2.0 Pro Preview (medium)"
     },
     {
       "modelId": "minimax-m2-1-preview",
@@ -8466,6 +9897,20 @@
       "sourceLabel": "Qwen3.8 2.4T A95B"
     },
     {
+      "modelId": "qwen3-8-2-4t-a95b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1630,
+      "stderr": 15,
+      "sourceLabel": "Qwen3.8 2.4T A95B"
+    },
+    {
+      "modelId": "qwen3-8-2-4t-a95b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1443,
+      "stderr": 7.5,
+      "sourceLabel": "Qwen3.8 2.4T A95B"
+    },
+    {
       "modelId": "qwen2-5-coder-32b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1270,
@@ -8485,6 +9930,20 @@
       "raw": 1303,
       "stderr": 4,
       "sourceLabel": "qwen2.5-72b-instruct"
+    },
+    {
+      "modelId": "agnes-2-5-pro-alpha",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1098,
+      "stderr": 17.5,
+      "sourceLabel": "Agnes 2.5 Pro Alpha"
+    },
+    {
+      "modelId": "agnes-2-5-pro-beta",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1378,
+      "stderr": 17,
+      "sourceLabel": "Agnes 2.5 Pro Beta"
     },
     {
       "modelId": "deepseek-v2-5",
@@ -8507,10 +9966,10 @@
       "sourceLabel": "Gemini 2.5 Flash (Preview) (Thinking 24K)"
     },
     {
-      "modelId": "gemini-2-5-pro-preview-thinking-1k",
+      "modelId": "gemini-2-5-pro-preview",
       "benchmarkId": "arc-agi-2",
-      "raw": 3.4,
-      "sourceLabel": "Gemini 2.5 Pro (Preview, Thinking 1K)"
+      "raw": 3.8,
+      "sourceLabel": "Gemini 2.5 Pro (Preview)"
     },
     {
       "modelId": "gemini-2-5-pro",
@@ -8518,6 +9977,20 @@
       "raw": 1446,
       "stderr": 2,
       "sourceLabel": "gemini-2.5-pro"
+    },
+    {
+      "modelId": "gemini-2-5-pro",
+      "benchmarkId": "aa-gdpval",
+      "raw": 618,
+      "stderr": 17,
+      "sourceLabel": "Gemini 2.5 Pro"
+    },
+    {
+      "modelId": "gemini-2-5-pro",
+      "benchmarkId": "aa-briefcase",
+      "raw": 326,
+      "stderr": 11,
+      "sourceLabel": "Gemini 2.5 Pro"
     },
     {
       "modelId": "gemini-2-5-pro",
@@ -8546,6 +10019,13 @@
       "sourceLabel": "Kimi K2.5"
     },
     {
+      "modelId": "kimi-k2-5-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 940,
+      "stderr": 18,
+      "sourceLabel": "Kimi K2.5 (Reasoning)"
+    },
+    {
       "modelId": "minimax-m2-5",
       "benchmarkId": "lmarena",
       "raw": 1391,
@@ -8572,11 +10052,39 @@
       "sourceLabel": "MiMo-V2.5-Pro"
     },
     {
+      "modelId": "mimo-v2-5-pro",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1189,
+      "stderr": 14,
+      "sourceLabel": "MiMo-V2.5-Pro"
+    },
+    {
+      "modelId": "mimo-v2-5-pro",
+      "benchmarkId": "aa-briefcase",
+      "raw": 881,
+      "stderr": 7,
+      "sourceLabel": "MiMo-V2.5-Pro"
+    },
+    {
       "modelId": "mimo-v2-5",
       "benchmarkId": "lmarena",
       "raw": 1434,
       "stderr": 4,
       "sourceLabel": "mimo-v2.5"
+    },
+    {
+      "modelId": "mimo-v2-5",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1082,
+      "stderr": 17,
+      "sourceLabel": "MiMo-V2.5"
+    },
+    {
+      "modelId": "mimo-v2-5",
+      "benchmarkId": "aa-briefcase",
+      "raw": 751,
+      "stderr": 10,
+      "sourceLabel": "MiMo-V2.5"
     },
     {
       "modelId": "qwen2-5",
@@ -8586,6 +10094,13 @@
       "sourceLabel": "qwen2.5-max"
     },
     {
+      "modelId": "lfm2-5-2-6b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 204,
+      "stderr": 22,
+      "sourceLabel": "LFM2.5-2.6B"
+    },
+    {
       "modelId": "chatglm2-6b",
       "benchmarkId": "lmarena",
       "raw": 1024,
@@ -8593,11 +10108,32 @@
       "sourceLabel": "chatglm2-6b"
     },
     {
+      "modelId": "ling-2-6-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 494,
+      "stderr": 19,
+      "sourceLabel": "Ling 2.6 Flash"
+    },
+    {
       "modelId": "kimi-k2-6",
       "benchmarkId": "lmarena",
       "raw": 1461,
       "stderr": 5,
       "sourceLabel": "kimi-k2.6"
+    },
+    {
+      "modelId": "kimi-k2-6",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1118,
+      "stderr": 14,
+      "sourceLabel": "Kimi K2.6"
+    },
+    {
+      "modelId": "kimi-k2-6",
+      "benchmarkId": "aa-briefcase",
+      "raw": 818,
+      "stderr": 8,
+      "sourceLabel": "Kimi K2.6"
     },
     {
       "modelId": "kimi-k2-6",
@@ -8648,11 +10184,25 @@
       "sourceLabel": "Kimi K2.6 Thinkingopen"
     },
     {
+      "modelId": "ring-2-6-1t",
+      "benchmarkId": "aa-gdpval",
+      "raw": 866,
+      "stderr": 15,
+      "sourceLabel": "Ring-2.6-1T"
+    },
+    {
       "modelId": "llama-2-7b-chat",
       "benchmarkId": "lmarena",
       "raw": 1107,
       "stderr": 7,
       "sourceLabel": "llama-2-7b-chat"
+    },
+    {
+      "modelId": "kimi-k2-7-code",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1118,
+      "stderr": 14,
+      "sourceLabel": "Kimi K2.7 Code"
     },
     {
       "modelId": "kimi-k2-7-code",
@@ -8710,6 +10260,13 @@
       "sourceLabel": "minimax-m2.7"
     },
     {
+      "modelId": "minimax-m2-7",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1090,
+      "stderr": 14,
+      "sourceLabel": "MiniMax-M2.7"
+    },
+    {
       "modelId": "molmo-2-8b",
       "benchmarkId": "lmarena",
       "raw": 1328,
@@ -8736,6 +10293,20 @@
       "raw": 1317,
       "stderr": 6,
       "sourceLabel": "gpt-oss-20b"
+    },
+    {
+      "modelId": "gpt-oss-20b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 516,
+      "stderr": 16,
+      "sourceLabel": "gpt-oss-20b (high)"
+    },
+    {
+      "modelId": "gpt-oss-20b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
+      "sourceLabel": "gpt-oss-20b (high)"
     },
     {
       "modelId": "phi-3-mini-4k-instruct-june-2024",
@@ -8885,6 +10456,20 @@
       "sourceLabel": "claude-opus-4-5-20251101-high-32k"
     },
     {
+      "modelId": "gpt-5-5-instant-june-2026",
+      "benchmarkId": "aa-gdpval",
+      "raw": 664,
+      "stderr": 17,
+      "sourceLabel": "GPT-5.5 Instant (June 2026)"
+    },
+    {
+      "modelId": "gpt-5-5-instant-june-2026",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1086,
+      "stderr": 10.5,
+      "sourceLabel": "GPT-5.5 Instant (June 2026)"
+    },
+    {
       "modelId": "gpt-5-2-chat-latest-20260210",
       "benchmarkId": "lmarena",
       "raw": 1476,
@@ -8899,6 +10484,13 @@
       "sourceLabel": "deepseek-v4-pro-high-20260813"
     },
     {
+      "modelId": "jt-4-1-flash-236b-a21b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1196,
+      "stderr": 16,
+      "sourceLabel": "JT-4.1 Flash 236B A21B"
+    },
+    {
       "modelId": "qwen3-235b-a22b-instruct-2507",
       "benchmarkId": "lmarena",
       "raw": 1423,
@@ -8911,6 +10503,13 @@
       "raw": 1400,
       "stderr": 7,
       "sourceLabel": "qwen3-235b-a22b-thinking-2507"
+    },
+    {
+      "modelId": "qwen3-235b-a22b-2507",
+      "benchmarkId": "aa-gdpval",
+      "raw": 496,
+      "stderr": 19,
+      "sourceLabel": "Qwen3 235B A22B 2507 (Reasoning)"
     },
     {
       "modelId": "qwen3-vl-235b-a22b-instruct",
@@ -8953,6 +10552,13 @@
       "raw": 1303,
       "stderr": 5,
       "sourceLabel": "mistral-small-3.1-24b-instruct-2503"
+    },
+    {
+      "modelId": "deepseek-v3-dec-24",
+      "benchmarkId": "aa-gdpval",
+      "raw": 184,
+      "stderr": 19,
+      "sourceLabel": "DeepSeek V3 (Dec '24)"
     },
     {
       "modelId": "mistral-large-2402",
@@ -9011,6 +10617,13 @@
       "sourceLabel": "qwen3-30b-a3b-instruct-2507"
     },
     {
+      "modelId": "qwen3-30b-a3b-2507",
+      "benchmarkId": "aa-gdpval",
+      "raw": 275,
+      "stderr": 20,
+      "sourceLabel": "Qwen3 30B A3B 2507 (Reasoning)"
+    },
+    {
       "modelId": "mistral-medium-2508",
       "benchmarkId": "lmarena",
       "raw": 1409,
@@ -9023,6 +10636,20 @@
       "raw": 1438,
       "stderr": 8,
       "sourceLabel": "gemma-4-26b-a4b"
+    },
+    {
+      "modelId": "gemma-4-26b-a4b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 715,
+      "stderr": 16,
+      "sourceLabel": "Gemma 4 26B A4B (Reasoning)"
+    },
+    {
+      "modelId": "diffusiongemma-26b-a4b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 502,
+      "stderr": 17,
+      "sourceLabel": "DiffusionGemma 26B A4B"
     },
     {
       "modelId": "longcat-flash-chat-2602-exp",
@@ -9046,52 +10673,73 @@
       "sourceLabel": "qwen3.5-27b"
     },
     {
-      "modelId": "qwen-3-6-27b",
+      "modelId": "qwen3-6-27b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1046,
+      "stderr": 16,
+      "sourceLabel": "Qwen3.6 27B (Non-reasoning)"
+    },
+    {
+      "modelId": "qwen3-6-27b",
       "benchmarkId": "livebench",
       "raw": 64,
       "sourceLabel": "Qwen 3.6 27Bopen"
     },
     {
-      "modelId": "qwen-3-6-27b",
+      "modelId": "qwen3-6-27b",
       "benchmarkId": "livebench-reasoning",
       "raw": 70.3,
       "sourceLabel": "Qwen 3.6 27Bopen"
     },
     {
-      "modelId": "qwen-3-6-27b",
+      "modelId": "qwen3-6-27b",
       "benchmarkId": "livebench-coding",
       "raw": 71.8,
       "sourceLabel": "Qwen 3.6 27Bopen"
     },
     {
-      "modelId": "qwen-3-6-27b",
+      "modelId": "qwen3-6-27b",
       "benchmarkId": "livebench-agentic-coding",
       "raw": 39.3,
       "sourceLabel": "Qwen 3.6 27Bopen"
     },
     {
-      "modelId": "qwen-3-6-27b",
+      "modelId": "qwen3-6-27b",
       "benchmarkId": "livebench-mathematics",
       "raw": 79.9,
       "sourceLabel": "Qwen 3.6 27Bopen"
     },
     {
-      "modelId": "qwen-3-6-27b",
+      "modelId": "qwen3-6-27b",
       "benchmarkId": "livebench-data-analysis",
       "raw": 70.4,
       "sourceLabel": "Qwen 3.6 27Bopen"
     },
     {
-      "modelId": "qwen-3-6-27b",
+      "modelId": "qwen3-6-27b",
       "benchmarkId": "livebench-language",
       "raw": 63.3,
       "sourceLabel": "Qwen 3.6 27Bopen"
     },
     {
-      "modelId": "qwen-3-6-27b",
+      "modelId": "qwen3-6-27b",
       "benchmarkId": "livebench-instruction-following",
       "raw": 53.2,
       "sourceLabel": "Qwen 3.6 27Bopen"
+    },
+    {
+      "modelId": "qwen3-6-27b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1071,
+      "stderr": 14,
+      "sourceLabel": "Qwen3.6 27B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-6-27b-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 814,
+      "stderr": 7.5,
+      "sourceLabel": "Qwen3.6 27B (Reasoning)"
     },
     {
       "modelId": "qwen3-8-27b",
@@ -9104,6 +10752,20 @@
       "modelId": "qwen3-8-27b",
       "benchmarkId": "artificial-analysis",
       "raw": 41,
+      "sourceLabel": "Qwen3.8 27B (xhigh)"
+    },
+    {
+      "modelId": "qwen3-8-27b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1466,
+      "stderr": 16,
+      "sourceLabel": "Qwen3.8 27B (xhigh)"
+    },
+    {
+      "modelId": "qwen3-8-27b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1402,
+      "stderr": 7,
       "sourceLabel": "Qwen3.8 27B (xhigh)"
     },
     {
@@ -9209,6 +10871,27 @@
       "sourceLabel": "Qwen3.8-27B"
     },
     {
+      "modelId": "nvidia-nemotron-3-nano-30b-a3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 440,
+      "stderr": 17,
+      "sourceLabel": "NVIDIA Nemotron 3 Nano 30B A3B (Reasoning)"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-nano-30b-a3b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 112,
+      "stderr": 11.5,
+      "sourceLabel": "NVIDIA Nemotron 3 Nano 30B A3B (Reasoning)"
+    },
+    {
+      "modelId": "nemotron-3-nano-omni-30b-a3b-reasoning",
+      "benchmarkId": "aa-gdpval",
+      "raw": 417,
+      "stderr": 21,
+      "sourceLabel": "Nemotron 3 Nano Omni 30B A3B Reasoning"
+    },
+    {
       "modelId": "qwen3-30b-a3b",
       "benchmarkId": "lmarena",
       "raw": 1327,
@@ -9228,6 +10911,20 @@
       "raw": 1369,
       "stderr": 6,
       "sourceLabel": "qwen3-next-80b-a3b-thinking"
+    },
+    {
+      "modelId": "qwen3-next-80b-a3b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 326,
+      "stderr": 20,
+      "sourceLabel": "Qwen3 Next 80B A3B (Reasoning)"
+    },
+    {
+      "modelId": "ministral-3-3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 235,
+      "stderr": 18,
+      "sourceLabel": "Ministral 3 3B"
     },
     {
       "modelId": "llama-3-1-tulu-3-70b",
@@ -9261,6 +10958,20 @@
       "raw": 1395,
       "stderr": 4,
       "sourceLabel": "qwen3.5-35b-a3b"
+    },
+    {
+      "modelId": "qwen3-5-35b-a3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 742,
+      "stderr": 20,
+      "sourceLabel": "Qwen3.5 35B A3B (Non-reasoning)"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 956,
+      "stderr": 18,
+      "sourceLabel": "Qwen3.6 35B A3B (Non-reasoning)"
     },
     {
       "modelId": "qwen3-6-35b-a3b",
@@ -9317,6 +11028,13 @@
       "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
+      "modelId": "qwen3-6-35b-a3b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 994,
+      "stderr": 15,
+      "sourceLabel": "Qwen3.6 35B A3B (Reasoning)"
+    },
+    {
       "modelId": "olmo-3-32b-think",
       "benchmarkId": "lmarena",
       "raw": 1307,
@@ -9331,11 +11049,32 @@
       "sourceLabel": "qwen3-32b"
     },
     {
+      "modelId": "qwen3-32b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 241,
+      "stderr": 18,
+      "sourceLabel": "Qwen3 32B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-32b-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 27,
+      "stderr": 12.5,
+      "sourceLabel": "Qwen3 32B (Reasoning)"
+    },
+    {
       "modelId": "qwen3-coder-480b-a35b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1387,
       "stderr": 5,
       "sourceLabel": "qwen3-coder-480b-a35b-instruct"
+    },
+    {
+      "modelId": "g9v3-39a5b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1192,
+      "stderr": 18,
+      "sourceLabel": "G9v3-39A5B"
     },
     {
       "modelId": "g9v3-39a5b",
@@ -9442,55 +11181,97 @@
       "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
+      "modelId": "nvidia-nemotron-3-nano-4b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 160,
+      "stderr": 21,
+      "sourceLabel": "NVIDIA Nemotron 3 Nano 4B"
+    },
+    {
+      "modelId": "granite-4-1-3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 75,
+      "stderr": 20,
+      "sourceLabel": "Granite 4.1 3B"
+    },
+    {
       "modelId": "granite-4-2-3b",
       "benchmarkId": "artificial-analysis",
       "raw": 11,
       "sourceLabel": "Granite 4.2 3B"
     },
     {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 391,
+      "stderr": 22,
+      "sourceLabel": "Granite 4.2 3B"
+    },
+    {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 134,
+      "stderr": 12,
+      "sourceLabel": "Granite 4.2 3B"
+    },
+    {
       "modelId": "nemotron-3-ultra-550b-a55b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1094,
+      "stderr": 14,
+      "sourceLabel": "Nemotron 3 Ultra 550B A55B (Reasoning)"
+    },
+    {
+      "modelId": "nemotron-3-ultra-550b-a55b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 877,
+      "stderr": 7.5,
+      "sourceLabel": "Nemotron 3 Ultra 550B A55B (Reasoning)"
+    },
+    {
+      "modelId": "nemotron-3-ultra-550b-a55b-2",
       "benchmarkId": "livebench",
       "raw": 67.4,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b",
+      "modelId": "nemotron-3-ultra-550b-a55b-2",
       "benchmarkId": "livebench-reasoning",
       "raw": 74.7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b",
+      "modelId": "nemotron-3-ultra-550b-a55b-2",
       "benchmarkId": "livebench-coding",
       "raw": 70.7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b",
+      "modelId": "nemotron-3-ultra-550b-a55b-2",
       "benchmarkId": "livebench-agentic-coding",
       "raw": 38.7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b",
+      "modelId": "nemotron-3-ultra-550b-a55b-2",
       "benchmarkId": "livebench-mathematics",
       "raw": 88.7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b",
+      "modelId": "nemotron-3-ultra-550b-a55b-2",
       "benchmarkId": "livebench-data-analysis",
       "raw": 54.5,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b",
+      "modelId": "nemotron-3-ultra-550b-a55b-2",
       "benchmarkId": "livebench-language",
       "raw": 70.8,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b",
+      "modelId": "nemotron-3-ultra-550b-a55b-2",
       "benchmarkId": "livebench-instruction-following",
       "raw": 73.4,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
@@ -9503,11 +11284,46 @@
       "sourceLabel": "llama-3-70b-instruct"
     },
     {
+      "modelId": "ministral-3-8b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 406,
+      "stderr": 17,
+      "sourceLabel": "Ministral 3 8B"
+    },
+    {
+      "modelId": "ministral-3-8b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 113,
+      "stderr": 11,
+      "sourceLabel": "Ministral 3 8B"
+    },
+    {
+      "modelId": "qwen3-8b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 167,
+      "stderr": 19,
+      "sourceLabel": "Qwen3 8B (Reasoning)"
+    },
+    {
       "modelId": "grok-3-mini-beta",
       "benchmarkId": "lmarena",
       "raw": 1358,
       "stderr": 5,
       "sourceLabel": "grok-3-mini-beta"
+    },
+    {
+      "modelId": "motif-3-beta",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1186,
+      "stderr": 17,
+      "sourceLabel": "Motif 3 (Beta)"
+    },
+    {
+      "modelId": "qwen3-coder-next",
+      "benchmarkId": "aa-gdpval",
+      "raw": 666,
+      "stderr": 18,
+      "sourceLabel": "Qwen3 Coder Next"
     },
     {
       "modelId": "gemini-3-deep-think-preview",
@@ -9588,6 +11404,13 @@
       "sourceLabel": "hy3"
     },
     {
+      "modelId": "hy3",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1139,
+      "stderr": 17,
+      "sourceLabel": "Hy3"
+    },
+    {
       "modelId": "phi-3-mini-128k-instruct",
       "benchmarkId": "lmarena",
       "raw": 1129,
@@ -9626,6 +11449,20 @@
       "modelId": "kimi-k3",
       "benchmarkId": "artificial-analysis",
       "raw": 50,
+      "sourceLabel": "Kimi K3 (max)"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1588,
+      "stderr": 15,
+      "sourceLabel": "Kimi K3 (max)"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1500,
+      "stderr": 6.5,
       "sourceLabel": "Kimi K3 (max)"
     },
     {
@@ -9696,6 +11533,20 @@
       "sourceLabel": "Mistral Large 3"
     },
     {
+      "modelId": "mistral-large-3",
+      "benchmarkId": "aa-gdpval",
+      "raw": 590,
+      "stderr": 16,
+      "sourceLabel": "Mistral Large 3"
+    },
+    {
+      "modelId": "mistral-large-3",
+      "benchmarkId": "aa-briefcase",
+      "raw": 253,
+      "stderr": 10.5,
+      "sourceLabel": "Mistral Large 3"
+    },
+    {
       "modelId": "minimax-m3",
       "benchmarkId": "lmarena",
       "raw": 1443,
@@ -9706,6 +11557,20 @@
       "modelId": "minimax-m3",
       "benchmarkId": "artificial-analysis",
       "raw": 36,
+      "sourceLabel": "MiniMax-M3"
+    },
+    {
+      "modelId": "minimax-m3",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1306,
+      "stderr": 14,
+      "sourceLabel": "MiniMax-M3"
+    },
+    {
+      "modelId": "minimax-m3",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1099,
+      "stderr": 6.5,
       "sourceLabel": "MiniMax-M3"
     },
     {
@@ -9873,9 +11738,30 @@
     },
     {
       "modelId": "o3-mini",
+      "benchmarkId": "aa-gdpval",
+      "raw": 422,
+      "stderr": 19,
+      "sourceLabel": "o3-mini (high)"
+    },
+    {
+      "modelId": "o3-mini",
+      "benchmarkId": "aa-briefcase",
+      "raw": 167,
+      "stderr": 12.5,
+      "sourceLabel": "o3-mini (high)"
+    },
+    {
+      "modelId": "o3-mini",
       "benchmarkId": "arc-agi-2",
       "raw": 3,
       "sourceLabel": "o3-mini (High)"
+    },
+    {
+      "modelId": "motif-3",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1202,
+      "stderr": 17,
+      "sourceLabel": "Motif 3"
     },
     {
       "modelId": "nemotron-3-super",
@@ -10059,6 +11945,20 @@
       "sourceLabel": "qwen3-max-preview"
     },
     {
+      "modelId": "solar-pro-3",
+      "benchmarkId": "aa-gdpval",
+      "raw": 448,
+      "stderr": 16,
+      "sourceLabel": "Solar Pro 3"
+    },
+    {
+      "modelId": "solar-pro-3",
+      "benchmarkId": "aa-briefcase",
+      "raw": 134,
+      "stderr": 11,
+      "sourceLabel": "Solar Pro 3"
+    },
+    {
       "modelId": "step-3",
       "benchmarkId": "lmarena",
       "raw": 1349,
@@ -10072,9 +11972,37 @@
       "sourceLabel": "Ling 3.0 Flash"
     },
     {
+      "modelId": "ling-3-0-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1039,
+      "stderr": 18,
+      "sourceLabel": "Ling 3.0 Flash"
+    },
+    {
+      "modelId": "ling-3-0-flash",
+      "benchmarkId": "aa-briefcase",
+      "raw": 802,
+      "stderr": 9.5,
+      "sourceLabel": "Ling 3.0 Flash"
+    },
+    {
       "modelId": "ling-3-0-tiny",
       "benchmarkId": "artificial-analysis",
       "raw": 16,
+      "sourceLabel": "Ling 3.0 Tiny"
+    },
+    {
+      "modelId": "ling-3-0-tiny",
+      "benchmarkId": "aa-gdpval",
+      "raw": 718,
+      "stderr": 20,
+      "sourceLabel": "Ling 3.0 Tiny"
+    },
+    {
+      "modelId": "ling-3-0-tiny",
+      "benchmarkId": "aa-briefcase",
+      "raw": 485,
+      "stderr": 11,
       "sourceLabel": "Ling 3.0 Tiny"
     },
     {
@@ -10142,6 +12070,20 @@
     },
     {
       "modelId": "deepseek-v3-1-terminus",
+      "benchmarkId": "aa-gdpval",
+      "raw": 828,
+      "stderr": 19,
+      "sourceLabel": "DeepSeek V3.1 Terminus (Reasoning)"
+    },
+    {
+      "modelId": "deepseek-v3-1-terminus",
+      "benchmarkId": "aa-briefcase",
+      "raw": 474,
+      "stderr": 10,
+      "sourceLabel": "DeepSeek V3.1 Terminus (Reasoning)"
+    },
+    {
+      "modelId": "deepseek-v3-1-terminus-2",
       "benchmarkId": "lmarena",
       "raw": 1418,
       "stderr": 10,
@@ -10153,6 +12095,20 @@
       "raw": 1417,
       "stderr": 6,
       "sourceLabel": "deepseek-v3.1"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "aa-gdpval",
+      "raw": 597,
+      "stderr": 16,
+      "sourceLabel": "Gemini 3.1 Flash-Lite"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "aa-briefcase",
+      "raw": 234,
+      "stderr": 10.5,
+      "sourceLabel": "Gemini 3.1 Flash-Lite"
     },
     {
       "modelId": "gemini-3-1-flash-lite-preview",
@@ -10172,6 +12128,20 @@
       "modelId": "gemini-3-1-pro-preview",
       "benchmarkId": "artificial-analysis",
       "raw": 37,
+      "sourceLabel": "Gemini 3.1 Pro Preview"
+    },
+    {
+      "modelId": "gemini-3-1-pro-preview",
+      "benchmarkId": "aa-gdpval",
+      "raw": 907,
+      "stderr": 15,
+      "sourceLabel": "Gemini 3.1 Pro Preview"
+    },
+    {
+      "modelId": "gemini-3-1-pro-preview",
+      "benchmarkId": "aa-briefcase",
+      "raw": 465,
+      "stderr": 9.5,
       "sourceLabel": "Gemini 3.1 Pro Preview"
     },
     {
@@ -10229,6 +12199,34 @@
       "sourceLabel": "Gemini 3.1 Pro Preview High"
     },
     {
+      "modelId": "mistral-medium-3-1",
+      "benchmarkId": "aa-gdpval",
+      "raw": 557,
+      "stderr": 18,
+      "sourceLabel": "Mistral Medium 3.1"
+    },
+    {
+      "modelId": "mistral-medium-3-1",
+      "benchmarkId": "aa-briefcase",
+      "raw": 540,
+      "stderr": 11,
+      "sourceLabel": "Mistral Medium 3.1"
+    },
+    {
+      "modelId": "mistral-small-3-1",
+      "benchmarkId": "aa-gdpval",
+      "raw": 551,
+      "stderr": 18,
+      "sourceLabel": "Mistral Small 3.1"
+    },
+    {
+      "modelId": "mistral-small-3-1",
+      "benchmarkId": "aa-briefcase",
+      "raw": 334,
+      "stderr": 11,
+      "sourceLabel": "Mistral Small 3.1"
+    },
+    {
       "modelId": "granite-3-1-2b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1178,
@@ -10258,16 +12256,30 @@
     },
     {
       "modelId": "deepseek-v3-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 813,
+      "stderr": 19,
+      "sourceLabel": "DeepSeek V3.2 (Reasoning)"
+    },
+    {
+      "modelId": "deepseek-v3-2-2",
       "benchmarkId": "lmarena",
       "raw": 1425,
       "stderr": 4,
       "sourceLabel": "deepseek-v3.2"
     },
     {
-      "modelId": "deepseek-v3-2",
+      "modelId": "deepseek-v3-2-2",
       "benchmarkId": "arc-agi-2",
       "raw": 4,
       "sourceLabel": "Deepseek V3.2"
+    },
+    {
+      "modelId": "mistral-small-3-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 30,
+      "stderr": 19,
+      "sourceLabel": "Mistral Small 3.2"
     },
     {
       "modelId": "llama-3-2-1b-instruct",
@@ -10289,6 +12301,20 @@
       "raw": 1317,
       "stderr": 4,
       "sourceLabel": "llama-3.3-70b-instruct"
+    },
+    {
+      "modelId": "llama-3-3-70b-instruct",
+      "benchmarkId": "aa-gdpval",
+      "raw": 50,
+      "stderr": 19,
+      "sourceLabel": "Llama 3.3 Instruct 70B"
+    },
+    {
+      "modelId": "g9v3-3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 810,
+      "stderr": 26,
+      "sourceLabel": "G9v3-3B"
     },
     {
       "modelId": "g9v3-3b",
@@ -10340,11 +12366,32 @@
       "sourceLabel": "gemma-3-4b-it"
     },
     {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 590,
+      "stderr": 18,
+      "sourceLabel": "Qwen3.5 9B (Reasoning)"
+    },
+    {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "lmarena",
       "raw": 1479,
       "stderr": 4,
       "sourceLabel": "gemini-3.5-flash-high"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1262,
+      "stderr": 14,
+      "sourceLabel": "Gemini 3.5 Flash (high)"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "aa-briefcase",
+      "raw": 871,
+      "stderr": 7,
+      "sourceLabel": "Gemini 3.5 Flash (high)"
     },
     {
       "modelId": "gemini-3-5-flash",
@@ -10411,6 +12458,20 @@
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "artificial-analysis",
       "raw": 28,
+      "sourceLabel": "Gemini 3.5 Flash-Lite"
+    },
+    {
+      "modelId": "gemini-3-5-flash-lite",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1067,
+      "stderr": 17,
+      "sourceLabel": "Gemini 3.5 Flash-Lite"
+    },
+    {
+      "modelId": "gemini-3-5-flash-lite",
+      "benchmarkId": "aa-briefcase",
+      "raw": 648,
+      "stderr": 9,
       "sourceLabel": "Gemini 3.5 Flash-Lite"
     },
     {
@@ -10482,11 +12543,39 @@
       "sourceLabel": "step-3.5-flash"
     },
     {
+      "modelId": "claude-3-5-haiku",
+      "benchmarkId": "aa-gdpval",
+      "raw": 409,
+      "stderr": 18,
+      "sourceLabel": "Claude 3.5 Haiku"
+    },
+    {
+      "modelId": "nemotron-3-5-lightning",
+      "benchmarkId": "aa-gdpval",
+      "raw": 769,
+      "stderr": 19,
+      "sourceLabel": "Nemotron 3.5 Lightning"
+    },
+    {
       "modelId": "mistral-medium-3-5",
       "benchmarkId": "lmarena",
       "raw": 1427,
       "stderr": 7,
       "sourceLabel": "mistral-medium-3.5"
+    },
+    {
+      "modelId": "mistral-medium-3-5",
+      "benchmarkId": "aa-gdpval",
+      "raw": 878,
+      "stderr": 15,
+      "sourceLabel": "Mistral Medium 3.5"
+    },
+    {
+      "modelId": "mistral-medium-3-5",
+      "benchmarkId": "aa-briefcase",
+      "raw": 527,
+      "stderr": 9,
+      "sourceLabel": "Mistral Medium 3.5"
     },
     {
       "modelId": "openchat-3-5",
@@ -10551,49 +12640,49 @@
       "sourceLabel": "Qwen3.5-0.8B"
     },
     {
-      "modelId": "qwen3-5-2b",
+      "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 54.89,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
-      "modelId": "qwen3-5-2b",
+      "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
       "raw": 22.73,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
-      "modelId": "qwen3-5-2b",
+      "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
       "raw": 43.6,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
-      "modelId": "qwen3-5-2b",
+      "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:humaneval",
       "raw": 75.6,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
-      "modelId": "qwen3-5-2b",
+      "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:mbpp",
       "raw": 67.7,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
-      "modelId": "qwen3-5-2b",
+      "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:aime-2025",
       "raw": 34.17,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
-      "modelId": "qwen3-5-2b",
+      "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:aime-2026",
       "raw": 38.75,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
-      "modelId": "qwen3-5-2b",
+      "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:livecodebench-v6",
       "raw": 29.79,
       "sourceLabel": "Qwen3.5-2B"
@@ -10647,43 +12736,43 @@
       "sourceLabel": "Qwen3.5-4B"
     },
     {
-      "modelId": "qwen3-5-9b",
+      "modelId": "qwen3-5-9b-2",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 7,
       "sourceLabel": "Qwen3.5-9B"
     },
     {
-      "modelId": "qwen3-5-9b",
+      "modelId": "qwen3-5-9b-2",
       "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
       "raw": 29.2,
       "sourceLabel": "Qwen3.5-9B"
     },
     {
-      "modelId": "qwen3-5-9b",
+      "modelId": "qwen3-5-9b-2",
       "benchmarkId": "ifm-k2-horizon:scicode",
       "raw": 27.5,
       "sourceLabel": "Qwen3.5-9B"
     },
     {
-      "modelId": "qwen3-5-9b",
+      "modelId": "qwen3-5-9b-2",
       "benchmarkId": "ifm-k2-horizon:aa-lcr",
       "raw": 65.3,
       "sourceLabel": "Qwen3.5-9B"
     },
     {
-      "modelId": "qwen3-5-9b",
+      "modelId": "qwen3-5-9b-2",
       "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
       "raw": 50.8,
       "sourceLabel": "Qwen3.5-9B"
     },
     {
-      "modelId": "qwen3-5-9b",
+      "modelId": "qwen3-5-9b-2",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
       "raw": 65.72,
       "sourceLabel": "Qwen3.5-9B"
     },
     {
-      "modelId": "qwen3-5-9b",
+      "modelId": "qwen3-5-9b-2",
       "benchmarkId": "ifm-k2-horizon:hle",
       "raw": 14.9,
       "sourceLabel": "Qwen3.5-9B"
@@ -10707,6 +12796,20 @@
       "benchmarkId": "artificial-analysis",
       "raw": 40,
       "sourceLabel": "Gemini 3.6 Flash"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1334,
+      "stderr": 15,
+      "sourceLabel": "Gemini 3.6 Flash (high)"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "aa-briefcase",
+      "raw": 955,
+      "stderr": 7,
+      "sourceLabel": "Gemini 3.6 Flash (high)"
     },
     {
       "modelId": "gemini-3-6-flash",
@@ -10768,6 +12871,13 @@
       "raw": 1444,
       "stderr": 4,
       "sourceLabel": "qwen3.6-plus"
+    },
+    {
+      "modelId": "qwen3-6-plus",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1069,
+      "stderr": 14,
+      "sourceLabel": "Qwen3.6 Plus"
     },
     {
       "modelId": "qwen3-6-plus",
@@ -10845,6 +12955,20 @@
     },
     {
       "modelId": "gemini-3-7-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1435,
+      "stderr": 15,
+      "sourceLabel": "Gemini 3.7 Flash (high)"
+    },
+    {
+      "modelId": "gemini-3-7-flash",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1116,
+      "stderr": 7,
+      "sourceLabel": "Gemini 3.7 Flash (high)"
+    },
+    {
+      "modelId": "gemini-3-7-flash",
       "benchmarkId": "terminal-bench",
       "raw": 11.2,
       "stderr": 2.4,
@@ -10906,11 +13030,25 @@
       "sourceLabel": "Gemini 3.7 Flash High"
     },
     {
+      "modelId": "step-3-7-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 958,
+      "stderr": 15,
+      "sourceLabel": "Step 3.7 Flash"
+    },
+    {
       "modelId": "qwen3-7-plus",
       "benchmarkId": "lmarena",
       "raw": 1455,
       "stderr": 4,
       "sourceLabel": "qwen3.7-plus"
+    },
+    {
+      "modelId": "qwen3-7-plus",
+      "benchmarkId": "aa-gdpval",
+      "raw": 889,
+      "stderr": 15,
+      "sourceLabel": "Qwen3.7 Plus"
     },
     {
       "modelId": "qwen3-7-max-preview",
@@ -10920,49 +13058,63 @@
       "sourceLabel": "qwen3.7-max-preview"
     },
     {
-      "modelId": "qwen-3-7",
+      "modelId": "qwen3-7",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1193,
+      "stderr": 14,
+      "sourceLabel": "Qwen3.7 Max"
+    },
+    {
+      "modelId": "qwen3-7",
+      "benchmarkId": "aa-briefcase",
+      "raw": 916,
+      "stderr": 7,
+      "sourceLabel": "Qwen3.7 Max"
+    },
+    {
+      "modelId": "qwen3-7",
       "benchmarkId": "livebench",
       "raw": 73.1,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen-3-7",
+      "modelId": "qwen3-7",
       "benchmarkId": "livebench-reasoning",
       "raw": 83.3,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen-3-7",
+      "modelId": "qwen3-7",
       "benchmarkId": "livebench-coding",
       "raw": 74.2,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen-3-7",
+      "modelId": "qwen3-7",
       "benchmarkId": "livebench-agentic-coding",
       "raw": 43.6,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen-3-7",
+      "modelId": "qwen3-7",
       "benchmarkId": "livebench-mathematics",
       "raw": 85.2,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen-3-7",
+      "modelId": "qwen3-7",
       "benchmarkId": "livebench-data-analysis",
       "raw": 71.8,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen-3-7",
+      "modelId": "qwen3-7",
       "benchmarkId": "livebench-language",
       "raw": 79.7,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen-3-7",
+      "modelId": "qwen3-7",
       "benchmarkId": "livebench-instruction-following",
       "raw": 74,
       "sourceLabel": "Qwen 3.7 Max"
@@ -10985,6 +13137,20 @@
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "artificial-analysis",
       "raw": 47,
+      "sourceLabel": "Gemini 3.8 Flash (high)"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1465,
+      "stderr": 20,
+      "sourceLabel": "Gemini 3.8 Flash (high)"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1201,
+      "stderr": 9.5,
       "sourceLabel": "Gemini 3.8 Flash (high)"
     },
     {
@@ -11044,49 +13210,56 @@
       "sourceLabel": "Gemini 3.8 Flash High"
     },
     {
-      "modelId": "qwen-3-8-flash-next",
+      "modelId": "qwen3-8-flash-next",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1651,
+      "stderr": 17,
+      "sourceLabel": "Qwen3.8-Flash-Next"
+    },
+    {
+      "modelId": "qwen3-8-flash-next",
       "benchmarkId": "livebench",
       "raw": 76.2,
       "sourceLabel": "Qwen 3.8 Flash Nextopen"
     },
     {
-      "modelId": "qwen-3-8-flash-next",
+      "modelId": "qwen3-8-flash-next",
       "benchmarkId": "livebench-reasoning",
       "raw": 87.4,
       "sourceLabel": "Qwen 3.8 Flash Nextopen"
     },
     {
-      "modelId": "qwen-3-8-flash-next",
+      "modelId": "qwen3-8-flash-next",
       "benchmarkId": "livebench-coding",
       "raw": 72.6,
       "sourceLabel": "Qwen 3.8 Flash Nextopen"
     },
     {
-      "modelId": "qwen-3-8-flash-next",
+      "modelId": "qwen3-8-flash-next",
       "benchmarkId": "livebench-agentic-coding",
       "raw": 61.6,
       "sourceLabel": "Qwen 3.8 Flash Nextopen"
     },
     {
-      "modelId": "qwen-3-8-flash-next",
+      "modelId": "qwen3-8-flash-next",
       "benchmarkId": "livebench-mathematics",
       "raw": 85.8,
       "sourceLabel": "Qwen 3.8 Flash Nextopen"
     },
     {
-      "modelId": "qwen-3-8-flash-next",
+      "modelId": "qwen3-8-flash-next",
       "benchmarkId": "livebench-data-analysis",
       "raw": 74.2,
       "sourceLabel": "Qwen 3.8 Flash Nextopen"
     },
     {
-      "modelId": "qwen-3-8-flash-next",
+      "modelId": "qwen3-8-flash-next",
       "benchmarkId": "livebench-language",
       "raw": 74.6,
       "sourceLabel": "Qwen 3.8 Flash Nextopen"
     },
     {
-      "modelId": "qwen-3-8-flash-next",
+      "modelId": "qwen3-8-flash-next",
       "benchmarkId": "livebench-instruction-following",
       "raw": 77.1,
       "sourceLabel": "Qwen 3.8 Flash Nextopen"
@@ -11102,6 +13275,20 @@
       "modelId": "qwen3-8",
       "benchmarkId": "artificial-analysis",
       "raw": 47,
+      "sourceLabel": "Qwen3.8 Max"
+    },
+    {
+      "modelId": "qwen3-8",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1634,
+      "stderr": 14,
+      "sourceLabel": "Qwen3.8 Max"
+    },
+    {
+      "modelId": "qwen3-8",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1392,
+      "stderr": 7,
       "sourceLabel": "Qwen3.8 Max"
     },
     {
@@ -11153,11 +13340,25 @@
       "sourceLabel": "Qwen 3.8 Maxopen"
     },
     {
+      "modelId": "granite-4-1-30b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 380,
+      "stderr": 16,
+      "sourceLabel": "Granite 4.1 30B"
+    },
+    {
       "modelId": "granite-4-2-30b",
       "benchmarkId": "lmarena",
       "raw": 1342,
       "stderr": 11,
       "sourceLabel": "granite-4.2-30b"
+    },
+    {
+      "modelId": "granite-4-2-30b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 723,
+      "stderr": 20,
+      "sourceLabel": "Granite 4.2 30B"
     },
     {
       "modelId": "ibm-granite-4-2-30b",
@@ -11282,6 +13483,13 @@
       "sourceLabel": "gemma-4-31b"
     },
     {
+      "modelId": "gemma-4-31b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 693,
+      "stderr": 18,
+      "sourceLabel": "Gemma 4 31B (Non-reasoning)"
+    },
+    {
       "modelId": "gemma-4-31b-it",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 14.8,
@@ -11336,6 +13544,20 @@
       "sourceLabel": "Gemma 4 31B-it"
     },
     {
+      "modelId": "gemma-4-31b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 757,
+      "stderr": 16,
+      "sourceLabel": "Gemma 4 31B (Reasoning)"
+    },
+    {
+      "modelId": "gemma-4-31b-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 380,
+      "stderr": 9.5,
+      "sourceLabel": "Gemma 4 31B (Reasoning)"
+    },
+    {
       "modelId": "c4ai-aya-expanse-32b",
       "benchmarkId": "lmarena",
       "raw": 1267,
@@ -11355,6 +13577,13 @@
       "raw": 1336,
       "stderr": 4,
       "sourceLabel": "qwq-32b"
+    },
+    {
+      "modelId": "exaone-4-5-33b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 629,
+      "stderr": 20,
+      "sourceLabel": "EXAONE 4.5 33B"
     },
     {
       "modelId": "guanaco-33b",
@@ -11408,6 +13637,13 @@
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 52,
       "sourceLabel": "Gemma 4-E4B"
+    },
+    {
+      "modelId": "gemma-4-e4b-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 178,
+      "stderr": 22,
+      "sourceLabel": "Gemma 4 E4B (Reasoning)"
     },
     {
       "modelId": "c4ai-aya-expanse-8b",
@@ -11486,6 +13722,27 @@
       "sourceLabel": "deepseek-v4-flash"
     },
     {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1119,
+      "stderr": 15,
+      "sourceLabel": "DeepSeek V4 Flash (Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "aa-briefcase",
+      "raw": 833,
+      "stderr": 6.5,
+      "sourceLabel": "DeepSeek V4 Flash (Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "deepseek-v4-flash-vision",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1581,
+      "stderr": 15,
+      "sourceLabel": "DeepSeek V4 Flash Vision (Reasoning, Max Effort)"
+    },
+    {
       "modelId": "deepseek-v4-pro-high-preview",
       "benchmarkId": "lmarena",
       "raw": 1455,
@@ -11498,6 +13755,20 @@
       "raw": 1458,
       "stderr": 4,
       "sourceLabel": "deepseek-v4-pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1226,
+      "stderr": 14,
+      "sourceLabel": "DeepSeek V4 Pro (Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "aa-briefcase",
+      "raw": 926,
+      "stderr": 6.5,
+      "sourceLabel": "DeepSeek V4 Pro (Reasoning, Max Effort)"
     },
     {
       "modelId": "grok-4-fast-reasoning",
@@ -11518,6 +13789,20 @@
       "raw": 1319,
       "stderr": 5,
       "sourceLabel": "glm-4-plus"
+    },
+    {
+      "modelId": "gpt-4",
+      "benchmarkId": "aa-gdpval",
+      "raw": 190,
+      "stderr": 18,
+      "sourceLabel": "GPT-4"
+    },
+    {
+      "modelId": "gpt-4o-mini",
+      "benchmarkId": "aa-gdpval",
+      "raw": 189,
+      "stderr": 19,
+      "sourceLabel": "GPT-4o mini"
     },
     {
       "modelId": "gpt-4o-mini",
@@ -11545,9 +13830,23 @@
     },
     {
       "modelId": "llama-4-maverick",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
+      "sourceLabel": "Llama 4 Maverick"
+    },
+    {
+      "modelId": "llama-4-maverick",
       "benchmarkId": "arc-agi-2",
       "raw": 0,
       "sourceLabel": "Llama 4 Maverick"
+    },
+    {
+      "modelId": "llama-4-scout",
+      "benchmarkId": "aa-gdpval",
+      "raw": 61,
+      "stderr": 17,
+      "sourceLabel": "Llama 4 Scout"
     },
     {
       "modelId": "llama-4-scout",
@@ -11560,6 +13859,13 @@
       "benchmarkId": "arc-agi-2",
       "raw": 6.1,
       "sourceLabel": "o4-mini (High)"
+    },
+    {
+      "modelId": "mistral-small-4",
+      "benchmarkId": "aa-gdpval",
+      "raw": 538,
+      "stderr": 19,
+      "sourceLabel": "Mistral Small 4 (Reasoning)"
     },
     {
       "modelId": "claude-opus-4",
@@ -11582,6 +13888,20 @@
       "sourceLabel": "solar-pro4"
     },
     {
+      "modelId": "solar-pro4",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1198,
+      "stderr": 17,
+      "sourceLabel": "Solar Pro 4"
+    },
+    {
+      "modelId": "claude-4-sonnet",
+      "benchmarkId": "aa-gdpval",
+      "raw": 821,
+      "stderr": 17,
+      "sourceLabel": "Claude 4 Sonnet (Reasoning)"
+    },
+    {
       "modelId": "claude-sonnet-4",
       "benchmarkId": "arc-agi-2",
       "raw": 5.9,
@@ -11602,9 +13922,23 @@
     },
     {
       "modelId": "gpt-4-1-mini",
+      "benchmarkId": "aa-gdpval",
+      "raw": 455,
+      "stderr": 18,
+      "sourceLabel": "GPT-4.1 mini"
+    },
+    {
+      "modelId": "gpt-4-1-mini",
       "benchmarkId": "arc-agi-2",
       "raw": 0,
       "sourceLabel": "GPT-4.1-Mini"
+    },
+    {
+      "modelId": "gpt-4-1-nano",
+      "benchmarkId": "aa-gdpval",
+      "raw": 14,
+      "stderr": 19,
+      "sourceLabel": "GPT-4.1 nano"
     },
     {
       "modelId": "gpt-4-1-nano",
@@ -11630,6 +13964,20 @@
       "modelId": "granite-4-2-8b",
       "benchmarkId": "artificial-analysis",
       "raw": 14,
+      "sourceLabel": "Granite 4.2 8B"
+    },
+    {
+      "modelId": "granite-4-2-8b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 648,
+      "stderr": 21,
+      "sourceLabel": "Granite 4.2 8B"
+    },
+    {
+      "modelId": "granite-4-2-8b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 333,
+      "stderr": 10.5,
       "sourceLabel": "Granite 4.2 8B"
     },
     {
@@ -11743,7 +14091,7 @@
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "grok-4-20-reasoning",
+      "modelId": "grok-4-20",
       "benchmarkId": "arc-agi-2",
       "raw": 65.1,
       "sourceLabel": "Grok 4.20 (Reasoning)"
@@ -11754,6 +14102,20 @@
       "raw": 1443,
       "stderr": 4,
       "sourceLabel": "grok-4.3"
+    },
+    {
+      "modelId": "grok-4-3",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1022,
+      "stderr": 14,
+      "sourceLabel": "Grok 4.3 (high)"
+    },
+    {
+      "modelId": "grok-4-3",
+      "benchmarkId": "aa-briefcase",
+      "raw": 762,
+      "stderr": 7.5,
+      "sourceLabel": "Grok 4.3 (high)"
     },
     {
       "modelId": "grok-4-3",
@@ -11845,6 +14207,20 @@
     },
     {
       "modelId": "grok-4-5",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1433,
+      "stderr": 15,
+      "sourceLabel": "Grok 4.5 (high)"
+    },
+    {
+      "modelId": "grok-4-5",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1288,
+      "stderr": 6,
+      "sourceLabel": "Grok 4.5 (high)"
+    },
+    {
+      "modelId": "grok-4-5",
       "benchmarkId": "terminal-bench",
       "raw": 12.4,
       "stderr": 2.6,
@@ -11918,6 +14294,20 @@
       "sourceLabel": "Claude Haiku 4.5 (Thinking 32K)"
     },
     {
+      "modelId": "claude-4-5-haiku-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 857,
+      "stderr": 15,
+      "sourceLabel": "Claude 4.5 Haiku (Reasoning)"
+    },
+    {
+      "modelId": "claude-4-5-haiku-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 618,
+      "stderr": 8,
+      "sourceLabel": "Claude 4.5 Haiku (Reasoning)"
+    },
+    {
       "modelId": "opus-4-5",
       "benchmarkId": "arc-agi-2",
       "raw": 37.6,
@@ -11972,6 +14362,20 @@
       "sourceLabel": "Claude 4.5 Opus Thinking High Effort"
     },
     {
+      "modelId": "claude-4-5-sonnet",
+      "benchmarkId": "aa-gdpval",
+      "raw": 991,
+      "stderr": 16,
+      "sourceLabel": "Claude 4.5 Sonnet (Reasoning)"
+    },
+    {
+      "modelId": "claude-4-5-sonnet",
+      "benchmarkId": "aa-briefcase",
+      "raw": 711,
+      "stderr": 11,
+      "sourceLabel": "Claude 4.5 Sonnet (Reasoning)"
+    },
+    {
       "modelId": "claude-sonnet-4-5",
       "benchmarkId": "arc-agi-2",
       "raw": 13.6,
@@ -11983,6 +14387,13 @@
       "raw": 1425,
       "stderr": 4,
       "sourceLabel": "glm-4.6"
+    },
+    {
+      "modelId": "glm-4-6-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 876,
+      "stderr": 17,
+      "sourceLabel": "GLM-4.6 (Reasoning)"
     },
     {
       "modelId": "glm-4-6v",
@@ -12003,6 +14414,20 @@
       "benchmarkId": "artificial-analysis",
       "raw": 51,
       "sourceLabel": "Grok 4.6 (high)"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1666,
+      "stderr": 16,
+      "sourceLabel": "Grok 4.6 (xhigh)"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1549,
+      "stderr": 7,
+      "sourceLabel": "Grok 4.6 (xhigh)"
     },
     {
       "modelId": "grok-4-6",
@@ -12136,6 +14561,20 @@
     },
     {
       "modelId": "claude-sonnet-4-6",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1298,
+      "stderr": 14,
+      "sourceLabel": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "claude-sonnet-4-6",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1067,
+      "stderr": 6.5,
+      "sourceLabel": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "claude-sonnet-4-6",
       "benchmarkId": "arc-agi-2",
       "raw": 58.3,
       "sourceLabel": "Claude Sonnet 4.6 (Max)"
@@ -12209,11 +14648,32 @@
       "sourceLabel": "glm-4.7"
     },
     {
+      "modelId": "glm-4-7-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1100,
+      "stderr": 16,
+      "sourceLabel": "GLM-4.7 (Reasoning)"
+    },
+    {
       "modelId": "claude-opus-4-7",
       "benchmarkId": "lmarena",
       "raw": 1502,
       "stderr": 4,
       "sourceLabel": "claude-opus-4-7-high"
+    },
+    {
+      "modelId": "claude-opus-4-7",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1399,
+      "stderr": 14,
+      "sourceLabel": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "claude-opus-4-7",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1256,
+      "stderr": 6.5,
+      "sourceLabel": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)"
     },
     {
       "modelId": "claude-opus-4-7",
@@ -12269,6 +14729,20 @@
       "raw": 1482,
       "stderr": 4,
       "sourceLabel": "claude-opus-4-8-high"
+    },
+    {
+      "modelId": "claude-opus-4-8",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1493,
+      "stderr": 13,
+      "sourceLabel": "Claude Opus 4.8 (Adaptive Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "claude-opus-4-8",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1319,
+      "stderr": 6.5,
+      "sourceLabel": "Claude Opus 4.8 (Adaptive Reasoning, Max Effort)"
     },
     {
       "modelId": "claude-opus-4-8",
@@ -12333,6 +14807,20 @@
       "sourceLabel": "Claude 4.8 Opus Thinking Max Effort"
     },
     {
+      "modelId": "quasar-438b-max-based-on-glm-5-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1242,
+      "stderr": 19,
+      "sourceLabel": "Quasar 438B (max, based on GLM-5.2)"
+    },
+    {
+      "modelId": "quasar-438b-max-based-on-glm-5-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1124,
+      "stderr": 10,
+      "sourceLabel": "Quasar 438B (max, based on GLM-5.2)"
+    },
+    {
       "modelId": "gpt-5-chat",
       "benchmarkId": "lmarena",
       "raw": 1427,
@@ -12351,6 +14839,20 @@
       "benchmarkId": "artificial-analysis",
       "raw": 53,
       "sourceLabel": "Claude Fable 5 (with fallback)"
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1635,
+      "stderr": 14,
+      "sourceLabel": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)"
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1534,
+      "stderr": 6.5,
+      "sourceLabel": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)"
     },
     {
       "modelId": "claude-fable-5",
@@ -12443,6 +14945,13 @@
     },
     {
       "modelId": "gpt-5",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1018,
+      "stderr": 17,
+      "sourceLabel": "GPT-5 (high)"
+    },
+    {
+      "modelId": "gpt-5",
       "benchmarkId": "arc-agi-2",
       "raw": 9.9,
       "sourceLabel": "GPT-5 (High)"
@@ -12453,6 +14962,13 @@
       "raw": 1389,
       "stderr": 5,
       "sourceLabel": "gpt-5-mini-high"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "aa-gdpval",
+      "raw": 883,
+      "stderr": 17,
+      "sourceLabel": "GPT-5 mini (high)"
     },
     {
       "modelId": "gpt-5-mini",
@@ -12491,6 +15007,20 @@
       "benchmarkId": "artificial-analysis",
       "raw": 54,
       "sourceLabel": "Claude Opus 5 (max)"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1738,
+      "stderr": 16,
+      "sourceLabel": "Claude Opus 5 (Adaptive Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1647,
+      "stderr": 7.5,
+      "sourceLabel": "Claude Opus 5 (Adaptive Reasoning, Max Effort)"
     },
     {
       "modelId": "claude-opus-5",
@@ -12566,6 +15096,20 @@
       "benchmarkId": "artificial-analysis",
       "raw": 45,
       "sourceLabel": "Claude Sonnet 5 (max)"
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1505,
+      "stderr": 14,
+      "sourceLabel": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1358,
+      "stderr": 6,
+      "sourceLabel": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)"
     },
     {
       "modelId": "claude-sonnet-5",
@@ -12735,6 +15279,20 @@
     },
     {
       "modelId": "claude-fable-5-1",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1767,
+      "stderr": 19,
+      "sourceLabel": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1665,
+      "stderr": 10,
+      "sourceLabel": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)"
+    },
+    {
+      "modelId": "claude-fable-5-1",
       "benchmarkId": "terminal-bench",
       "raw": 57.9,
       "stderr": 3.8,
@@ -12803,11 +15361,32 @@
       "sourceLabel": "glm-5.1"
     },
     {
+      "modelId": "glm-5-1-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1185,
+      "stderr": 14,
+      "sourceLabel": "GLM-5.1 (Reasoning)"
+    },
+    {
+      "modelId": "glm-5-1-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 966,
+      "stderr": 7,
+      "sourceLabel": "GLM-5.1 (Reasoning)"
+    },
+    {
       "modelId": "gpt-5-1",
       "benchmarkId": "lmarena",
       "raw": 1455,
       "stderr": 4,
       "sourceLabel": "gpt-5.1-high"
+    },
+    {
+      "modelId": "gpt-5-1",
+      "benchmarkId": "aa-gdpval",
+      "raw": 933,
+      "stderr": 17,
+      "sourceLabel": "GPT-5.1 (high)"
     },
     {
       "modelId": "gpt-5-1",
@@ -12869,6 +15448,20 @@
       "raw": 1472,
       "stderr": 5,
       "sourceLabel": "glm-5.2-max"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1421,
+      "stderr": 13,
+      "sourceLabel": "GLM-5.2 (max)"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1239,
+      "stderr": 6,
+      "sourceLabel": "GLM-5.2 (max)"
     },
     {
       "modelId": "glm-5-2",
@@ -13114,6 +15707,13 @@
       "sourceLabel": "gpt-5.3-chat-latest"
     },
     {
+      "modelId": "gpt-5-3-codex",
+      "benchmarkId": "aa-briefcase",
+      "raw": 866,
+      "stderr": 7,
+      "sourceLabel": "GPT-5.3 Codex (xhigh)"
+    },
+    {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "lmarena",
       "raw": 1474,
@@ -13124,6 +15724,20 @@
       "modelId": "glm-5-3-flash",
       "benchmarkId": "artificial-analysis",
       "raw": 46,
+      "sourceLabel": "GLM-5.3-Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1673,
+      "stderr": 16,
+      "sourceLabel": "GLM-5.3-Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1459,
+      "stderr": 9.5,
       "sourceLabel": "GLM-5.3-Flash"
     },
     {
@@ -13185,6 +15799,20 @@
       "modelId": "glm-5-3",
       "benchmarkId": "artificial-analysis",
       "raw": 49,
+      "sourceLabel": "GLM-5.3 (max)"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1679,
+      "stderr": 16,
+      "sourceLabel": "GLM-5.3 (max)"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1519,
+      "stderr": 9.5,
       "sourceLabel": "GLM-5.3 (max)"
     },
     {
@@ -13252,6 +15880,13 @@
     },
     {
       "modelId": "gpt-5-4",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1310,
+      "stderr": 14,
+      "sourceLabel": "GPT-5.4 (xhigh)"
+    },
+    {
+      "modelId": "gpt-5-4",
       "benchmarkId": "arc-agi-2",
       "raw": 74,
       "sourceLabel": "GPT-5.4 (XHigh)"
@@ -13313,6 +15948,20 @@
     },
     {
       "modelId": "gpt-5-4-mini",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1098,
+      "stderr": 14,
+      "sourceLabel": "GPT-5.4 mini (xhigh)"
+    },
+    {
+      "modelId": "gpt-5-4-mini",
+      "benchmarkId": "aa-briefcase",
+      "raw": 721,
+      "stderr": 8,
+      "sourceLabel": "GPT-5.4 mini (xhigh)"
+    },
+    {
+      "modelId": "gpt-5-4-mini",
       "benchmarkId": "arc-agi-2",
       "raw": 18.9,
       "sourceLabel": "GPT-5.4 Mini (XHigh)"
@@ -13371,6 +16020,20 @@
       "raw": 1402,
       "stderr": 4,
       "sourceLabel": "gpt-5.4-nano-high"
+    },
+    {
+      "modelId": "gpt-5-4-nano",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1037,
+      "stderr": 14,
+      "sourceLabel": "GPT-5.4 nano (xhigh)"
+    },
+    {
+      "modelId": "gpt-5-4-nano",
+      "benchmarkId": "aa-briefcase",
+      "raw": 675,
+      "stderr": 10,
+      "sourceLabel": "GPT-5.4 nano (xhigh)"
     },
     {
       "modelId": "gpt-5-4-nano",
@@ -13438,6 +16101,20 @@
       "raw": 1482,
       "stderr": 4,
       "sourceLabel": "gpt-5.5-high"
+    },
+    {
+      "modelId": "gpt-5-5",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1398,
+      "stderr": 13,
+      "sourceLabel": "GPT-5.5 (xhigh)"
+    },
+    {
+      "modelId": "gpt-5-5",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1137,
+      "stderr": 6.5,
+      "sourceLabel": "GPT-5.5 (xhigh)"
     },
     {
       "modelId": "gpt-5-5",
@@ -13517,6 +16194,20 @@
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "artificial-analysis",
       "raw": 43,
+      "sourceLabel": "GPT-5.6 Luna (max)"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1493,
+      "stderr": 14,
+      "sourceLabel": "GPT-5.6 Luna (max)"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1342,
+      "stderr": 7.5,
       "sourceLabel": "GPT-5.6 Luna (max)"
     },
     {
@@ -13698,6 +16389,20 @@
     },
     {
       "modelId": "gpt-5-6-sol",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1627,
+      "stderr": 14,
+      "sourceLabel": "GPT-5.6 Sol (max)"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1479,
+      "stderr": 7,
+      "sourceLabel": "GPT-5.6 Sol (max)"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
       "benchmarkId": "terminal-bench",
       "raw": 37.3,
       "stderr": 3.8,
@@ -13769,6 +16474,20 @@
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "artificial-analysis",
       "raw": 47,
+      "sourceLabel": "GPT-5.6 Terra (max)"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1480,
+      "stderr": 14,
+      "sourceLabel": "GPT-5.6 Terra (max)"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1334,
+      "stderr": 8,
       "sourceLabel": "GPT-5.6 Terra (max)"
     },
     {
@@ -13931,6 +16650,20 @@
     },
     {
       "modelId": "gpt-6-astra",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1583,
+      "stderr": 20,
+      "sourceLabel": "GPT-6 Astra (max)"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1564,
+      "stderr": 10,
+      "sourceLabel": "GPT-6 Astra (max)"
+    },
+    {
+      "modelId": "gpt-6-astra",
       "benchmarkId": "terminal-bench",
       "raw": 58.2,
       "stderr": 2.8,
@@ -13990,12 +16723,6 @@
       "benchmarkId": "livebench-instruction-following",
       "raw": 75.6,
       "sourceLabel": "GPT-6 Astra Max Effort"
-    },
-    {
-      "modelId": "gpt-6-astra-non-reasoning",
-      "benchmarkId": "artificial-analysis",
-      "raw": 48,
-      "sourceLabel": "GPT-6 Astra (Non-reasoning)"
     },
     {
       "modelId": "chatglm-6b",
@@ -14103,6 +16830,20 @@
       "sourceLabel": "wizardlm-70b"
     },
     {
+      "modelId": "command-a",
+      "benchmarkId": "aa-gdpval",
+      "raw": 660,
+      "stderr": 18,
+      "sourceLabel": "Command A+"
+    },
+    {
+      "modelId": "command-a",
+      "benchmarkId": "aa-briefcase",
+      "raw": 376,
+      "stderr": 10.5,
+      "sourceLabel": "Command A+"
+    },
+    {
       "modelId": "ox-alpha",
       "benchmarkId": "livebench",
       "raw": 69.2,
@@ -14178,6 +16919,20 @@
       "sourceLabel": "longcat-flash-chat"
     },
     {
+      "modelId": "north-mini-code",
+      "benchmarkId": "aa-gdpval",
+      "raw": 491,
+      "stderr": 18,
+      "sourceLabel": "North Mini Code"
+    },
+    {
+      "modelId": "north-mini-code",
+      "benchmarkId": "aa-briefcase",
+      "raw": 239,
+      "stderr": 11,
+      "sourceLabel": "North Mini Code"
+    },
+    {
       "modelId": "codex-mini-latest",
       "benchmarkId": "arc-agi-2",
       "raw": 1.3,
@@ -14205,6 +16960,13 @@
       "sourceLabel": "dbrx-instruct-preview"
     },
     {
+      "modelId": "k-exaone",
+      "benchmarkId": "aa-gdpval",
+      "raw": 541,
+      "stderr": 20,
+      "sourceLabel": "K-EXAONE (Reasoning)"
+    },
+    {
       "modelId": "gemini-pro",
       "benchmarkId": "lmarena",
       "raw": 1223,
@@ -14222,6 +16984,20 @@
       "modelId": "muse-glimmer",
       "benchmarkId": "artificial-analysis",
       "raw": 24,
+      "sourceLabel": "Muse Glimmer (high)"
+    },
+    {
+      "modelId": "muse-glimmer",
+      "benchmarkId": "aa-gdpval",
+      "raw": 895,
+      "stderr": 19,
+      "sourceLabel": "Muse Glimmer (high)"
+    },
+    {
+      "modelId": "muse-glimmer",
+      "benchmarkId": "aa-briefcase",
+      "raw": 487,
+      "stderr": 10.5,
       "sourceLabel": "Muse Glimmer (high)"
     },
     {
@@ -14269,6 +17045,20 @@
       "benchmarkId": "artificial-analysis",
       "raw": 32,
       "sourceLabel": "Inkling"
+    },
+    {
+      "modelId": "inkling",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1168,
+      "stderr": 17,
+      "sourceLabel": "Inkling (xhigh)"
+    },
+    {
+      "modelId": "inkling",
+      "benchmarkId": "aa-briefcase",
+      "raw": 837,
+      "stderr": 8.5,
+      "sourceLabel": "Inkling (xhigh)"
     },
     {
       "modelId": "inkling",
@@ -14441,6 +17231,20 @@
     },
     {
       "modelId": "inkling-small",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1194,
+      "stderr": 17,
+      "sourceLabel": "Inkling Small"
+    },
+    {
+      "modelId": "inkling-small",
+      "benchmarkId": "aa-briefcase",
+      "raw": 915,
+      "stderr": 8.5,
+      "sourceLabel": "Inkling Small"
+    },
+    {
+      "modelId": "inkling-small",
       "benchmarkId": "arc-agi-2",
       "raw": 40.1,
       "sourceLabel": "Inkling Small (XHigh)"
@@ -14458,6 +17262,13 @@
       "raw": 1369,
       "stderr": 5,
       "sourceLabel": "trinity-large-thinking"
+    },
+    {
+      "modelId": "trinity-large",
+      "benchmarkId": "aa-gdpval",
+      "raw": 513,
+      "stderr": 20,
+      "sourceLabel": "Trinity Large Thinking"
     },
     {
       "modelId": "yi-lightning",
@@ -14504,6 +17315,20 @@
       "raw": 1488,
       "stderr": 6,
       "sourceLabel": "muse-spark"
+    },
+    {
+      "modelId": "muse-spark",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1078,
+      "stderr": 14,
+      "sourceLabel": "Muse Spark"
+    },
+    {
+      "modelId": "muse-spark",
+      "benchmarkId": "aa-briefcase",
+      "raw": 647,
+      "stderr": 8.5,
+      "sourceLabel": "Muse Spark"
     },
     {
       "modelId": "nvarc",
