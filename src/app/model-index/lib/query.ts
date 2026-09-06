@@ -10,6 +10,7 @@ import type { Benchmark } from '../data/types';
 import { recommend, type Recommendation } from './access';
 import { aggregate, type AggregateRow, compareScores } from './aggregate';
 import { groupBoards } from './boards';
+import { sizeLabel, type SizeTier, tierOf } from './size';
 import {
   categoryRank,
   MIN_SOURCES,
@@ -172,6 +173,14 @@ export interface ModelSummary {
   rankedInScope: boolean;
   /** Position in the returned list among rankedInScope rows; null for the rest. */
   position: number | null;
+  /** Total parameters in billions where known (counted from the weights, or read from the name); null when undisclosed. */
+  size: {
+    paramsB: number;
+    activeB?: number;
+    source: string;
+    label: string;
+  } | null;
+  sizeTier: SizeTier;
   /** Recognised boards scoring the model, out of those that could. */
   covered: number;
   coverable: number;
@@ -208,6 +217,10 @@ function summarize(r: AggregateRow, scope: Scope): ModelSummary {
     ranked: r.ranked,
     rankedInScope: eligible(r, scope),
     position: null,
+    size: r.model.size
+      ? { ...r.model.size, label: sizeLabel(r.model.size)! }
+      : null,
+    sizeTier: tierOf(r.model.size),
     covered: r.covered,
     coverable: r.coverable,
     reports: r.reports,
@@ -281,6 +294,8 @@ export interface RankQuery {
   callable?: boolean;
   /** Include report ✱ figures (launch posts, blogs). Default true. */
   reports?: boolean;
+  /** Size class by total parameters: small ≤ 15B, medium 15–100B, large > 100B, undisclosed. */
+  size?: SizeTier;
 }
 
 export function rankModels(q: RankQuery = {}) {
@@ -301,6 +316,7 @@ export function rankModels(q: RankQuery = {}) {
     if (r.covered < minBoards) return false;
     if (!includeReports && r.covered === 0) return false;
     if (orgQ && fold(r.model.org) !== orgQ) return false;
+    if (q.size && tierOf(r.model.size) !== q.size) return false;
     if (q.openWeights && !r.model.access?.weights) return false;
     if (q.callable && !r.model.access?.openrouter) return false;
     return scopeScore(r, scope) !== null;
@@ -324,6 +340,7 @@ export function rankModels(q: RankQuery = {}) {
     level: scope.level,
     minBoards,
     reports: includeReports,
+    ...(q.size ? { size: q.size } : {}),
     total: out.length,
     models,
     note: 'Scores are 0–100 standardized across the models each source lists; 50 is that measure’s average, not a grade. Overall ranks a model once boards from two independent publishers have scored it; a category or domain ranks any model a recognised board measured there. Report (✱) figures never rank a model on their own. This is a snapshot dated generatedAt, not a live feed; every figure links to its publisher.',

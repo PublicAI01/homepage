@@ -14,6 +14,7 @@ import {
 import { aggregate, type AggregateRow, compareScores } from '../lib/aggregate';
 import { type BoardView, groupBoards } from '../lib/boards';
 import { downloadChart } from '../lib/export-chart';
+import { SIZE_TIERS, sizeLabel, type SizeTier, tierOf } from '../lib/size';
 import {
   categoryRank,
   domainLabel,
@@ -151,6 +152,7 @@ export default function IndexTable({
   // be switched off, which drops their figures from every score and hides
   // models nothing else has measured.
   const [includeReports, setIncludeReports] = useState(true);
+  const [sizeTier, setSizeTier] = useState<SizeTier | 'all'>('all');
 
   const weights = useMemo(() => {
     const w = weightsFor(benchmarks);
@@ -226,6 +228,7 @@ export default function IndexTable({
       if (r.covered < minBoards) return false;
       if (!includeReports && r.covered === 0) return false;
       if (org !== 'all' && r.model.org !== org) return false;
+      if (sizeTier !== 'all' && tierOf(r.model.size) !== sizeTier) return false;
       if (q && !`${r.model.name} ${r.model.org}`.toLowerCase().includes(q))
         return false;
       const has = sourcesScoring.get(r.model.id)!;
@@ -255,6 +258,7 @@ export default function IndexTable({
     rankKey,
     sourcesScoring,
     includeReports,
+    sizeTier,
   ]);
 
   const rankedCount = rows.filter((r) => r.ranked).length;
@@ -289,9 +293,10 @@ export default function IndexTable({
       .filter((r) => keyOf(r, rankKey) !== null)
       .slice(0, CHART_ROWS);
     const scope = rankLabel(rankKey);
+    const tier = SIZE_TIERS.find((t) => t.id === sizeTier);
     downloadChart(
       {
-        title: `Top ${top.length} models — ${scope}`,
+        title: `Top ${top.length} models — ${scope}${tier ? ` · ${tier.label}` : ''}`,
         scope,
         // Position within this scope, not the Overall rank: a chart titled
         // "Coding" numbered 1, 3, 4, 8 would read as an error.
@@ -410,6 +415,21 @@ export default function IndexTable({
               key={o}
               value={o}>
               {o}
+            </option>
+          ))}
+        </select>
+        <select
+          value={sizeTier}
+          onChange={(e) => setSizeTier(e.target.value as SizeTier | 'all')}
+          aria-label="Model size"
+          title="Total parameters. Counted from the weights for open models, read from the name otherwise; closed models are undisclosed, not estimated."
+          className={CONTROL}>
+          <option value="all">All sizes</option>
+          {SIZE_TIERS.map((t) => (
+            <option
+              key={t.id}
+              value={t.id}>
+              {t.label}
             </option>
           ))}
         </select>
@@ -638,6 +658,17 @@ function Row({
             {row.model.name}
           </b>
           <span className="text-g2 ml-2 text-xs">{row.model.org}</span>
+          {sizeLabel(row.model.size) ? (
+            <span
+              className="text-micro ml-2 font-mono text-[#78758A]"
+              title={
+                row.model.size?.source === 'huggingface'
+                  ? 'Total parameters, counted from the weights on Hugging Face'
+                  : 'Total parameters, as the model’s own name states'
+              }>
+              {sizeLabel(row.model.size)}
+            </span>
+          ) : null}
           {!inScope ? (
             <span className="text-micro ml-2 rounded border border-white/12 px-1 py-px text-[#78758A]">
               {rankKey.level === 'overall' ? 'provisional' : 'report only'}
@@ -761,6 +792,9 @@ function ModelCard({
 
   const facts: string[] = [
     row.model.org,
+    sizeLabel(row.model.size)
+      ? `${sizeLabel(row.model.size)} parameters${row.model.size?.source === 'huggingface' ? ' (counted)' : ''}`
+      : 'size undisclosed',
     access?.weights
       ? 'open weights'
       : or

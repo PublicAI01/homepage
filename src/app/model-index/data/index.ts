@@ -21,4 +21,5 @@ export type {
   Metric,
   Model,
   Score,
+  Size,
 } from './types';
