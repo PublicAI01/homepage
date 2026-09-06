@@ -1,8 +1,8 @@
 import type { Benchmark, Model, Score } from '../data/types';
 
 /**
- * Turning four leaderboards into one number, without pretending the number is
- * more solid than its inputs.
+ * Turning several leaderboards into one number, without pretending the number
+ * is more solid than its inputs.
  *
  * Three problems have to be solved in order:
  *
@@ -17,9 +17,9 @@ import type { Benchmark, Model, Score } from '../data/types';
  *    error bars; a 57.9% ± 3.8 is a weaker claim than 58.2% ± 2.8. Scores are
  *    weighted down in proportion to their published uncertainty.
  *
- * 3. Coverage is uneven. No model appears on all four boards by default, and a
- *    model rated on two boards has not earned the same confidence as one rated
- *    on four. Missing scores are never imputed — they are excluded from the
+ * 3. Coverage is uneven. Not every model appears on every board, and a model
+ *    rated on two boards has not earned the same confidence as one rated on
+ *    four. Missing scores are never imputed — they are excluded from the
  *    weighted mean, and coverage is reported alongside every result so a thin
  *    row is visibly thin.
  */
@@ -44,6 +44,8 @@ export interface AggregateRow {
   model: Model;
   /** Final 0-100 index score, or null when the model has no usable scores. */
   score: number | null;
+  /** The same weighted mean, restricted to the boards in each domain. */
+  byDomain: Record<string, number | null>;
   perBenchmark: NormalizedScore[];
   /** How many of the weighted benchmarks this model actually appears on. */
   covered: number;
@@ -95,11 +97,29 @@ export function confidenceOf(stderr: number | undefined, spread: number) {
   return clamp(1 / (1 + relative * relative * 16), 0.15, 1);
 }
 
+/** Weighted mean of normalized scores, or null when nothing contributes. */
+function weightedMean(
+  scores: NormalizedScore[],
+  weights: Record<string, number>,
+): number | null {
+  const total = scores.reduce(
+    (sum, s) => sum + weights[s.benchmarkId] * s.confidence,
+    0,
+  );
+  if (total <= 0) return null;
+  return (
+    scores.reduce(
+      (sum, s) => sum + s.normalized * weights[s.benchmarkId] * s.confidence,
+      0,
+    ) / total
+  );
+}
+
 export interface AggregateInput {
   models: Model[];
   benchmarks: Benchmark[];
   scores: Score[];
-  /** benchmarkId -> 0-100 user weight. */
+  /** benchmarkId -> weight. Boards absent or at 0 do not contribute. */
   weights: Record<string, number>;
   /** When false, published error bars are ignored and every score counts equally. */
   useConfidence?: boolean;
@@ -113,6 +133,8 @@ export function aggregate({
   useConfidence = true,
 }: AggregateInput): AggregateRow[] {
   const active = benchmarks.filter((b) => (weights[b.id] ?? 0) > 0);
+  const domainOf = new Map(benchmarks.map((b) => [b.id, b.domain]));
+  const domains = [...new Set(active.map((b) => b.domain))];
 
   // Normalize within each board, over the models actually present on it.
   const normalizedBy = new Map<string, Map<string, NormalizedScore>>();
@@ -145,28 +167,23 @@ export function aggregate({
       .map((b) => normalizedBy.get(b.id)?.get(model.id))
       .filter((s): s is NormalizedScore => s !== undefined);
 
-    // Only boards the user actually weighted contribute to the score.
+    // Only weighted boards contribute to any score.
     const contributing = perBenchmark.filter(
       (s) => (weights[s.benchmarkId] ?? 0) > 0,
     );
 
-    const totalWeight = contributing.reduce(
-      (sum, s) => sum + weights[s.benchmarkId] * s.confidence,
-      0,
-    );
-
-    const score =
-      totalWeight > 0
-        ? contributing.reduce(
-            (sum, s) =>
-              sum + s.normalized * weights[s.benchmarkId] * s.confidence,
-            0,
-          ) / totalWeight
-        : null;
+    const byDomain: Record<string, number | null> = {};
+    for (const d of domains) {
+      byDomain[d] = weightedMean(
+        contributing.filter((s) => domainOf.get(s.benchmarkId) === d),
+        weights,
+      );
+    }
 
     return {
       model,
-      score,
+      score: weightedMean(contributing, weights),
+      byDomain,
       perBenchmark,
       covered: contributing.length,
       coverable: active.length,
@@ -174,63 +191,17 @@ export function aggregate({
     };
   });
 
-  return rows.sort((a, b) => {
-    if (a.score === null) return 1;
-    if (b.score === null) return -1;
-    return b.score - a.score;
-  });
+  return rows.sort(compareScores((r) => r.score));
 }
 
-export interface Preset {
-  id: string;
-  name: string;
-  blurb: string;
-  weights: Record<string, number>;
+/** Sort highest first; models without a score go last. */
+export function compareScores<T>(key: (row: T) => number | null) {
+  return (a: T, b: T) => {
+    const x = key(a);
+    const y = key(b);
+    if (x === null && y === null) return 0;
+    if (x === null) return 1;
+    if (y === null) return -1;
+    return y - x;
+  };
 }
-
-export const presets: Preset[] = [
-  {
-    id: 'general',
-    name: 'General',
-    blurb: 'Every board counts the same. The default index.',
-    weights: {
-      lmarena: 25,
-      'terminal-bench': 25,
-      'arc-agi-2': 25,
-      livebench: 25,
-    },
-  },
-  {
-    id: 'agent',
-    name: 'Agent / Coding',
-    blurb: 'Weighted to models that finish real terminal and coding work.',
-    weights: {
-      lmarena: 5,
-      'terminal-bench': 50,
-      'arc-agi-2': 15,
-      livebench: 30,
-    },
-  },
-  {
-    id: 'reasoning',
-    name: 'Reasoning',
-    blurb: 'Weighted to abstract problem solving over conversational polish.',
-    weights: {
-      lmarena: 10,
-      'terminal-bench': 15,
-      'arc-agi-2': 50,
-      livebench: 25,
-    },
-  },
-  {
-    id: 'product',
-    name: 'Chat product',
-    blurb: 'Weighted to what end users prefer in an assistant.',
-    weights: {
-      lmarena: 55,
-      'terminal-bench': 5,
-      'arc-agi-2': 10,
-      livebench: 30,
-    },
-  },
-];

@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest';
 
 import { benchmarks, models, scores } from '../data';
 import type { Benchmark, Model, Score } from '../data/types';
-import { aggregate, confidenceOf, normalizeBoard, presets } from './aggregate';
+import { aggregate, confidenceOf, normalizeBoard } from './aggregate';
+import { WEIGHTING, WEIGHTS } from './weights';
 
 const bench = (id: string): Benchmark => ({
   id,
@@ -234,6 +235,62 @@ describe('aggregate', () => {
   });
 });
 
+describe('byDomain', () => {
+  it('scores each domain from that domain’s boards alone', () => {
+    const bs = [
+      { ...bench('a'), domain: 'x' },
+      { ...bench('b'), domain: 'y' },
+    ];
+    const ss = [
+      score('m1', 'a', 90),
+      score('m2', 'a', 10),
+      score('m1', 'b', 10),
+      score('m2', 'b', 90),
+    ];
+    const out = aggregate({
+      models: [model('m1'), model('m2')],
+      benchmarks: bs,
+      scores: ss,
+      weights: { a: 50, b: 50 },
+    });
+    const m1 = out.find((r) => r.model.id === 'm1')!;
+    const onA = m1.perBenchmark.find((s) => s.benchmarkId === 'a')!;
+    const onB = m1.perBenchmark.find((s) => s.benchmarkId === 'b')!;
+    expect(m1.byDomain.x).toBeCloseTo(onA.normalized, 10);
+    expect(m1.byDomain.y).toBeCloseTo(onB.normalized, 10);
+  });
+
+  it('is null for a domain the model has no scores in', () => {
+    const bs = [
+      { ...bench('a'), domain: 'x' },
+      { ...bench('b'), domain: 'y' },
+    ];
+    const out = aggregate({
+      models: [model('m1'), model('m2')],
+      benchmarks: bs,
+      scores: [score('m1', 'a', 90), score('m2', 'a', 10)],
+      weights: { a: 50, b: 50 },
+    });
+    expect(out[0].byDomain.y).toBeNull();
+  });
+});
+
+describe('weighting', () => {
+  it('assigns a weight to every shipped benchmark and nothing else', () => {
+    const ids = new Set(benchmarks.map((b) => b.id));
+    for (const w of WEIGHTING) expect(ids.has(w.benchmarkId)).toBe(true);
+    for (const b of benchmarks) expect(typeof WEIGHTS[b.id]).toBe('number');
+  });
+
+  it('sums to 100 so the shares read as percentages', () => {
+    expect(WEIGHTING.reduce((s, w) => s + w.weight, 0)).toBe(100);
+  });
+
+  it('states a reason for every share', () => {
+    for (const w of WEIGHTING) expect(w.rationale.length).toBeGreaterThan(20);
+  });
+});
+
 describe('shipped data', () => {
   it('references only known models and benchmarks', () => {
     const modelIds = new Set(models.map((m) => m.id));
@@ -264,40 +321,25 @@ describe('shipped data', () => {
     }
   });
 
-  it('gives every preset a weight for every benchmark', () => {
-    for (const p of presets) {
-      for (const b of benchmarks) {
-        expect(typeof p.weights[b.id]).toBe('number');
-      }
-    }
+  it('produces a full ranking under the published weighting', () => {
+    const out = aggregate({ models, benchmarks, scores, weights: WEIGHTS });
+    expect(out).toHaveLength(models.length);
+    for (const r of out) expect(r.score).not.toBeNull();
   });
 
-  it('produces a ranking over the real data under every preset', () => {
-    for (const p of presets) {
-      const out = aggregate({
-        models,
-        benchmarks,
-        scores,
-        weights: p.weights,
-      });
-      expect(out).toHaveLength(models.length);
-      expect(out[0].score).not.toBeNull();
-    }
-  });
-
-  it('has no single leader: the top model depends on the weighting', () => {
-    // The point of the index. If every preset agreed on the winner, one
-    // leaderboard would have done. The full order must move too, not only
-    // the top row.
-    const rankings = presets.map((p) =>
-      aggregate({ models, benchmarks, scores, weights: p.weights }).map(
-        (r) => r.model.id,
+  it('does not let one board dictate the winner: domain leaders differ', () => {
+    // The point of the index. If every domain agreed on the winner, a single
+    // leaderboard would have done.
+    const out = aggregate({ models, benchmarks, scores, weights: WEIGHTS });
+    const domains = [...new Set(benchmarks.map((b) => b.domain))];
+    const leaders = new Set(
+      domains.map(
+        (d) =>
+          [...out].sort(
+            (a, b) => (b.byDomain[d] ?? -1) - (a.byDomain[d] ?? -1),
+          )[0].model.id,
       ),
     );
-    const leaders = new Set(rankings.map((r) => r[0]));
     expect(leaders.size).toBeGreaterThan(1);
-
-    const orders = new Set(rankings.map((r) => r.join('>')));
-    expect(orders.size).toBeGreaterThan(1);
   });
 });

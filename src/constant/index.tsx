@@ -42,6 +42,12 @@ const NAV_LIST = [
     label: 'For Labs',
     comingSoon: false,
   },
+  {
+    id: 'model-index',
+    href: '/model-index',
+    label: 'Index',
+    comingSoon: false,
+  },
 ] as const;
 
 export {
