@@ -118,3 +118,33 @@ describe('describeIndex', () => {
     expect(d.scopes.length).toBeGreaterThan(3);
   });
 });
+
+describe('reports switch', () => {
+  it('drops report-only models and report figures when reports are off', () => {
+    const on = ok(rankModels({ scope: 'agents', minBoards: 0, limit: 100 }));
+    const off = ok(
+      rankModels({ scope: 'agents', minBoards: 0, limit: 100, reports: false }),
+    );
+    expect(off.total).toBeLessThanOrEqual(on.total);
+    for (const m of off.models) {
+      expect(m.covered).toBeGreaterThan(0);
+      expect(m.rankedInScope).toBe(true);
+    }
+    // Overall rank is untouched by the switch: reports never enter it.
+    const a = ok(rankModels({ limit: 20 })).models.map((m) => m.name);
+    const b = ok(rankModels({ limit: 20, reports: false })).models.map(
+      (m) => m.name,
+    );
+    expect(a).toEqual(b);
+  });
+
+  it('places a report-only row by its figure with no position, when reports are on', () => {
+    const r = ok(rankModels({ scope: 'agents', minBoards: 0, limit: 100 }));
+    const placed = r.models.filter((m) => !m.rankedInScope);
+    for (const m of placed) expect(m.position).toBeNull();
+    const numbered = r.models
+      .filter((m) => m.rankedInScope)
+      .map((m) => m.position);
+    expect(numbered).toEqual(numbered.map((_, i) => i + 1));
+  });
+});

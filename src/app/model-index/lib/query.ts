@@ -29,21 +29,33 @@ export const INDEX_URL = 'https://publicai.io/model-index';
 export const MCP_URL = `${INDEX_URL}/mcp`;
 export const API_URL = `${INDEX_URL}/api`;
 
-const weights = weightsFor(benchmarks);
-const rows: AggregateRow[] = aggregate({
-  models,
-  benchmarks,
-  scores,
-  weights,
-  overall: OVERALL,
-  priorFraction: PRIOR_FRACTION,
-  minSources: MIN_SOURCES,
-});
-const rankOf = new Map<string, number>();
-{
+/**
+ * Two aggregates, computed once: with reports ✱ (launch posts, blogs) and
+ * without. Turning them off drops their figures from every score and hides
+ * models nothing else has measured; it never changes the Overall rank,
+ * which reports do not enter.
+ */
+function build(includeReports: boolean) {
+  const weights = weightsFor(benchmarks);
+  if (!includeReports)
+    for (const b of benchmarks) if (b.kind === 'report') weights[b.id] = 0;
+  const rows: AggregateRow[] = aggregate({
+    models,
+    benchmarks,
+    scores,
+    weights,
+    overall: OVERALL,
+    priorFraction: PRIOR_FRACTION,
+    minSources: MIN_SOURCES,
+  });
+  const rankOf = new Map<string, number>();
   let n = 0;
   for (const r of rows) if (r.ranked) rankOf.set(r.model.id, ++n);
+  return { rows, rankOf };
 }
+const WITH = build(true);
+const WITHOUT = build(false);
+const { rows, rankOf } = WITH;
 const benchById = new Map(benchmarks.map((b) => [b.id, b]));
 const sources = groupBoards(benchmarks);
 
@@ -267,6 +279,8 @@ export interface RankQuery {
   openWeights?: boolean;
   /** Only models with a callable id in a catalog. */
   callable?: boolean;
+  /** Include report ✱ figures (launch posts, blogs). Default true. */
+  reports?: boolean;
 }
 
 export function rankModels(q: RankQuery = {}) {
@@ -280,9 +294,12 @@ export function rankModels(q: RankQuery = {}) {
   const minBoards = q.minBoards ?? MIN_SOURCES;
   const limit = Math.max(1, Math.min(q.limit ?? 20, 100));
   const orgQ = q.org ? fold(q.org) : null;
+  const includeReports = q.reports ?? true;
+  const set = includeReports ? WITH : WITHOUT;
 
-  let out = rows.filter((r) => {
+  let out = set.rows.filter((r) => {
     if (r.covered < minBoards) return false;
+    if (!includeReports && r.covered === 0) return false;
     if (orgQ && fold(r.model.org) !== orgQ) return false;
     if (q.openWeights && !r.model.access?.weights) return false;
     if (q.callable && !r.model.access?.openrouter) return false;
@@ -290,10 +307,10 @@ export function rankModels(q: RankQuery = {}) {
   });
   if (scope.level !== 'overall') {
     const by = compareScores<AggregateRow>((r) => scopeScore(r, scope));
-    out = [...out].sort(
-      (a, b) =>
-        Number(eligible(b, scope)) - Number(eligible(a, scope)) || by(a, b),
-    );
+    // With reports in, a row sits where its figure puts it (rankedInScope
+    // false, position null when only reports placed it). Without, only
+    // board-measured rows remain in the scope.
+    out = [...out].filter((r) => includeReports || eligible(r, scope)).sort(by);
   }
   let n = 0;
   const models = out.slice(0, limit).map((r) => {
@@ -306,6 +323,7 @@ export function rankModels(q: RankQuery = {}) {
     scope: scopeLabel(scope),
     level: scope.level,
     minBoards,
+    reports: includeReports,
     total: out.length,
     models,
     note: 'Scores are 0–100 standardized across the models each source lists; 50 is that measure’s average, not a grade. Overall ranks a model once boards from two independent publishers have scored it; a category or domain ranks any model a recognised board measured there. Report (✱) figures never rank a model on their own. This is a snapshot dated generatedAt, not a live feed; every figure links to its publisher.',
