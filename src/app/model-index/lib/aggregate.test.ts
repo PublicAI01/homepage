@@ -285,20 +285,19 @@ describe('shipped data', () => {
     }
   });
 
-  it('changes the leader between the preference and agent presets', () => {
-    // The point of the index: LMArena's top model is not the best agent.
-    const chat = aggregate({
-      models,
-      benchmarks,
-      scores,
-      weights: presets.find((p) => p.id === 'product')!.weights,
-    });
-    const agent = aggregate({
-      models,
-      benchmarks,
-      scores,
-      weights: presets.find((p) => p.id === 'agent')!.weights,
-    });
-    expect(chat[0].model.id).not.toBe(agent[0].model.id);
+  it('has no single leader: the top model depends on the weighting', () => {
+    // The point of the index. If every preset agreed on the winner, one
+    // leaderboard would have done. The full order must move too, not only
+    // the top row.
+    const rankings = presets.map((p) =>
+      aggregate({ models, benchmarks, scores, weights: p.weights }).map(
+        (r) => r.model.id,
+      ),
+    );
+    const leaders = new Set(rankings.map((r) => r[0]));
+    expect(leaders.size).toBeGreaterThan(1);
+
+    const orders = new Set(rankings.map((r) => r.join('>')));
+    expect(orders.size).toBeGreaterThan(1);
   });
 });

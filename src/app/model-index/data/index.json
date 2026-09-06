@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-05T00:00:00Z",
+  "generatedAt": "2026-09-06T05:44:27.489Z",
   "benchmarks": [
     {
       "id": "lmarena",
       "name": "LMArena Text",
       "publisher": "LMArena",
       "url": "https://arena.ai/leaderboard/text",
-      "retrievedAt": "2026-09-05",
-      "snapshot": "Sep 2, 2026 — 7,999,020 votes across 400 models",
+      "retrievedAt": "2026-09-06",
+      "snapshot": "7,999,020 votes across 400 models",
       "metric": "elo",
       "domain": "Human preference",
       "caveat": "Blind head-to-head votes. Measures what people prefer reading, which tracks style as well as correctness."
@@ -17,7 +17,7 @@
       "name": "Terminal-Bench",
       "publisher": "Terminal-Bench",
       "url": "https://www.tbench.ai/leaderboard",
-      "retrievedAt": "2026-09-05",
+      "retrievedAt": "2026-09-06",
       "snapshot": "Top entry dated Sep 3, 2026",
       "metric": "percent",
       "domain": "Agentic terminal use",
@@ -28,7 +28,7 @@
       "name": "ARC-AGI-2",
       "publisher": "ARC Prize",
       "url": "https://arcprize.org/leaderboard",
-      "retrievedAt": "2026-09-05",
+      "retrievedAt": "2026-09-06",
       "metric": "percent",
       "domain": "Abstract reasoning",
       "caveat": "Reported per reasoning-effort tier. The same model spans a wide range across tiers, so the tier is recorded alongside each score."
@@ -38,7 +38,7 @@
       "name": "LiveBench",
       "publisher": "LiveBench",
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-05",
+      "retrievedAt": "2026-09-06",
       "metric": "index",
       "domain": "Contamination-resistant general",
       "caveat": "Overall figure aggregates the publisher’s own sub-categories (reasoning, coding, agentic coding, mathematics, data analysis, language, instruction following)."
@@ -146,6 +146,12 @@
     },
     {
       "modelId": "claude-fable-5",
+      "benchmarkId": "arc-agi-2",
+      "raw": 89.2,
+      "sourceLabel": "Claude Fable 5 (Max)"
+    },
+    {
+      "modelId": "claude-fable-5",
       "benchmarkId": "livebench",
       "raw": 83,
       "sourceLabel": "Claude Fable 5 Max Effort"
@@ -153,9 +159,9 @@
     {
       "modelId": "claude-opus-5",
       "benchmarkId": "lmarena",
-      "raw": 1493,
-      "stderr": 5,
-      "sourceLabel": "claude-opus-5-high"
+      "raw": 1488,
+      "stderr": 6,
+      "sourceLabel": "claude-opus-5-max"
     },
     {
       "modelId": "claude-opus-5",
@@ -167,9 +173,22 @@
     },
     {
       "modelId": "claude-opus-5",
+      "benchmarkId": "arc-agi-2",
+      "raw": 90.4,
+      "sourceLabel": "Claude Opus 5 (Max)"
+    },
+    {
+      "modelId": "claude-opus-5",
       "benchmarkId": "livebench",
       "raw": 80.1,
       "sourceLabel": "Claude 5 Opus Thinking Max Effort"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "lmarena",
+      "raw": 1483,
+      "stderr": 5,
+      "sourceLabel": "gpt-5.6-sol-xhigh"
     },
     {
       "modelId": "gpt-5-6-sol",
@@ -178,6 +197,12 @@
       "stderr": 3.8,
       "sourceLabel": "GPT-5.6 Sol(max)",
       "scaffold": "Codex"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "arc-agi-2",
+      "raw": 92.5,
+      "sourceLabel": "GPT-5.6 Sol (Max)"
     },
     {
       "modelId": "gpt-5-6-sol",
@@ -201,12 +226,31 @@
       "scaffold": "mini-SWE-agent"
     },
     {
+      "modelId": "gemini-3-8-flash",
+      "benchmarkId": "livebench",
+      "raw": 75.8,
+      "sourceLabel": "Gemini 3.8 Flash High"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "lmarena",
+      "raw": 1461,
+      "stderr": 10,
+      "sourceLabel": "grok-4.6-high"
+    },
+    {
       "modelId": "grok-4-6",
       "benchmarkId": "terminal-bench",
       "raw": 20.3,
       "stderr": 3.1,
       "sourceLabel": "Grok 4.6(high)",
       "scaffold": "Grok Build"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "arc-agi-2",
+      "raw": 67.1,
+      "sourceLabel": "Grok 4.6 (XHigh)"
     },
     {
       "modelId": "grok-4-6",
