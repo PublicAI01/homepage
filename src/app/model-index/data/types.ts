@@ -44,6 +44,8 @@ export interface Benchmark {
   /** Known limitation a buyer should weigh before trusting the column. */
   caveat?: string;
   kind: SourceKind;
+  /** Display name of the source this measure belongs to. Boards repeat their headline name; reports carry the publication's title. */
+  source: string;
   /**
    * The source this measure belongs to, by id. LiveBench's category figures
    * all point at `livebench`; single-measure boards point at themselves; a

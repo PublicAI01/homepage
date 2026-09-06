@@ -86,7 +86,7 @@ export function SourceBadge({
     source.kind === 'report'
       ? REPORT_BADGE
       : (SOURCE_BADGE[source.id] ?? FALLBACK_BADGE);
-  const name = source.headline.name;
+  const name = source.name;
   const label = present
     ? `${name}${detail ? ` — ${detail}` : ''}`
     : `${name} — not listed`;
@@ -265,7 +265,7 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
               type="button"
               aria-pressed={on}
               onClick={() => toggleSource(s.id)}
-              title={s.headline.name}
+              title={s.name}
               className={cn(
                 'rounded-md border p-0.5 transition-colors',
                 on
@@ -528,7 +528,7 @@ function Row({
             })}
             {reportsScoring.length > 0 ? (
               <span
-                title={reportsScoring.map((r) => r.headline.name).join(' · ')}
+                title={reportsScoring.map((r) => r.name).join(' · ')}
                 className={cn(
                   'text-micro inline-flex h-5 min-w-7 items-center justify-center rounded border px-1 font-mono font-semibold',
                   REPORT_BADGE.tone,
@@ -646,7 +646,7 @@ function Row({
                         source={src}
                         present
                       />
-                      <b className="font-medium text-white">{h.name}</b>
+                      <b className="font-medium text-white">{src.name}</b>
                       {src.kind === 'report' ? (
                         <span className="text-[#E8A9F0]">
                           report by {h.publisher}

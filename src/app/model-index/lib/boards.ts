@@ -8,6 +8,8 @@ import type { Benchmark, SourceKind } from '../data/types';
 export interface BoardView {
   id: string;
   kind: SourceKind;
+  /** The source's own name: a board's title, or a report's publication title. */
+  name: string;
   headline: Benchmark;
   measures: Benchmark[];
 }
@@ -18,7 +20,13 @@ export function groupBoards(benchmarks: Benchmark[]): BoardView[] {
   for (const b of benchmarks) {
     let view = out.find((v) => v.id === b.group);
     if (!view) {
-      view = { id: b.group, kind: b.kind, headline: b, measures: [] };
+      view = {
+        id: b.group,
+        kind: b.kind,
+        name: b.source,
+        headline: b,
+        measures: [],
+      };
       out.push(view);
     }
     if (b.id === b.group) view.headline = b;

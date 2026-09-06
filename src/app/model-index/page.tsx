@@ -187,7 +187,7 @@ export default function ModelIndex() {
                         present
                       />
                       <b className="text-body-sm font-semibold text-white">
-                        {s.headline.name}
+                        {s.name}
                       </b>
                       <span className="text-caption text-p1 ml-auto font-mono">
                         {w.weight}%
@@ -215,7 +215,7 @@ export default function ModelIndex() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-body-sm font-semibold text-white underline underline-offset-2">
-                      {b.headline.name}
+                      {b.name}
                     </a>
                     <span className="text-micro ml-auto text-[#78758A]">
                       read {b.headline.retrievedAt}
@@ -271,7 +271,7 @@ export default function ModelIndex() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-body-sm font-semibold text-white underline underline-offset-2">
-                        {r.headline.name}
+                        {r.name}
                       </a>
                       <span className="text-micro ml-auto text-[#78758A]">
                         {r.headline.publishedAt

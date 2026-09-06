@@ -27,6 +27,7 @@ const bench = (
   category: 'test',
   domain: 'test',
   kind: 'board',
+  source: id,
   group,
   ...extra,
 });

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T08:04:22.663Z",
+  "generatedAt": "2026-09-06T08:06:05.399Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -13,6 +13,7 @@
       "domain": "Human preference",
       "caveat": "Blind head-to-head votes. Measures what people prefer reading, which tracks style as well as correctness.",
       "kind": "board",
+      "source": "LMArena Text",
       "group": "lmarena"
     },
     {
@@ -27,6 +28,7 @@
       "domain": "Agentic coding",
       "caveat": "Scores a model plus its agent scaffold (Codex, Claude Code, Grok Build). The scaffold is part of the result, not a constant.",
       "kind": "board",
+      "source": "Terminal-Bench",
       "group": "terminal-bench"
     },
     {
@@ -40,6 +42,7 @@
       "domain": "Abstract reasoning",
       "caveat": "Reported per reasoning-effort tier. The same model spans a wide range across tiers; the highest published tier is indexed and recorded beside the score.",
       "kind": "board",
+      "source": "ARC-AGI-2",
       "group": "arc-agi-2"
     },
     {
@@ -53,6 +56,7 @@
       "domain": "General",
       "caveat": "Questions are refreshed to resist contamination. The overall figure averages the publisher’s own categories, each of which is also indexed on its own.",
       "kind": "board",
+      "source": "LiveBench",
       "group": "livebench"
     },
     {
@@ -66,6 +70,7 @@
       "domain": "Reasoning",
       "caveat": "Questions are refreshed to resist contamination. The overall figure averages the publisher’s own categories, each of which is also indexed on its own.",
       "kind": "board",
+      "source": "LiveBench",
       "group": "livebench"
     },
     {
@@ -79,6 +84,7 @@
       "domain": "Code generation",
       "caveat": "Questions are refreshed to resist contamination. The overall figure averages the publisher’s own categories, each of which is also indexed on its own.",
       "kind": "board",
+      "source": "LiveBench",
       "group": "livebench"
     },
     {
@@ -92,6 +98,7 @@
       "domain": "Agentic coding",
       "caveat": "Questions are refreshed to resist contamination. The overall figure averages the publisher’s own categories, each of which is also indexed on its own.",
       "kind": "board",
+      "source": "LiveBench",
       "group": "livebench"
     },
     {
@@ -105,6 +112,7 @@
       "domain": "Mathematics",
       "caveat": "Questions are refreshed to resist contamination. The overall figure averages the publisher’s own categories, each of which is also indexed on its own.",
       "kind": "board",
+      "source": "LiveBench",
       "group": "livebench"
     },
     {
@@ -118,6 +126,7 @@
       "domain": "Data analysis",
       "caveat": "Questions are refreshed to resist contamination. The overall figure averages the publisher’s own categories, each of which is also indexed on its own.",
       "kind": "board",
+      "source": "LiveBench",
       "group": "livebench"
     },
     {
@@ -131,6 +140,7 @@
       "domain": "Language",
       "caveat": "Questions are refreshed to resist contamination. The overall figure averages the publisher’s own categories, each of which is also indexed on its own.",
       "kind": "board",
+      "source": "LiveBench",
       "group": "livebench"
     },
     {
@@ -144,6 +154,7 @@
       "domain": "Instruction following",
       "caveat": "Questions are refreshed to resist contamination. The overall figure averages the publisher’s own categories, each of which is also indexed on its own.",
       "kind": "board",
+      "source": "LiveBench",
       "group": "livebench"
     },
     {
@@ -158,6 +169,7 @@
       "domain": "Professional tasks",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -172,6 +184,7 @@
       "domain": "Tool use",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -186,6 +199,7 @@
       "domain": "Tool use",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -200,6 +214,7 @@
       "domain": "Workflow automation",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -214,6 +229,7 @@
       "domain": "Long-horizon workflows",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -228,6 +244,7 @@
       "domain": "MCP tool use",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -242,6 +259,7 @@
       "domain": "Web research",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -256,6 +274,7 @@
       "domain": "In-the-wild agentic tasks",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -270,6 +289,7 @@
       "domain": "Agentic coding",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -284,6 +304,7 @@
       "domain": "Scientific coding",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -298,6 +319,7 @@
       "domain": "Repository Q&A",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -312,6 +334,7 @@
       "domain": "Software engineering",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -326,6 +349,7 @@
       "domain": "Expert reasoning",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -340,6 +364,7 @@
       "domain": "Science QA",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -354,6 +379,7 @@
       "domain": "Physics",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -368,6 +394,7 @@
       "domain": "Long context",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -382,6 +409,7 @@
       "domain": "Factual accuracy",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -396,6 +424,7 @@
       "domain": "Hallucination",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -410,6 +439,7 @@
       "domain": "Software engineering",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -424,6 +454,7 @@
       "domain": "Competition math",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -438,6 +469,7 @@
       "domain": "Expert reasoning",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -452,6 +484,7 @@
       "domain": "Tool use",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -466,6 +499,7 @@
       "domain": "Code generation",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -480,6 +514,7 @@
       "domain": "Code generation",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -494,6 +529,7 @@
       "domain": "Competition math",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -508,6 +544,7 @@
       "domain": "Competition math",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     },
     {
@@ -522,6 +559,7 @@
       "domain": "Code generation",
       "caveat": "Vendor launch post. Competitor figures are as IFM printed them; the post does not say whether they were re-run or taken from the competitors’ own reports. Effort tiers vary by column.",
       "kind": "report",
+      "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
     }
   ],
