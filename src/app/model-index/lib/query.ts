@@ -10,6 +10,7 @@ import type { Benchmark } from '../data/types';
 import { recommend, type Recommendation } from './access';
 import { aggregate, type AggregateRow, compareScores } from './aggregate';
 import { groupBoards } from './boards';
+import { familyOf } from './family';
 import { sizeLabel, type SizeTier, tierOf } from './size';
 import {
   categoryRank,
@@ -163,6 +164,8 @@ export interface ModelSummary {
   id: string;
   name: string;
   org: string;
+  /** Model line, from the name: "Claude", "GPT", "Qwen", "K2". */
+  family: string;
   /** The Overall index, 0–100; null when no recognised board scores the model. */
   index: number | null;
   /** The figure the list is ranked by, when a scope other than Overall was asked for. */
@@ -210,6 +213,7 @@ function summarize(r: AggregateRow, scope: Scope): ModelSummary {
     id: r.model.id,
     name: r.model.name,
     org: r.model.org,
+    family: familyOf(r.model.name),
     index: r1(r.score),
     ...(scope.level !== 'overall'
       ? { scopeScore: r1(scopeScore(r, scope)) }
@@ -287,6 +291,8 @@ function detail(r: AggregateRow): ModelDetail {
 export interface RankQuery {
   scope?: string;
   org?: string;
+  /** Model line, e.g. "Claude", "GPT", "Qwen", "K2". */
+  family?: string;
   minBoards?: number;
   limit?: number;
   openWeights?: boolean;
@@ -316,6 +322,8 @@ export function rankModels(q: RankQuery = {}) {
     if (r.covered < minBoards) return false;
     if (!includeReports && r.covered === 0) return false;
     if (orgQ && fold(r.model.org) !== orgQ) return false;
+    if (q.family && fold(familyOf(r.model.name)) !== fold(q.family))
+      return false;
     if (q.size && tierOf(r.model.size) !== q.size) return false;
     if (q.openWeights && !r.model.access?.weights) return false;
     if (q.callable && !r.model.access?.openrouter) return false;

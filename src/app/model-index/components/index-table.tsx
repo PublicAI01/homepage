@@ -14,6 +14,7 @@ import {
 import { aggregate, type AggregateRow, compareScores } from '../lib/aggregate';
 import { type BoardView, groupBoards } from '../lib/boards';
 import { downloadChart } from '../lib/export-chart';
+import { familyOf } from '../lib/family';
 import { SIZE_TIERS, sizeLabel, type SizeTier, tierOf } from '../lib/size';
 import {
   categoryRank,
@@ -141,7 +142,7 @@ export default function IndexTable({
 }: Props) {
   const [rankKey, setRankKey] = useState<RankKey>({ level: 'overall' });
   const [query, setQuery] = useState('');
-  const [org, setOrg] = useState('all');
+  const [family, setFamily] = useState('all');
   // Everything a recognised board has scored is listed; ranked rows come
   // first, provisional ones after, so a model on one board is visible
   // without being ranked on that one board's word.
@@ -184,8 +185,11 @@ export default function IndexTable({
     );
   }, [benchmarks]);
 
-  const orgs = useMemo(
-    () => [...new Set(models.map((m) => m.org))].sort(),
+  const families = useMemo(
+    () =>
+      [...new Set(models.map((m) => familyOf(m.name)))].sort((a, b) =>
+        a.localeCompare(b, 'en', { sensitivity: 'base' }),
+      ),
     [models],
   );
 
@@ -227,7 +231,7 @@ export default function IndexTable({
     let out = rows.filter((r) => {
       if (r.covered < minBoards) return false;
       if (!includeReports && r.covered === 0) return false;
-      if (org !== 'all' && r.model.org !== org) return false;
+      if (family !== 'all' && familyOf(r.model.name) !== family) return false;
       if (sizeTier !== 'all' && tierOf(r.model.size) !== sizeTier) return false;
       if (q && !`${r.model.name} ${r.model.org}`.toLowerCase().includes(q))
         return false;
@@ -252,7 +256,7 @@ export default function IndexTable({
   }, [
     rows,
     query,
-    org,
+    family,
     minBoards,
     mustHave,
     rankKey,
@@ -400,21 +404,21 @@ export default function IndexTable({
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search model or organisation"
+          placeholder="Search model"
           aria-label="Search"
           className={cn(CONTROL, 'w-60 placeholder:text-[#78758A]')}
         />
         <select
-          value={org}
-          onChange={(e) => setOrg(e.target.value)}
-          aria-label="Organisation"
+          value={family}
+          onChange={(e) => setFamily(e.target.value)}
+          aria-label="Model line"
           className={CONTROL}>
-          <option value="all">All organisations</option>
-          {orgs.map((o) => (
+          <option value="all">All models</option>
+          {families.map((f) => (
             <option
-              key={o}
-              value={o}>
-              {o}
+              key={f}
+              value={f}>
+              {f}
             </option>
           ))}
         </select>

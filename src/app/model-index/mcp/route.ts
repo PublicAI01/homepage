@@ -32,6 +32,12 @@ const handler = createMcpHandler(
             .string()
             .optional()
             .describe('Restrict to one organisation, e.g. "Anthropic".'),
+          family: z
+            .string()
+            .optional()
+            .describe(
+              'Restrict to one model line, e.g. "Claude", "GPT", "Qwen", "K2".',
+            ),
           minBoards: z
             .number()
             .int()
