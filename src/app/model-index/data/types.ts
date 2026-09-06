@@ -91,11 +91,22 @@ export interface Access {
   official?: { name: string; url: string };
 }
 
+/** Parameter count, where one is known. Closed models have none; nothing is estimated. */
+export interface Size {
+  /** Total parameters, in billions. */
+  paramsB: number;
+  /** Active parameters per token on a mixture-of-experts, in billions. */
+  activeB?: number;
+  /** `huggingface`: counted from the weights files. `name`: read from the model's own name. */
+  source: 'huggingface' | 'name';
+}
+
 export interface Model {
   id: string;
   name: string;
   org: string;
   access?: Access;
+  size?: Size;
 }
 
 /** A catalog the access fields were read from. Cited like a board, never scored. */

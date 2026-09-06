@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
 
-import { describeIndex, getModel, rankModels } from '../lib/query';
+import {
+  describeIndex,
+  getModel,
+  rankModels,
+  type RankQuery,
+} from '../lib/query';
 
 /**
  * The same three answers as the MCP server, over plain GET, for agents and
@@ -9,7 +14,7 @@ import { describeIndex, getModel, rankModels } from '../lib/query';
  *   /model-index/api                        → describe_index
  *   /model-index/api?model=claude-fable-5-1 → get_model
  *   /model-index/api?scope=coding&limit=10  → rank_models
- *     (also org, minBoards, openWeights, callable, reports=false)
+ *     (also org, minBoards, openWeights, callable, reports=false, size=small|medium|large|undisclosed)
  */
 export function GET(request: Request) {
   const p = new URL(request.url).searchParams;
@@ -27,6 +32,7 @@ export function GET(request: Request) {
           openWeights: bool('openWeights'),
           callable: bool('callable'),
           reports: bool('reports'),
+          size: (p.get('size') as RankQuery['size']) ?? undefined,
         })
       : describeIndex();
 
