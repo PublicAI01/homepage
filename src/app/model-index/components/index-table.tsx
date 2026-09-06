@@ -13,6 +13,7 @@ import {
 } from '../lib/access';
 import { aggregate, type AggregateRow, compareScores } from '../lib/aggregate';
 import { type BoardView, groupBoards } from '../lib/boards';
+import { downloadChart } from '../lib/export-chart';
 import {
   categoryRank,
   domainLabel,
@@ -26,12 +27,12 @@ import {
 } from '../lib/weights';
 
 const PANEL = 'rounded-xl border border-[#2C2C31] bg-white/[0.045]';
-const INDEX_TONE = 'text-[#6EE7A0]';
+const INDEX_TONE = 'text-white';
 const CONTROL =
   'text-caption h-8 rounded-md border border-white/12 bg-transparent px-2.5 text-white outline-none transition-colors hover:border-white/25 focus:border-primary';
 const CHIP =
   'text-caption rounded-md border px-2.5 py-1 font-medium transition-colors';
-const CHIP_ON = 'border-primary/70 bg-primary/15 text-white';
+const CHIP_ON = 'border-white/40 bg-white/10 text-white';
 const CHIP_OFF =
   'text-g2 border-transparent hover:border-white/15 hover:text-white';
 const LABEL = 'text-micro tracking-[0.14em] text-[#78758A] uppercase';
@@ -42,7 +43,11 @@ interface Props {
   benchmarks: Benchmark[];
   scores: Score[];
   catalogs: Catalog[];
+  generatedAt: string;
 }
+
+const CHART_ROWS = 10;
+const INDEX_URL = 'https://publicai.io/model-index';
 
 /** What the table is ranked by: the overall index, a category, or a domain inside one. */
 type RankKey =
@@ -117,11 +122,15 @@ export default function IndexTable({
   benchmarks,
   scores,
   catalogs,
+  generatedAt,
 }: Props) {
   const [rankKey, setRankKey] = useState<RankKey>({ level: 'overall' });
   const [query, setQuery] = useState('');
   const [org, setOrg] = useState('all');
-  const [minBoards, setMinBoards] = useState(MIN_SOURCES);
+  // Everything a recognised board has scored is listed; ranked rows come
+  // first, provisional ones after, so a model on one board is visible
+  // without being ranked on that one board's word.
+  const [minBoards, setMinBoards] = useState(1);
   const [mustHave, setMustHave] = useState<Set<string>>(new Set());
   const [openModel, setOpenModel] = useState<string | null>(null);
 
@@ -226,6 +235,32 @@ export default function IndexTable({
   const activeDomains = activeCategory
     ? (taxonomy.find(([c]) => c === activeCategory)?.[1] ?? [])
     : [];
+
+  const exportChart = () => {
+    const top = filtered
+      .filter((r) => keyOf(r, rankKey) !== null)
+      .slice(0, CHART_ROWS);
+    const scope = rankLabel(rankKey);
+    downloadChart(
+      {
+        title: `Top ${top.length} models — ${scope}`,
+        scope,
+        // Position within this scope, not the Overall rank: a chart titled
+        // "Coding" numbered 1, 3, 4, 8 would read as an error.
+        rows: top.map((r, i) => ({
+          rank: r.ranked ? i + 1 : null,
+          name: r.model.name,
+          org: r.model.org,
+          score: keyOf(r, rankKey) ?? 0,
+          covered: r.covered,
+          coverable: r.coverable,
+        })),
+        generatedAt,
+        url: INDEX_URL,
+      },
+      `publicai-index-${scope.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${generatedAt.slice(0, 10)}.png`,
+    );
+  };
 
   return (
     <div>
@@ -371,22 +406,32 @@ export default function IndexTable({
         </span>
       </div>
 
-      <p className="text-caption mt-3 mb-2 text-[#78758A]">
-        <span className="text-[#D9D7E0]">{rankedCount}</span> ranked ·{' '}
-        <span className="text-[#D9D7E0]">{rows.length - rankedCount}</span>{' '}
-        provisional · showing{' '}
-        <span className="text-[#D9D7E0]">
-          {shown.length}
-          {filtered.length > shown.length ? ` of ${filtered.length}` : ''}
-        </span>
-        {rankKey.level !== 'overall' ? (
-          <>
-            {' '}
-            · ranked by{' '}
-            <span className="text-[#D9D7E0]">{rankLabel(rankKey)}</span>
-          </>
-        ) : null}
-      </p>
+      <div className="text-caption mt-3 mb-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[#78758A]">
+        <p>
+          <span className="text-[#D9D7E0]">{rankedCount}</span> ranked ·{' '}
+          <span className="text-[#D9D7E0]">{rows.length - rankedCount}</span>{' '}
+          provisional · showing{' '}
+          <span className="text-[#D9D7E0]">
+            {shown.length}
+            {filtered.length > shown.length ? ` of ${filtered.length}` : ''}
+          </span>
+          {rankKey.level !== 'overall' ? (
+            <>
+              {' '}
+              · ranked by{' '}
+              <span className="text-[#D9D7E0]">{rankLabel(rankKey)}</span>
+            </>
+          ) : null}
+        </p>
+        <button
+          type="button"
+          onClick={exportChart}
+          disabled={filtered.length === 0}
+          className="text-caption ml-auto inline-flex h-7 items-center gap-1.5 rounded-md border border-white/12 px-2.5 text-[#D9D7E0] transition-colors hover:border-white/30 hover:text-white disabled:opacity-40"
+          title={`Download a PNG bar chart of the top ${CHART_ROWS} rows as filtered and ranked here`}>
+          <span aria-hidden>↓</span> Export chart
+        </button>
+      </div>
 
       {/* ---------------- table ---------------- */}
       <div className={cn(PANEL, 'overflow-x-auto')}>

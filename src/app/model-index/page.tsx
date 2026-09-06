@@ -103,6 +103,9 @@ const limits = [
 
 const mcpConfig = `{ "mcpServers": { "publicai-index": { "url": "${MCP_URL}" } } }`;
 
+const snapshotDate = generatedAt.slice(0, 10);
+const citation = `PublicAI Foundation (${snapshotDate.slice(0, 4)}). PublicAI Index: a weighted aggregate of public model leaderboards, snapshot ${snapshotDate}. https://publicai.io/model-index`;
+
 const Card = ({
   title,
   children,
@@ -119,13 +122,16 @@ const Card = ({
 );
 
 const SectionHead = ({
+  n,
   title,
   lede,
 }: {
+  n: string;
   title: string;
   lede: React.ReactNode;
 }) => (
   <>
+    <p className={cn(LABEL, 'mb-2')}>§ {n}</p>
     <h2 className="text-heading mb-2 font-bold text-white">{title}</h2>
     <p className={cn('text-g2 text-lede mb-6', MEASURE)}>{lede}</p>
   </>
@@ -133,296 +139,315 @@ const SectionHead = ({
 
 export default function ModelIndex() {
   return (
-    <div className="container mx-auto max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
-      {/* ===================== HEADER ===================== */}
-      <header className="pt-10 pb-8 lg:pt-14 lg:pb-10">
-        <p className="text-p1 text-micro mb-3 tracking-[0.14em] uppercase">
-          PublicAI Index
-        </p>
-        <h1 className={cn('text-display mb-4 font-bold text-white', MEASURE)}>
-          {models.length} models, {domains.length} domains, one scale.
-        </h1>
-        <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
-          A single benchmark is easy to target and easy to overfit. This index
-          normalizes recognised public leaderboards onto one scale, discounts
-          each score by the uncertainty its publisher reports, shrinks thin
-          evidence, and weights the rest by a scheme published beside the table
-          — overall, by category, and by domain. Figures from launch posts and
-          blogs are indexed too, marked ✱ and kept out of the headline. Every
-          model opens into a card with how to call it, and agents can ask the
-          same questions over MCP.
-        </p>
-        <dl className="text-caption flex flex-wrap gap-x-6 gap-y-1 text-[#78758A]">
-          {[
-            ['Updated', updated],
-            ['Boards', boards.length],
-            ['Reports ✱', reports.length],
-            ['Measures', benchmarks.length],
-            ['Categories', categories.length],
-            ['Domains', domains.length],
-            ['Models', models.length],
-            ['With a callable id', callable],
-          ].map(([k, v]) => (
-            <div key={String(k)}>
-              <dt className="inline">{k} </dt>
-              <dd className="inline text-[#D9D7E0]">{v}</dd>
+    // `isolate` + the full-bleed pseudo-element lay a solid ground over the
+    // site's animated grid, so a page made of numbers reads like a paper,
+    // not a poster.
+    <div className="relative isolate before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:bg-[#08080A]">
+      <div className="container mx-auto max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
+        {/* ===================== HEADER ===================== */}
+        <header className="pt-10 pb-8 lg:pt-14 lg:pb-10">
+          <p className="text-p1 text-micro mb-3 tracking-[0.14em] uppercase">
+            PublicAI Index
+          </p>
+          <h1 className={cn('text-display mb-4 font-bold text-white', MEASURE)}>
+            {models.length} models, {domains.length} domains, one scale.
+          </h1>
+          <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
+            A single benchmark is easy to target and easy to overfit. This index
+            normalizes recognised public leaderboards onto one scale, discounts
+            each score by the uncertainty its publisher reports, shrinks thin
+            evidence, and weights the rest by a scheme published beside the
+            table — overall, by category, and by domain. Figures from launch
+            posts and blogs are indexed too, marked ✱ and kept out of the
+            headline. Every model opens into a card with how to call it, and
+            agents can ask the same questions over MCP.
+          </p>
+          <dl className="text-caption flex flex-wrap gap-x-6 gap-y-1 text-[#78758A]">
+            {[
+              ['Updated', updated],
+              ['Boards', boards.length],
+              ['Reports ✱', reports.length],
+              ['Measures', benchmarks.length],
+              ['Categories', categories.length],
+              ['Domains', domains.length],
+              ['Models', models.length],
+              ['With a callable id', callable],
+            ].map(([k, v]) => (
+              <div key={String(k)}>
+                <dt className="inline">{k} </dt>
+                <dd className="inline text-[#D9D7E0]">{v}</dd>
+              </div>
+            ))}
+            <div>
+              <dt className="sr-only">Attribution</dt>
+              <dd className="inline">
+                Scores belong to their publishers; PublicAI only normalizes and
+                weights them.
+              </dd>
             </div>
-          ))}
-          <div>
-            <dt className="sr-only">Attribution</dt>
-            <dd className="inline">
-              Scores belong to their publishers; PublicAI only normalizes and
-              weights them.
-            </dd>
-          </div>
-        </dl>
-      </header>
+          </dl>
+          <p className="text-micro mt-4 flex flex-wrap items-baseline gap-x-2 text-[#78758A]">
+            <span className={LABEL}>Cite</span>
+            <code className="font-mono text-[#9C9AA8] select-all">
+              {citation}
+            </code>
+          </p>
+        </header>
 
-      {/* ===================== TABLE + SIDEBAR ===================== */}
-      <div
-        className="grid grid-cols-1 gap-8 border-t border-white/8 pt-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-10"
-        id="index">
-        <main className="min-w-0">
-          <IndexTable
-            models={models}
-            benchmarks={benchmarks}
-            scores={scores}
-            catalogs={catalogs}
-          />
-        </main>
+        {/* ===================== TABLE + SIDEBAR ===================== */}
+        <div
+          className="grid grid-cols-1 gap-8 border-t border-white/8 pt-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-10"
+          id="index">
+          <main className="min-w-0">
+            <p className={cn(LABEL, 'mb-3')}>§ 1 · Ranking</p>
+            <IndexTable
+              models={models}
+              benchmarks={benchmarks}
+              scores={scores}
+              catalogs={catalogs}
+              generatedAt={generatedAt}
+            />
+          </main>
 
-        <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24">
-          <Card title="Weighting — Overall index">
-            <ol className="flex flex-col gap-3">
-              {WEIGHTING.map((w) => {
-                const s = sourceById.get(w.benchmarkId);
-                if (!s) return null;
-                return (
-                  <li key={w.benchmarkId}>
-                    <div className="mb-1 flex items-center gap-2">
-                      <SourceBadge
-                        source={s}
-                        present
-                      />
-                      <b className="text-body-sm font-semibold text-white">
-                        {s.name}
-                      </b>
-                      <span className="text-caption text-p1 ml-auto font-mono">
-                        {w.weight}%
-                      </span>
-                    </div>
-                    <p className="text-micro text-g2">{w.rationale}</p>
-                  </li>
-                );
-              })}
-            </ol>
-            <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
-              Set by PublicAI; stated so it can be disagreed with. A board’s
-              category figures shape only their own domain. Report figures ✱
-              carry {REPORT_WEIGHT}% of a board’s share, in domain columns only.
-            </p>
-          </Card>
-
-          <Card title="For agents — MCP">
-            <p className="text-caption mb-2 text-[#D9D7E0]">
-              The same answers, as tools:{' '}
-              <code className="font-mono text-white">rank_models</code>,{' '}
-              <code className="font-mono text-white">get_model</code>,{' '}
-              <code className="font-mono text-white">describe_index</code>.
-              Every score comes with its sources; every model with the
-              recommended way to call it.
-            </p>
-            <pre className="text-micro overflow-x-auto rounded-md bg-black/40 px-2.5 py-2 font-mono whitespace-pre-wrap text-[#D9D7E0] select-all">
-              {mcpConfig}
-            </pre>
-            <p className="text-micro mt-2 text-[#78758A]">
-              Streamable HTTP, no key. Plain JSON at{' '}
-              <a
-                href={`${API_URL}?scope=coding&limit=10`}
-                className="text-p1 underline underline-offset-2">
-                {API_URL.replace('https://', '')}
-              </a>{' '}
-              with <code className="font-mono">scope</code>,{' '}
-              <code className="font-mono">org</code>,{' '}
-              <code className="font-mono">minBoards</code>,{' '}
-              <code className="font-mono">limit</code> or{' '}
-              <code className="font-mono">model</code>.
-            </p>
-          </Card>
-        </aside>
-      </div>
-
-      {/* ===================== SOURCES ===================== */}
-      <section
-        className="border-t border-white/8 py-12 lg:py-14"
-        id="sources">
-        <SectionHead
-          title="Sources"
-          lede="Recognised leaderboards form the Overall index. Reports ✱ widen the domain columns. A catalog says where a model can be called. All first-party; every figure links to the page it was read from."
-        />
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {boards.map((b) => (
-            <article
-              key={b.id}
-              className={cn(PANEL, 'p-4')}>
-              <div className="mb-1 flex items-center gap-2">
-                <SourceBadge
-                  source={b}
-                  present
-                />
-                <a
-                  href={b.headline.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-body-sm font-semibold text-white underline underline-offset-2">
-                  {b.name}
-                </a>
-                <span className="text-micro ml-auto text-[#78758A]">
-                  read {b.headline.retrievedAt}
-                </span>
-              </div>
-              <p className="text-micro text-p1 mb-1">
-                {[
-                  ...new Set(b.measures.map((m) => domainLabel(m.domain))),
-                ].join(' · ')}
+          <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24">
+            <Card title="Weighting — Overall index">
+              <ol className="flex flex-col gap-3">
+                {WEIGHTING.map((w) => {
+                  const s = sourceById.get(w.benchmarkId);
+                  if (!s) return null;
+                  return (
+                    <li key={w.benchmarkId}>
+                      <div className="mb-1 flex items-center gap-2">
+                        <SourceBadge
+                          source={s}
+                          present
+                        />
+                        <b className="text-body-sm font-semibold text-white">
+                          {s.name}
+                        </b>
+                        <span className="text-caption text-p1 ml-auto font-mono">
+                          {w.weight}%
+                        </span>
+                      </div>
+                      <p className="text-micro text-g2">{w.rationale}</p>
+                    </li>
+                  );
+                })}
+              </ol>
+              <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
+                Set by PublicAI; stated so it can be disagreed with. A board’s
+                category figures shape only their own domain. Report figures ✱
+                carry {REPORT_WEIGHT}% of a board’s share, in domain columns
+                only.
               </p>
-              {b.headline.snapshot ? (
-                <p className="text-micro text-g2">{b.headline.snapshot}</p>
-              ) : null}
-              {b.headline.caveat ? (
-                <p className="text-micro mt-1 text-[#78758A]">
-                  {b.headline.caveat}
-                </p>
-              ) : null}
-            </article>
-          ))}
-          {reports.map((r) => (
-            <article
-              key={r.id}
-              className={cn(PANEL, 'p-4')}>
-              <div className="mb-1 flex items-center gap-2">
-                <SourceBadge
-                  source={r}
-                  present
-                />
-                <a
-                  href={r.headline.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-body-sm font-semibold text-white underline underline-offset-2">
-                  {r.name}
-                </a>
-                <span className="text-micro ml-auto text-[#78758A]">
-                  {r.headline.publishedAt
-                    ? `published ${r.headline.publishedAt}`
-                    : `read ${r.headline.retrievedAt}`}
-                </span>
-              </div>
-              <p className="text-micro mb-1 text-[#E8A9F0]">
-                Report by {r.headline.publisher} · {r.measures.length}{' '}
-                benchmarks across{' '}
-                {new Set(r.measures.map((m) => m.category)).size} categories ·
-                marked ✱ wherever it appears
+            </Card>
+
+            <Card title="For agents — MCP">
+              <p className="text-caption mb-2 text-[#D9D7E0]">
+                The same answers, as tools:{' '}
+                <code className="font-mono text-white">rank_models</code>,{' '}
+                <code className="font-mono text-white">get_model</code>,{' '}
+                <code className="font-mono text-white">describe_index</code>.
+                Every score comes with its sources; every model with the
+                recommended way to call it.
               </p>
-              {r.headline.caveat ? (
-                <p className="text-micro text-[#78758A]">{r.headline.caveat}</p>
-              ) : null}
-            </article>
-          ))}
-          {catalogs.map((c) => (
-            <article
-              key={c.id}
-              className={cn(PANEL, 'p-4')}>
-              <div className="mb-1 flex items-center gap-2">
-                <span className="text-micro inline-flex h-5 min-w-7 items-center justify-center rounded border border-white/20 bg-white/10 px-1 font-mono font-semibold text-[#D9D7E0]">
-                  CAT
-                </span>
+              <pre className="text-micro overflow-x-auto rounded-md bg-black/40 px-2.5 py-2 font-mono whitespace-pre-wrap text-[#D9D7E0] select-all">
+                {mcpConfig}
+              </pre>
+              <p className="text-micro mt-2 text-[#78758A]">
+                Streamable HTTP, no key. Plain JSON at{' '}
                 <a
-                  href={c.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-body-sm font-semibold text-white underline underline-offset-2">
-                  {c.name}
-                </a>
-                <span className="text-micro ml-auto text-[#78758A]">
-                  read {c.retrievedAt}
-                </span>
-              </div>
-              <p className="text-micro mb-1 text-[#D9D7E0]">
-                Catalog · {callable} of {models.length} models matched · ids,
-                context, prices, open weights · never scored
-              </p>
-              {c.caveat ? (
-                <p className="text-micro text-[#78758A]">{c.caveat}</p>
-              ) : null}
-            </article>
-          ))}
-          {excluded.map((e) => (
-            <article
-              key={e.name}
-              className={cn(PANEL, 'border-dashed p-4')}>
-              <p className="text-micro text-[#78758A]">
-                <b className="text-body-sm block font-semibold text-[#F5C86B]">
-                  Excluded — {e.name}
-                </b>
-                {e.reason}{' '}
-                <a
-                  href={e.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`${API_URL}?scope=coding&limit=10`}
                   className="text-p1 underline underline-offset-2">
-                  source
-                </a>
+                  {API_URL.replace('https://', '')}
+                </a>{' '}
+                with <code className="font-mono">scope</code>,{' '}
+                <code className="font-mono">org</code>,{' '}
+                <code className="font-mono">minBoards</code>,{' '}
+                <code className="font-mono">limit</code> or{' '}
+                <code className="font-mono">model</code>.
               </p>
-            </article>
-          ))}
+            </Card>
+          </aside>
         </div>
-      </section>
 
-      {/* ===================== METHOD ===================== */}
-      <section
-        className="border-t border-white/8 py-12 lg:py-14"
-        id="method">
-        <SectionHead
-          title="How the score is computed"
-          lede="Five steps, each chosen so that a number here can be traced to a number there, and so that thin or self-reported evidence cannot buy a rank."
-        />
-        <ol className="grid grid-cols-1 gap-x-10 md:grid-cols-2 xl:grid-cols-5">
-          {method.map(({ title, text }, i) => (
-            <li
-              key={title}
-              className="border-t border-white/8 py-4">
-              <b className="text-body mb-1 block font-semibold text-white">
-                <span className="text-p1 mr-2 font-mono">0{i + 1}</span>
-                {title}
-              </b>
-              <p className="text-g2 text-body-sm">{text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
+        {/* ===================== SOURCES ===================== */}
+        <section
+          className="border-t border-white/8 py-12 lg:py-14"
+          id="sources">
+          <SectionHead
+            n="2"
+            title="Sources"
+            lede="Recognised leaderboards form the Overall index. Reports ✱ widen the domain columns. A catalog says where a model can be called. All first-party; every figure links to the page it was read from."
+          />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {boards.map((b) => (
+              <article
+                key={b.id}
+                className={cn(PANEL, 'p-4')}>
+                <div className="mb-1 flex items-center gap-2">
+                  <SourceBadge
+                    source={b}
+                    present
+                  />
+                  <a
+                    href={b.headline.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body-sm font-semibold text-white underline underline-offset-2">
+                    {b.name}
+                  </a>
+                  <span className="text-micro ml-auto text-[#78758A]">
+                    read {b.headline.retrievedAt}
+                  </span>
+                </div>
+                <p className="text-micro text-p1 mb-1">
+                  {[
+                    ...new Set(b.measures.map((m) => domainLabel(m.domain))),
+                  ].join(' · ')}
+                </p>
+                {b.headline.snapshot ? (
+                  <p className="text-micro text-g2">{b.headline.snapshot}</p>
+                ) : null}
+                {b.headline.caveat ? (
+                  <p className="text-micro mt-1 text-[#78758A]">
+                    {b.headline.caveat}
+                  </p>
+                ) : null}
+              </article>
+            ))}
+            {reports.map((r) => (
+              <article
+                key={r.id}
+                className={cn(PANEL, 'p-4')}>
+                <div className="mb-1 flex items-center gap-2">
+                  <SourceBadge
+                    source={r}
+                    present
+                  />
+                  <a
+                    href={r.headline.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body-sm font-semibold text-white underline underline-offset-2">
+                    {r.name}
+                  </a>
+                  <span className="text-micro ml-auto text-[#78758A]">
+                    {r.headline.publishedAt
+                      ? `published ${r.headline.publishedAt}`
+                      : `read ${r.headline.retrievedAt}`}
+                  </span>
+                </div>
+                <p className="text-micro mb-1 text-[#E8A9F0]">
+                  Report by {r.headline.publisher} · {r.measures.length}{' '}
+                  benchmarks across{' '}
+                  {new Set(r.measures.map((m) => m.category)).size} categories ·
+                  marked ✱ wherever it appears
+                </p>
+                {r.headline.caveat ? (
+                  <p className="text-micro text-[#78758A]">
+                    {r.headline.caveat}
+                  </p>
+                ) : null}
+              </article>
+            ))}
+            {catalogs.map((c) => (
+              <article
+                key={c.id}
+                className={cn(PANEL, 'p-4')}>
+                <div className="mb-1 flex items-center gap-2">
+                  <span className="text-micro inline-flex h-5 min-w-7 items-center justify-center rounded border border-white/20 bg-white/10 px-1 font-mono font-semibold text-[#D9D7E0]">
+                    CAT
+                  </span>
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body-sm font-semibold text-white underline underline-offset-2">
+                    {c.name}
+                  </a>
+                  <span className="text-micro ml-auto text-[#78758A]">
+                    read {c.retrievedAt}
+                  </span>
+                </div>
+                <p className="text-micro mb-1 text-[#D9D7E0]">
+                  Catalog · {callable} of {models.length} models matched · ids,
+                  context, prices, open weights · never scored
+                </p>
+                {c.caveat ? (
+                  <p className="text-micro text-[#78758A]">{c.caveat}</p>
+                ) : null}
+              </article>
+            ))}
+            {excluded.map((e) => (
+              <article
+                key={e.name}
+                className={cn(PANEL, 'border-dashed p-4')}>
+                <p className="text-micro text-[#78758A]">
+                  <b className="text-body-sm block font-semibold text-[#F5C86B]">
+                    Excluded — {e.name}
+                  </b>
+                  {e.reason}{' '}
+                  <a
+                    href={e.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-p1 underline underline-offset-2">
+                    source
+                  </a>
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      {/* ===================== LIMITS ===================== */}
-      <section
-        className="border-t border-white/8 py-12 lg:py-14"
-        id="limits">
-        <SectionHead
-          title="What this index cannot tell you"
-          lede="An aggregate hides the disagreements that produced it. These are the ones worth knowing before you cite this page."
-        />
-        <div className="grid grid-cols-1 gap-x-10 md:grid-cols-2 xl:grid-cols-3">
-          {limits.map(({ title, text }) => (
-            <div
-              key={title}
-              className="border-t border-white/8 py-4">
-              <b className="text-body mb-1 block font-semibold text-white">
-                {title}
-              </b>
-              <p className="text-g2 text-body-sm">{text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* ===================== METHOD ===================== */}
+        <section
+          className="border-t border-white/8 py-12 lg:py-14"
+          id="method">
+          <SectionHead
+            n="3"
+            title="Method"
+            lede="Five steps, each chosen so that a number here can be traced to a number there, and so that thin or self-reported evidence cannot buy a rank."
+          />
+          <ol className="grid grid-cols-1 gap-x-10 md:grid-cols-2 xl:grid-cols-5">
+            {method.map(({ title, text }, i) => (
+              <li
+                key={title}
+                className="border-t border-white/8 py-4">
+                <b className="text-body mb-1 block font-semibold text-white">
+                  <span className="text-p1 mr-2 font-mono">0{i + 1}</span>
+                  {title}
+                </b>
+                <p className="text-g2 text-body-sm">{text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        {/* ===================== LIMITS ===================== */}
+        <section
+          className="border-t border-white/8 py-12 lg:py-14"
+          id="limits">
+          <SectionHead
+            n="4"
+            title="Limitations"
+            lede="An aggregate hides the disagreements that produced it. These are the ones worth knowing before you cite this page."
+          />
+          <div className="grid grid-cols-1 gap-x-10 md:grid-cols-2 xl:grid-cols-3">
+            {limits.map(({ title, text }) => (
+              <div
+                key={title}
+                className="border-t border-white/8 py-4">
+                <b className="text-body mb-1 block font-semibold text-white">
+                  {title}
+                </b>
+                <p className="text-g2 text-body-sm">{text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
