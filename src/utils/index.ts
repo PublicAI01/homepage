@@ -1,6 +1,35 @@
 import { type ClassValue, clsx } from 'clsx';
 import type { ImageProps } from 'next/image';
-import { twMerge } from 'tailwind-merge';
+import { extendTailwindMerge } from 'tailwind-merge';
+
+/**
+ * The type scale defined in globals.css as `--text-*`.
+ *
+ * tailwind-merge only knows Tailwind's own scale, so without this it files
+ * `text-body-sm` under text-color alongside `text-white` and drops whichever
+ * comes first — silently stripping the font size off anything built with
+ * `cn('text-body-sm text-white', ...)`. Declaring them as font sizes keeps size
+ * and color in separate conflict groups, where they belong.
+ */
+const FONT_SIZES = [
+  'display',
+  'heading',
+  'subheading',
+  'lede',
+  'body',
+  'body-sm',
+  'caption',
+  'micro',
+  'code',
+];
+
+const twMerge = extendTailwindMerge({
+  extend: {
+    classGroups: {
+      'font-size': [{ text: FONT_SIZES }],
+    },
+  },
+});
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
