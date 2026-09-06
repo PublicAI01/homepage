@@ -162,35 +162,18 @@ export default function ModelIndex() {
             A composite of {boards.length} recognised leaderboards —{' '}
             {models.length} models, {domains.length} domains, one scale.
           </p>
-          <div
-            className={cn(
-              'text-lede mb-5 flex flex-col gap-3 text-[#D9D7E0]',
-              MEASURE,
-            )}>
-            {/* Overview, the problem, what this index does about it, and who
-                can ask — in that order, one short paragraph each. */}
-            <p>
-              Model evaluation has fragmented into dozens of leaderboards, each
-              with its own harness, and every launch ships with a table the
-              vendor chose. A single benchmark is easy to target: a score that
-              tops one board says little about the next.
-            </p>
-            <p>
-              PublicAI runs no evaluations of its own. It aggregates the public
-              ones by statistical method — every figure standardized onto one
-              scale, discounted by the uncertainty its publisher reports, shrunk
-              where evidence is thin, and weighted by a scheme printed beside
-              the table — into an index no single benchmark can be tuned to:
-              overall, by category, and by domain, for anyone choosing a model
-              for a vertical or citing one in a paper. Launch posts and blogs
-              are indexed too, marked ✱ and kept out of the headline.
-            </p>
-            <p>
-              Agents get the same answers as people: the index is served over
-              MCP and a JSON API, every score with its sources, every model with
-              the way to call it.
-            </p>
-          </div>
+          <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
+            Model evaluation has fragmented into dozens of leaderboards, and a
+            single benchmark is easy to target: topping one board says little
+            about the next. PublicAI runs no evaluations of its own. It
+            aggregates the public ones by statistical method — one scale,
+            discounted by published uncertainty, shrunk where evidence is thin,
+            weighted by a scheme printed beside the table — into an index no
+            single benchmark can be tuned to, overall and by domain. Launch
+            posts and blogs are indexed too, marked ✱ and kept out of the
+            headline. Agents get the same answers over MCP and a JSON API, every
+            score with its sources.
+          </p>
           <dl className="text-caption flex flex-wrap gap-x-6 gap-y-1 text-[#78758A]">
             {[
               ['Updated', updated],
