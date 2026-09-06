@@ -62,7 +62,7 @@ const method = [
   },
   {
     title: 'Never impute; shrink instead',
-    text: `A model absent from a source is excluded from that term, not filled in. But thin evidence is pulled toward 50 by a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the weight available, so one generous board cannot put a barely-tested model at the top. Scored by fewer than ${MIN_SOURCES} recognised boards, a model is listed as provisional and not ranked.`,
+    text: `A model absent from a source is excluded from that term, not filled in. But thin evidence is pulled toward 50 by a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the weight available, so one generous board cannot put a barely-tested model at the top. Overall ranks a model once boards from ${MIN_SOURCES} independent publishers have scored it; until then it is provisional. A category or domain ranks any model a recognised board has measured there, on that measurement.`,
   },
   {
     title: 'Weight by a published scheme',
@@ -146,12 +146,17 @@ export default function ModelIndex() {
       <div className="container mx-auto max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
         {/* ===================== HEADER ===================== */}
         <header className="pt-10 pb-8 lg:pt-14 lg:pb-10">
-          <p className="text-p1 text-micro mb-3 tracking-[0.14em] uppercase">
+          {/* The product's name is the headline; the counts are its subtitle. */}
+          <h1 className="text-display mb-2 font-bold text-white">
             PublicAI Index
-          </p>
-          <h1 className={cn('text-display mb-4 font-bold text-white', MEASURE)}>
-            {models.length} models, {domains.length} domains, one scale.
           </h1>
+          <p
+            className={cn(
+              'text-subheading mb-4 font-semibold text-[#B9B7C4]',
+              MEASURE,
+            )}>
+            {models.length} models, {domains.length} domains, one scale.
+          </p>
           <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
             A single benchmark is easy to target and easy to overfit. This index
             normalizes recognised public leaderboards onto one scale, discounts

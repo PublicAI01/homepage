@@ -20,7 +20,9 @@ const bench = (
 ): Benchmark => ({
   id,
   name: id,
-  publisher: 'test',
+  // One publisher per board unless a test says otherwise, so "boards" and
+  // "publishers" agree in the fixtures and eligibility reads as before.
+  publisher: group,
   url: 'https://example.com',
   retrievedAt: '2026-09-05',
   metric: 'percent',

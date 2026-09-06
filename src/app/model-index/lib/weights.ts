@@ -92,7 +92,15 @@ export const weightsFor = (benchmarks: Benchmark[]): Record<string, number> =>
  */
 export const PRIOR_FRACTION = 0.25;
 
-/** Recognised boards a model must be scored by to be ranked rather than listed as provisional. */
+/**
+ * Independent publishers whose recognised boards must score a model for it
+ * to be ranked Overall rather than listed as provisional. Publishers, not
+ * boards: Artificial Analysis runs three boards here, and three of its
+ * leaderboards agreeing with each other is still one voice.
+ *
+ * A category or domain ranks on its own evidence: any model a recognised
+ * board has measured in that scope is ranked there, on that measurement.
+ */
 export const MIN_SOURCES = 2;
 
 /** Display order of the top-level categories. Anything unlisted goes after, alphabetically. */
@@ -116,6 +124,14 @@ export const SOURCE_BADGE: Record<string, { code: string; tone: string }> = {
   'artificial-analysis': {
     code: 'AA',
     tone: 'border-[#F0B4A2]/40 bg-[#F0B4A2]/15 text-[#F0B4A2]',
+  },
+  'aa-gdpval': {
+    code: 'GV',
+    tone: 'border-[#F0B4A2]/40 bg-[#F0B4A2]/10 text-[#E7A691]',
+  },
+  'aa-briefcase': {
+    code: 'BC',
+    tone: 'border-[#F0B4A2]/40 bg-[#F0B4A2]/10 text-[#E7A691]',
   },
   'terminal-bench': {
     code: 'TB',
