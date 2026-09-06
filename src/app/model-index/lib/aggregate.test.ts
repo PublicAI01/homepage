@@ -3,9 +3,15 @@ import { describe, expect, it } from 'vitest';
 import { benchmarks, models, scores } from '../data';
 import type { Benchmark, Model, Score } from '../data/types';
 import { aggregate, confidenceOf, normalizeBoard } from './aggregate';
-import { WEIGHTING, WEIGHTS } from './weights';
+import {
+  MIN_SOURCES,
+  OVERALL,
+  PRIOR_FRACTION,
+  WEIGHTING,
+  WEIGHTS,
+} from './weights';
 
-const bench = (id: string): Benchmark => ({
+const bench = (id: string, group = id): Benchmark => ({
   id,
   name: id,
   publisher: 'test',
@@ -13,6 +19,7 @@ const bench = (id: string): Benchmark => ({
   retrievedAt: '2026-09-05',
   metric: 'percent',
   domain: 'test',
+  group,
 });
 
 const model = (id: string): Model => ({ id, name: id, org: 'test' });
@@ -275,6 +282,104 @@ describe('byDomain', () => {
   });
 });
 
+describe('shrinkage', () => {
+  // Board a is worth 80, board b is worth 20. m1 is scored 90 by both;
+  // m2 is scored 90 only by the small board; m3 anchors the spread.
+  // m4 is a filler so both boards have the same score distribution, which
+  // makes m1's normalized value identical on a and b.
+  const bs = [bench('a'), bench('b')];
+  const ms = [model('m1'), model('m2'), model('m3'), model('m4')];
+  const ss = [
+    score('m1', 'a', 90),
+    score('m3', 'a', 10),
+    score('m4', 'a', 90),
+    score('m1', 'b', 90),
+    score('m2', 'b', 90),
+    score('m3', 'b', 10),
+  ];
+  const run = (priorFraction: number) =>
+    aggregate({
+      models: ms,
+      benchmarks: bs,
+      scores: ss,
+      weights: { a: 80, b: 20 },
+      priorFraction,
+      minSources: 2,
+    });
+  const of = (rows: ReturnType<typeof aggregate>, id: string) =>
+    rows.find((r) => r.model.id === id)!;
+
+  it('with no prior, one small board can put a barely-tested model level with a fully tested one', () => {
+    const out = run(0);
+    expect(of(out, 'm2').score).toBeCloseTo(of(out, 'm1').score!, 6);
+  });
+
+  it('with a prior, the fully tested model comes out ahead of the same score on one small board', () => {
+    const out = run(0.25);
+    expect(of(out, 'm1').score!).toBeGreaterThan(of(out, 'm2').score!);
+  });
+
+  it('pulls a thin score toward 50, never past the evidence', () => {
+    const out = run(0.25);
+    const m2 = of(out, 'm2');
+    const onB = m2.perBenchmark.find((s) => s.benchmarkId === 'b')!;
+    expect(m2.score!).toBeLessThan(onB.normalized);
+    expect(m2.score!).toBeGreaterThan(50);
+  });
+
+  it('reports evidence as a fraction of the weight available', () => {
+    const out = run(0.25);
+    expect(of(out, 'm1').evidence).toBeCloseTo(1, 6);
+    expect(of(out, 'm2').evidence).toBeCloseTo(0.2, 6);
+  });
+
+  it('lists a model scored by too few boards as provisional and sorts it after the ranked ones', () => {
+    const out = run(0.25);
+    expect(of(out, 'm2').ranked).toBe(false);
+    expect(of(out, 'm1').ranked).toBe(true);
+    expect(out.findIndex((r) => r.model.id === 'm2')).toBeGreaterThan(
+      out.findIndex((r) => r.model.id === 'm3'),
+    );
+  });
+
+  it('counts a board with several measures as one source', () => {
+    const out = aggregate({
+      models: [model('m1'), model('m2')],
+      benchmarks: [bench('x-overall', 'x'), bench('x-cat', 'x')],
+      scores: [
+        score('m1', 'x-overall', 90),
+        score('m2', 'x-overall', 10),
+        score('m1', 'x-cat', 90),
+        score('m2', 'x-cat', 10),
+      ],
+      weights: { 'x-overall': 25, 'x-cat': 25 },
+      overall: new Set(['x-overall']),
+      minSources: 2,
+    });
+    expect(out[0].covered).toBe(1);
+    expect(out[0].coverable).toBe(1);
+    expect(out[0].ranked).toBe(false);
+  });
+
+  it('keeps category figures out of the overall score', () => {
+    const out = aggregate({
+      models: [model('m1'), model('m2')],
+      benchmarks: [bench('x-overall', 'x'), bench('x-cat', 'x')],
+      scores: [
+        score('m1', 'x-overall', 50),
+        score('m2', 'x-overall', 50),
+        score('m1', 'x-cat', 90),
+        score('m2', 'x-cat', 10),
+      ],
+      weights: { 'x-overall': 25, 'x-cat': 25 },
+      overall: new Set(['x-overall']),
+    });
+    // Both tie on the overall figure; the category must not break the tie.
+    expect(out[0].score).toBeCloseTo(out[1].score!, 6);
+    expect(out[0].byDomain.test).not.toBeCloseTo(out[1].byDomain.test!, 6);
+  });
+});
+
 describe('weighting', () => {
   it('assigns a weight to every shipped benchmark and nothing else', () => {
     const ids = new Set(benchmarks.map((b) => b.id));
@@ -282,8 +387,16 @@ describe('weighting', () => {
     for (const b of benchmarks) expect(typeof WEIGHTS[b.id]).toBe('number');
   });
 
-  it('sums to 100 so the shares read as percentages', () => {
-    expect(WEIGHTING.reduce((s, w) => s + w.weight, 0)).toBe(100);
+  it('has overall shares that sum to 100, so they read as percentages', () => {
+    expect(
+      WEIGHTING.filter((w) => w.overall).reduce((s, w) => s + w.weight, 0),
+    ).toBe(100);
+  });
+
+  it('never lets a board’s category figures into the overall index', () => {
+    for (const w of WEIGHTING) {
+      if (w.benchmarkId.startsWith('livebench-')) expect(w.overall).toBe(false);
+    }
   });
 
   it('states a reason for every share', () => {
@@ -321,16 +434,40 @@ describe('shipped data', () => {
     }
   });
 
+  const shipped = () =>
+    aggregate({
+      models,
+      benchmarks,
+      scores,
+      weights: WEIGHTS,
+      overall: OVERALL,
+      priorFraction: PRIOR_FRACTION,
+      minSources: MIN_SOURCES,
+    });
+
   it('produces a full ranking under the published weighting', () => {
-    const out = aggregate({ models, benchmarks, scores, weights: WEIGHTS });
+    const out = shipped();
     expect(out).toHaveLength(models.length);
     for (const r of out) expect(r.score).not.toBeNull();
+  });
+
+  it('places ranked models before provisional ones', () => {
+    const out = shipped();
+    const firstProvisional = out.findIndex((r) => !r.ranked);
+    if (firstProvisional === -1) return;
+    for (const r of out.slice(firstProvisional)) expect(r.ranked).toBe(false);
+    for (const r of out.slice(0, firstProvisional)) expect(r.ranked).toBe(true);
+  });
+
+  it('counts coverage in boards, so LiveBench’s seven categories are one source', () => {
+    const out = shipped();
+    for (const r of out) expect(r.covered).toBeLessThanOrEqual(4);
   });
 
   it('does not let one board dictate the winner: domain leaders differ', () => {
     // The point of the index. If every domain agreed on the winner, a single
     // leaderboard would have done.
-    const out = aggregate({ models, benchmarks, scores, weights: WEIGHTS });
+    const out = shipped().filter((r) => r.ranked);
     const domains = [...new Set(benchmarks.map((b) => b.domain))];
     const leaders = new Set(
       domains.map(

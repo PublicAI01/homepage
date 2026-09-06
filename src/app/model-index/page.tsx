@@ -4,12 +4,18 @@ import { cn } from '@/utils';
 
 import IndexTable, { SourceBadge } from './components/index-table';
 import { benchmarks, excluded, generatedAt, models, scores } from './data';
-import { domainLabel, WEIGHTING } from './lib/weights';
+import { groupBoards } from './lib/boards';
+import {
+  domainLabel,
+  MIN_SOURCES,
+  PRIOR_FRACTION,
+  WEIGHTING,
+} from './lib/weights';
 
 export const metadata: Metadata = {
   title: 'PublicAI Index — Weighted aggregate of public model leaderboards',
   description:
-    'One score from independent public leaderboards. Z-scored per board, confidence-weighted by published error bars, weighted by a published scheme. Every figure links back to the publisher.',
+    'One score from independent public leaderboards, and a score per domain. Z-scored per board, discounted by published error bars, shrunk on thin evidence, weighted by a published scheme. Every figure links back to the publisher.',
   keywords:
     'LLM leaderboard aggregate, model evaluation index, LMArena, Terminal-Bench, ARC-AGI, LiveBench, benchmark normalization, PublicAI',
 };
@@ -25,43 +31,45 @@ const updated = new Date(generatedAt).toLocaleDateString('en-US', {
   timeZone: 'UTC',
 });
 
-const benchById = new Map(benchmarks.map((b) => [b.id, b]));
+const boards = groupBoards(benchmarks);
+const boardById = new Map(boards.map((b) => [b.id, b]));
+const domains = [...new Set(benchmarks.map((b) => b.domain))];
 
 const method = [
   {
-    title: 'Standardize per board',
-    text: 'Each leaderboard is z-scored across the models on it and mapped to 0–100 with 50 as that board’s average. An Elo of 1504 and a 57.9% resolution rate become comparable, and a narrow-spread board is not drowned out by a wide one.',
+    title: 'Standardize per measure',
+    text: 'Each figure a board publishes is z-scored across the models on it and mapped to 0–100 with 50 as that measure’s average. An Elo of 1504 and a 57.9% resolution rate become comparable, and a narrow-spread board is not drowned out by a wide one.',
   },
   {
     title: 'Discount by published uncertainty',
     text: 'Where a publisher reports an error bar, the score is discounted in proportion to how wide it is relative to the board’s spread. No error bar means face value — absence is not treated as evidence of a wide one.',
   },
   {
-    title: 'Never impute',
-    text: 'A model absent from a board is excluded from that term, not filled in with a zero or an average. Both would be inventions. Coverage is shown on every row.',
+    title: 'Never impute; shrink instead',
+    text: `A model absent from a board is excluded from that term, not filled in. But thin evidence is pulled toward 50 by a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the weight available, so one generous board cannot put a barely-tested model at the top. Scored by fewer than ${MIN_SOURCES} boards, a model is listed as provisional and not ranked.`,
   },
   {
     title: 'Weight by a published scheme',
-    text: 'Each source carries a fixed share, set by PublicAI and stated beside the table with its reason. Domain columns apply the same shares within one domain.',
+    text: 'Each board’s headline figure carries a fixed share of the Overall index, stated beside the table with its reason. A board’s category figures shape only the domain they measure, so no board is counted twice.',
   },
 ];
 
 const limits = [
   {
-    title: 'Reasoning-effort tiers are not always matched',
-    text: 'Boards report different effort tiers for the same model, and the gap between tiers can exceed the gap between models. The tier is visible in each expanded source label. Treat mixed rows as weaker evidence.',
+    title: 'Reasoning-effort tiers are matched by rule',
+    text: 'Boards report several effort tiers per model. The highest published tier is indexed, and the exact label is kept beside each score. Where a board only published a lower tier, that row is weaker evidence than it looks.',
   },
   {
     title: 'Some boards score a scaffold, not a model',
     text: 'Terminal-Bench results are a model plus an agent framework — Codex, Claude Code, Grok Build. The framework is part of the number and is recorded beside each score.',
   },
   {
-    title: 'A snapshot, not a live feed',
-    text: 'Figures were read from each publisher on the date shown. Leaderboards move; check the source before acting on a number.',
+    title: 'Model identity is inferred from names',
+    text: 'Four boards spell the same model four ways. They are matched by name after tier and vendor words are removed. The rule is tested against hand-checked cases and every merge is logged, but a wrong merge is possible; the expanded row shows the exact source labels.',
   },
   {
-    title: 'Few boards, so far',
-    text: 'Enough to show that single-leaderboard rankings do not survive aggregation; not enough to be a definitive ranking of model capability. This page does not claim to be one.',
+    title: 'A snapshot, not a live feed',
+    text: 'Figures were read from each publisher on the date shown. Leaderboards move; check the source before acting on a number.',
   },
 ];
 
@@ -89,13 +97,15 @@ export default function ModelIndex() {
           PublicAI Index
         </p>
         <h1 className={cn('text-display mb-4 font-bold text-white', MEASURE)}>
-          One score from {benchmarks.length} public leaderboards.
+          {models.length} models, {boards.length} public leaderboards, one
+          scale.
         </h1>
         <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
           A single benchmark is easy to target and easy to overfit. This index
           normalizes independent public leaderboards onto one scale, discounts
-          each score by the uncertainty its publisher reports, and weights them
-          by a scheme published beside the table.
+          each score by the uncertainty its publisher reports, shrinks thin
+          evidence, and weights the rest by a scheme published beside the table
+          — overall, and per domain.
         </p>
         <dl className="text-caption flex flex-wrap gap-x-6 gap-y-1 text-[#78758A]">
           <div>
@@ -103,8 +113,16 @@ export default function ModelIndex() {
             <dd className="inline text-[#D9D7E0]">{updated}</dd>
           </div>
           <div>
-            <dt className="inline">Sources </dt>
+            <dt className="inline">Boards </dt>
+            <dd className="inline text-[#D9D7E0]">{boards.length}</dd>
+          </div>
+          <div>
+            <dt className="inline">Measures </dt>
             <dd className="inline text-[#D9D7E0]">{benchmarks.length}</dd>
+          </div>
+          <div>
+            <dt className="inline">Domains </dt>
+            <dd className="inline text-[#D9D7E0]">{domains.length}</dd>
           </div>
           <div>
             <dt className="inline">Models </dt>
@@ -124,7 +142,7 @@ export default function ModelIndex() {
       <div
         className="grid grid-cols-1 gap-8 border-t border-white/8 pt-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-10"
         id="index">
-        <main>
+        <main className="min-w-0">
           <IndexTable
             models={models}
             benchmarks={benchmarks}
@@ -132,21 +150,21 @@ export default function ModelIndex() {
           />
         </main>
 
-        <aside className="flex flex-col gap-4">
-          <Card title="Weighting">
+        <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24">
+          <Card title="Weighting — Overall index">
             <ol className="flex flex-col gap-3">
-              {WEIGHTING.map((w) => {
-                const b = benchById.get(w.benchmarkId);
+              {WEIGHTING.filter((w) => w.overall).map((w) => {
+                const b = boardById.get(w.benchmarkId);
                 if (!b) return null;
                 return (
                   <li key={w.benchmarkId}>
                     <div className="mb-1 flex items-center gap-2">
                       <SourceBadge
-                        benchmark={b}
+                        board={b}
                         present
                       />
                       <b className="text-body-sm font-semibold text-white">
-                        {b.name}
+                        {b.headline.name}
                       </b>
                       <span className="text-caption text-p1 ml-auto font-mono">
                         {w.weight}%
@@ -158,34 +176,40 @@ export default function ModelIndex() {
               })}
             </ol>
             <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
-              Set by PublicAI. Shares are stated so they can be disagreed with.
+              Set by PublicAI; stated so it can be disagreed with. A board’s
+              category figures (LiveBench publishes seven) shape only their own
+              domain column.
             </p>
           </Card>
 
           <Card title="Sources">
             <ul className="flex flex-col gap-3">
-              {benchmarks.map((b) => (
+              {boards.map((b) => (
                 <li key={b.id}>
                   <div className="mb-0.5 flex flex-wrap items-baseline gap-x-2">
                     <a
-                      href={b.url}
+                      href={b.headline.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-body-sm font-semibold text-white underline underline-offset-2">
-                      {b.name}
+                      {b.headline.name}
                     </a>
-                    <span className="text-caption text-p1">
-                      {domainLabel(b.domain)}
-                    </span>
                     <span className="text-micro ml-auto text-[#78758A]">
-                      read {b.retrievedAt}
+                      read {b.headline.retrievedAt}
                     </span>
                   </div>
-                  {b.snapshot ? (
-                    <p className="text-micro text-g2">{b.snapshot}</p>
+                  <p className="text-micro text-p1">
+                    {[
+                      ...new Set(b.measures.map((m) => domainLabel(m.domain))),
+                    ].join(' · ')}
+                  </p>
+                  {b.headline.snapshot ? (
+                    <p className="text-micro text-g2">{b.headline.snapshot}</p>
                   ) : null}
-                  {b.caveat ? (
-                    <p className="text-micro text-[#78758A]">{b.caveat}</p>
+                  {b.headline.caveat ? (
+                    <p className="text-micro text-[#78758A]">
+                      {b.headline.caveat}
+                    </p>
                   ) : null}
                 </li>
               ))}

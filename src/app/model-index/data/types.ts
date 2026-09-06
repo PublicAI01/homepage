@@ -28,6 +28,12 @@ export interface Benchmark {
   domain: string;
   /** Known limitation a buyer should weigh before trusting the column. */
   caveat?: string;
+  /**
+   * The board this measure belongs to, by id. LiveBench's category figures
+   * all point at `livebench`; single-measure boards point at themselves.
+   * Coverage counts boards, not measures.
+   */
+  group?: string;
 }
 
 export interface Score {

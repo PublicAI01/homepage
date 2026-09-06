@@ -6,17 +6,23 @@ import { cn } from '@/utils';
 
 import type { Benchmark, Model, Score } from '../data/types';
 import { aggregate, type AggregateRow, compareScores } from '../lib/aggregate';
+import { type BoardView, groupBoards } from '../lib/boards';
 import {
   domainLabel,
   FALLBACK_BADGE,
+  MIN_SOURCES,
+  OVERALL,
+  PRIOR_FRACTION,
   SOURCE_BADGE,
   WEIGHTS,
 } from '../lib/weights';
 
 const PANEL =
   'rounded-xl border border-[#2C2C31] bg-white/[0.045] backdrop-blur-sm';
-
 const INDEX_TONE = 'text-[#6EE7A0]';
+const CONTROL =
+  'text-caption rounded-md border border-white/12 bg-transparent px-2.5 py-1.5 text-white outline-none focus:border-primary';
+const PAGE = 100;
 
 interface Props {
   models: Model[];
@@ -41,18 +47,19 @@ function agreement(d: number) {
 }
 
 export function SourceBadge({
-  benchmark,
+  board,
   present,
   detail,
 }: {
-  benchmark: Benchmark;
+  board: BoardView;
   present: boolean;
   detail?: string;
 }) {
-  const badge = SOURCE_BADGE[benchmark.id] ?? FALLBACK_BADGE;
+  const badge = SOURCE_BADGE[board.id] ?? FALLBACK_BADGE;
+  const name = board.headline.name;
   const label = present
-    ? `${benchmark.name}${detail ? ` — ${detail}` : ''}`
-    : `${benchmark.name} — not listed`;
+    ? `${name}${detail ? ` — ${detail}` : ''}`
+    : `${name} — not listed`;
   return (
     <span
       title={label}
@@ -70,39 +77,165 @@ export function SourceBadge({
 
 export default function IndexTable({ models, benchmarks, scores }: Props) {
   const [sortKey, setSortKey] = useState<'overall' | string>('overall');
+  const [query, setQuery] = useState('');
+  const [org, setOrg] = useState('all');
+  const [minBoards, setMinBoards] = useState(MIN_SOURCES);
+  const [mustHave, setMustHave] = useState<Set<string>>(new Set());
   const [openModel, setOpenModel] = useState<string | null>(null);
 
   const weighted = useMemo(
     () => benchmarks.filter((b) => (WEIGHTS[b.id] ?? 0) > 0),
     [benchmarks],
   );
+  const boards = useMemo(() => groupBoards(weighted), [weighted]);
   const domains = useMemo(
     () => [...new Set(weighted.map((b) => b.domain))],
     [weighted],
   );
+  const orgs = useMemo(
+    () => [...new Set(models.map((m) => m.org))].sort(),
+    [models],
+  );
 
   const rows = useMemo(
-    () => aggregate({ models, benchmarks, scores, weights: WEIGHTS }),
+    () =>
+      aggregate({
+        models,
+        benchmarks,
+        scores,
+        weights: WEIGHTS,
+        overall: OVERALL,
+        priorFraction: PRIOR_FRACTION,
+        minSources: MIN_SOURCES,
+      }),
     [models, benchmarks, scores],
   );
 
-  const sorted = useMemo(() => {
-    if (sortKey === 'overall') return rows;
-    return [...rows].sort(compareScores((r) => r.byDomain[sortKey] ?? null));
-  }, [rows, sortKey]);
+  const rankOf = useMemo(() => {
+    const m = new Map<string, number>();
+    let n = 0;
+    for (const r of rows) if (r.ranked) m.set(r.model.id, ++n);
+    return m;
+  }, [rows]);
 
-  const benchById = useMemo(
-    () => new Map(benchmarks.map((b) => [b.id, b])),
-    [benchmarks],
-  );
+  const boardsScoring = useMemo(() => {
+    const groupOf = new Map(benchmarks.map((b) => [b.id, b.group ?? b.id]));
+    const m = new Map<string, Set<string>>();
+    for (const r of rows) {
+      m.set(
+        r.model.id,
+        new Set(
+          r.perBenchmark
+            .filter((s) => (WEIGHTS[s.benchmarkId] ?? 0) > 0)
+            .map((s) => groupOf.get(s.benchmarkId)!),
+        ),
+      );
+    }
+    return m;
+  }, [rows, benchmarks]);
 
-  const tabs: { key: 'overall' | string; label: string }[] = [
-    { key: 'overall', label: 'Overall' },
-    ...domains.map((d) => ({ key: d, label: domainLabel(d) })),
-  ];
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    let out = rows.filter((r) => {
+      if (r.covered < minBoards) return false;
+      if (org !== 'all' && r.model.org !== org) return false;
+      if (q && !`${r.model.name} ${r.model.org}`.toLowerCase().includes(q))
+        return false;
+      const has = boardsScoring.get(r.model.id)!;
+      for (const b of mustHave) if (!has.has(b)) return false;
+      return true;
+    });
+    if (sortKey !== 'overall') {
+      const byDomain = compareScores<AggregateRow>(
+        (r) => r.byDomain[sortKey] ?? null,
+      );
+      out = [...out].sort(
+        (a, b) => Number(b.ranked) - Number(a.ranked) || byDomain(a, b),
+      );
+    }
+    return out;
+  }, [rows, query, org, minBoards, mustHave, sortKey, boardsScoring]);
+
+  const rankedCount = rows.filter((r) => r.ranked).length;
+  const shown = filtered.slice(0, PAGE);
+  const coverable = rows[0]?.coverable ?? boards.length;
+
+  const toggleBoard = (id: string) =>
+    setMustHave((s) => {
+      const next = new Set(s);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
 
   return (
     <div>
+      {/* ---------------- filters ---------------- */}
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search model or organisation"
+          aria-label="Search"
+          className={cn(CONTROL, 'w-56 placeholder:text-[#78758A]')}
+        />
+        <select
+          value={org}
+          onChange={(e) => setOrg(e.target.value)}
+          aria-label="Organisation"
+          className={CONTROL}>
+          <option value="all">All organisations</option>
+          {orgs.map((o) => (
+            <option
+              key={o}
+              value={o}>
+              {o}
+            </option>
+          ))}
+        </select>
+        <select
+          value={minBoards}
+          onChange={(e) => setMinBoards(Number(e.target.value))}
+          aria-label="Minimum sources"
+          className={CONTROL}>
+          {Array.from({ length: coverable }, (_, i) => i + 1).map((n) => (
+            <option
+              key={n}
+              value={n}>
+              {n === 1
+                ? 'Any coverage (incl. provisional)'
+                : `Scored by ${n}+ boards`}
+            </option>
+          ))}
+        </select>
+        <span className="text-micro text-g2 ml-1 tracking-[0.14em] uppercase">
+          Must include
+        </span>
+        {boards.map((b) => {
+          const on = mustHave.has(b.id);
+          return (
+            <button
+              key={b.id}
+              type="button"
+              aria-pressed={on}
+              onClick={() => toggleBoard(b.id)}
+              title={b.headline.name}
+              className={cn(
+                'rounded-md border p-0.5 transition-colors',
+                on
+                  ? 'border-primary'
+                  : 'border-transparent hover:border-white/20',
+              )}>
+              <SourceBadge
+                board={b}
+                present
+              />
+            </button>
+          );
+        })}
+      </div>
+
       {/* ---------------- domain tabs ---------------- */}
       <div
         role="tablist"
@@ -111,7 +244,10 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
         <span className="text-micro text-g2 mr-2 tracking-[0.14em] uppercase">
           Rank by
         </span>
-        {tabs.map((t) => {
+        {[
+          { key: 'overall', label: 'Overall' },
+          ...domains.map((d) => ({ key: d, label: domainLabel(d) })),
+        ].map((t) => {
           const on = sortKey === t.key;
           return (
             <button
@@ -132,6 +268,16 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
         })}
       </div>
 
+      <p className="text-caption mb-2 text-[#78758A]">
+        <span className="text-[#D9D7E0]">{rankedCount}</span> ranked ·{' '}
+        <span className="text-[#D9D7E0]">{rows.length - rankedCount}</span>{' '}
+        provisional (one source) · showing{' '}
+        <span className="text-[#D9D7E0]">
+          {shown.length}
+          {filtered.length > shown.length ? ` of ${filtered.length}` : ''}
+        </span>
+      </p>
+
       {/* ---------------- table ---------------- */}
       <div className={cn(PANEL, 'overflow-x-auto')}>
         <table className="text-body-sm w-full border-collapse text-left whitespace-nowrap">
@@ -146,45 +292,53 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
                 )}>
                 Index
               </th>
-              {domains.map((d) => (
-                <th
-                  key={d}
-                  className={cn(
-                    'px-3 py-3 text-right font-medium',
-                    sortKey === d ? 'text-white' : 'max-xl:hidden',
-                  )}>
-                  {domainLabel(d)}
+              {sortKey !== 'overall' ? (
+                <th className="px-3 py-3 text-right font-medium text-white">
+                  {domainLabel(sortKey)}
                 </th>
-              ))}
+              ) : null}
               <th className="px-3 py-3 font-medium">Sources</th>
               <th className="w-8 px-3 py-3" />
             </tr>
           </thead>
           <tbody>
-            {sorted.map((row, i) => (
+            {shown.map((row) => (
               <Row
                 key={row.model.id}
                 row={row}
-                rank={i + 1}
-                domains={domains}
+                rank={rankOf.get(row.model.id)}
                 sortKey={sortKey}
-                weighted={weighted}
-                benchById={benchById}
+                domains={domains}
+                boards={boards}
                 open={openModel === row.model.id}
                 onToggle={() =>
                   setOpenModel(openModel === row.model.id ? null : row.model.id)
                 }
               />
             ))}
+            {shown.length === 0 ? (
+              <tr className="border-t border-white/8">
+                <td
+                  colSpan={6}
+                  className="text-g2 px-3 py-6 text-center">
+                  Nothing matches these filters.
+                </td>
+              </tr>
+            ) : null}
           </tbody>
         </table>
       </div>
 
       <p className="text-caption text-g2 mt-3 max-w-[76ch]">
         Scores are 0–100 standardized: 50 is average across the models listed,
-        not an absolute grade. A filled source badge means that board scored the
-        model; a dashed one means it did not list it. Hover a badge for the
-        board and the raw score.
+        not an absolute grade. Thin evidence is pulled toward 50, and a model
+        scored by fewer than {MIN_SOURCES} boards is listed as provisional
+        without a rank. A filled badge means that board scored the model; a
+        dashed one means it did not list it. Hover a badge for the board and its
+        headline figure.
+        {filtered.length > shown.length
+          ? ` The first ${PAGE} of ${filtered.length} are shown; narrow the filters to see the rest.`
+          : ''}
       </p>
     </div>
   );
@@ -193,26 +347,23 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
 function Row({
   row,
   rank,
-  domains,
   sortKey,
-  weighted,
-  benchById,
+  domains,
+  boards,
   open,
   onToggle,
 }: {
   row: AggregateRow;
-  rank: number;
-  domains: string[];
+  rank: number | undefined;
   sortKey: string;
-  weighted: Benchmark[];
-  benchById: Map<string, Benchmark>;
+  domains: string[];
+  boards: BoardView[];
   open: boolean;
   onToggle: () => void;
 }) {
-  const thin = row.covered > 0 && row.covered < row.coverable;
+  const thin = row.ranked && row.covered < row.coverable;
   const agree = agreement(row.dispersion);
   const scored = new Map(row.perBenchmark.map((s) => [s.benchmarkId, s]));
-  const colSpan = 5 + domains.length;
 
   return (
     <>
@@ -222,39 +373,46 @@ function Row({
           open && 'bg-white/4',
         )}
         onClick={onToggle}>
-        <td className="text-g2 px-3 py-2.5 font-mono">{rank}</td>
+        <td className="text-g2 px-3 py-2.5 font-mono">
+          {rank ?? <span title="Provisional — one source">—</span>}
+        </td>
         <td className="px-3 py-2.5">
-          <b className="font-semibold text-white">{row.model.name}</b>
+          <b
+            className={cn(
+              'font-semibold',
+              row.ranked ? 'text-white' : 'text-[#B9B7C4]',
+            )}>
+            {row.model.name}
+          </b>
           <span className="text-g2 ml-2 text-xs">{row.model.org}</span>
+          {!row.ranked ? (
+            <span className="text-micro ml-2 rounded border border-white/12 px-1 py-px text-[#78758A]">
+              provisional
+            </span>
+          ) : null}
         </td>
         <td
           className={cn(
             'px-3 py-2.5 text-right font-mono font-semibold',
-            INDEX_TONE,
+            row.ranked ? INDEX_TONE : 'text-[#78758A]',
           )}>
           {fmt(row.score)}
         </td>
-        {domains.map((d) => (
-          <td
-            key={d}
-            className={cn(
-              'px-3 py-2.5 text-right font-mono',
-              sortKey === d ? 'text-white' : 'text-[#D9D7E0] max-xl:hidden',
-              row.byDomain[d] === null && 'text-[#78758A]',
-            )}>
-            {fmt(row.byDomain[d] ?? null)}
+        {sortKey !== 'overall' ? (
+          <td className="px-3 py-2.5 text-right font-mono text-white">
+            {fmt(row.byDomain[sortKey] ?? null)}
           </td>
-        ))}
+        ) : null}
         <td className="px-3 py-2.5">
           <span className="flex items-center gap-1">
-            {weighted.map((b) => {
-              const s = scored.get(b.id);
+            {boards.map((b) => {
+              const s = scored.get(b.headline.id);
               return (
                 <SourceBadge
                   key={b.id}
-                  benchmark={b}
+                  board={b}
                   present={Boolean(s)}
-                  detail={s ? rawLabel(b.metric, s.raw) : undefined}
+                  detail={s ? rawLabel(b.headline.metric, s.raw) : undefined}
                 />
               );
             })}
@@ -275,7 +433,7 @@ function Row({
             ›
           </span>
           <span className="sr-only">
-            {open ? 'Hide' : 'Show'} source scores for {row.model.name}
+            {open ? 'Hide' : 'Show'} details for {row.model.name}
           </span>
         </td>
       </tr>
@@ -283,65 +441,116 @@ function Row({
       {open ? (
         <tr className="border-t border-white/8 bg-[#161618]">
           <td
-            colSpan={colSpan}
+            colSpan={6}
             className="px-4 py-4 whitespace-normal">
-            {thin ? (
-              <p className="text-caption mb-3 text-[#F5C86B]">
-                Scored by {row.covered} of {row.coverable} sources. The index is
-                computed from those alone — missing scores are not filled in —
-                so it rests on less evidence than a fully covered model.
-              </p>
-            ) : null}
-            {row.covered > 1 ? (
-              <p className="text-caption mb-3 text-[#78758A]">
-                Board agreement:{' '}
-                <span className={agree.tone}>{agree.label}</span>
-              </p>
-            ) : null}
-            <dl className="flex flex-col gap-2.5">
-              {row.perBenchmark.map((s) => {
-                const b = benchById.get(s.benchmarkId)!;
+            <div className="text-caption mb-3 flex flex-wrap gap-x-5 gap-y-1 text-[#78758A]">
+              <span>
+                Scored by{' '}
+                <b className="font-medium text-[#D9D7E0]">
+                  {row.covered} of {row.coverable}
+                </b>{' '}
+                boards
+              </span>
+              <span>
+                Evidence{' '}
+                <b className="font-medium text-[#D9D7E0]">
+                  {Math.round(row.evidence * 100)}%
+                </b>{' '}
+                of available weight
+              </span>
+              {row.covered > 1 ? (
+                <span>
+                  Board agreement:{' '}
+                  <span className={agree.tone}>{agree.label}</span>
+                </span>
+              ) : null}
+              {!row.ranked ? (
+                <span className="text-[#F5C86B]">
+                  Provisional: one source is not enough to rank on.
+                </span>
+              ) : null}
+            </div>
+
+            <dl className="mb-4 flex flex-wrap gap-1.5">
+              {domains.map((d) => {
+                const v = row.byDomain[d] ?? null;
                 return (
                   <div
-                    key={s.benchmarkId}
-                    className="text-caption flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <dt className="flex w-44 shrink-0 items-center gap-2 font-medium text-white">
-                      <SourceBadge
-                        benchmark={b}
-                        present
-                      />
-                      {b.name}
-                    </dt>
-                    <dd className="font-mono text-[#D9D7E0]">
-                      {rawLabel(b.metric, s.raw)}
-                      {s.stderr !== undefined ? (
-                        <span className="text-[#78758A]"> ± {s.stderr}</span>
-                      ) : null}
-                    </dd>
-                    <dd className="text-g2">
-                      → <span className="font-mono">{fmt(s.normalized)}</span>
-                    </dd>
-                    <dd className="text-[#78758A]">
-                      as{' '}
-                      <span className="font-mono">
-                        &quot;{s.sourceLabel}&quot;
-                      </span>
-                      {s.scaffold ? ` via ${s.scaffold}` : ''}
-                    </dd>
-                    <dd className="ml-auto">
-                      <a
-                        href={b.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-p1 underline underline-offset-2">
-                        source
-                      </a>
-                    </dd>
+                    key={d}
+                    className={cn(
+                      'text-caption flex items-baseline gap-1.5 rounded-md border px-2 py-1',
+                      v === null
+                        ? 'border-dashed border-white/10 text-white/30'
+                        : 'border-white/12',
+                    )}>
+                    <dt className="text-g2">{domainLabel(d)}</dt>
+                    <dd className="font-mono text-white">{fmt(v)}</dd>
                   </div>
                 );
               })}
             </dl>
+
+            <div className="flex flex-col gap-3">
+              {boards.map((b) => {
+                const present = b.measures.filter((m) => scored.has(m.id));
+                if (present.length === 0) return null;
+                const first = scored.get(present[0].id)!;
+                return (
+                  <div key={b.id}>
+                    <div className="text-caption mb-1 flex flex-wrap items-center gap-2">
+                      <SourceBadge
+                        board={b}
+                        present
+                      />
+                      <b className="font-medium text-white">
+                        {b.headline.name}
+                      </b>
+                      <span className="text-[#78758A]">
+                        as{' '}
+                        <span className="font-mono">
+                          &quot;{first.sourceLabel}&quot;
+                        </span>
+                        {first.scaffold ? ` via ${first.scaffold}` : ''}
+                      </span>
+                      <a
+                        href={b.headline.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-p1 ml-auto underline underline-offset-2">
+                        source
+                      </a>
+                    </div>
+                    <dl className="text-caption grid grid-cols-1 gap-x-6 gap-y-0.5 pl-9 sm:grid-cols-2">
+                      {present.map((m) => {
+                        const s = scored.get(m.id)!;
+                        return (
+                          <div
+                            key={m.id}
+                            className="flex items-baseline gap-2">
+                            <dt className="text-g2 w-40 shrink-0 truncate">
+                              {m.name.replace(/^.*· /, '')}
+                            </dt>
+                            <dd className="font-mono text-[#D9D7E0]">
+                              {rawLabel(m.metric, s.raw)}
+                              {s.stderr !== undefined ? (
+                                <span className="text-[#78758A]">
+                                  {' '}
+                                  ± {s.stderr}
+                                </span>
+                              ) : null}
+                            </dd>
+                            <dd className="text-g2 font-mono">
+                              → {fmt(s.normalized)}
+                            </dd>
+                          </div>
+                        );
+                      })}
+                    </dl>
+                  </div>
+                );
+              })}
+            </div>
           </td>
         </tr>
       ) : null}

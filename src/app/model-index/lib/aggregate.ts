@@ -4,7 +4,7 @@ import type { Benchmark, Model, Score } from '../data/types';
  * Turning several leaderboards into one number, without pretending the number
  * is more solid than its inputs.
  *
- * Three problems have to be solved in order:
+ * Four problems have to be solved in order:
  *
  * 1. Scales do not compare. An Elo of 1504 and a resolution rate of 57.9% are
  *    not on the same axis, and neither are two percentages whose spreads
@@ -17,11 +17,16 @@ import type { Benchmark, Model, Score } from '../data/types';
  *    error bars; a 57.9% ± 3.8 is a weaker claim than 58.2% ± 2.8. Scores are
  *    weighted down in proportion to their published uncertainty.
  *
- * 3. Coverage is uneven. Not every model appears on every board, and a model
- *    rated on two boards has not earned the same confidence as one rated on
- *    four. Missing scores are never imputed — they are excluded from the
- *    weighted mean, and coverage is reported alongside every result so a thin
- *    row is visibly thin.
+ * 3. Coverage is uneven, and a plain weighted mean over whatever is present
+ *    lets one generous board put a barely-tested model at the top: scored 80
+ *    by a single 20%-weight board, it would tie a model scored 80 by every
+ *    board. So thin evidence is shrunk toward the middle in proportion to how
+ *    thin it is (`prior`), and a model scored by too few boards is listed but
+ *    not ranked (`minSources`). Missing scores are still never imputed.
+ *
+ * 4. A board can publish several figures. Its headline figure carries the
+ *    board's share in the Overall index; its category figures shape only the
+ *    domain they measure, so a board is never counted twice.
  */
 
 /** Mean of the board, in standard-deviation units, rescaled so 50 is average. */
@@ -44,13 +49,17 @@ export interface AggregateRow {
   model: Model;
   /** Final 0-100 index score, or null when the model has no usable scores. */
   score: number | null;
-  /** The same weighted mean, restricted to the boards in each domain. */
+  /** The same computation, restricted to the measures in each domain. */
   byDomain: Record<string, number | null>;
   perBenchmark: NormalizedScore[];
-  /** How many of the weighted benchmarks this model actually appears on. */
+  /** How many boards (not measures) scored this model, among the weighted ones. */
   covered: number;
-  /** How many benchmarks carry non-zero weight. */
+  /** How many boards carry weight. */
   coverable: number;
+  /** Weight-times-confidence behind the overall score, out of the total available. */
+  evidence: number;
+  /** Scored by enough boards to be placed in the ranking. */
+  ranked: boolean;
   /** Spread of the model's normalized scores. High means the boards disagree. */
   dispersion: number;
 }
@@ -97,30 +106,45 @@ export function confidenceOf(stderr: number | undefined, spread: number) {
   return clamp(1 / (1 + relative * relative * 16), 0.15, 1);
 }
 
-/** Weighted mean of normalized scores, or null when nothing contributes. */
-function weightedMean(
+/**
+ * Weighted mean of normalized scores, pulled toward 50 by a prior whose
+ * weight is `priorFraction` of the total weight available in scope. With
+ * full evidence the pull is mild; with one small board it dominates.
+ */
+function shrunkMean(
   scores: NormalizedScore[],
   weights: Record<string, number>,
-): number | null {
-  const total = scores.reduce(
+  scopeWeight: number,
+  priorFraction: number,
+): { score: number | null; evidence: number } {
+  const evidence = scores.reduce(
     (sum, s) => sum + weights[s.benchmarkId] * s.confidence,
     0,
   );
-  if (total <= 0) return null;
-  return (
-    scores.reduce(
-      (sum, s) => sum + s.normalized * weights[s.benchmarkId] * s.confidence,
-      0,
-    ) / total
+  if (evidence <= 0) return { score: null, evidence: 0 };
+  const sum = scores.reduce(
+    (acc, s) => acc + s.normalized * weights[s.benchmarkId] * s.confidence,
+    0,
   );
+  const prior = priorFraction * scopeWeight;
+  return {
+    score: (sum + prior * T_SCORE_MEAN) / (evidence + prior),
+    evidence,
+  };
 }
 
 export interface AggregateInput {
   models: Model[];
   benchmarks: Benchmark[];
   scores: Score[];
-  /** benchmarkId -> weight. Boards absent or at 0 do not contribute. */
+  /** benchmarkId -> weight, for every measure that may shape a domain. */
   weights: Record<string, number>;
+  /** Measures that form the Overall index. Default: every weighted measure. */
+  overall?: Set<string>;
+  /** Prior weight as a fraction of the weight in scope. 0 = plain weighted mean. */
+  priorFraction?: number;
+  /** Boards a model must be scored by to be ranked. */
+  minSources?: number;
   /** When false, published error bars are ignored and every score counts equally. */
   useConfidence?: boolean;
 }
@@ -130,13 +154,35 @@ export function aggregate({
   benchmarks,
   scores,
   weights,
+  overall,
+  priorFraction = 0,
+  minSources = 1,
   useConfidence = true,
 }: AggregateInput): AggregateRow[] {
-  const active = benchmarks.filter((b) => (weights[b.id] ?? 0) > 0);
+  const weighted = benchmarks.filter((b) => (weights[b.id] ?? 0) > 0);
+  const overallIds = overall ?? new Set(weighted.map((b) => b.id));
+  const boardOf = new Map(benchmarks.map((b) => [b.id, b.group ?? b.id]));
   const domainOf = new Map(benchmarks.map((b) => [b.id, b.domain]));
-  const domains = [...new Set(active.map((b) => b.domain))];
 
-  // Normalize within each board, over the models actually present on it.
+  const domains = [...new Set(weighted.map((b) => b.domain))];
+  const coverable = new Set(weighted.map((b) => boardOf.get(b.id))).size;
+
+  const sumWeight = (ids: Iterable<string>) => {
+    let t = 0;
+    for (const id of ids) t += weights[id] ?? 0;
+    return t;
+  };
+  const overallWeight = sumWeight(
+    weighted.filter((b) => overallIds.has(b.id)).map((b) => b.id),
+  );
+  const domainWeight = new Map(
+    domains.map((d) => [
+      d,
+      sumWeight(weighted.filter((b) => b.domain === d).map((b) => b.id)),
+    ]),
+  );
+
+  // Normalize within each measure, over the models actually present on it.
   const normalizedBy = new Map<string, Map<string, NormalizedScore>>();
 
   for (const bench of benchmarks) {
@@ -167,31 +213,48 @@ export function aggregate({
       .map((b) => normalizedBy.get(b.id)?.get(model.id))
       .filter((s): s is NormalizedScore => s !== undefined);
 
-    // Only weighted boards contribute to any score.
     const contributing = perBenchmark.filter(
       (s) => (weights[s.benchmarkId] ?? 0) > 0,
+    );
+    const inOverall = contributing.filter((s) => overallIds.has(s.benchmarkId));
+
+    const { score, evidence } = shrunkMean(
+      inOverall,
+      weights,
+      overallWeight,
+      priorFraction,
     );
 
     const byDomain: Record<string, number | null> = {};
     for (const d of domains) {
-      byDomain[d] = weightedMean(
+      byDomain[d] = shrunkMean(
         contributing.filter((s) => domainOf.get(s.benchmarkId) === d),
         weights,
-      );
+        domainWeight.get(d) ?? 0,
+        priorFraction,
+      ).score;
     }
+
+    const covered = new Set(contributing.map((s) => boardOf.get(s.benchmarkId)))
+      .size;
 
     return {
       model,
-      score: weightedMean(contributing, weights),
+      score,
       byDomain,
       perBenchmark,
-      covered: contributing.length,
-      coverable: active.length,
-      dispersion: stdDev(contributing.map((s) => s.normalized)),
+      covered,
+      coverable,
+      evidence: overallWeight > 0 ? evidence / overallWeight : 0,
+      ranked: covered >= minSources,
+      dispersion: stdDev(inOverall.map((s) => s.normalized)),
     };
   });
 
-  return rows.sort(compareScores((r) => r.score));
+  const byScore = compareScores<AggregateRow>((r) => r.score);
+  return rows.sort(
+    (a, b) => Number(b.ranked) - Number(a.ranked) || byScore(a, b),
+  );
 }
 
 /** Sort highest first; models without a score go last. */
