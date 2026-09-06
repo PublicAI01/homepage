@@ -10,8 +10,19 @@
  * does not run these benchmarks.
  */
 
-/** How a leaderboard reports its numbers. Drives normalization, not display. */
+/** How a source reports its numbers. Drives normalization, not display. */
 export type Metric = 'elo' | 'percent' | 'index';
+
+/**
+ * Where a figure comes from.
+ *
+ * - `board`: a leaderboard PublicAI recognises — a maintained, first-party
+ *   ranking page. Shown without a mark.
+ * - `report`: a one-off publication — a vendor's launch post, a lab's blog,
+ *   an evaluator's write-up. Shown with a ✱. Never enters the Overall index
+ *   and never counts toward ranking eligibility; widens the domain columns.
+ */
+export type SourceKind = 'board' | 'report';
 
 export interface Benchmark {
   id: string;
@@ -23,28 +34,33 @@ export interface Benchmark {
   retrievedAt: string;
   /** The leaderboard's own snapshot label, where it publishes one. */
   snapshot?: string;
+  /** For reports: the date the publication is dated. */
+  publishedAt?: string;
   metric: Metric;
-  /** What capability this leaderboard actually measures. */
+  /** Top-level capability area. Fixed vocabulary. */
+  category: string;
+  /** The specific capability this number is evidence of. */
   domain: string;
   /** Known limitation a buyer should weigh before trusting the column. */
   caveat?: string;
+  kind: SourceKind;
   /**
-   * The board this measure belongs to, by id. LiveBench's category figures
-   * all point at `livebench`; single-measure boards point at themselves.
-   * Coverage counts boards, not measures.
+   * The source this measure belongs to, by id. LiveBench's category figures
+   * all point at `livebench`; single-measure boards point at themselves; a
+   * report's measures all point at the report. Coverage counts sources.
    */
-  group?: string;
+  group: string;
 }
 
 export interface Score {
   modelId: string;
   benchmarkId: string;
   raw: number;
-  /** Published uncertainty, where the leaderboard reports one. Drives confidence weighting. */
+  /** Published uncertainty, where the source reports one. Drives confidence weighting. */
   stderr?: number;
-  /** The model string exactly as that leaderboard prints it. Shown in provenance. */
+  /** The model string exactly as that source prints it. Shown in provenance. */
   sourceLabel: string;
-  /** Agent framework the score was produced with, where the benchmark scores a scaffold rather than a bare model. */
+  /** Agent framework the score was produced with, where the source scores a scaffold. */
   scaffold?: string;
 }
 

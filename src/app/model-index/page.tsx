@@ -6,16 +6,18 @@ import IndexTable, { SourceBadge } from './components/index-table';
 import { benchmarks, excluded, generatedAt, models, scores } from './data';
 import { groupBoards } from './lib/boards';
 import {
+  categoryRank,
   domainLabel,
   MIN_SOURCES,
   PRIOR_FRACTION,
+  REPORT_WEIGHT,
   WEIGHTING,
 } from './lib/weights';
 
 export const metadata: Metadata = {
   title: 'PublicAI Index — Weighted aggregate of public model leaderboards',
   description:
-    'One score from independent public leaderboards, and a score per domain. Z-scored per board, discounted by published error bars, shrunk on thin evidence, weighted by a published scheme. Every figure links back to the publisher.',
+    'One score from recognised public leaderboards, plus scores per category and domain, with launch-post figures marked ✱. Z-scored per measure, discounted by published error bars, shrunk on thin evidence, weighted by a published scheme. Every figure links back to its publisher.',
   keywords:
     'LLM leaderboard aggregate, model evaluation index, LMArena, Terminal-Bench, ARC-AGI, LiveBench, benchmark normalization, PublicAI',
 };
@@ -31,14 +33,19 @@ const updated = new Date(generatedAt).toLocaleDateString('en-US', {
   timeZone: 'UTC',
 });
 
-const boards = groupBoards(benchmarks);
-const boardById = new Map(boards.map((b) => [b.id, b]));
+const sources = groupBoards(benchmarks);
+const boards = sources.filter((s) => s.kind !== 'report');
+const reports = sources.filter((s) => s.kind === 'report');
+const sourceById = new Map(sources.map((s) => [s.id, s]));
 const domains = [...new Set(benchmarks.map((b) => b.domain))];
+const categories = [...new Set(benchmarks.map((b) => b.category))].sort(
+  (a, b) => categoryRank(a) - categoryRank(b),
+);
 
 const method = [
   {
     title: 'Standardize per measure',
-    text: 'Each figure a board publishes is z-scored across the models on it and mapped to 0–100 with 50 as that measure’s average. An Elo of 1504 and a 57.9% resolution rate become comparable, and a narrow-spread board is not drowned out by a wide one.',
+    text: 'Each figure a source publishes is z-scored across the models on it and mapped to 0–100 with 50 as that measure’s average. An Elo of 1504 and a 57.9% resolution rate become comparable, and a narrow-spread board is not drowned out by a wide one.',
   },
   {
     title: 'Discount by published uncertainty',
@@ -46,26 +53,34 @@ const method = [
   },
   {
     title: 'Never impute; shrink instead',
-    text: `A model absent from a board is excluded from that term, not filled in. But thin evidence is pulled toward 50 by a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the weight available, so one generous board cannot put a barely-tested model at the top. Scored by fewer than ${MIN_SOURCES} boards, a model is listed as provisional and not ranked.`,
+    text: `A model absent from a source is excluded from that term, not filled in. But thin evidence is pulled toward 50 by a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the weight available, so one generous board cannot put a barely-tested model at the top. Scored by fewer than ${MIN_SOURCES} recognised boards, a model is listed as provisional and not ranked.`,
   },
   {
     title: 'Weight by a published scheme',
-    text: 'Each board’s headline figure carries a fixed share of the Overall index, stated beside the table with its reason. A board’s category figures shape only the domain they measure, so no board is counted twice.',
+    text: 'Each recognised board’s headline figure carries a fixed share of the Overall index, stated beside the table with its reason. A board’s category figures shape only the domain they measure, so no board is counted twice.',
+  },
+  {
+    title: 'Mark reports ✱ and keep them out of the headline',
+    text: `A launch post or a blog is evidence of a different grade: the publisher chose the benchmarks, the settings and the comparison set. Its figures are indexed for domain and category columns at ${REPORT_WEIGHT}% of a board’s share, never enter the Overall index, and never make a model rankable.`,
   },
 ];
 
 const limits = [
   {
     title: 'Reasoning-effort tiers are matched by rule',
-    text: 'Boards report several effort tiers per model. The highest published tier is indexed, and the exact label is kept beside each score. Where a board only published a lower tier, that row is weaker evidence than it looks.',
+    text: 'Sources report several effort tiers per model. The highest published tier is indexed, and the exact label is kept beside each score. Where a source only published a lower tier, that row is weaker evidence than it looks.',
   },
   {
-    title: 'Some boards score a scaffold, not a model',
+    title: 'Some sources score a scaffold, not a model',
     text: 'Terminal-Bench results are a model plus an agent framework — Codex, Claude Code, Grok Build. The framework is part of the number and is recorded beside each score.',
   },
   {
     title: 'Model identity is inferred from names',
-    text: 'Four boards spell the same model four ways. They are matched by name after tier and vendor words are removed. The rule is tested against hand-checked cases and every merge is logged, but a wrong merge is possible; the expanded row shows the exact source labels.',
+    text: 'Five sources spell the same model five ways. They are matched by name after tier and vendor words are removed. The rule is tested against hand-checked cases and every merge is logged, but a wrong merge is possible; the expanded row shows the exact source labels.',
+  },
+  {
+    title: 'Report figures are the publisher’s',
+    text: 'A launch post does not always say whether competitor figures were re-run or copied, and its columns can mix effort tiers. They are shown with their mark and their publisher so the reader can weigh them, not laundered into board figures.',
   },
   {
     title: 'A snapshot, not a live feed',
@@ -97,15 +112,15 @@ export default function ModelIndex() {
           PublicAI Index
         </p>
         <h1 className={cn('text-display mb-4 font-bold text-white', MEASURE)}>
-          {models.length} models, {boards.length} public leaderboards, one
-          scale.
+          {models.length} models, {domains.length} domains, one scale.
         </h1>
         <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
           A single benchmark is easy to target and easy to overfit. This index
-          normalizes independent public leaderboards onto one scale, discounts
+          normalizes recognised public leaderboards onto one scale, discounts
           each score by the uncertainty its publisher reports, shrinks thin
           evidence, and weights the rest by a scheme published beside the table
-          — overall, and per domain.
+          — overall, by category, and by domain. Figures from launch posts and
+          blogs are indexed too, marked ✱ and kept out of the headline.
         </p>
         <dl className="text-caption flex flex-wrap gap-x-6 gap-y-1 text-[#78758A]">
           <div>
@@ -117,8 +132,16 @@ export default function ModelIndex() {
             <dd className="inline text-[#D9D7E0]">{boards.length}</dd>
           </div>
           <div>
+            <dt className="inline">Reports ✱ </dt>
+            <dd className="inline text-[#D9D7E0]">{reports.length}</dd>
+          </div>
+          <div>
             <dt className="inline">Measures </dt>
             <dd className="inline text-[#D9D7E0]">{benchmarks.length}</dd>
+          </div>
+          <div>
+            <dt className="inline">Categories </dt>
+            <dd className="inline text-[#D9D7E0]">{categories.length}</dd>
           </div>
           <div>
             <dt className="inline">Domains </dt>
@@ -153,18 +176,18 @@ export default function ModelIndex() {
         <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24">
           <Card title="Weighting — Overall index">
             <ol className="flex flex-col gap-3">
-              {WEIGHTING.filter((w) => w.overall).map((w) => {
-                const b = boardById.get(w.benchmarkId);
-                if (!b) return null;
+              {WEIGHTING.map((w) => {
+                const s = sourceById.get(w.benchmarkId);
+                if (!s) return null;
                 return (
                   <li key={w.benchmarkId}>
                     <div className="mb-1 flex items-center gap-2">
                       <SourceBadge
-                        board={b}
+                        source={s}
                         present
                       />
                       <b className="text-body-sm font-semibold text-white">
-                        {b.headline.name}
+                        {s.headline.name}
                       </b>
                       <span className="text-caption text-p1 ml-auto font-mono">
                         {w.weight}%
@@ -177,12 +200,12 @@ export default function ModelIndex() {
             </ol>
             <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
               Set by PublicAI; stated so it can be disagreed with. A board’s
-              category figures (LiveBench publishes seven) shape only their own
-              domain column.
+              category figures shape only their own domain. Report figures ✱
+              carry {REPORT_WEIGHT}% of a board’s share, in domain columns only.
             </p>
           </Card>
 
-          <Card title="Sources">
+          <Card title="Recognised leaderboards">
             <ul className="flex flex-col gap-3">
               {boards.map((b) => (
                 <li key={b.id}>
@@ -236,6 +259,47 @@ export default function ModelIndex() {
               </div>
             ) : null}
           </Card>
+
+          {reports.length ? (
+            <Card title="Reports ✱">
+              <ul className="flex flex-col gap-3">
+                {reports.map((r) => (
+                  <li key={r.id}>
+                    <div className="mb-0.5 flex flex-wrap items-baseline gap-x-2">
+                      <a
+                        href={r.headline.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-body-sm font-semibold text-white underline underline-offset-2">
+                        {r.headline.name}
+                      </a>
+                      <span className="text-micro ml-auto text-[#78758A]">
+                        {r.headline.publishedAt
+                          ? `published ${r.headline.publishedAt} · `
+                          : ''}
+                        read {r.headline.retrievedAt}
+                      </span>
+                    </div>
+                    <p className="text-micro text-[#E8A9F0]">
+                      {r.headline.publisher} · {r.measures.length} benchmarks
+                      across {new Set(r.measures.map((m) => m.category)).size}{' '}
+                      categories
+                    </p>
+                    {r.headline.caveat ? (
+                      <p className="text-micro text-[#78758A]">
+                        {r.headline.caveat}
+                      </p>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
+                Every figure from a report is marked ✱ wherever it appears.
+                Reports never enter the Overall index and never make a model
+                rankable.
+              </p>
+            </Card>
+          ) : null}
 
           <Card title="How the score is computed">
             <ol className="flex flex-col gap-2.5">

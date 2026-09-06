@@ -8,13 +8,15 @@ import type { Benchmark, Model, Score } from '../data/types';
 import { aggregate, type AggregateRow, compareScores } from '../lib/aggregate';
 import { type BoardView, groupBoards } from '../lib/boards';
 import {
+  categoryRank,
   domainLabel,
   FALLBACK_BADGE,
   MIN_SOURCES,
   OVERALL,
   PRIOR_FRACTION,
+  REPORT_BADGE,
   SOURCE_BADGE,
-  WEIGHTS,
+  weightsFor,
 } from '../lib/weights';
 
 const PANEL =
@@ -22,6 +24,11 @@ const PANEL =
 const INDEX_TONE = 'text-[#6EE7A0]';
 const CONTROL =
   'text-caption rounded-md border border-white/12 bg-transparent px-2.5 py-1.5 text-white outline-none focus:border-primary';
+const CHIP =
+  'text-caption rounded-md border px-2.5 py-1 font-medium transition-colors';
+const CHIP_ON = 'border-primary bg-primary/20 text-white';
+const CHIP_OFF =
+  'text-g2 border-white/12 hover:border-white/30 hover:text-white';
 const PAGE = 100;
 
 interface Props {
@@ -30,7 +37,14 @@ interface Props {
   scores: Score[];
 }
 
-const fmt = (n: number | null) => (n === null ? '—' : n.toFixed(1));
+/** What the table is ranked by: the overall index, a category, or a domain inside one. */
+type RankKey =
+  | { level: 'overall' }
+  | { level: 'category'; category: string }
+  | { level: 'domain'; category: string; domain: string };
+
+const fmt = (n: number | null | undefined) =>
+  n === null || n === undefined ? '—' : n.toFixed(1);
 
 /** Raw scores print in their own units, so a reader can check them against the source. */
 function rawLabel(metric: Benchmark['metric'], raw: number) {
@@ -46,17 +60,33 @@ function agreement(d: number) {
   return { label: 'consistent', tone: 'text-[#78758A]' };
 }
 
+const keyOf = (row: AggregateRow, k: RankKey): number | null => {
+  if (k.level === 'overall') return row.score;
+  if (k.level === 'category') return row.byCategory[k.category] ?? null;
+  return row.byDomain[k.domain] ?? null;
+};
+
+const rankLabel = (k: RankKey) =>
+  k.level === 'overall'
+    ? 'Overall'
+    : k.level === 'category'
+      ? domainLabel(k.category)
+      : domainLabel(k.domain);
+
 export function SourceBadge({
-  board,
+  source,
   present,
   detail,
 }: {
-  board: BoardView;
+  source: BoardView;
   present: boolean;
   detail?: string;
 }) {
-  const badge = SOURCE_BADGE[board.id] ?? FALLBACK_BADGE;
-  const name = board.headline.name;
+  const badge =
+    source.kind === 'report'
+      ? REPORT_BADGE
+      : (SOURCE_BADGE[source.id] ?? FALLBACK_BADGE);
+  const name = source.headline.name;
   const label = present
     ? `${name}${detail ? ` — ${detail}` : ''}`
     : `${name} — not listed`;
@@ -76,22 +106,38 @@ export function SourceBadge({
 }
 
 export default function IndexTable({ models, benchmarks, scores }: Props) {
-  const [sortKey, setSortKey] = useState<'overall' | string>('overall');
+  const [rankKey, setRankKey] = useState<RankKey>({ level: 'overall' });
   const [query, setQuery] = useState('');
   const [org, setOrg] = useState('all');
   const [minBoards, setMinBoards] = useState(MIN_SOURCES);
   const [mustHave, setMustHave] = useState<Set<string>>(new Set());
   const [openModel, setOpenModel] = useState<string | null>(null);
 
-  const weighted = useMemo(
-    () => benchmarks.filter((b) => (WEIGHTS[b.id] ?? 0) > 0),
-    [benchmarks],
+  const weights = useMemo(() => weightsFor(benchmarks), [benchmarks]);
+  const sources = useMemo(() => groupBoards(benchmarks), [benchmarks]);
+  const boards = useMemo(
+    () => sources.filter((s) => s.kind !== 'report'),
+    [sources],
   );
-  const boards = useMemo(() => groupBoards(weighted), [weighted]);
-  const domains = useMemo(
-    () => [...new Set(weighted.map((b) => b.domain))],
-    [weighted],
+  const reports = useMemo(
+    () => sources.filter((s) => s.kind === 'report'),
+    [sources],
   );
+
+  /** category → its domains, in first-seen order; categories in display order. */
+  const taxonomy = useMemo(() => {
+    const m = new Map<string, string[]>();
+    for (const b of benchmarks) {
+      const list = m.get(b.category) ?? [];
+      if (!list.includes(b.domain)) list.push(b.domain);
+      m.set(b.category, list);
+    }
+    return [...m.entries()].sort(
+      (a, b) =>
+        categoryRank(a[0]) - categoryRank(b[0]) || a[0].localeCompare(b[0]),
+    );
+  }, [benchmarks]);
+
   const orgs = useMemo(
     () => [...new Set(models.map((m) => m.org))].sort(),
     [models],
@@ -103,12 +149,12 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
         models,
         benchmarks,
         scores,
-        weights: WEIGHTS,
+        weights,
         overall: OVERALL,
         priorFraction: PRIOR_FRACTION,
         minSources: MIN_SOURCES,
       }),
-    [models, benchmarks, scores],
+    [models, benchmarks, scores, weights],
   );
 
   const rankOf = useMemo(() => {
@@ -118,17 +164,13 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
     return m;
   }, [rows]);
 
-  const boardsScoring = useMemo(() => {
-    const groupOf = new Map(benchmarks.map((b) => [b.id, b.group ?? b.id]));
+  const sourcesScoring = useMemo(() => {
+    const groupOf = new Map(benchmarks.map((b) => [b.id, b.group]));
     const m = new Map<string, Set<string>>();
     for (const r of rows) {
       m.set(
         r.model.id,
-        new Set(
-          r.perBenchmark
-            .filter((s) => (WEIGHTS[s.benchmarkId] ?? 0) > 0)
-            .map((s) => groupOf.get(s.benchmarkId)!),
-        ),
+        new Set(r.perBenchmark.map((s) => groupOf.get(s.benchmarkId)!)),
       );
     }
     return m;
@@ -141,32 +183,36 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
       if (org !== 'all' && r.model.org !== org) return false;
       if (q && !`${r.model.name} ${r.model.org}`.toLowerCase().includes(q))
         return false;
-      const has = boardsScoring.get(r.model.id)!;
+      const has = sourcesScoring.get(r.model.id)!;
       for (const b of mustHave) if (!has.has(b)) return false;
       return true;
     });
-    if (sortKey !== 'overall') {
-      const byDomain = compareScores<AggregateRow>(
-        (r) => r.byDomain[sortKey] ?? null,
-      );
-      out = [...out].sort(
-        (a, b) => Number(b.ranked) - Number(a.ranked) || byDomain(a, b),
-      );
+    if (rankKey.level !== 'overall') {
+      const by = compareScores<AggregateRow>((r) => keyOf(r, rankKey));
+      out = [...out]
+        // A model with no figure in this scope is not "last": it is absent.
+        .filter((r) => keyOf(r, rankKey) !== null)
+        .sort((a, b) => Number(b.ranked) - Number(a.ranked) || by(a, b));
     }
     return out;
-  }, [rows, query, org, minBoards, mustHave, sortKey, boardsScoring]);
+  }, [rows, query, org, minBoards, mustHave, rankKey, sourcesScoring]);
 
   const rankedCount = rows.filter((r) => r.ranked).length;
   const shown = filtered.slice(0, PAGE);
   const coverable = rows[0]?.coverable ?? boards.length;
 
-  const toggleBoard = (id: string) =>
+  const toggleSource = (id: string) =>
     setMustHave((s) => {
       const next = new Set(s);
       if (next.has(id)) next.delete(id);
       else next.add(id);
       return next;
     });
+
+  const activeCategory = rankKey.level === 'overall' ? null : rankKey.category;
+  const activeDomains = activeCategory
+    ? (taxonomy.find(([c]) => c === activeCategory)?.[1] ?? [])
+    : [];
 
   return (
     <div>
@@ -197,30 +243,29 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
         <select
           value={minBoards}
           onChange={(e) => setMinBoards(Number(e.target.value))}
-          aria-label="Minimum sources"
+          aria-label="Minimum recognised boards"
           className={CONTROL}>
+          <option value={0}>Any coverage (incl. report-only)</option>
           {Array.from({ length: coverable }, (_, i) => i + 1).map((n) => (
             <option
               key={n}
               value={n}>
-              {n === 1
-                ? 'Any coverage (incl. provisional)'
-                : `Scored by ${n}+ boards`}
+              {n === 1 ? 'At least 1 board' : `Scored by ${n}+ boards`}
             </option>
           ))}
         </select>
         <span className="text-micro text-g2 ml-1 tracking-[0.14em] uppercase">
           Must include
         </span>
-        {boards.map((b) => {
-          const on = mustHave.has(b.id);
+        {sources.map((s) => {
+          const on = mustHave.has(s.id);
           return (
             <button
-              key={b.id}
+              key={s.id}
               type="button"
               aria-pressed={on}
-              onClick={() => toggleBoard(b.id)}
-              title={b.headline.name}
+              onClick={() => toggleSource(s.id)}
+              title={s.headline.name}
               className={cn(
                 'rounded-md border p-0.5 transition-colors',
                 on
@@ -228,7 +273,7 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
                   : 'border-transparent hover:border-white/20',
               )}>
               <SourceBadge
-                board={b}
+                source={s}
                 present
               />
             </button>
@@ -236,46 +281,103 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
         })}
       </div>
 
-      {/* ---------------- domain tabs ---------------- */}
+      {/* ---------------- rank by: category, then domain ---------------- */}
       <div
         role="tablist"
-        aria-label="Rank by"
-        className="mb-3 flex flex-wrap items-center gap-1.5">
+        aria-label="Rank by category"
+        className="mb-2 flex flex-wrap items-center gap-1.5">
         <span className="text-micro text-g2 mr-2 tracking-[0.14em] uppercase">
           Rank by
         </span>
-        {[
-          { key: 'overall', label: 'Overall' },
-          ...domains.map((d) => ({ key: d, label: domainLabel(d) })),
-        ].map((t) => {
-          const on = sortKey === t.key;
+        <button
+          type="button"
+          role="tab"
+          aria-selected={rankKey.level === 'overall'}
+          onClick={() => setRankKey({ level: 'overall' })}
+          className={cn(
+            CHIP,
+            rankKey.level === 'overall' ? CHIP_ON : CHIP_OFF,
+          )}>
+          Overall
+        </button>
+        {taxonomy.map(([category, domains]) => {
+          const on = activeCategory === category;
           return (
             <button
-              key={t.key}
+              key={category}
               type="button"
               role="tab"
               aria-selected={on}
-              onClick={() => setSortKey(t.key)}
-              className={cn(
-                'text-caption rounded-md border px-2.5 py-1 font-medium transition-colors',
-                on
-                  ? 'border-primary bg-primary/20 text-white'
-                  : 'text-g2 border-white/12 hover:border-white/30 hover:text-white',
-              )}>
-              {t.label}
+              onClick={() => setRankKey({ level: 'category', category })}
+              className={cn(CHIP, on ? CHIP_ON : CHIP_OFF)}>
+              {domainLabel(category)}
+              <span className="ml-1.5 font-mono text-[10px] opacity-60">
+                {domains.length}
+              </span>
             </button>
           );
         })}
       </div>
 
+      {activeCategory ? (
+        <div
+          role="tablist"
+          aria-label={`Rank by domain within ${activeCategory}`}
+          className="mb-3 flex flex-wrap items-center gap-1.5 pl-1">
+          <span className="text-micro mr-2 tracking-[0.14em] text-[#78758A] uppercase">
+            {domainLabel(activeCategory)} ›
+          </span>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={rankKey.level === 'category'}
+            onClick={() =>
+              setRankKey({ level: 'category', category: activeCategory })
+            }
+            className={cn(
+              CHIP,
+              rankKey.level === 'category' ? CHIP_ON : CHIP_OFF,
+            )}>
+            All {domainLabel(activeCategory).toLowerCase()}
+          </button>
+          {activeDomains.map((domain) => {
+            const on = rankKey.level === 'domain' && rankKey.domain === domain;
+            return (
+              <button
+                key={domain}
+                type="button"
+                role="tab"
+                aria-selected={on}
+                onClick={() =>
+                  setRankKey({
+                    level: 'domain',
+                    category: activeCategory,
+                    domain,
+                  })
+                }
+                className={cn(CHIP, on ? CHIP_ON : CHIP_OFF)}>
+                {domainLabel(domain)}
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
+
       <p className="text-caption mb-2 text-[#78758A]">
         <span className="text-[#D9D7E0]">{rankedCount}</span> ranked ·{' '}
         <span className="text-[#D9D7E0]">{rows.length - rankedCount}</span>{' '}
-        provisional (one source) · showing{' '}
+        provisional · showing{' '}
         <span className="text-[#D9D7E0]">
           {shown.length}
           {filtered.length > shown.length ? ` of ${filtered.length}` : ''}
         </span>
+        {rankKey.level !== 'overall' ? (
+          <>
+            {' '}
+            · ranked by{' '}
+            <span className="text-[#D9D7E0]">{rankLabel(rankKey)}</span>
+          </>
+        ) : null}
       </p>
 
       {/* ---------------- table ---------------- */}
@@ -288,13 +390,13 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
               <th
                 className={cn(
                   'px-3 py-3 text-right font-medium',
-                  sortKey === 'overall' && 'text-white',
+                  rankKey.level === 'overall' && 'text-white',
                 )}>
                 Index
               </th>
-              {sortKey !== 'overall' ? (
+              {rankKey.level !== 'overall' ? (
                 <th className="px-3 py-3 text-right font-medium text-white">
-                  {domainLabel(sortKey)}
+                  {rankLabel(rankKey)}
                 </th>
               ) : null}
               <th className="px-3 py-3 font-medium">Sources</th>
@@ -307,9 +409,10 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
                 key={row.model.id}
                 row={row}
                 rank={rankOf.get(row.model.id)}
-                sortKey={sortKey}
-                domains={domains}
+                rankKey={rankKey}
+                taxonomy={taxonomy}
                 boards={boards}
+                reports={reports}
                 open={openModel === row.model.id}
                 onToggle={() =>
                   setOpenModel(openModel === row.model.id ? null : row.model.id)
@@ -331,11 +434,11 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
 
       <p className="text-caption text-g2 mt-3 max-w-[76ch]">
         Scores are 0–100 standardized: 50 is average across the models listed,
-        not an absolute grade. Thin evidence is pulled toward 50, and a model
-        scored by fewer than {MIN_SOURCES} boards is listed as provisional
-        without a rank. A filled badge means that board scored the model; a
-        dashed one means it did not list it. Hover a badge for the board and its
-        headline figure.
+        not an absolute grade. Thin evidence is pulled toward 50. A model scored
+        by fewer than {MIN_SOURCES} recognised boards is listed as provisional
+        without a rank; figures from reports ✱ shape category and domain columns
+        only. A filled badge means that source scored the model; hover for the
+        source and its figure.
         {filtered.length > shown.length
           ? ` The first ${PAGE} of ${filtered.length} are shown; narrow the filters to see the rest.`
           : ''}
@@ -347,23 +450,28 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
 function Row({
   row,
   rank,
-  sortKey,
-  domains,
+  rankKey,
+  taxonomy,
   boards,
+  reports,
   open,
   onToggle,
 }: {
   row: AggregateRow;
   rank: number | undefined;
-  sortKey: string;
-  domains: string[];
+  rankKey: RankKey;
+  taxonomy: [string, string[]][];
   boards: BoardView[];
+  reports: BoardView[];
   open: boolean;
   onToggle: () => void;
 }) {
   const thin = row.ranked && row.covered < row.coverable;
   const agree = agreement(row.dispersion);
   const scored = new Map(row.perBenchmark.map((s) => [s.benchmarkId, s]));
+  const reportsScoring = reports.filter((r) =>
+    r.measures.some((m) => scored.has(m.id)),
+  );
 
   return (
     <>
@@ -374,7 +482,9 @@ function Row({
         )}
         onClick={onToggle}>
         <td className="text-g2 px-3 py-2.5 font-mono">
-          {rank ?? <span title="Provisional — one source">—</span>}
+          {rank ?? (
+            <span title="Provisional — not enough recognised boards">—</span>
+          )}
         </td>
         <td className="px-3 py-2.5">
           <b
@@ -398,9 +508,9 @@ function Row({
           )}>
           {fmt(row.score)}
         </td>
-        {sortKey !== 'overall' ? (
+        {rankKey.level !== 'overall' ? (
           <td className="px-3 py-2.5 text-right font-mono text-white">
-            {fmt(row.byDomain[sortKey] ?? null)}
+            {fmt(keyOf(row, rankKey))}
           </td>
         ) : null}
         <td className="px-3 py-2.5">
@@ -410,12 +520,22 @@ function Row({
               return (
                 <SourceBadge
                   key={b.id}
-                  board={b}
+                  source={b}
                   present={Boolean(s)}
                   detail={s ? rawLabel(b.headline.metric, s.raw) : undefined}
                 />
               );
             })}
+            {reportsScoring.length > 0 ? (
+              <span
+                title={reportsScoring.map((r) => r.headline.name).join(' · ')}
+                className={cn(
+                  'text-micro inline-flex h-5 min-w-7 items-center justify-center rounded border px-1 font-mono font-semibold',
+                  REPORT_BADGE.tone,
+                )}>
+                ✱{reportsScoring.length > 1 ? reportsScoring.length : ''}
+              </span>
+            ) : null}
             <span
               className={cn(
                 'text-caption ml-1.5 font-mono',
@@ -449,14 +569,24 @@ function Row({
                 <b className="font-medium text-[#D9D7E0]">
                   {row.covered} of {row.coverable}
                 </b>{' '}
-                boards
+                recognised boards
+                {row.reports > 0 ? (
+                  <>
+                    {' '}
+                    and{' '}
+                    <b className="font-medium text-[#D9D7E0]">
+                      {row.reports}
+                    </b>{' '}
+                    report{row.reports > 1 ? 's' : ''} ✱
+                  </>
+                ) : null}
               </span>
               <span>
                 Evidence{' '}
                 <b className="font-medium text-[#D9D7E0]">
                   {Math.round(row.evidence * 100)}%
                 </b>{' '}
-                of available weight
+                of available board weight
               </span>
               {row.covered > 1 ? (
                 <span>
@@ -466,45 +596,63 @@ function Row({
               ) : null}
               {!row.ranked ? (
                 <span className="text-[#F5C86B]">
-                  Provisional: one source is not enough to rank on.
+                  Provisional: fewer than {MIN_SOURCES} recognised boards.
                 </span>
               ) : null}
             </div>
 
-            <dl className="mb-4 flex flex-wrap gap-1.5">
-              {domains.map((d) => {
-                const v = row.byDomain[d] ?? null;
+            {/* category → domain scores */}
+            <div className="mb-4 flex flex-col gap-1.5">
+              {taxonomy.map(([category, domains]) => {
+                const c = row.byCategory[category] ?? null;
+                const present = domains.filter(
+                  (d) => (row.byDomain[d] ?? null) !== null,
+                );
+                if (c === null && present.length === 0) return null;
                 return (
                   <div
-                    key={d}
-                    className={cn(
-                      'text-caption flex items-baseline gap-1.5 rounded-md border px-2 py-1',
-                      v === null
-                        ? 'border-dashed border-white/10 text-white/30'
-                        : 'border-white/12',
-                    )}>
-                    <dt className="text-g2">{domainLabel(d)}</dt>
-                    <dd className="font-mono text-white">{fmt(v)}</dd>
+                    key={category}
+                    className="text-caption flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <span className="w-32 shrink-0 text-white">
+                      {domainLabel(category)}
+                      <span className="text-g2 ml-1.5 font-mono">{fmt(c)}</span>
+                    </span>
+                    {present.map((d) => (
+                      <span
+                        key={d}
+                        className="rounded-md border border-white/12 px-1.5 py-0.5">
+                        <span className="text-g2">{domainLabel(d)}</span>{' '}
+                        <span className="font-mono text-white">
+                          {fmt(row.byDomain[d])}
+                        </span>
+                      </span>
+                    ))}
                   </div>
                 );
               })}
-            </dl>
+            </div>
 
+            {/* provenance, grouped by source */}
             <div className="flex flex-col gap-3">
-              {boards.map((b) => {
-                const present = b.measures.filter((m) => scored.has(m.id));
+              {[...boards, ...reports].map((src) => {
+                const present = src.measures.filter((m) => scored.has(m.id));
                 if (present.length === 0) return null;
                 const first = scored.get(present[0].id)!;
+                const h = src.headline;
                 return (
-                  <div key={b.id}>
+                  <div key={src.id}>
                     <div className="text-caption mb-1 flex flex-wrap items-center gap-2">
                       <SourceBadge
-                        board={b}
+                        source={src}
                         present
                       />
-                      <b className="font-medium text-white">
-                        {b.headline.name}
-                      </b>
+                      <b className="font-medium text-white">{h.name}</b>
+                      {src.kind === 'report' ? (
+                        <span className="text-[#E8A9F0]">
+                          report by {h.publisher}
+                          {h.publishedAt ? `, ${h.publishedAt}` : ''}
+                        </span>
+                      ) : null}
                       <span className="text-[#78758A]">
                         as{' '}
                         <span className="font-mono">
@@ -513,7 +661,7 @@ function Row({
                         {first.scaffold ? ` via ${first.scaffold}` : ''}
                       </span>
                       <a
-                        href={b.headline.url}
+                        href={h.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
@@ -527,8 +675,9 @@ function Row({
                         return (
                           <div
                             key={m.id}
-                            className="flex items-baseline gap-2">
-                            <dt className="text-g2 w-40 shrink-0 truncate">
+                            className="flex items-baseline gap-2"
+                            title={`${m.category} › ${m.domain}`}>
+                            <dt className="text-g2 w-44 shrink-0 truncate">
                               {m.name.replace(/^.*· /, '')}
                             </dt>
                             <dd className="font-mono text-[#D9D7E0]">

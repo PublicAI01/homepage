@@ -7,19 +7,28 @@ import {
   MIN_SOURCES,
   OVERALL,
   PRIOR_FRACTION,
+  REPORT_WEIGHT,
+  weightFor,
   WEIGHTING,
-  WEIGHTS,
+  weightsFor,
 } from './weights';
 
-const bench = (id: string, group = id): Benchmark => ({
+const bench = (
+  id: string,
+  group = id,
+  extra: Partial<Benchmark> = {},
+): Benchmark => ({
   id,
   name: id,
   publisher: 'test',
   url: 'https://example.com',
   retrievedAt: '2026-09-05',
   metric: 'percent',
+  category: 'test',
   domain: 'test',
+  kind: 'board',
   group,
+  ...extra,
 });
 
 const model = (id: string): Model => ({ id, name: id, org: 'test' });
@@ -380,22 +389,98 @@ describe('shrinkage', () => {
   });
 });
 
+describe('reports and categories', () => {
+  const bs = [
+    bench('a', 'a', { category: 'Coding', domain: 'Code generation' }),
+    bench('b', 'b', { category: 'Reasoning', domain: 'Math' }),
+    bench('r:x', 'r', {
+      category: 'Coding',
+      domain: 'Tool use',
+      kind: 'report',
+    }),
+  ];
+  const ms = [model('m1'), model('m2')];
+  const ss = [
+    score('m1', 'a', 90),
+    score('m2', 'a', 10),
+    score('m1', 'b', 10),
+    score('m2', 'b', 90),
+    score('m1', 'r:x', 90),
+    score('m2', 'r:x', 10),
+  ];
+  const run = () =>
+    aggregate({
+      models: ms,
+      benchmarks: bs,
+      scores: ss,
+      weights: { a: 50, b: 50, 'r:x': 10 },
+      overall: new Set(['a', 'b']),
+      minSources: 2,
+    });
+
+  it('does not count a report toward coverage, but does count it separately', () => {
+    const out = run();
+    for (const r of out) {
+      expect(r.covered).toBe(2);
+      expect(r.coverable).toBe(2);
+      expect(r.reports).toBe(1);
+    }
+  });
+
+  it('keeps a report out of the overall score', () => {
+    const out = run();
+    // a and b cancel exactly; only the report distinguishes m1 from m2.
+    expect(out[0].score).toBeCloseTo(out[1].score!, 6);
+  });
+
+  it('lets a report shape its category and domain', () => {
+    const out = run();
+    const m1 = out.find((r) => r.model.id === 'm1')!;
+    const m2 = out.find((r) => r.model.id === 'm2')!;
+    expect(m1.byCategory.Coding!).toBeGreaterThan(m2.byCategory.Coding!);
+    expect(m1.byDomain['Tool use']!).toBeGreaterThan(m2.byDomain['Tool use']!);
+  });
+
+  it('scores a category from every measure filed under it', () => {
+    const out = run();
+    const m1 = out.find((r) => r.model.id === 'm1')!;
+    const a = m1.perBenchmark.find((s) => s.benchmarkId === 'a')!;
+    const rx = m1.perBenchmark.find((s) => s.benchmarkId === 'r:x')!;
+    // Coding = weighted mean of a (50) and r:x (10), no prior.
+    expect(m1.byCategory.Coding).toBeCloseTo(
+      (a.normalized * 50 + rx.normalized * 10) / 60,
+      6,
+    );
+  });
+});
+
 describe('weighting', () => {
-  it('assigns a weight to every shipped benchmark and nothing else', () => {
+  it('names only shipped benchmarks, and gives every shipped measure a weight', () => {
     const ids = new Set(benchmarks.map((b) => b.id));
     for (const w of WEIGHTING) expect(ids.has(w.benchmarkId)).toBe(true);
-    for (const b of benchmarks) expect(typeof WEIGHTS[b.id]).toBe('number');
+    for (const b of benchmarks) expect(weightFor(b)).toBeGreaterThan(0);
+  });
+
+  it('discounts a report below any board measure', () => {
+    for (const b of benchmarks) {
+      if (b.kind === 'report') expect(weightFor(b)).toBe(REPORT_WEIGHT);
+      else expect(weightFor(b)).toBeGreaterThan(REPORT_WEIGHT);
+    }
+  });
+
+  it('keeps every report out of the overall index', () => {
+    for (const b of benchmarks) {
+      if (b.kind === 'report') expect(OVERALL.has(b.id)).toBe(false);
+    }
   });
 
   it('has overall shares that sum to 100, so they read as percentages', () => {
-    expect(
-      WEIGHTING.filter((w) => w.overall).reduce((s, w) => s + w.weight, 0),
-    ).toBe(100);
+    expect(WEIGHTING.reduce((s, w) => s + w.weight, 0)).toBe(100);
   });
 
   it('never lets a board’s category figures into the overall index', () => {
-    for (const w of WEIGHTING) {
-      if (w.benchmarkId.startsWith('livebench-')) expect(w.overall).toBe(false);
+    for (const b of benchmarks) {
+      if (b.id.startsWith('livebench-')) expect(OVERALL.has(b.id)).toBe(false);
     }
   });
 
@@ -439,7 +524,7 @@ describe('shipped data', () => {
       models,
       benchmarks,
       scores,
-      weights: WEIGHTS,
+      weights: weightsFor(benchmarks),
       overall: OVERALL,
       priorFraction: PRIOR_FRACTION,
       minSources: MIN_SOURCES,
@@ -448,7 +533,26 @@ describe('shipped data', () => {
   it('produces a full ranking under the published weighting', () => {
     const out = shipped();
     expect(out).toHaveLength(models.length);
-    for (const r of out) expect(r.score).not.toBeNull();
+    for (const r of out) {
+      // Ranked models always have an overall score. A model seen only in a
+      // report has none — reports never enter the Overall index — but must
+      // still score somewhere, or it should not be in the snapshot.
+      if (r.ranked) expect(r.score).not.toBeNull();
+      const anywhere =
+        r.score !== null || Object.values(r.byDomain).some((v) => v !== null);
+      expect(anywhere, r.model.id).toBe(true);
+    }
+  });
+
+  it('gives a report-only model domain scores but no overall score', () => {
+    const out = shipped();
+    const reportOnly = out.filter((r) => r.covered === 0 && r.reports > 0);
+    expect(reportOnly.length).toBeGreaterThan(0);
+    for (const r of reportOnly) {
+      expect(r.score).toBeNull();
+      expect(r.ranked).toBe(false);
+      expect(Object.values(r.byDomain).some((v) => v !== null)).toBe(true);
+    }
   });
 
   it('places ranked models before provisional ones', () => {
@@ -459,9 +563,16 @@ describe('shipped data', () => {
     for (const r of out.slice(0, firstProvisional)) expect(r.ranked).toBe(true);
   });
 
-  it('counts coverage in boards, so LiveBench’s seven categories are one source', () => {
+  it('counts coverage in recognised boards, so LiveBench’s seven categories are one source and a report is none', () => {
     const out = shipped();
     for (const r of out) expect(r.covered).toBeLessThanOrEqual(4);
+  });
+
+  it('never ranks a model on report evidence alone', () => {
+    const out = shipped();
+    for (const r of out) {
+      if (r.covered < MIN_SOURCES) expect(r.ranked).toBe(false);
+    }
   });
 
   it('does not let one board dictate the winner: domain leaders differ', () => {

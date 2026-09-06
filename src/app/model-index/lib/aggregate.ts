@@ -27,6 +27,10 @@ import type { Benchmark, Model, Score } from '../data/types';
  * 4. A board can publish several figures. Its headline figure carries the
  *    board's share in the Overall index; its category figures shape only the
  *    domain they measure, so a board is never counted twice.
+ *
+ * 5. A report ✱ — a launch post, a blog — is evidence of a different grade.
+ *    Its figures shape domain and category columns at a discount, never the
+ *    Overall index, and never count toward ranking eligibility.
  */
 
 /** Mean of the board, in standard-deviation units, rescaled so 50 is average. */
@@ -51,11 +55,15 @@ export interface AggregateRow {
   score: number | null;
   /** The same computation, restricted to the measures in each domain. */
   byDomain: Record<string, number | null>;
+  /** The same computation, restricted to the measures in each category. */
+  byCategory: Record<string, number | null>;
   perBenchmark: NormalizedScore[];
-  /** How many boards (not measures) scored this model, among the weighted ones. */
+  /** How many recognised boards (not measures, not reports) scored this model. */
   covered: number;
-  /** How many boards carry weight. */
+  /** How many recognised boards carry weight. */
   coverable: number;
+  /** How many reports ✱ scored this model. Informational; never confers rank. */
+  reports: number;
   /** Weight-times-confidence behind the overall score, out of the total available. */
   evidence: number;
   /** Scored by enough boards to be placed in the ranking. */
@@ -161,11 +169,16 @@ export function aggregate({
 }: AggregateInput): AggregateRow[] {
   const weighted = benchmarks.filter((b) => (weights[b.id] ?? 0) > 0);
   const overallIds = overall ?? new Set(weighted.map((b) => b.id));
-  const boardOf = new Map(benchmarks.map((b) => [b.id, b.group ?? b.id]));
+  const boardOf = new Map(benchmarks.map((b) => [b.id, b.group]));
+  const kindOf = new Map(benchmarks.map((b) => [b.id, b.kind]));
   const domainOf = new Map(benchmarks.map((b) => [b.id, b.domain]));
+  const categoryOf = new Map(benchmarks.map((b) => [b.id, b.category]));
 
   const domains = [...new Set(weighted.map((b) => b.domain))];
-  const coverable = new Set(weighted.map((b) => boardOf.get(b.id))).size;
+  const categories = [...new Set(weighted.map((b) => b.category))];
+  const coverable = new Set(
+    weighted.filter((b) => b.kind !== 'report').map((b) => b.group),
+  ).size;
 
   const sumWeight = (ids: Iterable<string>) => {
     let t = 0;
@@ -179,6 +192,12 @@ export function aggregate({
     domains.map((d) => [
       d,
       sumWeight(weighted.filter((b) => b.domain === d).map((b) => b.id)),
+    ]),
+  );
+  const categoryWeight = new Map(
+    categories.map((c) => [
+      c,
+      sumWeight(weighted.filter((b) => b.category === c).map((b) => b.id)),
     ]),
   );
 
@@ -235,16 +254,36 @@ export function aggregate({
       ).score;
     }
 
-    const covered = new Set(contributing.map((s) => boardOf.get(s.benchmarkId)))
-      .size;
+    const byCategory: Record<string, number | null> = {};
+    for (const c of categories) {
+      byCategory[c] = shrunkMean(
+        contributing.filter((s) => categoryOf.get(s.benchmarkId) === c),
+        weights,
+        categoryWeight.get(c) ?? 0,
+        priorFraction,
+      ).score;
+    }
+
+    const covered = new Set(
+      contributing
+        .filter((s) => kindOf.get(s.benchmarkId) !== 'report')
+        .map((s) => boardOf.get(s.benchmarkId)),
+    ).size;
+    const reports = new Set(
+      contributing
+        .filter((s) => kindOf.get(s.benchmarkId) === 'report')
+        .map((s) => boardOf.get(s.benchmarkId)),
+    ).size;
 
     return {
       model,
       score,
       byDomain,
+      byCategory,
       perBenchmark,
       covered,
       coverable,
+      reports,
       evidence: overallWeight > 0 ? evidence / overallWeight : 0,
       ranked: covered >= minSources,
       dispersion: stdDev(inOverall.map((s) => s.normalized)),
