@@ -8,10 +8,14 @@ import type { IndexData } from './types';
  */
 const data = raw as IndexData;
 
-export const { generatedAt, benchmarks, models, scores, excluded } = data;
+export const { generatedAt, benchmarks, models, scores, excluded, catalogs } =
+  data;
 
 export type {
+  Access,
+  AccessOpenRouter,
   Benchmark,
+  Catalog,
   Excluded,
   IndexData,
   Metric,

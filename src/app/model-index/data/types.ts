@@ -66,10 +66,46 @@ export interface Score {
   scaffold?: string;
 }
 
+/** Where a model is listed on OpenRouter: one OpenAI-compatible endpoint, one id, for many vendors. */
+export interface AccessOpenRouter {
+  id: string;
+  url: string;
+  contextLength?: number;
+  /** USD per million tokens at the date read; absent where the router prints a variable price. */
+  inputPerM?: number;
+  outputPerM?: number;
+  /** ISO date the router first listed the model. */
+  listedAt?: string;
+  modalities?: string[];
+}
+
+/**
+ * How a model can be reached. None of this touches a score; it is carried so
+ * an answer to "which model?" can also say "and here is how to call it".
+ */
+export interface Access {
+  openrouter?: AccessOpenRouter;
+  /** Open weights, where the catalog links a repository. */
+  weights?: { huggingFaceId: string; url: string };
+  /** The vendor's own developer site. Curated per organisation, not read from a source. */
+  official?: { name: string; url: string };
+}
+
 export interface Model {
   id: string;
   name: string;
   org: string;
+  access?: Access;
+}
+
+/** A catalog the access fields were read from. Cited like a board, never scored. */
+export interface Catalog {
+  id: string;
+  name: string;
+  publisher: string;
+  url: string;
+  retrievedAt: string;
+  caveat?: string;
 }
 
 /** A well-known board deliberately left out, and why. Exclusions are part of the method. */
@@ -86,4 +122,5 @@ export interface IndexData {
   models: Model[];
   scores: Score[];
   excluded: Excluded[];
+  catalogs: Catalog[];
 }
