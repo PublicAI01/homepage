@@ -45,7 +45,7 @@ const NAV_LIST = [
   {
     id: 'model-index',
     href: '/model-index',
-    label: 'Index',
+    label: 'Model Index',
     comingSoon: false,
   },
 ] as const;
