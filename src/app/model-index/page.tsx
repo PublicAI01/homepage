@@ -93,7 +93,7 @@ const limits = [
   },
   {
     title: 'Size classes are what makers disclose',
-    text: 'Small ≤ 15B, medium 15–100B, large > 100B by total parameters: counted from the weights on Hugging Face for open models, read from the name otherwise. A closed model is undisclosed, not small; within a class, positions are simply the ranking filtered to it, on the same scores.',
+    text: 'Small ≤ 15B, medium 15–100B, large 100B–1T, very large > 1T by total parameters: counted from the weights on Hugging Face for open models, read from the name otherwise. A closed model is undisclosed, not small; within a class, positions are simply the ranking filtered to it, on the same scores.',
   },
   {
     title: 'Access facts are a catalog’s, not a test',

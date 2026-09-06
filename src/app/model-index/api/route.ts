@@ -14,7 +14,7 @@ import {
  *   /model-index/api                        → describe_index
  *   /model-index/api?model=claude-fable-5-1 → get_model
  *   /model-index/api?scope=coding&limit=10  → rank_models
- *     (also org, minBoards, openWeights, callable, reports=false, size=small|medium|large|undisclosed)
+ *     (also org, minBoards, openWeights, callable, reports=false, size=small|medium|large|xlarge|undisclosed)
  */
 export function GET(request: Request) {
   const p = new URL(request.url).searchParams;

@@ -294,7 +294,7 @@ export interface RankQuery {
   callable?: boolean;
   /** Include report ✱ figures (launch posts, blogs). Default true. */
   reports?: boolean;
-  /** Size class by total parameters: small ≤ 15B, medium 15–100B, large > 100B, undisclosed. */
+  /** Size class by total parameters: small ≤ 15B, medium 15–100B, large 100B–1T, xlarge > 1T, undisclosed. */
   size?: SizeTier;
 }
 
