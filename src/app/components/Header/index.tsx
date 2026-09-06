@@ -67,7 +67,7 @@ const Header = () => {
                 <li
                   key={index}
                   className={cn(
-                    'relative z-10 flex list-none cursor-default items-center justify-center gap-1.5 py-2 text-center select-none',
+                    'relative z-10 flex cursor-default list-none items-center justify-center gap-1.5 py-2 text-center select-none',
                     styles['coming-soon'],
                   )}>
                   <span className="text-base font-semibold text-white/50">
@@ -100,7 +100,7 @@ const Header = () => {
             )}
             <div
               className={cn(
-                'absolute bottom-0 left-0 h-full w-1/4 rounded-sm',
+                'absolute bottom-0 left-0 h-full rounded-sm',
                 styles.slider,
               )}
               aria-hidden></div>
