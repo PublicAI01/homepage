@@ -159,18 +159,38 @@ export default function ModelIndex() {
               'text-subheading mb-4 font-semibold text-[#B9B7C4]',
               MEASURE,
             )}>
+            A composite of {boards.length} recognised leaderboards —{' '}
             {models.length} models, {domains.length} domains, one scale.
           </p>
-          <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
-            A single benchmark is easy to target and easy to overfit. This index
-            normalizes recognised public leaderboards onto one scale, discounts
-            each score by the uncertainty its publisher reports, shrinks thin
-            evidence, and weights the rest by a scheme published beside the
-            table — overall, by category, and by domain. Figures from launch
-            posts and blogs are indexed too, marked ✱ and kept out of the
-            headline. Every model opens into a card with how to call it, and
-            agents can ask the same questions over MCP.
-          </p>
+          <div
+            className={cn(
+              'text-lede mb-5 flex flex-col gap-3 text-[#D9D7E0]',
+              MEASURE,
+            )}>
+            {/* Overview, the problem, what this index does about it, and who
+                can ask — in that order, one short paragraph each. */}
+            <p>
+              Model evaluation has fragmented into dozens of leaderboards, each
+              with its own harness, and every launch ships with a table the
+              vendor chose. A single benchmark is easy to target: a score that
+              tops one board says little about the next.
+            </p>
+            <p>
+              PublicAI runs no evaluations of its own. It aggregates the public
+              ones by statistical method — every figure standardized onto one
+              scale, discounted by the uncertainty its publisher reports, shrunk
+              where evidence is thin, and weighted by a scheme printed beside
+              the table — into an index no single benchmark can be tuned to:
+              overall, by category, and by domain, for anyone choosing a model
+              for a vertical or citing one in a paper. Launch posts and blogs
+              are indexed too, marked ✱ and kept out of the headline.
+            </p>
+            <p>
+              Agents get the same answers as people: the index is served over
+              MCP and a JSON API, every score with its sources, every model with
+              the way to call it.
+            </p>
+          </div>
           <dl className="text-caption flex flex-wrap gap-x-6 gap-y-1 text-[#78758A]">
             {[
               ['Updated', updated],
