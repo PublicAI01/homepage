@@ -566,7 +566,10 @@ describe('shipped data', () => {
 
   it('counts coverage in recognised boards, so LiveBench’s seven categories are one source and a report is none', () => {
     const out = shipped();
-    for (const r of out) expect(r.covered).toBeLessThanOrEqual(4);
+    const boards = new Set(
+      benchmarks.filter((b) => b.kind === 'board').map((b) => b.group),
+    ).size;
+    for (const r of out) expect(r.covered).toBeLessThanOrEqual(boards);
   });
 
   it('never ranks a model on report evidence alone', () => {
