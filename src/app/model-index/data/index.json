@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T18:30:46.245Z",
+  "generatedAt": "2026-09-06T19:07:32.219Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -603,6 +603,156 @@
       "kind": "report",
       "source": "IFM — K2 Horizon launch",
       "group": "ifm-k2-horizon"
+    },
+    {
+      "id": "datacamp-astra-vs-fable:terminal-bench-4-0",
+      "name": "Terminal-Bench 4.0",
+      "publisher": "DataCamp",
+      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-05",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Agentic coding",
+      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
+      "kind": "report",
+      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
+      "group": "datacamp-astra-vs-fable"
+    },
+    {
+      "id": "datacamp-astra-vs-fable:deepswe-v1-1",
+      "name": "DeepSWE v1.1",
+      "publisher": "DataCamp",
+      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-05",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Software engineering",
+      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
+      "kind": "report",
+      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
+      "group": "datacamp-astra-vs-fable"
+    },
+    {
+      "id": "datacamp-astra-vs-fable:frontiercode-1-1-main",
+      "name": "FrontierCode 1.1 Main",
+      "publisher": "DataCamp",
+      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-05",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Software engineering",
+      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
+      "kind": "report",
+      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
+      "group": "datacamp-astra-vs-fable"
+    },
+    {
+      "id": "datacamp-astra-vs-fable:internal-database-migration",
+      "name": "Internal database migration",
+      "publisher": "DataCamp",
+      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-05",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Agentic coding",
+      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
+      "kind": "report",
+      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
+      "group": "datacamp-astra-vs-fable"
+    },
+    {
+      "id": "cellcog-k2-horizon:gdpval-aa-elo",
+      "name": "GDPVal-AA (Elo)",
+      "publisher": "CellCog",
+      "url": "https://cellcog.ai/blog/k2-horizon/",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-04",
+      "metric": "elo",
+      "category": "Agents",
+      "domain": "Professional tasks",
+      "caveat": "Third-party write-up. Figures are from the vendors’ own reports as the author compiled them, not re-run. Effort tiers are not stated.",
+      "kind": "report",
+      "source": "CellCog — K2 Horizon analysis",
+      "group": "cellcog-k2-horizon"
+    },
+    {
+      "id": "cellcog-k2-horizon:toolathlon-verified",
+      "name": "Toolathlon Verified",
+      "publisher": "CellCog",
+      "url": "https://cellcog.ai/blog/k2-horizon/",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-04",
+      "metric": "percent",
+      "category": "Agents",
+      "domain": "Tool use",
+      "caveat": "Third-party write-up. Figures are from the vendors’ own reports as the author compiled them, not re-run. Effort tiers are not stated.",
+      "kind": "report",
+      "source": "CellCog — K2 Horizon analysis",
+      "group": "cellcog-k2-horizon"
+    },
+    {
+      "id": "cellcog-k2-horizon:terminal-bench-2-1",
+      "name": "Terminal-Bench 2.1",
+      "publisher": "CellCog",
+      "url": "https://cellcog.ai/blog/k2-horizon/",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-04",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Agentic coding",
+      "caveat": "Third-party write-up. Figures are from the vendors’ own reports as the author compiled them, not re-run. Effort tiers are not stated.",
+      "kind": "report",
+      "source": "CellCog — K2 Horizon analysis",
+      "group": "cellcog-k2-horizon"
+    },
+    {
+      "id": "cellcog-k2-horizon:swe-bench-pro-strict",
+      "name": "SWE-bench Pro (strict)",
+      "publisher": "CellCog",
+      "url": "https://cellcog.ai/blog/k2-horizon/",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-04",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Software engineering",
+      "caveat": "Third-party write-up. Figures are from the vendors’ own reports as the author compiled them, not re-run. Effort tiers are not stated.",
+      "kind": "report",
+      "source": "CellCog — K2 Horizon analysis",
+      "group": "cellcog-k2-horizon"
+    },
+    {
+      "id": "cellcog-k2-horizon:mcpmark",
+      "name": "MCPMark",
+      "publisher": "CellCog",
+      "url": "https://cellcog.ai/blog/k2-horizon/",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-04",
+      "metric": "percent",
+      "category": "Agents",
+      "domain": "MCP tool use",
+      "caveat": "Third-party write-up. Figures are from the vendors’ own reports as the author compiled them, not re-run. Effort tiers are not stated.",
+      "kind": "report",
+      "source": "CellCog — K2 Horizon analysis",
+      "group": "cellcog-k2-horizon"
+    },
+    {
+      "id": "cellcog-k2-horizon:swe-atlas-qna-strict",
+      "name": "SWE-Atlas-QnA (strict)",
+      "publisher": "CellCog",
+      "url": "https://cellcog.ai/blog/k2-horizon/",
+      "retrievedAt": "2026-09-06",
+      "publishedAt": "2026-09-04",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Repository Q&A",
+      "caveat": "Third-party write-up. Figures are from the vendors’ own reports as the author compiled them, not re-run. Effort tiers are not stated.",
+      "kind": "report",
+      "source": "CellCog — K2 Horizon analysis",
+      "group": "cellcog-k2-horizon"
     }
   ],
   "models": [
@@ -1780,41 +1930,6 @@
       }
     },
     {
-      "id": "qwen3-5-122b-a10b",
-      "name": "Qwen3.5 122B A10B",
-      "org": "Alibaba",
-      "access": {
-        "openrouter": {
-          "id": "qwen/qwen3.5-122b-a10b",
-          "url": "https://openrouter.ai/qwen/qwen3.5-122b-a10b",
-          "contextLength": 262144,
-          "inputPerM": 0.29,
-          "outputPerM": 2.4,
-          "listedAt": "2026-02-25",
-          "modalities": ["text", "image", "video"]
-        },
-        "weights": {
-          "huggingFaceId": "Qwen/Qwen3.5-122B-A10B",
-          "url": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B"
-        },
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "qwen3-5-122b-a10b-2",
-      "name": "Qwen3.5 122B A10B",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
       "id": "amazon-nova-experimental-chat-10-20",
       "name": "Amazon Nova Experimental Chat 10 20",
       "org": "Amazon",
@@ -1869,22 +1984,6 @@
         }
       }
     },
-    {
-      "id": "nvidia-nemotron-3-super-120b-a12b",
-      "name": "NVIDIA Nemotron 3 Super 120B A12B",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
-    {
-      "id": "nemotron-3-super-120b-a12b",
-      "name": "Nemotron 3 Super 120B A12B",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
     { "id": "dolly-v2-12b", "name": "Dolly V2 12B", "org": "Other" },
     {
       "id": "gemma-3-12b-it",
@@ -1899,17 +1998,6 @@
     },
     {
       "id": "gemma-4-12b",
-      "name": "Gemma 4-12B",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      }
-    },
-    {
-      "id": "gemma-4-12b-2",
       "name": "Gemma 4 12B",
       "org": "Google",
       "access": {
@@ -1924,6 +2012,14 @@
       "id": "hypernova-60b-2605-high-based-on-gpt-oss-120b",
       "name": "HyperNova 60B 2605 (high, based on gpt-oss-120b)",
       "org": "Multiverse Computing"
+    },
+    {
+      "id": "nvidia-nemotron-3-super-120b-a12b",
+      "name": "NVIDIA Nemotron 3 Super 120B A12B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
     },
     {
       "id": "gpt-oss-120b",
@@ -1968,6 +2064,30 @@
         "official": {
           "name": "DeepSeek API",
           "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
+    {
+      "id": "qwen3-5-122b-a10b",
+      "name": "Qwen3.5 122B A10B",
+      "org": "Alibaba",
+      "access": {
+        "openrouter": {
+          "id": "qwen/qwen3.5-122b-a10b",
+          "url": "https://openrouter.ai/qwen/qwen3.5-122b-a10b",
+          "contextLength": 262144,
+          "inputPerM": 0.29,
+          "outputPerM": 2.4,
+          "listedAt": "2026-02-25",
+          "modalities": ["text", "image", "video"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3.5-122B-A10B",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B"
+        },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       }
     },
@@ -2045,6 +2165,19 @@
       "name": "Qwen3 14B",
       "org": "Alibaba",
       "access": {
+        "openrouter": {
+          "id": "qwen/qwen3-14b",
+          "url": "https://openrouter.ai/qwen/qwen3-14b",
+          "contextLength": 131072,
+          "inputPerM": 0.12,
+          "outputPerM": 0.24,
+          "listedAt": "2025-04-28",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3-14B",
+          "url": "https://huggingface.co/Qwen/Qwen3-14B"
+        },
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
@@ -2093,41 +2226,6 @@
         }
       }
     },
-    {
-      "id": "qwen3-5-397b-a17b",
-      "name": "Qwen3.5 397B A17B",
-      "org": "Alibaba",
-      "access": {
-        "openrouter": {
-          "id": "qwen/qwen3.5-397b-a17b",
-          "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-          "contextLength": 262144,
-          "inputPerM": 0.55,
-          "outputPerM": 3.5,
-          "listedAt": "2026-02-16",
-          "modalities": ["text", "image", "video"]
-        },
-        "weights": {
-          "huggingFaceId": "Qwen/Qwen3.5-397B-A17B",
-          "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B"
-        },
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "qwen3-5-397b-a17b-2",
-      "name": "Qwen3.5 397B A17B",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
     { "id": "falcon-180b-chat", "name": "Falcon 180B Chat", "org": "Other" },
     {
       "id": "k2-think-v2",
@@ -2150,12 +2248,6 @@
           "url": "https://platform.stepfun.com"
         }
       }
-    },
-    {
-      "id": "k2-horizon-375b-a23b",
-      "name": "K2 Horizon 375B A23B",
-      "org": "IFM (MBZUAI)",
-      "access": { "official": { "name": "IFM", "url": "https://ifm.ai" } }
     },
     {
       "id": "solar-open2-250b",
@@ -2191,14 +2283,6 @@
       }
     },
     {
-      "id": "nemotron-cascade-2-30b-a3b",
-      "name": "Nemotron Cascade 2 30B A3B",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
-    {
       "id": "qwen3-5-2b",
       "name": "Qwen3.5 2B",
       "org": "Alibaba",
@@ -2216,6 +2300,14 @@
       "access": { "official": { "name": "IFM", "url": "https://ifm.ai" } }
     },
     {
+      "id": "nemotron-cascade-2-30b-a3b",
+      "name": "Nemotron Cascade 2 30B A3B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
       "id": "k2-horizon-32b",
       "name": "K2 Horizon 32B",
       "org": "IFM (MBZUAI)",
@@ -2224,6 +2316,12 @@
     {
       "id": "k2-horizon-mova-36b-a4b",
       "name": "K2 Horizon MoVA 36B A4B",
+      "org": "IFM (MBZUAI)",
+      "access": { "official": { "name": "IFM", "url": "https://ifm.ai" } }
+    },
+    {
+      "id": "k2-horizon-375b-a23b",
+      "name": "K2 Horizon 375B A23B",
       "org": "IFM (MBZUAI)",
       "access": { "official": { "name": "IFM", "url": "https://ifm.ai" } }
     },
@@ -2819,17 +2917,6 @@
       }
     },
     {
-      "id": "kimi-k2-5-2",
-      "name": "Kimi K2.5",
-      "org": "Moonshot",
-      "access": {
-        "official": {
-          "name": "Moonshot AI Platform",
-          "url": "https://platform.moonshot.ai/docs"
-        }
-      }
-    },
-    {
       "id": "minimax-m2-5",
       "name": "MiniMax M2.5",
       "org": "MiniMax",
@@ -3316,11 +3403,6 @@
       }
     },
     {
-      "id": "jt-4-1-flash-236b-a21b",
-      "name": "JT-4.1 Flash 236B A21B",
-      "org": "China Mobile"
-    },
-    {
       "id": "qwen3-235b-a22b-instruct-2507",
       "name": "Qwen3 235B A22B Instruct 2507",
       "org": "Alibaba",
@@ -3362,17 +3444,6 @@
           "huggingFaceId": "Qwen/Qwen3-235B-A22B-Thinking-2507",
           "url": "https://huggingface.co/Qwen/Qwen3-235B-A22B-Thinking-2507"
         },
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "qwen3-235b-a22b-2507",
-      "name": "Qwen3 235B A22B 2507",
-      "org": "Alibaba",
-      "access": {
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
@@ -3461,6 +3532,11 @@
           "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       }
+    },
+    {
+      "id": "jt-4-1-flash-236b-a21b",
+      "name": "JT-4.1 Flash 236B A21B",
+      "org": "China Mobile"
     },
     {
       "id": "mistral-small-24b-instruct-2501",
@@ -3610,6 +3686,19 @@
       "name": "Qwen3 30B A3B 2507",
       "org": "Alibaba",
       "access": {
+        "openrouter": {
+          "id": "qwen/qwen3-30b-a3b-thinking-2507",
+          "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-thinking-2507",
+          "contextLength": 81920,
+          "inputPerM": 0.2,
+          "outputPerM": 2.4,
+          "listedAt": "2025-08-28",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3-30B-A3B-Thinking-2507",
+          "url": "https://huggingface.co/Qwen/Qwen3-30B-A3B-Thinking-2507"
+        },
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
@@ -3629,30 +3718,6 @@
     },
     {
       "id": "gemma-4-26b-a4b",
-      "name": "Gemma 4 26B A4B",
-      "org": "Google",
-      "access": {
-        "openrouter": {
-          "id": "google/gemma-4-26b-a4b-it",
-          "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
-          "contextLength": 262144,
-          "inputPerM": 0.07,
-          "outputPerM": 0.34,
-          "listedAt": "2026-04-03",
-          "modalities": ["image", "text", "video"]
-        },
-        "weights": {
-          "huggingFaceId": "google/gemma-4-26B-A4B-it",
-          "url": "https://huggingface.co/google/gemma-4-26B-A4B-it"
-        },
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      }
-    },
-    {
-      "id": "gemma-4-26b-a4b-2",
       "name": "Gemma 4 26B A4B",
       "org": "Google",
       "access": {
@@ -3751,17 +3816,6 @@
       }
     },
     {
-      "id": "qwen3-6-27b-2",
-      "name": "Qwen3.6 27B",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
       "id": "qwen3-8-27b",
       "name": "Qwen3.8 27B",
       "org": "Alibaba",
@@ -3786,10 +3840,40 @@
       }
     },
     {
+      "id": "ministral-3-3b",
+      "name": "Ministral 3 3B",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
+      "id": "llama-3-1-tulu-3-70b",
+      "name": "Llama 3.1 Tulu 3 70B",
+      "org": "Ai2",
+      "access": { "official": { "name": "Ai2", "url": "https://allenai.org" } }
+    },
+    {
       "id": "nvidia-nemotron-3-nano-30b-a3b",
       "name": "NVIDIA Nemotron 3 Nano 30B A3B",
       "org": "NVIDIA",
       "access": {
+        "openrouter": {
+          "id": "nvidia/nemotron-3-nano-30b-a3b",
+          "url": "https://openrouter.ai/nvidia/nemotron-3-nano-30b-a3b",
+          "contextLength": 262144,
+          "inputPerM": 0.05,
+          "outputPerM": 0.2,
+          "listedAt": "2025-12-14",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+          "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16"
+        },
         "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
       }
     },
@@ -3818,6 +3902,151 @@
         "weights": {
           "huggingFaceId": "Qwen/Qwen3-30B-A3B",
           "url": "https://huggingface.co/Qwen/Qwen3-30B-A3B"
+        },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "olmo-3-32b-think",
+      "name": "Olmo 3 32B Think",
+      "org": "Ai2",
+      "access": { "official": { "name": "Ai2", "url": "https://allenai.org" } }
+    },
+    {
+      "id": "qwen3-32b",
+      "name": "Qwen3 32B",
+      "org": "Alibaba",
+      "access": {
+        "openrouter": {
+          "id": "qwen/qwen3-32b",
+          "url": "https://openrouter.ai/qwen/qwen3-32b",
+          "contextLength": 131072,
+          "inputPerM": 0.08,
+          "outputPerM": 0.28,
+          "listedAt": "2025-04-28",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3-32B",
+          "url": "https://huggingface.co/Qwen/Qwen3-32B"
+        },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    { "id": "g9v3-39a5b", "name": "G9v3 39A5B", "org": "AI9Stars" },
+    {
+      "id": "nvidia-nemotron-3-ultra-550b-a55b-nvfp4",
+      "name": "NVIDIA Nemotron 3 Ultra 550B A55B Nvfp4",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "gemma-3n-e4b-it",
+      "name": "Gemma 3n E4b It",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "nvidia-nemotron-3-nano-4b",
+      "name": "NVIDIA Nemotron 3 Nano 4B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "granite-4-1-3b",
+      "name": "Granite 4.1 3B",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
+        }
+      }
+    },
+    {
+      "id": "granite-4-2-3b",
+      "name": "Granite 4.2 3B",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
+        }
+      }
+    },
+    {
+      "id": "qwen3-coder-480b-a35b-instruct",
+      "name": "Qwen3 Coder 480B A35B Instruct",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "nemotron-3-ultra-550b-a55b",
+      "name": "Nemotron 3 Ultra 550B A55B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "llama-3-70b-instruct",
+      "name": "Llama 3 70B Instruct",
+      "org": "Meta",
+      "access": {
+        "official": {
+          "name": "Llama developer docs",
+          "url": "https://www.llama.com/docs"
+        }
+      }
+    },
+    {
+      "id": "ministral-3-8b",
+      "name": "Ministral 3 8B",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
+      "id": "qwen3-8b",
+      "name": "Qwen3 8B",
+      "org": "Alibaba",
+      "access": {
+        "openrouter": {
+          "id": "qwen/qwen3-8b",
+          "url": "https://openrouter.ai/qwen/qwen3-8b",
+          "contextLength": 131072,
+          "inputPerM": 0.117,
+          "outputPerM": 0.455,
+          "listedAt": "2025-04-28",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3-8B",
+          "url": "https://huggingface.co/Qwen/Qwen3-8B"
         },
         "official": {
           "name": "Alibaba Cloud Model Studio",
@@ -3867,268 +4096,6 @@
           "huggingFaceId": "Qwen/Qwen3-Next-80B-A3B-Thinking",
           "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking"
         },
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "qwen3-next-80b-a3b-2",
-      "name": "Qwen3 Next 80B A3B",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "ministral-3-3b",
-      "name": "Ministral 3 3B",
-      "org": "Mistral",
-      "access": {
-        "official": {
-          "name": "Mistral AI docs",
-          "url": "https://docs.mistral.ai"
-        }
-      }
-    },
-    {
-      "id": "llama-3-1-tulu-3-70b",
-      "name": "Llama 3.1 Tulu 3 70B",
-      "org": "Ai2",
-      "access": { "official": { "name": "Ai2", "url": "https://allenai.org" } }
-    },
-    {
-      "id": "nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
-      "name": "NVIDIA Nemotron 3.5 Lightning 30B A3B Nvfp4",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
-    {
-      "id": "nemotron-3-5-30b-a3b",
-      "name": "Nemotron 3.5 30B-A3B",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
-    {
-      "id": "qwen3-5-35b-a3b",
-      "name": "Qwen3.5 35B A3B",
-      "org": "Alibaba",
-      "access": {
-        "openrouter": {
-          "id": "qwen/qwen3.5-35b-a3b",
-          "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
-          "contextLength": 262144,
-          "inputPerM": 0.313,
-          "outputPerM": 1.25,
-          "listedAt": "2026-02-25",
-          "modalities": ["text", "image", "video"]
-        },
-        "weights": {
-          "huggingFaceId": "Qwen/Qwen3.5-35B-A3B",
-          "url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B"
-        },
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "qwen3-6-35b-a3b",
-      "name": "Qwen3.6 35B A3B",
-      "org": "Alibaba",
-      "access": {
-        "openrouter": {
-          "id": "qwen/qwen3.6-35b-a3b",
-          "url": "https://openrouter.ai/qwen/qwen3.6-35b-a3b",
-          "contextLength": 262144,
-          "inputPerM": 0.1,
-          "outputPerM": 0.9,
-          "listedAt": "2026-04-27",
-          "modalities": ["text", "image", "video"]
-        },
-        "weights": {
-          "huggingFaceId": "Qwen/Qwen3.6-35B-A3B",
-          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
-        },
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "qwen3-6-35b-a3b-2",
-      "name": "Qwen3.6 35B A3B",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "olmo-3-32b-think",
-      "name": "Olmo 3 32B Think",
-      "org": "Ai2",
-      "access": { "official": { "name": "Ai2", "url": "https://allenai.org" } }
-    },
-    {
-      "id": "qwen3-32b",
-      "name": "Qwen3 32B",
-      "org": "Alibaba",
-      "access": {
-        "openrouter": {
-          "id": "qwen/qwen3-32b",
-          "url": "https://openrouter.ai/qwen/qwen3-32b",
-          "contextLength": 131072,
-          "inputPerM": 0.08,
-          "outputPerM": 0.28,
-          "listedAt": "2025-04-28",
-          "modalities": ["text"]
-        },
-        "weights": {
-          "huggingFaceId": "Qwen/Qwen3-32B",
-          "url": "https://huggingface.co/Qwen/Qwen3-32B"
-        },
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "qwen3-32b-2",
-      "name": "Qwen3 32B",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "qwen3-coder-480b-a35b-instruct",
-      "name": "Qwen3 Coder 480B A35B Instruct",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    { "id": "g9v3-39a5b", "name": "G9v3 39A5B", "org": "AI9Stars" },
-    {
-      "id": "nvidia-nemotron-3-ultra-550b-a55b-nvfp4",
-      "name": "NVIDIA Nemotron 3 Ultra 550B A55B Nvfp4",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
-    {
-      "id": "gemma-3n-e4b-it",
-      "name": "Gemma 3n E4b It",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      }
-    },
-    {
-      "id": "nemotron-3-nano-4b",
-      "name": "Nemotron 3 Nano-4B",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
-    {
-      "id": "nvidia-nemotron-3-nano-4b",
-      "name": "NVIDIA Nemotron 3 Nano 4B",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
-    {
-      "id": "granite-4-1-3b",
-      "name": "Granite 4.1 3B",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      }
-    },
-    {
-      "id": "granite-4-2-3b",
-      "name": "Granite 4.2 3B",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      }
-    },
-    {
-      "id": "nemotron-3-ultra-550b-a55b",
-      "name": "Nemotron 3 Ultra 550B A55B",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
-    {
-      "id": "nemotron-3-ultra-550b-a55b-2",
-      "name": "Nemotron 3 Ultra 550B A55B",
-      "org": "NVIDIA",
-      "access": {
-        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
-      }
-    },
-    {
-      "id": "llama-3-70b-instruct",
-      "name": "Llama 3 70B Instruct",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      }
-    },
-    {
-      "id": "ministral-3-8b",
-      "name": "Ministral 3 8B",
-      "org": "Mistral",
-      "access": {
-        "official": {
-          "name": "Mistral AI docs",
-          "url": "https://docs.mistral.ai"
-        }
-      }
-    },
-    {
-      "id": "qwen3-8b",
-      "name": "Qwen3 8B",
-      "org": "Alibaba",
-      "access": {
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
@@ -4721,30 +4688,6 @@
       }
     },
     {
-      "id": "deepseek-v3-1-terminus-2",
-      "name": "DeepSeek V3.1 Terminus",
-      "org": "DeepSeek",
-      "access": {
-        "openrouter": {
-          "id": "deepseek/deepseek-v3.1-terminus",
-          "url": "https://openrouter.ai/deepseek/deepseek-v3.1-terminus",
-          "contextLength": 163840,
-          "inputPerM": 0.27,
-          "outputPerM": 1,
-          "listedAt": "2025-09-22",
-          "modalities": ["text"]
-        },
-        "weights": {
-          "huggingFaceId": "deepseek-ai/DeepSeek-V3.1-Terminus",
-          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus"
-        },
-        "official": {
-          "name": "DeepSeek API",
-          "url": "https://api-docs.deepseek.com"
-        }
-      }
-    },
-    {
       "id": "deepseek-v3-1",
       "name": "DeepSeek V3.1",
       "org": "DeepSeek",
@@ -4941,30 +4884,6 @@
       }
     },
     {
-      "id": "deepseek-v3-2-2",
-      "name": "DeepSeek V3.2",
-      "org": "DeepSeek",
-      "access": {
-        "openrouter": {
-          "id": "deepseek/deepseek-v3.2",
-          "url": "https://openrouter.ai/deepseek/deepseek-v3.2",
-          "contextLength": 163840,
-          "inputPerM": 0.269,
-          "outputPerM": 0.4,
-          "listedAt": "2025-12-01",
-          "modalities": ["text"]
-        },
-        "weights": {
-          "huggingFaceId": "deepseek-ai/DeepSeek-V3.2",
-          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2"
-        },
-        "official": {
-          "name": "DeepSeek API",
-          "url": "https://api-docs.deepseek.com"
-        }
-      }
-    },
-    {
       "id": "mistral-small-3-2",
       "name": "Mistral Small 3.2",
       "org": "Mistral",
@@ -5030,6 +4949,70 @@
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
+      "name": "NVIDIA Nemotron 3.5 Lightning 30B A3B Nvfp4",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "nemotron-3-5-30b-a3b",
+      "name": "Nemotron 3.5 30B-A3B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "qwen3-5-35b-a3b",
+      "name": "Qwen3.5 35B A3B",
+      "org": "Alibaba",
+      "access": {
+        "openrouter": {
+          "id": "qwen/qwen3.5-35b-a3b",
+          "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
+          "contextLength": 262144,
+          "inputPerM": 0.313,
+          "outputPerM": 1.25,
+          "listedAt": "2026-02-25",
+          "modalities": ["text", "image", "video"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3.5-35B-A3B",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B"
+        },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen3-5-397b-a17b",
+      "name": "Qwen3.5 397B A17B",
+      "org": "Alibaba",
+      "access": {
+        "openrouter": {
+          "id": "qwen/qwen3.5-397b-a17b",
+          "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
+          "contextLength": 262144,
+          "inputPerM": 0.55,
+          "outputPerM": 3.5,
+          "listedAt": "2026-02-16",
+          "modalities": ["text", "image", "video"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3.5-397B-A17B",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B"
+        },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       }
     },
@@ -5242,6 +5225,30 @@
         "weights": {
           "huggingFaceId": "Qwen/Qwen3.5-9B",
           "url": "https://huggingface.co/Qwen/Qwen3.5-9B"
+        },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen3-6-35b-a3b",
+      "name": "Qwen3.6 35B A3B",
+      "org": "Alibaba",
+      "access": {
+        "openrouter": {
+          "id": "qwen/qwen3.6-35b-a3b",
+          "url": "https://openrouter.ai/qwen/qwen3.6-35b-a3b",
+          "contextLength": 262144,
+          "inputPerM": 0.1,
+          "outputPerM": 0.9,
+          "listedAt": "2026-04-27",
+          "modalities": ["text", "image", "video"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3.6-35B-A3B",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
         },
         "official": {
           "name": "Alibaba Cloud Model Studio",
@@ -5563,30 +5570,6 @@
       }
     },
     {
-      "id": "gemma-4-31b-2",
-      "name": "Gemma 4 31B",
-      "org": "Google",
-      "access": {
-        "openrouter": {
-          "id": "google/gemma-4-31b-it",
-          "url": "https://openrouter.ai/google/gemma-4-31b-it",
-          "contextLength": 262144,
-          "inputPerM": 0.09,
-          "outputPerM": 0.34,
-          "listedAt": "2026-04-02",
-          "modalities": ["image", "text", "video"]
-        },
-        "weights": {
-          "huggingFaceId": "google/gemma-4-31B-it",
-          "url": "https://huggingface.co/google/gemma-4-31B-it"
-        },
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      }
-    },
-    {
       "id": "c4ai-aya-expanse-32b",
       "name": "C4ai Aya Expanse 32B",
       "org": "Cohere",
@@ -5650,17 +5633,6 @@
     },
     {
       "id": "gemma-4-e4b",
-      "name": "Gemma 4-E4B",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      }
-    },
-    {
-      "id": "gemma-4-e4b-2",
       "name": "Gemma 4 E4B",
       "org": "Google",
       "access": {
@@ -6034,26 +6006,6 @@
       }
     },
     {
-      "id": "claude-sonnet-4",
-      "name": "Claude Sonnet 4",
-      "org": "Anthropic",
-      "access": {
-        "openrouter": {
-          "id": "anthropic/claude-sonnet-4",
-          "url": "https://openrouter.ai/anthropic/claude-sonnet-4",
-          "contextLength": 1000000,
-          "inputPerM": 3,
-          "outputPerM": 15,
-          "listedAt": "2025-05-22",
-          "modalities": ["image", "text", "file"]
-        },
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
       "id": "grok-4-1-fast-reasoning",
       "name": "Grok 4.1 Fast Reasoning",
       "org": "SpaceXAI",
@@ -6332,26 +6284,6 @@
       }
     },
     {
-      "id": "claude-4-5-haiku-2",
-      "name": "Claude 4.5 Haiku",
-      "org": "Anthropic",
-      "access": {
-        "openrouter": {
-          "id": "anthropic/claude-haiku-4.5",
-          "url": "https://openrouter.ai/anthropic/claude-haiku-4.5",
-          "contextLength": 200000,
-          "inputPerM": 1,
-          "outputPerM": 5,
-          "listedAt": "2025-10-15",
-          "modalities": ["text", "image", "file"]
-        },
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
       "id": "opus-4-5",
       "name": "Opus 4.5",
       "org": "Anthropic",
@@ -6392,48 +6324,7 @@
       }
     },
     {
-      "id": "claude-sonnet-4-5",
-      "name": "Claude Sonnet 4.5",
-      "org": "Anthropic",
-      "access": {
-        "openrouter": {
-          "id": "anthropic/claude-sonnet-4.5",
-          "url": "https://openrouter.ai/anthropic/claude-sonnet-4.5",
-          "contextLength": 1000000,
-          "inputPerM": 3,
-          "outputPerM": 15,
-          "listedAt": "2025-09-29",
-          "modalities": ["text", "image", "file"]
-        },
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
       "id": "glm-4-6",
-      "name": "GLM-4.6",
-      "org": "Z.ai",
-      "access": {
-        "openrouter": {
-          "id": "z-ai/glm-4.6",
-          "url": "https://openrouter.ai/z-ai/glm-4.6",
-          "contextLength": 204800,
-          "inputPerM": 0.55,
-          "outputPerM": 2.2,
-          "listedAt": "2025-09-30",
-          "modalities": ["text"]
-        },
-        "weights": {
-          "huggingFaceId": "zai-org/GLM-4.6",
-          "url": "https://huggingface.co/zai-org/GLM-4.6"
-        },
-        "official": { "name": "Z.ai API", "url": "https://docs.z.ai" }
-      }
-    },
-    {
-      "id": "glm-4-6-2",
       "name": "GLM-4.6",
       "org": "Z.ai",
       "access": {
@@ -6565,27 +6456,6 @@
     },
     {
       "id": "glm-4-7",
-      "name": "GLM-4.7",
-      "org": "Z.ai",
-      "access": {
-        "openrouter": {
-          "id": "z-ai/glm-4.7",
-          "url": "https://openrouter.ai/z-ai/glm-4.7",
-          "contextLength": 204800,
-          "inputPerM": 0.4,
-          "outputPerM": 1.75,
-          "listedAt": "2025-12-22",
-          "modalities": ["text"]
-        },
-        "weights": {
-          "huggingFaceId": "zai-org/GLM-4.7",
-          "url": "https://huggingface.co/zai-org/GLM-4.7"
-        },
-        "official": { "name": "Z.ai API", "url": "https://docs.z.ai" }
-      }
-    },
-    {
-      "id": "glm-4-7-2",
       "name": "GLM-4.7",
       "org": "Z.ai",
       "access": {
@@ -6872,27 +6742,6 @@
     },
     {
       "id": "glm-5-1",
-      "name": "GLM-5.1",
-      "org": "Z.ai",
-      "access": {
-        "openrouter": {
-          "id": "z-ai/glm-5.1",
-          "url": "https://openrouter.ai/z-ai/glm-5.1",
-          "contextLength": 204800,
-          "inputPerM": 0.966,
-          "outputPerM": 3.036,
-          "listedAt": "2026-04-07",
-          "modalities": ["text"]
-        },
-        "weights": {
-          "huggingFaceId": "zai-org/GLM-5.1",
-          "url": "https://huggingface.co/zai-org/GLM-5.1"
-        },
-        "official": { "name": "Z.ai API", "url": "https://docs.z.ai" }
-      }
-    },
-    {
-      "id": "glm-5-1-2",
       "name": "GLM-5.1",
       "org": "Z.ai",
       "access": {
@@ -8896,27 +8745,6 @@
       "sourceLabel": "amazon-nova-experimental-chat-12-10"
     },
     {
-      "modelId": "qwen3-5-122b-a10b",
-      "benchmarkId": "lmarena",
-      "raw": 1417,
-      "stderr": 4,
-      "sourceLabel": "qwen3.5-122b-a10b"
-    },
-    {
-      "modelId": "qwen3-5-122b-a10b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 834,
-      "stderr": 18,
-      "sourceLabel": "Qwen3.5 122B A10B (Non-reasoning)"
-    },
-    {
-      "modelId": "qwen3-5-122b-a10b-2",
-      "benchmarkId": "aa-gdpval",
-      "raw": 928,
-      "stderr": 15,
-      "sourceLabel": "Qwen3.5 122B A10B (Reasoning)"
-    },
-    {
       "modelId": "amazon-nova-experimental-chat-10-20",
       "benchmarkId": "lmarena",
       "raw": 1350,
@@ -8952,27 +8780,6 @@
       "sourceLabel": "qwen2.5-plus-1127"
     },
     {
-      "modelId": "nvidia-nemotron-3-super-120b-a12b",
-      "benchmarkId": "lmarena",
-      "raw": 1361,
-      "stderr": 7,
-      "sourceLabel": "nvidia-nemotron-3-super-120b-a12b"
-    },
-    {
-      "modelId": "nemotron-3-super-120b-a12b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 646,
-      "stderr": 16,
-      "sourceLabel": "Nemotron 3 Super 120B A12B (Reasoning)"
-    },
-    {
-      "modelId": "nemotron-3-super-120b-a12b",
-      "benchmarkId": "aa-briefcase",
-      "raw": 0,
-      "stderr": 0,
-      "sourceLabel": "Nemotron 3 Super 120B A12B (Reasoning)"
-    },
-    {
       "modelId": "dolly-v2-12b",
       "benchmarkId": "lmarena",
       "raw": 982,
@@ -8985,6 +8792,13 @@
       "raw": 1342,
       "stderr": 10,
       "sourceLabel": "gemma-3-12b-it"
+    },
+    {
+      "modelId": "gemma-4-12b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 593,
+      "stderr": 20,
+      "sourceLabel": "Gemma 4 12B (Reasoning)"
     },
     {
       "modelId": "gemma-4-12b",
@@ -9023,13 +8837,6 @@
       "sourceLabel": "Gemma 4-12B"
     },
     {
-      "modelId": "gemma-4-12b-2",
-      "benchmarkId": "aa-gdpval",
-      "raw": 593,
-      "stderr": 20,
-      "sourceLabel": "Gemma 4 12B (Reasoning)"
-    },
-    {
       "modelId": "oasst-pythia-12b",
       "benchmarkId": "lmarena",
       "raw": 1023,
@@ -9049,6 +8856,27 @@
       "raw": 261,
       "stderr": 11.5,
       "sourceLabel": "HyperNova 60B 2605 (high, based on gpt-oss-120b)"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-super-120b-a12b",
+      "benchmarkId": "lmarena",
+      "raw": 1361,
+      "stderr": 7,
+      "sourceLabel": "nvidia-nemotron-3-super-120b-a12b"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-super-120b-a12b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 646,
+      "stderr": 16,
+      "sourceLabel": "Nemotron 3 Super 120B A12B (Reasoning)"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-super-120b-a12b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
+      "sourceLabel": "Nemotron 3 Super 120B A12B (Reasoning)"
     },
     {
       "modelId": "gpt-oss-120b",
@@ -9090,6 +8918,20 @@
       "raw": 1323,
       "stderr": 8,
       "sourceLabel": "deepseek-v2.5-1210"
+    },
+    {
+      "modelId": "qwen3-5-122b-a10b",
+      "benchmarkId": "lmarena",
+      "raw": 1417,
+      "stderr": 4,
+      "sourceLabel": "qwen3.5-122b-a10b"
+    },
+    {
+      "modelId": "qwen3-5-122b-a10b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 928,
+      "stderr": 15,
+      "sourceLabel": "Qwen3.5 122B A10B (Reasoning)"
     },
     {
       "modelId": "llama-4-maverick-17b-128e-instruct",
@@ -9211,27 +9053,6 @@
       "sourceLabel": "llama-3.1-405b-instruct-bf16"
     },
     {
-      "modelId": "qwen3-5-397b-a17b",
-      "benchmarkId": "lmarena",
-      "raw": 1441,
-      "stderr": 3,
-      "sourceLabel": "qwen3.5-397b-a17b"
-    },
-    {
-      "modelId": "qwen3-5-397b-a17b-2",
-      "benchmarkId": "aa-gdpval",
-      "raw": 907,
-      "stderr": 15,
-      "sourceLabel": "Qwen3.5 397B A17B (Reasoning)"
-    },
-    {
-      "modelId": "qwen3-5-397b-a17b-2",
-      "benchmarkId": "aa-briefcase",
-      "raw": 564,
-      "stderr": 9,
-      "sourceLabel": "Qwen3.5 397B A17B (Reasoning)"
-    },
-    {
       "modelId": "falcon-180b-chat",
       "benchmarkId": "lmarena",
       "raw": 1147,
@@ -9265,6 +9086,196 @@
       "raw": 1333,
       "stderr": 9,
       "sourceLabel": "step-2-16k-exp-202412"
+    },
+    {
+      "modelId": "solar-open2-250b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1055,
+      "stderr": 18,
+      "sourceLabel": "Solar Open2 250B"
+    },
+    {
+      "modelId": "gemini-3-deep-think-2-26",
+      "benchmarkId": "arc-agi-2",
+      "raw": 84.6,
+      "sourceLabel": "Gemini 3 Deep Think (2/26)"
+    },
+    {
+      "modelId": "gemma-2-27b-it",
+      "benchmarkId": "lmarena",
+      "raw": 1289,
+      "stderr": 3,
+      "sourceLabel": "gemma-2-27b-it"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 167,
+      "stderr": 21,
+      "sourceLabel": "Qwen3.5 2B (Reasoning)"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "ifm-k2-horizon:tau3-banking",
+      "raw": 17.7,
+      "sourceLabel": "K2-Horizon-3.7B"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
+      "raw": 25.09,
+      "sourceLabel": "K2-Horizon-3.7B"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "ifm-k2-horizon:scicode",
+      "raw": 25.9,
+      "sourceLabel": "K2-Horizon-3.7B"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
+      "raw": 65.35,
+      "sourceLabel": "K2-Horizon-3.7B"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
+      "raw": 68.6,
+      "sourceLabel": "K2-Horizon-3.7B"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
+      "raw": 70.45,
+      "sourceLabel": "K2-Horizon-3.7B"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "ifm-k2-horizon:hle",
+      "raw": 12.9,
+      "sourceLabel": "K2-Horizon-3.7B"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
+      "raw": 50.94,
+      "sourceLabel": "K2-Horizon-3.7B"
+    },
+    {
+      "modelId": "nemotron-cascade-2-30b-a3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 449,
+      "stderr": 21,
+      "sourceLabel": "Nemotron Cascade 2 30B A3B"
+    },
+    {
+      "modelId": "k2-horizon-32b",
+      "benchmarkId": "ifm-k2-horizon:tau3-banking",
+      "raw": 22.5,
+      "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-32b",
+      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
+      "raw": 36.6,
+      "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-32b",
+      "benchmarkId": "ifm-k2-horizon:scicode",
+      "raw": 30.2,
+      "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-32b",
+      "benchmarkId": "ifm-k2-horizon:humanity-s-last-exam-without-tools",
+      "raw": 22.8,
+      "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-32b",
+      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
+      "raw": 82.3,
+      "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-32b",
+      "benchmarkId": "ifm-k2-horizon:critpt",
+      "raw": 1.4,
+      "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-32b",
+      "benchmarkId": "ifm-k2-horizon:aa-lcr",
+      "raw": 65.3,
+      "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-32b",
+      "benchmarkId": "ifm-k2-horizon:aa-omniscience-accuracy",
+      "raw": 16.8,
+      "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-32b",
+      "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
+      "raw": 58.3,
+      "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "ifm-k2-horizon:tau3-banking",
+      "raw": 26.8,
+      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
+      "raw": 58.6,
+      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "ifm-k2-horizon:scicode",
+      "raw": 38.9,
+      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "ifm-k2-horizon:humanity-s-last-exam-without-tools",
+      "raw": 25.2,
+      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
+      "raw": 80.8,
+      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "ifm-k2-horizon:critpt",
+      "raw": 2.1,
+      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "ifm-k2-horizon:aa-lcr",
+      "raw": 66.3,
+      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "ifm-k2-horizon:aa-omniscience-accuracy",
+      "raw": 18.8,
+      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
+      "raw": 69.2,
+      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
     },
     {
       "modelId": "k2-horizon-375b-a23b",
@@ -9395,194 +9406,40 @@
       "sourceLabel": "K2-Horizon-375B-A23B"
     },
     {
-      "modelId": "solar-open2-250b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 1055,
-      "stderr": 18,
-      "sourceLabel": "Solar Open2 250B"
+      "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "cellcog-k2-horizon:gdpval-aa-elo",
+      "raw": 1441,
+      "sourceLabel": "K2-Horizon-375B"
     },
     {
-      "modelId": "gemini-3-deep-think-2-26",
-      "benchmarkId": "arc-agi-2",
-      "raw": 84.6,
-      "sourceLabel": "Gemini 3 Deep Think (2/26)"
-    },
-    {
-      "modelId": "gemma-2-27b-it",
-      "benchmarkId": "lmarena",
-      "raw": 1289,
-      "stderr": 3,
-      "sourceLabel": "gemma-2-27b-it"
-    },
-    {
-      "modelId": "nemotron-cascade-2-30b-a3b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 449,
-      "stderr": 21,
-      "sourceLabel": "Nemotron Cascade 2 30B A3B"
-    },
-    {
-      "modelId": "qwen3-5-2b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 167,
-      "stderr": 21,
-      "sourceLabel": "Qwen3.5 2B (Reasoning)"
-    },
-    {
-      "modelId": "k2-horizon-3-7b",
-      "benchmarkId": "ifm-k2-horizon:tau3-banking",
-      "raw": 17.7,
-      "sourceLabel": "K2-Horizon-3.7B"
-    },
-    {
-      "modelId": "k2-horizon-3-7b",
-      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 25.09,
-      "sourceLabel": "K2-Horizon-3.7B"
-    },
-    {
-      "modelId": "k2-horizon-3-7b",
-      "benchmarkId": "ifm-k2-horizon:scicode",
-      "raw": 25.9,
-      "sourceLabel": "K2-Horizon-3.7B"
-    },
-    {
-      "modelId": "k2-horizon-3-7b",
-      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 65.35,
-      "sourceLabel": "K2-Horizon-3.7B"
-    },
-    {
-      "modelId": "k2-horizon-3-7b",
-      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
-      "raw": 68.6,
-      "sourceLabel": "K2-Horizon-3.7B"
-    },
-    {
-      "modelId": "k2-horizon-3-7b",
-      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 70.45,
-      "sourceLabel": "K2-Horizon-3.7B"
-    },
-    {
-      "modelId": "k2-horizon-3-7b",
-      "benchmarkId": "ifm-k2-horizon:hle",
-      "raw": 12.9,
-      "sourceLabel": "K2-Horizon-3.7B"
-    },
-    {
-      "modelId": "k2-horizon-3-7b",
-      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 50.94,
-      "sourceLabel": "K2-Horizon-3.7B"
-    },
-    {
-      "modelId": "k2-horizon-32b",
-      "benchmarkId": "ifm-k2-horizon:tau3-banking",
-      "raw": 22.5,
-      "sourceLabel": "K2-Horizon-32B"
-    },
-    {
-      "modelId": "k2-horizon-32b",
-      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 36.6,
-      "sourceLabel": "K2-Horizon-32B"
-    },
-    {
-      "modelId": "k2-horizon-32b",
-      "benchmarkId": "ifm-k2-horizon:scicode",
-      "raw": 30.2,
-      "sourceLabel": "K2-Horizon-32B"
-    },
-    {
-      "modelId": "k2-horizon-32b",
-      "benchmarkId": "ifm-k2-horizon:humanity-s-last-exam-without-tools",
-      "raw": 22.8,
-      "sourceLabel": "K2-Horizon-32B"
-    },
-    {
-      "modelId": "k2-horizon-32b",
-      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 82.3,
-      "sourceLabel": "K2-Horizon-32B"
-    },
-    {
-      "modelId": "k2-horizon-32b",
-      "benchmarkId": "ifm-k2-horizon:critpt",
-      "raw": 1.4,
-      "sourceLabel": "K2-Horizon-32B"
-    },
-    {
-      "modelId": "k2-horizon-32b",
-      "benchmarkId": "ifm-k2-horizon:aa-lcr",
+      "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "cellcog-k2-horizon:toolathlon-verified",
       "raw": 65.3,
-      "sourceLabel": "K2-Horizon-32B"
+      "sourceLabel": "K2-Horizon-375B"
     },
     {
-      "modelId": "k2-horizon-32b",
-      "benchmarkId": "ifm-k2-horizon:aa-omniscience-accuracy",
-      "raw": 16.8,
-      "sourceLabel": "K2-Horizon-32B"
+      "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "cellcog-k2-horizon:terminal-bench-2-1",
+      "raw": 70.2,
+      "sourceLabel": "K2-Horizon-375B"
     },
     {
-      "modelId": "k2-horizon-32b",
-      "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
-      "raw": 58.3,
-      "sourceLabel": "K2-Horizon-32B"
+      "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "cellcog-k2-horizon:swe-bench-pro-strict",
+      "raw": 42.6,
+      "sourceLabel": "K2-Horizon-375B"
     },
     {
-      "modelId": "k2-horizon-mova-36b-a4b",
-      "benchmarkId": "ifm-k2-horizon:tau3-banking",
-      "raw": 26.8,
-      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+      "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "cellcog-k2-horizon:mcpmark",
+      "raw": 67.7,
+      "sourceLabel": "K2-Horizon-375B"
     },
     {
-      "modelId": "k2-horizon-mova-36b-a4b",
-      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 58.6,
-      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
-    },
-    {
-      "modelId": "k2-horizon-mova-36b-a4b",
-      "benchmarkId": "ifm-k2-horizon:scicode",
-      "raw": 38.9,
-      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
-    },
-    {
-      "modelId": "k2-horizon-mova-36b-a4b",
-      "benchmarkId": "ifm-k2-horizon:humanity-s-last-exam-without-tools",
-      "raw": 25.2,
-      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
-    },
-    {
-      "modelId": "k2-horizon-mova-36b-a4b",
-      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 80.8,
-      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
-    },
-    {
-      "modelId": "k2-horizon-mova-36b-a4b",
-      "benchmarkId": "ifm-k2-horizon:critpt",
-      "raw": 2.1,
-      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
-    },
-    {
-      "modelId": "k2-horizon-mova-36b-a4b",
-      "benchmarkId": "ifm-k2-horizon:aa-lcr",
-      "raw": 66.3,
-      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
-    },
-    {
-      "modelId": "k2-horizon-mova-36b-a4b",
-      "benchmarkId": "ifm-k2-horizon:aa-omniscience-accuracy",
-      "raw": 18.8,
-      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
-    },
-    {
-      "modelId": "k2-horizon-mova-36b-a4b",
-      "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
-      "raw": 69.2,
-      "sourceLabel": "K2-Horizon-MoVA-36B-A4B"
+      "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "cellcog-k2-horizon:swe-atlas-qna-strict",
+      "raw": 48.4,
+      "sourceLabel": "K2-Horizon-375B"
     },
     {
       "modelId": "gemma-4-e2b",
@@ -9644,6 +9501,12 @@
       "modelId": "k2-horizon-7b",
       "benchmarkId": "ifm-k2-horizon:hle",
       "raw": 18.6,
+      "sourceLabel": "K2-Horizon-7B"
+    },
+    {
+      "modelId": "k2-horizon-7b",
+      "benchmarkId": "cellcog-k2-horizon:terminal-bench-2-1",
+      "raw": 39.1,
       "sourceLabel": "K2-Horizon-7B"
     },
     {
@@ -10014,16 +9877,16 @@
     },
     {
       "modelId": "kimi-k2-5",
-      "benchmarkId": "arc-agi-2",
-      "raw": 11.8,
-      "sourceLabel": "Kimi K2.5"
-    },
-    {
-      "modelId": "kimi-k2-5-2",
       "benchmarkId": "aa-gdpval",
       "raw": 940,
       "stderr": 18,
       "sourceLabel": "Kimi K2.5 (Reasoning)"
+    },
+    {
+      "modelId": "kimi-k2-5",
+      "benchmarkId": "arc-agi-2",
+      "raw": 11.8,
+      "sourceLabel": "Kimi K2.5"
     },
     {
       "modelId": "minimax-m2-5",
@@ -10484,13 +10347,6 @@
       "sourceLabel": "deepseek-v4-pro-high-20260813"
     },
     {
-      "modelId": "jt-4-1-flash-236b-a21b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 1196,
-      "stderr": 16,
-      "sourceLabel": "JT-4.1 Flash 236B A21B"
-    },
-    {
       "modelId": "qwen3-235b-a22b-instruct-2507",
       "benchmarkId": "lmarena",
       "raw": 1423,
@@ -10505,7 +10361,7 @@
       "sourceLabel": "qwen3-235b-a22b-thinking-2507"
     },
     {
-      "modelId": "qwen3-235b-a22b-2507",
+      "modelId": "qwen3-235b-a22b-thinking-2507",
       "benchmarkId": "aa-gdpval",
       "raw": 496,
       "stderr": 19,
@@ -10538,6 +10394,13 @@
       "raw": 1395,
       "stderr": 7,
       "sourceLabel": "qwen3-vl-235b-a22b-thinking"
+    },
+    {
+      "modelId": "jt-4-1-flash-236b-a21b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1196,
+      "stderr": 16,
+      "sourceLabel": "JT-4.1 Flash 236B A21B"
     },
     {
       "modelId": "mistral-small-24b-instruct-2501",
@@ -10638,7 +10501,7 @@
       "sourceLabel": "gemma-4-26b-a4b"
     },
     {
-      "modelId": "gemma-4-26b-a4b-2",
+      "modelId": "gemma-4-26b-a4b",
       "benchmarkId": "aa-gdpval",
       "raw": 715,
       "stderr": 16,
@@ -10675,9 +10538,16 @@
     {
       "modelId": "qwen3-6-27b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1046,
-      "stderr": 16,
-      "sourceLabel": "Qwen3.6 27B (Non-reasoning)"
+      "raw": 1071,
+      "stderr": 14,
+      "sourceLabel": "Qwen3.6 27B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-6-27b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 814,
+      "stderr": 7.5,
+      "sourceLabel": "Qwen3.6 27B (Reasoning)"
     },
     {
       "modelId": "qwen3-6-27b",
@@ -10726,20 +10596,6 @@
       "benchmarkId": "livebench-instruction-following",
       "raw": 53.2,
       "sourceLabel": "Qwen 3.6 27Bopen"
-    },
-    {
-      "modelId": "qwen3-6-27b-2",
-      "benchmarkId": "aa-gdpval",
-      "raw": 1071,
-      "stderr": 14,
-      "sourceLabel": "Qwen3.6 27B (Reasoning)"
-    },
-    {
-      "modelId": "qwen3-6-27b-2",
-      "benchmarkId": "aa-briefcase",
-      "raw": 814,
-      "stderr": 7.5,
-      "sourceLabel": "Qwen3.6 27B (Reasoning)"
     },
     {
       "modelId": "qwen3-8-27b",
@@ -10871,6 +10727,20 @@
       "sourceLabel": "Qwen3.8-27B"
     },
     {
+      "modelId": "ministral-3-3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 235,
+      "stderr": 18,
+      "sourceLabel": "Ministral 3 3B"
+    },
+    {
+      "modelId": "llama-3-1-tulu-3-70b",
+      "benchmarkId": "lmarena",
+      "raw": 1286,
+      "stderr": 10,
+      "sourceLabel": "llama-3.1-tulu-3-70b"
+    },
+    {
       "modelId": "nvidia-nemotron-3-nano-30b-a3b",
       "benchmarkId": "aa-gdpval",
       "raw": 440,
@@ -10899,142 +10769,6 @@
       "sourceLabel": "qwen3-30b-a3b"
     },
     {
-      "modelId": "qwen3-next-80b-a3b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1399,
-      "stderr": 5,
-      "sourceLabel": "qwen3-next-80b-a3b-instruct"
-    },
-    {
-      "modelId": "qwen3-next-80b-a3b",
-      "benchmarkId": "lmarena",
-      "raw": 1369,
-      "stderr": 6,
-      "sourceLabel": "qwen3-next-80b-a3b-thinking"
-    },
-    {
-      "modelId": "qwen3-next-80b-a3b-2",
-      "benchmarkId": "aa-gdpval",
-      "raw": 326,
-      "stderr": 20,
-      "sourceLabel": "Qwen3 Next 80B A3B (Reasoning)"
-    },
-    {
-      "modelId": "ministral-3-3b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 235,
-      "stderr": 18,
-      "sourceLabel": "Ministral 3 3B"
-    },
-    {
-      "modelId": "llama-3-1-tulu-3-70b",
-      "benchmarkId": "lmarena",
-      "raw": 1286,
-      "stderr": 10,
-      "sourceLabel": "llama-3.1-tulu-3-70b"
-    },
-    {
-      "modelId": "nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
-      "benchmarkId": "lmarena",
-      "raw": 1355,
-      "stderr": 9,
-      "sourceLabel": "nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4"
-    },
-    {
-      "modelId": "nemotron-3-5-30b-a3b",
-      "benchmarkId": "ifm-k2-horizon:tau3-banking",
-      "raw": 9.28,
-      "sourceLabel": "Nemotron 3.5 30B-A3B"
-    },
-    {
-      "modelId": "nemotron-3-5-30b-a3b",
-      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
-      "raw": 51.56,
-      "sourceLabel": "Nemotron 3.5 30B-A3B"
-    },
-    {
-      "modelId": "qwen3-5-35b-a3b",
-      "benchmarkId": "lmarena",
-      "raw": 1395,
-      "stderr": 4,
-      "sourceLabel": "qwen3.5-35b-a3b"
-    },
-    {
-      "modelId": "qwen3-5-35b-a3b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 742,
-      "stderr": 20,
-      "sourceLabel": "Qwen3.5 35B A3B (Non-reasoning)"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 956,
-      "stderr": 18,
-      "sourceLabel": "Qwen3.6 35B A3B (Non-reasoning)"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "ifm-k2-horizon:tau3-banking",
-      "raw": 9.3,
-      "sourceLabel": "Qwen3.6-35B-A3B"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 44.9,
-      "sourceLabel": "Qwen3.6-35B-A3B"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "ifm-k2-horizon:scicode",
-      "raw": 35.8,
-      "sourceLabel": "Qwen3.6-35B-A3B"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "ifm-k2-horizon:humanity-s-last-exam-without-tools",
-      "raw": 22.2,
-      "sourceLabel": "Qwen3.6-35B-A3B"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 84.1,
-      "sourceLabel": "Qwen3.6-35B-A3B"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "ifm-k2-horizon:critpt",
-      "raw": 0.3,
-      "sourceLabel": "Qwen3.6-35B-A3B"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "ifm-k2-horizon:aa-lcr",
-      "raw": 66.7,
-      "sourceLabel": "Qwen3.6-35B-A3B"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "ifm-k2-horizon:aa-omniscience-accuracy",
-      "raw": 18.8,
-      "sourceLabel": "Qwen3.6-35B-A3B"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b",
-      "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
-      "raw": 49.5,
-      "sourceLabel": "Qwen3.6-35B-A3B"
-    },
-    {
-      "modelId": "qwen3-6-35b-a3b-2",
-      "benchmarkId": "aa-gdpval",
-      "raw": 994,
-      "stderr": 15,
-      "sourceLabel": "Qwen3.6 35B A3B (Reasoning)"
-    },
-    {
       "modelId": "olmo-3-32b-think",
       "benchmarkId": "lmarena",
       "raw": 1307,
@@ -11049,25 +10783,18 @@
       "sourceLabel": "qwen3-32b"
     },
     {
-      "modelId": "qwen3-32b-2",
+      "modelId": "qwen3-32b",
       "benchmarkId": "aa-gdpval",
       "raw": 241,
       "stderr": 18,
       "sourceLabel": "Qwen3 32B (Reasoning)"
     },
     {
-      "modelId": "qwen3-32b-2",
+      "modelId": "qwen3-32b",
       "benchmarkId": "aa-briefcase",
       "raw": 27,
       "stderr": 12.5,
       "sourceLabel": "Qwen3 32B (Reasoning)"
-    },
-    {
-      "modelId": "qwen3-coder-480b-a35b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1387,
-      "stderr": 5,
-      "sourceLabel": "qwen3-coder-480b-a35b-instruct"
     },
     {
       "modelId": "g9v3-39a5b",
@@ -11145,47 +10872,47 @@
       "sourceLabel": "gemma-3n-e4b-it"
     },
     {
-      "modelId": "nemotron-3-nano-4b",
-      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 3.7,
-      "sourceLabel": "Nemotron 3 Nano-4B"
-    },
-    {
-      "modelId": "nemotron-3-nano-4b",
-      "benchmarkId": "ifm-k2-horizon:scicode",
-      "raw": 16.4,
-      "sourceLabel": "Nemotron 3 Nano-4B"
-    },
-    {
-      "modelId": "nemotron-3-nano-4b",
-      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 51.3,
-      "sourceLabel": "Nemotron 3 Nano-4B"
-    },
-    {
-      "modelId": "nemotron-3-nano-4b",
-      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 34.66,
-      "sourceLabel": "Nemotron 3 Nano-4B"
-    },
-    {
-      "modelId": "nemotron-3-nano-4b",
-      "benchmarkId": "ifm-k2-horizon:hle",
-      "raw": 4.9,
-      "sourceLabel": "Nemotron 3 Nano-4B"
-    },
-    {
-      "modelId": "nemotron-3-nano-4b",
-      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 36.78,
-      "sourceLabel": "Nemotron 3 Nano-4B"
-    },
-    {
       "modelId": "nvidia-nemotron-3-nano-4b",
       "benchmarkId": "aa-gdpval",
       "raw": 160,
       "stderr": 21,
       "sourceLabel": "NVIDIA Nemotron 3 Nano 4B"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-nano-4b",
+      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
+      "raw": 3.7,
+      "sourceLabel": "Nemotron 3 Nano-4B"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-nano-4b",
+      "benchmarkId": "ifm-k2-horizon:scicode",
+      "raw": 16.4,
+      "sourceLabel": "Nemotron 3 Nano-4B"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-nano-4b",
+      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
+      "raw": 51.3,
+      "sourceLabel": "Nemotron 3 Nano-4B"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-nano-4b",
+      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
+      "raw": 34.66,
+      "sourceLabel": "Nemotron 3 Nano-4B"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-nano-4b",
+      "benchmarkId": "ifm-k2-horizon:hle",
+      "raw": 4.9,
+      "sourceLabel": "Nemotron 3 Nano-4B"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-nano-4b",
+      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
+      "raw": 36.78,
+      "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
       "modelId": "granite-4-1-3b",
@@ -11215,6 +10942,13 @@
       "sourceLabel": "Granite 4.2 3B"
     },
     {
+      "modelId": "qwen3-coder-480b-a35b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1387,
+      "stderr": 5,
+      "sourceLabel": "qwen3-coder-480b-a35b-instruct"
+    },
+    {
       "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "aa-gdpval",
       "raw": 1094,
@@ -11229,49 +10963,49 @@
       "sourceLabel": "Nemotron 3 Ultra 550B A55B (Reasoning)"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b-2",
+      "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "livebench",
       "raw": 67.4,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b-2",
+      "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "livebench-reasoning",
       "raw": 74.7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b-2",
+      "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "livebench-coding",
       "raw": 70.7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b-2",
+      "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "livebench-agentic-coding",
       "raw": 38.7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b-2",
+      "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "livebench-mathematics",
       "raw": 88.7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b-2",
+      "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "livebench-data-analysis",
       "raw": 54.5,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b-2",
+      "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "livebench-language",
       "raw": 70.8,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
-      "modelId": "nemotron-3-ultra-550b-a55b-2",
+      "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "livebench-instruction-following",
       "raw": 73.4,
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
@@ -11303,6 +11037,27 @@
       "raw": 167,
       "stderr": 19,
       "sourceLabel": "Qwen3 8B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-next-80b-a3b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1399,
+      "stderr": 5,
+      "sourceLabel": "qwen3-next-80b-a3b-instruct"
+    },
+    {
+      "modelId": "qwen3-next-80b-a3b",
+      "benchmarkId": "lmarena",
+      "raw": 1369,
+      "stderr": 6,
+      "sourceLabel": "qwen3-next-80b-a3b-thinking"
+    },
+    {
+      "modelId": "qwen3-next-80b-a3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 326,
+      "stderr": 20,
+      "sourceLabel": "Qwen3 Next 80B A3B (Reasoning)"
     },
     {
       "modelId": "grok-3-mini-beta",
@@ -11730,6 +11485,42 @@
       "sourceLabel": "MiniMax-M3 (max)"
     },
     {
+      "modelId": "minimax-m3",
+      "benchmarkId": "cellcog-k2-horizon:gdpval-aa-elo",
+      "raw": 1380,
+      "sourceLabel": "MiniMax-M3"
+    },
+    {
+      "modelId": "minimax-m3",
+      "benchmarkId": "cellcog-k2-horizon:toolathlon-verified",
+      "raw": 53.7,
+      "sourceLabel": "MiniMax-M3"
+    },
+    {
+      "modelId": "minimax-m3",
+      "benchmarkId": "cellcog-k2-horizon:terminal-bench-2-1",
+      "raw": 65.2,
+      "sourceLabel": "MiniMax-M3"
+    },
+    {
+      "modelId": "minimax-m3",
+      "benchmarkId": "cellcog-k2-horizon:swe-bench-pro-strict",
+      "raw": 43.8,
+      "sourceLabel": "MiniMax-M3"
+    },
+    {
+      "modelId": "minimax-m3",
+      "benchmarkId": "cellcog-k2-horizon:mcpmark",
+      "raw": 48.8,
+      "sourceLabel": "MiniMax-M3"
+    },
+    {
+      "modelId": "minimax-m3",
+      "benchmarkId": "cellcog-k2-horizon:swe-atlas-qna-strict",
+      "raw": 42.3,
+      "sourceLabel": "MiniMax-M3"
+    },
+    {
       "modelId": "o3-mini",
       "benchmarkId": "lmarena",
       "raw": 1363,
@@ -11920,6 +11711,36 @@
       "sourceLabel": "Nemotron 3 Ultra"
     },
     {
+      "modelId": "nemotron-3-ultra",
+      "benchmarkId": "cellcog-k2-horizon:gdpval-aa-elo",
+      "raw": 1162,
+      "sourceLabel": "Nemotron 3 Ultra"
+    },
+    {
+      "modelId": "nemotron-3-ultra",
+      "benchmarkId": "cellcog-k2-horizon:toolathlon-verified",
+      "raw": 34.3,
+      "sourceLabel": "Nemotron 3 Ultra"
+    },
+    {
+      "modelId": "nemotron-3-ultra",
+      "benchmarkId": "cellcog-k2-horizon:terminal-bench-2-1",
+      "raw": 53.9,
+      "sourceLabel": "Nemotron 3 Ultra"
+    },
+    {
+      "modelId": "nemotron-3-ultra",
+      "benchmarkId": "cellcog-k2-horizon:swe-bench-pro-strict",
+      "raw": 38.7,
+      "sourceLabel": "Nemotron 3 Ultra"
+    },
+    {
+      "modelId": "nemotron-3-ultra",
+      "benchmarkId": "cellcog-k2-horizon:mcpmark",
+      "raw": 45.7,
+      "sourceLabel": "Nemotron 3 Ultra"
+    },
+    {
       "modelId": "o3",
       "benchmarkId": "arc-agi-2",
       "raw": 6.5,
@@ -12070,6 +11891,13 @@
     },
     {
       "modelId": "deepseek-v3-1-terminus",
+      "benchmarkId": "lmarena",
+      "raw": 1418,
+      "stderr": 10,
+      "sourceLabel": "deepseek-v3.1-terminus-thinking"
+    },
+    {
+      "modelId": "deepseek-v3-1-terminus",
       "benchmarkId": "aa-gdpval",
       "raw": 828,
       "stderr": 19,
@@ -12081,13 +11909,6 @@
       "raw": 474,
       "stderr": 10,
       "sourceLabel": "DeepSeek V3.1 Terminus (Reasoning)"
-    },
-    {
-      "modelId": "deepseek-v3-1-terminus-2",
-      "benchmarkId": "lmarena",
-      "raw": 1418,
-      "stderr": 10,
-      "sourceLabel": "deepseek-v3.1-terminus-thinking"
     },
     {
       "modelId": "deepseek-v3-1",
@@ -12256,20 +12077,20 @@
     },
     {
       "modelId": "deepseek-v3-2",
-      "benchmarkId": "aa-gdpval",
-      "raw": 813,
-      "stderr": 19,
-      "sourceLabel": "DeepSeek V3.2 (Reasoning)"
-    },
-    {
-      "modelId": "deepseek-v3-2-2",
       "benchmarkId": "lmarena",
       "raw": 1425,
       "stderr": 4,
       "sourceLabel": "deepseek-v3.2"
     },
     {
-      "modelId": "deepseek-v3-2-2",
+      "modelId": "deepseek-v3-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 813,
+      "stderr": 19,
+      "sourceLabel": "DeepSeek V3.2 (Reasoning)"
+    },
+    {
+      "modelId": "deepseek-v3-2",
       "benchmarkId": "arc-agi-2",
       "raw": 4,
       "sourceLabel": "Deepseek V3.2"
@@ -12364,6 +12185,60 @@
       "raw": 1303,
       "stderr": 9,
       "sourceLabel": "gemma-3-4b-it"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
+      "benchmarkId": "lmarena",
+      "raw": 1355,
+      "stderr": 9,
+      "sourceLabel": "nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4"
+    },
+    {
+      "modelId": "nemotron-3-5-30b-a3b",
+      "benchmarkId": "ifm-k2-horizon:tau3-banking",
+      "raw": 9.28,
+      "sourceLabel": "Nemotron 3.5 30B-A3B"
+    },
+    {
+      "modelId": "nemotron-3-5-30b-a3b",
+      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
+      "raw": 51.56,
+      "sourceLabel": "Nemotron 3.5 30B-A3B"
+    },
+    {
+      "modelId": "qwen3-5-35b-a3b",
+      "benchmarkId": "lmarena",
+      "raw": 1395,
+      "stderr": 4,
+      "sourceLabel": "qwen3.5-35b-a3b"
+    },
+    {
+      "modelId": "qwen3-5-35b-a3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 742,
+      "stderr": 20,
+      "sourceLabel": "Qwen3.5 35B A3B (Non-reasoning)"
+    },
+    {
+      "modelId": "qwen3-5-397b-a17b",
+      "benchmarkId": "lmarena",
+      "raw": 1441,
+      "stderr": 3,
+      "sourceLabel": "qwen3.5-397b-a17b"
+    },
+    {
+      "modelId": "qwen3-5-397b-a17b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 907,
+      "stderr": 15,
+      "sourceLabel": "Qwen3.5 397B A17B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-5-397b-a17b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 564,
+      "stderr": 9,
+      "sourceLabel": "Qwen3.5 397B A17B (Reasoning)"
     },
     {
       "modelId": "qwen3-5-9b",
@@ -12776,6 +12651,67 @@
       "benchmarkId": "ifm-k2-horizon:hle",
       "raw": 14.9,
       "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 994,
+      "stderr": 15,
+      "sourceLabel": "Qwen3.6 35B A3B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "ifm-k2-horizon:tau3-banking",
+      "raw": 9.3,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
+      "raw": 44.9,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "ifm-k2-horizon:scicode",
+      "raw": 35.8,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "ifm-k2-horizon:humanity-s-last-exam-without-tools",
+      "raw": 22.2,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
+      "raw": 84.1,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "ifm-k2-horizon:critpt",
+      "raw": 0.3,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "ifm-k2-horizon:aa-lcr",
+      "raw": 66.7,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "ifm-k2-horizon:aa-omniscience-accuracy",
+      "raw": 18.8,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
+      "raw": 49.5,
+      "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
       "modelId": "chatglm3-6b",
@@ -13485,9 +13421,16 @@
     {
       "modelId": "gemma-4-31b",
       "benchmarkId": "aa-gdpval",
-      "raw": 693,
-      "stderr": 18,
-      "sourceLabel": "Gemma 4 31B (Non-reasoning)"
+      "raw": 757,
+      "stderr": 16,
+      "sourceLabel": "Gemma 4 31B (Reasoning)"
+    },
+    {
+      "modelId": "gemma-4-31b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 380,
+      "stderr": 9.5,
+      "sourceLabel": "Gemma 4 31B (Reasoning)"
     },
     {
       "modelId": "gemma-4-31b-it",
@@ -13542,20 +13485,6 @@
       "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
       "raw": 15,
       "sourceLabel": "Gemma 4 31B-it"
-    },
-    {
-      "modelId": "gemma-4-31b-2",
-      "benchmarkId": "aa-gdpval",
-      "raw": 757,
-      "stderr": 16,
-      "sourceLabel": "Gemma 4 31B (Reasoning)"
-    },
-    {
-      "modelId": "gemma-4-31b-2",
-      "benchmarkId": "aa-briefcase",
-      "raw": 380,
-      "stderr": 9.5,
-      "sourceLabel": "Gemma 4 31B (Reasoning)"
     },
     {
       "modelId": "c4ai-aya-expanse-32b",
@@ -13622,6 +13551,13 @@
     },
     {
       "modelId": "gemma-4-e4b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 178,
+      "stderr": 22,
+      "sourceLabel": "Gemma 4 E4B (Reasoning)"
+    },
+    {
+      "modelId": "gemma-4-e4b",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 5,
       "sourceLabel": "Gemma 4-E4B"
@@ -13637,13 +13573,6 @@
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 52,
       "sourceLabel": "Gemma 4-E4B"
-    },
-    {
-      "modelId": "gemma-4-e4b-2",
-      "benchmarkId": "aa-gdpval",
-      "raw": 178,
-      "stderr": 22,
-      "sourceLabel": "Gemma 4 E4B (Reasoning)"
     },
     {
       "modelId": "c4ai-aya-expanse-8b",
@@ -13902,7 +13831,7 @@
       "sourceLabel": "Claude 4 Sonnet (Reasoning)"
     },
     {
-      "modelId": "claude-sonnet-4",
+      "modelId": "claude-4-sonnet",
       "benchmarkId": "arc-agi-2",
       "raw": 5.9,
       "sourceLabel": "Claude Sonnet 4 (Thinking 16K)"
@@ -14289,23 +14218,23 @@
     },
     {
       "modelId": "claude-4-5-haiku",
-      "benchmarkId": "arc-agi-2",
-      "raw": 4,
-      "sourceLabel": "Claude Haiku 4.5 (Thinking 32K)"
-    },
-    {
-      "modelId": "claude-4-5-haiku-2",
       "benchmarkId": "aa-gdpval",
       "raw": 857,
       "stderr": 15,
       "sourceLabel": "Claude 4.5 Haiku (Reasoning)"
     },
     {
-      "modelId": "claude-4-5-haiku-2",
+      "modelId": "claude-4-5-haiku",
       "benchmarkId": "aa-briefcase",
       "raw": 618,
       "stderr": 8,
       "sourceLabel": "Claude 4.5 Haiku (Reasoning)"
+    },
+    {
+      "modelId": "claude-4-5-haiku",
+      "benchmarkId": "arc-agi-2",
+      "raw": 4,
+      "sourceLabel": "Claude Haiku 4.5 (Thinking 32K)"
     },
     {
       "modelId": "opus-4-5",
@@ -14376,7 +14305,7 @@
       "sourceLabel": "Claude 4.5 Sonnet (Reasoning)"
     },
     {
-      "modelId": "claude-sonnet-4-5",
+      "modelId": "claude-4-5-sonnet",
       "benchmarkId": "arc-agi-2",
       "raw": 13.6,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking 32K)"
@@ -14389,7 +14318,7 @@
       "sourceLabel": "glm-4.6"
     },
     {
-      "modelId": "glm-4-6-2",
+      "modelId": "glm-4-6",
       "benchmarkId": "aa-gdpval",
       "raw": 876,
       "stderr": 17,
@@ -14648,7 +14577,7 @@
       "sourceLabel": "glm-4.7"
     },
     {
-      "modelId": "glm-4-7-2",
+      "modelId": "glm-4-7",
       "benchmarkId": "aa-gdpval",
       "raw": 1100,
       "stderr": 16,
@@ -15354,6 +15283,30 @@
       "sourceLabel": "Claude Fable 5.1 Max Effort"
     },
     {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "datacamp-astra-vs-fable:terminal-bench-4-0",
+      "raw": 55.8,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "datacamp-astra-vs-fable:deepswe-v1-1",
+      "raw": 67.4,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "datacamp-astra-vs-fable:frontiercode-1-1-main",
+      "raw": 50.9,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "datacamp-astra-vs-fable:internal-database-migration",
+      "raw": 57.8,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
       "modelId": "glm-5-1",
       "benchmarkId": "lmarena",
       "raw": 1466,
@@ -15361,14 +15314,14 @@
       "sourceLabel": "glm-5.1"
     },
     {
-      "modelId": "glm-5-1-2",
+      "modelId": "glm-5-1",
       "benchmarkId": "aa-gdpval",
       "raw": 1185,
       "stderr": 14,
       "sourceLabel": "GLM-5.1 (Reasoning)"
     },
     {
-      "modelId": "glm-5-1-2",
+      "modelId": "glm-5-1",
       "benchmarkId": "aa-briefcase",
       "raw": 966,
       "stderr": 7,
@@ -15618,6 +15571,42 @@
       "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
       "raw": 74,
       "sourceLabel": "GLM 5.2 (max)"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "cellcog-k2-horizon:gdpval-aa-elo",
+      "raw": 1498,
+      "sourceLabel": "GLM 5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "cellcog-k2-horizon:toolathlon-verified",
+      "raw": 59.9,
+      "sourceLabel": "GLM 5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "cellcog-k2-horizon:terminal-bench-2-1",
+      "raw": 77.9,
+      "sourceLabel": "GLM 5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "cellcog-k2-horizon:swe-bench-pro-strict",
+      "raw": 46.7,
+      "sourceLabel": "GLM 5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "cellcog-k2-horizon:mcpmark",
+      "raw": 72.4,
+      "sourceLabel": "GLM 5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "cellcog-k2-horizon:swe-atlas-qna-strict",
+      "raw": 46.4,
+      "sourceLabel": "GLM 5.2"
     },
     {
       "modelId": "gpt-5-2",
@@ -16723,6 +16712,30 @@
       "benchmarkId": "livebench-instruction-following",
       "raw": 75.6,
       "sourceLabel": "GPT-6 Astra Max Effort"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "datacamp-astra-vs-fable:terminal-bench-4-0",
+      "raw": 57.7,
+      "sourceLabel": "GPT-6 Astra"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "datacamp-astra-vs-fable:deepswe-v1-1",
+      "raw": 74.1,
+      "sourceLabel": "GPT-6 Astra"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "datacamp-astra-vs-fable:frontiercode-1-1-main",
+      "raw": 53.3,
+      "sourceLabel": "GPT-6 Astra"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "datacamp-astra-vs-fable:internal-database-migration",
+      "raw": 63.9,
+      "sourceLabel": "GPT-6 Astra"
     },
     {
       "modelId": "chatglm-6b",

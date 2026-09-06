@@ -9,7 +9,7 @@ import { describeIndex, getModel, rankModels } from '../lib/query';
  *   /model-index/api                        → describe_index
  *   /model-index/api?model=claude-fable-5-1 → get_model
  *   /model-index/api?scope=coding&limit=10  → rank_models
- *     (also org, minBoards, openWeights, callable)
+ *     (also org, minBoards, openWeights, callable, reports=false)
  */
 export function GET(request: Request) {
   const p = new URL(request.url).searchParams;
@@ -26,6 +26,7 @@ export function GET(request: Request) {
           limit: int('limit'),
           openWeights: bool('openWeights'),
           callable: bool('callable'),
+          reports: bool('reports'),
         })
       : describeIndex();
 

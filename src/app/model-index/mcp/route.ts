@@ -56,6 +56,12 @@ const handler = createMcpHandler(
             .boolean()
             .optional()
             .describe('Only models with a callable id in a catalog.'),
+          reports: z
+            .boolean()
+            .optional()
+            .describe(
+              'Include report ✱ figures (launch posts, blogs, write-ups). Default true; false drops them from every score and hides models nothing else measured.',
+            ),
         }),
       },
       async (args) => json(rankModels(args)),

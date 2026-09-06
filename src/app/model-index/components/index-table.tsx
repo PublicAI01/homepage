@@ -47,6 +47,8 @@ interface Props {
 }
 
 const CHART_ROWS = 10;
+/** Must-include key standing for "any report ✱". */
+const REPORT_ANY = '✱';
 const INDEX_URL = 'https://publicai.io/model-index';
 
 /** What the table is ranked by: the overall index, a category, or a domain inside one. */
@@ -145,8 +147,17 @@ export default function IndexTable({
   const [minBoards, setMinBoards] = useState(1);
   const [mustHave, setMustHave] = useState<Set<string>>(new Set());
   const [openModel, setOpenModel] = useState<string | null>(null);
+  // Reports ✱ — launch posts, blogs, write-ups — are in by default and can
+  // be switched off, which drops their figures from every score and hides
+  // models nothing else has measured.
+  const [includeReports, setIncludeReports] = useState(true);
 
-  const weights = useMemo(() => weightsFor(benchmarks), [benchmarks]);
+  const weights = useMemo(() => {
+    const w = weightsFor(benchmarks);
+    if (!includeReports)
+      for (const b of benchmarks) if (b.kind === 'report') w[b.id] = 0;
+    return w;
+  }, [benchmarks, includeReports]);
   const sources = useMemo(() => groupBoards(benchmarks), [benchmarks]);
   const boards = useMemo(
     () => sources.filter((s) => s.kind !== 'report'),
@@ -213,11 +224,14 @@ export default function IndexTable({
     const q = query.trim().toLowerCase();
     let out = rows.filter((r) => {
       if (r.covered < minBoards) return false;
+      if (!includeReports && r.covered === 0) return false;
       if (org !== 'all' && r.model.org !== org) return false;
       if (q && !`${r.model.name} ${r.model.org}`.toLowerCase().includes(q))
         return false;
       const has = sourcesScoring.get(r.model.id)!;
-      for (const b of mustHave) if (!has.has(b)) return false;
+      for (const b of mustHave) {
+        if (b === REPORT_ANY ? r.reports === 0 : !has.has(b)) return false;
+      }
       return true;
     });
     if (rankKey.level !== 'overall') {
@@ -225,14 +239,23 @@ export default function IndexTable({
       out = [...out]
         // A model with no figure in this scope is not "last": it is absent.
         .filter((r) => keyOf(r, rankKey) !== null)
-        .sort(
-          (a, b) =>
-            Number(eligible(b, rankKey)) - Number(eligible(a, rankKey)) ||
-            by(a, b),
-        );
+        // With reports in, a row sits where its figure puts it and carries
+        // a ✱ instead of a number if no board measured it here. With
+        // reports out, only board-measured rows remain in this scope.
+        .filter((r) => includeReports || eligible(r, rankKey))
+        .sort(by);
     }
     return out;
-  }, [rows, query, org, minBoards, mustHave, rankKey, sourcesScoring]);
+  }, [
+    rows,
+    query,
+    org,
+    minBoards,
+    mustHave,
+    rankKey,
+    sourcesScoring,
+    includeReports,
+  ]);
 
   const rankedCount = rows.filter((r) => r.ranked).length;
   const shown = filtered.slice(0, PAGE);
@@ -404,17 +427,38 @@ export default function IndexTable({
             </option>
           ))}
         </select>
+        <label
+          className="text-caption flex cursor-pointer items-center gap-1.5 text-[#D9D7E0] select-none"
+          title="Launch posts, blogs and write-ups. Off: their figures leave every score and models nothing else measured are hidden.">
+          <input
+            type="checkbox"
+            checked={includeReports}
+            onChange={(e) => setIncludeReports(e.target.checked)}
+            className="accent-primary size-3.5"
+          />
+          Include reports{' '}
+          <span className={cn('font-mono', REPORT_BADGE.tone.split(' ').pop())}>
+            ✱
+          </span>
+        </label>
         <span className="ml-auto flex items-center gap-1.5">
           <span className={cn(LABEL, 'mr-1')}>Must include</span>
-          {sources.map((s) => {
-            const on = mustHave.has(s.id);
+          {/* Boards one by one; every report shares the one ✱, so the ✱
+              button means "measured by at least one report". */}
+          {[...boards, ...(reports.length ? [reports[0]] : [])].map((s) => {
+            const id = s.kind === 'report' ? REPORT_ANY : s.id;
+            const on = mustHave.has(id);
             return (
               <button
-                key={s.id}
+                key={id}
                 type="button"
                 aria-pressed={on}
-                onClick={() => toggleSource(s.id)}
-                title={s.name}
+                onClick={() => toggleSource(id)}
+                title={
+                  s.kind === 'report'
+                    ? `Any report ✱ (${reports.map((r) => r.name).join(' · ')})`
+                    : s.name
+                }
                 className={cn(
                   'rounded-md border p-0.5 transition-colors',
                   on
@@ -574,12 +618,13 @@ function Row({
         <td className="text-g2 px-2.5 py-2.5 font-mono">
           {position ?? (
             <span
+              className={cn(rankKey.level !== 'overall' && 'text-[#E8A9F0]')}
               title={
                 rankKey.level === 'overall'
                   ? `Provisional — fewer than ${MIN_SOURCES} independent publishers`
-                  : 'No recognised board measures this model here; report figures only'
+                  : 'Placed by report ✱ figures only; no recognised board measures this model here'
               }>
-              —
+              {rankKey.level === 'overall' ? '—' : '✱'}
             </span>
           )}
         </td>
