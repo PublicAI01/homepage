@@ -63,10 +63,10 @@ const handler = createMcpHandler(
               'Include report ✱ figures (launch posts, blogs, write-ups). Default true; false drops them from every score and hides models nothing else measured.',
             ),
           size: z
-            .enum(['small', 'medium', 'large', 'undisclosed'])
+            .enum(['small', 'medium', 'large', 'xlarge', 'undisclosed'])
             .optional()
             .describe(
-              'Size class by total parameters: small ≤ 15B, medium 15–100B, large > 100B (counted from the weights for open models, read from the name otherwise); undisclosed for closed models. Positions are then within that class.',
+              'Size class by total parameters: small ≤ 15B, medium 15–100B, large 100B–1T, xlarge > 1T (counted from the weights for open models, read from the name otherwise); undisclosed for closed models. Positions are then within that class.',
             ),
         }),
       },
