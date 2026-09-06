@@ -4,7 +4,13 @@ import { useMemo, useState } from 'react';
 
 import { cn } from '@/utils';
 
-import type { Benchmark, Model, Score } from '../data/types';
+import type { Benchmark, Catalog, Model, Score } from '../data/types';
+import {
+  type Channel,
+  channelsOf,
+  contextLabel,
+  priceLabel,
+} from '../lib/access';
 import { aggregate, type AggregateRow, compareScores } from '../lib/aggregate';
 import { type BoardView, groupBoards } from '../lib/boards';
 import {
@@ -19,22 +25,23 @@ import {
   weightsFor,
 } from '../lib/weights';
 
-const PANEL =
-  'rounded-xl border border-[#2C2C31] bg-white/[0.045] backdrop-blur-sm';
+const PANEL = 'rounded-xl border border-[#2C2C31] bg-white/[0.045]';
 const INDEX_TONE = 'text-[#6EE7A0]';
 const CONTROL =
-  'text-caption rounded-md border border-white/12 bg-transparent px-2.5 py-1.5 text-white outline-none focus:border-primary';
+  'text-caption h-8 rounded-md border border-white/12 bg-transparent px-2.5 text-white outline-none transition-colors hover:border-white/25 focus:border-primary';
 const CHIP =
   'text-caption rounded-md border px-2.5 py-1 font-medium transition-colors';
-const CHIP_ON = 'border-primary bg-primary/20 text-white';
+const CHIP_ON = 'border-primary/70 bg-primary/15 text-white';
 const CHIP_OFF =
-  'text-g2 border-white/12 hover:border-white/30 hover:text-white';
+  'text-g2 border-transparent hover:border-white/15 hover:text-white';
+const LABEL = 'text-micro tracking-[0.14em] text-[#78758A] uppercase';
 const PAGE = 100;
 
 interface Props {
   models: Model[];
   benchmarks: Benchmark[];
   scores: Score[];
+  catalogs: Catalog[];
 }
 
 /** What the table is ranked by: the overall index, a category, or a domain inside one. */
@@ -57,7 +64,7 @@ function rawLabel(metric: Benchmark['metric'], raw: number) {
 function agreement(d: number) {
   if (d >= 18) return { label: 'boards disagree', tone: 'text-[#F08A8A]' };
   if (d >= 9) return { label: 'mixed', tone: 'text-[#F5C86B]' };
-  return { label: 'consistent', tone: 'text-[#78758A]' };
+  return { label: 'consistent', tone: 'text-[#9C9AA8]' };
 }
 
 const keyOf = (row: AggregateRow, k: RankKey): number | null => {
@@ -105,7 +112,12 @@ export function SourceBadge({
   );
 }
 
-export default function IndexTable({ models, benchmarks, scores }: Props) {
+export default function IndexTable({
+  models,
+  benchmarks,
+  scores,
+  catalogs,
+}: Props) {
   const [rankKey, setRankKey] = useState<RankKey>({ level: 'overall' });
   const [query, setQuery] = useState('');
   const [org, setOrg] = useState('all');
@@ -200,6 +212,7 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
   const rankedCount = rows.filter((r) => r.ranked).length;
   const shown = filtered.slice(0, PAGE);
   const coverable = rows[0]?.coverable ?? boards.length;
+  const catalogDate = catalogs[0]?.retrievedAt;
 
   const toggleSource = (id: string) =>
     setMustHave((s) => {
@@ -216,79 +229,12 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
 
   return (
     <div>
-      {/* ---------------- filters ---------------- */}
-      <div className="mb-3 flex flex-wrap items-center gap-2">
-        <input
-          type="search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search model or organisation"
-          aria-label="Search"
-          className={cn(CONTROL, 'w-56 placeholder:text-[#78758A]')}
-        />
-        <select
-          value={org}
-          onChange={(e) => setOrg(e.target.value)}
-          aria-label="Organisation"
-          className={CONTROL}>
-          <option value="all">All organisations</option>
-          {orgs.map((o) => (
-            <option
-              key={o}
-              value={o}>
-              {o}
-            </option>
-          ))}
-        </select>
-        <select
-          value={minBoards}
-          onChange={(e) => setMinBoards(Number(e.target.value))}
-          aria-label="Minimum recognised boards"
-          className={CONTROL}>
-          <option value={0}>Any coverage (incl. report-only)</option>
-          {Array.from({ length: coverable }, (_, i) => i + 1).map((n) => (
-            <option
-              key={n}
-              value={n}>
-              {n === 1 ? 'At least 1 board' : `Scored by ${n}+ boards`}
-            </option>
-          ))}
-        </select>
-        <span className="text-micro text-g2 ml-1 tracking-[0.14em] uppercase">
-          Must include
-        </span>
-        {sources.map((s) => {
-          const on = mustHave.has(s.id);
-          return (
-            <button
-              key={s.id}
-              type="button"
-              aria-pressed={on}
-              onClick={() => toggleSource(s.id)}
-              title={s.name}
-              className={cn(
-                'rounded-md border p-0.5 transition-colors',
-                on
-                  ? 'border-primary'
-                  : 'border-transparent hover:border-white/20',
-              )}>
-              <SourceBadge
-                source={s}
-                present
-              />
-            </button>
-          );
-        })}
-      </div>
-
       {/* ---------------- rank by: category, then domain ---------------- */}
       <div
         role="tablist"
         aria-label="Rank by category"
-        className="mb-2 flex flex-wrap items-center gap-1.5">
-        <span className="text-micro text-g2 mr-2 tracking-[0.14em] uppercase">
-          Rank by
-        </span>
+        className="flex flex-wrap items-center gap-1">
+        <span className={cn(LABEL, 'mr-2')}>Rank by</span>
         <button
           type="button"
           role="tab"
@@ -311,7 +257,7 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
               onClick={() => setRankKey({ level: 'category', category })}
               className={cn(CHIP, on ? CHIP_ON : CHIP_OFF)}>
               {domainLabel(category)}
-              <span className="ml-1.5 font-mono text-[10px] opacity-60">
+              <span className="ml-1.5 font-mono text-[10px] opacity-50">
                 {domains.length}
               </span>
             </button>
@@ -323,10 +269,7 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
         <div
           role="tablist"
           aria-label={`Rank by domain within ${activeCategory}`}
-          className="mb-3 flex flex-wrap items-center gap-1.5 pl-1">
-          <span className="text-micro mr-2 tracking-[0.14em] text-[#78758A] uppercase">
-            {domainLabel(activeCategory)} ›
-          </span>
+          className="border-primary/40 mt-1.5 flex flex-wrap items-center gap-1 border-l-2 pl-3">
           <button
             type="button"
             role="tab"
@@ -363,7 +306,72 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
         </div>
       ) : null}
 
-      <p className="text-caption mb-2 text-[#78758A]">
+      {/* ---------------- filters ---------------- */}
+      <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-white/8 pt-4">
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search model or organisation"
+          aria-label="Search"
+          className={cn(CONTROL, 'w-60 placeholder:text-[#78758A]')}
+        />
+        <select
+          value={org}
+          onChange={(e) => setOrg(e.target.value)}
+          aria-label="Organisation"
+          className={CONTROL}>
+          <option value="all">All organisations</option>
+          {orgs.map((o) => (
+            <option
+              key={o}
+              value={o}>
+              {o}
+            </option>
+          ))}
+        </select>
+        <select
+          value={minBoards}
+          onChange={(e) => setMinBoards(Number(e.target.value))}
+          aria-label="Minimum recognised boards"
+          className={CONTROL}>
+          <option value={0}>Any coverage (incl. report-only)</option>
+          {Array.from({ length: coverable }, (_, i) => i + 1).map((n) => (
+            <option
+              key={n}
+              value={n}>
+              {n === 1 ? 'At least 1 board' : `Scored by ${n}+ boards`}
+            </option>
+          ))}
+        </select>
+        <span className="ml-auto flex items-center gap-1.5">
+          <span className={cn(LABEL, 'mr-1')}>Must include</span>
+          {sources.map((s) => {
+            const on = mustHave.has(s.id);
+            return (
+              <button
+                key={s.id}
+                type="button"
+                aria-pressed={on}
+                onClick={() => toggleSource(s.id)}
+                title={s.name}
+                className={cn(
+                  'rounded-md border p-0.5 transition-colors',
+                  on
+                    ? 'border-primary/70'
+                    : 'border-transparent hover:border-white/20',
+                )}>
+                <SourceBadge
+                  source={s}
+                  present
+                />
+              </button>
+            );
+          })}
+        </span>
+      </div>
+
+      <p className="text-caption mt-3 mb-2 text-[#78758A]">
         <span className="text-[#D9D7E0]">{rankedCount}</span> ranked ·{' '}
         <span className="text-[#D9D7E0]">{rows.length - rankedCount}</span>{' '}
         provisional · showing{' '}
@@ -413,6 +421,7 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
                 taxonomy={taxonomy}
                 boards={boards}
                 reports={reports}
+                catalogDate={catalogDate}
                 open={openModel === row.model.id}
                 onToggle={() =>
                   setOpenModel(openModel === row.model.id ? null : row.model.id)
@@ -438,7 +447,8 @@ export default function IndexTable({ models, benchmarks, scores }: Props) {
         by fewer than {MIN_SOURCES} recognised boards is listed as provisional
         without a rank; figures from reports ✱ shape category and domain columns
         only. A filled badge means that source scored the model; hover for the
-        source and its figure.
+        figure. Open a row for the model card: scores by domain, how to call it,
+        and every source figure.
         {filtered.length > shown.length
           ? ` The first ${PAGE} of ${filtered.length} are shown; narrow the filters to see the rest.`
           : ''}
@@ -454,6 +464,7 @@ function Row({
   taxonomy,
   boards,
   reports,
+  catalogDate,
   open,
   onToggle,
 }: {
@@ -463,11 +474,11 @@ function Row({
   taxonomy: [string, string[]][];
   boards: BoardView[];
   reports: BoardView[];
+  catalogDate: string | undefined;
   open: boolean;
   onToggle: () => void;
 }) {
   const thin = row.ranked && row.covered < row.coverable;
-  const agree = agreement(row.dispersion);
   const scored = new Map(row.perBenchmark.map((s) => [s.benchmarkId, s]));
   const reportsScoring = reports.filter((r) =>
     r.measures.some((m) => scored.has(m.id)),
@@ -478,9 +489,10 @@ function Row({
       <tr
         className={cn(
           'cursor-pointer border-t border-white/8 align-middle transition-colors hover:bg-white/4',
-          open && 'bg-white/4',
+          open && 'bg-white/[0.06]',
         )}
-        onClick={onToggle}>
+        onClick={onToggle}
+        aria-expanded={open}>
         <td className="text-g2 px-3 py-2.5 font-mono">
           {rank ?? (
             <span title="Provisional — not enough recognised boards">—</span>
@@ -548,7 +560,7 @@ function Row({
         <td className="text-g2 px-3 py-2.5">
           <span
             aria-hidden
-            className="inline-block transition-transform"
+            className="inline-block transition-transform duration-200"
             style={{ transform: open ? 'rotate(90deg)' : 'none' }}>
             ›
           </span>
@@ -559,150 +571,349 @@ function Row({
       </tr>
 
       {open ? (
-        <tr className="border-t border-white/8 bg-[#161618]">
+        <tr className="border-t border-white/8 bg-[#141416]">
           <td
             colSpan={6}
-            className="px-4 py-4 whitespace-normal">
-            <div className="text-caption mb-3 flex flex-wrap gap-x-5 gap-y-1 text-[#78758A]">
-              <span>
-                Scored by{' '}
-                <b className="font-medium text-[#D9D7E0]">
-                  {row.covered} of {row.coverable}
-                </b>{' '}
-                recognised boards
-                {row.reports > 0 ? (
-                  <>
-                    {' '}
-                    and{' '}
-                    <b className="font-medium text-[#D9D7E0]">
-                      {row.reports}
-                    </b>{' '}
-                    report{row.reports > 1 ? 's' : ''} ✱
-                  </>
-                ) : null}
-              </span>
-              <span>
-                Evidence{' '}
-                <b className="font-medium text-[#D9D7E0]">
-                  {Math.round(row.evidence * 100)}%
-                </b>{' '}
-                of available board weight
-              </span>
-              {row.covered > 1 ? (
-                <span>
-                  Board agreement:{' '}
-                  <span className={agree.tone}>{agree.label}</span>
-                </span>
-              ) : null}
-              {!row.ranked ? (
-                <span className="text-[#F5C86B]">
-                  Provisional: fewer than {MIN_SOURCES} recognised boards.
-                </span>
-              ) : null}
-            </div>
-
-            {/* category → domain scores */}
-            <div className="mb-4 flex flex-col gap-1.5">
-              {taxonomy.map(([category, domains]) => {
-                const c = row.byCategory[category] ?? null;
-                const present = domains.filter(
-                  (d) => (row.byDomain[d] ?? null) !== null,
-                );
-                if (c === null && present.length === 0) return null;
-                return (
-                  <div
-                    key={category}
-                    className="text-caption flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                    <span className="w-32 shrink-0 text-white">
-                      {domainLabel(category)}
-                      <span className="text-g2 ml-1.5 font-mono">{fmt(c)}</span>
-                    </span>
-                    {present.map((d) => (
-                      <span
-                        key={d}
-                        className="rounded-md border border-white/12 px-1.5 py-0.5">
-                        <span className="text-g2">{domainLabel(d)}</span>{' '}
-                        <span className="font-mono text-white">
-                          {fmt(row.byDomain[d])}
-                        </span>
-                      </span>
-                    ))}
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* provenance, grouped by source */}
-            <div className="flex flex-col gap-3">
-              {[...boards, ...reports].map((src) => {
-                const present = src.measures.filter((m) => scored.has(m.id));
-                if (present.length === 0) return null;
-                const first = scored.get(present[0].id)!;
-                const h = src.headline;
-                return (
-                  <div key={src.id}>
-                    <div className="text-caption mb-1 flex flex-wrap items-center gap-2">
-                      <SourceBadge
-                        source={src}
-                        present
-                      />
-                      <b className="font-medium text-white">{src.name}</b>
-                      {src.kind === 'report' ? (
-                        <span className="text-[#E8A9F0]">
-                          report by {h.publisher}
-                          {h.publishedAt ? `, ${h.publishedAt}` : ''}
-                        </span>
-                      ) : null}
-                      <span className="text-[#78758A]">
-                        as{' '}
-                        <span className="font-mono">
-                          &quot;{first.sourceLabel}&quot;
-                        </span>
-                        {first.scaffold ? ` via ${first.scaffold}` : ''}
-                      </span>
-                      <a
-                        href={h.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-p1 ml-auto underline underline-offset-2">
-                        source
-                      </a>
-                    </div>
-                    <dl className="text-caption grid grid-cols-1 gap-x-6 gap-y-0.5 pl-9 sm:grid-cols-2">
-                      {present.map((m) => {
-                        const s = scored.get(m.id)!;
-                        return (
-                          <div
-                            key={m.id}
-                            className="flex items-baseline gap-2"
-                            title={`${m.category} › ${m.domain}`}>
-                            <dt className="text-g2 w-44 shrink-0 truncate">
-                              {m.name.replace(/^.*· /, '')}
-                            </dt>
-                            <dd className="font-mono text-[#D9D7E0]">
-                              {rawLabel(m.metric, s.raw)}
-                              {s.stderr !== undefined ? (
-                                <span className="text-[#78758A]">
-                                  {' '}
-                                  ± {s.stderr}
-                                </span>
-                              ) : null}
-                            </dd>
-                            <dd className="text-g2 font-mono">
-                              → {fmt(s.normalized)}
-                            </dd>
-                          </div>
-                        );
-                      })}
-                    </dl>
-                  </div>
-                );
-              })}
+            className="p-0 whitespace-normal">
+            {/* The table scrolls sideways on small screens; the card must not.
+                Sticky at the left edge and capped at the viewport, it stays
+                readable while the rows behind it scroll. */}
+            <div className="sticky left-0 max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
+              <ModelCard
+                row={row}
+                rank={rank}
+                taxonomy={taxonomy}
+                boards={boards}
+                reports={reports}
+                catalogDate={catalogDate}
+              />
             </div>
           </td>
         </tr>
       ) : null}
     </>
+  );
+}
+
+/**
+ * The card a row opens into. Three things a reader wants, in order: what
+ * this model is and how it scores, how to call it, and where every figure
+ * came from. Nothing here is prose about the model; every line is a fact the
+ * index holds, and every number links back.
+ */
+function ModelCard({
+  row,
+  rank,
+  taxonomy,
+  boards,
+  reports,
+  catalogDate,
+}: {
+  row: AggregateRow;
+  rank: number | undefined;
+  taxonomy: [string, string[]][];
+  boards: BoardView[];
+  reports: BoardView[];
+  catalogDate: string | undefined;
+}) {
+  const agree = agreement(row.dispersion);
+  const scored = new Map(row.perBenchmark.map((s) => [s.benchmarkId, s]));
+  const access = row.model.access;
+  const or = access?.openrouter;
+  const channels = channelsOf(access);
+  const [recommended, ...alternatives] = channels;
+
+  // A best domain gives the "about" line something a reader can act on.
+  const best = Object.entries(row.byDomain)
+    .filter((e): e is [string, number] => typeof e[1] === 'number')
+    .sort((a, b) => b[1] - a[1])[0];
+
+  const facts: string[] = [
+    row.model.org,
+    access?.weights
+      ? 'open weights'
+      : or
+        ? 'weights not published'
+        : catalogDate
+          ? `not in the catalog as of ${catalogDate}`
+          : '',
+    contextLabel(or?.contextLength)
+      ? `${contextLabel(or?.contextLength)} context`
+      : '',
+    or?.modalities?.length ? `${or.modalities.join(' + ')} in` : '',
+    or?.listedAt ? `listed ${or.listedAt}` : '',
+  ].filter(Boolean);
+
+  return (
+    <div className="grid grid-cols-1 gap-x-8 gap-y-5 px-4 py-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      {/* ---- about + scores ---- */}
+      <div className="min-w-0">
+        <div className="mb-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <b className="text-body font-semibold text-white">{row.model.name}</b>
+          <span className="text-caption text-[#9C9AA8]">
+            {facts.join(' · ')}
+          </span>
+        </div>
+        <p className="text-caption mb-4 text-[#9C9AA8]">
+          {rank ? (
+            <>
+              Ranked <b className="font-medium text-[#D9D7E0]">#{rank}</b>{' '}
+              overall
+              {best ? (
+                <>
+                  ; strongest in{' '}
+                  <b className="font-medium text-[#D9D7E0]">
+                    {domainLabel(best[0])} {fmt(best[1])}
+                  </b>
+                </>
+              ) : null}
+              .{' '}
+            </>
+          ) : (
+            <span className="text-[#F5C86B]">
+              Provisional — fewer than {MIN_SOURCES} recognised boards.{' '}
+            </span>
+          )}
+          Scored by{' '}
+          <b className="font-medium text-[#D9D7E0]">
+            {row.covered} of {row.coverable}
+          </b>{' '}
+          boards
+          {row.reports > 0 ? (
+            <>
+              {' '}
+              and <b className="font-medium text-[#D9D7E0]">
+                {row.reports}
+              </b>{' '}
+              report
+              {row.reports > 1 ? 's' : ''} ✱
+            </>
+          ) : null}
+          ; evidence{' '}
+          <b className="font-medium text-[#D9D7E0]">
+            {Math.round(row.evidence * 100)}%
+          </b>{' '}
+          of available weight
+          {row.covered > 1 ? (
+            <>
+              ; boards <span className={agree.tone}>{agree.label}</span>
+            </>
+          ) : null}
+          .
+        </p>
+
+        <h4 className={cn(LABEL, 'mb-2')}>Scores by domain</h4>
+        <div className="flex flex-col gap-1.5">
+          {taxonomy.map(([category, domains]) => {
+            const c = row.byCategory[category] ?? null;
+            const present = domains.filter(
+              (d) => (row.byDomain[d] ?? null) !== null,
+            );
+            if (c === null && present.length === 0) return null;
+            // A category with one domain of the same name would print twice.
+            const chips =
+              present.length === 1 &&
+              domainLabel(present[0]) === domainLabel(category)
+                ? []
+                : present;
+            return (
+              <div
+                key={category}
+                className="text-caption flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                <span className="w-28 shrink-0 text-white">
+                  {domainLabel(category)}
+                  <span className="text-g2 ml-1.5 font-mono">{fmt(c)}</span>
+                </span>
+                {chips.map((d) => (
+                  <span
+                    key={d}
+                    className="rounded-md border border-white/10 bg-white/[0.03] px-1.5 py-0.5">
+                    <span className="text-g2">{domainLabel(d)}</span>{' '}
+                    <span className="font-mono text-white">
+                      {fmt(row.byDomain[d])}
+                    </span>
+                  </span>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ---- access ---- */}
+      <div className="min-w-0">
+        <h4 className={cn(LABEL, 'mb-2')}>How to call it</h4>
+        {recommended ? (
+          <div className="flex flex-col gap-2">
+            <ChannelCard
+              channel={recommended}
+              recommended
+              price={priceLabel(or?.inputPerM, or?.outputPerM)}
+            />
+            {alternatives.map((ch) => (
+              <ChannelCard
+                key={ch.kind}
+                channel={ch}
+              />
+            ))}
+            <p className="text-micro text-[#78758A]">
+              One rule for every model: the OpenRouter id through its
+              OpenAI-compatible endpoint first — one key, every listed model,
+              ids stable across vendors — the vendor’s own API for first-party
+              features, the weights for self-hosting. Prices are the router’s
+              {catalogDate ? ` on ${catalogDate}` : ''} and move; nothing here
+              is an endorsement.
+            </p>
+          </div>
+        ) : (
+          <p className="text-caption text-[#9C9AA8]">
+            No access channel on file
+            {catalogDate ? ` as of ${catalogDate}` : ''}. The catalog does not
+            list this model under this name; it may be reachable under a dated
+            or regional id.
+          </p>
+        )}
+      </div>
+
+      {/* ---- provenance ---- */}
+      <div className="min-w-0 lg:col-span-2">
+        <h4 className={cn(LABEL, 'mb-2')}>
+          Every figure and where it came from
+        </h4>
+        <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-2">
+          {[...boards, ...reports].map((src) => {
+            const present = src.measures.filter((m) => scored.has(m.id));
+            if (present.length === 0) return null;
+            const first = scored.get(present[0].id)!;
+            const h = src.headline;
+            return (
+              <div
+                key={src.id}
+                className={cn(present.length > 2 && 'md:col-span-2')}>
+                <div className="text-caption mb-1 flex flex-wrap items-center gap-2">
+                  <SourceBadge
+                    source={src}
+                    present
+                  />
+                  <b className="font-medium text-white">{src.name}</b>
+                  {src.kind === 'report' ? (
+                    <span className="text-[#E8A9F0]">
+                      report by {h.publisher}
+                      {h.publishedAt ? `, ${h.publishedAt}` : ''}
+                    </span>
+                  ) : null}
+                  <span className="text-[#78758A]">
+                    as{' '}
+                    <span className="font-mono">
+                      &quot;{first.sourceLabel}&quot;
+                    </span>
+                    {first.scaffold ? ` via ${first.scaffold}` : ''}
+                  </span>
+                  <a
+                    href={h.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-p1 ml-auto underline underline-offset-2">
+                    source
+                  </a>
+                </div>
+                <dl
+                  className={cn(
+                    'text-caption grid grid-cols-1 gap-x-6 gap-y-0.5 pl-9',
+                    present.length > 2 && 'sm:grid-cols-2 lg:grid-cols-3',
+                  )}>
+                  {present.map((m) => {
+                    const s = scored.get(m.id)!;
+                    return (
+                      <div
+                        key={m.id}
+                        className="flex items-baseline gap-2"
+                        title={`${m.category} › ${m.domain}`}>
+                        <dt className="text-g2 w-40 shrink-0 truncate">
+                          {m.name.replace(/^.*· /, '')}
+                        </dt>
+                        <dd className="font-mono text-[#D9D7E0]">
+                          {rawLabel(m.metric, s.raw)}
+                          {s.stderr !== undefined ? (
+                            <span className="text-[#78758A]">
+                              {' '}
+                              ± {s.stderr}
+                            </span>
+                          ) : null}
+                        </dd>
+                        <dd className="text-g2 font-mono">
+                          → {fmt(s.normalized)}
+                        </dd>
+                      </div>
+                    );
+                  })}
+                </dl>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ChannelCard({
+  channel,
+  recommended = false,
+  price,
+}: {
+  channel: Channel;
+  recommended?: boolean;
+  price?: string | null;
+}) {
+  return (
+    <div
+      className={cn(
+        'rounded-lg border px-3 py-2.5',
+        recommended
+          ? 'border-primary/50 bg-primary/[0.08]'
+          : 'border-white/10 bg-white/[0.03]',
+      )}>
+      <div className="text-caption flex flex-wrap items-center gap-x-2 gap-y-0.5">
+        {recommended ? (
+          <span className="text-micro border-primary/60 rounded border px-1 py-px font-semibold tracking-wide text-white uppercase">
+            Recommended
+          </span>
+        ) : null}
+        <a
+          href={channel.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="font-medium text-white underline underline-offset-2">
+          {channel.name}
+        </a>
+        <span className="text-[#9C9AA8]">{channel.note}</span>
+      </div>
+      {channel.model ? (
+        <div className="text-caption mt-1.5 flex flex-wrap items-baseline gap-x-4 gap-y-0.5">
+          <span>
+            <span className="text-[#78758A]">model </span>
+            <code
+              className="rounded bg-black/40 px-1.5 py-0.5 font-mono text-[#D9D7E0] select-all"
+              onClick={(e) => e.stopPropagation()}>
+              {channel.model}
+            </code>
+          </span>
+          {channel.baseUrl ? (
+            <span>
+              <span className="text-[#78758A]">base </span>
+              <code
+                className="rounded bg-black/40 px-1.5 py-0.5 font-mono text-[#D9D7E0] select-all"
+                onClick={(e) => e.stopPropagation()}>
+                {channel.baseUrl}
+              </code>
+            </span>
+          ) : null}
+          {price ? <span className="text-[#9C9AA8]">{price}</span> : null}
+        </div>
+      ) : null}
+    </div>
   );
 }
