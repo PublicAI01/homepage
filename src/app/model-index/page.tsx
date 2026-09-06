@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { cn } from '@/utils';
 
 import IndexConsole from './components/index-console';
-import { benchmarks, excluded, models, scores } from './data/benchmarks';
+import { benchmarks, excluded, models, scores } from './data';
 
 export const metadata: Metadata = {
   title: 'PublicAI Index — Weighted aggregate of public model leaderboards',

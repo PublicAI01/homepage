@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import type { Benchmark, Model, Score } from '../data/benchmarks';
-import { benchmarks, models, scores } from '../data/benchmarks';
+import { benchmarks, models, scores } from '../data';
+import type { Benchmark, Model, Score } from '../data/types';
 import { aggregate, confidenceOf, normalizeBoard, presets } from './aggregate';
 
 const bench = (id: string): Benchmark => ({

@@ -1,4 +1,4 @@
-import type { Benchmark, Model, Score } from '../data/benchmarks';
+import type { Benchmark, Model, Score } from '../data/types';
 
 /**
  * Turning four leaderboards into one number, without pretending the number is

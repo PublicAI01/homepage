@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 
 import { cn } from '@/utils';
 
-import type { Benchmark, Model, Score } from '../data/benchmarks';
+import type { Benchmark, Model, Score } from '../data/types';
 import type { AggregateRow } from '../lib/aggregate';
 import { aggregate, presets } from '../lib/aggregate';
 
