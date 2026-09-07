@@ -349,6 +349,29 @@ export default function IndexTable({
       return next;
     });
 
+  /**
+   * A scope no recognised board measures yet is ranked on report figures
+   * alone — a comparison set the publisher chose, usually small and
+   * missing the frontier. That is a different grade of ranking and the
+   * table says so above the rows.
+   */
+  const scopeBoards = useMemo(() => {
+    if (rankKey.level === 'overall') return null;
+    const inScope = benchmarks.filter((b) =>
+      rankKey.level === 'category'
+        ? b.category === rankKey.category
+        : b.domain === rankKey.domain,
+    );
+    return {
+      boards: new Set(
+        inScope.filter((b) => b.kind !== 'report').map((b) => b.group),
+      ).size,
+      reports: new Set(
+        inScope.filter((b) => b.kind === 'report').map((b) => b.source),
+      ),
+    };
+  }, [benchmarks, rankKey]);
+
   const activeCategory = rankKey.level === 'overall' ? null : rankKey.category;
   const activeDomains = activeCategory
     ? (taxonomy.find(([c]) => c === activeCategory)?.[1] ?? [])
@@ -612,6 +635,19 @@ export default function IndexTable({
         </span>
       </div>
 
+      {scopeBoards && scopeBoards.boards === 0 ? (
+        <p
+          role="note"
+          className="text-caption mt-3 rounded-md border border-[#F5C86B]/30 bg-[#F5C86B]/[0.06] px-3 py-2 text-[#E8D9A8]">
+          <b className="font-semibold text-[#F5C86B]">
+            No recognised board measures {rankLabel(rankKey)} yet.
+          </b>{' '}
+          Every figure here is from {[...scopeBoards.reports].join(' and ')} ✱ —
+          a comparison set the publisher chose. Models the publisher left out
+          are absent, not behind. Read the order as “within that set”, not as
+          the field.
+        </p>
+      ) : null}
       <div className="text-caption mt-3 mb-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[#78758A]">
         <p>
           <span className="text-[#D9D7E0]">{rankedCount}</span> ranked ·{' '}

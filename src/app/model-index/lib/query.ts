@@ -390,10 +390,36 @@ export function rankModels(q: RankQuery = {}) {
     else m.position = ++n;
     return m;
   });
+  const inScope =
+    scope.level === 'overall'
+      ? []
+      : benchmarks.filter((b) =>
+          scope.level === 'category'
+            ? b.category === scope.category
+            : b.domain === scope.domain,
+        );
+  const scopeBoards = new Set(
+    inScope.filter((b) => b.kind !== 'report').map((b) => b.group),
+  ).size;
+  const scopeReports = [
+    ...new Set(inScope.filter((b) => b.kind === 'report').map((b) => b.source)),
+  ];
   return {
     generatedAt,
     scope: scopeLabel(scope),
     level: scope.level,
+    /** Recognised boards with a measure in this scope. 0 means every figure is from reports ✱: a publisher-chosen comparison set, not the field. */
+    ...(scope.level !== 'overall'
+      ? {
+          scopeBoards,
+          scopeReports,
+          ...(scopeBoards === 0
+            ? {
+                warning: `No recognised board measures ${scopeLabel(scope)} yet. Every figure is from ${scopeReports.join(' and ')} ✱ — a comparison set the publisher chose. Models the publisher left out are absent, not behind; read positions as within that set.`,
+              }
+            : {}),
+        }
+      : {}),
     minBoards,
     reports: includeReports,
     ...(q.size ? { size: q.size } : {}),
