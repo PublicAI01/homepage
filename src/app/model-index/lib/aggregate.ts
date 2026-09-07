@@ -75,6 +75,22 @@ export interface AggregateRow {
   ranked: boolean;
   /** Spread of the model's normalized scores. High means the boards disagree. */
   dispersion: number;
+  /**
+   * For a model with no Overall score: an estimate anchored on models that
+   * have one. On every measure the model shares with such models, its figure
+   * is placed among theirs and their Overall indices interpolated at that
+   * position; the placements are averaged by measure weight. Order-based,
+   * clamped to the anchors' range, never a rank.
+   */
+  estimate: Estimate | null;
+}
+
+export interface Estimate {
+  score: number;
+  /** Measures the placement drew on. */
+  measures: number;
+  /** Distinct anchor models with an Overall index. */
+  anchors: number;
 }
 
 const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length;
@@ -321,13 +337,82 @@ export function aggregate({
       // not boards: one publisher's several leaderboards agree with itself.
       ranked: publishers >= minSources,
       dispersion: stdDev(inOverall.map((s) => s.normalized)),
+      estimate: null,
     };
   });
 
-  const byScore = compareScores<AggregateRow>((r) => r.score);
+  // ---- anchored estimates -------------------------------------------------
+  // Anchors are models with an Overall score; a measure's anchor list is the
+  // (figure, Overall) pairs of anchors scored on it, sorted by figure.
+  const overallOf = new Map(
+    rows.filter((r) => r.score !== null).map((r) => [r.model.id, r.score!]),
+  );
+  const anchorsOn = new Map<string, { raw: number; overall: number }[]>();
+  for (const [benchId, byModel] of normalizedBy) {
+    const list: { raw: number; overall: number }[] = [];
+    for (const [modelId, s] of byModel) {
+      const o = overallOf.get(modelId);
+      if (o !== undefined) list.push({ raw: s.raw, overall: o });
+    }
+    if (list.length >= 2)
+      anchorsOn.set(
+        benchId,
+        list.sort((a, b) => a.raw - b.raw),
+      );
+  }
+  for (const r of rows) {
+    if (r.score !== null) continue;
+    let sum = 0;
+    let wsum = 0;
+    let measures = 0;
+    const anchorIds = new Set<string>();
+    for (const s of r.perBenchmark) {
+      const w = weights[s.benchmarkId] ?? 0;
+      const list = anchorsOn.get(s.benchmarkId);
+      if (w <= 0 || !list) continue;
+      const placed = placeAmong(s.raw, list);
+      // A placement on two anchors says less than one on ten.
+      const support = Math.min(list.length, 6) / 6;
+      sum += placed * w * support;
+      wsum += w * support;
+      measures++;
+      for (const [modelId] of normalizedBy.get(s.benchmarkId)!)
+        if (overallOf.has(modelId)) anchorIds.add(modelId);
+    }
+    if (wsum > 0)
+      r.estimate = { score: sum / wsum, measures, anchors: anchorIds.size };
+  }
+
+  const byScore = compareScores<AggregateRow>(
+    (r) => r.score ?? r.estimate?.score ?? null,
+  );
   return rows.sort(
     (a, b) => Number(b.ranked) - Number(a.ranked) || byScore(a, b),
   );
+}
+
+/**
+ * Where a figure falls among anchors on the same measure, read off in the
+ * anchors' Overall index: linear between the two neighbours, clamped to the
+ * anchors' range beyond them — being above every anchor earns the top
+ * anchor's index, not more.
+ */
+export function placeAmong(
+  raw: number,
+  sorted: { raw: number; overall: number }[],
+): number {
+  if (raw <= sorted[0].raw) return sorted[0].overall;
+  const last = sorted[sorted.length - 1];
+  if (raw >= last.raw) return last.overall;
+  for (let i = 1; i < sorted.length; i++) {
+    const a = sorted[i - 1];
+    const b = sorted[i];
+    if (raw <= b.raw) {
+      const t = b.raw === a.raw ? 0.5 : (raw - a.raw) / (b.raw - a.raw);
+      return a.overall + t * (b.overall - a.overall);
+    }
+  }
+  return last.overall;
 }
 
 /** Sort highest first; models without a score go last. */

@@ -684,7 +684,16 @@ function Row({
             'px-2.5 py-2.5 text-right font-mono font-semibold',
             row.ranked ? INDEX_TONE : 'text-[#78758A]',
           )}>
-          {fmt(row.score)}
+          {row.score === null && row.estimate ? (
+            <span
+              className="text-[#B9B7C4]"
+              title={`Estimate ✱ — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position. Never ranked.`}>
+              ~{fmt(row.estimate.score)}
+              <span className="ml-0.5 text-[#E8A9F0]">✱</span>
+            </span>
+          ) : (
+            fmt(row.score)
+          )}
         </td>
         {rankKey.level !== 'overall' ? (
           <td className="px-2.5 py-2.5 text-right font-mono text-white">
@@ -840,8 +849,20 @@ function ModelCard({
             </>
           ) : (
             <span className="text-[#F5C86B]">
-              Provisional — fewer than {MIN_SOURCES} independent
-              publishers.{' '}
+              Provisional — fewer than {MIN_SOURCES} independent publishers.{' '}
+              {row.score === null && row.estimate ? (
+                <span className="text-[#9C9AA8]">
+                  Estimated index{' '}
+                  <b className="font-medium text-[#D9D7E0]">
+                    ~{fmt(row.estimate.score)}✱
+                  </b>
+                  : its figures on {row.estimate.measures} measure
+                  {row.estimate.measures > 1 ? 's' : ''} placed among{' '}
+                  {row.estimate.anchors} models that have an Overall index,
+                  reading theirs at that position. An estimate, never a
+                  rank.{' '}
+                </span>
+              ) : null}
             </span>
           )}
           Scored by{' '}

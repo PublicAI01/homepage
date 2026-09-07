@@ -72,6 +72,10 @@ const method = [
     title: 'Mark reports ✱ and keep them out of the headline',
     text: `A launch post or a blog is evidence of a different grade: the publisher chose the benchmarks, the settings and the comparison set. Its figures are indexed for domain and category columns at ${REPORT_WEIGHT}% of a board’s share, never enter the Overall index, and never make a model rankable.`,
   },
+  {
+    title: 'Estimate the rest, and say so',
+    text: 'A model no Overall board has scored still sits in tables beside models that have an index. On each such measure its figure is placed among theirs and their Overall index read at that position, clamped to their range; the placements are averaged by measure weight. Shown as ~55✱, never ranked, gone the day a real score arrives.',
+  },
 ];
 
 const limits = [
