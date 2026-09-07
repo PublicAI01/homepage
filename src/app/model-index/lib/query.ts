@@ -174,7 +174,13 @@ export interface ModelSummary {
    * measure, their index read at that position, averaged by measure weight.
    * Never a rank; cite as an estimate.
    */
-  estimatedIndex: { score: number; measures: number; anchors: number } | null;
+  estimatedIndex: {
+    score: number;
+    measures: number;
+    anchors: number;
+    /** `below`: trailed every anchor, score is a ceiling; `above`: led every anchor, score is a floor. */
+    bound: 'below' | 'above' | null;
+  } | null;
   /** The figure the list is ranked by, when a scope other than Overall was asked for. */
   scopeScore?: number | null;
   /** Ranked Overall: scored by boards from at least two independent publishers. */
@@ -338,6 +344,8 @@ export function rankModels(q: RankQuery = {}) {
     if (q.size && tierOf(r.model.size) !== q.size) return false;
     if (q.openWeights && !r.model.access?.weights) return false;
     if (q.callable && !r.model.access?.openrouter) return false;
+    // Overall lists estimate-only rows too (estimatedIndex set, index null).
+    if (scope.level === 'overall' && r.estimate) return true;
     return scopeScore(r, scope) !== null;
   });
   if (scope.level !== 'overall') {
@@ -414,7 +422,7 @@ export function describeIndex() {
       `A model absent from a source is excluded from that term, never imputed; a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the in-scope weight pulls thin evidence toward 50.`,
       `Overall ranks a model once boards from ${MIN_SOURCES} independent publishers have scored it; otherwise it is provisional. A category or domain ranks any model a recognised board has measured there.`,
       `Reports (launch posts, blogs) are marked ✱, carry ${REPORT_WEIGHT}% of a board’s share in their domain only, and never enter the Overall index.`,
-      'A model with no Overall index gets an estimate ✱ (estimatedIndex): its figures on each shared measure are placed among models that have an index, and theirs is read at that position, clamped to their range. Never a rank.',
+      'A model with no Overall index gets an estimate ✱ (estimatedIndex): its figures on each shared measure are placed among models that have an index, and theirs is read at that position; outside their range the nearest anchor is a bound (ceiling or floor), not a point. Never a rank.',
     ],
     overallWeighting: boards
       .filter((b) => weightOf.has(b.id))
