@@ -6,6 +6,7 @@ import { cn } from '@/utils';
 
 import IndexTable, { SourceBadge } from './components/index-table';
 import { LinkedInMark, XMark } from './components/social-marks';
+import Subscribe from './components/subscribe';
 import {
   benchmarks,
   catalogs,
@@ -326,11 +327,31 @@ export default function ModelIndex() {
               </p>
             </Card>
 
+            <Card title="Index Weekly">
+              <p className="text-caption mb-2 text-[#D9D7E0]">
+                Every Monday: the biggest moves, new entrants and new sources,
+                with one chart. No other mail.
+              </p>
+              <Subscribe />
+              <p className="text-micro mt-2 text-[#78758A]">
+                Prefer a feed?{' '}
+                <a
+                  href="/model-index/feed.xml"
+                  className="text-p1 underline underline-offset-2">
+                  RSS
+                </a>{' '}
+                · agents can poll <code className="font-mono">?since=</code> on
+                the API or the <code className="font-mono">whats_new</code>{' '}
+                tool.
+              </p>
+            </Card>
+
             <Card title="For agents — MCP">
               <p className="text-caption mb-2 text-[#D9D7E0]">
                 The same answers, as tools:{' '}
                 <code className="font-mono text-white">rank_models</code>,{' '}
                 <code className="font-mono text-white">get_model</code>,{' '}
+                <code className="font-mono text-white">whats_new</code>,{' '}
                 <code className="font-mono text-white">describe_index</code>.
                 Every score comes with its sources; every model with the
                 recommended way to call it.

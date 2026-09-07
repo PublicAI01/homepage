@@ -461,6 +461,7 @@ export function describeIndex() {
     url: INDEX_URL,
     mcp: MCP_URL,
     api: API_URL,
+    feed: `${INDEX_URL}/feed.xml`,
     generatedAt,
     counts: {
       models: models.length,

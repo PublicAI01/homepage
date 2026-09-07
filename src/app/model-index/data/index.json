@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T09:58:04.220Z",
+  "generatedAt": "2026-09-07T10:02:06.807Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -245,7 +245,7 @@
       "id": "osworld",
       "name": "OSWorld",
       "publisher": "XLANG Lab",
-      "url": "https://os-world.github.io/",
+      "url": "https://osworld-v1.xlang.ai/",
       "retrievedAt": "2026-09-07",
       "metric": "percent",
       "category": "Agents",

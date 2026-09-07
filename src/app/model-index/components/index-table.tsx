@@ -1156,6 +1156,30 @@ function ModelCard({
         )}
       </div>
 
+      {/* ---- badge ---- */}
+      <div className="min-w-0 lg:col-span-2">
+        <h4 className={cn(LABEL, 'mb-2')}>Badge for a README or launch post</h4>
+        <div className="flex flex-wrap items-center gap-3">
+          {/* eslint-disable-next-line @next/next/no-img-element -- the live badge itself */}
+          <img
+            src={`/model-index/badge?model=${encodeURIComponent(row.model.id)}`}
+            alt={`${row.model.name} on the PublicAI Index`}
+            height={20}
+          />
+          <code
+            className="text-micro min-w-0 flex-1 truncate rounded bg-black/40 px-1.5 py-1 font-mono text-[#D9D7E0] select-all"
+            onClick={(e) => e.stopPropagation()}
+            title="Markdown — click to select">
+            {`[![PublicAI Index](https://publicai.io/model-index/badge?model=${row.model.id})](https://publicai.io/model-index?q=${encodeURIComponent(row.model.name)})`}
+          </code>
+        </div>
+        <p className="text-micro mt-1 text-[#78758A]">
+          Renders the live position; add{' '}
+          <code className="font-mono">&scope=domain:Tool use</code> for a
+          domain.
+        </p>
+      </div>
+
       {/* ---- provenance ---- */}
       <div className="min-w-0 lg:col-span-2">
         <h4 className={cn(LABEL, 'mb-2')}>

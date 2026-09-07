@@ -1,6 +1,7 @@
 import { createMcpHandler } from 'mcp-handler';
 import { z } from 'zod';
 
+import { changesSince } from '../lib/changes';
 import { describeIndex, getModel, rankModels } from '../lib/query';
 
 /**
@@ -94,6 +95,30 @@ const handler = createMcpHandler(
         }),
       },
       async ({ model }) => json(getModel(model)),
+    );
+
+    server.registerTool(
+      'whats_new',
+      {
+        title: 'What changed',
+        description:
+          'Changes in the index since a date: sources added, models that entered the Overall ranking, moves of N places or more, models that left. Poll this instead of re-reading the whole ranking. Snapshots refresh daily.',
+        inputSchema: z.object({
+          since: z
+            .string()
+            .describe(
+              'ISO date, e.g. "2026-09-01". The last snapshot on or before it is the baseline.',
+            ),
+          minDelta: z
+            .number()
+            .int()
+            .min(1)
+            .max(50)
+            .optional()
+            .describe('Minimum rank move to report. Default 3.'),
+        }),
+      },
+      async ({ since, minDelta }) => json(changesSince(since, minDelta)),
     );
 
     server.registerTool(
