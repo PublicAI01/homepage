@@ -19,9 +19,8 @@ import { decodeView, encodeView, rankName } from './lib/view-state';
 import {
   categoryRank,
   domainLabel,
-  MIN_SOURCES,
-  PRIOR_FRACTION,
   REPORT_WEIGHT,
+  SOURCE_LOGO,
   WEIGHTING,
 } from './lib/weights';
 
@@ -101,59 +100,55 @@ const callable = models.filter((m) => m.access?.openrouter).length;
 
 const method = [
   {
-    title: 'Standardize per measure',
-    text: 'Each figure a source publishes is z-scored across the models on it and mapped to 0–100 with 50 as that measure’s average. An Elo of 1504 and a 57.9% resolution rate become comparable, and a narrow-spread board is not drowned out by a wide one.',
+    title: 'Standardize, discount uncertainty',
+    text: 'Every figure is z-scored across the models its source lists and mapped to 0–100, so an Elo and a pass rate share one scale. Where a publisher prints an error bar, the figure counts for less.',
   },
   {
-    title: 'Discount by published uncertainty',
-    text: 'Where a publisher reports an error bar, the score is discounted in proportion to how wide it is relative to the board’s spread. No error bar means face value — absence is not treated as evidence of a wide one.',
-  },
-  {
-    title: 'Never impute; shrink instead',
-    text: `A model absent from a source is excluded from that term, not filled in. But thin evidence is pulled toward 50 by a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the weight available, so one generous board cannot put a barely-tested model at the top. Overall ranks a model once boards from ${MIN_SOURCES} independent publishers have scored it; until then it is provisional. A category or domain ranks any model a recognised board has measured there, on that measurement.`,
+    title: 'Shrink, never impute',
+    text: 'A missing figure is left missing. Thin evidence is pulled toward 50, so one generous board cannot lift a barely-tested model.',
   },
   {
     title: 'Weight by a published scheme',
-    text: 'Each recognised board’s headline figure carries a fixed share of the Overall index, stated beside the table with its reason. A board’s category figures shape only the domain they measure, so no board is counted twice.',
+    text: 'Each board’s share of the Overall index is fixed and printed beside the table, with its reason.',
   },
   {
-    title: 'Mark reports ✱ and keep them out of the headline',
-    text: `A launch post or a blog is evidence of a different grade: the publisher chose the benchmarks, the settings and the comparison set. Its figures are indexed for domain and category columns at ${REPORT_WEIGHT}% of a board’s share, never enter the Overall index, and never make a model rankable.`,
+    title: 'Two publishers to rank',
+    text: 'Overall ranks a model once boards from two independent publishers have scored it. A domain ranks on its own board evidence.',
+  },
+  {
+    title: 'Reports ✱ stay out of the headline',
+    text: 'Launch posts and blogs shape domain columns at a tenth of a board’s weight, never the Overall index.',
   },
   {
     title: 'Estimate the rest, and say so',
-    text: 'A model no Overall board has scored still sits in tables beside models that have an index. On each such measure its figure is placed among theirs and their Overall index read at that position; beyond their range the nearest anchor is a bound, shown as ≤ or ≥, not a point. Placements are averaged by measure weight. Shown as ~55✱, never ranked, gone the day a real score arrives.',
+    text: 'A model with no Overall score is placed among models that have one and shown as ~55✱ — never ranked.',
   },
 ];
 
 const limits = [
   {
-    title: 'Reasoning-effort tiers are matched by rule',
-    text: 'Sources report several effort tiers per model. The highest published tier is indexed, and the exact label is kept beside each score. Where a source only published a lower tier, that row is weaker evidence than it looks.',
+    title: 'Effort tiers are matched by rule',
+    text: 'The highest tier a source publishes is indexed; the exact label is kept beside the score.',
   },
   {
-    title: 'Some sources score a scaffold, not a model',
-    text: 'Terminal-Bench results are a model plus an agent framework — Codex, Claude Code, Grok Build. The framework is part of the number and is recorded beside each score.',
+    title: 'Some boards score a scaffold',
+    text: 'Terminal-Bench results are a model plus an agent framework; the framework is named beside the score.',
   },
   {
-    title: 'Model identity is inferred from names',
-    text: 'Five sources spell the same model five ways. They are matched by name after tier and vendor words are removed. The rule is tested against hand-checked cases and every merge is logged, but a wrong merge is possible; the model card shows the exact source labels.',
+    title: 'Identity is inferred from names',
+    text: 'Seven sources spell one model seven ways. Every merge is logged; a wrong one is possible.',
   },
   {
     title: 'Report figures are the publisher’s',
-    text: 'A launch post does not always say whether competitor figures were re-run or copied, and its columns can mix effort tiers. They are shown with their mark and their publisher so the reader can weigh them, not laundered into board figures.',
+    text: 'Competitor numbers in a launch post may be copied, not re-run. They are marked, not laundered.',
   },
   {
-    title: 'Size classes are what makers disclose',
-    text: 'Small ≤ 15B, medium 15–100B, large 100B–1T, very large > 1T by total parameters: counted from the weights on Hugging Face for open models, read from the name otherwise. A closed model is undisclosed, not small; within a class, positions are simply the ranking filtered to it, on the same scores.',
-  },
-  {
-    title: 'Access facts are a catalog’s, not a test',
-    text: 'Ids, context windows and prices are read from a public catalog on the date shown and move often. Vendor sites are curated pointers. None of it is an endorsement, and none of it touches a score.',
+    title: 'Sizes are what makers disclose',
+    text: 'Counted from open weights or read from the name; a closed model is undisclosed, not small.',
   },
   {
     title: 'A snapshot, not a live feed',
-    text: 'Figures were read from each publisher on the date shown. Leaderboards move; check the source before acting on a number.',
+    text: 'Read from each publisher on the date shown. Check the source before acting on a number.',
   },
 ];
 
@@ -382,7 +377,9 @@ export default function ModelIndex() {
                   <p className="text-micro text-g2">{b.headline.snapshot}</p>
                 ) : null}
                 {b.headline.caveat ? (
-                  <p className="text-micro mt-1 text-[#78758A]">
+                  <p
+                    className="text-micro mt-1 line-clamp-3 text-[#78758A]"
+                    title={b.headline.caveat}>
                     {b.headline.caveat}
                   </p>
                 ) : null}
@@ -396,6 +393,7 @@ export default function ModelIndex() {
                   <SourceBadge
                     source={r}
                     present
+                    logo
                   />
                   <a
                     href={r.headline.url}
@@ -417,7 +415,9 @@ export default function ModelIndex() {
                   marked ✱ wherever it appears
                 </p>
                 {r.headline.caveat ? (
-                  <p className="text-micro text-[#78758A]">
+                  <p
+                    className="text-micro line-clamp-3 text-[#78758A]"
+                    title={r.headline.caveat}>
                     {r.headline.caveat}
                   </p>
                 ) : null}
@@ -428,9 +428,22 @@ export default function ModelIndex() {
                 key={c.id}
                 className={cn(PANEL, 'p-4')}>
                 <div className="mb-1 flex items-center gap-2">
-                  <span className="text-micro inline-flex h-5 min-w-7 items-center justify-center rounded border border-white/20 bg-white/10 px-1 font-mono font-semibold text-[#D9D7E0]">
-                    CAT
-                  </span>
+                  {SOURCE_LOGO[c.id] ? (
+                    <span className="inline-flex size-5 items-center justify-center rounded bg-white/[0.06]">
+                      {/* eslint-disable-next-line @next/next/no-img-element -- a 16px mark */}
+                      <img
+                        src={SOURCE_LOGO[c.id]}
+                        alt=""
+                        width={16}
+                        height={16}
+                        className="size-4 object-contain"
+                      />
+                    </span>
+                  ) : (
+                    <span className="text-micro inline-flex h-5 min-w-7 items-center justify-center rounded border border-white/20 bg-white/10 px-1 font-mono font-semibold text-[#D9D7E0]">
+                      CAT
+                    </span>
+                  )}
                   <a
                     href={c.url}
                     target="_blank"
@@ -447,7 +460,11 @@ export default function ModelIndex() {
                   context, prices, open weights · never scored
                 </p>
                 {c.caveat ? (
-                  <p className="text-micro text-[#78758A]">{c.caveat}</p>
+                  <p
+                    className="text-micro line-clamp-3 text-[#78758A]"
+                    title={c.caveat}>
+                    {c.caveat}
+                  </p>
                 ) : null}
               </article>
             ))}
@@ -480,18 +497,20 @@ export default function ModelIndex() {
           <SectionHead
             n="3"
             title="Method"
-            lede="Five steps, each chosen so that a number here can be traced to a number there, and so that thin or self-reported evidence cannot buy a rank."
+            lede="Six rules, each so that a number here traces to a number there, and so that thin or self-reported evidence cannot buy a rank."
           />
-          <ol className="grid grid-cols-1 gap-x-10 md:grid-cols-2 xl:grid-cols-5">
+          <ol className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {method.map(({ title, text }, i) => (
               <li
                 key={title}
-                className="border-t border-white/8 py-4">
-                <b className="text-body mb-1 block font-semibold text-white">
-                  <span className="text-p1 mr-2 font-mono">0{i + 1}</span>
+                className={cn(PANEL, 'p-5')}>
+                <span className="text-p1 text-caption mb-2 block font-mono">
+                  0{i + 1}
+                </span>
+                <b className="text-subheading mb-2 block font-semibold text-white">
                   {title}
                 </b>
-                <p className="text-g2 text-body-sm">{text}</p>
+                <p className="text-body text-[#B9B7C4]">{text}</p>
               </li>
             ))}
           </ol>
@@ -506,15 +525,15 @@ export default function ModelIndex() {
             title="Limitations"
             lede="An aggregate hides the disagreements that produced it. These are the ones worth knowing before you cite this page."
           />
-          <div className="grid grid-cols-1 gap-x-10 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-10 gap-y-2 md:grid-cols-2 xl:grid-cols-3">
             {limits.map(({ title, text }) => (
               <div
                 key={title}
-                className="border-t border-white/8 py-4">
-                <b className="text-body mb-1 block font-semibold text-white">
+                className="border-t border-white/8 py-5">
+                <b className="text-body mb-1.5 block font-semibold text-white">
                   {title}
                 </b>
-                <p className="text-g2 text-body-sm">{text}</p>
+                <p className="text-body text-[#B9B7C4]">{text}</p>
               </div>
             ))}
           </div>

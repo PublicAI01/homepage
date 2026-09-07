@@ -147,6 +147,26 @@ export const SOURCE_BADGE: Record<string, { code: string; tone: string }> = {
   },
 };
 
+/**
+ * Each source's own mark, served from this site (public/model-index/logos),
+ * never hot-linked. Used to identify the source beside its figures, the
+ * way a citation names its publisher; the code badge is the fallback.
+ */
+export const SOURCE_LOGO: Record<string, string> = {
+  lmarena: '/model-index/logos/lmarena.png',
+  'artificial-analysis': '/model-index/logos/artificial-analysis.png',
+  // GDPval-AA and AA-Briefcase share Artificial Analysis's mark; they keep
+  // their code chips so three AA boards in a row stay tellable apart.
+  'terminal-bench': '/model-index/logos/terminal-bench.png',
+  'arc-agi-2': '/model-index/logos/arc-agi-2.png',
+  livebench: '/model-index/logos/livebench.png',
+  'ifm-k2-horizon': '/model-index/logos/ifm-k2-horizon.png',
+  'datacamp-astra-vs-fable': '/model-index/logos/datacamp-astra-vs-fable.png',
+  'cellcog-k2-horizon': '/model-index/logos/cellcog-k2-horizon.png',
+  openrouter: '/model-index/logos/openrouter.png',
+  huggingface: '/model-index/logos/huggingface.svg',
+};
+
 export const FALLBACK_BADGE = {
   code: '?',
   tone: 'border-white/20 bg-white/10 text-[#D9D7E0]',
