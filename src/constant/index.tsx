@@ -1,5 +1,7 @@
 const TWITTER_LINK = 'https://x.com/PublicAI_';
 const LINKEDIN_LINK = 'https://www.linkedin.com/company/publicai01';
+/** The Index's own X account; the site-wide TWITTER_LINK is the older one. */
+const INDEX_TWITTER_LINK = 'https://x.com/PublicAIData';
 const TELEGRAM_LINK = 'https://t.me/public_ai01';
 const DOCS_LINK =
   'https://docs.publicai.io/publicai-documentation?utm_source=homepage';
@@ -57,6 +59,7 @@ export {
   DOCS_LINK,
   DUNE_LINK,
   GITHUB_LINK,
+  INDEX_TWITTER_LINK,
   LINKEDIN_LINK,
   MEDIUM_LINK,
   NAV_LIST,

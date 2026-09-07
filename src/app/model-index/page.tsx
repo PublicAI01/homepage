@@ -5,9 +5,9 @@ import discord from '@/assets/media-platform/discord.svg?react';
 import telegram from '@/assets/media-platform/telegram.svg?react';
 import {
   DISCORD_LINK,
+  INDEX_TWITTER_LINK,
   LINKEDIN_LINK,
   TELEGRAM_LINK,
-  TWITTER_LINK,
 } from '@/constant';
 import { cn } from '@/utils';
 
@@ -37,7 +37,7 @@ const INDEX_URL = 'https://publicai.io/model-index';
 
 /** Where to follow the Index. The site's floating rail and footer row stand aside on this page. */
 const FOLLOW = [
-  { label: 'X', href: TWITTER_LINK, Icon: XMark },
+  { label: 'X', href: INDEX_TWITTER_LINK, Icon: XMark },
   { label: 'LinkedIn', href: LINKEDIN_LINK, Icon: LinkedInMark },
   { label: 'Telegram', href: TELEGRAM_LINK, Icon: telegram },
   { label: 'Discord', href: DISCORD_LINK, Icon: discord },
