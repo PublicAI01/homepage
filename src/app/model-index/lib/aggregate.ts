@@ -91,6 +91,12 @@ export interface Estimate {
   measures: number;
   /** Distinct anchor models with an Overall index. */
   anchors: number;
+  /**
+   * Set when most of the weight sat outside the anchors' range: `below`
+   * means the model trailed every anchor on those measures, so the score is
+   * a ceiling (≤), not a point; `above` the reverse (≥).
+   */
+  bound: 'below' | 'above' | null;
 }
 
 const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length;
@@ -364,6 +370,8 @@ export function aggregate({
     if (r.score !== null) continue;
     let sum = 0;
     let wsum = 0;
+    let below = 0;
+    let above = 0;
     let measures = 0;
     const anchorIds = new Set<string>();
     for (const s of r.perBenchmark) {
@@ -373,14 +381,21 @@ export function aggregate({
       const placed = placeAmong(s.raw, list);
       // A placement on two anchors says less than one on ten.
       const support = Math.min(list.length, 6) / 6;
-      sum += placed * w * support;
+      sum += placed.overall * w * support;
       wsum += w * support;
+      if (placed.bound === 'below') below += w * support;
+      if (placed.bound === 'above') above += w * support;
       measures++;
       for (const [modelId] of normalizedBy.get(s.benchmarkId)!)
         if (overallOf.has(modelId)) anchorIds.add(modelId);
     }
     if (wsum > 0)
-      r.estimate = { score: sum / wsum, measures, anchors: anchorIds.size };
+      r.estimate = {
+        score: sum / wsum,
+        measures,
+        anchors: anchorIds.size,
+        bound: below > wsum / 2 ? 'below' : above > wsum / 2 ? 'above' : null,
+      };
   }
 
   const byScore = compareScores<AggregateRow>(
@@ -400,19 +415,20 @@ export function aggregate({
 export function placeAmong(
   raw: number,
   sorted: { raw: number; overall: number }[],
-): number {
-  if (raw <= sorted[0].raw) return sorted[0].overall;
+): { overall: number; bound: 'below' | 'above' | null } {
+  if (raw < sorted[0].raw)
+    return { overall: sorted[0].overall, bound: 'below' };
   const last = sorted[sorted.length - 1];
-  if (raw >= last.raw) return last.overall;
+  if (raw > last.raw) return { overall: last.overall, bound: 'above' };
   for (let i = 1; i < sorted.length; i++) {
     const a = sorted[i - 1];
     const b = sorted[i];
     if (raw <= b.raw) {
       const t = b.raw === a.raw ? 0.5 : (raw - a.raw) / (b.raw - a.raw);
-      return a.overall + t * (b.overall - a.overall);
+      return { overall: a.overall + t * (b.overall - a.overall), bound: null };
     }
   }
-  return last.overall;
+  return { overall: last.overall, bound: null };
 }
 
 /** Sort highest first; models without a score go last. */

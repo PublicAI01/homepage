@@ -687,8 +687,13 @@ function Row({
           {row.score === null && row.estimate ? (
             <span
               className="text-[#B9B7C4]"
-              title={`Estimate ✱ — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position. Never ranked.`}>
-              ~{fmt(row.estimate.score)}
+              title={`Estimate ✱ — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position.${row.estimate.bound === 'below' ? ' It trailed every such model there, so this is a ceiling.' : row.estimate.bound === 'above' ? ' It led every such model there, so this is a floor.' : ''} Never ranked.`}>
+              {row.estimate.bound === 'below'
+                ? '≤'
+                : row.estimate.bound === 'above'
+                  ? '≥'
+                  : '~'}
+              {fmt(row.estimate.score)}
               <span className="ml-0.5 text-[#E8A9F0]">✱</span>
             </span>
           ) : (
@@ -854,13 +859,23 @@ function ModelCard({
                 <span className="text-[#9C9AA8]">
                   Estimated index{' '}
                   <b className="font-medium text-[#D9D7E0]">
-                    ~{fmt(row.estimate.score)}✱
+                    {row.estimate.bound === 'below'
+                      ? '≤'
+                      : row.estimate.bound === 'above'
+                        ? '≥'
+                        : '~'}
+                    {fmt(row.estimate.score)}✱
                   </b>
                   : its figures on {row.estimate.measures} measure
                   {row.estimate.measures > 1 ? 's' : ''} placed among{' '}
                   {row.estimate.anchors} models that have an Overall index,
-                  reading theirs at that position. An estimate, never a
-                  rank.{' '}
+                  reading theirs at that position
+                  {row.estimate.bound === 'below'
+                    ? ' — it trailed every one of them there, so this is a ceiling'
+                    : row.estimate.bound === 'above'
+                      ? ' — it led every one of them there, so this is a floor'
+                      : ''}
+                  . An estimate, never a rank.{' '}
                 </span>
               ) : null}
             </span>

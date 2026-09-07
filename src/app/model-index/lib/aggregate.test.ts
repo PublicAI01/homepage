@@ -610,10 +610,11 @@ describe('anchored estimates', () => {
       { raw: 20, overall: 50 },
       { raw: 40, overall: 70 },
     ];
-    expect(placeAmong(15, anchors)).toBe(45);
-    expect(placeAmong(30, anchors)).toBe(60);
-    expect(placeAmong(5, anchors)).toBe(40);
-    expect(placeAmong(99, anchors)).toBe(70);
+    expect(placeAmong(15, anchors)).toEqual({ overall: 45, bound: null });
+    expect(placeAmong(30, anchors)).toEqual({ overall: 60, bound: null });
+    // Outside the anchors, the nearest anchor's index is a bound, not a point.
+    expect(placeAmong(5, anchors)).toEqual({ overall: 40, bound: 'below' });
+    expect(placeAmong(99, anchors)).toEqual({ overall: 70, bound: 'above' });
   });
 
   it('gives a model with no Overall score an estimate from its report figures, and none to a scored model', () => {

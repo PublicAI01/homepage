@@ -74,7 +74,7 @@ const method = [
   },
   {
     title: 'Estimate the rest, and say so',
-    text: 'A model no Overall board has scored still sits in tables beside models that have an index. On each such measure its figure is placed among theirs and their Overall index read at that position, clamped to their range; the placements are averaged by measure weight. Shown as ~55✱, never ranked, gone the day a real score arrives.',
+    text: 'A model no Overall board has scored still sits in tables beside models that have an index. On each such measure its figure is placed among theirs and their Overall index read at that position; beyond their range the nearest anchor is a bound, shown as ≤ or ≥, not a point. Placements are averaged by measure weight. Shown as ~55✱, never ranked, gone the day a real score arrives.',
   },
 ];
 
