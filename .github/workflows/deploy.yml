@@ -118,11 +118,15 @@ jobs:
           RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
           CONTACT_EMAIL_TO: ${{ secrets.CONTACT_EMAIL_TO }}
           OFFICIAL_ACCOUNTS_JSON: ${{ secrets.OFFICIAL_ACCOUNTS_JSON }}
+          # Index Weekly sign-ups. Absent, /model-index/api/subscribe
+          # answers 503 and the form says so.
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
-          envs: IMAGE,IMAGE_REPO,CONTAINER_NAME,KEEP_IMAGES,GHCR_USER,GHCR_TOKEN,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_REGION,RECAPTCHA_SECRET_KEY,CONTACT_EMAIL_TO,OFFICIAL_ACCOUNTS_JSON
+          envs: IMAGE,IMAGE_REPO,CONTAINER_NAME,KEEP_IMAGES,GHCR_USER,GHCR_TOKEN,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_REGION,RECAPTCHA_SECRET_KEY,CONTACT_EMAIL_TO,OFFICIAL_ACCOUNTS_JSON,RESEND_API_KEY,RESEND_AUDIENCE_ID
           script: |
             # Required: without set -e a failed command would not fail the job.
             set -euo pipefail
@@ -152,6 +156,7 @@ jobs:
                 -p 3000:3000 \
                 -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION \
                 -e RECAPTCHA_SECRET_KEY -e CONTACT_EMAIL_TO -e OFFICIAL_ACCOUNTS_JSON \
+                -e RESEND_API_KEY -e RESEND_AUDIENCE_ID \
                 --log-driver json-file \
                 --log-opt max-size=10m --log-opt max-file=3 \
                 "$1"
