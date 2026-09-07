@@ -341,7 +341,9 @@ export function aggregate({
       evidence: overallWeight > 0 ? evidence / overallWeight : 0,
       // Ranked on the word of at least `minSources` independent publishers,
       // not boards: one publisher's several leaderboards agree with itself.
-      ranked: publishers >= minSources,
+      // And there must be an Overall score to rank on — two domain-only
+      // boards make a model comparable in their domains, not Overall.
+      ranked: publishers >= minSources && score !== null,
       dispersion: stdDev(inOverall.map((s) => s.normalized)),
       estimate: null,
     };

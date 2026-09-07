@@ -107,6 +107,7 @@ export const MIN_SOURCES = 2;
 export const CATEGORY_ORDER = [
   'Human preference',
   'Agents',
+  'Professional',
   'Coding',
   'Reasoning',
   'Knowledge',
@@ -145,6 +146,38 @@ export const SOURCE_BADGE: Record<string, { code: string; tone: string }> = {
     code: 'LB',
     tone: 'border-[#7CB8FF]/40 bg-[#7CB8FF]/15 text-[#7CB8FF]',
   },
+  livecodebench: {
+    code: 'LC',
+    tone: 'border-[#9EE7C8]/40 bg-[#9EE7C8]/15 text-[#9EE7C8]',
+  },
+  aider: {
+    code: 'AD',
+    tone: 'border-[#C7D2FE]/40 bg-[#C7D2FE]/15 text-[#C7D2FE]',
+  },
+  bfcl: {
+    code: 'BF',
+    tone: 'border-[#F6C177]/40 bg-[#F6C177]/15 text-[#F6C177]',
+  },
+  osworld: {
+    code: 'OS',
+    tone: 'border-[#8BD3F7]/40 bg-[#8BD3F7]/15 text-[#8BD3F7]',
+  },
+  mmmu: {
+    code: 'MM',
+    tone: 'border-[#F7A8B8]/40 bg-[#F7A8B8]/15 text-[#F7A8B8]',
+  },
+  kagi: {
+    code: 'KG',
+    tone: 'border-[#FFD166]/40 bg-[#FFD166]/15 text-[#FFD166]',
+  },
+  simplebench: {
+    code: 'SB',
+    tone: 'border-[#B8F2A3]/40 bg-[#B8F2A3]/15 text-[#B8F2A3]',
+  },
+  vals: {
+    code: 'VA',
+    tone: 'border-[#D4B5FF]/40 bg-[#D4B5FF]/15 text-[#D4B5FF]',
+  },
 };
 
 /**
@@ -163,6 +196,13 @@ export const SOURCE_LOGO: Record<string, string> = {
   'ifm-k2-horizon': '/model-index/logos/ifm-k2-horizon.png',
   'datacamp-astra-vs-fable': '/model-index/logos/datacamp-astra-vs-fable.png',
   'cellcog-k2-horizon': '/model-index/logos/cellcog-k2-horizon.png',
+  aider: '/model-index/logos/aider.png',
+  bfcl: '/model-index/logos/bfcl.png',
+  osworld: '/model-index/logos/osworld.png',
+  mmmu: '/model-index/logos/mmmu.png',
+  kagi: '/model-index/logos/kagi.png',
+  simplebench: '/model-index/logos/simplebench.png',
+  vals: '/model-index/logos/vals.png',
   openrouter: '/model-index/logos/openrouter.png',
   huggingface: '/model-index/logos/huggingface.svg',
 };
