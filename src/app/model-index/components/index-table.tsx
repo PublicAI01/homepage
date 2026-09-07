@@ -577,7 +577,9 @@ export default function IndexTable({
           </span>
         </label>
         <span className="ml-auto flex items-center gap-1.5">
-          <span className={cn(LABEL, 'mr-1')}>Must include</span>
+          <span className={cn(LABEL, 'mr-1 whitespace-nowrap')}>
+            Must include
+          </span>
           {/* Boards one by one; every report shares the one ✱, so the ✱
               button means "measured by at least one report". */}
           {[...boards, ...(reports.length ? [reports[0]] : [])].map((s) => {
@@ -683,7 +685,10 @@ export default function IndexTable({
                   {rankLabel(rankKey)}
                 </th>
               ) : null}
-              <th className="px-2.5 py-3 font-medium">Sources</th>
+              {/* On a phone the badges would force a sideways scroll; the card has them. */}
+              <th className="hidden px-2.5 py-3 font-medium sm:table-cell">
+                Sources
+              </th>
               <th className="w-8 px-2.5 py-3" />
             </tr>
           </thead>
@@ -719,18 +724,12 @@ export default function IndexTable({
         </table>
       </div>
 
-      <p className="text-caption text-g2 mt-3 max-w-[76ch]">
-        Scores are 0–100 standardized: 50 is average across the models listed,
-        not an absolute grade. Thin evidence is pulled toward 50. Overall ranks
-        a model once {MIN_SOURCES} independent publishers’ boards have scored
-        it; until then it is provisional, without a rank. A category or domain
-        ranks any model a recognised board has measured there; figures from
-        reports ✱ shape those columns but never rank a model on their own. A
-        filled badge means that source scored the model; hover for the figure.
-        Open a row for the model card: scores by domain, how to call it, and
-        every source figure.
+      <p className="text-caption text-g2 mt-3">
+        0–100, standardized: 50 is the average of the models each source lists.
+        Provisional = fewer than {MIN_SOURCES} independent publishers. ✱ = from
+        reports. Open a row for the model card.
         {filtered.length > shown.length
-          ? ` The first ${PAGE} of ${filtered.length} are shown; narrow the filters to see the rest.`
+          ? ` Showing the first ${PAGE} of ${filtered.length}.`
           : ''}
       </p>
     </div>
@@ -847,7 +846,7 @@ function Row({
             {fmt(keyOf(row, rankKey))}
           </td>
         ) : null}
-        <td className="px-2.5 py-2.5">
+        <td className="hidden px-2.5 py-2.5 sm:table-cell">
           <span className="flex items-center gap-0.5">
             {boards.map((b) => {
               const s = scored.get(b.headline.id);
@@ -1105,12 +1104,10 @@ function ModelCard({
               />
             ))}
             <p className="text-micro text-[#78758A]">
-              One rule for every model: the OpenRouter id through its
-              OpenAI-compatible endpoint first — one key, every listed model,
-              ids stable across vendors — the vendor’s own API for first-party
-              features, the weights for self-hosting. Prices are the router’s
-              {catalogDate ? ` on ${catalogDate}` : ''} and move; nothing here
-              is an endorsement.
+              OpenRouter first: one key, every listed model, stable ids. Vendor
+              API for first-party features; weights to self-host. Prices are the
+              router’s{catalogDate ? ` on ${catalogDate}` : ''}, not an
+              endorsement.
             </p>
           </div>
         ) : (

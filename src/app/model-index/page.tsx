@@ -1,14 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
-import discord from '@/assets/media-platform/discord.svg?react';
-import telegram from '@/assets/media-platform/telegram.svg?react';
-import {
-  DISCORD_LINK,
-  INDEX_TWITTER_LINK,
-  LINKEDIN_LINK,
-  TELEGRAM_LINK,
-} from '@/constant';
+import { INDEX_TWITTER_LINK, LINKEDIN_LINK } from '@/constant';
 import { cn } from '@/utils';
 
 import IndexTable, { SourceBadge } from './components/index-table';
@@ -39,8 +32,6 @@ const INDEX_URL = 'https://publicai.io/model-index';
 const FOLLOW = [
   { label: 'X', href: INDEX_TWITTER_LINK, Icon: XMark },
   { label: 'LinkedIn', href: LINKEDIN_LINK, Icon: LinkedInMark },
-  { label: 'Telegram', href: TELEGRAM_LINK, Icon: telegram },
-  { label: 'Discord', href: DISCORD_LINK, Icon: discord },
 ];
 
 /**
@@ -172,7 +163,7 @@ const limits = [
 const mcpConfig = `{ "mcpServers": { "publicai-index": { "url": "${MCP_URL}" } } }`;
 
 const snapshotDate = generatedAt.slice(0, 10);
-const citation = `PublicAI Foundation (${snapshotDate.slice(0, 4)}). PublicAI Index: a weighted aggregate of public model leaderboards, snapshot ${snapshotDate}. https://publicai.io/model-index`;
+const citation = `PublicAI Foundation (${snapshotDate.slice(0, 4)}). PublicAI Index, snapshot ${snapshotDate}. https://publicai.io/model-index`;
 
 const Card = ({
   title,
@@ -261,12 +252,8 @@ export default function ModelIndex() {
               {[
                 ['Updated', updated],
                 ['Models', models.length],
-                ['Boards', boards.length],
+                ['Leaderboards', boards.length],
                 ['Reports ✱', reports.length],
-                ['Measures', benchmarks.length],
-                ['Domains', domains.length],
-                ['Categories', categories.length],
-                ['Callable ids', callable],
               ].map(([k, v]) => (
                 <div
                   key={String(k)}
@@ -334,10 +321,8 @@ export default function ModelIndex() {
                 })}
               </ol>
               <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
-                Set by PublicAI; stated so it can be disagreed with. A board’s
-                category figures shape only their own domain. Report figures ✱
-                carry {REPORT_WEIGHT}% of a board’s share, in domain columns
-                only.
+                Fixed by PublicAI. Reports ✱ carry {REPORT_WEIGHT}% of a board’s
+                share, in domain columns only.
               </p>
             </Card>
 
@@ -377,7 +362,7 @@ export default function ModelIndex() {
           <SectionHead
             n="2"
             title="Sources"
-            lede="Recognised leaderboards form the Overall index. Reports ✱ widen the domain columns. A catalog says where a model can be called. All first-party; every figure links to the page it was read from."
+            lede="Leaderboards form the Overall index; reports ✱ widen the domain columns; catalogs say where a model can be called. Every figure links to its source."
           />
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {boards.map((b) => (
