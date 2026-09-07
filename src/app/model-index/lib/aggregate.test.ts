@@ -2,7 +2,12 @@ import { describe, expect, it } from 'vitest';
 
 import { benchmarks, models, scores } from '../data';
 import type { Benchmark, Model, Score } from '../data/types';
-import { aggregate, confidenceOf, normalizeBoard } from './aggregate';
+import {
+  aggregate,
+  confidenceOf,
+  normalizeBoard,
+  placeAmong,
+} from './aggregate';
 import {
   MIN_SOURCES,
   OVERALL,
@@ -595,5 +600,41 @@ describe('shipped data', () => {
       ),
     );
     expect(leaders.size).toBeGreaterThan(1);
+  });
+});
+
+describe('anchored estimates', () => {
+  it('places a figure among anchors and reads their Overall index at that position', () => {
+    const anchors = [
+      { raw: 10, overall: 40 },
+      { raw: 20, overall: 50 },
+      { raw: 40, overall: 70 },
+    ];
+    expect(placeAmong(15, anchors)).toBe(45);
+    expect(placeAmong(30, anchors)).toBe(60);
+    expect(placeAmong(5, anchors)).toBe(40);
+    expect(placeAmong(99, anchors)).toBe(70);
+  });
+
+  it('gives a model with no Overall score an estimate from its report figures, and none to a scored model', () => {
+    const out = aggregate({
+      models,
+      benchmarks,
+      scores,
+      weights: weightsFor(benchmarks),
+      overall: OVERALL,
+      priorFraction: PRIOR_FRACTION,
+      minSources: MIN_SOURCES,
+    });
+    const withEstimate = out.filter((r) => r.score === null && r.estimate);
+    expect(withEstimate.length).toBeGreaterThan(0);
+    for (const r of withEstimate) {
+      expect(r.ranked).toBe(false);
+      expect(r.estimate!.score).toBeGreaterThanOrEqual(0);
+      expect(r.estimate!.score).toBeLessThanOrEqual(100);
+      expect(r.estimate!.anchors).toBeGreaterThanOrEqual(2);
+    }
+    for (const r of out.filter((r) => r.score !== null))
+      expect(r.estimate).toBeNull();
   });
 });
