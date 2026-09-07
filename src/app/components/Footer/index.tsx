@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import HideOn from '@/app/components/HideOn';
 import Mail from '@/assets/svg/mail.svg?react';
 import { SUPPORT_EMAIL_ADDRESS, TOKEN_WEBSITE_LINK } from '@/constant';
 import { PLATFORMS } from '@/constant/platforms';
@@ -55,21 +56,23 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <address className="frosted-card flex w-max items-center gap-2 rounded-lg p-2 md:px-4">
-            <p className="text-g1 text-base font-normal not-italic md:mr-2 md:text-xl">
-              Stay Connected
-            </p>
-            {PLATFORMS.map((item, index) => (
-              <Link
-                key={index}
-                href={item.link}
-                target="_blank"
-                rel="external noreferrer"
-                aria-label={`${item.label} link`}>
-                <item.Icon className="text-g1 size-6 md:size-10" />
-              </Link>
-            ))}
-          </address>
+          <HideOn prefixes={['/model-index']}>
+            <address className="frosted-card flex w-max items-center gap-2 rounded-lg p-2 md:px-4">
+              <p className="text-g1 text-base font-normal not-italic md:mr-2 md:text-xl">
+                Stay Connected
+              </p>
+              {PLATFORMS.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="external noreferrer"
+                  aria-label={`${item.label} link`}>
+                  <item.Icon className="text-g1 size-6 md:size-10" />
+                </Link>
+              ))}
+            </address>
+          </HideOn>
         </section>
         <span className="text-g2 mt-5 mb-2.5 text-center text-sm md:mt-7 md:text-base">
           © {new Date().getFullYear()} PublicAI Foundation, Cayman Islands. All

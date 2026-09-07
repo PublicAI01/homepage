@@ -7,6 +7,7 @@ import { Bai_Jamjuree, Darker_Grotesque } from 'next/font/google';
 import Footer from '@/app/components/Footer';
 import GridPattern from '@/app/components/GridPattern';
 import Header from '@/app/components/Header';
+import HideOn from '@/app/components/HideOn';
 import MediaPlatform from '@/app/components/MediaPlatform';
 import SideNav from '@/app/components/SideNav';
 import { cn } from '@/utils';
@@ -51,7 +52,9 @@ export default function RootLayout({
         )}>
         <GridPattern className="top-header-height -z-1 h-[calc(100%-var(--spacing-header-height))]" />
         <Header />
-        <MediaPlatform />
+        <HideOn prefixes={['/model-index']}>
+          <MediaPlatform />
+        </HideOn>
         <SideNav />
         <main className="pt-header-height relative flex flex-1 flex-col items-stretch">
           {children}

@@ -1,4 +1,5 @@
 const TWITTER_LINK = 'https://x.com/PublicAI_';
+const LINKEDIN_LINK = 'https://www.linkedin.com/company/publicai01';
 const TELEGRAM_LINK = 'https://t.me/public_ai01';
 const DOCS_LINK =
   'https://docs.publicai.io/publicai-documentation?utm_source=homepage';
@@ -45,7 +46,7 @@ const NAV_LIST = [
   {
     id: 'model-index',
     href: '/model-index',
-    label: 'Model Index',
+    label: 'LLM Index',
     comingSoon: false,
   },
 ] as const;
@@ -56,6 +57,7 @@ export {
   DOCS_LINK,
   DUNE_LINK,
   GITHUB_LINK,
+  LINKEDIN_LINK,
   MEDIUM_LINK,
   NAV_LIST,
   OFFICE_EMAIL_ADDRESS,

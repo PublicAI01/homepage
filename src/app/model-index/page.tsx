@@ -1,9 +1,18 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
+import discord from '@/assets/media-platform/discord.svg?react';
+import telegram from '@/assets/media-platform/telegram.svg?react';
+import {
+  DISCORD_LINK,
+  LINKEDIN_LINK,
+  TELEGRAM_LINK,
+  TWITTER_LINK,
+} from '@/constant';
 import { cn } from '@/utils';
 
 import IndexTable, { SourceBadge } from './components/index-table';
+import { LinkedInMark, XMark } from './components/social-marks';
 import {
   benchmarks,
   catalogs,
@@ -25,6 +34,14 @@ import {
 } from './lib/weights';
 
 const INDEX_URL = 'https://publicai.io/model-index';
+
+/** Where to follow the Index. The site's floating rail and footer row stand aside on this page. */
+const FOLLOW = [
+  { label: 'X', href: TWITTER_LINK, Icon: XMark },
+  { label: 'LinkedIn', href: LINKEDIN_LINK, Icon: LinkedInMark },
+  { label: 'Telegram', href: TELEGRAM_LINK, Icon: telegram },
+  { label: 'Discord', href: DISCORD_LINK, Icon: discord },
+];
 
 /**
  * A shared link carries its filters; the title, description and card image
@@ -51,7 +68,7 @@ export async function generateMetadata({
     : 'PublicAI Index — the LLM benchmark aggregator';
   const description = what
     ? `Top models by ${scope} on the PublicAI Index, a composite of recognised public leaderboards. Scores standardized onto one scale, every figure traceable to its publisher.`
-    : 'The world’s most comprehensive and robust model index, built from everyone’s benchmarks and none of our own. Scores from recognised public leaderboards, standardized onto one scale, with launch-post figures marked ✱. Queryable by agents over MCP.';
+    : 'The world’s most comprehensive and robust LLM index, built from everyone’s benchmarks and none of our own. Scores from recognised public leaderboards, standardized onto one scale, with launch-post figures marked ✱. Queryable by agents over MCP.';
   const query = encodeView(view).toString();
   const url = query ? `${INDEX_URL}?${query}` : INDEX_URL;
   const image = `${INDEX_URL}/og${query ? `?${query}` : ''}`;
@@ -206,8 +223,8 @@ export default function ModelIndex() {
             </h1>
             <p className="text-subheading mb-5 max-w-[60ch] font-semibold text-[#B9B7C4]">
               The LLM benchmark aggregator — the world’s most comprehensive and
-              robust model index, built from everyone’s benchmarks and none of
-              our own.
+              robust LLM index, built from everyone’s benchmarks and none of our
+              own.
             </p>
             <p className="text-lede max-w-[90ch] text-[#D9D7E0]">
               Model evaluation has fragmented into dozens of leaderboards, and a
@@ -220,6 +237,21 @@ export default function ModelIndex() {
               Launch posts and blogs are indexed too, marked ✱ and kept out of
               the headline. Agents get the same answers over MCP and a JSON API,
               every score with its sources.
+            </p>
+            <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+              <span className={LABEL}>Follow PublicAI Index</span>
+              {FOLLOW.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="external noreferrer"
+                  aria-label={`PublicAI on ${label}`}
+                  title={label}
+                  className="text-g1 inline-flex size-8 items-center justify-center rounded-md border border-white/12 transition-colors hover:border-white/30 hover:text-white">
+                  <Icon className="size-4" />
+                </a>
+              ))}
             </p>
           </div>
 
