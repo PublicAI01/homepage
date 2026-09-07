@@ -52,7 +52,7 @@ export async function generateMetadata({
     : 'PublicAI Index — the LLM benchmark aggregator';
   const description = what
     ? `Top models by ${scope} on the PublicAI Index, a composite of recognised public leaderboards. Scores standardized onto one scale, every figure traceable to its publisher.`
-    : 'The most comprehensive and robust model index, built from everyone’s benchmarks and none of our own. Scores from recognised public leaderboards, standardized onto one scale, with launch-post figures marked ✱. Queryable by agents over MCP.';
+    : 'The world’s most comprehensive and robust model index, built from everyone’s benchmarks and none of our own. Scores from recognised public leaderboards, standardized onto one scale, with launch-post figures marked ✱. Queryable by agents over MCP.';
   const query = encodeView(view).toString();
   const url = query ? `${INDEX_URL}?${query}` : INDEX_URL;
   const image = `${INDEX_URL}/og${query ? `?${query}` : ''}`;
@@ -201,61 +201,67 @@ export default function ModelIndex() {
     <div className="relative isolate before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:bg-[#08080A]">
       <div className="container mx-auto max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
         {/* ===================== HEADER ===================== */}
-        <header className="pt-10 pb-8 lg:pt-14 lg:pb-10">
-          {/* The product's name is the headline; the counts are its subtitle. */}
-          <h1 className="text-display mb-2 font-bold text-white">
-            PublicAI Index
-          </h1>
-          <p
-            className={cn(
-              'text-subheading mb-4 font-semibold text-[#B9B7C4]',
-              MEASURE,
-            )}>
-            The LLM benchmark aggregator — the most comprehensive and robust
-            model index, built from everyone’s benchmarks and none of our own.
-          </p>
-          <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
-            Model evaluation has fragmented into dozens of leaderboards, and a
-            single benchmark is easy to target: topping one board says little
-            about the next. PublicAI runs no evaluations of its own. It
-            aggregates the public ones by statistical method — one scale,
-            discounted by published uncertainty, shrunk where evidence is thin,
-            weighted by a scheme printed beside the table — into an index no
-            single benchmark can be tuned to, overall and by domain. Launch
-            posts and blogs are indexed too, marked ✱ and kept out of the
-            headline. Agents get the same answers over MCP and a JSON API, every
-            score with its sources.
-          </p>
-          <dl className="text-caption flex flex-wrap gap-x-6 gap-y-1 text-[#78758A]">
-            {[
-              ['Updated', updated],
-              ['Boards', boards.length],
-              ['Reports ✱', reports.length],
-              ['Measures', benchmarks.length],
-              ['Categories', categories.length],
-              ['Domains', domains.length],
-              ['Models', models.length],
-              ['With a callable id', callable],
-            ].map(([k, v]) => (
-              <div key={String(k)}>
-                <dt className="inline">{k} </dt>
-                <dd className="inline text-[#D9D7E0]">{v}</dd>
-              </div>
-            ))}
-            <div>
-              <dt className="sr-only">Attribution</dt>
-              <dd className="inline">
-                Scores belong to their publishers; PublicAI only normalizes and
-                weights them.
-              </dd>
-            </div>
-          </dl>
-          <p className="text-micro mt-4 flex flex-wrap items-baseline gap-x-2 text-[#78758A]">
-            <span className={LABEL}>Cite</span>
-            <code className="font-mono text-[#9C9AA8] select-all">
-              {citation}
-            </code>
-          </p>
+        <header className="grid grid-cols-1 gap-8 pt-10 pb-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-10 lg:pt-14 lg:pb-10">
+          {/* Left: the name, the promise, the case. Right: the numbers, in a
+              panel the width of the sidebar below, so the two columns line
+              up and the page reads as one grid from the top. */}
+          <div className="min-w-0">
+            <h1 className="text-display mb-3 font-bold text-white">
+              PublicAI Index
+            </h1>
+            <p className="text-subheading mb-5 max-w-[60ch] font-semibold text-[#B9B7C4]">
+              The LLM benchmark aggregator — the world’s most comprehensive and
+              robust model index, built from everyone’s benchmarks and none of
+              our own.
+            </p>
+            <p className="text-lede max-w-[90ch] text-[#D9D7E0]">
+              Model evaluation has fragmented into dozens of leaderboards, and a
+              single benchmark is easy to target: topping one board says little
+              about the next. PublicAI runs no evaluations of its own. It
+              aggregates the public ones by statistical method — one scale,
+              discounted by published uncertainty, shrunk where evidence is
+              thin, weighted by a scheme printed beside the table — into an
+              index no single benchmark can be tuned to, overall and by domain.
+              Launch posts and blogs are indexed too, marked ✱ and kept out of
+              the headline. Agents get the same answers over MCP and a JSON API,
+              every score with its sources.
+            </p>
+          </div>
+
+          <aside className={cn(PANEL, 'self-start p-4 lg:mt-2')}>
+            <h2 className={cn(LABEL, 'mb-3')}>This snapshot</h2>
+            <dl className="grid grid-cols-2 gap-x-4 gap-y-2">
+              {[
+                ['Updated', updated],
+                ['Models', models.length],
+                ['Boards', boards.length],
+                ['Reports ✱', reports.length],
+                ['Measures', benchmarks.length],
+                ['Domains', domains.length],
+                ['Categories', categories.length],
+                ['Callable ids', callable],
+              ].map(([k, v]) => (
+                <div
+                  key={String(k)}
+                  className="flex flex-col">
+                  <dt className="text-micro text-[#78758A]">{k}</dt>
+                  <dd className="text-body-sm font-mono font-semibold text-white">
+                    {v}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
+              Scores belong to their publishers; PublicAI only normalizes and
+              weights them.
+            </p>
+            <p className="text-micro mt-2 text-[#78758A]">
+              <span className={cn(LABEL, 'mr-1.5')}>Cite</span>
+              <code className="font-mono text-[#9C9AA8] select-all">
+                {citation}
+              </code>
+            </p>
+          </aside>
         </header>
 
         {/* ===================== TABLE + SIDEBAR ===================== */}
