@@ -6,7 +6,6 @@ import { getBlogPosts } from '@/app/blog/utils';
 import AsSeenIn from '@/app/components/AsSeenIn';
 import { baseUrl } from '@/app/sitemap';
 import ArrowLeft from '@/assets/svg/arrow-left.svg?react';
-import Button from '@/components/Button';
 import ScrollToTop from '@/components/ScrollToTop';
 import { formatDate } from '@/utils';
 
@@ -83,10 +82,6 @@ export default async function Page({
     notFound();
   }
 
-  const blogUrl = `${baseUrl}/blog/${post.slug}`;
-  const explainPrompt = `Read "${post.metadata.title}" (${blogUrl}). Explain its key points in plain language, why they matter, and what PublicAI is building.`;
-  const sharePrompt = `Summarize the key message of "${post.metadata.title}" (${blogUrl}). Then craft a short post for X about it with the hashtag #PublicAI. Use the handle @PublicAI_ (with underscore) if you mention PublicAI.`;
-
   return (
     <section className="mx-auto mb-6 flex max-w-[85ch] flex-col items-center max-md:px-[calc(var(--spacing-mobile-padding-x)*2)] md:mb-10">
       <Link
@@ -137,47 +132,6 @@ export default async function Page({
       <h1 className="text-center text-xl font-extrabold tracking-tight sm:text-2xl md:text-3xl">
         {post.metadata.title}
       </h1>
-      <div className="flex flex-col items-center justify-center">
-        <p className="my-3">Explore this content with AI:</p>
-        <div className="flex items-center gap-3">
-          {[
-            {
-              ai: 'ChatGPT',
-              href: 'https://chat.openai.com/?q=',
-              prompt: explainPrompt,
-            },
-            {
-              ai: 'Perplexity',
-              href: 'https://www.perplexity.ai/search/new?q=',
-              prompt: explainPrompt,
-            },
-            {
-              ai: 'Claude',
-              href: 'https://claude.ai/new?q=',
-              prompt: explainPrompt,
-            },
-            {
-              ai: 'Grok',
-              href: 'https://x.com/i/grok?text=',
-              prompt: sharePrompt,
-            },
-          ].map(({ ai, href, prompt }) => {
-            const fullUrl = new URL(
-              `${href}${prompt}`.replaceAll('#', '%23'),
-            ).toString();
-
-            return (
-              <Button
-                key={ai}
-                className="w-auto px-2 py-1 text-xs shadow-none md:text-sm"
-                href={fullUrl}
-                aria-label={`Explore this content with ${ai}`}>
-                {ai}
-              </Button>
-            );
-          })}
-        </div>
-      </div>
       <article className="prose prose-invert prose-figcaption:text-center max-w-[85ch]!">
         <post.MDX />
       </article>
