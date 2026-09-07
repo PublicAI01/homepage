@@ -163,8 +163,8 @@ export default function ModelIndex() {
               'text-subheading mb-4 font-semibold text-[#B9B7C4]',
               MEASURE,
             )}>
-            A composite of {boards.length} recognised leaderboards —{' '}
-            {models.length} models, {domains.length} domains, one scale.
+            The world’s fairest, most robust model index — built from everyone’s
+            benchmarks and none of our own.
           </p>
           <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
             Model evaluation has fragmented into dozens of leaderboards, and a
