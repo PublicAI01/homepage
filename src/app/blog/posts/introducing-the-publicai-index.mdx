@@ -1,0 +1,55 @@
+export const metadata = {
+  title: 'Introducing the PublicAI Index: the LLM benchmark aggregator',
+  publishedAt: '2026-09-07',
+  summary:
+    'One score from every recognised public leaderboard, standardized onto one scale, with launch-post figures marked ✱ and kept out of the headline. Built from everyone’s benchmarks and none of our own — and queryable by agents over MCP.',
+  image: '/images/publicai-index-launch_cover.png',
+  keywords: [
+    'PublicAI Index',
+    'LLM benchmark aggregator',
+    'LLM leaderboard',
+    'model evaluation',
+    'MCP',
+  ],
+};
+
+![PublicAI Index](/images/publicai-index-launch.png)
+
+Model evaluation has fragmented into dozens of leaderboards, each with its own harness, and every launch ships with a table the vendor chose. A single benchmark is easy to target: a score that tops one board says little about the next.
+
+Today we are launching the **[PublicAI Index](/model-index)** — the LLM benchmark aggregator. It is the world’s most comprehensive and robust LLM index, and it is built from everyone’s benchmarks and none of our own.
+
+# We evaluate nothing
+
+PublicAI runs no benchmarks. That is the point. Every figure on the Index is read from a public, first-party page — LMArena, Artificial Analysis, Terminal-Bench, ARC-AGI-2, LiveBench and more — and every figure links back to it. We normalize and weight; we do not score. No conflict of interest, nothing to tune to.
+
+# Six rules
+
+1. **Standardize, discount uncertainty.** Every figure is z-scored across the models its source lists and mapped to 0–100, so an Elo and a pass rate share one scale. Where a publisher prints an error bar, the figure counts for less.
+2. **Shrink, never impute.** A missing figure stays missing. Thin evidence is pulled toward 50, so one generous board cannot lift a barely-tested model.
+3. **Weight by a published scheme.** Each board’s share of the Overall index is fixed and printed beside the table, with its reason.
+4. **Two publishers to rank.** A model enters the Overall ranking once boards from two independent publishers have scored it. A domain ranks on its own board evidence.
+5. **Reports ✱ stay out of the headline.** Launch posts and blogs are indexed too — they are how a brand-new model shows up before the boards catch it — but they are marked ✱, shape domain columns at a tenth of a board’s weight, and never enter the Overall index.
+6. **Estimate the rest, and say so.** A model with no Overall score is placed among models that have one and shown as ~55✱ — never ranked.
+
+# What is in it today
+
+Seven recognised leaderboards, three reports ✱, 526 models, 29 domains under six categories — from agentic coding and tool use to long context and hallucination. Rank by category or domain; filter by model line, by size class (small ≤ 15B, medium, large, very large > 1T, undisclosed — counted from the weights on Hugging Face, never estimated), by coverage. Every row opens into a card: scores by domain, how to call the model, and every source figure with the label the source printed. Every view has a link and a share card that show exactly what you filtered.
+
+# For agents, too
+
+The Index is served over MCP and a JSON API, so an agent can ask “which model, and how do I call it?” and get the same answer a person reads on the page — every score with its sources, every model with the way to reach it.
+
+```json
+{
+  "mcpServers": {
+    "publicai-index": { "url": "https://publicai.io/model-index/mcp" }
+  }
+}
+```
+
+# What is next
+
+More recognised boards — Vals.ai, BFCL, LiveCodeBench, Aider, SEAL, OSWorld and others — toward twenty, each bringing its own domains; more reports as new models land; and the same rules throughout. The weighting is stated so it can be disagreed with. Tell us where we are wrong.
+
+**[Open the PublicAI Index →](/model-index)**
