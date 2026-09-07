@@ -599,7 +599,7 @@ export default function IndexTable({
             ✱
           </span>
         </label>
-        <span className="ml-auto flex items-center gap-1.5">
+        <span className="ml-auto flex flex-wrap items-center gap-1.5">
           <span className={cn(LABEL, 'mr-1 whitespace-nowrap')}>
             Must include
           </span>
