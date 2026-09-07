@@ -138,13 +138,12 @@ describe('reports switch', () => {
     expect(a).toEqual(b);
   });
 
-  it('places a report-only row by its figure with no position, when reports are on', () => {
+  it('numbers every row in a scope by its place and flags report-only placement', () => {
     const r = ok(rankModels({ scope: 'agents', minBoards: 0, limit: 100 }));
-    const placed = r.models.filter((m) => !m.rankedInScope);
-    for (const m of placed) expect(m.position).toBeNull();
-    const numbered = r.models
-      .filter((m) => m.rankedInScope)
-      .map((m) => m.position);
-    expect(numbered).toEqual(numbered.map((_, i) => i + 1));
+    expect(r.models.map((m) => m.position)).toEqual(
+      r.models.map((_, i) => i + 1),
+    );
+    expect(r.models.some((m) => !m.rankedInScope)).toBe(true);
+    expect(r.models.some((m) => m.rankedInScope)).toBe(true);
   });
 });

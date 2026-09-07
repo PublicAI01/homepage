@@ -187,7 +187,7 @@ export interface ModelSummary {
   ranked: boolean;
   /** Ranked in the requested scope: a recognised board measured the model there. Equals `ranked` for Overall. */
   rankedInScope: boolean;
-  /** Position in the returned list among rankedInScope rows; null for the rest. */
+  /** Place in the returned list. Overall: the rank (null when provisional). A scope: every row's place; rankedInScope says whether a recognised board put it there. */
   position: number | null;
   /** Total parameters in billions where known (counted from the weights, or read from the name); null when undisclosed. */
   size: {
@@ -358,7 +358,8 @@ export function rankModels(q: RankQuery = {}) {
   let n = 0;
   const models = out.slice(0, limit).map((r) => {
     const m = summarize(r, scope);
-    if (m.rankedInScope) m.position = ++n;
+    if (scope.level === 'overall') m.position = m.ranked ? ++n : null;
+    else m.position = ++n;
     return m;
   });
   return {

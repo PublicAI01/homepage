@@ -272,8 +272,11 @@ export default function IndexTable({
   const positionOf = useMemo(() => {
     const m = new Map<string, number>();
     if (rankKey.level === 'overall') return rankOf;
+    // In a scope every listed row is numbered by where it sits; a row placed
+    // by report figures alone carries a ✱ after its number, so the grade of
+    // evidence shows without the place being taken away.
     let n = 0;
-    for (const r of filtered) if (eligible(r, rankKey)) m.set(r.model.id, ++n);
+    for (const r of filtered) m.set(r.model.id, ++n);
     return m;
   }, [filtered, rankKey, rankOf]);
   const coverable = rows[0]?.coverable ?? boards.length;
@@ -640,15 +643,19 @@ function Row({
         onClick={onToggle}
         aria-expanded={open}>
         <td className="text-g2 px-2.5 py-2.5 font-mono">
-          {position ?? (
+          {position === undefined ? (
             <span
-              className={cn(rankKey.level !== 'overall' && 'text-[#E8A9F0]')}
-              title={
-                rankKey.level === 'overall'
-                  ? `Provisional — fewer than ${MIN_SOURCES} independent publishers`
-                  : 'Placed by report ✱ figures only; no recognised board measures this model here'
-              }>
-              {rankKey.level === 'overall' ? '—' : '✱'}
+              title={`Provisional — fewer than ${MIN_SOURCES} independent publishers`}>
+              —
+            </span>
+          ) : inScope || rankKey.level === 'overall' ? (
+            position
+          ) : (
+            <span
+              className="text-[#B9B7C4]"
+              title="Placed by report ✱ figures only; no recognised board measures this model here">
+              {position}
+              <span className="text-[#E8A9F0]">✱</span>
             </span>
           )}
         </td>
