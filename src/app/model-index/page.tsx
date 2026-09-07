@@ -296,7 +296,57 @@ export default function ModelIndex() {
             </Suspense>
           </main>
 
-          <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24">
+          {/* The rail is taller than a laptop viewport, so it scrolls inside its
+              own sticky box; otherwise sticky does nothing and the cards below
+              the fold are unreachable while reading the table. */}
+          <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1">
+            <Card title="For agents — MCP">
+              <p className="text-caption mb-2 text-[#D9D7E0]">
+                The same answers, as tools:{' '}
+                <code className="font-mono text-white">rank_models</code>,{' '}
+                <code className="font-mono text-white">get_model</code>,{' '}
+                <code className="font-mono text-white">whats_new</code>,{' '}
+                <code className="font-mono text-white">describe_index</code>.
+                Every score comes with its sources; every model with the
+                recommended way to call it.
+              </p>
+              <pre className="text-micro overflow-x-auto rounded-md bg-black/40 px-2.5 py-2 font-mono whitespace-pre-wrap text-[#D9D7E0] select-all">
+                {mcpConfig}
+              </pre>
+              <p className="text-micro mt-2 text-[#78758A]">
+                Streamable HTTP, no key. Plain JSON at{' '}
+                <a
+                  href={`${API_URL}?scope=coding&limit=10`}
+                  className="text-p1 underline underline-offset-2">
+                  {API_URL.replace('https://', '')}
+                </a>{' '}
+                with <code className="font-mono">scope</code>,{' '}
+                <code className="font-mono">org</code>,{' '}
+                <code className="font-mono">minBoards</code>,{' '}
+                <code className="font-mono">limit</code> or{' '}
+                <code className="font-mono">model</code>.
+              </p>
+            </Card>
+
+            <Card title="Index Weekly">
+              <p className="text-caption mb-2 text-[#D9D7E0]">
+                Every Monday: the biggest moves, new entrants and new sources,
+                with one chart. No other mail.
+              </p>
+              <Subscribe />
+              <p className="text-micro mt-2 text-[#78758A]">
+                Prefer a feed?{' '}
+                <a
+                  href="/model-index/feed.xml"
+                  className="text-p1 underline underline-offset-2">
+                  RSS
+                </a>{' '}
+                · agents can poll <code className="font-mono">?since=</code> on
+                the API or the <code className="font-mono">whats_new</code>{' '}
+                tool.
+              </p>
+            </Card>
+
             <Card title="Weighting — Overall index">
               <ol className="flex flex-col gap-3">
                 {WEIGHTING.map((w) => {
@@ -324,53 +374,6 @@ export default function ModelIndex() {
               <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
                 Fixed by PublicAI. Reports ✱ carry {REPORT_WEIGHT}% of a board’s
                 share, in domain columns only.
-              </p>
-            </Card>
-
-            <Card title="Index Weekly">
-              <p className="text-caption mb-2 text-[#D9D7E0]">
-                Every Monday: the biggest moves, new entrants and new sources,
-                with one chart. No other mail.
-              </p>
-              <Subscribe />
-              <p className="text-micro mt-2 text-[#78758A]">
-                Prefer a feed?{' '}
-                <a
-                  href="/model-index/feed.xml"
-                  className="text-p1 underline underline-offset-2">
-                  RSS
-                </a>{' '}
-                · agents can poll <code className="font-mono">?since=</code> on
-                the API or the <code className="font-mono">whats_new</code>{' '}
-                tool.
-              </p>
-            </Card>
-
-            <Card title="For agents — MCP">
-              <p className="text-caption mb-2 text-[#D9D7E0]">
-                The same answers, as tools:{' '}
-                <code className="font-mono text-white">rank_models</code>,{' '}
-                <code className="font-mono text-white">get_model</code>,{' '}
-                <code className="font-mono text-white">whats_new</code>,{' '}
-                <code className="font-mono text-white">describe_index</code>.
-                Every score comes with its sources; every model with the
-                recommended way to call it.
-              </p>
-              <pre className="text-micro overflow-x-auto rounded-md bg-black/40 px-2.5 py-2 font-mono whitespace-pre-wrap text-[#D9D7E0] select-all">
-                {mcpConfig}
-              </pre>
-              <p className="text-micro mt-2 text-[#78758A]">
-                Streamable HTTP, no key. Plain JSON at{' '}
-                <a
-                  href={`${API_URL}?scope=coding&limit=10`}
-                  className="text-p1 underline underline-offset-2">
-                  {API_URL.replace('https://', '')}
-                </a>{' '}
-                with <code className="font-mono">scope</code>,{' '}
-                <code className="font-mono">org</code>,{' '}
-                <code className="font-mono">minBoards</code>,{' '}
-                <code className="font-mono">limit</code> or{' '}
-                <code className="font-mono">model</code>.
               </p>
             </Card>
           </aside>

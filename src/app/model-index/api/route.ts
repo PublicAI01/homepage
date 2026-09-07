@@ -38,6 +38,9 @@ export function GET(request: Request) {
             callable: bool('callable'),
             reports: bool('reports'),
             size: (p.get('size') as RankQuery['size']) ?? undefined,
+            // Documented since launch but never read; the UI filter that
+            // used to set it is gone, the API filter stays.
+            must: p.get('must')?.split(',').filter(Boolean),
           })
         : describeIndex();
 

@@ -30,7 +30,6 @@ export async function GET(request: Request) {
     minBoards: view.minBoards,
     reports: view.reports,
     q: view.q || undefined,
-    must: view.must,
     limit: 10,
   });
   const rows = 'error' in result ? [] : result.models;

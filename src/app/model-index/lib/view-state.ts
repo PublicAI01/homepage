@@ -5,7 +5,7 @@ import type { SizeTier } from './size';
  * social-card image and the exported chart all read the same state, so what
  * a reader shares is what they filtered — never the unfiltered page.
  *
- *   ?rank=domain:Tool use&family=K2&size=large&min=0&reports=0&must=lmarena,any-report&q=k2
+ *   ?rank=domain:Tool use&family=K2&size=large&min=0&reports=0&q=k2
  */
 export interface ViewState {
   rank:
@@ -17,11 +17,7 @@ export interface ViewState {
   size: SizeTier | 'all';
   minBoards: number;
   reports: boolean;
-  /** Source ids that must have scored the model; `any-report` stands for any ✱. */
-  must: string[];
 }
-
-export const ANY_REPORT = 'any-report';
 
 export const DEFAULT_VIEW: ViewState = {
   rank: { level: 'overall' },
@@ -30,7 +26,6 @@ export const DEFAULT_VIEW: ViewState = {
   size: 'all',
   minBoards: 1,
   reports: true,
-  must: [],
 };
 
 export function encodeView(v: ViewState): URLSearchParams {
@@ -42,14 +37,13 @@ export function encodeView(v: ViewState): URLSearchParams {
   if (v.size !== 'all') p.set('size', v.size);
   if (v.minBoards !== DEFAULT_VIEW.minBoards) p.set('min', String(v.minBoards));
   if (!v.reports) p.set('reports', '0');
-  if (v.must.length) p.set('must', v.must.join(','));
   return p;
 }
 
 const SIZES = new Set(['small', 'medium', 'large', 'xlarge', 'undisclosed']);
 
 export function decodeView(p: URLSearchParams): ViewState {
-  const v: ViewState = { ...DEFAULT_VIEW, must: [] };
+  const v: ViewState = { ...DEFAULT_VIEW };
   const rank = p.get('rank');
   if (rank?.startsWith('category:'))
     v.rank = { level: 'category', category: rank.slice(9) };
@@ -62,7 +56,6 @@ export function decodeView(p: URLSearchParams): ViewState {
   const min = Number(p.get('min'));
   v.minBoards = p.has('min') && Number.isInteger(min) && min >= 0 ? min : 1;
   v.reports = p.get('reports') !== '0';
-  v.must = (p.get('must') ?? '').split(',').filter(Boolean);
   return v;
 }
 

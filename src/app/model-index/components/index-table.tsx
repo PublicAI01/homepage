@@ -18,7 +18,6 @@ import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
 import { SIZE_TIERS, sizeLabel, type SizeTier, tierOf } from '../lib/size';
 import {
-  ANY_REPORT,
   decodeView,
   encodeView,
   rankName,
@@ -59,8 +58,6 @@ interface Props {
 }
 
 const CHART_ROWS = 10;
-/** Must-include key standing for "any report ✱". */
-const REPORT_ANY = ANY_REPORT;
 const INDEX_ORIGIN = 'https://publicai.io/model-index';
 const INDEX_URL = 'https://publicai.io/model-index';
 
@@ -204,9 +201,6 @@ export default function IndexTable({
   // first, provisional ones after, so a model on one board is visible
   // without being ranked on that one board's word.
   const [minBoards, setMinBoards] = useState(initial.minBoards);
-  const [mustHave, setMustHave] = useState<Set<string>>(
-    () => new Set(initial.must),
-  );
   const [openModel, setOpenModel] = useState<string | null>(null);
   // Reports ✱ — launch posts, blogs, write-ups — are in by default and can
   // be switched off, which drops their figures from every score and hides
@@ -273,18 +267,6 @@ export default function IndexTable({
     return m;
   }, [rows]);
 
-  const sourcesScoring = useMemo(() => {
-    const groupOf = new Map(benchmarks.map((b) => [b.id, b.group]));
-    const m = new Map<string, Set<string>>();
-    for (const r of rows) {
-      m.set(
-        r.model.id,
-        new Set(r.perBenchmark.map((s) => groupOf.get(s.benchmarkId)!)),
-      );
-    }
-    return m;
-  }, [rows, benchmarks]);
-
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     let out = rows.filter((r) => {
@@ -294,10 +276,6 @@ export default function IndexTable({
       if (sizeTier !== 'all' && tierOf(r.model.size) !== sizeTier) return false;
       if (q && !`${r.model.name} ${r.model.org}`.toLowerCase().includes(q))
         return false;
-      const has = sourcesScoring.get(r.model.id)!;
-      for (const b of mustHave) {
-        if (b === REPORT_ANY ? r.reports === 0 : !has.has(b)) return false;
-      }
       return true;
     });
     if (rankKey.level !== 'overall') {
@@ -312,17 +290,7 @@ export default function IndexTable({
         .sort(by);
     }
     return out;
-  }, [
-    rows,
-    query,
-    family,
-    minBoards,
-    mustHave,
-    rankKey,
-    sourcesScoring,
-    includeReports,
-    sizeTier,
-  ]);
+  }, [rows, query, family, minBoards, rankKey, includeReports, sizeTier]);
 
   const rankedCount = rows.filter((r) => r.ranked).length;
   const shown = filtered.slice(0, PAGE);
@@ -340,14 +308,6 @@ export default function IndexTable({
   }, [filtered, rankKey, rankOf]);
   const coverable = rows[0]?.coverable ?? boards.length;
   const catalogDate = catalogs[0]?.retrievedAt;
-
-  const toggleSource = (id: string) =>
-    setMustHave((s) => {
-      const next = new Set(s);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
 
   /**
    * A scope no recognised board measures yet is ranked on report figures
@@ -397,9 +357,8 @@ export default function IndexTable({
       size: sizeTier,
       minBoards,
       reports: includeReports,
-      must: [...mustHave],
     }),
-    [rankKey, query, family, sizeTier, minBoards, includeReports, mustHave],
+    [rankKey, query, family, sizeTier, minBoards, includeReports],
   );
   const viewQuery = useMemo(() => encodeView(view).toString(), [view]);
   useEffect(() => {
@@ -599,40 +558,6 @@ export default function IndexTable({
             ✱
           </span>
         </label>
-        <span className="ml-auto flex flex-wrap items-center gap-1.5">
-          <span className={cn(LABEL, 'mr-1 whitespace-nowrap')}>
-            Must include
-          </span>
-          {/* Boards one by one; every report shares the one ✱, so the ✱
-              button means "measured by at least one report". */}
-          {[...boards, ...(reports.length ? [reports[0]] : [])].map((s) => {
-            const id = s.kind === 'report' ? REPORT_ANY : s.id;
-            const on = mustHave.has(id);
-            return (
-              <button
-                key={id}
-                type="button"
-                aria-pressed={on}
-                onClick={() => toggleSource(id)}
-                title={
-                  s.kind === 'report'
-                    ? `Any report ✱ (${reports.map((r) => r.name).join(' · ')})`
-                    : s.name
-                }
-                className={cn(
-                  'rounded-md border p-0.5 transition-colors',
-                  on
-                    ? 'border-primary/70'
-                    : 'border-transparent hover:border-white/20',
-                )}>
-                <SourceBadge
-                  source={s}
-                  present
-                />
-              </button>
-            );
-          })}
-        </span>
       </div>
 
       {scopeBoards && scopeBoards.boards === 0 ? (
