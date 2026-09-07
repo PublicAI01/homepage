@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import { cn } from '@/utils';
 
@@ -13,6 +14,8 @@ import {
 } from './data';
 import { groupBoards } from './lib/boards';
 import { API_URL, MCP_URL } from './lib/query';
+import { SIZE_TIERS } from './lib/size';
+import { decodeView, encodeView, rankName } from './lib/view-state';
 import {
   categoryRank,
   domainLabel,
@@ -22,13 +25,58 @@ import {
   WEIGHTING,
 } from './lib/weights';
 
-export const metadata: Metadata = {
-  title: 'PublicAI Index — Weighted aggregate of public model leaderboards',
-  description:
-    'One score from recognised public leaderboards, plus scores per category and domain, with launch-post figures marked ✱. Z-scored per measure, discounted by published error bars, shrunk on thin evidence, weighted by a published scheme. Every figure links back to its publisher. Queryable by agents over MCP.',
-  keywords:
-    'LLM leaderboard aggregate, model evaluation index, LMArena, Artificial Analysis, Terminal-Bench, ARC-AGI, LiveBench, benchmark normalization, MCP server, PublicAI',
-};
+const INDEX_URL = 'https://publicai.io/model-index';
+
+/**
+ * A shared link carries its filters; the title, description and card image
+ * follow them, so a post about "Tool use · Large" previews that view.
+ */
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}): Promise<Metadata> {
+  const raw = await searchParams;
+  const p = new URLSearchParams();
+  for (const [k, v] of Object.entries(raw))
+    if (typeof v === 'string') p.set(k, v);
+  const view = decodeView(p);
+  const filtered = p.toString().length > 0;
+  const scope = rankName(view.rank);
+  const tier = SIZE_TIERS.find((t) => t.id === view.size);
+  const what = filtered
+    ? `${scope}${tier ? ` · ${tier.label}` : ''}${view.family !== 'all' ? ` · ${view.family}` : ''}`
+    : null;
+  const title = what
+    ? `${what} — PublicAI Index`
+    : 'PublicAI Index — the LLM benchmark aggregator';
+  const description = what
+    ? `Top models by ${scope} on the PublicAI Index, a composite of recognised public leaderboards. Scores standardized onto one scale, every figure traceable to its publisher.`
+    : 'The most comprehensive and robust model index, built from everyone’s benchmarks and none of our own. Scores from recognised public leaderboards, standardized onto one scale, with launch-post figures marked ✱. Queryable by agents over MCP.';
+  const query = encodeView(view).toString();
+  const url = query ? `${INDEX_URL}?${query}` : INDEX_URL;
+  const image = `${INDEX_URL}/og${query ? `?${query}` : ''}`;
+  return {
+    title,
+    description,
+    keywords:
+      'LLM leaderboard aggregate, LLM benchmark aggregator, model evaluation index, LMArena, Artificial Analysis, Terminal-Bench, ARC-AGI, LiveBench, benchmark normalization, MCP server, PublicAI',
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: 'PublicAI',
+      type: 'website',
+      images: [{ url: image, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [image],
+    },
+  };
+}
 
 const PANEL = 'rounded-xl border border-[#2C2C31] bg-white/[0.045]';
 const MEASURE = 'max-w-[68ch]';
@@ -163,8 +211,8 @@ export default function ModelIndex() {
               'text-subheading mb-4 font-semibold text-[#B9B7C4]',
               MEASURE,
             )}>
-            The world’s fairest, most robust model index — built from everyone’s
-            benchmarks and none of our own.
+            The LLM benchmark aggregator — the most comprehensive and robust
+            model index, built from everyone’s benchmarks and none of our own.
           </p>
           <p className={cn('text-lede mb-5 text-[#D9D7E0]', MEASURE)}>
             Model evaluation has fragmented into dozens of leaderboards, and a
@@ -216,13 +264,15 @@ export default function ModelIndex() {
           id="index">
           <main className="min-w-0">
             <p className={cn(LABEL, 'mb-3')}>§ 1 · Ranking</p>
-            <IndexTable
-              models={models}
-              benchmarks={benchmarks}
-              scores={scores}
-              catalogs={catalogs}
-              generatedAt={generatedAt}
-            />
+            <Suspense>
+              <IndexTable
+                models={models}
+                benchmarks={benchmarks}
+                scores={scores}
+                catalogs={catalogs}
+                generatedAt={generatedAt}
+              />
+            </Suspense>
           </main>
 
           <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24">

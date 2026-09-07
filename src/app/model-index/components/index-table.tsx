@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
 
 import { cn } from '@/utils';
 
@@ -16,6 +17,13 @@ import { type BoardView, groupBoards } from '../lib/boards';
 import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
 import { SIZE_TIERS, sizeLabel, type SizeTier, tierOf } from '../lib/size';
+import {
+  ANY_REPORT,
+  decodeView,
+  encodeView,
+  rankName,
+  type ViewState,
+} from '../lib/view-state';
 import {
   categoryRank,
   domainLabel,
@@ -50,7 +58,8 @@ interface Props {
 
 const CHART_ROWS = 10;
 /** Must-include key standing for "any report ✱". */
-const REPORT_ANY = '✱';
+const REPORT_ANY = ANY_REPORT;
+const INDEX_ORIGIN = 'https://publicai.io/model-index';
 const INDEX_URL = 'https://publicai.io/model-index';
 
 /** What the table is ranked by: the overall index, a category, or a domain inside one. */
@@ -140,20 +149,38 @@ export default function IndexTable({
   catalogs,
   generatedAt,
 }: Props) {
-  const [rankKey, setRankKey] = useState<RankKey>({ level: 'overall' });
-  const [query, setQuery] = useState('');
-  const [family, setFamily] = useState('all');
+  const searchParams = useSearchParams();
+  // The URL sets the filters on first render — on the server and the client
+  // alike, so a shared link opens on exactly the view that was shared.
+  const initial = useMemo(
+    () => decodeView(new URLSearchParams(searchParams.toString())),
+    [searchParams],
+  );
+  const [rankKey, setRankKey] = useState<RankKey>(() => {
+    const r = initial.rank;
+    if (r.level === 'category')
+      return { level: 'category', category: r.category };
+    if (r.level === 'domain') {
+      const category = benchmarks.find((b) => b.domain === r.domain)?.category;
+      if (category) return { level: 'domain', category, domain: r.domain };
+    }
+    return { level: 'overall' };
+  });
+  const [query, setQuery] = useState(initial.q);
+  const [family, setFamily] = useState(initial.family);
   // Everything a recognised board has scored is listed; ranked rows come
   // first, provisional ones after, so a model on one board is visible
   // without being ranked on that one board's word.
-  const [minBoards, setMinBoards] = useState(1);
-  const [mustHave, setMustHave] = useState<Set<string>>(new Set());
+  const [minBoards, setMinBoards] = useState(initial.minBoards);
+  const [mustHave, setMustHave] = useState<Set<string>>(
+    () => new Set(initial.must),
+  );
   const [openModel, setOpenModel] = useState<string | null>(null);
   // Reports ✱ — launch posts, blogs, write-ups — are in by default and can
   // be switched off, which drops their figures from every score and hides
   // models nothing else has measured.
-  const [includeReports, setIncludeReports] = useState(true);
-  const [sizeTier, setSizeTier] = useState<SizeTier | 'all'>('all');
+  const [includeReports, setIncludeReports] = useState(initial.reports);
+  const [sizeTier, setSizeTier] = useState<SizeTier | 'all'>(initial.size);
 
   const weights = useMemo(() => {
     const w = weightsFor(benchmarks);
@@ -294,6 +321,55 @@ export default function IndexTable({
   const activeDomains = activeCategory
     ? (taxonomy.find(([c]) => c === activeCategory)?.[1] ?? [])
     : [];
+
+  // ---- the view as a URL ----------------------------------------------------
+  // The filters keep the URL current, so the address bar is always a link
+  // to exactly this view.
+  const view: ViewState = useMemo(
+    () => ({
+      rank:
+        rankKey.level === 'overall'
+          ? { level: 'overall' }
+          : rankKey.level === 'category'
+            ? { level: 'category', category: rankKey.category }
+            : {
+                level: 'domain',
+                category: rankKey.category,
+                domain: rankKey.domain,
+              },
+      q: query.trim(),
+      family,
+      size: sizeTier,
+      minBoards,
+      reports: includeReports,
+      must: [...mustHave],
+    }),
+    [rankKey, query, family, sizeTier, minBoards, includeReports, mustHave],
+  );
+  const viewQuery = useMemo(() => encodeView(view).toString(), [view]);
+  useEffect(() => {
+    const next = `${window.location.pathname}${viewQuery ? `?${viewQuery}` : ''}`;
+    if (next !== `${window.location.pathname}${window.location.search}`)
+      window.history.replaceState(null, '', next);
+  }, [viewQuery]);
+
+  const shareUrl = `${INDEX_ORIGIN}${viewQuery ? `?${viewQuery}` : ''}`;
+  const shareText = (() => {
+    const tier = SIZE_TIERS.find((t) => t.id === sizeTier);
+    const what = `${rankName(view.rank)}${tier ? ` · ${tier.label}` : ''}${family !== 'all' ? ` · ${family}` : ''}`;
+    const top = filtered.slice(0, 3).map((r) => r.model.name);
+    return `Top models by ${what} on the PublicAI Index${top.length ? `: ${top.join(', ')}…` : ''}`;
+  })();
+  const [copied, setCopied] = useState(false);
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      window.prompt('Copy this link', shareUrl);
+    }
+  };
 
   const exportChart = () => {
     const top = filtered
@@ -519,11 +595,36 @@ export default function IndexTable({
             </>
           ) : null}
         </p>
+        <span className="ml-auto flex items-center gap-1.5">
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-caption inline-flex h-7 items-center rounded-md border border-white/12 px-2.5 text-[#D9D7E0] transition-colors hover:border-white/30 hover:text-white"
+            title="Share this view on X — the card shows this view’s top ten">
+            Share on X
+          </a>
+          <a
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-caption inline-flex h-7 items-center rounded-md border border-white/12 px-2.5 text-[#D9D7E0] transition-colors hover:border-white/30 hover:text-white"
+            title="Share this view on LinkedIn — the card shows this view’s top ten">
+            LinkedIn
+          </a>
+          <button
+            type="button"
+            onClick={copyLink}
+            className="text-caption inline-flex h-7 items-center rounded-md border border-white/12 px-2.5 text-[#D9D7E0] transition-colors hover:border-white/30 hover:text-white"
+            title="Copy a link to exactly this view">
+            {copied ? 'Copied' : 'Copy link'}
+          </button>
+        </span>
         <button
           type="button"
           onClick={exportChart}
           disabled={filtered.length === 0}
-          className="text-caption ml-auto inline-flex h-7 items-center gap-1.5 rounded-md border border-white/12 px-2.5 text-[#D9D7E0] transition-colors hover:border-white/30 hover:text-white disabled:opacity-40"
+          className="text-caption inline-flex h-7 items-center gap-1.5 rounded-md border border-white/12 px-2.5 text-[#D9D7E0] transition-colors hover:border-white/30 hover:text-white disabled:opacity-40"
           title={`Download a PNG bar chart of the top ${CHART_ROWS} rows as filtered and ranked here`}>
           <span aria-hidden>↓</span> Export chart
         </button>

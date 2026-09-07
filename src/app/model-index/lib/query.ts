@@ -89,6 +89,20 @@ const fold = (s: string) =>
 export function resolveScope(input: string | undefined): Scope | null {
   if (!input || fold(input) === 'overall' || fold(input) === 'index')
     return { level: 'overall' };
+  // "category:Reasoning" / "domain:Reasoning" settle a name used at both levels.
+  const prefixed = /^(category|domain):(.+)$/.exec(input.trim());
+  if (prefixed) {
+    const want = fold(prefixed[2]);
+    for (const [category, domains] of taxonomy) {
+      if (prefixed[1] === 'category' && fold(category) === want)
+        return { level: 'category', category };
+      if (prefixed[1] === 'domain')
+        for (const domain of domains)
+          if (fold(domain) === want)
+            return { level: 'domain', category, domain };
+    }
+    return null;
+  }
   const q = fold(input);
   for (const [category] of taxonomy)
     if (fold(category) === q) return { level: 'category', category };
@@ -319,6 +333,10 @@ export interface RankQuery {
   reports?: boolean;
   /** Size class by total parameters: small ≤ 15B, medium 15–100B, large 100B–1T, xlarge > 1T, undisclosed. */
   size?: SizeTier;
+  /** Free-text match on model name or organisation. */
+  q?: string;
+  /** Source ids that must have scored the model; "any-report" for any ✱. */
+  must?: string[];
 }
 
 export function rankModels(q: RankQuery = {}) {
@@ -342,6 +360,16 @@ export function rankModels(q: RankQuery = {}) {
     if (q.family && fold(familyOf(r.model.name)) !== fold(q.family))
       return false;
     if (q.size && tierOf(r.model.size) !== q.size) return false;
+    if (q.q && !fold(`${r.model.name} ${r.model.org}`).includes(fold(q.q)))
+      return false;
+    if (q.must?.length) {
+      const has = new Set(
+        r.perBenchmark.map((s) => benchById.get(s.benchmarkId)!.group),
+      );
+      for (const m of q.must) {
+        if (m === 'any-report' ? r.reports === 0 : !has.has(m)) return false;
+      }
+    }
     if (q.openWeights && !r.model.access?.weights) return false;
     if (q.callable && !r.model.access?.openrouter) return false;
     // Overall lists estimate-only rows too (estimatedIndex set, index null).
