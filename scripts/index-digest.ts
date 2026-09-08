@@ -39,6 +39,10 @@ const top = Object.entries(to.models)
   .slice(0, 10);
 
 const url = 'https://publicai.io/model-index';
+// The MCP endpoint speaks JSON-RPC over POST, so a reader who clicks it
+// in a mail client gets "Method not allowed". Send people to the page that
+// explains it; the endpoint itself belongs in a config file, not a link.
+const MCP_DOCS = 'https://docs.publicai.io/index/mcp';
 const line = (m: (typeof c.models)[number]) =>
   m.kind === 'moved'
     ? `${m.name} ${m.delta! > 0 ? '↑' : '↓'} ${Math.abs(m.delta!)} → #${m.rank}`
@@ -74,7 +78,7 @@ ${
     .join('\n') || '- No new models.'
 }
 ${c.newSources.length ? `\n## New sources\n${c.newSources.map((s) => `- ${s}`).join('\n')}\n` : ''}
-[Open the Index](${url}) · [RSS](${url}/feed.xml) · [MCP](${url}/mcp)
+[Open the Index](${url}) · [RSS](${url}/feed.xml) · [MCP for agents](${MCP_DOCS})
 
 Scores are 0–100 standardized; 50 is the average of the models each source lists. Scores belong to their publishers; PublicAI normalizes and weights them.
 `;
@@ -104,7 +108,7 @@ const html = `<!doctype html><html><body style="margin:0;background:#0B0B0D;colo
     .join('') || '<li>No new models.</li>'
 }</ul>
 ${c.newSources.length ? `<h2 style="font-size:16px;margin:0 0 8px">New sources</h2><ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${c.newSources.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>` : ''}
-<p><a href="${url}" style="color:#B08BFF">Open the Index</a> · <a href="${url}/feed.xml" style="color:#B08BFF">RSS</a> · <a href="${url}/mcp" style="color:#B08BFF">MCP</a></p>
+<p><a href="${url}" style="color:#B08BFF">Open the Index</a> · <a href="${url}/feed.xml" style="color:#B08BFF">RSS</a> · <a href="${MCP_DOCS}" style="color:#B08BFF">MCP for agents</a></p>
 <p style="font-size:12px;color:#6F6D7A;margin-top:32px">Scores are 0–100 standardized; 50 is the average of the models each source lists. Scores belong to their publishers; PublicAI normalizes and weights them. <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#6F6D7A">Unsubscribe</a></p>
 </div></body></html>`;
 
