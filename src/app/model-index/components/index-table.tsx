@@ -12,7 +12,12 @@ import {
   contextLabel,
   priceLabel,
 } from '../lib/access';
-import { aggregate, type AggregateRow, compareScores } from '../lib/aggregate';
+import {
+  aggregate,
+  type AggregateRow,
+  compareScores,
+  type NormalizedScore,
+} from '../lib/aggregate';
 import { type BoardView, groupBoards } from '../lib/boards';
 import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
@@ -119,11 +124,14 @@ export function SourceBadge({
   source,
   present,
   detail,
+  label: given,
   logo = source.kind !== 'report',
 }: {
   source: BoardView;
   present: boolean;
   detail?: string;
+  /** Overrides the tooltip, for a badge standing in for several boards. */
+  label?: string;
   /** Show the logo (default for boards) rather than the code badge. */
   logo?: boolean;
 }) {
@@ -132,9 +140,11 @@ export function SourceBadge({
       ? REPORT_BADGE
       : (SOURCE_BADGE[source.id] ?? FALLBACK_BADGE);
   const name = source.name;
-  const label = present
-    ? `${name}${detail ? ` — ${detail}` : ''}`
-    : `${name} — not listed`;
+  const label =
+    given ??
+    (present
+      ? `${name}${detail ? ` — ${detail}` : ''}`
+      : `${name} — not listed`);
   const src = logo ? SOURCE_LOGO[source.id] : undefined;
   if (src) {
     return (
@@ -167,6 +177,49 @@ export function SourceBadge({
           : 'border-dashed border-white/12 text-white/25 opacity-70',
       )}>
       {badge.code}
+    </span>
+  );
+}
+
+/**
+ * One mark per publisher, not per board. Artificial Analysis runs three of
+ * the fifteen, and three identical marks in a row read as a rendering fault;
+ * the ranking rule already counts them as a single voice, so the strip says
+ * the same thing. A publisher with more than one board carries the count of
+ * those that scored the model, the way the reports chip already does.
+ */
+function PublisherBadge({
+  group,
+  scored,
+}: {
+  group: BoardView[];
+  scored: Map<string, NormalizedScore>;
+}) {
+  const hits = group.filter((b) => scored.has(b.headline.id));
+  const label = group
+    .map((b) => {
+      const s = scored.get(b.headline.id);
+      return `${b.name} — ${s ? rawLabel(b.headline.metric, s.raw) : 'not listed'}`;
+    })
+    .join('\n');
+  return (
+    <span className="relative inline-flex shrink-0">
+      <SourceBadge
+        source={group[0]}
+        present={hits.length > 0}
+        detail={undefined}
+        label={label}
+      />
+      {group.length > 1 ? (
+        <span
+          aria-hidden
+          className={cn(
+            'text-micro bg-b1 pointer-events-none absolute -right-1 -bottom-1 rounded-sm px-0.5 font-mono leading-none',
+            hits.length > 0 ? 'text-p1' : 'text-white/25',
+          )}>
+          {hits.length}
+        </span>
+      ) : null}
     </span>
   );
 }
@@ -219,6 +272,15 @@ export default function IndexTable({
     () => sources.filter((s) => s.kind !== 'report'),
     [sources],
   );
+  // Grouped for the row strip: one mark per publisher, in registry order.
+  const publishers = useMemo(() => {
+    const byPublisher = new Map<string, BoardView[]>();
+    for (const b of boards) {
+      const key = b.headline.publisher;
+      byPublisher.set(key, [...(byPublisher.get(key) ?? []), b]);
+    }
+    return [...byPublisher.values()];
+  }, [boards]);
   const reports = useMemo(
     () => sources.filter((s) => s.kind === 'report'),
     [sources],
@@ -560,17 +622,20 @@ export default function IndexTable({
         </label>
       </div>
 
+      {/* Whole-column caveat, not a per-row one: when no board measures this
+          scope, every figure in it is a publisher's chosen comparison set,
+          and a reader scanning the order needs that in one line. The detail
+          lives on the hover. */}
       {scopeBoards && scopeBoards.boards === 0 ? (
         <p
           role="note"
-          className="text-caption mt-3 rounded-md border border-[#F5C86B]/30 bg-[#F5C86B]/[0.06] px-3 py-2 text-[#E8D9A8]">
-          <b className="font-semibold text-[#F5C86B]">
-            No recognised board measures {rankLabel(rankKey)} yet.
-          </b>{' '}
-          Every figure here is from {[...scopeBoards.reports].join(' and ')} ✱ —
-          a comparison set the publisher chose. Models the publisher left out
-          are absent, not behind. Read the order as “within that set”, not as
-          the field.
+          title={`Every figure here is from ${[...scopeBoards.reports].join(' and ')} ✱ — a comparison set the publisher chose. Models the publisher left out are absent, not behind. Read the order as "within that set", not as the field.`}
+          className="text-caption mt-3 flex items-baseline gap-2 text-[#C9A961]">
+          <span aria-hidden>✱</span>
+          <span>
+            No board measures {rankLabel(rankKey)} yet — every figure below is
+            from a report, ordered within the set its publisher chose.
+          </span>
         </p>
       ) : null}
       <div className="text-caption mt-3 mb-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[#78758A]">
@@ -664,6 +729,7 @@ export default function IndexTable({
                 rankKey={rankKey}
                 taxonomy={taxonomy}
                 boards={boards}
+                publishers={publishers}
                 reports={reports}
                 catalogDate={catalogDate}
                 open={openModel === row.model.id}
@@ -705,6 +771,7 @@ function Row({
   rankKey,
   taxonomy,
   boards,
+  publishers,
   reports,
   catalogDate,
   open,
@@ -717,6 +784,8 @@ function Row({
   rankKey: RankKey;
   taxonomy: [string, string[]][];
   boards: BoardView[];
+  /** Boards grouped by publisher, for the strip. */
+  publishers: BoardView[][];
   reports: BoardView[];
   catalogDate: string | undefined;
   open: boolean;
@@ -809,17 +878,13 @@ function Row({
         ) : null}
         <td className="hidden px-2.5 py-2.5 sm:table-cell">
           <span className="flex items-center gap-0.5">
-            {boards.map((b) => {
-              const s = scored.get(b.headline.id);
-              return (
-                <SourceBadge
-                  key={b.id}
-                  source={b}
-                  present={Boolean(s)}
-                  detail={s ? rawLabel(b.headline.metric, s.raw) : undefined}
-                />
-              );
-            })}
+            {publishers.map((group) => (
+              <PublisherBadge
+                key={group[0].id}
+                group={group}
+                scored={scored}
+              />
+            ))}
             {reportsScoring.length > 0 ? (
               <span
                 title={reportsScoring.map((r) => r.name).join(' · ')}
