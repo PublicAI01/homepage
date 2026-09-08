@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T05:42:28.618Z",
+  "generatedAt": "2026-09-08T11:09:41.790Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -7729,8 +7729,8 @@
           "id": "qwen/qwen3.5-397b-a17b",
           "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
           "contextLength": 262144,
-          "inputPerM": 0.39,
-          "outputPerM": 2.34,
+          "inputPerM": 0.55,
+          "outputPerM": 3.5,
           "listedAt": "2026-02-16",
           "modalities": ["text", "image", "video"]
         },
@@ -11385,7 +11385,7 @@
     {
       "modelId": "k2-horizon-0-9b",
       "benchmarkId": "ifm-k2-horizon:livecodebench-v6",
-      "raw": 37.41,
+      "raw": 37.4,
       "sourceLabel": "K2-Horizon-0.9B"
     },
     {
@@ -13230,7 +13230,7 @@
     {
       "modelId": "openbmb-1b",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 26.26,
+      "raw": 26.3,
       "sourceLabel": "OpenBMB-1B"
     },
     {
@@ -13242,7 +13242,7 @@
     {
       "modelId": "openbmb-1b",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 25.15,
+      "raw": 25.2,
       "sourceLabel": "OpenBMB-1B"
     },
     {
@@ -13260,19 +13260,19 @@
     {
       "modelId": "openbmb-1b",
       "benchmarkId": "ifm-k2-horizon:aime-2025",
-      "raw": 40.42,
+      "raw": 40.4,
       "sourceLabel": "OpenBMB-1B"
     },
     {
       "modelId": "openbmb-1b",
       "benchmarkId": "ifm-k2-horizon:aime-2026",
-      "raw": 40.42,
+      "raw": 40.4,
       "sourceLabel": "OpenBMB-1B"
     },
     {
       "modelId": "openbmb-1b",
       "benchmarkId": "ifm-k2-horizon:livecodebench-v6",
-      "raw": 33.52,
+      "raw": 33.5,
       "sourceLabel": "OpenBMB-1B"
     },
     {
@@ -14860,7 +14860,7 @@
     {
       "modelId": "gemma-4-12b",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 63.07,
+      "raw": 63.1,
       "sourceLabel": "Gemma 4-12B"
     },
     {
@@ -15382,7 +15382,7 @@
     {
       "modelId": "k2-horizon-3-7b",
       "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 25.09,
+      "raw": 25.1,
       "sourceLabel": "K2-Horizon-3.7B"
     },
     {
@@ -15394,7 +15394,7 @@
     {
       "modelId": "k2-horizon-3-7b",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 65.35,
+      "raw": 65.4,
       "sourceLabel": "K2-Horizon-3.7B"
     },
     {
@@ -15406,7 +15406,7 @@
     {
       "modelId": "k2-horizon-3-7b",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 70.45,
+      "raw": 70.5,
       "sourceLabel": "K2-Horizon-3.7B"
     },
     {
@@ -15418,7 +15418,7 @@
     {
       "modelId": "k2-horizon-3-7b",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 50.94,
+      "raw": 50.9,
       "sourceLabel": "K2-Horizon-3.7B"
     },
     {
@@ -15753,7 +15753,7 @@
     {
       "modelId": "k2-horizon-7b",
       "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 39.06,
+      "raw": 39.1,
       "sourceLabel": "K2-Horizon-7B"
     },
     {
@@ -16843,15 +16843,15 @@
     {
       "modelId": "agnes-2-5-pro-alpha",
       "benchmarkId": "aa-gdpval",
-      "raw": 1095,
+      "raw": 1094,
       "stderr": 17,
       "sourceLabel": "Agnes 2.5 Pro Alpha"
     },
     {
       "modelId": "agnes-2-5-pro-alpha",
       "benchmarkId": "aa-briefcase",
-      "raw": 1197,
-      "stderr": 9.5,
+      "raw": 1196,
+      "stderr": 9,
       "sourceLabel": "Agnes 2.5 Pro Alpha"
     },
     {
@@ -19451,7 +19451,7 @@
     {
       "modelId": "nvidia-nemotron-3-nano-4b",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 34.66,
+      "raw": 34.7,
       "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
@@ -19463,7 +19463,7 @@
     {
       "modelId": "nvidia-nemotron-3-nano-4b",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 36.78,
+      "raw": 36.8,
       "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
@@ -22312,7 +22312,7 @@
     {
       "modelId": "g9v3-3b",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 34.09,
+      "raw": 34.1,
       "sourceLabel": "G9v3-3B"
     },
     {
@@ -22324,7 +22324,7 @@
     {
       "modelId": "g9v3-3b",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 47.93,
+      "raw": 47.9,
       "sourceLabel": "G9v3-3B"
     },
     {
@@ -22402,13 +22402,13 @@
     {
       "modelId": "nemotron-3-5-30b-a3b",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
-      "raw": 9.28,
+      "raw": 9.3,
       "sourceLabel": "Nemotron 3.5 30B-A3B"
     },
     {
       "modelId": "nemotron-3-5-30b-a3b",
       "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
-      "raw": 51.56,
+      "raw": 51.6,
       "sourceLabel": "Nemotron 3.5 30B-A3B"
     },
     {
@@ -23404,7 +23404,7 @@
     {
       "modelId": "qwen3-5-0-8b",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 0.57,
+      "raw": 0.6,
       "sourceLabel": "Qwen3.5-0.8B"
     },
     {
@@ -23428,31 +23428,31 @@
     {
       "modelId": "qwen3-5-0-8b",
       "benchmarkId": "ifm-k2-horizon:aime-2025",
-      "raw": 1.04,
+      "raw": 1,
       "sourceLabel": "Qwen3.5-0.8B"
     },
     {
       "modelId": "qwen3-5-0-8b",
       "benchmarkId": "ifm-k2-horizon:aime-2026",
-      "raw": 0.21,
+      "raw": 0.2,
       "sourceLabel": "Qwen3.5-0.8B"
     },
     {
       "modelId": "qwen3-5-0-8b",
       "benchmarkId": "ifm-k2-horizon:livecodebench-v6",
-      "raw": 6.64,
+      "raw": 6.6,
       "sourceLabel": "Qwen3.5-0.8B"
     },
     {
       "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 54.89,
+      "raw": 54.9,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
       "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 22.73,
+      "raw": 22.7,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
@@ -23476,19 +23476,19 @@
     {
       "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:aime-2025",
-      "raw": 34.17,
+      "raw": 34.2,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
       "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:aime-2026",
-      "raw": 38.75,
+      "raw": 38.8,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
       "modelId": "qwen3-5-2b-2",
       "benchmarkId": "ifm-k2-horizon:livecodebench-v6",
-      "raw": 29.79,
+      "raw": 29.8,
       "sourceLabel": "Qwen3.5-2B"
     },
     {
@@ -23524,7 +23524,7 @@
     {
       "modelId": "qwen3-5-4b",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 61.55,
+      "raw": 61.6,
       "sourceLabel": "Qwen3.5-4B"
     },
     {
@@ -23536,7 +23536,7 @@
     {
       "modelId": "qwen3-5-4b",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 55.66,
+      "raw": 55.7,
       "sourceLabel": "Qwen3.5-4B"
     },
     {
@@ -23572,7 +23572,7 @@
     {
       "modelId": "qwen3-5-9b-2",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 65.72,
+      "raw": 65.7,
       "sourceLabel": "Qwen3.5-9B"
     },
     {
@@ -27198,13 +27198,13 @@
     {
       "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
-      "raw": 47.67,
+      "raw": 47.7,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
       "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 66.48,
+      "raw": 66.5,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
@@ -27216,7 +27216,7 @@
     {
       "modelId": "granite-4-2-8b-2",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 48.43,
+      "raw": 48.4,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
@@ -30733,12 +30733,12 @@
       "modelId": "claude-fable-5-1",
       "benchmarkId": "artificial-analysis",
       "raw": 53,
-      "sourceLabel": "Claude Fable 5.1 (max with fallback)"
+      "sourceLabel": "Claude Fable 5.1 (xhigh with fallback)"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 1763,
+      "raw": 1764,
       "stderr": 19,
       "sourceLabel": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)"
     },
@@ -30746,7 +30746,7 @@
       "modelId": "claude-fable-5-1",
       "benchmarkId": "aa-briefcase",
       "raw": 1662,
-      "stderr": 10,
+      "stderr": 9.5,
       "sourceLabel": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)"
     },
     {
@@ -31196,14 +31196,14 @@
     {
       "modelId": "minicpm5-2b",
       "benchmarkId": "aa-gdpval",
-      "raw": 829,
+      "raw": 828,
       "stderr": 22,
       "sourceLabel": "MiniCPM5-2B"
     },
     {
       "modelId": "minicpm5-2b",
       "benchmarkId": "aa-briefcase",
-      "raw": 433,
+      "raw": 434,
       "stderr": 11.5,
       "sourceLabel": "MiniCPM5-2B"
     },
@@ -32016,7 +32016,7 @@
       "modelId": "glm-5-3",
       "benchmarkId": "aa-briefcase",
       "raw": 1515,
-      "stderr": 8.5,
+      "stderr": 9.5,
       "sourceLabel": "GLM-5.3 (max)"
     },
     {

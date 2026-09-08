@@ -5656,7 +5656,7 @@
     },
     {
       "date": "2026-09-08",
-      "generatedAt": "2026-09-08T05:42:28.618Z",
+      "generatedAt": "2026-09-08T11:09:41.790Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -7897,13 +7897,6 @@
           "rank": null,
           "covered": 1
         },
-        "agnes-2-5-pro-alpha": {
-          "name": "Agnes 2.5 Pro Alpha",
-          "org": "Sapiens AI",
-          "index": null,
-          "rank": null,
-          "covered": 2
-        },
         "o1": {
           "name": "O1",
           "org": "OpenAI",
@@ -8051,6 +8044,13 @@
           "rank": null,
           "covered": 1
         },
+        "agnes-2-5-pro-alpha": {
+          "name": "Agnes 2.5 Pro Alpha",
+          "org": "Sapiens AI",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
         "qwen3": {
           "name": "Qwen3",
           "org": "Alibaba",
@@ -8110,6 +8110,13 @@
         "gpt-4-turbo": {
           "name": "GPT-4 Turbo",
           "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "minicpm5-2b": {
+          "name": "MiniCPM5.2B",
+          "org": "OpenBMB",
           "index": null,
           "rank": null,
           "covered": 2
@@ -8176,13 +8183,6 @@
           "index": null,
           "rank": null,
           "covered": 1
-        },
-        "minicpm5-2b": {
-          "name": "MiniCPM5.2B",
-          "org": "OpenBMB",
-          "index": null,
-          "rank": null,
-          "covered": 2
         },
         "amazon-nova-experimental-chat-10-20": {
           "name": "Amazon Nova Experimental Chat 10 20",
@@ -8800,19 +8800,19 @@
           "rank": null,
           "covered": 1
         },
-        "granite-4-2-8b": {
-          "name": "Granite 4.2 8B",
-          "org": "IBM",
-          "index": null,
-          "rank": null,
-          "covered": 2
-        },
         "k2-horizon-7b": {
           "name": "K2 Horizon 7B",
           "org": "IFM (MBZUAI)",
           "index": null,
           "rank": null,
           "covered": 0
+        },
+        "granite-4-2-8b": {
+          "name": "Granite 4.2 8B",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 2
         },
         "qwen3-235b-a22b-diff-no-think-alibaba-api": {
           "name": "Qwen3 235B A22B diff, no think, Alibaba API",
