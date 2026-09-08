@@ -883,6 +883,29 @@ function Row({
  * came from. Nothing here is prose about the model; every line is a fact the
  * index holds, and every number links back.
  */
+/**
+ * The badge markdown, one click away instead of a code block nobody reads.
+ * Falls back to selecting the text where the clipboard is unavailable.
+ */
+function BadgeCopy({ markdown }: { markdown: string }) {
+  const [done, setDone] = useState(false);
+  return (
+    <button
+      type="button"
+      onClick={(e) => {
+        e.stopPropagation();
+        navigator.clipboard?.writeText(markdown).then(
+          () => setDone(true),
+          () => undefined,
+        );
+      }}
+      title="Markdown for a README or launch post — renders the live position"
+      className="text-micro text-p1 hover:text-p1/80 shrink-0 underline underline-offset-2 transition-colors">
+      {done ? 'Badge copied' : 'Copy badge'}
+    </button>
+  );
+}
+
 function ModelCard({
   row,
   rank,
@@ -898,68 +921,49 @@ function ModelCard({
   reports: BoardView[];
   catalogDate: string | undefined;
 }) {
-  const agree = agreement(row.dispersion);
   const scored = new Map(row.perBenchmark.map((s) => [s.benchmarkId, s]));
+  // Only when it is worth saying. "Consistent" is the quiet default and
+  // spending a line on it is how a card fills up with nothing.
+  const agree = row.covered > 1 ? agreement(row.dispersion) : null;
   const access = row.model.access;
   const or = access?.openrouter;
-  const channels = channelsOf(access);
-  const [recommended, ...alternatives] = channels;
+  const [recommended, ...alternatives] = channelsOf(access);
 
-  // A best domain gives the "about" line something a reader can act on.
-  const best = Object.entries(row.byDomain)
-    .filter((e): e is [string, number] => typeof e[1] === 'number')
-    .sort((a, b) => b[1] - a[1])[0];
-
-  const facts: string[] = [
+  // Four facts, not nine. Modalities and listing dates belong to the catalog,
+  // not to the first thing a reader sees about a model.
+  const facts = [
     row.model.org,
-    sizeLabel(row.model.size)
-      ? `${sizeLabel(row.model.size)} parameters${row.model.size?.source === 'huggingface' ? ' (counted)' : ''}`
-      : 'size undisclosed',
-    access?.weights
-      ? 'open weights'
-      : or
-        ? 'weights not published'
-        : catalogDate
-          ? `not in the catalog as of ${catalogDate}`
-          : '',
+    sizeLabel(row.model.size) ?? 'size undisclosed',
+    access?.weights ? 'open weights' : or ? 'closed weights' : '',
     contextLabel(or?.contextLength)
       ? `${contextLabel(or?.contextLength)} context`
       : '',
-    or?.modalities?.length ? `${or.modalities.join(' + ')} in` : '',
-    or?.listedAt ? `listed ${or.listedAt}` : '',
   ].filter(Boolean);
 
+  const markdown = `[![PublicAI Index](https://publicai.io/model-index/badge?model=${row.model.id})](https://publicai.io/model-index?q=${encodeURIComponent(row.model.name)})`;
+
   return (
-    <div className="grid grid-cols-1 gap-x-8 gap-y-5 px-4 py-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-      {/* ---- about + scores ---- */}
-      <div className="min-w-0">
-        <div className="mb-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+    <div className="flex flex-col gap-6 px-4 py-5">
+      {/* ---- who it is, and how well covered ---- */}
+      <div>
+        <div className="mb-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <b className="text-body font-semibold text-white">{row.model.name}</b>
           <span className="text-caption text-[#9C9AA8]">
             {facts.join(' · ')}
           </span>
         </div>
-        <p className="text-caption mb-4 text-[#9C9AA8]">
+        <p className="text-caption text-[#9C9AA8]">
           {rank ? (
             <>
               Ranked <b className="font-medium text-[#D9D7E0]">#{rank}</b>{' '}
               overall
-              {best ? (
-                <>
-                  ; strongest in{' '}
-                  <b className="font-medium text-[#D9D7E0]">
-                    {domainLabel(best[0])} {fmt(best[1])}
-                  </b>
-                </>
-              ) : null}
-              .{' '}
             </>
           ) : (
             <span className="text-[#F5C86B]">
-              Provisional — fewer than {MIN_SOURCES} independent publishers.{' '}
+              Provisional — fewer than {MIN_SOURCES} independent publishers
               {row.score === null && row.estimate ? (
                 <span className="text-[#9C9AA8]">
-                  Estimated index{' '}
+                  , estimated{' '}
                   <b className="font-medium text-[#D9D7E0]">
                     {row.estimate.bound === 'below'
                       ? '≤'
@@ -968,21 +972,11 @@ function ModelCard({
                         : '~'}
                     {fmt(row.estimate.score)}✱
                   </b>
-                  : its figures on {row.estimate.measures} measure
-                  {row.estimate.measures > 1 ? 's' : ''} placed among{' '}
-                  {row.estimate.anchors} models that have an Overall index,
-                  reading theirs at that position
-                  {row.estimate.bound === 'below'
-                    ? ' — it trailed every one of them there, so this is a ceiling'
-                    : row.estimate.bound === 'above'
-                      ? ' — it led every one of them there, so this is a floor'
-                      : ''}
-                  . An estimate, never a rank.{' '}
                 </span>
               ) : null}
             </span>
           )}
-          Scored by{' '}
+          {' · '}
           <b className="font-medium text-[#D9D7E0]">
             {row.covered} of {row.coverable}
           </b>{' '}
@@ -990,196 +984,140 @@ function ModelCard({
           {row.reports > 0 ? (
             <>
               {' '}
-              and <b className="font-medium text-[#D9D7E0]">
-                {row.reports}
-              </b>{' '}
-              report
-              {row.reports > 1 ? 's' : ''} ✱
+              and {row.reports} report{row.reports > 1 ? 's' : ''} ✱
             </>
           ) : null}
-          ; evidence{' '}
-          <b className="font-medium text-[#D9D7E0]">
-            {Math.round(row.evidence * 100)}%
-          </b>{' '}
-          of available weight
-          {row.covered > 1 ? (
+          {agree && agree.label !== 'consistent' ? (
             <>
-              ; boards <span className={agree.tone}>{agree.label}</span>
+              {' · '}
+              <span className={agree.tone}>boards {agree.label}</span>
             </>
           ) : null}
-          .
         </p>
-
-        <h4 className={cn(LABEL, 'mb-2')}>Scores by domain</h4>
-        <div className="flex flex-col gap-1.5">
-          {taxonomy.map(([category, domains]) => {
-            const c = row.byCategory[category] ?? null;
-            const present = domains.filter(
-              (d) => (row.byDomain[d] ?? null) !== null,
-            );
-            if (c === null && present.length === 0) return null;
-            // A category with one domain of the same name would print twice.
-            const chips =
-              present.length === 1 &&
-              domainLabel(present[0]) === domainLabel(category)
-                ? []
-                : present;
-            return (
-              <div
-                key={category}
-                className="text-caption flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                <span className="w-28 shrink-0 text-white">
-                  {domainLabel(category)}
-                  <span className="text-g2 ml-1.5 font-mono">{fmt(c)}</span>
-                </span>
-                {chips.map((d) => (
-                  <span
-                    key={d}
-                    className="rounded-md border border-white/10 bg-white/[0.03] px-1.5 py-0.5">
-                    <span className="text-g2">{domainLabel(d)}</span>{' '}
-                    <span className="font-mono text-white">
-                      {fmt(row.byDomain[d])}
-                    </span>
-                  </span>
-                ))}
-              </div>
-            );
-          })}
-        </div>
       </div>
 
-      {/* ---- access ---- */}
-      <div className="min-w-0">
-        <h4 className={cn(LABEL, 'mb-2')}>How to call it</h4>
-        {recommended ? (
+      <div className="grid grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,20rem)]">
+        {/* ---- scores ---- */}
+        <div className="min-w-0">
+          <h4 className={cn(LABEL, 'mb-2.5')}>Scores by domain</h4>
           <div className="flex flex-col gap-2">
-            <ChannelCard
-              channel={recommended}
-              recommended
-              price={priceLabel(or?.inputPerM, or?.outputPerM)}
-            />
-            {alternatives.map((ch) => (
-              <ChannelCard
-                key={ch.kind}
-                channel={ch}
-              />
-            ))}
-            <p className="text-micro text-[#78758A]">
-              OpenRouter first: one key, every listed model, stable ids. Vendor
-              API for first-party features; weights to self-host. Prices are the
-              router’s{catalogDate ? ` on ${catalogDate}` : ''}, not an
-              endorsement.
-            </p>
+            {taxonomy.map(([category, domains]) => {
+              const c = row.byCategory[category] ?? null;
+              // Strongest two, then a count. The question a card answers is
+              // "good at what", not "here is the taxonomy" — that is what the
+              // table's own Rank by is for.
+              const present = domains
+                .filter((d) => (row.byDomain[d] ?? null) !== null)
+                .sort(
+                  (a, b) => (row.byDomain[b] ?? 0) - (row.byDomain[a] ?? 0),
+                );
+              if (c === null && present.length === 0) return null;
+              const chips =
+                present.length === 1 &&
+                domainLabel(present[0]) === domainLabel(category)
+                  ? []
+                  : present.slice(0, 2);
+              const rest = present.length - chips.length;
+              return (
+                <div
+                  key={category}
+                  className="text-caption flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <span className="w-28 shrink-0 text-white">
+                    {domainLabel(category)}
+                    <span className="text-p1 ml-1.5 font-mono">{fmt(c)}</span>
+                  </span>
+                  {chips.map((d) => (
+                    <span
+                      key={d}
+                      className="text-g2">
+                      {domainLabel(d)}{' '}
+                      <span className="font-mono text-[#D9D7E0]">
+                        {fmt(row.byDomain[d])}
+                      </span>
+                    </span>
+                  ))}
+                  {rest > 0 ? (
+                    <span className="text-[#78758A]">+{rest}</span>
+                  ) : null}
+                </div>
+              );
+            })}
           </div>
-        ) : (
-          <p className="text-caption text-[#9C9AA8]">
-            No access channel on file
-            {catalogDate ? ` as of ${catalogDate}` : ''}. The catalog does not
-            list this model under this name; it may be reachable under a dated
-            or regional id.
-          </p>
-        )}
-      </div>
-
-      {/* ---- badge ---- */}
-      <div className="min-w-0 lg:col-span-2">
-        <h4 className={cn(LABEL, 'mb-2')}>Badge for a README or launch post</h4>
-        <div className="flex flex-wrap items-center gap-3">
-          {/* eslint-disable-next-line @next/next/no-img-element -- the live badge itself */}
-          <img
-            src={`/model-index/badge?model=${encodeURIComponent(row.model.id)}`}
-            alt={`${row.model.name} on the PublicAI Index`}
-            height={20}
-          />
-          <code
-            className="text-micro min-w-0 flex-1 truncate rounded bg-black/40 px-1.5 py-1 font-mono text-[#D9D7E0] select-all"
-            onClick={(e) => e.stopPropagation()}
-            title="Markdown — click to select">
-            {`[![PublicAI Index](https://publicai.io/model-index/badge?model=${row.model.id})](https://publicai.io/model-index?q=${encodeURIComponent(row.model.name)})`}
-          </code>
         </div>
-        <p className="text-micro mt-1 text-[#78758A]">
-          Renders the live position; add{' '}
-          <code className="font-mono">&scope=domain:Tool use</code> for a
-          domain.
-        </p>
+
+        {/* ---- access ---- */}
+        <div className="min-w-0">
+          <h4 className={cn(LABEL, 'mb-2.5')}>How to call it</h4>
+          {recommended ? (
+            <div className="flex flex-col gap-2">
+              <ChannelCard
+                channel={recommended}
+                recommended
+                price={priceLabel(or?.inputPerM, or?.outputPerM)}
+              />
+              {alternatives.map((ch) => (
+                <ChannelCard
+                  key={ch.kind}
+                  channel={ch}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="text-caption text-[#9C9AA8]">
+              No access channel on file
+              {catalogDate ? ` as of ${catalogDate}` : ''}.
+            </p>
+          )}
+        </div>
       </div>
 
-      {/* ---- provenance ---- */}
-      <div className="min-w-0 lg:col-span-2">
-        <h4 className={cn(LABEL, 'mb-2')}>
-          Every figure and where it came from
-        </h4>
-        <div className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-2">
+      {/* ---- sources ---- */}
+      <div className="min-w-0">
+        <div className="mb-2.5 flex items-baseline justify-between gap-4">
+          <h4 className={LABEL}>Sources</h4>
+          <BadgeCopy markdown={markdown} />
+        </div>
+        <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
           {[...boards, ...reports].map((src) => {
             const present = src.measures.filter((m) => scored.has(m.id));
             if (present.length === 0) return null;
-            const first = scored.get(present[0].id)!;
-            const h = src.headline;
+            const shown = present.slice(0, 2);
+            const rest = present.length - shown.length;
             return (
-              <div
+              <a
                 key={src.id}
-                className={cn(present.length > 2 && 'md:col-span-2')}>
-                <div className="text-caption mb-1 flex flex-wrap items-center gap-2">
-                  <SourceBadge
-                    source={src}
-                    present
-                  />
-                  <b className="font-medium text-white">{src.name}</b>
-                  {src.kind === 'report' ? (
-                    <span className="text-[#E8A9F0]">
-                      report by {h.publisher}
-                      {h.publishedAt ? `, ${h.publishedAt}` : ''}
+                href={src.headline.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                title={`${src.name} — open the source`}
+                className="group text-caption -mx-2 flex items-center gap-2.5 rounded-md px-2 py-1.5 transition-colors hover:bg-white/[0.05]">
+                <SourceBadge
+                  source={src}
+                  present
+                />
+                <span className="min-w-0 truncate font-medium text-white">
+                  {src.name}
+                </span>
+                {src.kind === 'report' ? (
+                  <span className="text-[#E8A9F0]">✱</span>
+                ) : null}
+                <span className="ml-auto flex shrink-0 items-baseline gap-2 font-mono text-[#D9D7E0]">
+                  {shown.map((m) => (
+                    <span key={m.id}>
+                      {rawLabel(m.metric, scored.get(m.id)!.raw)}
                     </span>
+                  ))}
+                  {rest > 0 ? (
+                    <span className="text-[#78758A]">+{rest}</span>
                   ) : null}
-                  <span className="text-[#78758A]">
-                    as{' '}
-                    <span className="font-mono">
-                      &quot;{first.sourceLabel}&quot;
-                    </span>
-                    {first.scaffold ? ` via ${first.scaffold}` : ''}
-                  </span>
-                  <a
-                    href={h.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="text-p1 ml-auto underline underline-offset-2">
-                    source
-                  </a>
-                </div>
-                <dl
-                  className={cn(
-                    'text-caption grid grid-cols-1 gap-x-6 gap-y-0.5 pl-9',
-                    present.length > 2 && 'sm:grid-cols-2 lg:grid-cols-3',
-                  )}>
-                  {present.map((m) => {
-                    const s = scored.get(m.id)!;
-                    return (
-                      <div
-                        key={m.id}
-                        className="flex items-baseline gap-2"
-                        title={`${m.category} › ${m.domain}`}>
-                        <dt className="text-g2 w-40 shrink-0 truncate">
-                          {m.name.replace(/^.*· /, '')}
-                        </dt>
-                        <dd className="font-mono text-[#D9D7E0]">
-                          {rawLabel(m.metric, s.raw)}
-                          {s.stderr !== undefined ? (
-                            <span className="text-[#78758A]">
-                              {' '}
-                              ± {s.stderr}
-                            </span>
-                          ) : null}
-                        </dd>
-                        <dd className="text-g2 font-mono">
-                          → {fmt(s.normalized)}
-                        </dd>
-                      </div>
-                    );
-                  })}
-                </dl>
-              </div>
+                </span>
+                <span
+                  className="text-p1 shrink-0 opacity-40 transition-opacity group-hover:opacity-100"
+                  aria-hidden>
+                  ↗
+                </span>
+              </a>
             );
           })}
         </div>

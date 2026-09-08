@@ -188,8 +188,12 @@ export const SOURCE_BADGE: Record<string, { code: string; tone: string }> = {
 export const SOURCE_LOGO: Record<string, string> = {
   lmarena: '/model-index/logos/lmarena.png',
   'artificial-analysis': '/model-index/logos/artificial-analysis.png',
-  // GDPval-AA and AA-Briefcase share Artificial Analysis's mark; they keep
-  // their code chips so three AA boards in a row stay tellable apart.
+  // Artificial Analysis publishes all three. Three of its marks in a row is
+  // the honest reading — one publisher measured the model three ways — and
+  // each still names itself on hover.
+  'aa-gdpval': '/model-index/logos/artificial-analysis.png',
+  'aa-briefcase': '/model-index/logos/artificial-analysis.png',
+  livecodebench: '/model-index/logos/livecodebench.svg',
   'terminal-bench': '/model-index/logos/terminal-bench.png',
   'arc-agi-2': '/model-index/logos/arc-agi-2.png',
   livebench: '/model-index/logos/livebench.png',
