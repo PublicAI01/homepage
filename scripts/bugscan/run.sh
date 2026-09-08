@@ -271,6 +271,20 @@ if [ ! -s "$CHANGED" ]; then
 fi
 log "改动文件:"; sed 's/^/  /' "$CHANGED" | tee -a "$LOG"
 
+# Every change as one real unified diff, new files included. `cat`-ing an
+# untracked file in would have left its lines without a leading `+`, and the
+# leak check reads added lines — so a secret in a *new* file, the likeliest
+# shape of all, would have been invisible to it. --no-index against /dev/null
+# gives a genuine addition diff instead. (Caught 2026-09-08 by a test that
+# planted a real key in a new file and watched every gate wave it through.)
+FULL_DIFF="$STATE/.review-diff"
+{ git diff
+  while IFS= read -r f; do
+    git ls-files --error-unmatch "$f" >/dev/null 2>&1 && continue
+    git diff --no-index -- /dev/null "$f" || true
+  done <"$CHANGED"
+} >"$FULL_DIFF"
+
 # ── Mechanical gates ────────────────────────────────────────────────────────
 fail_batch() {
   local gate=$1 why=$2
@@ -285,6 +299,29 @@ fail_batch() {
 hits=$(grep -E "$FORBID_RE" "$CHANGED" || true)
 [ -n "$hits" ] && fail_batch "改到了不该改的文件" "命中禁改路径,整批作废:
 $hits"
+
+# A denylist leaves everything unnamed writable; on a public repository the
+# safer shape is the other way round. A fix that genuinely needs a file
+# outside these roots voids the batch and mails a person — which is the right
+# outcome for a repository the whole world can read.
+if [ -n "${ALLOW_RE:-}" ]; then
+  strays=$(grep -vE "$ALLOW_RE" "$CHANGED" || true)
+  [ -n "$strays" ] && fail_batch "改到了白名单以外的地方" "只允许改这些路径:$ALLOW_RE
+越界的文件,整批作废:
+$strays"
+fi
+
+# Last line before anything leaves the machine. See leak-check.py — the first
+# check is literal against this machine's own credential files, because the
+# realistic leak is a model inlining a config value to make a bug go away.
+leak_out=$(python3 "$(dirname "$NOTIFY")/leak-check.py" "$FULL_DIFF" 2>&1)
+if [ $? -ne 0 ]; then
+  fail_batch "diff 里可能带着密钥" "$leak_out
+
+**这批改动一行都没有离开本机。**$( [ "$(git config --get remote.origin.url)" ] && echo "
+仓库: $(git config --get remote.origin.url)" )"
+fi
+log "  ✓ 密钥检查"
 
 lines=$(git diff --numstat | awk '{a+=$1; d+=$2} END {print a+d+0}')
 while IFS= read -r f; do
@@ -312,13 +349,6 @@ done
 # ── Stage 3: adversarial review, by a session that shares no premises ──────
 REVIEW_OUT="$STATE/$DAY.review.md"
 log "阶段 3/3 独立复审…"
-{ git diff
-  while IFS= read -r f; do
-    git ls-files --error-unmatch "$f" >/dev/null 2>&1 && continue
-    printf -- '--- 新文件 %s ---\n' "$f"; cat "$f"
-  done <"$CHANGED"
-} >"$STATE/.review-diff"
-
 review_prompt="/bugreview
 
 基线 commit: $BASE
@@ -329,7 +359,7 @@ $REVIEW_NOTES
 $(cat "$FIX_OUT")
 
 --- 完整 diff ---
-$(cat "$STATE/.review-diff")"
+$(cat "$FULL_DIFF")"
 
 if ! ask_claude "$REVIEW_TIMEOUT" "$REVIEW_OUT" -p "$review_prompt" --permission-mode plan; then
   fail_batch "复审没跑完" "复审阶段没跑完(超时或报错)。按「复审不过 ⇒ 不放行」处理。"
