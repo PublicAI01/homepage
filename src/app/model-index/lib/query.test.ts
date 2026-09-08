@@ -139,11 +139,25 @@ describe('reports switch', () => {
   });
 
   it('numbers every row in a scope by its place and flags report-only placement', () => {
-    const r = ok(rankModels({ scope: 'agents', minBoards: 0, limit: 100 }));
-    expect(r.models.map((m) => m.position)).toEqual(
-      r.models.map((_, i) => i + 1),
-    );
-    expect(r.models.some((m) => !m.rankedInScope)).toBe(true);
-    expect(r.models.some((m) => m.rankedInScope)).toBe(true);
+    // Asserted against the reports-off list rather than against a count of
+    // starred rows: whether any scope currently holds one is a fact about
+    // today's snapshot, and boards covering a domain that reports used to
+    // carry alone is the outcome this index is built to produce.
+    for (const scope of describeIndex().scopes.map((s) => s.scope)) {
+      const on = ok(rankModels({ scope, minBoards: 0, limit: 500 }));
+      const off = ok(
+        rankModels({ scope, minBoards: 0, limit: 500, reports: false }),
+      );
+      expect(on.models.map((m) => m.position)).toEqual(
+        on.models.map((_, i) => i + 1),
+      );
+
+      // A row is ranked in scope exactly when a recognised board put it
+      // there — which is exactly the set that survives switching reports off.
+      const byBoard = new Set(off.models.map((m) => m.id));
+      for (const m of on.models) {
+        expect(m.rankedInScope).toBe(byBoard.has(m.id));
+      }
+    }
   });
 });
