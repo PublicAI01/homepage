@@ -9,7 +9,7 @@ import {
 } from '@/constant';
 import { cn } from '@/utils';
 
-import Reveal from './components/reveal';
+import { stepArt } from './components/illustrations';
 
 export const metadata: Metadata = {
   title: 'Trajector — Get paid for the coding sessions you already run',
@@ -164,11 +164,6 @@ const faq = [
 export default function Trajector() {
   return (
     <div className="container mx-auto max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
-      {/* The reveal starts hidden and is uncovered by an observer, so without
-          scripting the page would be blank rather than merely static. */}
-      <noscript>
-        <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
-      </noscript>
       {/* ===================== HERO ===================== */}
       <header className="grid grid-cols-1 items-start gap-12 pt-10 pb-16 lg:grid-cols-[1.05fr_1fr] lg:pt-16 lg:pb-20">
         <div>
@@ -241,12 +236,10 @@ export default function Trajector() {
       {/* A rail rather than three cards: the product is a pipe, and the page
           says so in the same shape as the diagram above it. */}
       <section className={SECTION}>
-        <Reveal>
-          <p className={cn(LABEL, 'mb-3')}>§ 1 · How it works</p>
-          <h2 className="text-heading mb-12 font-bold text-white">
-            Three steps, then it is out of your way.
-          </h2>
-        </Reveal>
+        <p className={cn(LABEL, 'mb-3')}>§ 1 · How it works</p>
+        <h2 className="text-heading mb-12 font-bold text-white">
+          Three steps, then it is out of your way.
+        </h2>
         <ol className="relative grid grid-cols-1 gap-y-10 md:grid-cols-3 md:gap-x-8">
           <span
             className="via-primary/40 absolute top-4 left-4 hidden h-px w-[calc(100%-2rem)] bg-gradient-to-r from-[#2C2C31] to-[#2C2C31] md:block"
@@ -256,49 +249,44 @@ export default function Trajector() {
             className="via-primary/40 absolute top-8 bottom-6 left-4 w-px bg-gradient-to-b from-[#2C2C31] to-[#2C2C31] md:hidden"
             aria-hidden
           />
-          {steps.map((step, i) => (
-            <li key={step.title}>
-              {/* Flex, not absolute positioning: Reveal applies a transform,
-                  which would make itself the containing block and drag an
-                  absolutely placed number on top of the title. */}
-              <Reveal
-                delay={i * 110}
-                className="flex gap-4 md:block">
-                <span className="bg-b1 text-p1 text-body-sm border-primary/40 flex size-8 shrink-0 items-center justify-center rounded-full border font-mono font-semibold md:mb-6">
-                  {i + 1}
-                </span>
-                <div className="min-w-0">
-                  <b className="text-subheading mb-2 block font-semibold text-white">
-                    {step.title}
-                  </b>
-                  <p className="text-body max-w-[38ch] text-[#B9B7C4]">
-                    {step.text}
-                  </p>
+          {steps.map((step, i) => {
+            const Art = stepArt[i];
+            return (
+              <li key={step.title}>
+                <div className="flex gap-4 md:block">
+                  <span className="bg-b1 text-p1 text-body-sm border-primary/40 flex size-8 shrink-0 items-center justify-center rounded-full border font-mono font-semibold md:mb-6">
+                    {i + 1}
+                  </span>
+                  <div className="min-w-0">
+                    <Art className="mb-5 h-20 w-auto text-[#8A889A]" />
+                    <b className="text-subheading mb-2 block font-semibold text-white">
+                      {step.title}
+                    </b>
+                    <p className="text-body max-w-[38ch] text-[#B9B7C4]">
+                      {step.text}
+                    </p>
+                  </div>
                 </div>
-              </Reveal>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ol>
       </section>
 
       {/* ===================== GUARANTEES ===================== */}
       <section className={SECTION}>
-        <Reveal>
-          <p className={cn(LABEL, 'mb-3')}>§ 2 · What we guarantee</p>
-          <h2 className="text-heading mb-3 font-bold text-white">
-            Consent is structural, not a setting.
-          </h2>
-          <p className={cn('text-body mb-10 text-[#B9B7C4]', MEASURE)}>
-            Trajector is open source, so none of this has to be taken on trust.
-            Each of these is a property of how the tool is built, not a promise
-            about how it is operated.
-          </p>
-        </Reveal>
+        <p className={cn(LABEL, 'mb-3')}>§ 2 · What we guarantee</p>
+        <h2 className="text-heading mb-3 font-bold text-white">
+          Consent is structural, not a setting.
+        </h2>
+        <p className={cn('text-body mb-10 text-[#B9B7C4]', MEASURE)}>
+          Trajector is open source, so none of this has to be taken on trust.
+          Each of these is a property of how the tool is built, not a promise
+          about how it is operated.
+        </p>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {guarantees.map(({ title, text }, i) => (
-            <Reveal
-              key={title}
-              delay={i * 90}>
+            <div key={title}>
               <div
                 className={cn(
                   PANEL,
@@ -313,7 +301,7 @@ export default function Trajector() {
                 </b>
                 <p className="text-body text-[#B9B7C4]">{text}</p>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </section>
@@ -324,7 +312,7 @@ export default function Trajector() {
             half the row empty. The heading takes that half and stays put
             while the list is read. */}
         <div className="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
-          <Reveal className="lg:sticky lg:top-28 lg:self-start">
+          <div className="lg:sticky lg:top-28 lg:self-start">
             <p className={cn(LABEL, 'mb-3')}>§ 3 · FAQ</p>
             <h2 className="text-heading mb-3 font-bold text-white">
               Trajector FAQ
@@ -340,11 +328,9 @@ export default function Trajector() {
                 {SUPPORT_EMAIL_ADDRESS}
               </a>
             </p>
-          </Reveal>
+          </div>
 
-          <Reveal
-            delay={80}
-            className="flex min-w-0 flex-col">
+          <div className="flex min-w-0 flex-col">
             {faq.map(({ q, a }, i) => (
               <details
                 key={q}
@@ -361,51 +347,49 @@ export default function Trajector() {
                 <p className="text-body pb-5 text-[#B9B7C4]">{a}</p>
               </details>
             ))}
-          </Reveal>
+          </div>
         </div>
       </section>
 
       {/* ===================== CLOSING ===================== */}
       <section className={cn(SECTION, 'border-b-0')}>
-        <Reveal>
-          <div
-            className={cn(
-              PANEL,
-              'relative overflow-hidden px-6 py-14 text-center lg:px-10 lg:py-20',
-            )}>
-            {/* A single wash of brand colour, behind the last thing on the
+        <div
+          className={cn(
+            PANEL,
+            'relative overflow-hidden px-6 py-14 text-center lg:px-10 lg:py-20',
+          )}>
+          {/* A single wash of brand colour, behind the last thing on the
                 page, so the call to action is the one warm spot on it. */}
-            <span
-              className="from-primary/25 pointer-events-none absolute -top-32 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-radial to-transparent blur-3xl"
-              aria-hidden
-            />
-            <div className="relative">
-              <h2 className="text-heading mb-4 font-bold text-white">
-                If you build, you can earn.
-              </h2>
-              <p className="text-body mx-auto mb-8 max-w-[52ch] text-[#B9B7C4]">
-                Keep using your coding agent exactly as you do now. Enable the
-                projects you are happy to contribute, and leave the rest
-                untouched.
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <Button
-                  className="w-auto px-5 text-base"
-                  theme="primary"
-                  href={TRAJECTOR_SIGNUP_LINK}
-                  aria-label="sign up for Trajector">
-                  Sign up
-                </Button>
-                <Button
-                  className="w-auto px-5 text-base shadow-none"
-                  href={TRAJECTOR_DOCS_LINK}
-                  aria-label="read the Trajector documentation">
-                  Documentation
-                </Button>
-              </div>
+          <span
+            className="from-primary/25 pointer-events-none absolute -top-32 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-radial to-transparent blur-3xl"
+            aria-hidden
+          />
+          <div className="relative">
+            <h2 className="text-heading mb-4 font-bold text-white">
+              If you build, you can earn.
+            </h2>
+            <p className="text-body mx-auto mb-8 max-w-[52ch] text-[#B9B7C4]">
+              Keep using your coding agent exactly as you do now. Enable the
+              projects you are happy to contribute, and leave the rest
+              untouched.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button
+                className="w-auto px-5 text-base"
+                theme="primary"
+                href={TRAJECTOR_SIGNUP_LINK}
+                aria-label="sign up for Trajector">
+                Sign up
+              </Button>
+              <Button
+                className="w-auto px-5 text-base shadow-none"
+                href={TRAJECTOR_DOCS_LINK}
+                aria-label="read the Trajector documentation">
+                Documentation
+              </Button>
             </div>
           </div>
-        </Reveal>
+        </div>
       </section>
     </div>
   );
