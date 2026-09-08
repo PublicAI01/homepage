@@ -24,12 +24,28 @@ export interface ChartSpec {
 const W = 1600;
 const PAD = 72;
 const ROW_H = 58;
+/** The mark ships white: loaded as an <img>, its currentColor would go black. */
+const LOGO = '/publicai-mark-white.svg';
+const LOGO_W = 268;
+const ONE_LINER =
+  "The LLM benchmark aggregator \u2014 the world's most comprehensive and robust AI index.";
 const FONT = '"Inter", "Helvetica Neue", Arial, sans-serif';
 const MONO = '"JetBrains Mono", "SF Mono", Menlo, monospace';
 
-export function drawChart(spec: ChartSpec): HTMLCanvasElement {
+/** The mark, loaded once per export. Same-origin, so the canvas stays clean. */
+function loadMark(): Promise<HTMLImageElement | null> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = LOGO;
+  });
+}
+
+export async function drawChart(spec: ChartSpec): Promise<HTMLCanvasElement> {
   const { rows } = spec;
-  const H = PAD * 2 + 140 + rows.length * ROW_H + 40;
+  const mark = await loadMark();
+  const H = PAD * 2 + 176 + rows.length * ROW_H + 40;
   const canvas = document.createElement('canvas');
   const dpr = 2;
   canvas.width = W * dpr;
@@ -41,28 +57,40 @@ export function drawChart(spec: ChartSpec): HTMLCanvasElement {
   ctx.fillStyle = '#0B0B0D';
   ctx.fillRect(0, 0, W, H);
 
+  // Brand lockup, top right: the mark with INDEX set under it, the way a
+  // chart that will be screenshotted and reposted has to carry its source.
+  if (mark) {
+    const h = (mark.height / mark.width) * LOGO_W || LOGO_W / 4;
+    ctx.drawImage(mark, W - PAD - LOGO_W, PAD - 14, LOGO_W, h);
+    ctx.fillStyle = '#B08BFF';
+    ctx.font = `700 30px ${FONT}`;
+    ctx.letterSpacing = '4px';
+    ctx.textAlign = 'right';
+    ctx.fillText('INDEX', W - PAD, PAD + h + 20);
+    ctx.letterSpacing = '0px';
+    ctx.textAlign = 'left';
+  }
+
   // header
-  ctx.fillStyle = '#8E8BFF';
-  ctx.font = `600 13px ${FONT}`;
-  ctx.letterSpacing = '2px';
-  ctx.fillText('PUBLICAI INDEX', PAD, PAD);
-  ctx.letterSpacing = '0px';
   ctx.fillStyle = '#FFFFFF';
-  ctx.font = `700 34px ${FONT}`;
-  ctx.fillText(spec.title, PAD, PAD + 44);
+  ctx.font = `700 38px ${FONT}`;
+  ctx.fillText(spec.title, PAD, PAD + 24);
+  ctx.fillStyle = '#B9B7C4';
+  ctx.font = `400 18px ${FONT}`;
+  ctx.fillText(ONE_LINER, PAD, PAD + 56);
   ctx.fillStyle = '#9C9AA8';
-  ctx.font = `400 16px ${FONT}`;
+  ctx.font = `400 15px ${FONT}`;
   ctx.fillText(
     `Ranked by ${spec.scope} · 0–100 standardized, 50 = average of the models each source lists · snapshot ${spec.generatedAt.slice(0, 10)}`,
     PAD,
-    PAD + 74,
+    PAD + 84,
   );
 
   // bars
   const labelW = 420;
   const x0 = PAD + labelW;
   const barMax = W - PAD - x0 - 90;
-  const top = PAD + 120;
+  const top = PAD + 156;
   // The axis starts a tick below the lowest bar, not at zero: on a 0–100
   // scale where the top ten sit within ten points, a zero-based axis would
   // hide the very differences the chart is for. Ticks are labelled so the
@@ -130,8 +158,8 @@ export function drawChart(spec: ChartSpec): HTMLCanvasElement {
   return canvas;
 }
 
-export function downloadChart(spec: ChartSpec, filename: string) {
-  const canvas = drawChart(spec);
+export async function downloadChart(spec: ChartSpec, filename: string) {
+  const canvas = await drawChart(spec);
   const a = document.createElement('a');
   a.href = canvas.toDataURL('image/png');
   a.download = filename;
