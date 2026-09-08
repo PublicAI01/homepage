@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-07T10:02:06.807Z",
+  "generatedAt": "2026-09-08T05:42:28.618Z",
   "benchmarks": [
     {
       "id": "lmarena",
       "name": "LMArena Text",
       "publisher": "LMArena",
       "url": "https://arena.ai/leaderboard/text",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "snapshot": "7,999,020 votes across 400 models",
       "metric": "elo",
       "category": "Human preference",
@@ -21,7 +21,7 @@
       "name": "Artificial Analysis Intelligence Index",
       "publisher": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/leaderboards/models",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "index",
       "category": "General",
       "domain": "General intelligence",
@@ -35,7 +35,7 @@
       "name": "GDPval-AA",
       "publisher": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "elo",
       "category": "Agents",
       "domain": "Professional tasks",
@@ -49,7 +49,7 @@
       "name": "AA-Briefcase",
       "publisher": "Artificial Analysis",
       "url": "https://artificialanalysis.ai/evaluations/aa-briefcase",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "elo",
       "category": "Agents",
       "domain": "Agentic knowledge work",
@@ -63,7 +63,7 @@
       "name": "Terminal-Bench",
       "publisher": "Terminal-Bench",
       "url": "https://www.tbench.ai/leaderboard",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "snapshot": "Top entry dated Sep 3, 2026",
       "metric": "percent",
       "category": "Coding",
@@ -78,7 +78,7 @@
       "name": "ARC-AGI-2",
       "publisher": "ARC Prize",
       "url": "https://arcprize.org/leaderboard",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Abstract reasoning",
@@ -92,7 +92,7 @@
       "name": "LiveBench",
       "publisher": "LiveBench",
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "index",
       "category": "General",
       "domain": "General",
@@ -106,7 +106,7 @@
       "name": "LiveBench · Reasoning",
       "publisher": "LiveBench",
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "index",
       "category": "Reasoning",
       "domain": "Reasoning",
@@ -120,7 +120,7 @@
       "name": "LiveBench · Coding",
       "publisher": "LiveBench",
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "index",
       "category": "Coding",
       "domain": "Code generation",
@@ -134,7 +134,7 @@
       "name": "LiveBench · Agentic Coding",
       "publisher": "LiveBench",
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "index",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -148,7 +148,7 @@
       "name": "LiveBench · Mathematics",
       "publisher": "LiveBench",
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "index",
       "category": "Reasoning",
       "domain": "Mathematics",
@@ -162,7 +162,7 @@
       "name": "LiveBench · Data Analysis",
       "publisher": "LiveBench",
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "index",
       "category": "General",
       "domain": "Data analysis",
@@ -176,7 +176,7 @@
       "name": "LiveBench · Language",
       "publisher": "LiveBench",
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "index",
       "category": "General",
       "domain": "Language",
@@ -190,7 +190,7 @@
       "name": "LiveBench · Instruction Following",
       "publisher": "LiveBench",
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "metric": "index",
       "category": "General",
       "domain": "Instruction following",
@@ -204,7 +204,7 @@
       "name": "LiveCodeBench",
       "publisher": "LiveCodeBench",
       "url": "https://livecodebench.github.io/leaderboard.html",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Coding",
       "domain": "Competition programming",
@@ -218,7 +218,7 @@
       "name": "Aider polyglot",
       "publisher": "Aider",
       "url": "https://aider.chat/docs/leaderboards/",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Coding",
       "domain": "Code editing",
@@ -232,7 +232,7 @@
       "name": "BFCL v4",
       "publisher": "UC Berkeley (Gorilla)",
       "url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Agents",
       "domain": "Tool use",
@@ -246,7 +246,7 @@
       "name": "OSWorld",
       "publisher": "XLANG Lab",
       "url": "https://osworld-v1.xlang.ai/",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Agents",
       "domain": "Computer use",
@@ -260,7 +260,7 @@
       "name": "MMMU-Pro",
       "publisher": "MMMU",
       "url": "https://mmmu-benchmark.github.io/",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Multimodal understanding",
@@ -274,7 +274,7 @@
       "name": "Kagi LLM Benchmark",
       "publisher": "Kagi",
       "url": "https://help.kagi.com/kagi/ai/llm-benchmark.html",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "General",
       "domain": "General reasoning",
@@ -288,7 +288,7 @@
       "name": "SimpleBench",
       "publisher": "SimpleBench",
       "url": "https://simple-bench.com/",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Common-sense reasoning",
@@ -302,7 +302,7 @@
       "name": "Vals · Legal Research Bench",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal research",
@@ -316,7 +316,7 @@
       "name": "Vals · CaseLaw",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Case law",
@@ -330,7 +330,7 @@
       "name": "Vals · LegalBench",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal reasoning",
@@ -344,7 +344,7 @@
       "name": "Vals · Harvey Legal Agent Benchmark",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal agent",
@@ -358,7 +358,7 @@
       "name": "Vals · Finance Agent",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Finance agent",
@@ -372,7 +372,7 @@
       "name": "Vals · CorpFin",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Corporate finance",
@@ -386,7 +386,7 @@
       "name": "Vals · TaxEval",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Tax",
@@ -400,7 +400,7 @@
       "name": "Vals · MortgageTax",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Tax",
@@ -414,7 +414,7 @@
       "name": "Vals · MedQA",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Medical QA",
@@ -428,7 +428,7 @@
       "name": "Vals · MedCode",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Medical coding",
@@ -442,7 +442,7 @@
       "name": "Vals · MedScribe",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Medical documentation",
@@ -456,7 +456,7 @@
       "name": "Vals · BioMysteryBench",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Biology research",
@@ -470,7 +470,7 @@
       "name": "Vals · CyberBench",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "Cybersecurity",
@@ -484,7 +484,7 @@
       "name": "Vals · SRE Bench",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Professional",
       "domain": "IT operations",
@@ -498,7 +498,7 @@
       "name": "Vals · Web Search Index",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Agents",
       "domain": "Web research",
@@ -512,7 +512,7 @@
       "name": "Vals · SWE-bench Verified",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Coding",
       "domain": "Software engineering",
@@ -526,7 +526,7 @@
       "name": "Vals · Vibe Code Bench",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -540,7 +540,7 @@
       "name": "Vals · Code Migration",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Coding",
       "domain": "Code migration",
@@ -554,7 +554,7 @@
       "name": "Vals · GPQA Diamond",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Science QA",
@@ -568,7 +568,7 @@
       "name": "Vals · MMLU Pro",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Academic knowledge",
@@ -582,7 +582,7 @@
       "name": "Vals · AIME",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Competition math",
@@ -596,7 +596,7 @@
       "name": "Vals · ProofBench",
       "publisher": "Vals AI",
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-07",
+      "retrievedAt": "2026-09-08",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Mathematical proof",
@@ -610,7 +610,7 @@
       "name": "GDPVal-AA",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "elo",
       "category": "Agents",
@@ -625,7 +625,7 @@
       "name": "tau3-Banking",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -640,7 +640,7 @@
       "name": "Toolathlon Verified",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -655,7 +655,7 @@
       "name": "Automation Bench Public",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -670,7 +670,7 @@
       "name": "Apex-Agents (pass@1)",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -685,7 +685,7 @@
       "name": "MCPMark",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -700,7 +700,7 @@
       "name": "BrowseComp",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -715,7 +715,7 @@
       "name": "WildClawBench",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -730,7 +730,7 @@
       "name": "Terminal-Bench 2.1",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -745,7 +745,7 @@
       "name": "SciCode",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -760,7 +760,7 @@
       "name": "SWE-Atlas-QnA",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -775,7 +775,7 @@
       "name": "SWE Bench Pro",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -790,7 +790,7 @@
       "name": "Humanity's Last Exam (without tools)",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -805,7 +805,7 @@
       "name": "GPQA Diamond",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -820,7 +820,7 @@
       "name": "CritPt",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -835,7 +835,7 @@
       "name": "AA-LCR",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "General",
@@ -850,7 +850,7 @@
       "name": "AA-Omniscience Accuracy",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Knowledge",
@@ -865,7 +865,7 @@
       "name": "AA-Omniscience Non-Hallucination",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Knowledge",
@@ -880,7 +880,7 @@
       "name": "SWE-bench Verified",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -895,7 +895,7 @@
       "name": "HMMT Feb 2026",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -910,7 +910,7 @@
       "name": "HLE",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -925,7 +925,7 @@
       "name": "BFCL v4",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -940,7 +940,7 @@
       "name": "HumanEval+",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -955,7 +955,7 @@
       "name": "MBPP+",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -970,7 +970,7 @@
       "name": "AIME 2025",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -985,7 +985,7 @@
       "name": "AIME 2026",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -1000,7 +1000,7 @@
       "name": "LiveCodeBench v6",
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -1015,7 +1015,7 @@
       "name": "Terminal-Bench 4.0",
       "publisher": "DataCamp",
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1030,7 +1030,7 @@
       "name": "DeepSWE v1.1",
       "publisher": "DataCamp",
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1045,7 +1045,7 @@
       "name": "FrontierCode 1.1 Main",
       "publisher": "DataCamp",
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1060,7 +1060,7 @@
       "name": "Internal database migration",
       "publisher": "DataCamp",
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1075,7 +1075,7 @@
       "name": "GDPVal-AA (Elo)",
       "publisher": "CellCog",
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-04",
       "metric": "elo",
       "category": "Agents",
@@ -1090,7 +1090,7 @@
       "name": "Toolathlon Verified",
       "publisher": "CellCog",
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1105,7 +1105,7 @@
       "name": "Terminal-Bench 2.1",
       "publisher": "CellCog",
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1120,7 +1120,7 @@
       "name": "SWE-bench Pro (strict)",
       "publisher": "CellCog",
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1135,7 +1135,7 @@
       "name": "MCPMark",
       "publisher": "CellCog",
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1150,7 +1150,7 @@
       "name": "SWE-Atlas-QnA (strict)",
       "publisher": "CellCog",
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1721,8 +1721,8 @@
           "id": "deepseek/deepseek-chat-v3-0324",
           "url": "https://openrouter.ai/deepseek/deepseek-chat-v3-0324",
           "contextLength": 163840,
-          "inputPerM": 0.25,
-          "outputPerM": 1,
+          "inputPerM": 0.29,
+          "outputPerM": 1.14,
           "listedAt": "2025-03-24",
           "modalities": ["text"]
         },
@@ -2200,8 +2200,8 @@
           "id": "deepseek/deepseek-v4-flash-0731",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
           "contextLength": 1310720,
-          "inputPerM": 0.05,
-          "outputPerM": 0.1,
+          "inputPerM": 0.065,
+          "outputPerM": 0.18,
           "listedAt": "2026-07-31",
           "modalities": ["text"]
         },
@@ -2277,8 +2277,8 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
           "contextLength": 1048576,
-          "inputPerM": 1.121,
-          "outputPerM": 3.362,
+          "inputPerM": 1.049,
+          "outputPerM": 3.148,
           "listedAt": "2026-08-12",
           "modalities": ["text"]
         },
@@ -2612,7 +2612,7 @@
           "id": "minimax/minimax-m1",
           "url": "https://openrouter.ai/minimax/minimax-m1",
           "contextLength": 1000000,
-          "inputPerM": 0.55,
+          "inputPerM": 0.4,
           "outputPerM": 2.2,
           "listedAt": "2025-06-17",
           "modalities": ["text"]
@@ -3508,8 +3508,8 @@
           "id": "qwen/qwen3-14b",
           "url": "https://openrouter.ai/qwen/qwen3-14b",
           "contextLength": 131072,
-          "inputPerM": 0.12,
-          "outputPerM": 0.24,
+          "inputPerM": 0.227,
+          "outputPerM": 0.91,
           "listedAt": "2025-04-28",
           "modalities": ["text"]
         },
@@ -5053,8 +5053,8 @@
           "id": "moonshotai/kimi-k2.7-code",
           "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code",
           "contextLength": 262144,
-          "inputPerM": 0.66,
-          "outputPerM": 3.4,
+          "inputPerM": 0.71,
+          "outputPerM": 3.5,
           "listedAt": "2026-06-12",
           "modalities": ["text", "image"]
         },
@@ -6794,6 +6794,14 @@
     },
     { "id": "motif-3", "name": "Motif 3", "org": "Motif Technologies" },
     {
+      "id": "nemotron-3-nano",
+      "name": "Nemotron 3 Nano",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
       "id": "nemotron-3-super",
       "name": "Nemotron 3 Super",
       "org": "NVIDIA",
@@ -7251,8 +7259,8 @@
           "id": "deepseek/deepseek-chat-v3.1",
           "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
           "contextLength": 163840,
-          "inputPerM": 0.55,
-          "outputPerM": 1.65,
+          "inputPerM": 0.25,
+          "outputPerM": 0.95,
           "listedAt": "2025-08-21",
           "modalities": ["text"]
         },
@@ -7721,8 +7729,8 @@
           "id": "qwen/qwen3.5-397b-a17b",
           "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
           "contextLength": 262144,
-          "inputPerM": 0.55,
-          "outputPerM": 3.5,
+          "inputPerM": 0.39,
+          "outputPerM": 2.34,
           "listedAt": "2026-02-16",
           "modalities": ["text", "image", "video"]
         },
@@ -9656,7 +9664,7 @@
           "id": "z-ai/glm-4.7-flash",
           "url": "https://openrouter.ai/z-ai/glm-4.7-flash",
           "contextLength": 202752,
-          "inputPerM": 0.06,
+          "inputPerM": 0.061,
           "outputPerM": 0.4,
           "listedAt": "2026-01-19",
           "modalities": ["text"]
@@ -9734,6 +9742,12 @@
     {
       "id": "quasar-438b-max-based-on-glm-5-2",
       "name": "Quasar 438B (max, based on GLM-5.2)",
+      "org": "Multiverse Computing",
+      "size": { "paramsB": 438, "source": "name" }
+    },
+    {
+      "id": "quasar-438b",
+      "name": "Quasar 438B",
       "org": "Multiverse Computing",
       "size": { "paramsB": 438, "source": "name" }
     },
@@ -10030,6 +10044,18 @@
           "url": "https://platform.openai.com/docs"
         }
       }
+    },
+    {
+      "id": "minicpm5-2b",
+      "name": "MiniCPM5.2B",
+      "org": "OpenBMB",
+      "access": {
+        "official": {
+          "name": "OpenBMB on GitHub",
+          "url": "https://github.com/OpenBMB"
+        }
+      },
+      "size": { "paramsB": 2, "source": "name" }
     },
     {
       "id": "gpt-5-2-codex",
@@ -10424,6 +10450,26 @@
         "openrouter": {
           "id": "openai/gpt-6-astra",
           "url": "https://openrouter.ai/openai/gpt-6-astra",
+          "contextLength": 1050000,
+          "inputPerM": 10,
+          "outputPerM": 50,
+          "listedAt": "2026-09-04",
+          "modalities": ["file", "image", "text"]
+        },
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "gpt-6-astra-pro",
+      "name": "GPT-6 Astra Pro",
+      "org": "OpenAI",
+      "access": {
+        "openrouter": {
+          "id": "openai/gpt-6-astra-pro",
+          "url": "https://openrouter.ai/openai/gpt-6-astra-pro",
           "contextLength": 1050000,
           "inputPerM": 10,
           "outputPerM": 50,
@@ -11193,8 +11239,8 @@
     {
       "modelId": "grok-build-0-1-0616",
       "benchmarkId": "aa-gdpval",
-      "raw": 1142,
-      "stderr": 15,
+      "raw": 1138,
+      "stderr": 14,
       "sourceLabel": "Grok Build 0.1 0616"
     },
     {
@@ -12048,8 +12094,15 @@
     {
       "modelId": "deepseek-v3-0324",
       "benchmarkId": "aa-gdpval",
-      "raw": 276,
+      "raw": 275,
       "stderr": 19,
+      "sourceLabel": "DeepSeek V3 0324"
+    },
+    {
+      "modelId": "deepseek-v3-0324",
+      "benchmarkId": "aa-briefcase",
+      "raw": 92,
+      "stderr": 10.5,
       "sourceLabel": "DeepSeek V3 0324"
     },
     {
@@ -12496,20 +12549,20 @@
     {
       "modelId": "deepseek-v4-flash-0731",
       "benchmarkId": "artificial-analysis",
-      "raw": 41,
+      "raw": 35,
       "sourceLabel": "DeepSeek V4 Flash 0731 (max)"
     },
     {
       "modelId": "deepseek-v4-flash-0731",
       "benchmarkId": "aa-gdpval",
-      "raw": 1471,
+      "raw": 1468,
       "stderr": 15,
       "sourceLabel": "DeepSeek V4 Flash 0731 (Reasoning, Max Effort)"
     },
     {
       "modelId": "deepseek-v4-flash-0731",
       "benchmarkId": "aa-briefcase",
-      "raw": 1263,
+      "raw": 1259,
       "stderr": 7,
       "sourceLabel": "DeepSeek V4 Flash 0731 (Reasoning, Max Effort)"
     },
@@ -12718,21 +12771,21 @@
     {
       "modelId": "deepseek-v4-pro-0813",
       "benchmarkId": "artificial-analysis",
-      "raw": 42,
+      "raw": 36,
       "sourceLabel": "DeepSeek V4 Pro 0813 (max)"
     },
     {
       "modelId": "deepseek-v4-pro-0813",
       "benchmarkId": "aa-gdpval",
-      "raw": 1497,
+      "raw": 1493,
       "stderr": 15,
       "sourceLabel": "DeepSeek V4 Pro 0813 (Reasoning, Max Effort)"
     },
     {
       "modelId": "deepseek-v4-pro-0813",
       "benchmarkId": "aa-briefcase",
-      "raw": 1269,
-      "stderr": 7.5,
+      "raw": 1265,
+      "stderr": 6.5,
       "sourceLabel": "DeepSeek V4 Pro 0813 (Reasoning, Max Effort)"
     },
     {
@@ -13118,8 +13171,15 @@
     {
       "modelId": "deepseek-r1-jan-25",
       "benchmarkId": "aa-gdpval",
-      "raw": 480,
-      "stderr": 19,
+      "raw": 479,
+      "stderr": 18,
+      "sourceLabel": "DeepSeek R1 (Jan '25)"
+    },
+    {
+      "modelId": "deepseek-r1-jan-25",
+      "benchmarkId": "aa-briefcase",
+      "raw": 150,
+      "stderr": 10,
       "sourceLabel": "DeepSeek R1 (Jan '25)"
     },
     {
@@ -13217,16 +13277,22 @@
     },
     {
       "modelId": "celeris-1",
+      "benchmarkId": "artificial-analysis",
+      "raw": 6,
+      "sourceLabel": "Celeris-1"
+    },
+    {
+      "modelId": "celeris-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 484,
+      "raw": 483,
       "stderr": 21,
       "sourceLabel": "Celeris-1"
     },
     {
       "modelId": "celeris-1",
       "benchmarkId": "aa-briefcase",
-      "raw": 178,
-      "stderr": 11.5,
+      "raw": 172,
+      "stderr": 9.5,
       "sourceLabel": "Celeris-1"
     },
     {
@@ -13238,15 +13304,15 @@
     {
       "modelId": "kat-coder-pro-v1",
       "benchmarkId": "aa-gdpval",
-      "raw": 848,
+      "raw": 845,
       "stderr": 16,
       "sourceLabel": "KAT-Coder-Pro V1"
     },
     {
       "modelId": "kat-coder-pro-v1",
       "benchmarkId": "aa-briefcase",
-      "raw": 607,
-      "stderr": 9,
+      "raw": 602,
+      "stderr": 8,
       "sourceLabel": "KAT-Coder-Pro V1"
     },
     {
@@ -13544,7 +13610,7 @@
     {
       "modelId": "apodex-1-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 1276,
+      "raw": 1273,
       "stderr": 17,
       "sourceLabel": "Apodex 1.1"
     },
@@ -13558,15 +13624,15 @@
     {
       "modelId": "muse-spark-1-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 1298,
+      "raw": 1294,
       "stderr": 16,
       "sourceLabel": "Muse Spark 1.1 (xhigh)"
     },
     {
       "modelId": "muse-spark-1-1",
       "benchmarkId": "aa-briefcase",
-      "raw": 865,
-      "stderr": 9.5,
+      "raw": 860,
+      "stderr": 8,
       "sourceLabel": "Muse Spark 1.1 (xhigh)"
     },
     {
@@ -13727,14 +13793,14 @@
     {
       "modelId": "magistral-medium-1-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 363,
+      "raw": 362,
       "stderr": 18,
       "sourceLabel": "Magistral Medium 1.2"
     },
     {
       "modelId": "magistral-small-1-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 214,
+      "raw": 213,
       "stderr": 19,
       "sourceLabel": "Magistral Small 1.2"
     },
@@ -13748,20 +13814,20 @@
     {
       "modelId": "muse-spark-1-2",
       "benchmarkId": "artificial-analysis",
-      "raw": 47,
+      "raw": 40,
       "sourceLabel": "Muse Spark 1.2 (xhigh)"
     },
     {
       "modelId": "muse-spark-1-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 1527,
+      "raw": 1523,
       "stderr": 15,
       "sourceLabel": "Muse Spark 1.2 (xhigh)"
     },
     {
       "modelId": "muse-spark-1-2",
       "benchmarkId": "aa-briefcase",
-      "raw": 1346,
+      "raw": 1344,
       "stderr": 6.5,
       "sourceLabel": "Muse Spark 1.2 (xhigh)"
     },
@@ -13929,21 +13995,21 @@
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "artificial-analysis",
-      "raw": 53,
+      "raw": 48,
       "sourceLabel": "Muse Spark 1.3 (max)"
     },
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1720,
-      "stderr": 20,
+      "raw": 1703,
+      "stderr": 19,
       "sourceLabel": "Muse Spark 1.3 (max)"
     },
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1559,
-      "stderr": 10.5,
+      "raw": 1589,
+      "stderr": 11,
       "sourceLabel": "Muse Spark 1.3 (max)"
     },
     {
@@ -14763,7 +14829,7 @@
     {
       "modelId": "gemma-4-12b",
       "benchmarkId": "aa-gdpval",
-      "raw": 593,
+      "raw": 591,
       "stderr": 20,
       "sourceLabel": "Gemma 4 12B (Reasoning)"
     },
@@ -14813,15 +14879,15 @@
     {
       "modelId": "hypernova-60b-2605-high-based-on-gpt-oss-120b",
       "benchmarkId": "aa-gdpval",
-      "raw": 606,
+      "raw": 604,
       "stderr": 19,
       "sourceLabel": "HyperNova 60B 2605 (high, based on gpt-oss-120b)"
     },
     {
       "modelId": "hypernova-60b-2605-high-based-on-gpt-oss-120b",
       "benchmarkId": "aa-briefcase",
-      "raw": 261,
-      "stderr": 11.5,
+      "raw": 249,
+      "stderr": 10,
       "sourceLabel": "HyperNova 60B 2605 (high, based on gpt-oss-120b)"
     },
     {
@@ -14834,7 +14900,7 @@
     {
       "modelId": "nvidia-nemotron-3-super-120b-a12b",
       "benchmarkId": "aa-gdpval",
-      "raw": 646,
+      "raw": 644,
       "stderr": 16,
       "sourceLabel": "Nemotron 3 Super 120B A12B (Reasoning)"
     },
@@ -14855,14 +14921,14 @@
     {
       "modelId": "gpt-oss-120b",
       "benchmarkId": "artificial-analysis",
-      "raw": 16,
+      "raw": 12,
       "sourceLabel": "gpt-oss-120b (high)"
     },
     {
       "modelId": "gpt-oss-120b",
       "benchmarkId": "aa-gdpval",
-      "raw": 746,
-      "stderr": 16,
+      "raw": 745,
+      "stderr": 15,
       "sourceLabel": "gpt-oss-120b (high)"
     },
     {
@@ -14989,9 +15055,22 @@
     },
     {
       "modelId": "qwen3-5-122b-a10b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 16,
+      "sourceLabel": "Qwen3.5 122B A10B"
+    },
+    {
+      "modelId": "qwen3-5-122b-a10b",
       "benchmarkId": "aa-gdpval",
-      "raw": 928,
+      "raw": 925,
       "stderr": 15,
+      "sourceLabel": "Qwen3.5 122B A10B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-5-122b-a10b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 499,
+      "stderr": 9,
       "sourceLabel": "Qwen3.5 122B A10B (Reasoning)"
     },
     {
@@ -15071,22 +15150,28 @@
     },
     {
       "modelId": "ministral-3-14b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 6,
+      "sourceLabel": "Ministral 3 14B"
+    },
+    {
+      "modelId": "ministral-3-14b",
       "benchmarkId": "aa-gdpval",
-      "raw": 434,
+      "raw": 432,
       "stderr": 17,
       "sourceLabel": "Ministral 3 14B"
     },
     {
       "modelId": "ministral-3-14b",
       "benchmarkId": "aa-briefcase",
-      "raw": 162,
-      "stderr": 10.5,
+      "raw": 150,
+      "stderr": 9.5,
       "sourceLabel": "Ministral 3 14B"
     },
     {
       "modelId": "qwen3-14b",
       "benchmarkId": "aa-gdpval",
-      "raw": 189,
+      "raw": 188,
       "stderr": 19,
       "sourceLabel": "Qwen3 14B (Reasoning)"
     },
@@ -15216,15 +15301,15 @@
     {
       "modelId": "k2-think-v2",
       "benchmarkId": "aa-gdpval",
-      "raw": 329,
+      "raw": 328,
       "stderr": 18,
       "sourceLabel": "K2 Think V2"
     },
     {
       "modelId": "k2-think-v2",
       "benchmarkId": "aa-briefcase",
-      "raw": 52,
-      "stderr": 11,
+      "raw": 34,
+      "stderr": 9,
       "sourceLabel": "K2 Think V2"
     },
     {
@@ -15244,7 +15329,7 @@
     {
       "modelId": "solar-open2-250b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1055,
+      "raw": 1053,
       "stderr": 18,
       "sourceLabel": "Solar Open2 250B"
     },
@@ -15284,7 +15369,7 @@
     {
       "modelId": "qwen3-5-2b",
       "benchmarkId": "aa-gdpval",
-      "raw": 167,
+      "raw": 166,
       "stderr": 21,
       "sourceLabel": "Qwen3.5 2B (Reasoning)"
     },
@@ -15339,7 +15424,7 @@
     {
       "modelId": "nemotron-cascade-2-30b-a3b",
       "benchmarkId": "aa-gdpval",
-      "raw": 449,
+      "raw": 447,
       "stderr": 21,
       "sourceLabel": "Nemotron Cascade 2 30B A3B"
     },
@@ -15459,22 +15544,16 @@
     },
     {
       "modelId": "k2-horizon-375b-a23b",
-      "benchmarkId": "artificial-analysis",
-      "raw": 38,
-      "sourceLabel": "K2 Horizon 375B A23B"
-    },
-    {
-      "modelId": "k2-horizon-375b-a23b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1413,
+      "raw": 1410,
       "stderr": 20,
       "sourceLabel": "K2 Horizon 375B A23B"
     },
     {
       "modelId": "k2-horizon-375b-a23b",
       "benchmarkId": "aa-briefcase",
-      "raw": 1306,
-      "stderr": 9,
+      "raw": 1303,
+      "stderr": 8.5,
       "sourceLabel": "K2 Horizon 375B A23B"
     },
     {
@@ -15624,7 +15703,7 @@
     {
       "modelId": "gemma-4-e2b",
       "benchmarkId": "aa-gdpval",
-      "raw": 37,
+      "raw": 36,
       "stderr": 21,
       "sourceLabel": "Gemma 4 E2B (Reasoning)"
     },
@@ -15783,7 +15862,7 @@
     {
       "modelId": "a-x-k2",
       "benchmarkId": "aa-gdpval",
-      "raw": 1047,
+      "raw": 1044,
       "stderr": 18,
       "sourceLabel": "A.X-K2"
     },
@@ -15811,15 +15890,28 @@
     {
       "modelId": "kat-coder-pro-v2",
       "benchmarkId": "aa-gdpval",
-      "raw": 846,
+      "raw": 843,
       "stderr": 18,
       "sourceLabel": "KAT Coder Pro V2"
     },
     {
       "modelId": "devstral-2",
+      "benchmarkId": "artificial-analysis",
+      "raw": 9,
+      "sourceLabel": "Devstral 2"
+    },
+    {
+      "modelId": "devstral-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 690,
+      "raw": 689,
       "stderr": 17,
+      "sourceLabel": "Devstral 2"
+    },
+    {
+      "modelId": "devstral-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 483,
+      "stderr": 11,
       "sourceLabel": "Devstral 2"
     },
     {
@@ -15832,9 +15924,22 @@
     },
     {
       "modelId": "devstral-small-2",
+      "benchmarkId": "artificial-analysis",
+      "raw": 8,
+      "sourceLabel": "Devstral Small 2"
+    },
+    {
+      "modelId": "devstral-small-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 681,
-      "stderr": 17,
+      "raw": 680,
+      "stderr": 16,
+      "sourceLabel": "Devstral Small 2"
+    },
+    {
+      "modelId": "devstral-small-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 496,
+      "stderr": 9.5,
       "sourceLabel": "Devstral Small 2"
     },
     {
@@ -15847,7 +15952,7 @@
     {
       "modelId": "mimo-v2-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 790,
+      "raw": 788,
       "stderr": 19,
       "sourceLabel": "MiMo-V2-Flash (Non-reasoning)"
     },
@@ -16184,16 +16289,22 @@
     },
     {
       "modelId": "mercury-2",
+      "benchmarkId": "artificial-analysis",
+      "raw": 12,
+      "sourceLabel": "Mercury 2"
+    },
+    {
+      "modelId": "mercury-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 647,
+      "raw": 646,
       "stderr": 19,
       "sourceLabel": "Mercury 2"
     },
     {
       "modelId": "mercury-2",
       "benchmarkId": "aa-briefcase",
-      "raw": 286,
-      "stderr": 10.5,
+      "raw": 280,
+      "stderr": 9,
       "sourceLabel": "Mercury 2"
     },
     {
@@ -16213,7 +16324,7 @@
     {
       "modelId": "nex-n2-pro",
       "benchmarkId": "aa-gdpval",
-      "raw": 1178,
+      "raw": 1175,
       "stderr": 15,
       "sourceLabel": "Nex-N2-Pro"
     },
@@ -16234,7 +16345,7 @@
     {
       "modelId": "k-exaone-2-0",
       "benchmarkId": "aa-gdpval",
-      "raw": 922,
+      "raw": 918,
       "stderr": 19,
       "sourceLabel": "K-EXAONE 2.0"
     },
@@ -16306,21 +16417,34 @@
     {
       "modelId": "nova-2-0-lite",
       "benchmarkId": "aa-gdpval",
-      "raw": 538,
+      "raw": 536,
       "stderr": 17,
       "sourceLabel": "Nova 2.0 Lite (high)"
     },
     {
       "modelId": "longcat-2-0",
+      "benchmarkId": "artificial-analysis",
+      "raw": 20,
+      "sourceLabel": "LongCat 2.0"
+    },
+    {
+      "modelId": "longcat-2-0",
       "benchmarkId": "aa-gdpval",
-      "raw": 968,
+      "raw": 965,
       "stderr": 16,
+      "sourceLabel": "LongCat 2.0"
+    },
+    {
+      "modelId": "longcat-2-0",
+      "benchmarkId": "aa-briefcase",
+      "raw": 739,
+      "stderr": 10,
       "sourceLabel": "LongCat 2.0"
     },
     {
       "modelId": "nova-2-0-pro-preview",
       "benchmarkId": "aa-gdpval",
-      "raw": 631,
+      "raw": 630,
       "stderr": 16,
       "sourceLabel": "Nova 2.0 Pro Preview (medium)"
     },
@@ -16475,20 +16599,20 @@
     {
       "modelId": "qwen3-8-2-4t-a95b",
       "benchmarkId": "artificial-analysis",
-      "raw": 47,
+      "raw": 40,
       "sourceLabel": "Qwen3.8 2.4T A95B"
     },
     {
       "modelId": "qwen3-8-2-4t-a95b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1630,
+      "raw": 1628,
       "stderr": 15,
       "sourceLabel": "Qwen3.8 2.4T A95B"
     },
     {
       "modelId": "qwen3-8-2-4t-a95b",
       "benchmarkId": "aa-briefcase",
-      "raw": 1443,
+      "raw": 1439,
       "stderr": 7.5,
       "sourceLabel": "Qwen3.8 2.4T A95B"
     },
@@ -16719,14 +16843,21 @@
     {
       "modelId": "agnes-2-5-pro-alpha",
       "benchmarkId": "aa-gdpval",
-      "raw": 1098,
-      "stderr": 17.5,
+      "raw": 1095,
+      "stderr": 17,
+      "sourceLabel": "Agnes 2.5 Pro Alpha"
+    },
+    {
+      "modelId": "agnes-2-5-pro-alpha",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1197,
+      "stderr": 9.5,
       "sourceLabel": "Agnes 2.5 Pro Alpha"
     },
     {
       "modelId": "agnes-2-5-pro-beta",
       "benchmarkId": "aa-gdpval",
-      "raw": 1378,
+      "raw": 1376,
       "stderr": 17,
       "sourceLabel": "Agnes 2.5 Pro Beta"
     },
@@ -16888,15 +17019,15 @@
     {
       "modelId": "gemini-2-5-pro",
       "benchmarkId": "aa-gdpval",
-      "raw": 618,
+      "raw": 616,
       "stderr": 17,
       "sourceLabel": "Gemini 2.5 Pro"
     },
     {
       "modelId": "gemini-2-5-pro",
       "benchmarkId": "aa-briefcase",
-      "raw": 326,
-      "stderr": 11,
+      "raw": 315,
+      "stderr": 9.5,
       "sourceLabel": "Gemini 2.5 Pro"
     },
     {
@@ -16979,8 +17110,8 @@
     {
       "modelId": "kimi-k2-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 940,
-      "stderr": 18,
+      "raw": 936,
+      "stderr": 17,
       "sourceLabel": "Kimi K2.5 (Reasoning)"
     },
     {
@@ -17216,20 +17347,20 @@
     {
       "modelId": "mimo-v2-5-pro",
       "benchmarkId": "artificial-analysis",
-      "raw": 33,
+      "raw": 26,
       "sourceLabel": "MiMo-V2.5-Pro"
     },
     {
       "modelId": "mimo-v2-5-pro",
       "benchmarkId": "aa-gdpval",
-      "raw": 1189,
+      "raw": 1186,
       "stderr": 14,
       "sourceLabel": "MiMo-V2.5-Pro"
     },
     {
       "modelId": "mimo-v2-5-pro",
       "benchmarkId": "aa-briefcase",
-      "raw": 881,
+      "raw": 883,
       "stderr": 7,
       "sourceLabel": "MiMo-V2.5-Pro"
     },
@@ -17342,8 +17473,14 @@
     },
     {
       "modelId": "mimo-v2-5",
+      "benchmarkId": "artificial-analysis",
+      "raw": 22,
+      "sourceLabel": "MiMo-V2.5"
+    },
+    {
+      "modelId": "mimo-v2-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 1082,
+      "raw": 1079,
       "stderr": 17,
       "sourceLabel": "MiMo-V2.5"
     },
@@ -17351,7 +17488,7 @@
       "modelId": "mimo-v2-5",
       "benchmarkId": "aa-briefcase",
       "raw": 751,
-      "stderr": 10,
+      "stderr": 9,
       "sourceLabel": "MiMo-V2.5"
     },
     {
@@ -17471,7 +17608,7 @@
     {
       "modelId": "lfm2-5-2-6b",
       "benchmarkId": "aa-gdpval",
-      "raw": 204,
+      "raw": 202,
       "stderr": 22,
       "sourceLabel": "LFM2.5-2.6B"
     },
@@ -17485,7 +17622,7 @@
     {
       "modelId": "ling-2-6-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 494,
+      "raw": 493,
       "stderr": 19,
       "sourceLabel": "Ling 2.6 Flash"
     },
@@ -17499,15 +17636,15 @@
     {
       "modelId": "kimi-k2-6",
       "benchmarkId": "aa-gdpval",
-      "raw": 1118,
+      "raw": 1115,
       "stderr": 14,
       "sourceLabel": "Kimi K2.6"
     },
     {
       "modelId": "kimi-k2-6",
       "benchmarkId": "aa-briefcase",
-      "raw": 818,
-      "stderr": 8,
+      "raw": 820,
+      "stderr": 7,
       "sourceLabel": "Kimi K2.6"
     },
     {
@@ -17680,9 +17817,22 @@
     },
     {
       "modelId": "ring-2-6-1t",
+      "benchmarkId": "artificial-analysis",
+      "raw": 17,
+      "sourceLabel": "Ring-2.6-1T"
+    },
+    {
+      "modelId": "ring-2-6-1t",
       "benchmarkId": "aa-gdpval",
-      "raw": 866,
+      "raw": 864,
       "stderr": 15,
+      "sourceLabel": "Ring-2.6-1T"
+    },
+    {
+      "modelId": "ring-2-6-1t",
+      "benchmarkId": "aa-briefcase",
+      "raw": 654,
+      "stderr": 9.5,
       "sourceLabel": "Ring-2.6-1T"
     },
     {
@@ -17701,9 +17851,22 @@
     },
     {
       "modelId": "kimi-k2-7-code",
+      "benchmarkId": "artificial-analysis",
+      "raw": 26,
+      "sourceLabel": "Kimi K2.7 Code"
+    },
+    {
+      "modelId": "kimi-k2-7-code",
       "benchmarkId": "aa-gdpval",
-      "raw": 1118,
+      "raw": 1114,
       "stderr": 14,
+      "sourceLabel": "Kimi K2.7 Code"
+    },
+    {
+      "modelId": "kimi-k2-7-code",
+      "benchmarkId": "aa-briefcase",
+      "raw": 856,
+      "stderr": 9.5,
       "sourceLabel": "Kimi K2.7 Code"
     },
     {
@@ -17793,8 +17956,15 @@
     {
       "modelId": "minimax-m2-7",
       "benchmarkId": "aa-gdpval",
-      "raw": 1090,
+      "raw": 1087,
       "stderr": 14,
+      "sourceLabel": "MiniMax-M2.7"
+    },
+    {
+      "modelId": "minimax-m2-7",
+      "benchmarkId": "aa-briefcase",
+      "raw": 715,
+      "stderr": 9.5,
       "sourceLabel": "MiniMax-M2.7"
     },
     {
@@ -17964,8 +18134,14 @@
     },
     {
       "modelId": "gpt-oss-20b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 9,
+      "sourceLabel": "gpt-oss-20b (high)"
+    },
+    {
+      "modelId": "gpt-oss-20b",
       "benchmarkId": "aa-gdpval",
-      "raw": 516,
+      "raw": 514,
       "stderr": 16,
       "sourceLabel": "gpt-oss-20b (high)"
     },
@@ -18265,16 +18441,22 @@
     },
     {
       "modelId": "gpt-5-5-instant-june-2026",
+      "benchmarkId": "artificial-analysis",
+      "raw": 27,
+      "sourceLabel": "GPT-5.5 Instant (June 2026)"
+    },
+    {
+      "modelId": "gpt-5-5-instant-june-2026",
       "benchmarkId": "aa-gdpval",
-      "raw": 664,
+      "raw": 662,
       "stderr": 17,
       "sourceLabel": "GPT-5.5 Instant (June 2026)"
     },
     {
       "modelId": "gpt-5-5-instant-june-2026",
       "benchmarkId": "aa-briefcase",
-      "raw": 1086,
-      "stderr": 10.5,
+      "raw": 1082,
+      "stderr": 9.5,
       "sourceLabel": "GPT-5.5 Instant (June 2026)"
     },
     {
@@ -18326,8 +18508,15 @@
     {
       "modelId": "qwen3-235b-a22b-thinking-2507",
       "benchmarkId": "aa-gdpval",
-      "raw": 496,
+      "raw": 495,
       "stderr": 19,
+      "sourceLabel": "Qwen3 235B A22B 2507 (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-235b-a22b-thinking-2507",
+      "benchmarkId": "aa-briefcase",
+      "raw": 190,
+      "stderr": 11,
       "sourceLabel": "Qwen3 235B A22B 2507 (Reasoning)"
     },
     {
@@ -18427,7 +18616,7 @@
     {
       "modelId": "jt-4-1-flash-236b-a21b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1196,
+      "raw": 1193,
       "stderr": 16,
       "sourceLabel": "JT-4.1 Flash 236B A21B"
     },
@@ -18448,8 +18637,15 @@
     {
       "modelId": "deepseek-v3-dec-24",
       "benchmarkId": "aa-gdpval",
-      "raw": 184,
+      "raw": 183,
       "stderr": 19,
+      "sourceLabel": "DeepSeek V3 (Dec '24)"
+    },
+    {
+      "modelId": "deepseek-v3-dec-24",
+      "benchmarkId": "aa-briefcase",
+      "raw": 100,
+      "stderr": 11.5,
       "sourceLabel": "DeepSeek V3 (Dec '24)"
     },
     {
@@ -18565,8 +18761,15 @@
     {
       "modelId": "qwen3-30b-a3b-2507",
       "benchmarkId": "aa-gdpval",
-      "raw": 275,
+      "raw": 274,
       "stderr": 20,
+      "sourceLabel": "Qwen3 30B A3B 2507 (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-30b-a3b-2507",
+      "benchmarkId": "aa-briefcase",
+      "raw": 32,
+      "stderr": 11.5,
       "sourceLabel": "Qwen3 30B A3B 2507 (Reasoning)"
     },
     {
@@ -18616,14 +18819,14 @@
     {
       "modelId": "gemma-4-26b-a4b",
       "benchmarkId": "aa-gdpval",
-      "raw": 715,
+      "raw": 713,
       "stderr": 16,
       "sourceLabel": "Gemma 4 26B A4B (Reasoning)"
     },
     {
       "modelId": "diffusiongemma-26b-a4b",
       "benchmarkId": "aa-gdpval",
-      "raw": 502,
+      "raw": 501,
       "stderr": 17,
       "sourceLabel": "DiffusionGemma 26B A4B"
     },
@@ -18674,16 +18877,22 @@
     },
     {
       "modelId": "qwen3-6-27b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 22,
+      "sourceLabel": "Qwen3.6 27B"
+    },
+    {
+      "modelId": "qwen3-6-27b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1071,
+      "raw": 1069,
       "stderr": 14,
       "sourceLabel": "Qwen3.6 27B (Reasoning)"
     },
     {
       "modelId": "qwen3-6-27b",
       "benchmarkId": "aa-briefcase",
-      "raw": 814,
-      "stderr": 7.5,
+      "raw": 812,
+      "stderr": 7,
       "sourceLabel": "Qwen3.6 27B (Reasoning)"
     },
     {
@@ -18788,20 +18997,20 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "artificial-analysis",
-      "raw": 41,
+      "raw": 34,
       "sourceLabel": "Qwen3.8 27B (xhigh)"
     },
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1466,
+      "raw": 1463,
       "stderr": 16,
       "sourceLabel": "Qwen3.8 27B (xhigh)"
     },
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "aa-briefcase",
-      "raw": 1402,
+      "raw": 1398,
       "stderr": 7,
       "sourceLabel": "Qwen3.8 27B (xhigh)"
     },
@@ -19015,9 +19224,22 @@
     },
     {
       "modelId": "ministral-3-3b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 5,
+      "sourceLabel": "Ministral 3 3B"
+    },
+    {
+      "modelId": "ministral-3-3b",
       "benchmarkId": "aa-gdpval",
-      "raw": 235,
+      "raw": 234,
       "stderr": 18,
+      "sourceLabel": "Ministral 3 3B"
+    },
+    {
+      "modelId": "ministral-3-3b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 16,
+      "stderr": 10,
       "sourceLabel": "Ministral 3 3B"
     },
     {
@@ -19036,21 +19258,21 @@
     {
       "modelId": "nvidia-nemotron-3-nano-30b-a3b",
       "benchmarkId": "aa-gdpval",
-      "raw": 440,
+      "raw": 438,
       "stderr": 17,
       "sourceLabel": "NVIDIA Nemotron 3 Nano 30B A3B (Reasoning)"
     },
     {
       "modelId": "nvidia-nemotron-3-nano-30b-a3b",
       "benchmarkId": "aa-briefcase",
-      "raw": 112,
-      "stderr": 11.5,
+      "raw": 100,
+      "stderr": 10,
       "sourceLabel": "NVIDIA Nemotron 3 Nano 30B A3B (Reasoning)"
     },
     {
       "modelId": "nemotron-3-nano-omni-30b-a3b-reasoning",
       "benchmarkId": "aa-gdpval",
-      "raw": 417,
+      "raw": 416,
       "stderr": 21,
       "sourceLabel": "Nemotron 3 Nano Omni 30B A3B Reasoning"
     },
@@ -19084,15 +19306,15 @@
     {
       "modelId": "qwen3-32b",
       "benchmarkId": "aa-gdpval",
-      "raw": 241,
+      "raw": 240,
       "stderr": 18,
       "sourceLabel": "Qwen3 32B (Reasoning)"
     },
     {
       "modelId": "qwen3-32b",
       "benchmarkId": "aa-briefcase",
-      "raw": 27,
-      "stderr": 12.5,
+      "raw": 9,
+      "stderr": 9.5,
       "sourceLabel": "Qwen3 32B (Reasoning)"
     },
     {
@@ -19123,7 +19345,7 @@
     {
       "modelId": "g9v3-39a5b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1192,
+      "raw": 1189,
       "stderr": 18,
       "sourceLabel": "G9v3-39A5B"
     },
@@ -19204,7 +19426,7 @@
     {
       "modelId": "nvidia-nemotron-3-nano-4b",
       "benchmarkId": "aa-gdpval",
-      "raw": 160,
+      "raw": 159,
       "stderr": 21,
       "sourceLabel": "NVIDIA Nemotron 3 Nano 4B"
     },
@@ -19247,7 +19469,7 @@
     {
       "modelId": "granite-4-1-3b",
       "benchmarkId": "aa-gdpval",
-      "raw": 75,
+      "raw": 74,
       "stderr": 20,
       "sourceLabel": "Granite 4.1 3B"
     },
@@ -19260,21 +19482,21 @@
     {
       "modelId": "granite-4-2-3b",
       "benchmarkId": "artificial-analysis",
-      "raw": 11,
+      "raw": 9,
       "sourceLabel": "Granite 4.2 3B"
     },
     {
       "modelId": "granite-4-2-3b",
       "benchmarkId": "aa-gdpval",
-      "raw": 391,
-      "stderr": 22,
+      "raw": 390,
+      "stderr": 21,
       "sourceLabel": "Granite 4.2 3B"
     },
     {
       "modelId": "granite-4-2-3b",
       "benchmarkId": "aa-briefcase",
-      "raw": 134,
-      "stderr": 12,
+      "raw": 121,
+      "stderr": 10.5,
       "sourceLabel": "Granite 4.2 3B"
     },
     {
@@ -19293,15 +19515,15 @@
     {
       "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1094,
+      "raw": 1091,
       "stderr": 14,
       "sourceLabel": "Nemotron 3 Ultra 550B A55B (Reasoning)"
     },
     {
       "modelId": "nemotron-3-ultra-550b-a55b",
       "benchmarkId": "aa-briefcase",
-      "raw": 877,
-      "stderr": 7.5,
+      "raw": 878,
+      "stderr": 7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55B (Reasoning)"
     },
     {
@@ -19367,23 +19589,36 @@
     },
     {
       "modelId": "ministral-3-8b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 5,
+      "sourceLabel": "Ministral 3 8B"
+    },
+    {
+      "modelId": "ministral-3-8b",
       "benchmarkId": "aa-gdpval",
-      "raw": 406,
+      "raw": 405,
       "stderr": 17,
       "sourceLabel": "Ministral 3 8B"
     },
     {
       "modelId": "ministral-3-8b",
       "benchmarkId": "aa-briefcase",
-      "raw": 113,
-      "stderr": 11,
+      "raw": 99,
+      "stderr": 10.5,
       "sourceLabel": "Ministral 3 8B"
     },
     {
       "modelId": "qwen3-8b",
       "benchmarkId": "aa-gdpval",
-      "raw": 167,
+      "raw": 165,
       "stderr": 19,
+      "sourceLabel": "Qwen3 8B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-8b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
       "sourceLabel": "Qwen3 8B (Reasoning)"
     },
     {
@@ -19409,7 +19644,7 @@
     {
       "modelId": "qwen3-next-80b-a3b",
       "benchmarkId": "aa-gdpval",
-      "raw": 326,
+      "raw": 325,
       "stderr": 20,
       "sourceLabel": "Qwen3 Next 80B A3B (Reasoning)"
     },
@@ -19453,7 +19688,7 @@
     {
       "modelId": "motif-3-beta",
       "benchmarkId": "aa-gdpval",
-      "raw": 1186,
+      "raw": 1183,
       "stderr": 17,
       "sourceLabel": "Motif 3 (Beta)"
     },
@@ -19471,9 +19706,22 @@
     },
     {
       "modelId": "qwen3-coder-next",
+      "benchmarkId": "artificial-analysis",
+      "raw": 10,
+      "sourceLabel": "Qwen3 Coder Next"
+    },
+    {
+      "modelId": "qwen3-coder-next",
       "benchmarkId": "aa-gdpval",
-      "raw": 666,
+      "raw": 664,
       "stderr": 18,
+      "sourceLabel": "Qwen3 Coder Next"
+    },
+    {
+      "modelId": "qwen3-coder-next",
+      "benchmarkId": "aa-briefcase",
+      "raw": 414,
+      "stderr": 10,
       "sourceLabel": "Qwen3 Coder Next"
     },
     {
@@ -19781,9 +20029,22 @@
     },
     {
       "modelId": "hy3",
+      "benchmarkId": "artificial-analysis",
+      "raw": 26,
+      "sourceLabel": "Hy3"
+    },
+    {
+      "modelId": "hy3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1139,
+      "raw": 1136,
       "stderr": 17,
+      "sourceLabel": "Hy3"
+    },
+    {
+      "modelId": "hy3",
+      "benchmarkId": "aa-briefcase",
+      "raw": 950,
+      "stderr": 10,
       "sourceLabel": "Hy3"
     },
     {
@@ -19824,20 +20085,20 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "artificial-analysis",
-      "raw": 50,
+      "raw": 44,
       "sourceLabel": "Kimi K3 (max)"
     },
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1588,
+      "raw": 1584,
       "stderr": 15,
       "sourceLabel": "Kimi K3 (max)"
     },
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1500,
+      "raw": 1497,
       "stderr": 6.5,
       "sourceLabel": "Kimi K3 (max)"
     },
@@ -20032,21 +20293,21 @@
     {
       "modelId": "mistral-large-3",
       "benchmarkId": "artificial-analysis",
-      "raw": 11,
+      "raw": 10,
       "sourceLabel": "Mistral Large 3"
     },
     {
       "modelId": "mistral-large-3",
       "benchmarkId": "aa-gdpval",
-      "raw": 590,
+      "raw": 588,
       "stderr": 16,
       "sourceLabel": "Mistral Large 3"
     },
     {
       "modelId": "mistral-large-3",
       "benchmarkId": "aa-briefcase",
-      "raw": 253,
-      "stderr": 10.5,
+      "raw": 246,
+      "stderr": 9,
       "sourceLabel": "Mistral Large 3"
     },
     {
@@ -20142,20 +20403,20 @@
     {
       "modelId": "minimax-m3",
       "benchmarkId": "artificial-analysis",
-      "raw": 36,
+      "raw": 30,
       "sourceLabel": "MiniMax-M3"
     },
     {
       "modelId": "minimax-m3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1306,
+      "raw": 1304,
       "stderr": 14,
       "sourceLabel": "MiniMax-M3"
     },
     {
       "modelId": "minimax-m3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1099,
+      "raw": 1096,
       "stderr": 6.5,
       "sourceLabel": "MiniMax-M3"
     },
@@ -20481,15 +20742,15 @@
     {
       "modelId": "o3-mini",
       "benchmarkId": "aa-gdpval",
-      "raw": 422,
+      "raw": 421,
       "stderr": 19,
       "sourceLabel": "o3-mini (high)"
     },
     {
       "modelId": "o3-mini",
       "benchmarkId": "aa-briefcase",
-      "raw": 167,
-      "stderr": 12.5,
+      "raw": 161,
+      "stderr": 10,
       "sourceLabel": "o3-mini (high)"
     },
     {
@@ -20562,9 +20823,21 @@
     {
       "modelId": "motif-3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1202,
+      "raw": 1199,
       "stderr": 17,
       "sourceLabel": "Motif 3"
+    },
+    {
+      "modelId": "nemotron-3-nano",
+      "benchmarkId": "artificial-analysis",
+      "raw": 9,
+      "sourceLabel": "Nemotron 3 Nano"
+    },
+    {
+      "modelId": "nemotron-3-super",
+      "benchmarkId": "artificial-analysis",
+      "raw": 14,
+      "sourceLabel": "Nemotron 3 Super"
     },
     {
       "modelId": "nemotron-3-super",
@@ -20619,6 +20892,12 @@
       "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
       "raw": 13,
       "sourceLabel": "Nemotron 3 Super"
+    },
+    {
+      "modelId": "nemotron-3-ultra",
+      "benchmarkId": "artificial-analysis",
+      "raw": 23,
+      "sourceLabel": "Nemotron 3 Ultra"
     },
     {
       "modelId": "nemotron-3-ultra",
@@ -21052,16 +21331,22 @@
     },
     {
       "modelId": "solar-pro-3",
+      "benchmarkId": "artificial-analysis",
+      "raw": 8,
+      "sourceLabel": "Solar Pro 3"
+    },
+    {
+      "modelId": "solar-pro-3",
       "benchmarkId": "aa-gdpval",
-      "raw": 448,
+      "raw": 447,
       "stderr": 16,
       "sourceLabel": "Solar Pro 3"
     },
     {
       "modelId": "solar-pro-3",
       "benchmarkId": "aa-briefcase",
-      "raw": 134,
-      "stderr": 11,
+      "raw": 122,
+      "stderr": 9,
       "sourceLabel": "Solar Pro 3"
     },
     {
@@ -21127,22 +21412,16 @@
     },
     {
       "modelId": "ling-3-0-flash",
-      "benchmarkId": "artificial-analysis",
-      "raw": 27,
-      "sourceLabel": "Ling 3.0 Flash"
-    },
-    {
-      "modelId": "ling-3-0-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1039,
+      "raw": 1036,
       "stderr": 18,
       "sourceLabel": "Ling 3.0 Flash"
     },
     {
       "modelId": "ling-3-0-flash",
       "benchmarkId": "aa-briefcase",
-      "raw": 802,
-      "stderr": 9.5,
+      "raw": 800,
+      "stderr": 8.5,
       "sourceLabel": "Ling 3.0 Flash"
     },
     {
@@ -21241,21 +21520,21 @@
     {
       "modelId": "ling-3-0-tiny",
       "benchmarkId": "artificial-analysis",
-      "raw": 16,
+      "raw": 12,
       "sourceLabel": "Ling 3.0 Tiny"
     },
     {
       "modelId": "ling-3-0-tiny",
       "benchmarkId": "aa-gdpval",
-      "raw": 718,
+      "raw": 716,
       "stderr": 20,
       "sourceLabel": "Ling 3.0 Tiny"
     },
     {
       "modelId": "ling-3-0-tiny",
       "benchmarkId": "aa-briefcase",
-      "raw": 485,
-      "stderr": 11,
+      "raw": 481,
+      "stderr": 9.5,
       "sourceLabel": "Ling 3.0 Tiny"
     },
     {
@@ -21417,15 +21696,15 @@
     {
       "modelId": "deepseek-v3-1-terminus",
       "benchmarkId": "aa-gdpval",
-      "raw": 828,
-      "stderr": 19,
+      "raw": 826,
+      "stderr": 18,
       "sourceLabel": "DeepSeek V3.1 Terminus (Reasoning)"
     },
     {
       "modelId": "deepseek-v3-1-terminus",
       "benchmarkId": "aa-briefcase",
-      "raw": 474,
-      "stderr": 10,
+      "raw": 464,
+      "stderr": 9.5,
       "sourceLabel": "DeepSeek V3.1 Terminus (Reasoning)"
     },
     {
@@ -21464,15 +21743,15 @@
     {
       "modelId": "gemini-3-1-flash-lite",
       "benchmarkId": "aa-gdpval",
-      "raw": 597,
+      "raw": 596,
       "stderr": 16,
       "sourceLabel": "Gemini 3.1 Flash-Lite"
     },
     {
       "modelId": "gemini-3-1-flash-lite",
       "benchmarkId": "aa-briefcase",
-      "raw": 234,
-      "stderr": 10.5,
+      "raw": 226,
+      "stderr": 8.5,
       "sourceLabel": "Gemini 3.1 Flash-Lite"
     },
     {
@@ -21612,21 +21891,21 @@
     {
       "modelId": "gemini-3-1-pro-preview",
       "benchmarkId": "artificial-analysis",
-      "raw": 37,
+      "raw": 30,
       "sourceLabel": "Gemini 3.1 Pro Preview"
     },
     {
       "modelId": "gemini-3-1-pro-preview",
       "benchmarkId": "aa-gdpval",
-      "raw": 907,
+      "raw": 904,
       "stderr": 15,
       "sourceLabel": "Gemini 3.1 Pro Preview"
     },
     {
       "modelId": "gemini-3-1-pro-preview",
       "benchmarkId": "aa-briefcase",
-      "raw": 465,
-      "stderr": 9.5,
+      "raw": 459,
+      "stderr": 8,
       "sourceLabel": "Gemini 3.1 Pro Preview"
     },
     {
@@ -21692,29 +21971,29 @@
     {
       "modelId": "mistral-medium-3-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 557,
+      "raw": 555,
       "stderr": 18,
       "sourceLabel": "Mistral Medium 3.1"
     },
     {
       "modelId": "mistral-medium-3-1",
       "benchmarkId": "aa-briefcase",
-      "raw": 540,
-      "stderr": 11,
+      "raw": 532,
+      "stderr": 9,
       "sourceLabel": "Mistral Medium 3.1"
     },
     {
       "modelId": "mistral-small-3-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 551,
+      "raw": 550,
       "stderr": 18,
       "sourceLabel": "Mistral Small 3.1"
     },
     {
       "modelId": "mistral-small-3-1",
       "benchmarkId": "aa-briefcase",
-      "raw": 334,
-      "stderr": 11,
+      "raw": 325,
+      "stderr": 9.5,
       "sourceLabel": "Mistral Small 3.1"
     },
     {
@@ -21810,7 +22089,7 @@
     {
       "modelId": "deepseek-v3-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 813,
+      "raw": 810,
       "stderr": 19,
       "sourceLabel": "DeepSeek V3.2 (Reasoning)"
     },
@@ -21895,8 +22174,15 @@
     {
       "modelId": "mistral-small-3-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 30,
+      "raw": 29,
       "stderr": 19,
+      "sourceLabel": "Mistral Small 3.2"
+    },
+    {
+      "modelId": "mistral-small-3-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
       "sourceLabel": "Mistral Small 3.2"
     },
     {
@@ -21995,7 +22281,7 @@
     {
       "modelId": "g9v3-3b",
       "benchmarkId": "aa-gdpval",
-      "raw": 810,
+      "raw": 807,
       "stderr": 26,
       "sourceLabel": "G9v3-3B"
     },
@@ -22135,7 +22421,7 @@
     {
       "modelId": "qwen3-5-35b-a3b",
       "benchmarkId": "aa-gdpval",
-      "raw": 742,
+      "raw": 740,
       "stderr": 20,
       "sourceLabel": "Qwen3.5 35B A3B (Non-reasoning)"
     },
@@ -22148,16 +22434,22 @@
     },
     {
       "modelId": "qwen3-5-397b-a17b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 19,
+      "sourceLabel": "Qwen3.5 397B A17B"
+    },
+    {
+      "modelId": "qwen3-5-397b-a17b",
       "benchmarkId": "aa-gdpval",
-      "raw": 907,
+      "raw": 905,
       "stderr": 15,
       "sourceLabel": "Qwen3.5 397B A17B (Reasoning)"
     },
     {
       "modelId": "qwen3-5-397b-a17b",
       "benchmarkId": "aa-briefcase",
-      "raw": 564,
-      "stderr": 9,
+      "raw": 563,
+      "stderr": 7.5,
       "sourceLabel": "Qwen3.5 397B A17B (Reasoning)"
     },
     {
@@ -22169,7 +22461,7 @@
     {
       "modelId": "qwen3-5-9b",
       "benchmarkId": "aa-gdpval",
-      "raw": 590,
+      "raw": 588,
       "stderr": 18,
       "sourceLabel": "Qwen3.5 9B (Reasoning)"
     },
@@ -22183,15 +22475,15 @@
     {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1262,
+      "raw": 1259,
       "stderr": 14,
       "sourceLabel": "Gemini 3.5 Flash (high)"
     },
     {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "aa-briefcase",
-      "raw": 871,
-      "stderr": 7,
+      "raw": 870,
+      "stderr": 6.5,
       "sourceLabel": "Gemini 3.5 Flash (high)"
     },
     {
@@ -22386,21 +22678,21 @@
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "artificial-analysis",
-      "raw": 28,
+      "raw": 23,
       "sourceLabel": "Gemini 3.5 Flash-Lite"
     },
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "aa-gdpval",
-      "raw": 1067,
+      "raw": 1063,
       "stderr": 17,
       "sourceLabel": "Gemini 3.5 Flash-Lite"
     },
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "aa-briefcase",
-      "raw": 648,
-      "stderr": 9,
+      "raw": 645,
+      "stderr": 8,
       "sourceLabel": "Gemini 3.5 Flash-Lite"
     },
     {
@@ -22686,7 +22978,7 @@
     {
       "modelId": "claude-3-5-haiku",
       "benchmarkId": "aa-gdpval",
-      "raw": 409,
+      "raw": 408,
       "stderr": 18,
       "sourceLabel": "Claude 3.5 Haiku"
     },
@@ -22783,9 +23075,22 @@
     },
     {
       "modelId": "nemotron-3-5-lightning",
+      "benchmarkId": "artificial-analysis",
+      "raw": 14,
+      "sourceLabel": "Nemotron 3.5 Lightning"
+    },
+    {
+      "modelId": "nemotron-3-5-lightning",
       "benchmarkId": "aa-gdpval",
-      "raw": 769,
+      "raw": 767,
       "stderr": 19,
+      "sourceLabel": "Nemotron 3.5 Lightning"
+    },
+    {
+      "modelId": "nemotron-3-5-lightning",
+      "benchmarkId": "aa-briefcase",
+      "raw": 509,
+      "stderr": 10,
       "sourceLabel": "Nemotron 3.5 Lightning"
     },
     {
@@ -22855,16 +23160,22 @@
     },
     {
       "modelId": "mistral-medium-3-5",
+      "benchmarkId": "artificial-analysis",
+      "raw": 15,
+      "sourceLabel": "Mistral Medium 3.5"
+    },
+    {
+      "modelId": "mistral-medium-3-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 878,
+      "raw": 875,
       "stderr": 15,
       "sourceLabel": "Mistral Medium 3.5"
     },
     {
       "modelId": "mistral-medium-3-5",
       "benchmarkId": "aa-briefcase",
-      "raw": 527,
-      "stderr": 9,
+      "raw": 524,
+      "stderr": 7.5,
       "sourceLabel": "Mistral Medium 3.5"
     },
     {
@@ -23273,8 +23584,15 @@
     {
       "modelId": "qwen3-6-35b-a3b",
       "benchmarkId": "aa-gdpval",
-      "raw": 994,
-      "stderr": 15,
+      "raw": 992,
+      "stderr": 14,
+      "sourceLabel": "Qwen3.6 35B A3B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 711,
+      "stderr": 9,
       "sourceLabel": "Qwen3.6 35B A3B (Reasoning)"
     },
     {
@@ -23348,20 +23666,20 @@
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "artificial-analysis",
-      "raw": 40,
+      "raw": 34,
       "sourceLabel": "Gemini 3.6 Flash"
     },
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1334,
+      "raw": 1331,
       "stderr": 15,
       "sourceLabel": "Gemini 3.6 Flash (high)"
     },
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "aa-briefcase",
-      "raw": 955,
+      "raw": 953,
       "stderr": 7,
       "sourceLabel": "Gemini 3.6 Flash (high)"
     },
@@ -23549,7 +23867,7 @@
     {
       "modelId": "qwen3-6-plus",
       "benchmarkId": "aa-gdpval",
-      "raw": 1069,
+      "raw": 1066,
       "stderr": 14,
       "sourceLabel": "Qwen3.6 Plus"
     },
@@ -23772,13 +24090,13 @@
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "artificial-analysis",
-      "raw": 45,
+      "raw": 39,
       "sourceLabel": "Gemini 3.7 Flash (high)"
     },
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1435,
+      "raw": 1433,
       "stderr": 15,
       "sourceLabel": "Gemini 3.7 Flash (high)"
     },
@@ -23786,7 +24104,7 @@
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 1116,
-      "stderr": 7,
+      "stderr": 6.5,
       "sourceLabel": "Gemini 3.7 Flash (high)"
     },
     {
@@ -23961,8 +24279,8 @@
     {
       "modelId": "step-3-7-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 958,
-      "stderr": 15,
+      "raw": 954,
+      "stderr": 14,
       "sourceLabel": "Step 3.7 Flash"
     },
     {
@@ -23974,9 +24292,22 @@
     },
     {
       "modelId": "qwen3-7-plus",
+      "benchmarkId": "artificial-analysis",
+      "raw": 26,
+      "sourceLabel": "Qwen3.7 Plus"
+    },
+    {
+      "modelId": "qwen3-7-plus",
       "benchmarkId": "aa-gdpval",
-      "raw": 889,
+      "raw": 886,
       "stderr": 15,
+      "sourceLabel": "Qwen3.7 Plus"
+    },
+    {
+      "modelId": "qwen3-7-plus",
+      "benchmarkId": "aa-briefcase",
+      "raw": 913,
+      "stderr": 9,
       "sourceLabel": "Qwen3.7 Plus"
     },
     {
@@ -24039,15 +24370,15 @@
     {
       "modelId": "qwen3-7",
       "benchmarkId": "aa-gdpval",
-      "raw": 1193,
+      "raw": 1190,
       "stderr": 14,
       "sourceLabel": "Qwen3.7 Max"
     },
     {
       "modelId": "qwen3-7",
       "benchmarkId": "aa-briefcase",
-      "raw": 916,
-      "stderr": 7,
+      "raw": 918,
+      "stderr": 6,
       "sourceLabel": "Qwen3.7 Max"
     },
     {
@@ -24282,21 +24613,21 @@
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "artificial-analysis",
-      "raw": 47,
+      "raw": 41,
       "sourceLabel": "Gemini 3.8 Flash (high)"
     },
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1465,
-      "stderr": 20,
+      "raw": 1464,
+      "stderr": 19,
       "sourceLabel": "Gemini 3.8 Flash (high)"
     },
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "aa-briefcase",
-      "raw": 1201,
-      "stderr": 9.5,
+      "raw": 1202,
+      "stderr": 8.5,
       "sourceLabel": "Gemini 3.8 Flash (high)"
     },
     {
@@ -24478,7 +24809,7 @@
     {
       "modelId": "qwen3-8-flash-next",
       "benchmarkId": "aa-gdpval",
-      "raw": 1651,
+      "raw": 1648,
       "stderr": 17,
       "sourceLabel": "Qwen3.8-Flash-Next"
     },
@@ -24540,21 +24871,21 @@
     {
       "modelId": "qwen3-8",
       "benchmarkId": "artificial-analysis",
-      "raw": 47,
+      "raw": 40,
       "sourceLabel": "Qwen3.8 Max"
     },
     {
       "modelId": "qwen3-8",
       "benchmarkId": "aa-gdpval",
-      "raw": 1634,
+      "raw": 1630,
       "stderr": 14,
       "sourceLabel": "Qwen3.8 Max"
     },
     {
       "modelId": "qwen3-8",
       "benchmarkId": "aa-briefcase",
-      "raw": 1392,
-      "stderr": 7,
+      "raw": 1388,
+      "stderr": 6.5,
       "sourceLabel": "Qwen3.8 Max"
     },
     {
@@ -24715,7 +25046,7 @@
     {
       "modelId": "granite-4-1-30b",
       "benchmarkId": "aa-gdpval",
-      "raw": 380,
+      "raw": 379,
       "stderr": 16,
       "sourceLabel": "Granite 4.1 30B"
     },
@@ -24729,7 +25060,7 @@
     {
       "modelId": "granite-4-2-30b",
       "benchmarkId": "aa-gdpval",
-      "raw": 723,
+      "raw": 721,
       "stderr": 20,
       "sourceLabel": "Granite 4.2 30B"
     },
@@ -24863,16 +25194,22 @@
     },
     {
       "modelId": "gemma-4-31b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 15,
+      "sourceLabel": "Gemma 4 31B"
+    },
+    {
+      "modelId": "gemma-4-31b",
       "benchmarkId": "aa-gdpval",
-      "raw": 757,
+      "raw": 755,
       "stderr": 16,
       "sourceLabel": "Gemma 4 31B (Reasoning)"
     },
     {
       "modelId": "gemma-4-31b",
       "benchmarkId": "aa-briefcase",
-      "raw": 380,
-      "stderr": 9.5,
+      "raw": 377,
+      "stderr": 8,
       "sourceLabel": "Gemma 4 31B (Reasoning)"
     },
     {
@@ -25010,7 +25347,7 @@
     {
       "modelId": "exaone-4-5-33b",
       "benchmarkId": "aa-gdpval",
-      "raw": 629,
+      "raw": 628,
       "stderr": 20,
       "sourceLabel": "EXAONE 4.5 33B"
     },
@@ -25064,7 +25401,7 @@
     {
       "modelId": "gemma-4-e4b",
       "benchmarkId": "aa-gdpval",
-      "raw": 178,
+      "raw": 177,
       "stderr": 22,
       "sourceLabel": "Gemma 4 E4B (Reasoning)"
     },
@@ -25183,15 +25520,15 @@
     {
       "modelId": "deepseek-v4-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1119,
-      "stderr": 15,
+      "raw": 1116,
+      "stderr": 14,
       "sourceLabel": "DeepSeek V4 Flash (Reasoning, Max Effort)"
     },
     {
       "modelId": "deepseek-v4-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 833,
-      "stderr": 6.5,
+      "stderr": 6,
       "sourceLabel": "DeepSeek V4 Flash (Reasoning, Max Effort)"
     },
     {
@@ -25215,9 +25552,22 @@
     },
     {
       "modelId": "deepseek-v4-flash-vision",
+      "benchmarkId": "artificial-analysis",
+      "raw": 35,
+      "sourceLabel": "DeepSeek V4 Flash Vision (max)"
+    },
+    {
+      "modelId": "deepseek-v4-flash-vision",
       "benchmarkId": "aa-gdpval",
-      "raw": 1581,
+      "raw": 1577,
       "stderr": 15,
+      "sourceLabel": "DeepSeek V4 Flash Vision (Reasoning, Max Effort)"
+    },
+    {
+      "modelId": "deepseek-v4-flash-vision",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1432,
+      "stderr": 9.5,
       "sourceLabel": "DeepSeek V4 Flash Vision (Reasoning, Max Effort)"
     },
     {
@@ -25236,16 +25586,22 @@
     },
     {
       "modelId": "deepseek-v4-pro",
+      "benchmarkId": "artificial-analysis",
+      "raw": 31,
+      "sourceLabel": "DeepSeek V4 Pro (max)"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
       "benchmarkId": "aa-gdpval",
-      "raw": 1226,
+      "raw": 1223,
       "stderr": 14,
       "sourceLabel": "DeepSeek V4 Pro (Reasoning, Max Effort)"
     },
     {
       "modelId": "deepseek-v4-pro",
       "benchmarkId": "aa-briefcase",
-      "raw": 926,
-      "stderr": 6.5,
+      "raw": 925,
+      "stderr": 6,
       "sourceLabel": "DeepSeek V4 Pro (Reasoning, Max Effort)"
     },
     {
@@ -25496,14 +25852,14 @@
     {
       "modelId": "gpt-4",
       "benchmarkId": "aa-gdpval",
-      "raw": 190,
+      "raw": 189,
       "stderr": 18,
       "sourceLabel": "GPT-4"
     },
     {
       "modelId": "gpt-4o-mini",
       "benchmarkId": "aa-gdpval",
-      "raw": 189,
+      "raw": 188,
       "stderr": 19,
       "sourceLabel": "GPT-4o mini"
     },
@@ -25735,6 +26091,12 @@
     },
     {
       "modelId": "llama-4-maverick",
+      "benchmarkId": "artificial-analysis",
+      "raw": 9,
+      "sourceLabel": "Llama 4 Maverick"
+    },
+    {
+      "modelId": "llama-4-maverick",
       "benchmarkId": "aa-briefcase",
       "raw": 0,
       "stderr": 0,
@@ -25836,9 +26198,22 @@
     },
     {
       "modelId": "llama-4-scout",
+      "benchmarkId": "artificial-analysis",
+      "raw": 6,
+      "sourceLabel": "Llama 4 Scout"
+    },
+    {
+      "modelId": "llama-4-scout",
       "benchmarkId": "aa-gdpval",
-      "raw": 61,
+      "raw": 60,
       "stderr": 17,
+      "sourceLabel": "Llama 4 Scout"
+    },
+    {
+      "modelId": "llama-4-scout",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
       "sourceLabel": "Llama 4 Scout"
     },
     {
@@ -26031,9 +26406,22 @@
     },
     {
       "modelId": "mistral-small-4",
+      "benchmarkId": "artificial-analysis",
+      "raw": 11,
+      "sourceLabel": "Mistral Small 4"
+    },
+    {
+      "modelId": "mistral-small-4",
       "benchmarkId": "aa-gdpval",
-      "raw": 538,
+      "raw": 537,
       "stderr": 19,
+      "sourceLabel": "Mistral Small 4 (Reasoning)"
+    },
+    {
+      "modelId": "mistral-small-4",
+      "benchmarkId": "aa-briefcase",
+      "raw": 256,
+      "stderr": 10,
       "sourceLabel": "Mistral Small 4 (Reasoning)"
     },
     {
@@ -26152,14 +26540,14 @@
     {
       "modelId": "solar-pro4",
       "benchmarkId": "aa-gdpval",
-      "raw": 1198,
+      "raw": 1195,
       "stderr": 17,
       "sourceLabel": "Solar Pro 4"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "aa-gdpval",
-      "raw": 821,
+      "raw": 819,
       "stderr": 17,
       "sourceLabel": "Claude 4 Sonnet (Reasoning)"
     },
@@ -26465,7 +26853,7 @@
     {
       "modelId": "gpt-4-1-mini",
       "benchmarkId": "aa-gdpval",
-      "raw": 455,
+      "raw": 453,
       "stderr": 18,
       "sourceLabel": "GPT-4.1 mini"
     },
@@ -26546,7 +26934,7 @@
     {
       "modelId": "gpt-4-1-nano",
       "benchmarkId": "aa-gdpval",
-      "raw": 14,
+      "raw": 13,
       "stderr": 19,
       "sourceLabel": "GPT-4.1 nano"
     },
@@ -26709,22 +27097,16 @@
     },
     {
       "modelId": "granite-4-2-8b",
-      "benchmarkId": "artificial-analysis",
-      "raw": 14,
-      "sourceLabel": "Granite 4.2 8B"
-    },
-    {
-      "modelId": "granite-4-2-8b",
       "benchmarkId": "aa-gdpval",
-      "raw": 648,
+      "raw": 646,
       "stderr": 21,
       "sourceLabel": "Granite 4.2 8B"
     },
     {
       "modelId": "granite-4-2-8b",
       "benchmarkId": "aa-briefcase",
-      "raw": 333,
-      "stderr": 10.5,
+      "raw": 320,
+      "stderr": 9,
       "sourceLabel": "Granite 4.2 8B"
     },
     {
@@ -26973,8 +27355,14 @@
     },
     {
       "modelId": "grok-4-3",
+      "benchmarkId": "artificial-analysis",
+      "raw": 15,
+      "sourceLabel": "Grok 4.3 (Non-reasoning)"
+    },
+    {
+      "modelId": "grok-4-3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1022,
+      "raw": 1018,
       "stderr": 14,
       "sourceLabel": "Grok 4.3 (high)"
     },
@@ -26982,7 +27370,7 @@
       "modelId": "grok-4-3",
       "benchmarkId": "aa-briefcase",
       "raw": 762,
-      "stderr": 7.5,
+      "stderr": 7,
       "sourceLabel": "Grok 4.3 (high)"
     },
     {
@@ -27269,21 +27657,21 @@
     {
       "modelId": "grok-4-5",
       "benchmarkId": "artificial-analysis",
-      "raw": 45,
+      "raw": 39,
       "sourceLabel": "Grok 4.5 (high)"
     },
     {
       "modelId": "grok-4-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 1433,
+      "raw": 1430,
       "stderr": 15,
       "sourceLabel": "Grok 4.5 (high)"
     },
     {
       "modelId": "grok-4-5",
       "benchmarkId": "aa-briefcase",
-      "raw": 1288,
-      "stderr": 6,
+      "raw": 1283,
+      "stderr": 6.5,
       "sourceLabel": "Grok 4.5 (high)"
     },
     {
@@ -27485,21 +27873,21 @@
     {
       "modelId": "claude-4-5-haiku",
       "benchmarkId": "artificial-analysis",
-      "raw": 22,
+      "raw": 18,
       "sourceLabel": "Claude 4.5 Haiku"
     },
     {
       "modelId": "claude-4-5-haiku",
       "benchmarkId": "aa-gdpval",
-      "raw": 857,
+      "raw": 854,
       "stderr": 15,
       "sourceLabel": "Claude 4.5 Haiku (Reasoning)"
     },
     {
       "modelId": "claude-4-5-haiku",
       "benchmarkId": "aa-briefcase",
-      "raw": 618,
-      "stderr": 8,
+      "raw": 614,
+      "stderr": 7,
       "sourceLabel": "Claude 4.5 Haiku (Reasoning)"
     },
     {
@@ -27791,15 +28179,15 @@
     {
       "modelId": "claude-4-5-sonnet",
       "benchmarkId": "aa-gdpval",
-      "raw": 991,
+      "raw": 989,
       "stderr": 16,
       "sourceLabel": "Claude 4.5 Sonnet (Reasoning)"
     },
     {
       "modelId": "claude-4-5-sonnet",
       "benchmarkId": "aa-briefcase",
-      "raw": 711,
-      "stderr": 11,
+      "raw": 712,
+      "stderr": 9.5,
       "sourceLabel": "Claude 4.5 Sonnet (Reasoning)"
     },
     {
@@ -27935,7 +28323,7 @@
     {
       "modelId": "glm-4-6",
       "benchmarkId": "aa-gdpval",
-      "raw": 876,
+      "raw": 874,
       "stderr": 17,
       "sourceLabel": "GLM-4.6 (Reasoning)"
     },
@@ -28019,21 +28407,21 @@
     {
       "modelId": "grok-4-6",
       "benchmarkId": "artificial-analysis",
-      "raw": 51,
-      "sourceLabel": "Grok 4.6 (high)"
+      "raw": 44,
+      "sourceLabel": "Grok 4.6 (xhigh)"
     },
     {
       "modelId": "grok-4-6",
       "benchmarkId": "aa-gdpval",
-      "raw": 1666,
-      "stderr": 16,
+      "raw": 1663,
+      "stderr": 15,
       "sourceLabel": "Grok 4.6 (xhigh)"
     },
     {
       "modelId": "grok-4-6",
       "benchmarkId": "aa-briefcase",
-      "raw": 1549,
-      "stderr": 7,
+      "raw": 1545,
+      "stderr": 6.5,
       "sourceLabel": "Grok 4.6 (xhigh)"
     },
     {
@@ -28394,15 +28782,15 @@
     {
       "modelId": "claude-sonnet-4-6",
       "benchmarkId": "aa-gdpval",
-      "raw": 1298,
+      "raw": 1295,
       "stderr": 14,
       "sourceLabel": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)"
     },
     {
       "modelId": "claude-sonnet-4-6",
       "benchmarkId": "aa-briefcase",
-      "raw": 1067,
-      "stderr": 6.5,
+      "raw": 1065,
+      "stderr": 6,
       "sourceLabel": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)"
     },
     {
@@ -28595,7 +28983,7 @@
     {
       "modelId": "glm-4-7",
       "benchmarkId": "aa-gdpval",
-      "raw": 1100,
+      "raw": 1096,
       "stderr": 16,
       "sourceLabel": "GLM-4.7 (Reasoning)"
     },
@@ -28693,15 +29081,15 @@
     {
       "modelId": "claude-opus-4-7",
       "benchmarkId": "aa-gdpval",
-      "raw": 1399,
+      "raw": 1396,
       "stderr": 14,
       "sourceLabel": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)"
     },
     {
       "modelId": "claude-opus-4-7",
       "benchmarkId": "aa-briefcase",
-      "raw": 1256,
-      "stderr": 6.5,
+      "raw": 1252,
+      "stderr": 6,
       "sourceLabel": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)"
     },
     {
@@ -28895,15 +29283,15 @@
     {
       "modelId": "claude-opus-4-8",
       "benchmarkId": "aa-gdpval",
-      "raw": 1493,
+      "raw": 1489,
       "stderr": 13,
       "sourceLabel": "Claude Opus 4.8 (Adaptive Reasoning, Max Effort)"
     },
     {
       "modelId": "claude-opus-4-8",
       "benchmarkId": "aa-briefcase",
-      "raw": 1319,
-      "stderr": 6.5,
+      "raw": 1316,
+      "stderr": 6,
       "sourceLabel": "Claude Opus 4.8 (Adaptive Reasoning, Max Effort)"
     },
     {
@@ -29090,16 +29478,22 @@
     {
       "modelId": "quasar-438b-max-based-on-glm-5-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 1242,
+      "raw": 1239,
       "stderr": 19,
       "sourceLabel": "Quasar 438B (max, based on GLM-5.2)"
     },
     {
       "modelId": "quasar-438b-max-based-on-glm-5-2",
       "benchmarkId": "aa-briefcase",
-      "raw": 1124,
+      "raw": 1123,
       "stderr": 10,
       "sourceLabel": "Quasar 438B (max, based on GLM-5.2)"
+    },
+    {
+      "modelId": "quasar-438b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 27,
+      "sourceLabel": "Quasar 438B (max)"
     },
     {
       "modelId": "gpt-5-chat",
@@ -29124,21 +29518,21 @@
     {
       "modelId": "claude-fable-5",
       "benchmarkId": "artificial-analysis",
-      "raw": 53,
+      "raw": 50,
       "sourceLabel": "Claude Fable 5 (with fallback)"
     },
     {
       "modelId": "claude-fable-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 1635,
+      "raw": 1631,
       "stderr": 14,
       "sourceLabel": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)"
     },
     {
       "modelId": "claude-fable-5",
       "benchmarkId": "aa-briefcase",
-      "raw": 1534,
-      "stderr": 6.5,
+      "raw": 1530,
+      "stderr": 6,
       "sourceLabel": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)"
     },
     {
@@ -29444,8 +29838,8 @@
     {
       "modelId": "gpt-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 1018,
-      "stderr": 17,
+      "raw": 1015,
+      "stderr": 16,
       "sourceLabel": "GPT-5 (high)"
     },
     {
@@ -29575,8 +29969,15 @@
     {
       "modelId": "gpt-5-mini",
       "benchmarkId": "aa-gdpval",
-      "raw": 883,
+      "raw": 880,
       "stderr": 17,
+      "sourceLabel": "GPT-5 mini (high)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "aa-briefcase",
+      "raw": 438,
+      "stderr": 9.5,
       "sourceLabel": "GPT-5 mini (high)"
     },
     {
@@ -29801,20 +30202,20 @@
     {
       "modelId": "claude-opus-5",
       "benchmarkId": "artificial-analysis",
-      "raw": 54,
+      "raw": 51,
       "sourceLabel": "Claude Opus 5 (max)"
     },
     {
       "modelId": "claude-opus-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 1738,
+      "raw": 1735,
       "stderr": 16,
       "sourceLabel": "Claude Opus 5 (Adaptive Reasoning, Max Effort)"
     },
     {
       "modelId": "claude-opus-5",
       "benchmarkId": "aa-briefcase",
-      "raw": 1647,
+      "raw": 1645,
       "stderr": 7.5,
       "sourceLabel": "Claude Opus 5 (Adaptive Reasoning, Max Effort)"
     },
@@ -30030,20 +30431,20 @@
     {
       "modelId": "claude-sonnet-5",
       "benchmarkId": "artificial-analysis",
-      "raw": 45,
+      "raw": 38,
       "sourceLabel": "Claude Sonnet 5 (max)"
     },
     {
       "modelId": "claude-sonnet-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 1505,
+      "raw": 1501,
       "stderr": 14,
       "sourceLabel": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)"
     },
     {
       "modelId": "claude-sonnet-5",
       "benchmarkId": "aa-briefcase",
-      "raw": 1358,
+      "raw": 1355,
       "stderr": 6,
       "sourceLabel": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)"
     },
@@ -30331,20 +30732,20 @@
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "artificial-analysis",
-      "raw": 57,
+      "raw": 53,
       "sourceLabel": "Claude Fable 5.1 (max with fallback)"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 1767,
+      "raw": 1763,
       "stderr": 19,
       "sourceLabel": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "aa-briefcase",
-      "raw": 1665,
+      "raw": 1662,
       "stderr": 10,
       "sourceLabel": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)"
     },
@@ -30549,15 +30950,15 @@
     {
       "modelId": "glm-5-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 1185,
+      "raw": 1181,
       "stderr": 14,
       "sourceLabel": "GLM-5.1 (Reasoning)"
     },
     {
       "modelId": "glm-5-1",
       "benchmarkId": "aa-briefcase",
-      "raw": 966,
-      "stderr": 7,
+      "raw": 964,
+      "stderr": 6,
       "sourceLabel": "GLM-5.1 (Reasoning)"
     },
     {
@@ -30683,7 +31084,7 @@
     {
       "modelId": "gpt-5-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 933,
+      "raw": 930,
       "stderr": 17,
       "sourceLabel": "GPT-5.1 (high)"
     },
@@ -30793,6 +31194,20 @@
       "sourceLabel": "GPT 5.1"
     },
     {
+      "modelId": "minicpm5-2b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 829,
+      "stderr": 22,
+      "sourceLabel": "MiniCPM5-2B"
+    },
+    {
+      "modelId": "minicpm5-2b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 433,
+      "stderr": 11.5,
+      "sourceLabel": "MiniCPM5-2B"
+    },
+    {
       "modelId": "gpt-5-2-codex",
       "benchmarkId": "livebench",
       "raw": 74,
@@ -30866,15 +31281,15 @@
     {
       "modelId": "glm-5-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 1421,
+      "raw": 1418,
       "stderr": 13,
       "sourceLabel": "GLM-5.2 (max)"
     },
     {
       "modelId": "glm-5-2",
       "benchmarkId": "aa-briefcase",
-      "raw": 1239,
-      "stderr": 6,
+      "raw": 1234,
+      "stderr": 6.5,
       "sourceLabel": "GLM-5.2 (max)"
     },
     {
@@ -31390,7 +31805,7 @@
       "modelId": "gpt-5-3-codex",
       "benchmarkId": "aa-briefcase",
       "raw": 866,
-      "stderr": 7,
+      "stderr": 6.5,
       "sourceLabel": "GPT-5.3 Codex (xhigh)"
     },
     {
@@ -31419,21 +31834,21 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "artificial-analysis",
-      "raw": 46,
+      "raw": 42,
       "sourceLabel": "GLM-5.3-Flash"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1673,
-      "stderr": 16,
+      "raw": 1669,
+      "stderr": 15,
       "sourceLabel": "GLM-5.3-Flash"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-briefcase",
-      "raw": 1459,
-      "stderr": 9.5,
+      "raw": 1455,
+      "stderr": 8.5,
       "sourceLabel": "GLM-5.3-Flash"
     },
     {
@@ -31587,21 +32002,21 @@
     {
       "modelId": "glm-5-3",
       "benchmarkId": "artificial-analysis",
-      "raw": 49,
+      "raw": 45,
       "sourceLabel": "GLM-5.3 (max)"
     },
     {
       "modelId": "glm-5-3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1679,
+      "raw": 1676,
       "stderr": 16,
       "sourceLabel": "GLM-5.3 (max)"
     },
     {
       "modelId": "glm-5-3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1519,
-      "stderr": 9.5,
+      "raw": 1515,
+      "stderr": 8.5,
       "sourceLabel": "GLM-5.3 (max)"
     },
     {
@@ -31769,7 +32184,7 @@
     {
       "modelId": "gpt-5-4",
       "benchmarkId": "aa-gdpval",
-      "raw": 1310,
+      "raw": 1307,
       "stderr": 14,
       "sourceLabel": "GPT-5.4 (xhigh)"
     },
@@ -31957,15 +32372,15 @@
     {
       "modelId": "gpt-5-4-mini",
       "benchmarkId": "aa-gdpval",
-      "raw": 1098,
+      "raw": 1095,
       "stderr": 14,
       "sourceLabel": "GPT-5.4 mini (xhigh)"
     },
     {
       "modelId": "gpt-5-4-mini",
       "benchmarkId": "aa-briefcase",
-      "raw": 721,
-      "stderr": 8,
+      "raw": 719,
+      "stderr": 7,
       "sourceLabel": "GPT-5.4 mini (xhigh)"
     },
     {
@@ -32131,14 +32546,14 @@
     {
       "modelId": "gpt-5-4-nano",
       "benchmarkId": "aa-gdpval",
-      "raw": 1037,
+      "raw": 1035,
       "stderr": 14,
       "sourceLabel": "GPT-5.4 nano (xhigh)"
     },
     {
       "modelId": "gpt-5-4-nano",
       "benchmarkId": "aa-briefcase",
-      "raw": 675,
+      "raw": 670,
       "stderr": 10,
       "sourceLabel": "GPT-5.4 nano (xhigh)"
     },
@@ -32332,14 +32747,14 @@
     {
       "modelId": "gpt-5-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 1398,
+      "raw": 1396,
       "stderr": 13,
       "sourceLabel": "GPT-5.5 (xhigh)"
     },
     {
       "modelId": "gpt-5-5",
       "benchmarkId": "aa-briefcase",
-      "raw": 1137,
+      "raw": 1136,
       "stderr": 6.5,
       "sourceLabel": "GPT-5.5 (xhigh)"
     },
@@ -32559,21 +32974,21 @@
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "artificial-analysis",
-      "raw": 43,
+      "raw": 38,
       "sourceLabel": "GPT-5.6 Luna (max)"
     },
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "aa-gdpval",
-      "raw": 1493,
+      "raw": 1489,
       "stderr": 14,
       "sourceLabel": "GPT-5.6 Luna (max)"
     },
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "aa-briefcase",
-      "raw": 1342,
-      "stderr": 7.5,
+      "raw": 1339,
+      "stderr": 7,
       "sourceLabel": "GPT-5.6 Luna (max)"
     },
     {
@@ -32889,21 +33304,21 @@
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "artificial-analysis",
-      "raw": 51,
+      "raw": 47,
       "sourceLabel": "GPT-5.6 Sol (max)"
     },
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "aa-gdpval",
-      "raw": 1627,
+      "raw": 1624,
       "stderr": 14,
       "sourceLabel": "GPT-5.6 Sol (max)"
     },
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "aa-briefcase",
-      "raw": 1479,
-      "stderr": 7,
+      "raw": 1475,
+      "stderr": 7.5,
       "sourceLabel": "GPT-5.6 Sol (max)"
     },
     {
@@ -33126,21 +33541,21 @@
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "artificial-analysis",
-      "raw": 47,
+      "raw": 42,
       "sourceLabel": "GPT-5.6 Terra (max)"
     },
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "aa-gdpval",
-      "raw": 1480,
+      "raw": 1477,
       "stderr": 14,
       "sourceLabel": "GPT-5.6 Terra (max)"
     },
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "aa-briefcase",
-      "raw": 1334,
-      "stderr": 8,
+      "raw": 1330,
+      "stderr": 7,
       "sourceLabel": "GPT-5.6 Terra (max)"
     },
     {
@@ -33417,21 +33832,21 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "artificial-analysis",
-      "raw": 55,
+      "raw": 53,
       "sourceLabel": "GPT-6 Astra (max)"
     },
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "aa-gdpval",
-      "raw": 1583,
+      "raw": 1580,
       "stderr": 20,
       "sourceLabel": "GPT-6 Astra (max)"
     },
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "aa-briefcase",
-      "raw": 1564,
-      "stderr": 10,
+      "raw": 1562,
+      "stderr": 9.5,
       "sourceLabel": "GPT-6 Astra (max)"
     },
     {
@@ -33495,6 +33910,12 @@
       "benchmarkId": "livebench-instruction-following",
       "raw": 75.6,
       "sourceLabel": "GPT-6 Astra Max Effort"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "simplebench",
+      "raw": 83.6,
+      "sourceLabel": "GPT-6 Astra"
     },
     {
       "modelId": "gpt-6-astra",
@@ -33583,6 +34004,12 @@
       "benchmarkId": "datacamp-astra-vs-fable:internal-database-migration",
       "raw": 63.9,
       "sourceLabel": "GPT-6 Astra"
+    },
+    {
+      "modelId": "gpt-6-astra-pro",
+      "benchmarkId": "simplebench",
+      "raw": 86.5,
+      "sourceLabel": "GPT-6 Astra Pro"
     },
     {
       "modelId": "chatglm-6b",
@@ -33821,16 +34248,22 @@
     },
     {
       "modelId": "command-a",
+      "benchmarkId": "artificial-analysis",
+      "raw": 14,
+      "sourceLabel": "Command A+"
+    },
+    {
+      "modelId": "command-a",
       "benchmarkId": "aa-gdpval",
-      "raw": 660,
+      "raw": 658,
       "stderr": 18,
       "sourceLabel": "Command A+"
     },
     {
       "modelId": "command-a",
       "benchmarkId": "aa-briefcase",
-      "raw": 376,
-      "stderr": 10.5,
+      "raw": 366,
+      "stderr": 9.5,
       "sourceLabel": "Command A+"
     },
     {
@@ -34055,15 +34488,15 @@
     {
       "modelId": "north-mini-code",
       "benchmarkId": "aa-gdpval",
-      "raw": 491,
+      "raw": 490,
       "stderr": 18,
       "sourceLabel": "North Mini Code"
     },
     {
       "modelId": "north-mini-code",
       "benchmarkId": "aa-briefcase",
-      "raw": 239,
-      "stderr": 11,
+      "raw": 230,
+      "stderr": 9,
       "sourceLabel": "North Mini Code"
     },
     {
@@ -34161,7 +34594,7 @@
     {
       "modelId": "k-exaone",
       "benchmarkId": "aa-gdpval",
-      "raw": 541,
+      "raw": 540,
       "stderr": 20,
       "sourceLabel": "K-EXAONE (Reasoning)"
     },
@@ -34188,21 +34621,21 @@
     {
       "modelId": "muse-glimmer",
       "benchmarkId": "artificial-analysis",
-      "raw": 24,
+      "raw": 18,
       "sourceLabel": "Muse Glimmer (high)"
     },
     {
       "modelId": "muse-glimmer",
       "benchmarkId": "aa-gdpval",
-      "raw": 895,
+      "raw": 893,
       "stderr": 19,
       "sourceLabel": "Muse Glimmer (high)"
     },
     {
       "modelId": "muse-glimmer",
       "benchmarkId": "aa-briefcase",
-      "raw": 487,
-      "stderr": 10.5,
+      "raw": 481,
+      "stderr": 8.5,
       "sourceLabel": "Muse Glimmer (high)"
     },
     {
@@ -34254,21 +34687,21 @@
     {
       "modelId": "inkling",
       "benchmarkId": "artificial-analysis",
-      "raw": 32,
+      "raw": 26,
       "sourceLabel": "Inkling"
     },
     {
       "modelId": "inkling",
       "benchmarkId": "aa-gdpval",
-      "raw": 1168,
+      "raw": 1165,
       "stderr": 17,
       "sourceLabel": "Inkling (xhigh)"
     },
     {
       "modelId": "inkling",
       "benchmarkId": "aa-briefcase",
-      "raw": 837,
-      "stderr": 8.5,
+      "raw": 836,
+      "stderr": 7.5,
       "sourceLabel": "Inkling (xhigh)"
     },
     {
@@ -34562,16 +34995,22 @@
     },
     {
       "modelId": "inkling-small",
+      "benchmarkId": "artificial-analysis",
+      "raw": 26,
+      "sourceLabel": "Inkling Small"
+    },
+    {
+      "modelId": "inkling-small",
       "benchmarkId": "aa-gdpval",
-      "raw": 1194,
+      "raw": 1191,
       "stderr": 17,
       "sourceLabel": "Inkling Small"
     },
     {
       "modelId": "inkling-small",
       "benchmarkId": "aa-briefcase",
-      "raw": 915,
-      "stderr": 8.5,
+      "raw": 912,
+      "stderr": 7.5,
       "sourceLabel": "Inkling Small"
     },
     {
@@ -34722,9 +35161,22 @@
     },
     {
       "modelId": "trinity-large",
+      "benchmarkId": "artificial-analysis",
+      "raw": 11,
+      "sourceLabel": "Trinity Large Thinking"
+    },
+    {
+      "modelId": "trinity-large",
       "benchmarkId": "aa-gdpval",
-      "raw": 513,
+      "raw": 512,
       "stderr": 20,
+      "sourceLabel": "Trinity Large Thinking"
+    },
+    {
+      "modelId": "trinity-large",
+      "benchmarkId": "aa-briefcase",
+      "raw": 271,
+      "stderr": 9.5,
       "sourceLabel": "Trinity Large Thinking"
     },
     {
@@ -34832,15 +35284,15 @@
     {
       "modelId": "muse-spark",
       "benchmarkId": "aa-gdpval",
-      "raw": 1078,
+      "raw": 1076,
       "stderr": 14,
       "sourceLabel": "Muse Spark"
     },
     {
       "modelId": "muse-spark",
       "benchmarkId": "aa-briefcase",
-      "raw": 647,
-      "stderr": 8.5,
+      "raw": 644,
+      "stderr": 7,
       "sourceLabel": "Muse Spark"
     },
     {
@@ -34961,7 +35413,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -34969,7 +35421,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-06",
+      "retrievedAt": "2026-09-08",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
