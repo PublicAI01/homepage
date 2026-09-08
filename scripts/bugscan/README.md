@@ -1,11 +1,23 @@
 # 每日自动 bug 扫描
 
-每天中午 12:00,本机 cron 跑 `run.sh`:扫一遍代码,把 P0/P1 里**有把握**的直接修掉、
-过闸后推上 main(推 main 即部署,所以这是直接上线);没把握的不修,发邮件给人。
-P2 只记在报告里,不修。
+每天中午,本机 cron 跑 `run.sh`:扫一遍代码,把 P0/P1 里**有把握**的直接修掉、
+过闸后推上 main;没把握的不修,发邮件给人。P2 只记在报告里,不修。
 
 方法论不在这个仓 —— 在 `~/claude-skills`(独立仓 `qinwang-ai/auto-bugfix`),
-经 `~/.claude/skills/` 符号链接对本机所有项目可见。这里只有**本仓的闸门**。
+经 `~/.claude/skills/` 符号链接对本机所有项目可见。
+
+**这个脚本是仓库无关的**,同一份跑两个仓(12:00 homepage,12:30 publicai-index):
+
+    BUGSCAN_REPO=~/publicai-index scripts/bugscan/run.sh
+
+两份闸门脚本必然分叉,而这些闸是唯一挡在模型判断和线上之间的东西。所以差异
+不写在脚本里,写在**被扫仓自己的** `.claude/bugscan.profile` 里 —— 禁改路径、
+规模上限、跑哪些检查、哪些常数是人定的、"失败方向"在那个仓怎么读。没有 profile
+就拒扫:边界没人声明过就闷头扫,比不扫更危险。
+
+模型按 `BUGSCAN_MODELS` 的顺序试(默认 `claude-fable-5-1 claude-opus-5`),开跑前
+探一次,一轮三段用同一个 —— 修复阶段是 resume 扫描那个会话的,中途换模型等于让
+一段对话的后半截换了个人。
 
 ## 三段
 
@@ -21,15 +33,14 @@ P2 只记在报告里,不修。
 ## 闸(任何一道不过 = 整批回滚,不留半成品)
 
 1. **工作区必须干净、必须在 main** —— 否则直接跳过,不碰你手上的活
-2. **禁改路径** `FORBID_RE`:`.github/` `scripts/bugscan/` `.claude/`
-   `model-index/data/` `weights.ts` `public/` `.env*` `.gitignore`
-   `package.json` `pnpm-lock.yaml` `next.config.*`
+2. **禁改路径** `FORBID_RE` —— 各仓自己在 profile 里声明
 3. **规模闸** 400 行(added+deleted,含新增测试)
-4. **lint / tsc --noEmit / vitest** —— 脚本自己重跑一遍,修复方说过了不算
+4. **仓库自己的检查**(本仓:lint / tsc --noEmit / vitest)—— 脚本自己重跑一遍,
+   修复方说过了不算
 5. **独立对抗复审** 判 FAIL 即回滚
 
-判决域(`weights.ts` 里的权重与口径、榜单条数、文案配色)不是 bug,是人定的参数 ——
-信心 100% 也不改,只报告 + 走邮件。清单写在 `.claude/bugscan.md`。
+判决域不是 bug,是人定的参数 —— 信心 100% 也不改,只报告 + 走邮件。本仓的清单
+(`weights.ts` 的权重与口径、榜单条数、文案配色)写在 `.claude/bugscan.md` 与 profile。
 
 ## 什么时候会收到邮件
 
@@ -40,7 +51,7 @@ P2 只记在报告里,不修。
 
 ## 日志与产物
 
-`~/.local/state/bugscan/homepage/YYYY-MM-DD.{scan,fix,review}.md` 和 `.log`。
+`~/.local/state/bugscan/<仓名>/YYYY-MM-DD.{scan,fix,review}.md` 和 `.log`。
 想接着人工修:`claude --resume <扫描的 session id>`(id 在当天的 `.log` 里)。
 
 ## 手动
@@ -48,6 +59,8 @@ P2 只记在报告里,不修。
     scripts/bugscan/run.sh --scan-only   # 只扫,不改任何东西
     scripts/bugscan/run.sh --dry-run     # 走完全部闸,过了也不提交,diff 留在工作区
     scripts/bugscan/run.sh               # 完整流程(会推)
+
+    BUGSCAN_REPO=~/publicai-index scripts/bugscan/run.sh --scan-only
 
 ## 关掉
 
