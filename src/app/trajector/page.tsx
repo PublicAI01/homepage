@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     'Trajector pays you for the AI coding trajectories you already produce — captured locally on your own machine, redacted by default, uploaded only with your consent.',
   keywords:
-    'Trajector, Claude Code, coding agent data, get paid for coding sessions, AI training data, trajectory data, PublicAI',
+    'Trajector, coding agent, coding agent data, get paid for coding sessions, AI training data, trajectory data, PublicAI',
 };
 
 const PANEL =
@@ -29,7 +29,7 @@ const MEASURE = 'max-w-[68ch]';
 const steps = [
   {
     title: 'Install the CLI',
-    text: 'One binary. It captures the coding sessions you already run — locally, on your machine.',
+    text: 'One binary. It sits between your coding agent and the model API, capturing the sessions you already run — locally, on your machine.',
   },
   {
     title: 'Review and upload',
@@ -67,8 +67,8 @@ const faq = [
     a: (
       <>
         Trajector turns your real coding sessions into rewards. Install the CLI,
-        enable it on the projects you choose, and keep working with Claude Code
-        as usual — your session trajectories are collected, verified, and
+        enable it on the projects you choose, and keep working with your coding
+        agent as usual — your session trajectories are collected, verified, and
         rewarded.
       </>
     ),
@@ -82,10 +82,10 @@ const faq = [
         <code className="text-code font-mono text-white">claude-fable-5-1</code>{' '}
         and{' '}
         <code className="text-code font-mono text-white">claude-opus-5</code>{' '}
-        coding sessions are collected — run Claude Code with the model set to
-        one of those to be rewarded. Sessions from other models are rejected and
-        earn nothing; they show up as rejected in your session list. How to
-        switch, and the full beta rules (they may change), are in{' '}
+        sessions are collected — point your agent at one of those models to be
+        rewarded. Sessions from other models are rejected and earn nothing; they
+        show up as rejected in your session list. How to switch, and the full
+        beta rules (they may change), are in{' '}
         <a
           href={`${TRAJECTOR_DOCS_LINK}/rewards`}
           target="_blank"
@@ -150,8 +150,9 @@ const faq = [
     q: 'Who can join?',
     a: (
       <>
-        Any developer using Claude Code, contributing sessions from code they
-        own or that is open source. If you build, you can earn.
+        Any developer working with a supported coding agent, contributing
+        sessions from code they own or that is open source. If you build, you
+        can earn.
       </>
     ),
   },
@@ -192,8 +193,9 @@ export default function Trajector() {
             </Button>
           </div>
           <p className="text-body-sm mt-7 text-[#78758A]">
-            <b className="font-medium text-white">Coverage today:</b> Claude
-            Code on macOS and Linux; Windows in beta. Read the{' '}
+            <b className="font-medium text-white">Coverage today:</b> one coding
+            agent, with more as support lands. macOS and Linux; Windows in beta.
+            Read the{' '}
             <a
               href={TRAJECTOR_DOCS_LINK}
               target="_blank"
@@ -213,10 +215,10 @@ export default function Trajector() {
           )}>
           <p className={cn(LABEL, 'mb-4')}>The shape of a session</p>
           <pre className="text-[#D9D7E0]">
-            {`claude  ──►  127.0.0.1:41100  ──►  api.anthropic.com
-                    │              (or your own relay)
-                    │
-                    └──►  spool  ──►  redact  ──►  upload`}
+            {`coding agent  ──►  127.0.0.1:41100  ──►  model API
+                          │            (or your own relay)
+                          │
+                          └──►  spool  ──►  redact  ──►  upload`}
           </pre>
           <p className="text-micro mt-5 border-t border-white/8 pt-4 text-[#78758A]">
             The proxy forwards every request verbatim and records it on the
@@ -310,8 +312,9 @@ export default function Trajector() {
               If you build, you can earn.
             </h2>
             <p className={cn('text-body text-[#B9B7C4]', MEASURE)}>
-              Keep using Claude Code exactly as you do now. Enable the projects
-              you are happy to contribute, and leave the rest untouched.
+              Keep using your coding agent exactly as you do now. Enable the
+              projects you are happy to contribute, and leave the rest
+              untouched.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
