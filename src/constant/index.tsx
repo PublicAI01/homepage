@@ -19,6 +19,12 @@ const SUPPORT_EMAIL_ADDRESS = 'support@publicai.io';
 const OFFICE_EMAIL_ADDRESS = 'Office@publicai.io';
 const TOKEN_WEBSITE_LINK = 'https://token.publicai.io?utm_source=homepage';
 const TRAJECTOR_LINK = 'https://trajector.publicai.io/?utm_source=homepage';
+const TRAJECTOR_LOGIN_LINK =
+  'https://trajector.publicai.io/login?utm_source=homepage';
+const TRAJECTOR_SIGNUP_LINK =
+  'https://trajector.publicai.io/signup?utm_source=homepage';
+const TRAJECTOR_DOCS_LINK =
+  'https://docs.publicai.io/publicai-documentation/publicai-trajector-cli';
 const TRAJECTOR_PRIVACY_LINK =
   'https://trajector.publicai.io/privacy?utm_source=homepage';
 const TRAJECTOR_TERMS_LINK =
@@ -26,7 +32,7 @@ const TRAJECTOR_TERMS_LINK =
 const NAV_LIST = [
   {
     id: 'trajector',
-    href: TRAJECTOR_LINK,
+    href: '/trajector',
     label: 'Trajector',
     comingSoon: false,
   },
@@ -71,8 +77,11 @@ export {
   TELEGRAM_LINK,
   TELEGRAM_MINI_APP_LINK,
   TOKEN_WEBSITE_LINK,
+  TRAJECTOR_DOCS_LINK,
   TRAJECTOR_LINK,
+  TRAJECTOR_LOGIN_LINK,
   TRAJECTOR_PRIVACY_LINK,
+  TRAJECTOR_SIGNUP_LINK,
   TRAJECTOR_TERMS_LINK,
   TWITTER_LINK,
 };
