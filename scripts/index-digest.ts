@@ -42,7 +42,8 @@ const url = 'https://publicai.io/model-index';
 // The MCP endpoint speaks JSON-RPC over POST, so a reader who clicks it
 // in a mail client gets "Method not allowed". Send people to the page that
 // explains it; the endpoint itself belongs in a config file, not a link.
-const MCP_DOCS = 'https://docs.publicai.io/index/mcp';
+const MCP_DOCS =
+  'https://docs.publicai.io/publicai-documentation/publicai-index/mcp';
 const line = (m: (typeof c.models)[number]) =>
   m.kind === 'moved'
     ? `${m.name} ${m.delta! > 0 ? '↑' : '↓'} ${Math.abs(m.delta!)} → #${m.rank}`
