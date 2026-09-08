@@ -62,7 +62,9 @@ interface Props {
   generatedAt: string;
 }
 
-const CHART_ROWS = 10;
+/* Twenty, not ten: the exported chart is portrait for phone timelines, and
+   ten rows would leave half of it empty. */
+const CHART_ROWS = 20;
 const INDEX_ORIGIN = 'https://publicai.io/model-index';
 const INDEX_URL = 'https://publicai.io/model-index';
 

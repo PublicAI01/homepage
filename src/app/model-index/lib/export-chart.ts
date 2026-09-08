@@ -21,12 +21,16 @@ export interface ChartSpec {
   url: string;
 }
 
-const W = 1600;
-const PAD = 72;
+/* Portrait, not landscape: the chart is made to be posted, and a wide image
+   on a phone timeline scales down until the model names are unreadable. At
+   1200x1500 it is 4:5 — the tallest X shows without cropping — and twenty
+   rows fill it rather than ten floating in white space. */
+const W = 1200;
+const PAD = 56;
 const ROW_H = 58;
 /** The mark ships white: loaded as an <img>, its currentColor would go black. */
 const LOGO = '/publicai-mark-white.svg';
-const LOGO_W = 268;
+const LOGO_W = 224;
 const ONE_LINER =
   "The LLM benchmark aggregator \u2014 the world's most comprehensive and robust AI index.";
 const FONT = '"Inter", "Helvetica Neue", Arial, sans-serif';
@@ -45,7 +49,7 @@ function loadMark(): Promise<HTMLImageElement | null> {
 export async function drawChart(spec: ChartSpec): Promise<HTMLCanvasElement> {
   const { rows } = spec;
   const mark = await loadMark();
-  const H = PAD * 2 + 176 + rows.length * ROW_H + 40;
+  const H = PAD * 2 + 160 + rows.length * ROW_H + 36;
   const canvas = document.createElement('canvas');
   const dpr = 2;
   canvas.width = W * dpr;
@@ -73,24 +77,24 @@ export async function drawChart(spec: ChartSpec): Promise<HTMLCanvasElement> {
 
   // header
   ctx.fillStyle = '#FFFFFF';
-  ctx.font = `700 38px ${FONT}`;
+  ctx.font = `700 34px ${FONT}`;
   ctx.fillText(spec.title, PAD, PAD + 24);
   ctx.fillStyle = '#B9B7C4';
-  ctx.font = `400 18px ${FONT}`;
-  ctx.fillText(ONE_LINER, PAD, PAD + 56);
-  ctx.fillStyle = '#9C9AA8';
   ctx.font = `400 15px ${FONT}`;
+  ctx.fillText(ONE_LINER, PAD, PAD + 52);
+  ctx.fillStyle = '#9C9AA8';
+  ctx.font = `400 13px ${FONT}`;
   ctx.fillText(
     `Ranked by ${spec.scope} · 0–100 standardized, 50 = average of the models each source lists · snapshot ${spec.generatedAt.slice(0, 10)}`,
     PAD,
-    PAD + 84,
+    PAD + 76,
   );
 
   // bars
-  const labelW = 420;
+  const labelW = 330;
   const x0 = PAD + labelW;
-  const barMax = W - PAD - x0 - 90;
-  const top = PAD + 156;
+  const barMax = W - PAD - x0 - 150;
+  const top = PAD + 140;
   // The axis starts a tick below the lowest bar, not at zero: on a 0–100
   // scale where the top ten sit within ten points, a zero-based axis would
   // hide the very differences the chart is for. Ticks are labelled so the
@@ -122,7 +126,7 @@ export async function drawChart(spec: ChartSpec): Promise<HTMLCanvasElement> {
     ctx.font = `500 15px ${MONO}`;
     ctx.fillText(r.rank ? String(r.rank) : '—', PAD, y + 30);
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = `600 18px ${FONT}`;
+    ctx.font = `600 17px ${FONT}`;
     const name = r.name.length > 30 ? `${r.name.slice(0, 29)}…` : r.name;
     ctx.fillText(name, PAD + 44, y + 30);
     const nameW = ctx.measureText(name).width;
