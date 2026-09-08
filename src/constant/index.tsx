@@ -23,22 +23,13 @@ const TRAJECTOR_PRIVACY_LINK =
   'https://trajector.publicai.io/privacy?utm_source=homepage';
 const TRAJECTOR_TERMS_LINK =
   'https://trajector.publicai.io/terms?utm_source=homepage';
-const DOCUMENT_LINK =
-  'https://docs.publicai.io/publicai-documentation/publicai-trajector-cli';
 const NAV_LIST = [
   {
-    id: 'contribute',
+    id: 'trajector',
     href: TRAJECTOR_LINK,
-    label: 'Contribute',
+    label: 'Trajector',
     comingSoon: false,
   },
-  {
-    id: 'document',
-    href: DOCUMENT_LINK,
-    label: 'Docs',
-    comingSoon: false,
-  },
-  { id: 'blog', href: '/blog', label: 'Blog', comingSoon: false },
   {
     id: 'for-labs',
     href: '/for-labs',
@@ -49,6 +40,16 @@ const NAV_LIST = [
     id: 'model-index',
     href: '/model-index',
     label: 'LLM Index',
+    comingSoon: false,
+  },
+  { id: 'blog', href: '/blog', label: 'Blog', comingSoon: false },
+  {
+    // The docs root: the site covers Data Hub, Data Hunter, rewards and
+    // governance as well as the Trajector CLI, so linking a single chapter
+    // made the whole thing look like CLI notes.
+    id: 'document',
+    href: DOCS_LINK,
+    label: 'Docs',
     comingSoon: false,
   },
 ] as const;
