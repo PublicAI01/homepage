@@ -5656,7 +5656,7 @@
     },
     {
       "date": "2026-09-08",
-      "generatedAt": "2026-09-08T11:09:41.790Z",
+      "generatedAt": "2026-09-08T20:31:26.855Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -8044,13 +8044,6 @@
           "rank": null,
           "covered": 1
         },
-        "agnes-2-5-pro-alpha": {
-          "name": "Agnes 2.5 Pro Alpha",
-          "org": "Sapiens AI",
-          "index": null,
-          "rank": null,
-          "covered": 2
-        },
         "qwen3": {
           "name": "Qwen3",
           "org": "Alibaba",
@@ -8190,6 +8183,13 @@
           "index": 51.5,
           "rank": null,
           "covered": 1
+        },
+        "agnes-2-5-pro-alpha": {
+          "name": "Agnes 2.5 Pro Alpha",
+          "org": "Sapiens AI",
+          "index": null,
+          "rank": null,
+          "covered": 2
         },
         "step-3": {
           "name": "Step 3",
