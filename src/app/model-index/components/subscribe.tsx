@@ -9,7 +9,14 @@ import { cn } from '@/utils';
  * happened. Posts to /model-index/api/subscribe, which forwards to the
  * mailing list and says 503 when that is not configured.
  */
-export default function Subscribe({ className }: { className?: string }) {
+export default function Subscribe({
+  className,
+  onSubscribed,
+}: {
+  className?: string;
+  /** Called once the address is on the list, so a host can close itself. */
+  onSubscribed?: () => void;
+}) {
   const [email, setEmail] = useState('');
   const [state, setState] = useState<'idle' | 'busy' | 'done' | 'error'>(
     'idle',
@@ -29,6 +36,7 @@ export default function Subscribe({ className }: { className?: string }) {
       if (body.ok) {
         setState('done');
         setMessage('You are on the list. First issue next Monday.');
+        onSubscribed?.();
       } else {
         setState('error');
         setMessage(body.error ?? 'Something went wrong.');
