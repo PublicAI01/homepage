@@ -32,7 +32,7 @@ const ROW_H = 58;
 const LOGO = '/publicai-mark-white.svg';
 const LOGO_W = 224;
 const ONE_LINER =
-  "The LLM benchmark aggregator \u2014 the world's most comprehensive and robust AI index.";
+  "The LLM benchmark aggregator \u2014 the world's most comprehensive and robust LLM index.";
 const FONT = '"Inter", "Helvetica Neue", Arial, sans-serif';
 const MONO = '"JetBrains Mono", "SF Mono", Menlo, monospace';
 
