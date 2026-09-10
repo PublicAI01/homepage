@@ -75,3 +75,30 @@ describe('modelStandings', () => {
     expect('error' in r).toBe(true);
   });
 });
+
+describe('rivals', () => {
+  const found = modelStandings('k2-horizon-375b-a23b');
+  if ('error' in found) throw new Error(found.error);
+
+  it('only counts models met in most of the scopes', () => {
+    const floor = Math.max(2, Math.ceil(found.standings.length * 0.6));
+    for (const r of found.rivals) expect(r.met).toBeGreaterThanOrEqual(floor);
+  });
+
+  it('never claims a rival finished ahead more often than they met', () => {
+    for (const r of found.rivals) {
+      expect(r.ahead).toBeGreaterThanOrEqual(0);
+      expect(r.ahead).toBeLessThanOrEqual(r.met);
+      expect(r.met).toBeLessThanOrEqual(found.standings.length);
+    }
+  });
+
+  it('never lists the model as its own rival', () => {
+    expect(found.rivals.some((r) => r.id === found.model.id)).toBe(false);
+  });
+
+  it('orders by how often they finish ahead', () => {
+    const share = found.rivals.map((r) => r.ahead / r.met);
+    expect([...share].sort((a, b) => b - a)).toEqual(share);
+  });
+});

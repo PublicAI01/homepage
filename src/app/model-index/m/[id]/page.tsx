@@ -74,23 +74,77 @@ const Placement = ({ s }: { s: Standing }) => (
 );
 
 /**
- * A model against the models it is actually competing with.
+ * Distance from par, not distance from zero.
  *
- * Showing the top five told a reader at #49 who was winning, which is not
- * the question they arrived with. The neighbours either side are, and the
- * leader stays as the scale's anchor: without it "#49 · 55.9" says nothing
- * about whether that is close to the front.
- *
- * Bars run from zero. Cropping the axis to the visible range would make the
- * gaps look dramatic, which is the oldest way to lie with a chart and an
- * especially bad one for an index whose only asset is being trusted. The tick
- * is 50 — the average of the models each source lists, so it reads as "above
- * or below par" rather than as an arbitrary midpoint.
+ * Every score on this scale lands between about 40 and 75, so a 0–100 bar
+ * left every model looking half full and told a reader nothing — the chart
+ * was decoration. 50 is not an arbitrary axis crop: it is the definition of
+ * the scale, the average of the models each source lists. Measuring from it
+ * turns a 15-point spread into the width of the panel, and the direction
+ * carries the meaning a length alone could not.
  */
+const SPAN = 30;
+
+const Bar = ({ score, subject }: { score: number; subject: boolean }) => {
+  const d = Math.max(-SPAN, Math.min(SPAN, score - 50));
+  return (
+    <span className="relative block h-2 w-full overflow-hidden rounded-sm bg-[#17171B]">
+      <span
+        className={cn(
+          'absolute inset-y-0 rounded-sm',
+          subject
+            ? 'bg-gradient-to-r from-[#7C5CFF] to-[#B08BFF]'
+            : d >= 0
+              ? 'bg-[#3E3E48]'
+              : 'bg-[#332F3A]',
+        )}
+        style={
+          d >= 0
+            ? { left: '50%', width: `${(d / SPAN) * 50}%` }
+            : { right: '50%', width: `${(-d / SPAN) * 50}%` }
+        }
+      />
+      <span className="absolute inset-y-0 left-1/2 w-px bg-white/30" />
+    </span>
+  );
+};
+
+/** One scope, one line: the shape of a model across everything it was measured on. */
+const ProfileRow = ({ s }: { s: Standing }) => (
+  <div className="flex items-center gap-3 border-t border-white/6 py-1.5 first:border-0">
+    <span
+      className="w-40 shrink-0 truncate text-[13px] text-[#D9D7E0] sm:w-52"
+      title={s.scope}>
+      {s.scope}
+      {s.level === 'category' ? (
+        <span className="text-[#6E6C7A]"> · cat</span>
+      ) : null}
+    </span>
+    <span className="min-w-0 flex-1">
+      <Bar score={s.score} subject />
+    </span>
+    <span className="w-10 shrink-0 text-right font-mono text-xs text-white">
+      {s.score}
+    </span>
+    <span
+      className={cn(
+        'w-20 shrink-0 text-right font-mono text-xs',
+        s.position <= 3 ? 'text-[#B08BFF]' : 'text-[#8E8BA0]',
+      )}>
+      #{s.position}
+      <span className="text-[#6E6C7A]">/{s.total}</span>
+      {!s.rankedInScope ? <span className="text-[#E8A9F0]">✱</span> : null}
+    </span>
+  </div>
+);
+
+/** A scope in full: the leader for scale, then the models either side. */
 const Board = ({ s }: { s: Standing }) => (
   <div className={cn(PANEL, 'px-3.5 py-3')}>
     <div className="mb-2 flex items-baseline gap-2">
-      <span className="truncate text-sm font-semibold text-white" title={s.scope}>
+      <span
+        className="truncate text-sm font-semibold text-white"
+        title={s.scope}>
         {s.scope}
       </span>
       <span className="ml-auto shrink-0 font-mono text-xs text-[#8E8BA0]">
@@ -121,18 +175,8 @@ const Board = ({ s }: { s: Standing }) => (
             title={`${p.name} — ${p.org}`}>
             {p.name}
           </span>
-          <span className="relative hidden h-2 w-24 shrink-0 overflow-hidden rounded-sm bg-[#1C1C21] sm:block">
-            <span
-              className={cn(
-                'block h-full rounded-sm',
-                p.isSubject
-                  ? 'bg-gradient-to-r from-[#7C5CFF] to-[#B08BFF]'
-                  : 'bg-[#3A3A42]',
-              )}
-              style={{ width: `${Math.max(2, Math.min(100, p.score))}%` }}
-            />
-            {/* Par: 50 is the average of the models each source lists. */}
-            <span className="absolute inset-y-0 left-1/2 w-px bg-white/25" />
+          <span className="hidden w-24 shrink-0 sm:block">
+            <Bar score={p.score} subject={p.isSubject} />
           </span>
           <span
             className={cn(
@@ -154,7 +198,12 @@ export default async function ModelPage({
 }) {
   const found = await load(params);
   if (!found) notFound();
-  const { model, standings, generatedAt } = found;
+  const { model, standings, rivals, generatedAt } = found;
+  // Three from each end, and never the same panel twice when there are few.
+  const ends = [
+    ...standings.slice(0, 3),
+    ...standings.slice(-3).filter((s) => !standings.slice(0, 3).includes(s)),
+  ];
   const day = generatedAt.slice(0, 10);
   const starred = standings.some((s) => !s.rankedInScope);
   const badgeMarkdown = `[![PublicAI Index](${INDEX_URL}/badge?model=${model.id})](${INDEX_URL}/m/${model.id})`;
@@ -222,42 +271,99 @@ export default async function ModelPage({
           </p>
         ) : (
           <>
+            {/* The shape first. Twenty-three panels of equal weight gave a
+                reader nowhere to start; one line per scope answers "what is
+                this model good at" before anything asks for their attention. */}
             <section className="pb-10">
-              <p className={cn(LABEL, 'mb-2')}>§ 1 · Where it ranks</p>
-              <h2 className="text-heading mb-5 font-bold text-white">
-                {standings.length}{' '}
-                {standings.length === 1 ? 'domain' : 'domains'} with a published
-                figure
+              <p className={cn(LABEL, 'mb-2')}>§ 1 · Profile</p>
+              <h2 className="text-heading mb-1 font-bold text-white">
+                Across {standings.length}{' '}
+                {standings.length === 1 ? 'scope' : 'scopes'}, best first
               </h2>
-              <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6">
+              <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
+                Bars run from 50 — the average of the models each source lists
+                — so right of the line is above par and left is below.
+              </p>
+              <div className={cn(PANEL, 'px-4 py-2')}>
                 {standings.map((s) => (
-                  <Placement key={`${s.level}:${s.scope}`} s={s} />
+                  <ProfileRow key={`${s.level}:${s.scope}`} s={s} />
                 ))}
               </div>
             </section>
 
+            {/* Both ends, named as such. Showing the best three alone would be
+                a brochure; showing all twenty-three was the wall this page
+                started as. */}
             <section className="pb-10">
-              <p className={cn(LABEL, 'mb-2')}>§ 2 · Domain by domain</p>
+              <p className={cn(LABEL, 'mb-2')}>§ 2 · Best and weakest</p>
               <h2 className="text-heading mb-1 font-bold text-white">
                 Who it sits beside
               </h2>
-              <p className={cn('text-caption mb-5 text-[#9C9AA8]', 'max-w-[68ch]')}>
-                The leader, then the models immediately above and below. Bars
-                run 0–100 on the index scale; the tick is 50, the average of
-                the models each source lists.
+              <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
+                The leader of each scope for scale, then the models immediately
+                above and below.
               </p>
-              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-                {standings.map((s) => (
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+                {ends.map((s) => (
                   <Board key={`${s.level}:${s.scope}`} s={s} />
                 ))}
               </div>
             </section>
+
+            {rivals.length ? (
+              <section className="pb-10">
+                <p className={cn(LABEL, 'mb-2')}>§ 3 · Company</p>
+                <h2 className="text-heading mb-1 font-bold text-white">
+                  Who it keeps running into
+                </h2>
+                <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
+                  The same models appear in scope after scope. Counted once:
+                  how often each of them finishes ahead.
+                </p>
+                <div className={cn(PANEL, 'px-4 py-2')}>
+                  {rivals.map((r) => {
+                    const share = Math.round((r.ahead / r.met) * 100);
+                    return (
+                      <div
+                        key={r.id}
+                        className="flex items-center gap-3 border-t border-white/6 py-1.5 first:border-0">
+                        <a
+                          href={`/model-index/m/${r.id}`}
+                          className="w-40 shrink-0 truncate text-[13px] text-[#D9D7E0] hover:text-[#B08BFF] sm:w-52"
+                          title={`${r.name} — ${r.org}`}>
+                          {r.name}
+                        </a>
+                        <span className="relative block h-2 min-w-0 flex-1 overflow-hidden rounded-sm bg-[#17171B]">
+                          <span
+                            className={cn(
+                              'absolute inset-y-0 left-0 rounded-sm',
+                              share >= 50 ? 'bg-[#4A4458]' : 'bg-[#3E3E48]',
+                            )}
+                            style={{ width: `${share}%` }}
+                          />
+                          <span className="absolute inset-y-0 left-1/2 w-px bg-white/30" />
+                        </span>
+                        <span className="w-28 shrink-0 text-right font-mono text-xs text-[#8E8BA0]">
+                          <span
+                            className={
+                              share >= 50 ? 'text-[#D9D7E0]' : 'text-[#B08BFF]'
+                            }>
+                            {r.ahead}
+                          </span>
+                          /{r.met} ahead
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            ) : null}
           </>
         )}
 
         <section className="pb-10">
-          <p className={cn(LABEL, 'mb-2')}>§ 3 · Sources</p>
-          <h2 className="text-heading mb-5 font-bold text-white">
+          <p className={cn(LABEL, 'mb-2')}>§ 4 · Sources</p>
+          <h2 className="text-heading mb-4 font-bold text-white">
             {bySource.length} {bySource.length === 1 ? 'source' : 'sources'},{' '}
             {model.figures.length} figures
           </h2>
@@ -309,7 +415,7 @@ export default async function ModelPage({
         {/* For whoever publishes this model: the badge reads live, so a
             README pasted once stays current. */}
         <section className="pb-10">
-          <p className={cn(LABEL, 'mb-2')}>§ 4 · Badge</p>
+          <p className={cn(LABEL, 'mb-2')}>§ 5 · Badge</p>
           <div
             className={cn(
               PANEL,

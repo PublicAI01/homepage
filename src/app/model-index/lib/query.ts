@@ -533,10 +533,22 @@ export interface StandingsMiss {
   candidates: { id: string; name: string; org: string; rank: number | null }[];
 }
 
+export interface Rival {
+  id: string;
+  name: string;
+  org: string;
+  /** Scopes where both are placed. */
+  met: number;
+  /** Of those, how many the rival finished ahead in. */
+  ahead: number;
+}
+
 export interface StandingsHit {
   generatedAt: string;
   model: ModelDetail;
   standings: Standing[];
+  /** Who this model keeps running into, across every scope it appears in. */
+  rivals: Rival[];
 }
 
 export interface Standing {
@@ -600,6 +612,11 @@ export function modelStandings(
   ];
 
   const standings: Standing[] = [];
+  // The same dozen models turn up in every scope, which made twenty-three
+  // panels twenty-three copies of one competitive set. Counted once, that
+  // repetition becomes the most useful fact on the page.
+  const met = new Map<string, { row: AggregateRow; met: number; ahead: number }>();
+
   for (const s of scopes) {
     const scope = resolveScope(s.name);
     if (!scope) continue;
@@ -629,6 +646,15 @@ export function modelStandings(
         };
       });
 
+    for (let i = 0; i < ranked.length; i++) {
+      const r = ranked[i];
+      if (r.model.id === model.id) continue;
+      const seen = met.get(r.model.id) ?? { row: r, met: 0, ahead: 0 };
+      seen.met += 1;
+      if (i < idx) seen.ahead += 1;
+      met.set(r.model.id, seen);
+    }
+
     const inScope = benchmarks.filter((b) =>
       scope.level === 'category'
         ? b.category === scope.category
@@ -649,5 +675,20 @@ export function modelStandings(
     });
   }
   standings.sort((a, b) => a.position - b.position || b.total - a.total);
-  return { generatedAt, model, standings };
+
+  // Only models met nearly everywhere: one shared scope says nothing, and a
+  // list of near-strangers is the noise this section exists to remove.
+  const floor = Math.max(2, Math.ceil(standings.length * 0.6));
+  const rivals: Rival[] = [...met.values()]
+    .filter((r) => r.met >= floor)
+    .map((r) => ({
+      id: r.row.model.id,
+      name: r.row.model.name,
+      org: r.row.model.org,
+      met: r.met,
+      ahead: r.ahead,
+    }))
+    .sort((a, b) => b.ahead / b.met - a.ahead / a.met || b.met - a.met);
+
+  return { generatedAt, model, standings, rivals };
 }
