@@ -219,17 +219,17 @@ export default function ModelIndex() {
               robust LLM index, built from everyone’s benchmarks and none of our
               own.
             </p>
-            <p className="text-lede max-w-[90ch] text-[#D9D7E0]">
-              Model evaluation has fragmented into dozens of leaderboards, and a
-              single benchmark is easy to target: topping one board says little
-              about the next. PublicAI runs no evaluations of its own. It
-              aggregates the public ones by statistical method — one scale,
-              discounted by published uncertainty, shrunk where evidence is
-              thin, weighted by a scheme printed beside the table — into an
-              index no single benchmark can be tuned to, overall and by domain.
-              Launch posts and blogs are indexed too, marked ✱ and kept out of
-              the headline. Agents get the same answers over MCP and a JSON API,
-              every score with its sources.
+            {/* Six lines became three. The method has its own section further
+                down and repeating it here only pushed the table below the
+                fold, which is the one thing this page is for. */}
+            <p className="text-caption max-w-[78ch] text-[#B9B7C4]">
+              A single benchmark is easy to target, so topping one board says
+              little about the next. PublicAI runs no evaluations of its own: it
+              aggregates the public ones onto one scale — discounted by
+              published uncertainty, shrunk where evidence is thin, weighted by
+              a scheme printed beside the table. Launch posts are indexed too,
+              marked ✱ and kept out of the headline. Agents get the same answers
+              over MCP and a JSON API.
             </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
               <span className={LABEL}>Follow PublicAI Index</span>

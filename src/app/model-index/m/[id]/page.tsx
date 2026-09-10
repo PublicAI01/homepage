@@ -200,6 +200,14 @@ export default async function ModelPage({
   if (!found) notFound();
   const { model, standings, rivals, generatedAt } = found;
   // Three from each end, and never the same panel twice when there are few.
+  const abovePar = standings.filter((s) => s.score > 50).length;
+  const best = standings[0];
+  const worst = standings[standings.length - 1];
+  const beats = rivals.filter((r) => r.ahead / r.met < 0.5);
+  const beaten = rivals.filter((r) => r.ahead / r.met > 0.5);
+  const names = (rs: typeof rivals, n = 2) =>
+    rs.slice(0, n).map((r) => r.name).join(' and ');
+
   const ends = [
     ...standings.slice(0, 3),
     ...standings.slice(-3).filter((s) => !standings.slice(0, 3).includes(s)),
@@ -242,6 +250,24 @@ export default async function ModelPage({
             {model.size ? ` · ${model.size.label}` : ''}
             {model.catalog?.openWeights ? ' · open weights' : ''}
           </p>
+          {best ? (
+            <p className="text-lede mt-5 max-w-[72ch] text-[#D9D7E0]">
+              Strongest in{' '}
+              <b className="font-semibold text-white">{best.scope}</b> (#
+              {best.position} of {best.total}), weakest in{' '}
+              <b className="font-semibold text-white">{worst.scope}</b> (#
+              {worst.position} of {worst.total}). Above par in {abovePar} of{' '}
+              {standings.length} scopes.
+              {beaten.length || beats.length ? (
+                <>
+                  {' '}
+                  Among the models it meets almost everywhere, it finishes
+                  behind {beaten.length ? names(beaten) : 'none'}
+                  {beats.length ? <> and ahead of {names(beats)}</> : null}.
+                </>
+              ) : null}
+            </p>
+          ) : null}
           <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-sm">
             {model.index !== null ? (
               <span className="text-white">
@@ -291,38 +317,21 @@ export default async function ModelPage({
               </div>
             </section>
 
-            {/* Both ends, named as such. Showing the best three alone would be
-                a brochure; showing all twenty-three was the wall this page
-                started as. */}
-            <section className="pb-10">
-              <p className={cn(LABEL, 'mb-2')}>§ 2 · Best and weakest</p>
-              <h2 className="text-heading mb-1 font-bold text-white">
-                Who it sits beside
-              </h2>
-              <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
-                The leader of each scope for scale, then the models immediately
-                above and below.
-              </p>
-              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
-                {ends.map((s) => (
-                  <Board key={`${s.level}:${s.scope}`} s={s} />
-                ))}
-              </div>
-            </section>
-
             {rivals.length ? (
               <section className="pb-10">
-                <p className={cn(LABEL, 'mb-2')}>§ 3 · Company</p>
+                <p className={cn(LABEL, 'mb-2')}>§ 2 · Head to head</p>
                 <h2 className="text-heading mb-1 font-bold text-white">
-                  Who it keeps running into
+                  What it beats, and what beats it
                 </h2>
                 <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
-                  The same models appear in scope after scope. Counted once:
-                  how often each of them finishes ahead.
+                  The same models turn up scope after scope. Counted once:
+                  where both were placed, who finished higher. Bars run right
+                  for {model.name}, left for the other.
                 </p>
                 <div className={cn(PANEL, 'px-4 py-2')}>
-                  {rivals.map((r) => {
-                    const share = Math.round((r.ahead / r.met) * 100);
+                  {[...rivals].reverse().map((r) => {
+                    const won = r.met - r.ahead;
+                    const pct = (won / r.met) * 100 - 50;
                     return (
                       <div
                         key={r.id}
@@ -336,21 +345,28 @@ export default async function ModelPage({
                         <span className="relative block h-2 min-w-0 flex-1 overflow-hidden rounded-sm bg-[#17171B]">
                           <span
                             className={cn(
-                              'absolute inset-y-0 left-0 rounded-sm',
-                              share >= 50 ? 'bg-[#4A4458]' : 'bg-[#3E3E48]',
+                              'absolute inset-y-0 rounded-sm',
+                              pct >= 0
+                                ? 'bg-gradient-to-r from-[#7C5CFF] to-[#B08BFF]'
+                                : 'bg-[#3E3E48]',
                             )}
-                            style={{ width: `${share}%` }}
+                            style={
+                              pct >= 0
+                                ? { left: '50%', width: `${pct}%` }
+                                : { right: '50%', width: `${-pct}%` }
+                            }
                           />
                           <span className="absolute inset-y-0 left-1/2 w-px bg-white/30" />
                         </span>
-                        <span className="w-28 shrink-0 text-right font-mono text-xs text-[#8E8BA0]">
+                        <span className="w-32 shrink-0 text-right font-mono text-xs text-[#6E6C7A]">
                           <span
                             className={
-                              share >= 50 ? 'text-[#D9D7E0]' : 'text-[#B08BFF]'
+                              won > r.ahead ? 'text-[#B08BFF]' : 'text-[#8E8BA0]'
                             }>
-                            {r.ahead}
+                            won {won}
                           </span>
-                          /{r.met} ahead
+                          {' · '}
+                          <span className="text-[#8E8BA0]">lost {r.ahead}</span>
                         </span>
                       </div>
                     );
@@ -358,6 +374,25 @@ export default async function ModelPage({
                 </div>
               </section>
             ) : null}
+
+            {/* Detail last: by here a reader knows what to look at. Both ends
+                named as such, because showing only the best three would be a
+                brochure. */}
+            <section className="pb-10">
+              <p className={cn(LABEL, 'mb-2')}>§ 3 · Best and weakest</p>
+              <h2 className="text-heading mb-1 font-bold text-white">
+                Who it sits beside
+              </h2>
+              <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
+                The leader of each scope for scale, then the models immediately
+                above and below.
+              </p>
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+                {ends.map((s) => (
+                  <Board key={`${s.level}:${s.scope}`} s={s} />
+                ))}
+              </div>
+            </section>
           </>
         )}
 
