@@ -57,6 +57,24 @@ for required in BUGSCAN_LABEL FORBID_RE FIX_NOTES REVIEW_NOTES; do
 done
 [ "${#GATE_STEPS[@]}" -gt 0 ] || { echo "ERROR: profile 里缺 GATE_STEPS" >&2; exit 1; }
 
+# A pattern grep cannot compile matches nothing, so an invalid FORBID_RE does
+# not fail closed — it opens the gate completely and says nothing. Checked
+# here, loudly, because that is exactly how it would go unnoticed.
+for re_name in FORBID_RE EXEMPT_RE; do
+  re_value=${!re_name:-}
+  [ -n "$re_value" ] || continue
+  if ! printf 'probe\n' | grep -qE "$re_value" 2>/dev/null; then
+    if ! printf 'probe\n' | grep -E "$re_value" >/dev/null 2>&1; then
+      printf 'probe\n' | grep -E "$re_value" >/dev/null 2>/tmp/.bugscan-re || true
+      if [ -s /tmp/.bugscan-re ]; then
+        echo "ERROR: $re_name 不是合法的 ERE,拒绝扫描 —— 非法正则会让禁改闸静默全开" >&2
+        cat /tmp/.bugscan-re >&2
+        exit 1
+      fi
+    fi
+  fi
+done
+
 MAX_LINES="${MAX_LINES:-400}"
 STATE="${BUGSCAN_STATE:-$HOME/.local/state/bugscan/$BUGSCAN_LABEL}"
 # Best model first; the rest are what to fall back to when it is unavailable
@@ -278,6 +296,9 @@ fail_batch() {
 }
 
 hits=$(grep -E "$FORBID_RE" "$CHANGED" || true)
+if [ -n "$hits" ] && [ -n "${EXEMPT_RE:-}" ]; then
+  hits=$(printf '%s\n' "$hits" | grep -vE "$EXEMPT_RE" || true)
+fi
 [ -n "$hits" ] && fail_batch "改到了不该改的文件" "命中禁改路径,整批作废:
 $hits"
 
