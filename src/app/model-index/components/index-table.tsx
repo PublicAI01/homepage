@@ -848,13 +848,19 @@ function Row({
         </td>
         {/* Names wrap; the table never scrolls sideways because one label is long. */}
         <td className="min-w-52 px-2.5 py-2.5 whitespace-normal">
-          <b
+          {/* The name is the model's page. Clicking anywhere else on the row
+              still opens the card — the summary and the full answer each get
+              a target, and neither is hidden behind the other. */}
+          <a
+            href={`/model-index/m/${row.model.id}`}
+            onClick={(e) => e.stopPropagation()}
+            title={`${row.model.name} — every domain, every source`}
             className={cn(
-              'font-semibold',
+              'font-semibold underline-offset-2 hover:underline',
               inScope ? 'text-white' : 'text-[#B9B7C4]',
             )}>
             {row.model.name}
-          </b>
+          </a>
           <span className="text-g2 ml-2 text-xs">{row.model.org}</span>
           {sizeLabel(row.model.size) ? (
             <span
