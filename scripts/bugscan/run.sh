@@ -71,7 +71,9 @@ REVIEW_TIMEOUT="${BUGSCAN_REVIEW_TIMEOUT:-1800}"
 mkdir -p "$STATE"
 DAY=$(date +%F)
 LOG="$STATE/$DAY.log"
-NOTIFY="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)/notify.sh"
+SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+NOTIFY="$SELF_DIR/notify.sh"
+. "$SELF_DIR/lib.sh"
 
 log() { printf '%s  %s\n' "$(date '+%H:%M:%S')" "$*" | tee -a "$LOG"; }
 mail_out() { "$NOTIFY" "$1" >>"$LOG" 2>&1; }
@@ -87,26 +89,6 @@ if ! mkdir "$LOCK" 2>/dev/null; then
   fi
 fi
 trap 'rm -rf "$LOCK"' EXIT
-
-# Wall-clock cap around a child, because macOS ships no timeout(1).
-run_capped() {
-  local secs=$1; shift
-  "$@" & local pid=$! waited=0
-  while kill -0 "$pid" 2>/dev/null; do
-    if [ "$waited" -ge "$secs" ]; then
-      kill -TERM "$pid" 2>/dev/null; sleep 5; kill -KILL "$pid" 2>/dev/null
-      wait "$pid" 2>/dev/null; return 124
-    fi
-    sleep 5; waited=$((waited + 5))
-  done
-  wait "$pid"
-}
-
-json_field() { python3 -c '
-import json, sys
-d = json.load(open(sys.argv[1]))
-v = d.get(sys.argv[2])
-sys.stdout.write("" if v is None else (v if isinstance(v, str) else json.dumps(v)))' "$1" "$2" 2>/dev/null; }
 
 # Claude's text answer and session id, from one headless call.
 CLAUDE_TEXT=''; CLAUDE_SID=''
@@ -130,18 +112,17 @@ ask_claude() {
 
 log "═══ bugscan $BUGSCAN_LABEL $DAY ═══"
 
-MODEL=''
-for m in $MODELS; do
-  probe="$STATE/.probe.json"
-  run_capped 120 claude -p 'reply with exactly: OK' --model "$m" --output-format json >"$probe" 2>>"$LOG"
-  if [ "$(json_field "$probe" is_error)" = false ]; then MODEL=$m; break; fi
-  log "$m 用不了($(json_field "$probe" result | head -c 120)),换下一个"
-done
+MODEL="${BUGSCAN_MODEL:-}"
 if [ -z "$MODEL" ]; then
-  log "没有可用的模型"
-  printf '一个模型都调不通(试过:%s)。今天没扫。\n日志:%s\n' "$MODELS" "$LOG" \
-    | mail_out "【bugscan/$BUGSCAN_LABEL】没有可用的模型,今天没扫"
-  exit 1
+  if pick_model "$MODELS" "$STATE"; then
+    MODEL=$PICKED_MODEL
+  else
+    log "没有可用的模型: $PICK_REASON"
+    { pick_diagnosis "$PICK_REASON"; printf '\n\n试过:%s\n原话:%s\n日志:%s\n' \
+        "$MODELS" "$PICK_REASON" "$LOG"; } \
+      | mail_out "【bugscan】今天没扫成:$(pick_diagnosis "$PICK_REASON" | head -1 | cut -c1-24)"
+    exit 1
+  fi
 fi
 log "模型 $MODEL"
 

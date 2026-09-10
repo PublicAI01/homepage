@@ -1,14 +1,21 @@
 # 每日自动 bug 扫描
 
-每天中午,本机 cron 跑 `run.sh`:扫一遍代码,把 P0/P1 里**有把握**的直接修掉、
+每天中午,一个 LaunchAgent 跑 `daily.sh`:扫一遍代码,把 P0/P1 里**有把握**的直接修掉、
 过闸后推上 main;没把握的不修,发邮件给人。P2 只记在报告里,不修。
 
 方法论不在这个仓 —— 在 `~/claude-skills`(独立仓 `qinwang-ai/auto-bugfix`),
 经 `~/.claude/skills/` 符号链接对本机所有项目可见。
 
-**这个脚本是仓库无关的**,同一份跑两个仓(12:00 homepage,12:30 publicai-index):
+**一个任务跑两个仓**(`daily.sh` → homepage,然后 publicai-index)。一个账号探一次
+模型、发一封信 —— 各仓一个 cron 条目时,登录过期这种账号级故障会一个仓来一封,
+第二封不比第一封多说任何事。
 
-    BUGSCAN_REPO=~/publicai-index scripts/bugscan/run.sh
+**不是 cron,是 LaunchAgent**,这不是偏好:CLI 的凭据在登录钥匙串里,cron 跑在够不着
+钥匙串的后台上下文,所以每一趟都死在 "Not logged in",而终端里 `claude` 好好的
+(2026-09-09 实证)。LaunchAgent 跑在用户自己的会话里,钥匙串是解锁的。
+
+    ~/Library/LaunchAgents/io.publicai.bugscan.plist
+    BUGSCAN_REPO=~/publicai-index scripts/bugscan/run.sh   # 只跑一个仓
 
 两份闸门脚本必然分叉,而这些闸是唯一挡在模型判断和线上之间的东西。所以差异
 不写在脚本里,写在**被扫仓自己的** `.claude/bugscan.profile` 里 —— 禁改路径、
@@ -64,7 +71,7 @@
 
 ## 关掉
 
-    crontab -e   # 删掉那一行
+    launchctl bootout gui/$UID/io.publicai.bugscan
 
 ## 机器侧配置
 
