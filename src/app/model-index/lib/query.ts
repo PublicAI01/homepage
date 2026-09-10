@@ -561,6 +561,25 @@ export interface Standing {
  * model land", which is the question anyone arrives with after reading a
  * launch post. Same numbers as the table by construction — it asks the table.
  */
+/**
+ * A scope's whole ranking, under the defaults. rankModels caps its response
+ * at 100 for the API's sake; a model sitting at #120 still has neighbours,
+ * and they are the point of the comparison. Same filter and same comparator,
+ * and a test asserts the two never disagree.
+ */
+function fullRanking(scope: Scope) {
+  const out = WITH.rows.filter((r) => {
+    if (r.covered < MIN_SOURCES) return false;
+    if (scope.level === 'overall' && r.estimate) return true;
+    return scopeScore(r, scope) !== null;
+  });
+  if (scope.level === 'overall') return out;
+  return [...out].sort(compareScores<AggregateRow>((r) => scopeScore(r, scope)));
+}
+
+/** Rows either side of a model, plus the leader as the scale's anchor. */
+const NEIGHBOURS = 3;
+
 export function modelStandings(
   query: string,
 ): StandingsHit | StandingsMiss {
@@ -582,28 +601,51 @@ export function modelStandings(
 
   const standings: Standing[] = [];
   for (const s of scopes) {
-    const r = rankModels({ scope: s.name, reports: true, limit: 100 });
-    if ('error' in r || !('models' in r)) continue;
-    const me = r.models.find((m) => m.id === model.id);
-    if (!me || me.position === null || me.scopeScore == null) continue;
-    const peer = (m: (typeof r.models)[number]): Peer => ({
-      id: m.id,
-      name: m.name,
-      org: m.org,
-      score: m.scopeScore ?? 0,
-      position: m.position ?? 0,
-      isSubject: m.id === model.id,
-    });
-    const head = r.models.slice(0, 5).map(peer);
+    const scope = resolveScope(s.name);
+    if (!scope) continue;
+    const ranked = fullRanking(scope);
+    const idx = ranked.findIndex((r) => r.model.id === model.id);
+    if (idx === -1) continue;
+    const me = summarize(ranked[idx], scope);
+    if (me.scopeScore == null) continue;
+
+    // The leader anchors the scale — without it, "#49 scored 55.9" says
+    // nothing about whether that is close to the front or nowhere near it.
+    const wanted = new Set<number>([0]);
+    for (let i = idx - NEIGHBOURS; i <= idx + NEIGHBOURS; i++)
+      if (i >= 0 && i < ranked.length) wanted.add(i);
+
+    const peers: Peer[] = [...wanted]
+      .sort((a, b) => a - b)
+      .map((i) => {
+        const m = summarize(ranked[i], scope);
+        return {
+          id: m.id,
+          name: m.name,
+          org: m.org,
+          score: m.scopeScore ?? 0,
+          position: i + 1,
+          isSubject: m.id === model.id,
+        };
+      });
+
+    const inScope = benchmarks.filter((b) =>
+      scope.level === 'category'
+        ? b.category === scope.category
+        : scope.level === 'domain'
+          ? b.domain === scope.domain
+          : false,
+    );
     standings.push({
       scope: s.name,
       level: s.level,
-      position: me.position,
-      total: r.total,
+      position: idx + 1,
+      total: ranked.length,
       score: me.scopeScore,
-      boards: 'scopeBoards' in r ? (r.scopeBoards ?? 0) : 0,
+      boards: new Set(inScope.filter((b) => b.kind !== 'report').map((b) => b.group))
+        .size,
       rankedInScope: me.rankedInScope,
-      peers: head.some((p) => p.isSubject) ? head : [...head, peer(me)],
+      peers,
     });
   }
   standings.sort((a, b) => a.position - b.position || b.total - a.total);

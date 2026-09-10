@@ -73,12 +73,27 @@ const Placement = ({ s }: { s: Standing }) => (
   </div>
 );
 
-/** The head of a scope, and the model in it. Bars are the 0–100 index scale. */
+/**
+ * A model against the models it is actually competing with.
+ *
+ * Showing the top five told a reader at #49 who was winning, which is not
+ * the question they arrived with. The neighbours either side are, and the
+ * leader stays as the scale's anchor: without it "#49 · 55.9" says nothing
+ * about whether that is close to the front.
+ *
+ * Bars run from zero. Cropping the axis to the visible range would make the
+ * gaps look dramatic, which is the oldest way to lie with a chart and an
+ * especially bad one for an index whose only asset is being trusted. The tick
+ * is 50 — the average of the models each source lists, so it reads as "above
+ * or below par" rather than as an arbitrary midpoint.
+ */
 const Board = ({ s }: { s: Standing }) => (
   <div className={cn(PANEL, 'px-3.5 py-3')}>
-    <div className="mb-1.5 flex items-baseline gap-2">
-      <span className="text-sm font-semibold text-white">{s.scope}</span>
-      <span className="ml-auto font-mono text-xs text-[#8E8BA0]">
+    <div className="mb-2 flex items-baseline gap-2">
+      <span className="truncate text-sm font-semibold text-white" title={s.scope}>
+        {s.scope}
+      </span>
+      <span className="ml-auto shrink-0 font-mono text-xs text-[#8E8BA0]">
         #{s.position} of {s.total}
         {!s.rankedInScope ? <span className="text-[#E8A9F0]"> ✱</span> : null}
       </span>
@@ -86,12 +101,14 @@ const Board = ({ s }: { s: Standing }) => (
     {s.peers.map((p, i) => (
       <div key={p.id}>
         {i > 0 && p.position > s.peers[i - 1].position + 1 ? (
-          <div className="pl-5 font-mono text-[11px] leading-none text-[#4A4A52]">…</div>
+          <div className="py-0.5 pl-5 font-mono text-[11px] leading-none text-[#5E5C6A]">
+            ⋮
+          </div>
         ) : null}
         <div className="flex items-center gap-2 py-px">
           <span
             className={cn(
-              'w-5 font-mono text-[11px]',
+              'w-5 shrink-0 text-right font-mono text-[11px]',
               p.isSubject ? 'text-[#B08BFF]' : 'text-[#6E6C7A]',
             )}>
             {p.position}
@@ -100,24 +117,27 @@ const Board = ({ s }: { s: Standing }) => (
             className={cn(
               'min-w-0 flex-1 truncate text-[13px]',
               p.isSubject ? 'font-semibold text-white' : 'text-[#B9B7C4]',
-            )}>
+            )}
+            title={`${p.name} — ${p.org}`}>
             {p.name}
           </span>
-          <span className="hidden h-1.5 w-16 shrink-0 overflow-hidden rounded-full bg-[#232329] sm:block">
+          <span className="relative hidden h-2 w-24 shrink-0 overflow-hidden rounded-sm bg-[#1C1C21] sm:block">
             <span
               className={cn(
-                'block h-full rounded-full',
+                'block h-full rounded-sm',
                 p.isSubject
                   ? 'bg-gradient-to-r from-[#7C5CFF] to-[#B08BFF]'
                   : 'bg-[#3A3A42]',
               )}
-              style={{ width: `${Math.max(6, Math.min(100, p.score))}%` }}
+              style={{ width: `${Math.max(2, Math.min(100, p.score))}%` }}
             />
+            {/* Par: 50 is the average of the models each source lists. */}
+            <span className="absolute inset-y-0 left-1/2 w-px bg-white/25" />
           </span>
           <span
             className={cn(
               'w-9 shrink-0 text-right font-mono text-[11px]',
-              p.isSubject ? 'text-white' : 'text-[#B9B7C4]',
+              p.isSubject ? 'text-white' : 'text-[#8E8BA0]',
             )}>
             {p.score}
           </span>
@@ -218,9 +238,14 @@ export default async function ModelPage({
 
             <section className="pb-10">
               <p className={cn(LABEL, 'mb-2')}>§ 2 · Domain by domain</p>
-              <h2 className="text-heading mb-5 font-bold text-white">
+              <h2 className="text-heading mb-1 font-bold text-white">
                 Who it sits beside
               </h2>
+              <p className={cn('text-caption mb-5 text-[#9C9AA8]', 'max-w-[68ch]')}>
+                The leader, then the models immediately above and below. Bars
+                run 0–100 on the index scale; the tick is 50, the average of
+                the models each source lists.
+              </p>
               <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
                 {standings.map((s) => (
                   <Board key={`${s.level}:${s.scope}`} s={s} />
