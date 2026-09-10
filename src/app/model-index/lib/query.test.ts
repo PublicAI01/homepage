@@ -154,18 +154,33 @@ describe('reports switch', () => {
       const off = ok(
         rankModels({ scope, minBoards: 0, limit: 500, reports: false }),
       );
-      expect(on.models.map((m) => m.position)).toEqual(
-        on.models.map((_, i) => i + 1),
-      );
+      // Overall leaves a provisional row unnumbered, so the run of numbers
+      // is over the rows that have one — and it still has to be 1..k with no
+      // gaps, which is what "numbered by its place" means.
+      const numbered = on.models
+        .map((m) => m.position)
+        .filter((p): p is number => p !== null);
+      expect(numbered).toEqual(numbered.map((_, i) => i + 1));
 
       // One direction only. A row flagged as report-placed can never appear
       // once reports are off; the converse would need both lists whole, and
       // both are cut to the same limit from different orderings.
-      const byBoard = new Set(off.models.map((m) => m.id));
-      for (const m of on.models) {
-        if (!m.rankedInScope) expect(byBoard.has(m.id)).toBe(false);
+      // Domains only. In a domain, `rankedInScope` means "no recognised board
+      // measured it here", so such a row cannot be in the reports-off list. In
+      // Overall the same flag means "fewer than two publishers among the boards
+      // that build the index" — a board-measured model can fail that and still
+      // belong in the list, which is the rule doing its job, not a leak.
+      if (scope !== 'overall') {
+        const byBoard = new Set(off.models.map((m) => m.id));
+        for (const m of on.models) {
+          if (!m.rankedInScope) expect(byBoard.has(m.id)).toBe(false);
+        }
       }
-      for (const m of off.models) expect(m.rankedInScope).toBe(true);
+      // Same reason: with reports off, every row in a domain is there because
+      // a board measured it. Overall's flag is the ranking rule, and a
+      // board-measured model can fail that rule.
+      if (scope !== 'overall')
+        for (const m of off.models) expect(m.rankedInScope).toBe(true);
     }
   });
 });

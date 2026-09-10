@@ -117,6 +117,12 @@ const clamp = (x: number, lo: number, hi: number) =>
  * information to spread out, so every model lands at the mean rather than
  * having noise amplified into a ranking.
  */
+/**
+ * Below this many models on one measure there is no population to standardize
+ * against, and the scale stops meaning anything.
+ */
+export const MIN_MODELS_TO_STANDARDIZE = 3;
+
 export function normalizeBoard(raws: number[]): number[] {
   const m = mean(raws);
   const sd = stdDev(raws);
@@ -235,6 +241,16 @@ export function aggregate({
   for (const bench of benchmarks) {
     const rows = scores.filter((s) => s.benchmarkId === bench.id);
     if (rows.length === 0) continue;
+    // A standard deviation over two numbers is half the gap between them, so
+    // standardizing a two-model comparison places the loser at 35 and the
+    // winner at 65 whether they differ by two points or thirty. That is not a
+    // weak signal, it is a manufactured one: a blog comparing two models was
+    // moving Claude Fable 5.1 from first to sixth in Agentic coding.
+    //
+    // The figure is dropped rather than recorded at 50. This index leaves a
+    // missing figure missing and never imputes; writing 50 would be asserting
+    // "average", which is a claim the source never made.
+    if (rows.length < MIN_MODELS_TO_STANDARDIZE) continue;
 
     const raws = rows.map((r) => r.raw);
     const normalized = normalizeBoard(raws);
@@ -264,6 +280,9 @@ export function aggregate({
       (s) => (weights[s.benchmarkId] ?? 0) > 0,
     );
     const inOverall = contributing.filter((s) => overallIds.has(s.benchmarkId));
+    const overallPublishers = new Set(
+      inOverall.map((s) => publisherOf.get(s.benchmarkId)),
+    ).size;
 
     const { score, evidence } = shrunkMean(
       inOverall,
@@ -343,7 +362,14 @@ export function aggregate({
       // not boards: one publisher's several leaderboards agree with itself.
       // And there must be an Overall score to rank on — two domain-only
       // boards make a model comparable in their domains, not Overall.
-      ranked: publishers >= minSources && score !== null,
+      // Publishers among the boards that build the Overall index, not among
+      // all boards. The rule reads "two independent publishers have scored
+      // it", and the number it qualifies is the Overall index — but a second
+      // publisher whose board never enters Overall was counting, so 114 of
+      // 193 ranked models had an Overall decided by exactly one board. GPT-5.5
+      // Pro sat at #20 on ARC-AGI-2 alone. An index whose case is that no
+      // single benchmark can be tuned to it cannot rank half its field on one.
+      ranked: overallPublishers >= minSources && score !== null,
       dispersion: stdDev(inOverall.map((s) => s.normalized)),
       estimate: null,
     };

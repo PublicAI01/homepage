@@ -5,11 +5,7 @@ import { notFound } from 'next/navigation';
 import { cn } from '@/utils';
 
 import BadgeCopy from '../../components/badge-copy';
-import {
-  describeIndex,
-  modelStandings,
-  type Standing,
-} from '../../lib/query';
+import { describeIndex, modelStandings, type Standing } from '../../lib/query';
 
 const INDEX_URL = 'https://publicai.io/model-index';
 const ONE_LINER =
@@ -327,7 +323,9 @@ export default async function ModelPage({
                 ['Placed in', `${standings.length} domains`],
                 ['Read on', shortDay(day)],
               ].map(([k, v]) => (
-                <div key={k} className="flex justify-between gap-3">
+                <div
+                  key={k}
+                  className="flex justify-between gap-3">
                   <dt className="text-[#78758A]">{k}</dt>
                   <dd className="text-right text-[#D9D7E0]">{v}</dd>
                 </div>
@@ -534,9 +532,9 @@ export default async function ModelPage({
               <span className="text-[#E8A9F0]">✱</span> Placed by a one-off
               publication, not a board that re-ran the model.{' '}
               <span className="text-[#E8A9F0]">✱✱</span> marks a figure the
-              model’s own publisher printed, which counts for less again. Scores are 0–100 on the PublicAI Index scale, 50 = the
-              average of the models each source lists. Scores belong to their
-              publishers.
+              model’s own publisher printed, which counts for less again. Scores
+              are 0–100 on the PublicAI Index scale, 50 = the average of the
+              models each source lists. Scores belong to their publishers.
             </p>
           ) : null}
           <p>

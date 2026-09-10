@@ -117,7 +117,7 @@ const method = [
   },
   {
     title: 'Shrink, never impute',
-    text: 'A missing figure is left missing. Thin evidence is pulled toward 50, so one generous board cannot lift a barely-tested model.',
+    text: 'A missing figure is left missing. Thin evidence is pulled toward 50, so one generous board cannot lift a barely-tested model. A source comparing fewer than three models is not standardized at all — two points have no spread to place anything against.',
   },
   {
     title: 'Weight by a published scheme',
@@ -125,7 +125,7 @@ const method = [
   },
   {
     title: 'Two publishers to rank',
-    text: 'Overall ranks a model once boards from two independent publishers have scored it. A domain ranks on its own board evidence.',
+    text: 'Overall ranks a model once two independent publishers among the boards that build the index have scored it — a board that shapes only a domain does not count. A domain ranks on its own board evidence.',
   },
   {
     title: 'Reports ✱ stay out of the headline',

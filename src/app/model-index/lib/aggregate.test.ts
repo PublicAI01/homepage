@@ -249,7 +249,7 @@ describe('aggregate', () => {
 
   it('ignores error bars when confidence weighting is turned off', () => {
     const args = {
-      models: [model('m1'), model('m2')],
+      models: [model('m1'), model('m2'), model('m3')],
       benchmarks: [bench('a')],
       scores: [score('m1', 'a', 90, 0.1), score('m2', 'a', 10, 50)],
       weights: { a: 100 },
@@ -270,11 +270,13 @@ describe('byDomain', () => {
     const ss = [
       score('m1', 'a', 90),
       score('m2', 'a', 10),
+      score('m3', 'a', 50),
       score('m1', 'b', 10),
       score('m2', 'b', 90),
+      score('m3', 'b', 50),
     ];
     const out = aggregate({
-      models: [model('m1'), model('m2')],
+      models: [model('m1'), model('m2'), model('m3')],
       benchmarks: bs,
       scores: ss,
       weights: { a: 50, b: 50 },
@@ -292,7 +294,7 @@ describe('byDomain', () => {
       { ...bench('b'), domain: 'y' },
     ];
     const out = aggregate({
-      models: [model('m1'), model('m2')],
+      models: [model('m1'), model('m2'), model('m3')],
       benchmarks: bs,
       scores: [score('m1', 'a', 90), score('m2', 'a', 10)],
       weights: { a: 50, b: 50 },
@@ -363,13 +365,19 @@ describe('shrinkage', () => {
 
   it('counts a board with several measures as one source', () => {
     const out = aggregate({
-      models: [model('m1'), model('m2')],
+      // Three models, not two: a measure with fewer than three has no
+      // population to standardize against and is dropped before it gets here.
+      models: [model('m1'), model('m2'), model('m3')],
       benchmarks: [bench('x-overall', 'x'), bench('x-cat', 'x')],
       scores: [
         score('m1', 'x-overall', 90),
         score('m2', 'x-overall', 10),
+        score('m3', 'x-overall', 50),
         score('m1', 'x-cat', 90),
         score('m2', 'x-cat', 10),
+        score('m3', 'x-cat', 50),
+        score('m3', 'x-overall', 50),
+        score('m3', 'x-cat', 50),
       ],
       weights: { 'x-overall': 25, 'x-cat': 25 },
       overall: new Set(['x-overall']),
@@ -382,13 +390,15 @@ describe('shrinkage', () => {
 
   it('keeps category figures out of the overall score', () => {
     const out = aggregate({
-      models: [model('m1'), model('m2')],
+      models: [model('m1'), model('m2'), model('m3')],
       benchmarks: [bench('x-overall', 'x'), bench('x-cat', 'x')],
       scores: [
         score('m1', 'x-overall', 50),
         score('m2', 'x-overall', 50),
         score('m1', 'x-cat', 90),
         score('m2', 'x-cat', 10),
+        score('m3', 'x-overall', 50),
+        score('m3', 'x-cat', 50),
       ],
       weights: { 'x-overall': 25, 'x-cat': 25 },
       overall: new Set(['x-overall']),
@@ -409,14 +419,17 @@ describe('reports and categories', () => {
       kind: 'report',
     }),
   ];
-  const ms = [model('m1'), model('m2')];
+  const ms = [model('m1'), model('m2'), model('m3')];
   const ss = [
     score('m1', 'a', 90),
     score('m2', 'a', 10),
+    score('m3', 'a', 50),
     score('m1', 'b', 10),
     score('m2', 'b', 90),
+    score('m3', 'b', 50),
     score('m1', 'r:x', 90),
     score('m2', 'r:x', 10),
+    score('m3', 'r:x', 50),
   ];
   const run = () =>
     aggregate({
