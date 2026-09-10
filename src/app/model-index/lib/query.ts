@@ -13,11 +13,13 @@ import { groupBoards } from './boards';
 import { familyOf } from './family';
 import { sizeLabel, type SizeTier, tierOf } from './size';
 import {
+  BOARD_MEASURE_WEIGHT,
   categoryRank,
+  INDEPENDENT_REPORT_WEIGHT,
   MIN_SOURCES,
   OVERALL,
   PRIOR_FRACTION,
-  REPORT_WEIGHT,
+  VENDOR_REPORT_WEIGHT,
   WEIGHTING,
   weightsFor,
 } from './weights';
@@ -164,6 +166,8 @@ const agreement = (d: number) =>
 export interface SourceFigure {
   source: string;
   kind: Benchmark['kind'];
+  /** False when the model's own publisher printed this figure. */
+  independent: boolean;
   measure: string;
   category: string;
   domain: string;
@@ -286,6 +290,7 @@ function detail(r: AggregateRow): ModelDetail {
       return {
         source: b.source,
         kind: b.kind,
+        independent: b.independent ?? false,
         measure: b.name,
         category: b.category,
         domain: b.domain,
@@ -483,7 +488,7 @@ export function describeIndex() {
       'Where a source publishes an error bar, the figure’s weight is discounted by how wide it is relative to the board’s spread.',
       `A model absent from a source is excluded from that term, never imputed; a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the in-scope weight pulls thin evidence toward 50.`,
       `Overall ranks a model once boards from ${MIN_SOURCES} independent publishers have scored it; otherwise it is provisional. A category or domain ranks any model a recognised board has measured there.`,
-      `Reports (launch posts, blogs) are marked ✱, carry ${REPORT_WEIGHT}% of a board’s share in their domain only, and never enter the Overall index.`,
+      `Reports (launch posts, blogs) are marked ✱ and shape their domain only, never the Overall index. An independent write-up carries ${INDEPENDENT_REPORT_WEIGHT} against a board measure's ${BOARD_MEASURE_WEIGHT}; a figure the model's own publisher printed carries ${VENDOR_REPORT_WEIGHT}.`,
       'A model with no Overall index gets an estimate ✱ (estimatedIndex): its figures on each shared measure are placed among models that have an index, and theirs is read at that position; outside their range the nearest anchor is a bound (ceiling or floor), not a point. Never a rank.',
     ],
     overallWeighting: boards

@@ -68,15 +68,36 @@ export const OVERALL = new Set(WEIGHTING.map((w) => w.benchmarkId));
 /** A recognised board's category figure carries its board's share within its domain. */
 export const BOARD_MEASURE_WEIGHT = 25;
 
-/** A report figure carries less than half a board's share within its domain. */
-export const REPORT_WEIGHT = 10;
+/**
+ * What a one-off publication's figure is worth, by who ran it.
+ *
+ * These were one number, which priced an independent third-party evaluation
+ * exactly like a vendor marking its own homework. They are not the same
+ * evidence and should not weigh the same: the first has no stake in the
+ * result, the second has every stake, and pretending otherwise both
+ * understates the people doing real outside work and flatters the people
+ * who do not.
+ *
+ * Neither enters the Overall index, and both age out — a one-off is evidence
+ * about the moment it was written. Both stay below BOARD_MEASURE_WEIGHT: a
+ * write-up run once is worth more than a press release and less than a board
+ * that re-runs, and that ordering is the whole point of the split.
+ */
+export const INDEPENDENT_REPORT_WEIGHT = 12;
+export const VENDOR_REPORT_WEIGHT = 10;
+
+/** @deprecated The figure a caller means depends on who published it. */
+export const REPORT_WEIGHT = VENDOR_REPORT_WEIGHT;
 
 const explicit = new Map(WEIGHTING.map((w) => [w.benchmarkId, w.weight]));
 
 export function weightFor(b: Benchmark): number {
   const w = explicit.get(b.id);
   if (w !== undefined) return w;
-  return b.kind === 'report' ? REPORT_WEIGHT : BOARD_MEASURE_WEIGHT;
+  if (b.kind !== 'report') return BOARD_MEASURE_WEIGHT;
+  // `independent` is absent from snapshots written before the field existed;
+  // reading that as "vendor" keeps an old file weighted the way it was.
+  return b.independent ? INDEPENDENT_REPORT_WEIGHT : VENDOR_REPORT_WEIGHT;
 }
 
 /** benchmarkId → weight, for every measure in a snapshot. */

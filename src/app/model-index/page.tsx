@@ -24,8 +24,9 @@ import { decodeView, encodeView, rankName } from './lib/view-state';
 import {
   categoryRank,
   domainLabel,
-  REPORT_WEIGHT,
+  INDEPENDENT_REPORT_WEIGHT,
   SOURCE_LOGO,
+  VENDOR_REPORT_WEIGHT,
   WEIGHTING,
 } from './lib/weights';
 
@@ -128,7 +129,7 @@ const method = [
   },
   {
     title: 'Reports ✱ stay out of the headline',
-    text: 'Launch posts and blogs shape domain columns at a tenth of a board’s weight, never the Overall index.',
+    text: 'A one-off publication shapes domain columns, never the Overall index — and an independent write-up counts for more than a vendor’s own post.',
   },
   {
     title: 'Estimate the rest, and say so',
@@ -371,8 +372,9 @@ export default function ModelIndex() {
                 })}
               </ol>
               <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
-                Reports ✱ carry {REPORT_WEIGHT}% of a board’s share, in domain
-                columns only.
+                Reports ✱ carry {INDEPENDENT_REPORT_WEIGHT} when someone
+                independent ran them and {VENDOR_REPORT_WEIGHT} when the model’s
+                own publisher did, in domain columns only.
               </p>
             </Card>
           </aside>

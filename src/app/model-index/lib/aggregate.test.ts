@@ -9,10 +9,12 @@ import {
   placeAmong,
 } from './aggregate';
 import {
+  BOARD_MEASURE_WEIGHT,
+  INDEPENDENT_REPORT_WEIGHT,
   MIN_SOURCES,
   OVERALL,
   PRIOR_FRACTION,
-  REPORT_WEIGHT,
+  VENDOR_REPORT_WEIGHT,
   weightFor,
   WEIGHTING,
   weightsFor,
@@ -471,8 +473,11 @@ describe('weighting', () => {
 
   it('discounts a report below any board measure', () => {
     for (const b of benchmarks) {
-      if (b.kind === 'report') expect(weightFor(b)).toBe(REPORT_WEIGHT);
-      else expect(weightFor(b)).toBeGreaterThan(REPORT_WEIGHT);
+      if (b.kind === 'report')
+        expect(weightFor(b)).toBe(
+          b.independent ? INDEPENDENT_REPORT_WEIGHT : VENDOR_REPORT_WEIGHT,
+        );
+      else expect(weightFor(b)).toBeGreaterThan(INDEPENDENT_REPORT_WEIGHT);
     }
   });
 
@@ -637,5 +642,39 @@ describe('anchored estimates', () => {
     }
     for (const r of out.filter((r) => r.score !== null))
       expect(r.estimate).toBeNull();
+  });
+});
+
+describe('what a one-off publication is worth', () => {
+  const report = (independent?: boolean): Benchmark => ({
+    id: 'r:x',
+    name: 'X',
+    publisher: 'P',
+    url: 'u',
+    retrievedAt: '2026-09-10',
+    kind: 'report',
+    source: 'S',
+    group: 'g',
+    metric: 'percent',
+    category: 'Coding',
+    domain: 'Code generation',
+    ...(independent === undefined ? {} : { independent }),
+  });
+
+  it('pays an independent write-up more than a vendor’s own post', () => {
+    expect(weightFor(report(true))).toBe(INDEPENDENT_REPORT_WEIGHT);
+    expect(weightFor(report(false))).toBe(VENDOR_REPORT_WEIGHT);
+    expect(INDEPENDENT_REPORT_WEIGHT).toBeGreaterThan(VENDOR_REPORT_WEIGHT);
+  });
+
+  it('reads a snapshot from before the field existed as not independent', () => {
+    expect(weightFor(report(undefined))).toBe(VENDOR_REPORT_WEIGHT);
+  });
+
+  it('keeps board above independent above vendor', () => {
+    expect(BOARD_MEASURE_WEIGHT).toBeGreaterThan(INDEPENDENT_REPORT_WEIGHT);
+    expect(INDEPENDENT_REPORT_WEIGHT).toBeGreaterThan(VENDOR_REPORT_WEIGHT);
+    for (const w of WEIGHTING)
+      expect(w.weight).toBeGreaterThan(INDEPENDENT_REPORT_WEIGHT);
   });
 });

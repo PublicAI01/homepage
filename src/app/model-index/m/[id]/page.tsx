@@ -434,9 +434,22 @@ export default async function ModelPage({
                     rel="noreferrer"
                     className="text-sm font-semibold text-white hover:text-[#B08BFF]">
                     {figures[0].kind === 'report' ? (
-                      <span className="text-[#E8A9F0]">✱ </span>
+                      <span
+                        className="text-[#E8A9F0]"
+                        title={
+                          figures[0].independent
+                            ? 'A one-off publication by someone with no stake in the result'
+                            : 'Published by the model’s own maker'
+                        }>
+                        {figures[0].independent ? '✱ ' : '✱✱ '}
+                      </span>
                     ) : null}
                     {source} ↗
+                    {figures[0].kind === 'report' && !figures[0].independent ? (
+                      <span className="text-micro ml-2 font-normal text-[#E0B341]">
+                        the model’s own publisher
+                      </span>
+                    ) : null}
                   </a>
                   <span className={LABEL}>
                     {figures.length}{' '}
@@ -491,9 +504,10 @@ export default async function ModelPage({
         <footer className="text-micro border-t border-white/8 py-8 text-[#6E6C7A]">
           {starred ? (
             <p className="mb-2">
-              <span className="text-[#E8A9F0]">✱</span> Placed by report figures
-              — a launch post or blog, not a recognised board that re-ran the
-              model. Scores are 0–100 on the PublicAI Index scale, 50 = the
+              <span className="text-[#E8A9F0]">✱</span> Placed by a one-off
+              publication, not a board that re-ran the model.{' '}
+              <span className="text-[#E8A9F0]">✱✱</span> marks a figure the
+              model’s own publisher printed, which counts for less again. Scores are 0–100 on the PublicAI Index scale, 50 = the
               average of the models each source lists. Scores belong to their
               publishers.
             </p>

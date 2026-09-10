@@ -36,6 +36,12 @@ export interface Benchmark {
   snapshot?: string;
   /** For reports: the date the publication is dated. */
   publishedAt?: string;
+  /**
+   * False when the publisher was measuring its own model. Optional because
+   * snapshots written before the field existed do not carry it; absent reads
+   * as "not independent", which is the conservative way to be wrong.
+   */
+  independent?: boolean;
   metric: Metric;
   /** Top-level capability area. Fixed vocabulary. */
   category: string;
