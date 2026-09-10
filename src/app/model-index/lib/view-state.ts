@@ -23,6 +23,8 @@ export interface ViewState {
   reports: boolean;
   /** Model id whose detail card is open, '' for none. */
   model: string;
+  /** Only models that entered the index in the last week. */
+  onlyNew: boolean;
 }
 
 export const DEFAULT_VIEW: ViewState = {
@@ -33,6 +35,7 @@ export const DEFAULT_VIEW: ViewState = {
   minBoards: 1,
   reports: true,
   model: '',
+  onlyNew: false,
 };
 
 export function encodeView(v: ViewState): URLSearchParams {
@@ -45,6 +48,7 @@ export function encodeView(v: ViewState): URLSearchParams {
   if (v.minBoards !== DEFAULT_VIEW.minBoards) p.set('min', String(v.minBoards));
   if (!v.reports) p.set('reports', '0');
   if (v.model) p.set('model', v.model);
+  if (v.onlyNew) p.set('new', '1');
   return p;
 }
 
@@ -65,6 +69,7 @@ export function decodeView(p: URLSearchParams): ViewState {
   v.minBoards = p.has('min') && Number.isInteger(min) && min >= 0 ? min : 1;
   v.reports = p.get('reports') !== '0';
   v.model = p.get('model') ?? '';
+  v.onlyNew = p.get('new') === '1';
   return v;
 }
 

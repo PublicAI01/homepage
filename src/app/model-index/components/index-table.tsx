@@ -60,6 +60,9 @@ interface Props {
   scores: Score[];
   catalogs: Catalog[];
   generatedAt: string;
+  /** Models that entered the index recently — computed on the server, because
+      the history file is a quarter of a megabyte and this is a list of ids. */
+  newcomers: { ids: string[]; from: string; until: string };
 }
 
 /* Twenty, not ten: the exported chart is portrait for phone timelines, and
@@ -83,6 +86,16 @@ function rawLabel(metric: Benchmark['metric'], raw: number) {
   if (metric === 'percent') return `${raw}%`;
   return String(raw);
 }
+
+/** "2026-09-08" → "8 Sep". */
+const shortDay = (iso: string) =>
+  iso
+    ? new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        timeZone: 'UTC',
+      })
+    : '';
 
 /** Wide disagreement between boards is a caveat on the aggregate, so it is shown. */
 function agreement(d: number) {
@@ -232,6 +245,7 @@ export default function IndexTable({
   scores,
   catalogs,
   generatedAt,
+  newcomers,
 }: Props) {
   const searchParams = useSearchParams();
   // The URL sets the filters on first render — on the server and the client
@@ -259,6 +273,7 @@ export default function IndexTable({
   const [openModel, setOpenModel] = useState<string | null>(
     initial.model || null,
   );
+  const [onlyNew, setOnlyNew] = useState(initial.onlyNew);
   // Reports ✱ — launch posts, blogs, write-ups — are in by default and can
   // be switched off, which drops their figures from every score and hides
   // models nothing else has measured.
@@ -333,9 +348,19 @@ export default function IndexTable({
     return m;
   }, [rows]);
 
+  const isNew = useMemo(() => new Set(newcomers.ids), [newcomers.ids]);
+  const newNames = useMemo(
+    () =>
+      newcomers.ids
+        .map((id) => models.find((m) => m.id === id)?.name)
+        .filter((n): n is string => Boolean(n)),
+    [newcomers.ids, models],
+  );
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     let out = rows.filter((r) => {
+      if (onlyNew && !isNew.has(r.model.id)) return false;
       if (r.covered < minBoards) return false;
       if (!includeReports && r.covered === 0) return false;
       if (family !== 'all' && familyOf(r.model.name) !== family) return false;
@@ -356,7 +381,17 @@ export default function IndexTable({
         .sort(by);
     }
     return out;
-  }, [rows, query, family, minBoards, rankKey, includeReports, sizeTier]);
+  }, [
+    rows,
+    query,
+    family,
+    minBoards,
+    rankKey,
+    includeReports,
+    sizeTier,
+    onlyNew,
+    isNew,
+  ]);
 
   const rankedCount = rows.filter((r) => r.ranked).length;
   const shown = filtered.slice(0, PAGE);
@@ -424,8 +459,18 @@ export default function IndexTable({
       minBoards,
       reports: includeReports,
       model: openModel ?? '',
+      onlyNew,
     }),
-    [rankKey, query, family, sizeTier, minBoards, includeReports, openModel],
+    [
+      rankKey,
+      query,
+      family,
+      sizeTier,
+      minBoards,
+      includeReports,
+      openModel,
+      onlyNew,
+    ],
   );
   const viewQuery = useMemo(() => encodeView(view).toString(), [view]);
   useEffect(() => {
@@ -666,6 +711,40 @@ export default function IndexTable({
           </span>
         </p>
       ) : null}
+      {/* A new model arriving is otherwise silent: it lands wherever its score
+          puts it, and unless you already knew its name you would never see it.
+          Above the table, not behind a tab — a tab still asks you to go look. */}
+      {newcomers.ids.length && !onlyNew ? (
+        <div className="text-caption mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-lg border border-[#7C5CFF]/30 bg-[#7C5CFF]/8 px-3 py-2">
+          <span className="text-p1 font-semibold">
+            {newcomers.ids.length} new
+          </span>
+          <span className="text-[#B9B7C4]">
+            since {shortDay(newcomers.from)} · {newNames.slice(0, 3).join(', ')}
+            {newNames.length > 3 ? ` and ${newNames.length - 3} more` : ''}
+          </span>
+          <button
+            type="button"
+            onClick={() => setOnlyNew(true)}
+            className="text-p1 hover:text-p1/80 ml-auto shrink-0 underline underline-offset-2">
+            Show them →
+          </button>
+        </div>
+      ) : null}
+      {onlyNew ? (
+        <div className="text-caption mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-lg border border-[#7C5CFF]/30 bg-[#7C5CFF]/8 px-3 py-2">
+          <span className="text-p1 font-semibold">New models only</span>
+          <span className="text-[#B9B7C4]">
+            entered since {shortDay(newcomers.from)}
+          </span>
+          <button
+            type="button"
+            onClick={() => setOnlyNew(false)}
+            className="text-p1 hover:text-p1/80 ml-auto shrink-0 underline underline-offset-2">
+            Show everything
+          </button>
+        </div>
+      ) : null}
       <div className="text-caption mt-3 mb-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[#78758A]">
         <p>
           <span className="text-[#D9D7E0]">{rankedCount}</span> ranked ·{' '}
@@ -752,6 +831,7 @@ export default function IndexTable({
                 key={row.model.id}
                 row={row}
                 rank={rankOf.get(row.model.id)}
+                isNew={isNew.has(row.model.id)}
                 position={positionOf.get(row.model.id)}
                 inScope={eligible(row, rankKey)}
                 rankKey={rankKey}
@@ -804,6 +884,7 @@ function Row({
   catalogDate,
   open,
   onToggle,
+  isNew,
 }: {
   row: AggregateRow;
   rank: number | undefined;
@@ -818,6 +899,7 @@ function Row({
   catalogDate: string | undefined;
   open: boolean;
   onToggle: () => void;
+  isNew: boolean;
 }) {
   const thin = row.ranked && row.covered < row.coverable;
   const scored = new Map(row.perBenchmark.map((s) => [s.benchmarkId, s]));
@@ -877,6 +959,13 @@ function Row({
                   : 'Total parameters, as the model’s own name states'
               }>
               {sizeLabel(row.model.size)}
+            </span>
+          ) : null}
+          {isNew ? (
+            <span
+              className="text-micro text-p1 border-p1/40 bg-p1/10 ml-2 rounded border px-1 py-px"
+              title="Entered the index in the last week">
+              NEW
             </span>
           ) : null}
           {!inScope ? (

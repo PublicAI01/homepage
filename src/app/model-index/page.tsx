@@ -17,6 +17,7 @@ import {
   scores,
 } from './data';
 import { groupBoards } from './lib/boards';
+import { enteredSince } from './lib/changes';
 import { API_URL, MCP_URL } from './lib/query';
 import { SIZE_TIERS } from './lib/size';
 import { decodeView, encodeView, rankName } from './lib/view-state';
@@ -164,6 +165,14 @@ const limits = [
 
 const mcpConfig = `{ "mcpServers": { "publicai-index": { "url": "${MCP_URL}" } } }`;
 
+const entered = enteredSince(7);
+/** Ids only: the table needs a set, not the history file. */
+const newcomers = {
+  ids: entered.models.map((m) => m.id),
+  from: entered.from,
+  until: entered.until,
+};
+
 const snapshotDate = generatedAt.slice(0, 10);
 const citation = `PublicAI Foundation (${snapshotDate.slice(0, 4)}). PublicAI Index, snapshot ${snapshotDate}. https://publicai.io/model-index`;
 
@@ -293,6 +302,7 @@ export default function ModelIndex() {
                 scores={scores}
                 catalogs={catalogs}
                 generatedAt={generatedAt}
+                newcomers={newcomers}
               />
             </Suspense>
           </main>

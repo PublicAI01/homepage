@@ -28,3 +28,30 @@ export function changesSince(since: string, minDelta = 3, until?: string) {
   const to = until === undefined ? latest() : snapshotAt(until);
   return diff(snapshotAt(since), to, since, minDelta, entries);
 }
+
+/**
+ * Models that first appeared in the last `days`, newest snapshot first.
+ *
+ * The page carries this because a new model arriving is silent otherwise: it
+ * lands wherever its score puts it, and unless you already knew its name and
+ * searched for it, you would never see it. `from` is the snapshot actually
+ * compared against, not the requested cutoff — the history only goes back as
+ * far as it goes, and saying otherwise would overstate the window.
+ */
+export function enteredSince(days = 7) {
+  const to = latest();
+  if (!to) return { from: '', until: '', models: [] };
+  const cutoff = new Date(
+    Date.parse(`${to.date}T00:00:00Z`) - days * 86_400_000,
+  )
+    .toISOString()
+    .slice(0, 10);
+  const from = snapshotAt(cutoff);
+  return {
+    from: from?.date ?? to.date,
+    until: to.date,
+    models: diff(from, to, cutoff, 3, entries).models.filter(
+      (m) => m.kind === 'entered',
+    ),
+  };
+}
