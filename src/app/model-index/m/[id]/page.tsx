@@ -5,13 +5,26 @@ import { notFound } from 'next/navigation';
 import { cn } from '@/utils';
 
 import BadgeCopy from '../../components/badge-copy';
-import { modelStandings, type Standing } from '../../lib/query';
+import {
+  describeIndex,
+  modelStandings,
+  type Standing,
+} from '../../lib/query';
 
 const INDEX_URL = 'https://publicai.io/model-index';
 const ONE_LINER =
   'The LLM benchmark aggregator — the world’s most comprehensive and robust LLM index.';
 
 const PANEL = 'rounded-xl border border-[#2C2C31] bg-white/[0.045]';
+
+/** "2026-09-10" → "10 Sep 2026". A card is read, not parsed. */
+const shortDay = (iso: string) =>
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
 const LABEL = 'text-micro tracking-[0.14em] text-[#78758A] uppercase';
 
 const load = async (params: Promise<{ id: string }>) => {
@@ -200,6 +213,7 @@ export default async function ModelPage({
 
   const day = generatedAt.slice(0, 10);
   const starred = standings.some((s) => !s.rankedInScope);
+  const rankedTotal = describeIndex().counts.ranked;
   const badgeMarkdown = `[![PublicAI Index](${INDEX_URL}/badge?model=${model.id})](${INDEX_URL}/m/${model.id})`;
   const bySource = [
     ...model.figures
@@ -257,52 +271,65 @@ export default async function ModelPage({
             ) : null}
           </div>
 
-          {/* The headline number, where a headline number goes. A provisional
-              model leads with its coverage instead: putting ~54.5✱ in 40px
-              type would shout a figure we ourselves mark as not to be trusted. */}
+          {/* Counters do not explain themselves. "Scopes 34 · Figures 33"
+              reads like a typo, "71" says nothing without a scale, and the
+              number that decides whether to believe any of it — how many
+              boards actually measured this model — was not on the card at
+              all. Every line is a sentence now, and the evidence leads. */}
           <aside className={cn(PANEL, 'h-fit p-4')}>
             <p className={cn(LABEL, 'mb-3')}>This model</p>
             {model.index !== null ? (
               <>
                 <p className="font-mono text-4xl leading-none font-bold text-[#B08BFF]">
                   {model.index}
+                  <span className="text-xl text-[#4A4A52]"> / 100</span>
                 </p>
-                <p className="text-caption mt-1 text-[#9C9AA8]">
-                  Overall index{model.rank ? ` · rank #${model.rank}` : ''}
+                <p className="text-caption mt-1.5 text-[#9C9AA8]">
+                  50 is average
+                  {model.rank ? (
+                    <>
+                      {' · '}
+                      <b className="font-semibold text-[#D9D7E0]">
+                        #{model.rank}
+                      </b>{' '}
+                      of {rankedTotal}
+                    </>
+                  ) : null}
                 </p>
               </>
             ) : (
               <>
-                <p className="font-mono text-4xl leading-none font-bold text-white">
-                  {model.covered}
-                  <span className="text-2xl text-[#6E6C7A]">
-                    /{model.coverable}
-                  </span>
+                <p className="font-mono text-3xl leading-none font-bold text-white">
+                  Not ranked
                 </p>
-                <p className="text-caption mt-1 text-[#E0B341]">
-                  boards · provisional
-                </p>
-                <p className="text-micro mt-1 text-[#6E6C7A]">
-                  Not ranked until two independent publishers have scored it
+                <p className="text-caption mt-1.5 text-[#E0B341]">
+                  Only one publisher has scored it
                   {model.estimatedIndex
-                    ? `; estimated ~${model.estimatedIndex.score}✱`
+                    ? ` — looks like about ${model.estimatedIndex.score}`
                     : ''}
-                  .
                 </p>
               </>
             )}
-            <dl className="text-caption mt-4 space-y-1 border-t border-white/8 pt-3 text-[#9C9AA8]">
+            <dl className="text-caption mt-4 space-y-1.5 border-t border-white/8 pt-3">
               {[
-                ['Scopes', String(standings.length)],
-                ['Figures', String(model.figures.length)],
-                ['Reports ✱', String(model.reports)],
-                ['Snapshot', day],
+                [
+                  'Measured by',
+                  `${model.covered} of ${model.coverable} boards`,
+                ],
+                ...(model.reports
+                  ? ([
+                      [
+                        'Plus',
+                        `${model.reports} one-off ${model.reports === 1 ? 'report' : 'reports'} ✱`,
+                      ],
+                    ] as const)
+                  : []),
+                ['Placed in', `${standings.length} domains`],
+                ['Read on', shortDay(day)],
               ].map(([k, v]) => (
-                <div
-                  key={k}
-                  className="flex justify-between gap-3">
-                  <dt>{k}</dt>
-                  <dd className="font-mono text-[#D9D7E0]">{v}</dd>
+                <div key={k} className="flex justify-between gap-3">
+                  <dt className="text-[#78758A]">{k}</dt>
+                  <dd className="text-right text-[#D9D7E0]">{v}</dd>
                 </div>
               ))}
             </dl>
