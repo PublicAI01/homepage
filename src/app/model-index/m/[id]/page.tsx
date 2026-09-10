@@ -64,7 +64,9 @@ const Placement = ({ s }: { s: Standing }) => (
         {!s.rankedInScope ? <span className="text-[#E8A9F0]"> ✱</span> : null}
       </span>
     </div>
-    <div className="truncate text-sm leading-tight text-[#D9D7E0]" title={s.scope}>
+    <div
+      className="truncate text-sm leading-tight text-[#D9D7E0]"
+      title={s.scope}>
       {s.scope}
       {s.level === 'category' ? (
         <span className="text-[#78758A]"> · category</span>
@@ -109,87 +111,56 @@ const Bar = ({ score, subject }: { score: number; subject: boolean }) => {
   );
 };
 
-/** One scope, one line: the shape of a model across everything it was measured on. */
-const ProfileRow = ({ s }: { s: Standing }) => (
-  <div className="flex items-center gap-3 border-t border-white/6 py-1.5 first:border-0">
-    <span
-      className="w-40 shrink-0 truncate text-[13px] text-[#D9D7E0] sm:w-52"
-      title={s.scope}>
-      {s.scope}
-      {s.level === 'category' ? (
-        <span className="text-[#6E6C7A]"> · cat</span>
-      ) : null}
-    </span>
-    <span className="min-w-0 flex-1">
-      <Bar score={s.score} subject />
-    </span>
-    <span className="w-10 shrink-0 text-right font-mono text-xs text-white">
-      {s.score}
-    </span>
-    <span
+/**
+ * One scope, one line.
+ *
+ * `#14 of 45` does not say whether that is close. The gap to the leader does:
+ * twelve points back is out of reach, half a point is a coin toss. That was
+ * the one thing the six neighbour panels knew that nothing else did, and it
+ * fits here in a single column.
+ */
+const ProfileRow = ({ s, nested }: { s: Standing; nested?: boolean }) => {
+  const gap = Math.round((s.leader.score - s.score) * 10) / 10;
+  return (
+    <div
       className={cn(
-        'w-20 shrink-0 text-right font-mono text-xs',
-        s.position <= 3 ? 'text-[#B08BFF]' : 'text-[#8E8BA0]',
+        'flex items-center gap-3 border-t border-white/6 py-1.5',
+        nested ? 'pl-3 sm:pl-5' : 'font-semibold',
       )}>
-      #{s.position}
-      <span className="text-[#6E6C7A]">/{s.total}</span>
-      {!s.rankedInScope ? <span className="text-[#E8A9F0]">✱</span> : null}
-    </span>
-  </div>
-);
-
-/** A scope in full: the leader for scale, then the models either side. */
-const Board = ({ s }: { s: Standing }) => (
-  <div className={cn(PANEL, 'px-3.5 py-3')}>
-    <div className="mb-2 flex items-baseline gap-2">
       <span
-        className="truncate text-sm font-semibold text-white"
+        className={cn(
+          'w-36 shrink-0 truncate text-[13px] sm:w-48',
+          nested ? 'text-[#B9B7C4]' : 'text-white',
+        )}
         title={s.scope}>
         {s.scope}
       </span>
-      <span className="ml-auto shrink-0 font-mono text-xs text-[#8E8BA0]">
-        #{s.position} of {s.total}
-        {!s.rankedInScope ? <span className="text-[#E8A9F0]"> ✱</span> : null}
+      <span className="min-w-0 flex-1">
+        <Bar
+          score={s.score}
+          subject
+        />
+      </span>
+      <span className="w-10 shrink-0 text-right font-mono text-xs text-white">
+        {s.score}
+      </span>
+      <span
+        className="hidden w-16 shrink-0 text-right font-mono text-xs text-[#6E6C7A] sm:block"
+        title={`Leader: ${s.leader.name} at ${s.leader.score}`}>
+        {gap > 0 ? `−${gap}` : 'leads'}
+      </span>
+      <span
+        className={cn(
+          'w-20 shrink-0 text-right font-mono text-xs',
+          s.position <= 3 ? 'text-[#B08BFF]' : 'text-[#8E8BA0]',
+        )}>
+        #{s.position}
+        <span className="text-[#6E6C7A]">/{s.total}</span>
+        {!s.rankedInScope ? <span className="text-[#E8A9F0]">✱</span> : null}
       </span>
     </div>
-    {s.peers.map((p, i) => (
-      <div key={p.id}>
-        {i > 0 && p.position > s.peers[i - 1].position + 1 ? (
-          <div className="py-0.5 pl-5 font-mono text-[11px] leading-none text-[#5E5C6A]">
-            ⋮
-          </div>
-        ) : null}
-        <div className="flex items-center gap-2 py-px">
-          <span
-            className={cn(
-              'w-5 shrink-0 text-right font-mono text-[11px]',
-              p.isSubject ? 'text-[#B08BFF]' : 'text-[#6E6C7A]',
-            )}>
-            {p.position}
-          </span>
-          <span
-            className={cn(
-              'min-w-0 flex-1 truncate text-[13px]',
-              p.isSubject ? 'font-semibold text-white' : 'text-[#B9B7C4]',
-            )}
-            title={`${p.name} — ${p.org}`}>
-            {p.name}
-          </span>
-          <span className="hidden w-24 shrink-0 sm:block">
-            <Bar score={p.score} subject={p.isSubject} />
-          </span>
-          <span
-            className={cn(
-              'w-9 shrink-0 text-right font-mono text-[11px]',
-              p.isSubject ? 'text-white' : 'text-[#8E8BA0]',
-            )}>
-            {p.score}
-          </span>
-        </div>
-      </div>
-    ))}
-  </div>
-);
+  );
+};
 
 export default async function ModelPage({
   params,
@@ -206,12 +177,27 @@ export default async function ModelPage({
   const beats = rivals.filter((r) => r.ahead / r.met < 0.5);
   const beaten = rivals.filter((r) => r.ahead / r.met > 0.5);
   const names = (rs: typeof rivals, n = 2) =>
-    rs.slice(0, n).map((r) => r.name).join(' and ');
+    rs
+      .slice(0, n)
+      .map((r) => r.name)
+      .join(' and ');
 
-  const ends = [
-    ...standings.slice(0, 3),
-    ...standings.slice(-3).filter((s) => !standings.slice(0, 3).includes(s)),
-  ];
+  const byCategory = new Map<string, Standing[]>();
+  for (const s of standings) {
+    const key = s.level === 'category' ? s.scope : (s.category ?? s.scope);
+    byCategory.set(key, [...(byCategory.get(key) ?? []), s]);
+  }
+  const grouped = [...byCategory.entries()]
+    .map(([c, rows]) => {
+      const sorted = [...rows].sort(
+        (a, b) =>
+          Number(b.level === 'category') - Number(a.level === 'category') ||
+          a.position - b.position,
+      );
+      return [c, sorted] as const;
+    })
+    .sort((a, b) => a[1][0].position - b[1][0].position);
+
   const day = generatedAt.slice(0, 10);
   const starred = standings.some((s) => !s.rankedInScope);
   const badgeMarkdown = `[![PublicAI Index](${INDEX_URL}/badge?model=${model.id})](${INDEX_URL}/m/${model.id})`;
@@ -232,63 +218,95 @@ export default async function ModelPage({
       <div className="container mx-auto max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
         {/* Branding, then the model. Nothing else competes for the top of a
             page someone opened to read one model's numbers. */}
-        <header className="pt-10 pb-8 lg:pt-14">
-          <Link
-            href="/model-index"
-            className={cn(LABEL, 'hover:text-[#B08BFF]')}>
-            PublicAI Index
-          </Link>
-          <p className="text-lede mt-1 max-w-[60ch] text-[#B9B7C4]">
-            {ONE_LINER}
-          </p>
-
-          <h1 className="text-display mt-8 font-bold text-white">
-            {model.name}
-          </h1>
-          <p className="text-lede mt-2 text-[#D9D7E0]">
-            {model.org}
-            {model.size ? ` · ${model.size.label}` : ''}
-            {model.catalog?.openWeights ? ' · open weights' : ''}
-          </p>
-          {best ? (
-            <p className="text-lede mt-5 max-w-[72ch] text-[#D9D7E0]">
-              Strongest in{' '}
-              <b className="font-semibold text-white">{best.scope}</b> (#
-              {best.position} of {best.total}), weakest in{' '}
-              <b className="font-semibold text-white">{worst.scope}</b> (#
-              {worst.position} of {worst.total}). Above par in {abovePar} of{' '}
-              {standings.length} scopes.
-              {beaten.length || beats.length ? (
-                <>
-                  {' '}
-                  Among the models it meets almost everywhere, it finishes
-                  behind {beaten.length ? names(beaten) : 'none'}
-                  {beats.length ? <> and ahead of {names(beats)}</> : null}.
-                </>
-              ) : null}
+        <header className="grid grid-cols-1 gap-8 pt-10 pb-8 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-10 lg:pt-14">
+          <div className="min-w-0">
+            <Link
+              href="/model-index"
+              className={cn(LABEL, 'hover:text-[#B08BFF]')}>
+              ‹ PublicAI Index
+            </Link>
+            <p className="text-caption mt-1 max-w-[60ch] text-[#9C9AA8]">
+              {ONE_LINER}
             </p>
-          ) : null}
-          <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-sm">
-            {model.index !== null ? (
-              <span className="text-white">
-                Overall <b className="text-[#B08BFF]">{model.index}</b>
-                {model.rank ? (
-                  <span className="text-[#8E8BA0]"> · rank #{model.rank}</span>
+
+            <h1 className="text-display mt-6 font-bold text-white">
+              {model.name}
+            </h1>
+            <p className="text-lede mt-2 text-[#D9D7E0]">
+              {model.org}
+              {model.size ? ` · ${model.size.label}` : ''}
+              {model.catalog?.openWeights ? ' · open weights' : ''}
+            </p>
+            {best ? (
+              <p className="text-lede mt-4 max-w-[72ch] text-[#D9D7E0]">
+                Strongest in{' '}
+                <b className="font-semibold text-white">{best.scope}</b> (#
+                {best.position} of {best.total}), weakest in{' '}
+                <b className="font-semibold text-white">{worst.scope}</b> (#
+                {worst.position} of {worst.total}). Above par in {abovePar} of{' '}
+                {standings.length} scopes.
+                {beaten.length || beats.length ? (
+                  <>
+                    {' '}
+                    Among the models it meets almost everywhere, it finishes
+                    behind {beaten.length ? names(beaten) : 'none'}
+                    {beats.length ? <> and ahead of {names(beats)}</> : null}.
+                  </>
                 ) : null}
-              </span>
+              </p>
+            ) : null}
+          </div>
+
+          {/* The headline number, where a headline number goes. A provisional
+              model leads with its coverage instead: putting ~54.5✱ in 40px
+              type would shout a figure we ourselves mark as not to be trusted. */}
+          <aside className={cn(PANEL, 'h-fit p-4')}>
+            <p className={cn(LABEL, 'mb-3')}>This model</p>
+            {model.index !== null ? (
+              <>
+                <p className="font-mono text-4xl leading-none font-bold text-[#B08BFF]">
+                  {model.index}
+                </p>
+                <p className="text-caption mt-1 text-[#9C9AA8]">
+                  Overall index{model.rank ? ` · rank #${model.rank}` : ''}
+                </p>
+              </>
             ) : (
-              <span className="text-[#E0B341]">
-                Provisional — fewer than 2 independent publishers
-                {model.estimatedIndex
-                  ? `, estimated ~${model.estimatedIndex.score}✱`
-                  : ''}
-              </span>
+              <>
+                <p className="font-mono text-4xl leading-none font-bold text-white">
+                  {model.covered}
+                  <span className="text-2xl text-[#6E6C7A]">
+                    /{model.coverable}
+                  </span>
+                </p>
+                <p className="text-caption mt-1 text-[#E0B341]">
+                  boards · provisional
+                </p>
+                <p className="text-micro mt-1 text-[#6E6C7A]">
+                  Not ranked until two independent publishers have scored it
+                  {model.estimatedIndex
+                    ? `; estimated ~${model.estimatedIndex.score}✱`
+                    : ''}
+                  .
+                </p>
+              </>
             )}
-            <span className="text-[#8E8BA0]">
-              {model.covered} of {model.coverable} boards
-              {model.reports ? ` · ${model.reports} reports ✱` : ''}
-            </span>
-          </p>
+            <dl className="text-caption mt-4 space-y-1 border-t border-white/8 pt-3 text-[#9C9AA8]">
+              {[
+                ['Scopes', String(standings.length)],
+                ['Figures', String(model.figures.length)],
+                ['Reports ✱', String(model.reports)],
+                ['Snapshot', day],
+              ].map(([k, v]) => (
+                <div
+                  key={k}
+                  className="flex justify-between gap-3">
+                  <dt>{k}</dt>
+                  <dd className="font-mono text-[#D9D7E0]">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
         </header>
 
         {standings.length === 0 ? (
@@ -303,16 +321,27 @@ export default async function ModelPage({
             <section className="pb-10">
               <p className={cn(LABEL, 'mb-2')}>§ 1 · Profile</p>
               <h2 className="text-heading mb-1 font-bold text-white">
-                Across {standings.length}{' '}
-                {standings.length === 1 ? 'scope' : 'scopes'}, best first
+                What it is good at
               </h2>
               <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
-                Bars run from 50 — the average of the models each source lists
-                — so right of the line is above par and left is below.
+                Bars run from 50 — the average of the models each source lists —
+                so right of the line is above par. The middle column is the gap
+                to whoever leads that scope.
               </p>
+              {/* Categories are aggregates of the domains beneath them. A flat
+                  list sorted by rank put "Coding · cat" between two of the
+                  domains it is made of, which reads as though they were peers. */}
               <div className={cn(PANEL, 'px-4 py-2')}>
-                {standings.map((s) => (
-                  <ProfileRow key={`${s.level}:${s.scope}`} s={s} />
+                {grouped.map(([category, rows]) => (
+                  <div key={category}>
+                    {rows.map((r) => (
+                      <ProfileRow
+                        key={`${r.level}:${r.scope}`}
+                        s={r}
+                        nested={r.level === 'domain'}
+                      />
+                    ))}
+                  </div>
                 ))}
               </div>
             </section>
@@ -324,9 +353,9 @@ export default async function ModelPage({
                   What it beats, and what beats it
                 </h2>
                 <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
-                  The same models turn up scope after scope. Counted once:
-                  where both were placed, who finished higher. Bars run right
-                  for {model.name}, left for the other.
+                  The same models turn up scope after scope. Counted once: where
+                  both were placed, who finished higher. Bars run right for{' '}
+                  {model.name}, left for the other.
                 </p>
                 <div className={cn(PANEL, 'px-4 py-2')}>
                   {[...rivals].reverse().map((r) => {
@@ -361,7 +390,9 @@ export default async function ModelPage({
                         <span className="w-32 shrink-0 text-right font-mono text-xs text-[#6E6C7A]">
                           <span
                             className={
-                              won > r.ahead ? 'text-[#B08BFF]' : 'text-[#8E8BA0]'
+                              won > r.ahead
+                                ? 'text-[#B08BFF]'
+                                : 'text-[#8E8BA0]'
                             }>
                             won {won}
                           </span>
@@ -374,40 +405,28 @@ export default async function ModelPage({
                 </div>
               </section>
             ) : null}
-
-            {/* Detail last: by here a reader knows what to look at. Both ends
-                named as such, because showing only the best three would be a
-                brochure. */}
-            <section className="pb-10">
-              <p className={cn(LABEL, 'mb-2')}>§ 3 · Best and weakest</p>
-              <h2 className="text-heading mb-1 font-bold text-white">
-                Who it sits beside
-              </h2>
-              <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
-                The leader of each scope for scale, then the models immediately
-                above and below.
-              </p>
-              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
-                {ends.map((s) => (
-                  <Board key={`${s.level}:${s.scope}`} s={s} />
-                ))}
-              </div>
-            </section>
           </>
         )}
 
         <section className="pb-10">
-          <p className={cn(LABEL, 'mb-2')}>§ 4 · Sources</p>
-          <h2 className="text-heading mb-4 font-bold text-white">
-            {bySource.length} {bySource.length === 1 ? 'source' : 'sources'},{' '}
-            {model.figures.length} figures
+          <p className={cn(LABEL, 'mb-2')}>§ 3 · Sources</p>
+          <h2 className="text-heading mb-1 font-bold text-white">
+            Where the numbers come from
           </h2>
+          <p className="text-caption mb-4 max-w-[68ch] text-[#9C9AA8]">
+            {bySource.length}{' '}
+            {bySource.length === 1 ? 'publication' : 'publications'},{' '}
+            {model.figures.length} figures. Every one links to the page it was
+            read from.
+          </p>
           {/* One block per publication, not one row per number. Seventeen
               measures from a single launch post are one source that published
               seventeen times — listing it seventeen times says the opposite. */}
           <div className="flex flex-col gap-3">
             {bySource.map(([source, figures]) => (
-              <div key={source} className={cn(PANEL, 'px-4 py-3')}>
+              <div
+                key={source}
+                className={cn(PANEL, 'px-4 py-3')}>
                 <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                   <a
                     href={figures[0].url}
@@ -450,7 +469,7 @@ export default async function ModelPage({
         {/* For whoever publishes this model: the badge reads live, so a
             README pasted once stays current. */}
         <section className="pb-10">
-          <p className={cn(LABEL, 'mb-2')}>§ 5 · Badge</p>
+          <p className={cn(LABEL, 'mb-2')}>Badge</p>
           <div
             className={cn(
               PANEL,
@@ -481,7 +500,9 @@ export default async function ModelPage({
           ) : null}
           <p>
             Snapshot {day} ·{' '}
-            <Link href="/model-index" className="hover:text-[#B08BFF]">
+            <Link
+              href="/model-index"
+              className="hover:text-[#B08BFF]">
               the full index
             </Link>{' '}
             ·{' '}

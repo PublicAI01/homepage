@@ -125,3 +125,28 @@ describe('modelStandings scope identity', () => {
     }
   });
 });
+
+describe('standings — nesting and scale', () => {
+  const found = modelStandings('k2-horizon-375b-a23b');
+  if ('error' in found) throw new Error(found.error);
+
+  it('names the category a domain belongs to, and none for a category itself', () => {
+    for (const s of found.standings) {
+      if (s.level === 'domain') expect(typeof s.category).toBe('string');
+      else expect(s.category).toBeUndefined();
+    }
+  });
+
+  it('carries the leader of every scope', () => {
+    for (const s of found.standings) {
+      expect(s.leader.name).toBeTruthy();
+      expect(s.leader.score).toBeGreaterThanOrEqual(s.score);
+      expect(s.leader.name).toBe(s.peers[0].name);
+    }
+  });
+
+  it('gives the model itself as leader only when it leads', () => {
+    for (const s of found.standings)
+      expect(s.leader.name === found.model.name).toBe(s.position === 1);
+  });
+});

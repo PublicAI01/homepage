@@ -560,6 +560,10 @@ export interface StandingsHit {
 export interface Standing {
   scope: string;
   level: 'category' | 'domain';
+  /** For a domain, the category it belongs to — the page nests them. */
+  category?: string;
+  /** The scope's leader, so a score can be read as a distance rather than alone. */
+  leader: { name: string; score: number };
   /** Where a model sits and how crowded the scope is. */
   position: number;
   total: number;
@@ -677,9 +681,14 @@ export function modelStandings(query: string): StandingsHit | StandingsMiss {
           ? b.domain === scope.domain
           : false,
     );
+    const head = summarize(ranked[0], scope);
     standings.push({
       scope: scopeLabel(scope),
       level: scope.level,
+      ...(scope.level === 'domain' && inScope[0]
+        ? { category: inScope[0].category }
+        : {}),
+      leader: { name: head.name, score: head.scopeScore ?? 0 },
       position: idx + 1,
       total: ranked.length,
       score: me.scopeScore,
