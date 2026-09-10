@@ -1107,7 +1107,7 @@ function ModelCard({
   ].filter(Boolean);
 
   return (
-    <div className="flex flex-col gap-6 px-4 py-5">
+    <div className="flex flex-col gap-4 px-4 py-4">
       {/* ---- who it is, and how well covered ---- */}
       <div>
         <div className="mb-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -1115,18 +1115,17 @@ function ModelCard({
           <span className="text-caption text-[#9C9AA8]">
             {facts.join(' · ')}
           </span>
-          {/* This card is the summary; the page is the answer. A reader who
-              opened a row wanting "how does it do everywhere" should not have
-              to re-filter the table to find out. */}
-          {/* New tab, not a navigation: the reader opened this card, and
-              taking the page out from under them closes it for them. */}
+          {/* The card is the summary and the page is the answer, so the way
+              through should look like something you press rather than a
+              footnote in the corner. New tab: the reader opened this card, and
+              navigating away closes it for them. */}
           <a
             href={`/model-index/m/${row.model.id}`}
             target="_blank"
             rel="noreferrer"
-            className="text-micro text-p1 hover:text-p1/80 ml-auto shrink-0 underline underline-offset-2 transition-colors"
+            className="text-caption text-p1 border-p1/40 bg-p1/10 hover:border-p1/70 hover:bg-p1/20 ml-auto inline-flex shrink-0 items-center gap-1.5 rounded-md border px-2.5 py-1 font-medium transition-colors"
             onClick={(e) => e.stopPropagation()}>
-            See more ↗
+            Every domain, every source ↗
           </a>
         </div>
         <p className="text-caption text-[#9C9AA8]">
@@ -1173,52 +1172,108 @@ function ModelCard({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,20rem)]">
-        {/* ---- scores ---- */}
-        <div className="min-w-0">
-          <h4 className={cn(LABEL, 'mb-2.5')}>Scores by domain</h4>
-          <div className="flex flex-col gap-2">
-            {taxonomy.map(([category, domains]) => {
-              const c = row.byCategory[category] ?? null;
-              // Strongest two, then a count. The question a card answers is
-              // "good at what", not "here is the taxonomy" — that is what the
-              // table's own Rank by is for.
-              const present = domains
-                .filter((d) => (row.byDomain[d] ?? null) !== null)
-                .sort(
-                  (a, b) => (row.byDomain[b] ?? 0) - (row.byDomain[a] ?? 0),
-                );
-              if (c === null && present.length === 0) return null;
-              const chips =
-                present.length === 1 &&
-                domainLabel(present[0]) === domainLabel(category)
-                  ? []
-                  : present.slice(0, 2);
-              const rest = present.length - chips.length;
-              return (
-                <div
-                  key={category}
-                  className="text-caption flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                  <span className="w-28 shrink-0 text-white">
-                    {domainLabel(category)}
-                    <span className="text-p1 ml-1.5 font-mono">{fmt(c)}</span>
-                  </span>
-                  {chips.map((d) => (
-                    <span
-                      key={d}
-                      className="text-g2">
-                      {domainLabel(d)}{' '}
-                      <span className="font-mono text-[#D9D7E0]">
-                        {fmt(row.byDomain[d])}
-                      </span>
+      {/* Scores and sources share the left column. They used to be separate
+          rows, so the taller "how to call it" stack stretched the scores row
+          and left a hole under it exactly the height of the difference. */}
+      <div className="grid grid-cols-1 items-start gap-x-8 gap-y-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,19rem)]">
+        <div className="flex min-w-0 flex-col gap-5">
+          {/* ---- scores ---- */}
+          <div className="min-w-0">
+            <h4 className={cn(LABEL, 'mb-2.5')}>Scores by domain</h4>
+            <div className="flex flex-col gap-2">
+              {taxonomy.map(([category, domains]) => {
+                const c = row.byCategory[category] ?? null;
+                // Strongest two, then a count. The question a card answers is
+                // "good at what", not "here is the taxonomy" — that is what the
+                // table's own Rank by is for.
+                const present = domains
+                  .filter((d) => (row.byDomain[d] ?? null) !== null)
+                  .sort(
+                    (a, b) => (row.byDomain[b] ?? 0) - (row.byDomain[a] ?? 0),
+                  );
+                if (c === null && present.length === 0) return null;
+                const chips =
+                  present.length === 1 &&
+                  domainLabel(present[0]) === domainLabel(category)
+                    ? []
+                    : present.slice(0, 2);
+                const rest = present.length - chips.length;
+                return (
+                  <div
+                    key={category}
+                    className="text-caption flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <span className="w-28 shrink-0 text-white">
+                      {domainLabel(category)}
+                      <span className="text-p1 ml-1.5 font-mono">{fmt(c)}</span>
                     </span>
-                  ))}
-                  {rest > 0 ? (
-                    <span className="text-[#78758A]">+{rest}</span>
-                  ) : null}
-                </div>
-              );
-            })}
+                    {chips.map((d) => (
+                      <span
+                        key={d}
+                        className="text-g2">
+                        {domainLabel(d)}{' '}
+                        <span className="font-mono text-[#D9D7E0]">
+                          {fmt(row.byDomain[d])}
+                        </span>
+                      </span>
+                    ))}
+                    {rest > 0 ? (
+                      <span className="text-[#78758A]">+{rest}</span>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ---- sources ---- */}
+          <div className="min-w-0">
+            <div className="mb-2.5 flex items-baseline justify-between gap-4">
+              <h4 className={LABEL}>Sources</h4>
+            </div>
+            <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
+              {[...boards, ...reports].map((src) => {
+                const present = src.measures.filter((m) => scored.has(m.id));
+                if (present.length === 0) return null;
+                const shown = present.slice(0, 2);
+                const rest = present.length - shown.length;
+                return (
+                  <a
+                    key={src.id}
+                    href={src.headline.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    title={`${src.name} — open the source`}
+                    className="group text-caption -mx-2 flex items-center gap-2.5 rounded-md px-2 py-1.5 transition-colors hover:bg-white/[0.05]">
+                    <SourceBadge
+                      source={src}
+                      present
+                    />
+                    <span className="min-w-0 truncate font-medium text-white">
+                      {src.name}
+                    </span>
+                    {src.kind === 'report' ? (
+                      <span className="text-[#E8A9F0]">✱</span>
+                    ) : null}
+                    <span className="ml-auto flex shrink-0 items-baseline gap-2 font-mono text-[#D9D7E0]">
+                      {shown.map((m) => (
+                        <span key={m.id}>
+                          {rawLabel(m.metric, scored.get(m.id)!.raw)}
+                        </span>
+                      ))}
+                      {rest > 0 ? (
+                        <span className="text-[#78758A]">+{rest}</span>
+                      ) : null}
+                    </span>
+                    <span
+                      className="text-p1 shrink-0 opacity-40 transition-opacity group-hover:opacity-100"
+                      aria-hidden>
+                      ↗
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
 
@@ -1232,12 +1287,17 @@ function ModelCard({
                 recommended
                 price={priceLabel(or?.inputPerM, or?.outputPerM)}
               />
-              {alternatives.map((ch) => (
-                <ChannelCard
-                  key={ch.kind}
-                  channel={ch}
-                />
-              ))}
+              {/* The alternatives sit side by side. Stacked, three cards ran
+                  taller than the scores and sources beside them and put the
+                  hole back where it had just been closed. */}
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                {alternatives.map((ch) => (
+                  <ChannelCard
+                    key={ch.kind}
+                    channel={ch}
+                  />
+                ))}
+              </div>
             </div>
           ) : (
             <p className="text-caption text-[#9C9AA8]">
@@ -1245,57 +1305,6 @@ function ModelCard({
               {catalogDate ? ` as of ${catalogDate}` : ''}.
             </p>
           )}
-        </div>
-      </div>
-
-      {/* ---- sources ---- */}
-      <div className="min-w-0">
-        <div className="mb-2.5 flex items-baseline justify-between gap-4">
-          <h4 className={LABEL}>Sources</h4>
-        </div>
-        <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
-          {[...boards, ...reports].map((src) => {
-            const present = src.measures.filter((m) => scored.has(m.id));
-            if (present.length === 0) return null;
-            const shown = present.slice(0, 2);
-            const rest = present.length - shown.length;
-            return (
-              <a
-                key={src.id}
-                href={src.headline.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                title={`${src.name} — open the source`}
-                className="group text-caption -mx-2 flex items-center gap-2.5 rounded-md px-2 py-1.5 transition-colors hover:bg-white/[0.05]">
-                <SourceBadge
-                  source={src}
-                  present
-                />
-                <span className="min-w-0 truncate font-medium text-white">
-                  {src.name}
-                </span>
-                {src.kind === 'report' ? (
-                  <span className="text-[#E8A9F0]">✱</span>
-                ) : null}
-                <span className="ml-auto flex shrink-0 items-baseline gap-2 font-mono text-[#D9D7E0]">
-                  {shown.map((m) => (
-                    <span key={m.id}>
-                      {rawLabel(m.metric, scored.get(m.id)!.raw)}
-                    </span>
-                  ))}
-                  {rest > 0 ? (
-                    <span className="text-[#78758A]">+{rest}</span>
-                  ) : null}
-                </span>
-                <span
-                  className="text-p1 shrink-0 opacity-40 transition-opacity group-hover:opacity-100"
-                  aria-hidden>
-                  ↗
-                </span>
-              </a>
-            );
-          })}
         </div>
       </div>
     </div>
