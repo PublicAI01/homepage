@@ -49,9 +49,11 @@ const line = (m: (typeof c.models)[number]) =>
     ? `${m.name} ${m.delta! > 0 ? '↑' : '↓'} ${Math.abs(m.delta!)} → #${m.rank}`
     : m.kind === 'ranked'
       ? `${m.name} enters the Overall ranking at #${m.rank}`
-      : m.kind === 'entered'
-        ? `${m.name} (${m.org}) listed`
-        : `${m.name} no longer listed`;
+      : m.kind === 'unranked'
+        ? `${m.name} leaves the Overall ranking (was #${m.previousRank})`
+        : m.kind === 'entered'
+          ? `${m.name} (${m.org}) listed`
+          : `${m.name} no longer listed`;
 
 const md = `# PublicAI Index Weekly — ${to.date}
 
@@ -63,7 +65,9 @@ ${top.map(([, m]) => `${m.rank}. ${m.name} — ${m.index}`).join('\n')}
 ## Movers
 ${
   c.models
-    .filter((m) => m.kind === 'moved' || m.kind === 'ranked')
+    .filter(
+      (m) => m.kind === 'moved' || m.kind === 'ranked' || m.kind === 'unranked',
+    )
     .map(line)
     .map((l) => `- ${l}`)
     .join('\n') || '- No moves of three places or more.'
@@ -96,7 +100,9 @@ const html = `<!doctype html><html><body style="margin:0;background:#0B0B0D;colo
 <h2 style="font-size:16px;margin:0 0 8px">Movers</h2>
 <ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${
   c.models
-    .filter((m) => m.kind === 'moved' || m.kind === 'ranked')
+    .filter(
+      (m) => m.kind === 'moved' || m.kind === 'ranked' || m.kind === 'unranked',
+    )
     .map((m) => `<li>${esc(line(m))}</li>`)
     .join('') || '<li>No moves of three places or more.</li>'
 }</ul>

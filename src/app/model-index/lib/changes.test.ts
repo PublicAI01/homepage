@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
+import { changesSince, snapshots } from './changes';
 import { diff, type HistoryEntry } from './diff';
 
 const entry = (
@@ -49,5 +50,32 @@ describe('diff', () => {
     const c = diff(to, to, '2026-09-08', 3, [to]);
     expect(c.models).toEqual([]);
     expect(c.note).toMatch(/History begins/);
+  });
+});
+
+describe('diff: losing a rank', () => {
+  it('reports a model that drops from ranked to provisional', () => {
+    const from = entry('2026-09-01', { x: [4, 60] });
+    const to = entry('2026-09-02', { x: [null, 55] });
+    const c = diff(from, to, '2026-09-01', 3, [from, to]);
+    expect(c.models).toEqual([
+      expect.objectContaining({
+        id: 'x',
+        kind: 'unranked',
+        previousRank: 4,
+        index: 55,
+      }),
+    ]);
+  });
+});
+
+describe('changesSince with an end date', () => {
+  it('stops at the snapshot asked for, not at the latest one', () => {
+    const dates = snapshots();
+    if (dates.length < 3) return;
+    const c = changesSince(dates[0], 3, dates[1]);
+    expect(c.since).toBe(dates[0]);
+    expect(c.until).toBe(dates[1]);
+    expect(c.snapshots).toBe(1);
   });
 });

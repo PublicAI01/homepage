@@ -469,10 +469,15 @@ export default function IndexTable({
     }
   };
 
+  // Overall lists rows with no figure to chart (no index, no estimate), so
+  // "something on screen" is not "something to export".
+  const exportable = useMemo(
+    () => filtered.filter((r) => keyOf(r, rankKey) !== null),
+    [filtered, rankKey],
+  );
   const exportChart = () => {
-    const top = filtered
-      .filter((r) => keyOf(r, rankKey) !== null)
-      .slice(0, CHART_ROWS);
+    const top = exportable.slice(0, CHART_ROWS);
+    if (top.length === 0) return;
     const scope = rankLabel(rankKey);
     const tier = SIZE_TIERS.find((t) => t.id === sizeTier);
     downloadChart(
@@ -483,6 +488,7 @@ export default function IndexTable({
         // "Coding" numbered 1, 3, 4, 8 would read as an error.
         rows: top.map((r) => ({
           rank: positionOf.get(r.model.id) ?? null,
+          inScope: rankKey.level === 'overall' || eligible(r, rankKey),
           name: r.model.name,
           org: r.model.org,
           score: keyOf(r, rankKey) ?? 0,
@@ -707,7 +713,7 @@ export default function IndexTable({
         <button
           type="button"
           onClick={exportChart}
-          disabled={filtered.length === 0}
+          disabled={exportable.length === 0}
           className="text-caption inline-flex h-7 items-center gap-1.5 rounded-md border border-white/12 px-2.5 text-[#D9D7E0] transition-colors hover:border-white/30 hover:text-white disabled:opacity-40"
           title={`Download a PNG bar chart of the top ${CHART_ROWS} rows as filtered and ranked here`}>
           <span aria-hidden>↓</span> Export chart

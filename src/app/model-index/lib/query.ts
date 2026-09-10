@@ -74,6 +74,12 @@ const taxonomy: [string, string[]][] = (() => {
   );
 })();
 
+const categoryOfDomain = new Map(
+  taxonomy.flatMap(([category, domains]) =>
+    domains.map((d) => [d, category] as const),
+  ),
+);
+
 export type Scope =
   | { level: 'overall' }
   | { level: 'category'; category: string }
@@ -586,15 +592,15 @@ function fullRanking(scope: Scope) {
     return scopeScore(r, scope) !== null;
   });
   if (scope.level === 'overall') return out;
-  return [...out].sort(compareScores<AggregateRow>((r) => scopeScore(r, scope)));
+  return [...out].sort(
+    compareScores<AggregateRow>((r) => scopeScore(r, scope)),
+  );
 }
 
 /** Rows either side of a model, plus the leader as the scale's anchor. */
 const NEIGHBOURS = 3;
 
-export function modelStandings(
-  query: string,
-): StandingsHit | StandingsMiss {
+export function modelStandings(query: string): StandingsHit | StandingsMiss {
   // getModel's success shape carries `error?: undefined`, so `'error' in x`
   // narrows nothing. Rebuild the miss instead of passing it through.
   const found = getModel(query);
@@ -602,24 +608,33 @@ export function modelStandings(
     return { error: found.error, candidates: found.candidates ?? [] };
   const model = found.model;
 
-  const scopes: { name: string; level: 'category' | 'domain' }[] = [
+  // Built as Scope objects, not looked up by name: "Reasoning", "General"
+  // and "Human preference" name both a category and a domain, and a bare
+  // name resolves to the category — which put the category's numbers on
+  // the domain's panel (2026-09-10).
+  const scopes: (Scope & { level: 'category' | 'domain' })[] = [
     ...Object.entries(model.byCategory)
       .filter(([, v]) => v !== null)
-      .map(([name]) => ({ name, level: 'category' as const })),
+      .map(([category]) => ({ level: 'category' as const, category })),
     ...Object.entries(model.byDomain)
       .filter(([, v]) => v !== null)
-      .map(([name]) => ({ name, level: 'domain' as const })),
+      .map(([domain]) => ({
+        level: 'domain' as const,
+        category: categoryOfDomain.get(domain) ?? '',
+        domain,
+      })),
   ];
 
   const standings: Standing[] = [];
   // The same dozen models turn up in every scope, which made twenty-three
   // panels twenty-three copies of one competitive set. Counted once, that
   // repetition becomes the most useful fact on the page.
-  const met = new Map<string, { row: AggregateRow; met: number; ahead: number }>();
+  const met = new Map<
+    string,
+    { row: AggregateRow; met: number; ahead: number }
+  >();
 
-  for (const s of scopes) {
-    const scope = resolveScope(s.name);
-    if (!scope) continue;
+  for (const scope of scopes) {
     const ranked = fullRanking(scope);
     const idx = ranked.findIndex((r) => r.model.id === model.id);
     if (idx === -1) continue;
@@ -663,13 +678,14 @@ export function modelStandings(
           : false,
     );
     standings.push({
-      scope: s.name,
-      level: s.level,
+      scope: scopeLabel(scope),
+      level: scope.level,
       position: idx + 1,
       total: ranked.length,
       score: me.scopeScore,
-      boards: new Set(inScope.filter((b) => b.kind !== 'report').map((b) => b.group))
-        .size,
+      boards: new Set(
+        inScope.filter((b) => b.kind !== 'report').map((b) => b.group),
+      ).size,
       rankedInScope: me.rankedInScope,
       peers,
     });

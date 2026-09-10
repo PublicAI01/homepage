@@ -4,8 +4,7 @@ export interface RateLimitRule {
 }
 
 export type RateLimitResult =
-  | { allowed: true }
-  | { allowed: false; retryAfterSeconds: number };
+  { allowed: true } | { allowed: false; retryAfterSeconds: number };
 
 const SWEEP_INTERVAL_MS = 60_000;
 const SWEEP_MIN_KEYS = 1024;
@@ -71,6 +70,12 @@ const MINUTE_MS = 60_000;
 const DAY_MS = 86_400_000;
 
 export const contactRateLimiter = createRateLimiter([
+  { limit: 3, windowMs: MINUTE_MS },
+  { limit: 10, windowMs: DAY_MS },
+]);
+
+/** One address per sign-up; a burst from one IP is a script, not a reader. */
+export const subscribeRateLimiter = createRateLimiter([
   { limit: 3, windowMs: MINUTE_MS },
   { limit: 10, windowMs: DAY_MS },
 ]);

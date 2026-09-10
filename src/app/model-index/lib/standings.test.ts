@@ -14,7 +14,8 @@ describe('modelStandings', () => {
   it('agrees with the table it asked — same position, same total', () => {
     for (const s of found.standings) {
       const r = rankModels({ scope: s.scope, reports: true, limit: 100 });
-      if ('error' in r || !('models' in r)) throw new Error(`no scope ${s.scope}`);
+      if ('error' in r || !('models' in r))
+        throw new Error(`no scope ${s.scope}`);
       const me = r.models.find((m) => m.id === found.model.id);
       // rankModels caps at 100; only compare where it can see the model.
       if (me) {
@@ -38,7 +39,9 @@ describe('modelStandings', () => {
 
   it('shows the neighbours either side, clipped at the ends', () => {
     for (const s of found.standings) {
-      const near = s.peers.filter((p) => Math.abs(p.position - s.position) <= 3);
+      const near = s.peers.filter(
+        (p) => Math.abs(p.position - s.position) <= 3,
+      );
       const expected =
         Math.min(s.total, s.position + 3) - Math.max(1, s.position - 3) + 1;
       expect(near.length).toBe(expected);
@@ -100,5 +103,25 @@ describe('rivals', () => {
   it('orders by how often they finish ahead', () => {
     const share = found.rivals.map((r) => r.ahead / r.met);
     expect([...share].sort((a, b) => b - a)).toEqual(share);
+  });
+});
+
+describe('modelStandings scope identity', () => {
+  // "Reasoning", "General" and "Human preference" name both a category and
+  // a domain. Resolving the domain by bare name returned the category, so
+  // the domain panel carried the category's score and position.
+  it('scores a domain standing from byDomain and a category one from byCategory', () => {
+    const found = modelStandings('claude-fable-5-1');
+    if ('error' in found) throw new Error(found.error);
+    const { model, standings } = found;
+    expect(
+      standings.some(
+        (s) => s.level === 'domain' && s.scope in model.byCategory,
+      ),
+    ).toBe(true);
+    for (const s of standings) {
+      const table = s.level === 'domain' ? model.byDomain : model.byCategory;
+      expect(s.score).toBe(table[s.scope]);
+    }
   });
 });

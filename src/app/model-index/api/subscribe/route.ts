@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server';
 
+import { guardContentHeaders, readJsonBody } from '@/server/http';
+import { clientIp, subscribeRateLimiter } from '@/server/rate-limit';
+import { isRecord } from '@/server/validation';
+
 /**
  * Sign up for Index Weekly. The list lives in Resend (an Audience), so the
  * site stores nothing; this route only forwards the address. Without the
@@ -23,13 +27,26 @@ export async function POST(request: Request) {
       { status: 503 },
     );
   }
-  let email = '';
-  try {
-    const body = (await request.json()) as { email?: string };
-    email = (body.email ?? '').trim().toLowerCase();
-  } catch {
-    email = '';
-  }
+  // The same guards as the contact form: this route writes a third party's
+  // address into the audience, so an unmetered caller could sign up anyone
+  // (2026-09-10). No captcha yet; the limiter is the floor, not the ceiling.
+  const headerError = guardContentHeaders(request);
+  if (headerError) return headerError;
+  const limit = subscribeRateLimiter.check(
+    `${clientIp(request)}:/model-index/api/subscribe`,
+  );
+  if (!limit.allowed)
+    return NextResponse.json(
+      { ok: false, error: 'Too many sign-ups from here. Try again later.' },
+      {
+        status: 429,
+        headers: { 'Retry-After': String(limit.retryAfterSeconds) },
+      },
+    );
+  const read = await readJsonBody(request);
+  const body = read.ok && isRecord(read.body) ? read.body : {};
+  const email =
+    typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
   if (!EMAIL.test(email) || email.length > 254) {
     return NextResponse.json(
       { ok: false, error: 'That does not look like an email address.' },

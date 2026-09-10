@@ -16,7 +16,7 @@ export function GET() {
     .slice(0, 30)
     .map((date, i, arr) => {
       const prev = dates[dates.indexOf(date) - 1];
-      const c = changesSince(prev);
+      const c = changesSince(prev, 3, date);
       const lines = [
         c.newSources.length ? `New sources: ${c.newSources.join(', ')}.` : '',
         ...c.models
@@ -26,9 +26,11 @@ export function GET() {
               ? `${m.name} ${m.delta! > 0 ? '↑' : '↓'} ${Math.abs(m.delta!)} to #${m.rank}`
               : m.kind === 'ranked'
                 ? `${m.name} enters the Overall ranking at #${m.rank}`
-                : m.kind === 'entered'
-                  ? `${m.name} (${m.org}) listed`
-                  : `${m.name} no longer listed`,
+                : m.kind === 'unranked'
+                  ? `${m.name} leaves the Overall ranking (was #${m.previousRank})`
+                  : m.kind === 'entered'
+                    ? `${m.name} (${m.org}) listed`
+                    : `${m.name} no longer listed`,
           ),
       ].filter(Boolean);
       void i;

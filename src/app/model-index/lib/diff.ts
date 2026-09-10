@@ -22,8 +22,8 @@ export interface Change {
   id: string;
   name: string;
   org: string;
-  /** `entered`: first appearance. `ranked`: gained an Overall rank. `moved`: rank changed by `delta`. `left`: no longer listed. */
-  kind: 'entered' | 'ranked' | 'moved' | 'left';
+  /** `entered`: first appearance. `ranked`: gained an Overall rank. `unranked`: lost it, back to provisional. `moved`: rank changed by `delta`. `left`: no longer listed. */
+  kind: 'entered' | 'ranked' | 'unranked' | 'moved' | 'left';
   rank?: number | null;
   previousRank?: number | null;
   delta?: number;
@@ -80,6 +80,19 @@ export function diff(
       });
       continue;
     }
+    // The reverse of `ranked`: a board dropping the model can take its rank
+    // away, and a feed that reports only gains would hide it (2026-09-10).
+    if (now.rank === null && was.rank !== null) {
+      models.push({
+        id,
+        name: now.name,
+        org: now.org,
+        kind: 'unranked',
+        previousRank: was.rank,
+        index: now.index,
+      });
+      continue;
+    }
     if (
       now.rank !== null &&
       was.rank !== null &&
@@ -101,7 +114,7 @@ export function diff(
     if (!to.models[id])
       models.push({ id, name: was.name, org: was.org, kind: 'left' });
   }
-  const order = { ranked: 0, moved: 1, entered: 2, left: 3 };
+  const order = { ranked: 0, unranked: 1, moved: 2, entered: 3, left: 4 };
   models.sort(
     (a, b) =>
       order[a.kind] - order[b.kind] ||

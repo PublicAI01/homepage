@@ -6,6 +6,8 @@
  */
 export interface ChartRow {
   rank: number | null;
+  /** A recognised board placed the row here; false when reports ✱ alone did. */
+  inScope: boolean;
   name: string;
   org: string;
   score: number;
@@ -35,6 +37,27 @@ const ONE_LINER =
   "The LLM benchmark aggregator \u2014 the world's most comprehensive and robust LLM index.";
 const FONT = '"Inter", "Helvetica Neue", Arial, sans-serif';
 const MONO = '"JetBrains Mono", "SF Mono", Menlo, monospace';
+
+/**
+ * The position as printed: the table's ✱ for a row placed by reports alone
+ * travels with the chart, which is the copy that gets screenshotted.
+ */
+export const positionLabel = (r: Pick<ChartRow, 'rank' | 'inScope'>) =>
+  r.rank === null ? '—' : r.inScope ? String(r.rank) : `${r.rank}✱`;
+
+/**
+ * Axis from the scores on the chart: a tick below the lowest bar to a tick
+ * above the highest. Finite for an empty list — Math.min() of nothing is
+ * Infinity, and the gridline loop below never ended on it (2026-09-10).
+ */
+export function axisOf(scores: number[]): { floor: number; span: number } {
+  if (scores.length === 0) return { floor: 0, span: 100 };
+  const max = Math.max(...scores, 1);
+  const min = Math.min(...scores);
+  const floor = Math.max(0, Math.floor((min - 5) / 10) * 10);
+  const span = Math.max(1, Math.ceil((max + 2) / 10) * 10 - floor);
+  return { floor, span };
+}
 
 /** The mark, loaded once per export. Same-origin, so the canvas stays clean. */
 function loadMark(): Promise<HTMLImageElement | null> {
@@ -99,11 +122,7 @@ export async function drawChart(spec: ChartSpec): Promise<HTMLCanvasElement> {
   // scale where the top ten sit within ten points, a zero-based axis would
   // hide the very differences the chart is for. Ticks are labelled so the
   // truncation is visible.
-  const scores = rows.map((r) => r.score);
-  const max = Math.max(...scores, 1);
-  const min = Math.min(...scores);
-  const floor = Math.max(0, Math.floor((min - 5) / 10) * 10);
-  const span = Math.max(1, Math.ceil((max + 2) / 10) * 10 - floor);
+  const { floor, span } = axisOf(rows.map((r) => r.score));
 
   // gridlines
   ctx.strokeStyle = 'rgba(255,255,255,0.08)';
@@ -124,7 +143,7 @@ export async function drawChart(spec: ChartSpec): Promise<HTMLCanvasElement> {
     const y = top + i * ROW_H;
     ctx.fillStyle = '#6F6D7A';
     ctx.font = `500 15px ${MONO}`;
-    ctx.fillText(r.rank ? String(r.rank) : '—', PAD, y + 30);
+    ctx.fillText(positionLabel(r), PAD, y + 30);
     ctx.fillStyle = '#FFFFFF';
     ctx.font = `600 17px ${FONT}`;
     const name = r.name.length > 30 ? `${r.name.slice(0, 29)}…` : r.name;
@@ -135,9 +154,8 @@ export async function drawChart(spec: ChartSpec): Promise<HTMLCanvasElement> {
     ctx.fillText(r.org, PAD + 44 + nameW + 10, y + 30);
 
     const w = ((r.score - floor) / span) * barMax;
-    ctx.fillStyle = r.rank
-      ? 'rgba(142,139,255,0.85)'
-      : 'rgba(255,255,255,0.25)';
+    ctx.fillStyle =
+      r.rank && r.inScope ? 'rgba(142,139,255,0.85)' : 'rgba(255,255,255,0.25)';
     ctx.beginPath();
     ctx.roundRect(x0, y + 12, Math.max(4, w), 26, 4);
     ctx.fill();

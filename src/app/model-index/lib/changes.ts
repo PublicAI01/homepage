@@ -19,6 +19,12 @@ export function snapshotAt(date: string): HistoryEntry | undefined {
   return before[before.length - 1] ?? entries[0];
 }
 
-export function changesSince(since: string, minDelta = 3) {
-  return diff(snapshotAt(since), latest(), since, minDelta, entries);
+/**
+ * Changes from the snapshot at `since` to the one at `until` (default: the
+ * latest). The feed passes `until` so each item covers one day, not the
+ * whole stretch to today (2026-09-10).
+ */
+export function changesSince(since: string, minDelta = 3, until?: string) {
+  const to = until === undefined ? latest() : snapshotAt(until);
+  return diff(snapshotAt(since), to, since, minDelta, entries);
 }
