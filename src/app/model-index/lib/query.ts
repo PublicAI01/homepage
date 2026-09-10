@@ -518,3 +518,94 @@ export function describeIndex() {
     ],
   };
 }
+
+export interface Peer {
+  id: string;
+  name: string;
+  org: string;
+  score: number;
+  position: number;
+  isSubject: boolean;
+}
+
+export interface StandingsMiss {
+  error: string;
+  candidates: { id: string; name: string; org: string; rank: number | null }[];
+}
+
+export interface StandingsHit {
+  generatedAt: string;
+  model: ModelDetail;
+  standings: Standing[];
+}
+
+export interface Standing {
+  scope: string;
+  level: 'category' | 'domain';
+  /** Where a model sits and how crowded the scope is. */
+  position: number;
+  total: number;
+  score: number;
+  /** Recognised boards with a measure here. 0 means every figure is a report ✱. */
+  boards: number;
+  /** A recognised board put the model here, rather than a report ✱. */
+  rankedInScope: boolean;
+  /** The head of the table, plus the model itself when it sits below it. */
+  peers: Peer[];
+}
+
+/**
+ * One model's standing everywhere it has a figure, strongest placement first.
+ *
+ * The table answers "who leads this domain"; this answers "where does this
+ * model land", which is the question anyone arrives with after reading a
+ * launch post. Same numbers as the table by construction — it asks the table.
+ */
+export function modelStandings(
+  query: string,
+): StandingsHit | StandingsMiss {
+  // getModel's success shape carries `error?: undefined`, so `'error' in x`
+  // narrows nothing. Rebuild the miss instead of passing it through.
+  const found = getModel(query);
+  if (found.error !== undefined)
+    return { error: found.error, candidates: found.candidates ?? [] };
+  const model = found.model;
+
+  const scopes: { name: string; level: 'category' | 'domain' }[] = [
+    ...Object.entries(model.byCategory)
+      .filter(([, v]) => v !== null)
+      .map(([name]) => ({ name, level: 'category' as const })),
+    ...Object.entries(model.byDomain)
+      .filter(([, v]) => v !== null)
+      .map(([name]) => ({ name, level: 'domain' as const })),
+  ];
+
+  const standings: Standing[] = [];
+  for (const s of scopes) {
+    const r = rankModels({ scope: s.name, reports: true, limit: 100 });
+    if ('error' in r || !('models' in r)) continue;
+    const me = r.models.find((m) => m.id === model.id);
+    if (!me || me.position === null || me.scopeScore == null) continue;
+    const peer = (m: (typeof r.models)[number]): Peer => ({
+      id: m.id,
+      name: m.name,
+      org: m.org,
+      score: m.scopeScore ?? 0,
+      position: m.position ?? 0,
+      isSubject: m.id === model.id,
+    });
+    const head = r.models.slice(0, 5).map(peer);
+    standings.push({
+      scope: s.name,
+      level: s.level,
+      position: me.position,
+      total: r.total,
+      score: me.scopeScore,
+      boards: 'scopeBoards' in r ? (r.scopeBoards ?? 0) : 0,
+      rankedInScope: me.rankedInScope,
+      peers: head.some((p) => p.isSubject) ? head : [...head, peer(me)],
+    });
+  }
+  standings.sort((a, b) => a.position - b.position || b.total - a.total);
+  return { generatedAt, model, standings };
+}

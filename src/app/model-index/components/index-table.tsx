@@ -1039,6 +1039,15 @@ function ModelCard({
           <span className="text-caption text-[#9C9AA8]">
             {facts.join(' · ')}
           </span>
+          {/* This card is the summary; the page is the answer. A reader who
+              opened a row wanting "how does it do everywhere" should not have
+              to re-filter the table to find out. */}
+          <a
+            href={`/model-index/m/${row.model.id}`}
+            className="text-micro text-p1 hover:text-p1/80 ml-auto shrink-0 underline underline-offset-2 transition-colors"
+            onClick={(e) => e.stopPropagation()}>
+            Say more →
+          </a>
         </div>
         <p className="text-caption text-[#9C9AA8]">
           {rank ? (
