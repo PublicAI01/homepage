@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 
 import { cn } from '@/utils';
 
+import BadgeCopy from '../../components/badge-copy';
 import { modelStandings, type Standing } from '../../lib/query';
 
 const INDEX_URL = 'https://publicai.io/model-index';
@@ -48,39 +49,35 @@ export async function generateMetadata({
 
 /** Where a model sits, at a glance. The number is the point; the rest is caption. */
 const Placement = ({ s }: { s: Standing }) => (
-  <div className={cn(PANEL, 'flex flex-col gap-1.5 p-4')}>
-    <div className="flex items-baseline gap-2">
+  <div className={cn(PANEL, 'flex flex-col gap-0.5 px-3 py-2.5')}>
+    <div className="flex items-baseline gap-1.5">
       <span
         className={cn(
-          'font-mono text-3xl leading-none font-bold',
+          'font-mono text-xl leading-none font-bold',
           s.position <= 3 ? 'text-[#B08BFF]' : 'text-white',
         )}>
         #{s.position}
       </span>
-      <span className="font-mono text-sm text-[#8E8BA0]">of {s.total}</span>
-      {!s.rankedInScope ? (
-        <span
-          className="ml-auto text-[#E8A9F0]"
-          title="Placed by report ✱ figures — a launch post or blog, not a board that re-ran the model">
-          ✱
-        </span>
-      ) : null}
+      <span className="font-mono text-xs text-[#8E8BA0]">of {s.total}</span>
+      <span className="ml-auto font-mono text-xs text-[#8E8BA0]">
+        {s.score}
+        {!s.rankedInScope ? <span className="text-[#E8A9F0]"> ✱</span> : null}
+      </span>
     </div>
-    <div className="text-base leading-tight font-semibold text-white">
+    <div className="truncate text-sm leading-tight text-[#D9D7E0]" title={s.scope}>
       {s.scope}
-    </div>
-    <div className="font-mono text-xs text-[#8E8BA0]">
-      score {s.score}
-      {s.level === 'category' ? ' · category' : ''}
+      {s.level === 'category' ? (
+        <span className="text-[#78758A]"> · category</span>
+      ) : null}
     </div>
   </div>
 );
 
 /** The head of a scope, and the model in it. Bars are the 0–100 index scale. */
 const Board = ({ s }: { s: Standing }) => (
-  <div className={cn(PANEL, 'p-4')}>
-    <div className="mb-2 flex items-baseline gap-2">
-      <span className="text-base font-semibold text-white">{s.scope}</span>
+  <div className={cn(PANEL, 'px-3.5 py-3')}>
+    <div className="mb-1.5 flex items-baseline gap-2">
+      <span className="text-sm font-semibold text-white">{s.scope}</span>
       <span className="ml-auto font-mono text-xs text-[#8E8BA0]">
         #{s.position} of {s.total}
         {!s.rankedInScope ? <span className="text-[#E8A9F0]"> ✱</span> : null}
@@ -89,24 +86,24 @@ const Board = ({ s }: { s: Standing }) => (
     {s.peers.map((p, i) => (
       <div key={p.id}>
         {i > 0 && p.position > s.peers[i - 1].position + 1 ? (
-          <div className="pl-6 font-mono text-xs text-[#4A4A52]">…</div>
+          <div className="pl-5 font-mono text-[11px] leading-none text-[#4A4A52]">…</div>
         ) : null}
-        <div className="flex items-center gap-2.5 py-0.5">
+        <div className="flex items-center gap-2 py-px">
           <span
             className={cn(
-              'w-6 font-mono text-xs',
+              'w-5 font-mono text-[11px]',
               p.isSubject ? 'text-[#B08BFF]' : 'text-[#6E6C7A]',
             )}>
             {p.position}
           </span>
           <span
             className={cn(
-              'min-w-0 flex-1 truncate text-sm',
+              'min-w-0 flex-1 truncate text-[13px]',
               p.isSubject ? 'font-semibold text-white' : 'text-[#B9B7C4]',
             )}>
             {p.name}
           </span>
-          <span className="hidden h-[7px] w-20 shrink-0 overflow-hidden rounded-full bg-[#232329] sm:block">
+          <span className="hidden h-1.5 w-16 shrink-0 overflow-hidden rounded-full bg-[#232329] sm:block">
             <span
               className={cn(
                 'block h-full rounded-full',
@@ -119,7 +116,7 @@ const Board = ({ s }: { s: Standing }) => (
           </span>
           <span
             className={cn(
-              'w-10 shrink-0 text-right font-mono text-xs',
+              'w-9 shrink-0 text-right font-mono text-[11px]',
               p.isSubject ? 'text-white' : 'text-[#B9B7C4]',
             )}>
             {p.score}
@@ -140,6 +137,18 @@ export default async function ModelPage({
   const { model, standings, generatedAt } = found;
   const day = generatedAt.slice(0, 10);
   const starred = standings.some((s) => !s.rankedInScope);
+  const badgeMarkdown = `[![PublicAI Index](${INDEX_URL}/badge?model=${model.id})](${INDEX_URL}/m/${model.id})`;
+  const bySource = [
+    ...model.figures
+      .reduce(
+        (m, f) => m.set(f.source, [...(m.get(f.source) ?? []), f]),
+        new Map<string, typeof model.figures>(),
+      )
+      .entries(),
+  ].sort(
+    (a, b) =>
+      Number(a[1][0].kind === 'report') - Number(b[1][0].kind === 'report'),
+  );
 
   return (
     <div className="relative isolate before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:bg-[#08080A]">
@@ -200,7 +209,7 @@ export default async function ModelPage({
                 {standings.length === 1 ? 'domain' : 'domains'} with a published
                 figure
               </h2>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6">
                 {standings.map((s) => (
                   <Placement key={`${s.level}:${s.scope}`} s={s} />
                 ))}
@@ -212,7 +221,7 @@ export default async function ModelPage({
               <h2 className="text-heading mb-5 font-bold text-white">
                 Who it sits beside
               </h2>
-              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
                 {standings.map((s) => (
                   <Board key={`${s.level}:${s.scope}`} s={s} />
                 ))}
@@ -223,26 +232,74 @@ export default async function ModelPage({
 
         <section className="pb-10">
           <p className={cn(LABEL, 'mb-2')}>§ 3 · Sources</p>
-          <div className={cn(PANEL, 'divide-y divide-white/8')}>
-            {model.figures.map((f, i) => (
-              <a
-                key={`${f.source}:${f.measure}:${i}`}
-                href={f.url}
-                target="_blank"
-                rel="noreferrer"
-                className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-2.5 hover:bg-white/4">
-                <span className="text-sm text-white">
-                  {f.kind === 'report' ? (
-                    <span className="text-[#E8A9F0]">✱ </span>
-                  ) : null}
-                  {f.source}
-                </span>
-                <span className="text-sm text-[#8E8BA0]">{f.measure}</span>
-                <span className="ml-auto font-mono text-sm text-[#B9B7C4]">
-                  {f.rawLabel}
-                </span>
-              </a>
+          <h2 className="text-heading mb-5 font-bold text-white">
+            {bySource.length} {bySource.length === 1 ? 'source' : 'sources'},{' '}
+            {model.figures.length} figures
+          </h2>
+          {/* One block per publication, not one row per number. Seventeen
+              measures from a single launch post are one source that published
+              seventeen times — listing it seventeen times says the opposite. */}
+          <div className="flex flex-col gap-3">
+            {bySource.map(([source, figures]) => (
+              <div key={source} className={cn(PANEL, 'px-4 py-3')}>
+                <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <a
+                    href={figures[0].url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm font-semibold text-white hover:text-[#B08BFF]">
+                    {figures[0].kind === 'report' ? (
+                      <span className="text-[#E8A9F0]">✱ </span>
+                    ) : null}
+                    {source} ↗
+                  </a>
+                  <span className={LABEL}>
+                    {figures.length}{' '}
+                    {figures.length === 1 ? 'measure' : 'measures'}
+                  </span>
+                  <span className="text-micro ml-auto text-[#6E6C7A]">
+                    read {figures[0].retrievedAt.slice(0, 10)}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-x-4 gap-y-1">
+                  {figures.map((f, i) => (
+                    <span
+                      key={`${f.measure}:${i}`}
+                      className="text-[13px] text-[#9C9AA8]">
+                      {f.measure}{' '}
+                      <b className="font-mono font-medium text-[#D9D7E0]">
+                        {f.rawLabel}
+                      </b>
+                      {f.scaffold ? (
+                        <span className="text-[#6E6C7A]"> ({f.scaffold})</span>
+                      ) : null}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
+          </div>
+        </section>
+
+        {/* For whoever publishes this model: the badge reads live, so a
+            README pasted once stays current. */}
+        <section className="pb-10">
+          <p className={cn(LABEL, 'mb-2')}>§ 4 · Badge</p>
+          <div
+            className={cn(
+              PANEL,
+              'flex flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3',
+            )}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`/model-index/badge?model=${model.id}`}
+              alt={`PublicAI Index badge for ${model.name}`}
+              className="h-5"
+            />
+            <code className="text-micro min-w-0 flex-1 truncate font-mono text-[#8E8BA0]">
+              {badgeMarkdown}
+            </code>
+            <BadgeCopy markdown={badgeMarkdown} />
           </div>
         </section>
 

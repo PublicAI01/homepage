@@ -977,29 +977,6 @@ function Row({
  * came from. Nothing here is prose about the model; every line is a fact the
  * index holds, and every number links back.
  */
-/**
- * The badge markdown, one click away instead of a code block nobody reads.
- * Falls back to selecting the text where the clipboard is unavailable.
- */
-function BadgeCopy({ markdown }: { markdown: string }) {
-  const [done, setDone] = useState(false);
-  return (
-    <button
-      type="button"
-      onClick={(e) => {
-        e.stopPropagation();
-        navigator.clipboard?.writeText(markdown).then(
-          () => setDone(true),
-          () => undefined,
-        );
-      }}
-      title="Markdown for a README or launch post — renders the live position"
-      className="text-micro text-p1 hover:text-p1/80 shrink-0 underline underline-offset-2 transition-colors">
-      {done ? 'Badge copied' : 'Copy badge'}
-    </button>
-  );
-}
-
 function ModelCard({
   row,
   rank,
@@ -1034,8 +1011,6 @@ function ModelCard({
       : '',
   ].filter(Boolean);
 
-  const markdown = `[![PublicAI Index](https://publicai.io/model-index/badge?model=${row.model.id})](https://publicai.io/model-index?q=${encodeURIComponent(row.model.name)})`;
-
   return (
     <div className="flex flex-col gap-6 px-4 py-5">
       {/* ---- who it is, and how well covered ---- */}
@@ -1048,11 +1023,15 @@ function ModelCard({
           {/* This card is the summary; the page is the answer. A reader who
               opened a row wanting "how does it do everywhere" should not have
               to re-filter the table to find out. */}
+          {/* New tab, not a navigation: the reader opened this card, and
+              taking the page out from under them closes it for them. */}
           <a
             href={`/model-index/m/${row.model.id}`}
+            target="_blank"
+            rel="noreferrer"
             className="text-micro text-p1 hover:text-p1/80 ml-auto shrink-0 underline underline-offset-2 transition-colors"
             onClick={(e) => e.stopPropagation()}>
-            See more →
+            See more ↗
           </a>
         </div>
         <p className="text-caption text-[#9C9AA8]">
@@ -1178,7 +1157,6 @@ function ModelCard({
       <div className="min-w-0">
         <div className="mb-2.5 flex items-baseline justify-between gap-4">
           <h4 className={LABEL}>Sources</h4>
-          <BadgeCopy markdown={markdown} />
         </div>
         <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
           {[...boards, ...reports].map((src) => {
