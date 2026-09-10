@@ -256,7 +256,9 @@ export default function IndexTable({
   // first, provisional ones after, so a model on one board is visible
   // without being ranked on that one board's word.
   const [minBoards, setMinBoards] = useState(initial.minBoards);
-  const [openModel, setOpenModel] = useState<string | null>(null);
+  const [openModel, setOpenModel] = useState<string | null>(
+    initial.model || null,
+  );
   // Reports ✱ — launch posts, blogs, write-ups — are in by default and can
   // be switched off, which drops their figures from every score and hides
   // models nothing else has measured.
@@ -421,8 +423,9 @@ export default function IndexTable({
       size: sizeTier,
       minBoards,
       reports: includeReports,
+      model: openModel ?? '',
     }),
-    [rankKey, query, family, sizeTier, minBoards, includeReports],
+    [rankKey, query, family, sizeTier, minBoards, includeReports, openModel],
   );
   const viewQuery = useMemo(() => encodeView(view).toString(), [view]);
   useEffect(() => {
@@ -430,6 +433,23 @@ export default function IndexTable({
     if (next !== `${window.location.pathname}${window.location.search}`)
       window.history.replaceState(null, '', next);
   }, [viewQuery]);
+
+  // A link that opens a card should show it. Without this the page lands at
+  // the top and the card sits somewhere below the fold, which reads as a
+  // broken link rather than a deep one. Runs once, on the id the URL carried.
+  useEffect(() => {
+    if (!initial.model) return;
+    // After paint, not during it: on mount the rows are in the DOM but the
+    // router still restores scroll to the top afterwards, so scrolling here
+    // synchronously is undone a frame later and the link looks broken.
+    const t = setTimeout(() => {
+      document
+        .getElementById(`model-${initial.model}`)
+        ?.scrollIntoView({ block: 'center' });
+    }, 120);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const shareUrl = `${INDEX_ORIGIN}${viewQuery ? `?${viewQuery}` : ''}`;
   const shareText = (() => {
@@ -802,6 +822,7 @@ function Row({
   return (
     <>
       <tr
+        id={`model-${row.model.id}`}
         className={cn(
           'cursor-pointer border-t border-white/8 align-middle transition-colors hover:bg-white/4',
           open && 'bg-white/[0.06]',

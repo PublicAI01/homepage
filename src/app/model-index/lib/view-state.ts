@@ -6,6 +6,10 @@ import type { SizeTier } from './size';
  * a reader shares is what they filtered — never the unfiltered page.
  *
  *   ?rank=domain:Tool use&family=K2&size=large&min=0&reports=0&q=k2
+ *
+ * `model` is the row left open. It is in the URL for the same reason the
+ * filters are: a link to "how this model scores" should land on the answer,
+ * not on a table the reader still has to search.
  */
 export interface ViewState {
   rank:
@@ -17,6 +21,8 @@ export interface ViewState {
   size: SizeTier | 'all';
   minBoards: number;
   reports: boolean;
+  /** Model id whose detail card is open, '' for none. */
+  model: string;
 }
 
 export const DEFAULT_VIEW: ViewState = {
@@ -26,6 +32,7 @@ export const DEFAULT_VIEW: ViewState = {
   size: 'all',
   minBoards: 1,
   reports: true,
+  model: '',
 };
 
 export function encodeView(v: ViewState): URLSearchParams {
@@ -37,6 +44,7 @@ export function encodeView(v: ViewState): URLSearchParams {
   if (v.size !== 'all') p.set('size', v.size);
   if (v.minBoards !== DEFAULT_VIEW.minBoards) p.set('min', String(v.minBoards));
   if (!v.reports) p.set('reports', '0');
+  if (v.model) p.set('model', v.model);
   return p;
 }
 
@@ -56,6 +64,7 @@ export function decodeView(p: URLSearchParams): ViewState {
   const min = Number(p.get('min'));
   v.minBoards = p.has('min') && Number.isInteger(min) && min >= 0 ? min : 1;
   v.reports = p.get('reports') !== '0';
+  v.model = p.get('model') ?? '';
   return v;
 }
 
