@@ -1141,6 +1141,12 @@ function ModelCard({
   catalogDate: string | undefined;
 }) {
   const scored = new Map(row.perBenchmark.map((s) => [s.benchmarkId, s]));
+  const publisherGroups = new Map<string, BoardView[]>();
+  for (const src of [...boards, ...reports]) {
+    // Reports stay separate: two write-ups from one blog are two publications.
+    const key = src.kind === 'report' ? src.id : src.headline.publisher;
+    publisherGroups.set(key, [...(publisherGroups.get(key) ?? []), src]);
+  }
   // Only when it is worth saying. "Consistent" is the quiet default and
   // spending a line on it is how a card fills up with nothing.
   const agree = row.covered > 1 ? agreement(row.dispersion) : null;
@@ -1283,34 +1289,67 @@ function ModelCard({
             <div className="mb-2.5 flex items-baseline justify-between gap-4">
               <h4 className={LABEL}>Sources</h4>
             </div>
+            {/* One row per publisher, not per board. Artificial Analysis runs
+                three of the boards here, and three rows with the same mark
+                read as a duplicate — or as three independent votes, which is
+                exactly what the ranking rule says they are not. */}
             <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
-              {[...boards, ...reports].map((src) => {
-                const present = src.measures.filter((m) => scored.has(m.id));
-                if (present.length === 0) return null;
-                const shown = present.slice(0, 2);
-                const rest = present.length - shown.length;
+              {[...publisherGroups.values()].map((group) => {
+                const lead = group[0];
+                const figures = group.flatMap((src) =>
+                  src.measures
+                    .filter((m) => scored.has(m.id))
+                    .map((m) => ({ src, m })),
+                );
+                if (figures.length === 0) return null;
+                const shown = figures.slice(0, group.length > 1 ? 3 : 2);
+                const rest = figures.length - shown.length;
+                const shortBoard = (name: string) =>
+                  name
+                    .replace(lead.headline.publisher, '')
+                    .replace(/\bAA\b/g, '')
+                    .replace(/^[\s\-–·]+|[\s\-–·]+$/g, '')
+                    .trim() || 'Index';
                 return (
                   <a
-                    key={src.id}
-                    href={src.headline.url}
+                    key={lead.id}
+                    href={lead.headline.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    title={`${src.name} — open the source`}
-                    className="group text-caption -mx-2 flex items-center gap-2.5 rounded-md px-2 py-1.5 transition-colors hover:bg-white/[0.05]">
+                    title={
+                      group.length > 1
+                        ? `${lead.headline.publisher} — ${group.length} boards, one publisher`
+                        : `${lead.name} — open the source`
+                    }
+                    className={cn(
+                      'group text-caption -mx-2 flex items-center gap-2.5 rounded-md px-2 py-1.5 transition-colors hover:bg-white/[0.05]',
+                      // Three labelled figures do not fit in half a row.
+                      group.length > 1 && 'md:col-span-2',
+                    )}>
                     <SourceBadge
-                      source={src}
+                      source={lead}
                       present
                     />
                     <span className="min-w-0 truncate font-medium text-white">
-                      {src.name}
+                      {group.length > 1 ? lead.headline.publisher : lead.name}
                     </span>
-                    {src.kind === 'report' ? (
+                    {group.length > 1 ? (
+                      <span className="text-micro shrink-0 text-[#78758A]">
+                        {group.length} boards
+                      </span>
+                    ) : null}
+                    {lead.kind === 'report' ? (
                       <span className="text-[#E8A9F0]">✱</span>
                     ) : null}
-                    <span className="ml-auto flex shrink-0 items-baseline gap-2 font-mono text-[#D9D7E0]">
-                      {shown.map((m) => (
+                    <span className="ml-auto flex shrink-0 flex-wrap items-baseline justify-end gap-x-2 font-mono text-[#D9D7E0]">
+                      {shown.map(({ src, m }) => (
                         <span key={m.id}>
+                          {group.length > 1 ? (
+                            <span className="mr-1 font-sans text-[#78758A]">
+                              {shortBoard(src.name)}
+                            </span>
+                          ) : null}
                           {rawLabel(m.metric, scored.get(m.id)!.raw)}
                         </span>
                       ))}
