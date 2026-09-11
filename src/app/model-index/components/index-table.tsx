@@ -769,7 +769,12 @@ export default function IndexTable({
             </>
           ) : null}
         </p>
-        <span className="ml-auto flex items-center gap-1.5">
+        {/* Four buttons that would not fit beside the count on a phone. They
+            used to right-align and wrap one at a time, leaving "Export chart"
+            alone on the next line, left-aligned under three right-aligned
+            ones. Below `sm` the group takes the whole row and wraps as a
+            row; above, it sits to the right as before. */}
+        <span className="flex w-full flex-wrap items-center gap-1.5 sm:ml-auto sm:w-auto">
           <a
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`}
             target="_blank"

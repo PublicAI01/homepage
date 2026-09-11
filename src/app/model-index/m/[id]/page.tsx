@@ -131,20 +131,23 @@ const Bar = ({ score, subject }: { score: number; subject: boolean }) => {
 const ProfileRow = ({ s, nested }: { s: Standing; nested?: boolean }) => {
   const gap = Math.round((s.leader.score - s.score) * 10) / 10;
   return (
+    // On a phone the label, score and rank columns use the whole width and
+    // the bar was left a few pixels — a purple tick where the chart should
+    // be. Below `sm` the bar wraps onto its own full-width line instead.
     <div
       className={cn(
-        'flex items-center gap-3 border-t border-white/6 py-1.5',
+        'flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-white/6 py-1.5 sm:flex-nowrap',
         nested ? 'pl-3 sm:pl-5' : 'font-semibold',
       )}>
       <span
         className={cn(
-          'w-36 shrink-0 truncate text-[13px] sm:w-48',
+          'min-w-0 flex-1 truncate text-[13px] sm:w-48 sm:flex-none',
           nested ? 'text-[#B9B7C4]' : 'text-white',
         )}
         title={s.scope}>
         {s.scope}
       </span>
-      <span className="min-w-0 flex-1">
+      <span className="order-3 basis-full sm:order-none sm:min-w-0 sm:flex-1 sm:basis-auto">
         <Bar
           score={s.score}
           subject
@@ -389,14 +392,14 @@ export default async function ModelPage({
                     return (
                       <div
                         key={r.id}
-                        className="flex items-center gap-3 border-t border-white/6 py-1.5 first:border-0">
+                        className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-white/6 py-1.5 first:border-0 sm:flex-nowrap">
                         <a
                           href={`/model-index/m/${r.id}`}
-                          className="w-40 shrink-0 truncate text-[13px] text-[#D9D7E0] hover:text-[#B08BFF] sm:w-52"
+                          className="min-w-0 flex-1 truncate text-[13px] text-[#D9D7E0] hover:text-[#B08BFF] sm:w-52 sm:flex-none"
                           title={`${r.name} — ${r.org}`}>
                           {r.name}
                         </a>
-                        <span className="relative block h-2 min-w-0 flex-1 overflow-hidden rounded-sm bg-[#17171B]">
+                        <span className="relative order-3 block h-2 basis-full overflow-hidden rounded-sm bg-[#17171B] sm:order-none sm:min-w-0 sm:flex-1 sm:basis-auto">
                           <span
                             className={cn(
                               'absolute inset-y-0 rounded-sm',
