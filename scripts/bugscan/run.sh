@@ -94,7 +94,33 @@ NOTIFY="$SELF_DIR/notify.sh"
 . "$SELF_DIR/lib.sh"
 
 log() { printf '%s  %s\n' "$(date '+%H:%M:%S')" "$*" | tee -a "$LOG"; }
-mail_out() { "$NOTIFY" "$1" >>"$LOG" 2>&1; }
+
+# Everything a person needs to hear about today goes through here, and this
+# is the only place in the whole pipeline that speaks. Under daily.sh
+# (BUGSCAN_DIGEST set) it appends a section to the day's digest, which
+# daily.sh sends once for every repository together; standalone it mails at
+# once. It used to be three voices — this script, the fix session for its
+# skipped items, and daily.sh for account failures — so a single bad day
+# arrived as three or four mails saying overlapping things (2026-09-11: the
+# fix session's "3 fixed, 2 for you" followed a minute later by this
+# script's "rolled back", about the same batch).
+mail_out() {
+  local subject=$1 body; body=$(cat)
+  if [ -n "${BUGSCAN_DIGEST:-}" ]; then
+    printf '%s\n' "$subject" >>"$BUGSCAN_DIGEST.subjects"
+    printf '## %s\n\n%s\n\n' "$subject" "$body" >>"$BUGSCAN_DIGEST"
+    log "digest: $subject"
+  else
+    printf '%s' "$body" | "$NOTIFY" "$subject" >>"$LOG" 2>&1
+  fi
+}
+
+# The fix session's own words for what it left to a person — the block it is
+# told to end with. Empty when it skipped nothing.
+skipped_summary() {
+  [ -f "${FIX_OUT:-/nonexistent}" ] || return 0
+  sed -n '/^【跳过项·大白话总结】/,$p' "$FIX_OUT" | sed '/^【已发信】/,$d'
+}
 
 # One run at a time per repository. A stale lock older than six hours is a
 # crashed run, not a live one — longer than every timeout above put together.
@@ -231,10 +257,9 @@ $gate_list
 **不许碰 git**(add/commit/push/checkout/reset/stash)。提交由脚本在过闸并通过独立
 复审后做,你一碰回滚就失效了。
 
-**跳过项发信**:本轮所有跳过的 P0/P1 合并成一封,由你自己发:
-  printf '%s' \"<正文>\" | $NOTIFY \"<标题>\"
-正文主体 = 你输出末尾那段【跳过项·大白话总结】,原样复制、一字不改。发信失败只打印
-一行,不要重试。"
+**跳过项不用你发信**:外层脚本统一发,一天一封。你只要把输出末尾那段
+【跳过项·大白话总结】写完整 —— 脚本会原样摘走。【已发信】一行写「由脚本统一发」。
+不要调用 notify.sh,不要发任何邮件。"
 
 if ! ask_claude "$FIX_TIMEOUT" "$FIX_OUT" -p "$fix_prompt" --resume "$SID" \
      --dangerously-skip-permissions; then
@@ -262,10 +287,13 @@ CHANGED="$STATE/.changed"
 } | sed '/^$/d' | sort -u >"$CHANGED"
 
 if [ ! -s "$CHANGED" ]; then
-  # No diff and nothing claimed fixed is the ordinary quiet outcome; the fix
-  # session mails its own skipped items, so there is nothing to add here.
+  # No diff is the ordinary quiet outcome; only what was left to a person
+  # needs saying.
   log "没有代码改动(FIXED=$NFIX SKIPPED=$NSKIP)"
   [ "$NFIX" -gt 0 ] && log "注意:自称修了 $NFIX 条却没有 diff —— 已当作 0 条处理"
+  skipped=$(skipped_summary)
+  [ -n "$skipped" ] && { echo "$skipped"; echo; echo "修复报告:$FIX_OUT"; } \
+    | mail_out "【bugscan/$BUGSCAN_LABEL】$NSKIP 处没自动修,要你拍板"
   exit 0
 fi
 log "改动文件:"; sed 's/^/  /' "$CHANGED" | tee -a "$LOG"
@@ -289,6 +317,8 @@ fail_batch() {
   local gate=$1 why=$2
   rollback
   { echo "$why"; echo; echo "已整批回滚,$BUGSCAN_LABEL 没有任何改动。"; echo
+    skipped=$(skipped_summary)
+    [ -n "$skipped" ] && { echo "$skipped"; echo; }
     echo "修复方自述:"; sed -n '1,80p' "$FIX_OUT"; echo
     echo "扫描报告:$SCAN_OUT"; echo "日志:$LOG"; } \
     | mail_out "【bugscan/$BUGSCAN_LABEL】$gate,已回滚"
@@ -306,8 +336,12 @@ $hits"
 # safer shape is the other way round. A fix that genuinely needs a file
 # outside these roots voids the batch and mails a person — which is the right
 # outcome for a repository the whole world can read.
+# A path EXEMPT_RE carved out of the denylist is allowed here too; the two
+# gates must agree, or the exemption is a promise the whitelist breaks
+# (2026-09-11: a clean batch was voided for touching the one fixture the
+# profile explicitly lets it touch).
 if [ -n "${ALLOW_RE:-}" ]; then
-  strays=$(grep -vE "$ALLOW_RE" "$CHANGED" || true)
+  strays=$(grep -vE "$ALLOW_RE" "$CHANGED" | grep -vE "${EXEMPT_RE:-^\$}" || true)
   [ -n "$strays" ] && fail_batch "改到了白名单以外的地方" "只允许改这些路径:$ALLOW_RE
 越界的文件,整批作废:
 $strays"
@@ -395,6 +429,12 @@ COMMIT
 
 if git push -q origin main 2>>"$LOG"; then
   log "已推送 $(git rev-parse --short HEAD)"
+  skipped=$(skipped_summary)
+  if [ -n "$skipped" ]; then
+    { echo "修了 $NFIX 处,已推 $(git rev-parse --short HEAD)。$NSKIP 处没自动修,要你看:"; echo
+      echo "$skipped"; echo; echo "修复报告:$FIX_OUT"; } \
+      | mail_out "【bugscan/$BUGSCAN_LABEL】修了 $NFIX 处,$NSKIP 处要你拍板"
+  fi
 else
   log "push 失败"
   { echo "修复通过了全部闸并已在本地提交,但 push 失败了。"; echo

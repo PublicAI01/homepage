@@ -46,10 +46,31 @@ else
 fi
 
 export BUGSCAN_MODEL="$PICKED_MODEL"
+
+# Every repository's run writes what a person needs to hear into one digest,
+# and it goes out once, at the end — or not at all, when nothing needed a
+# person. Before this each run (and the fix session inside it) mailed on its
+# own, and a day with two repositories and one rolled-back batch was four
+# mails about two facts.
+DIGEST="$STATE/daily-$(date +%F).digest.md"
+rm -f "$DIGEST" "$DIGEST.subjects"
+export BUGSCAN_DIGEST="$DIGEST"
+
 rc=0
 for repo in $REPOS; do
   log "── $(basename "$repo")"
   BUGSCAN_REPO="$repo" "$SELF_DIR/run.sh" "$@" || rc=1
 done
+
+if [ -s "$DIGEST" ]; then
+  # Subject: one clause per repository, from the section titles.
+  subject=$(sed -E 's/^【bugscan\/?([^】]*)】/\1:/' "$DIGEST.subjects" \
+    | awk -F: '{ n[$1]++; last[$1]=$2 } END { for (r in n) printf "%s%s %s", (c++ ? " · " : ""), r, (n[r] > 1 ? n[r] " 件" : last[r]) }')
+  { cat "$DIGEST"; printf '总日志:%s\n' "$LOG"; } \
+    | "$NOTIFY" "【bugscan】$subject" >>"$LOG" 2>&1
+  log "已发一封:$subject"
+else
+  log "今天没有需要人看的事,不发信"
+fi
 log "═══ 完 ═══"
 exit "$rc"
