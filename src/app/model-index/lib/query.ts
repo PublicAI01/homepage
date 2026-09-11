@@ -583,6 +583,8 @@ export interface Standing {
   score: number;
   /** Recognised boards with a measure here. 0 means every figure is a report ✱. */
   boards: number;
+  /** Of those, how many scored this model. Fewer than `boards` means the score averages a subset. */
+  coveredBoards: number;
   /** A recognised board put the model here, rather than a report ✱. */
   rankedInScope: boolean;
   /** The head of the table, plus the model itself when it sits below it. */
@@ -708,6 +710,12 @@ export function modelStandings(query: string): StandingsHit | StandingsMiss {
       boards: new Set(
         inScope.filter((b) => b.kind !== 'report').map((b) => b.group),
       ).size,
+      coveredBoards:
+        scope.level === 'category'
+          ? (ranked[idx].boardsByCategory[scope.category] ?? 0)
+          : scope.level === 'domain'
+            ? (ranked[idx].boardsByDomain[scope.domain] ?? 0)
+            : 0,
       rankedInScope: me.rankedInScope,
       peers,
     });

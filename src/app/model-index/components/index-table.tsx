@@ -1075,7 +1075,9 @@ function Row({
                   ? `Measured by ${scopeCovered} of the ${scopeBoardTotal} boards that cover this scope${scopeCovered < scopeBoardTotal ? ' — its score here averages fewer boards than a fully-covered model’s' : ''}`
                   : `Scored by ${row.covered} of ${row.coverable} recognised boards`
               }>
-              {scoped ? `${scopeCovered}/${scopeBoardTotal}` : `${row.covered}/${row.coverable}`}
+              {scoped
+                ? `${scopeCovered}/${scopeBoardTotal}`
+                : `${row.covered}/${row.coverable}`}
             </span>
           </span>
         </td>

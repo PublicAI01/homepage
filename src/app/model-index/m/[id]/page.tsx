@@ -170,6 +170,24 @@ const ProfileRow = ({ s, nested }: { s: Standing; nested?: boolean }) => {
         <span className="text-[#6E6C7A]">/{s.total}</span>
         {!s.rankedInScope ? <span className="text-[#E8A9F0]">✱</span> : null}
       </span>
+      {/* Partial coverage is the one thing a rank hides. A model leading a
+          three-board domain on two of them is not the same claim as leading
+          it on three, and a reader deciding whether to believe a #1 needs
+          the fraction next to it. */}
+      <span
+        className={cn(
+          'hidden w-9 shrink-0 text-right font-mono text-[11px] sm:block',
+          s.boards > 0 && s.coveredBoards < s.boards
+            ? 'text-[#F5C86B]'
+            : 'text-[#4A4A52]',
+        )}
+        title={
+          s.boards === 0
+            ? 'No recognised board measures this scope; placed by reports ✱'
+            : `Scored by ${s.coveredBoards} of the ${s.boards} boards that measure this scope`
+        }>
+        {s.boards > 0 ? `${s.coveredBoards}/${s.boards}` : '✱'}
+      </span>
     </div>
   );
 };
@@ -254,7 +272,11 @@ export default async function ModelPage({
               <p className="text-lede mt-4 max-w-[72ch] text-[#D9D7E0]">
                 Strongest in{' '}
                 <b className="font-semibold text-white">{best.scope}</b> (#
-                {best.position} of {best.total}), weakest in{' '}
+                {best.position} of {best.total}
+                {best.boards > 0 && best.coveredBoards < best.boards
+                  ? `, on ${best.coveredBoards} of its ${best.boards} boards`
+                  : ''}
+                ), weakest in{' '}
                 <b className="font-semibold text-white">{worst.scope}</b> (#
                 {worst.position} of {worst.total}). Above par in {abovePar} of{' '}
                 {standings.length} scopes.
