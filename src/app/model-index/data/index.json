@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T11:09:30.239Z",
+  "generatedAt": "2026-09-11T23:58:06.213Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -8,7 +8,7 @@
       "independent": true,
       "url": "https://arena.ai/leaderboard/text",
       "retrievedAt": "2026-09-11",
-      "snapshot": "7,999,020 votes across 400 models",
+      "snapshot": "8,126,041 votes across 401 models",
       "metric": "elo",
       "category": "Human preference",
       "domain": "Human preference",
@@ -1089,8 +1089,8 @@
       "retrievedAt": "2026-09-11",
       "publishedAt": "2026-09-05",
       "metric": "percent",
-      "category": "General",
-      "domain": "FrontierMath Tier 4 (v2)",
+      "category": "Reasoning",
+      "domain": "Mathematics",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
       "kind": "report",
       "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
@@ -1137,8 +1137,8 @@
       "retrievedAt": "2026-09-11",
       "publishedAt": "2026-09-05",
       "metric": "percent",
-      "category": "General",
-      "domain": "ExploitBench",
+      "category": "Professional",
+      "domain": "Cybersecurity",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
       "kind": "report",
       "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
@@ -1152,9 +1152,9 @@
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
       "retrievedAt": "2026-09-11",
       "publishedAt": "2026-09-05",
-      "metric": "percent",
+      "metric": "index",
       "category": "General",
-      "domain": "AA Intelligence Index (max effort)",
+      "domain": "General intelligence",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
       "kind": "report",
       "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
@@ -1219,118 +1219,6 @@
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
-      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
-      "kind": "report",
-      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
-      "group": "datacamp-astra-vs-fable"
-    },
-    {
-      "id": "datacamp-astra-vs-fable:batch-discount",
-      "name": "Batch discount",
-      "publisher": "DataCamp",
-      "independent": true,
-      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-11",
-      "publishedAt": "2026-09-05",
-      "metric": "percent",
-      "category": "General",
-      "domain": "Batch discount",
-      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
-      "kind": "report",
-      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
-      "group": "datacamp-astra-vs-fable"
-    },
-    {
-      "id": "datacamp-astra-vs-fable:turns",
-      "name": "Turns",
-      "publisher": "DataCamp",
-      "independent": true,
-      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-11",
-      "publishedAt": "2026-09-05",
-      "metric": "percent",
-      "category": "General",
-      "domain": "Turns",
-      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
-      "kind": "report",
-      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
-      "group": "datacamp-astra-vs-fable"
-    },
-    {
-      "id": "datacamp-astra-vs-fable:tool-calls",
-      "name": "Tool calls",
-      "publisher": "DataCamp",
-      "independent": true,
-      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-11",
-      "publishedAt": "2026-09-05",
-      "metric": "percent",
-      "category": "General",
-      "domain": "Tool calls",
-      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
-      "kind": "report",
-      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
-      "group": "datacamp-astra-vs-fable"
-    },
-    {
-      "id": "datacamp-astra-vs-fable:physics-correctness",
-      "name": "Physics correctness",
-      "publisher": "DataCamp",
-      "independent": true,
-      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-11",
-      "publishedAt": "2026-09-05",
-      "metric": "percent",
-      "category": "General",
-      "domain": "Physics correctness",
-      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
-      "kind": "report",
-      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
-      "group": "datacamp-astra-vs-fable"
-    },
-    {
-      "id": "datacamp-astra-vs-fable:stability-over-time",
-      "name": "Stability over time",
-      "publisher": "DataCamp",
-      "independent": true,
-      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-11",
-      "publishedAt": "2026-09-05",
-      "metric": "percent",
-      "category": "General",
-      "domain": "Stability over time",
-      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
-      "kind": "report",
-      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
-      "group": "datacamp-astra-vs-fable"
-    },
-    {
-      "id": "datacamp-astra-vs-fable:visual-quality",
-      "name": "Visual quality",
-      "publisher": "DataCamp",
-      "independent": true,
-      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-11",
-      "publishedAt": "2026-09-05",
-      "metric": "percent",
-      "category": "General",
-      "domain": "Visual quality",
-      "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
-      "kind": "report",
-      "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
-      "group": "datacamp-astra-vs-fable"
-    },
-    {
-      "id": "datacamp-astra-vs-fable:rubric-score",
-      "name": "Rubric score",
-      "publisher": "DataCamp",
-      "independent": true,
-      "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-11",
-      "publishedAt": "2026-09-05",
-      "metric": "percent",
-      "category": "General",
-      "domain": "Rubric score",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
       "kind": "report",
       "source": "DataCamp — GPT-6 Astra vs Claude Fable 5.1",
@@ -1431,6 +1319,310 @@
       "kind": "report",
       "source": "CellCog — K2 Horizon analysis",
       "group": "cellcog-k2-horizon"
+    },
+    {
+      "id": "deepseek-v4-1-flash:gpqa-diamond-pass-1",
+      "name": "GPQA Diamond (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Reasoning",
+      "domain": "Science",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:hle-pass-1",
+      "name": "HLE (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Reasoning",
+      "domain": "Expert reasoning",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:codeforces-rating",
+      "name": "Codeforces (Rating)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Code generation",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:matharena-apex-pass-1",
+      "name": "MathArena Apex (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Reasoning",
+      "domain": "Mathematics",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:terminal-bench-2-1-pass-1",
+      "name": "Terminal-Bench 2.1 (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Agentic coding",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:terminal-bench-3-0-pass-1",
+      "name": "Terminal-Bench 3.0 (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Agentic coding",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:terminal-bench-4-0-pass-1",
+      "name": "Terminal-Bench 4.0 (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Agentic coding",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:deepswe-v1-1-resolved",
+      "name": "DeepSWE v1.1 (Resolved)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Agentic coding",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:programbench-almost-1",
+      "name": "ProgramBench (Almost@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Agentic coding",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:nl2repo-bench-score",
+      "name": "NL2Repo-Bench (Score)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Coding",
+      "domain": "Repository Q&A",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:cybergym-pass-1",
+      "name": "CyberGym (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Professional",
+      "domain": "Cybersecurity",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:sec-bench-pro-pass-1",
+      "name": "SEC-Bench Pro (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Professional",
+      "domain": "Cybersecurity",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:exploitgym-pass-1",
+      "name": "ExploitGym (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Professional",
+      "domain": "Cybersecurity",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:hle-w-tools-pass-1",
+      "name": "HLE w/ tools (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Reasoning",
+      "domain": "Expert reasoning",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:automationbench-pass-1",
+      "name": "AutomationBench (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Agents",
+      "domain": "Workflow automation",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:agent-s-last-exam-pass-1",
+      "name": "Agent's Last Exam (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Reasoning",
+      "domain": "Expert reasoning",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:chartography-w-tools-pass-1",
+      "name": "Chartography w/ tools (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Knowledge",
+      "domain": "Multimodal understanding",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:babyvision-w-tools-pass-1",
+      "name": "BabyVision w/ tools (Pass@1)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Knowledge",
+      "domain": "Multimodal understanding",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
+    },
+    {
+      "id": "deepseek-v4-1-flash:zerobench-main-w-tools-pass-5",
+      "name": "ZeroBench-main w/ tools (Pass@5)",
+      "publisher": "DeepSeek",
+      "independent": false,
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "retrievedAt": "2026-09-11",
+      "publishedAt": "2026-09-10",
+      "metric": "percent",
+      "category": "Knowledge",
+      "domain": "Multimodal understanding",
+      "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
+      "kind": "report",
+      "source": "DeepSeek — V4.1 Flash model card",
+      "group": "deepseek-v4-1-flash"
     }
   ],
   "models": [
@@ -2429,6 +2621,15 @@
       "name": "Command R Plus 08 2024",
       "org": "Cohere",
       "access": {
+        "openrouter": {
+          "id": "cohere/command-r-plus-08-2024",
+          "url": "https://openrouter.ai/cohere/command-r-plus-08-2024",
+          "contextLength": 128000,
+          "inputPerM": 2.5,
+          "outputPerM": 10,
+          "listedAt": "2024-08-30",
+          "modalities": ["text"]
+        },
         "official": { "name": "Cohere docs", "url": "https://docs.cohere.com" }
       }
     },
@@ -2538,8 +2739,8 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
           "contextLength": 1048576,
-          "inputPerM": 0.66,
-          "outputPerM": 1.98,
+          "inputPerM": 0.579,
+          "outputPerM": 1.738,
           "listedAt": "2026-08-12",
           "modalities": ["text"]
         },
@@ -2682,6 +2883,12 @@
       }
     },
     {
+      "id": "xlam-2-1b-fc-r",
+      "name": "XLAM 2 1B Fc R",
+      "org": "Salesforce",
+      "size": { "paramsB": 1, "source": "name" }
+    },
+    {
       "id": "deepseek-r1-claude-3-5-sonnet-20241022",
       "name": "DeepSeek R1 + claude-3-5-sonnet-20241022",
       "org": "Anthropic",
@@ -2733,6 +2940,49 @@
         "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
       },
       "size": { "paramsB": 253, "source": "name" }
+    },
+    {
+      "id": "falcon3-1b-instruct",
+      "name": "Falcon3.1B Instruct",
+      "org": "TII UAE",
+      "size": { "paramsB": 1, "source": "name" }
+    },
+    {
+      "id": "gemma-3-1b-it",
+      "name": "Gemma 3 1B It",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      },
+      "size": { "paramsB": 1, "source": "name" }
+    },
+    {
+      "id": "llama-3-2-1b-instruct",
+      "name": "Llama 3.2 1B Instruct",
+      "org": "Meta",
+      "access": {
+        "openrouter": {
+          "id": "meta-llama/llama-3.2-1b-instruct",
+          "url": "https://openrouter.ai/meta-llama/llama-3.2-1b-instruct",
+          "contextLength": 60000,
+          "inputPerM": 0.027,
+          "outputPerM": 0.201,
+          "listedAt": "2024-09-25",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "meta-llama/Llama-3.2-1B-Instruct",
+          "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct"
+        },
+        "official": {
+          "name": "Llama developer docs",
+          "url": "https://www.llama.com/docs"
+        }
+      },
+      "size": { "paramsB": 1.2, "source": "huggingface" }
     },
     {
       "id": "llama-3-3-nemotron-49b-super-v1",
@@ -2961,6 +3211,18 @@
       }
     },
     {
+      "id": "gemma-1-1-2b-it",
+      "name": "Gemma 1.1 2B It",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      },
+      "size": { "paramsB": 2, "source": "name" }
+    },
+    {
       "id": "opencodereasoning-nemotron-1-1-32b",
       "name": "OpenCodeReasoning Nemotron 1.1 32B",
       "org": "NVIDIA",
@@ -2968,6 +3230,18 @@
         "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
       },
       "size": { "paramsB": 32, "source": "name" }
+    },
+    {
+      "id": "gemma-1-1-7b-it",
+      "name": "Gemma 1.1 7B It",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      },
+      "size": { "paramsB": 7, "source": "name" }
     },
     {
       "id": "thedrummer-anubis-70b-v1-1",
@@ -2995,30 +3269,6 @@
           "url": "https://www.llama.com/docs"
         }
       }
-    },
-    {
-      "id": "gemma-1-1-2b-it",
-      "name": "Gemma 1.1.2b It",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      },
-      "size": { "paramsB": 2, "source": "name" }
-    },
-    {
-      "id": "gemma-1-1-7b-it",
-      "name": "Gemma 1.1.7b It",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      },
-      "size": { "paramsB": 7, "source": "name" }
     },
     {
       "id": "magistral-medium-1-2",
@@ -3157,6 +3407,48 @@
       "size": { "paramsB": 34, "source": "name" }
     },
     {
+      "id": "qwen1-5-4b-chat",
+      "name": "Qwen1.5 4B Chat",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "bytedance-ui-tars-1-5-7b",
+      "name": "Bytedance/ui Tars 1.5 7B",
+      "org": "Other",
+      "size": { "paramsB": 7, "source": "name" }
+    },
+    {
+      "id": "qwen1-5-7b-chat",
+      "name": "Qwen1.5 7B Chat",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 7, "source": "name" }
+    },
+    {
+      "id": "uitars-1-5-7b",
+      "name": "Uitars 1.5 7B",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      },
+      "size": { "paramsB": 7, "source": "name" }
+    },
+    {
       "id": "qwen1-5-72b-chat",
       "name": "Qwen1.5 72B Chat",
       "org": "Alibaba",
@@ -3212,48 +3504,6 @@
       "access": {
         "official": { "name": "AI21 docs", "url": "https://docs.ai21.com" }
       }
-    },
-    {
-      "id": "qwen1-5-4b-chat",
-      "name": "Qwen1.5.4b Chat",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 4, "source": "name" }
-    },
-    {
-      "id": "bytedance-ui-tars-1-5-7b",
-      "name": "Bytedance/ui Tars 1.5.7b",
-      "org": "Other",
-      "size": { "paramsB": 7, "source": "name" }
-    },
-    {
-      "id": "qwen1-5-7b-chat",
-      "name": "Qwen1.5.7b Chat",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 7, "source": "name" }
-    },
-    {
-      "id": "uitars-1-5-7b",
-      "name": "Uitars 1.5.7b",
-      "org": "ByteDance",
-      "access": {
-        "official": {
-          "name": "Volcengine Doubao",
-          "url": "https://www.volcengine.com/product/doubao"
-        }
-      },
-      "size": { "paramsB": 7, "source": "name" }
     },
     { "id": "swe-1-6-fast", "name": "SWE-1.6 Fast", "org": "Other" },
     {
@@ -3909,6 +4159,18 @@
       "size": { "paramsB": 180, "source": "name" }
     },
     {
+      "id": "gemma-2-2b-it",
+      "name": "Gemma 2 2B It",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      },
+      "size": { "paramsB": 2, "source": "name" }
+    },
+    {
       "id": "k2-think-v2",
       "name": "K2 Think V2",
       "org": "IFM (MBZUAI)",
@@ -4002,6 +4264,36 @@
         }
       },
       "size": { "paramsB": 76, "source": "name" }
+    },
+    {
+      "id": "xlam-2-3b-fc-r",
+      "name": "XLAM 2 3B Fc R",
+      "org": "Salesforce",
+      "size": { "paramsB": 3, "source": "name" }
+    },
+    {
+      "id": "granite-3-0-2b-instruct",
+      "name": "Granite 3.0 2B Instruct",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
+        }
+      },
+      "size": { "paramsB": 2, "source": "name" }
+    },
+    {
+      "id": "granite-3-1-2b-instruct",
+      "name": "Granite 3.1 2B Instruct",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
+        }
+      },
+      "size": { "paramsB": 2, "source": "name" }
     },
     {
       "id": "qwen3-5-2b",
@@ -4099,6 +4391,24 @@
       "size": { "paramsB": 405, "source": "name" }
     },
     {
+      "id": "minicpm5-2b",
+      "name": "MiniCPM5.2B",
+      "org": "OpenBMB",
+      "access": {
+        "official": {
+          "name": "OpenBMB on GitHub",
+          "url": "https://github.com/OpenBMB"
+        }
+      },
+      "size": { "paramsB": 2, "source": "name" }
+    },
+    {
+      "id": "chatglm2-6b",
+      "name": "Chatglm2 6B",
+      "org": "Other",
+      "size": { "paramsB": 6, "source": "name" }
+    },
+    {
       "id": "cogito-v2-preview-deepseek-671b",
       "name": "Cogito V2 Preview DeepSeek 671B",
       "org": "DeepSeek",
@@ -4122,6 +4432,18 @@
       }
     },
     {
+      "id": "llama-2-7b-chat",
+      "name": "Llama 2 7B Chat",
+      "org": "Meta",
+      "access": {
+        "official": {
+          "name": "Llama developer docs",
+          "url": "https://www.llama.com/docs"
+        }
+      },
+      "size": { "paramsB": 7, "source": "name" }
+    },
+    {
       "id": "k2-horizon-7b",
       "name": "K2 Horizon 7B",
       "org": "IFM (MBZUAI)",
@@ -4138,6 +4460,12 @@
           "url": "https://www.llama.com/docs"
         }
       },
+      "size": { "paramsB": 7, "source": "name" }
+    },
+    {
+      "id": "opencua-qwen2-7b",
+      "name": "Opencua Qwen2 7B",
+      "org": "The",
       "size": { "paramsB": 7, "source": "name" }
     },
     {
@@ -4211,8 +4539,57 @@
       "size": { "paramsB": 72, "source": "name" }
     },
     {
+      "id": "xlam-2-8b-fc-r",
+      "name": "XLAM 2 8B Fc R",
+      "org": "Salesforce",
+      "size": { "paramsB": 8, "source": "name" }
+    },
+    {
+      "id": "internvl2-8b",
+      "name": "InternVL2.8B",
+      "org": "Other",
+      "size": { "paramsB": 8, "source": "name" }
+    },
+    {
+      "id": "molmo-2-8b",
+      "name": "Molmo 2 8B",
+      "org": "Ai2",
+      "access": { "official": { "name": "Ai2", "url": "https://allenai.org" } },
+      "size": { "paramsB": 8, "source": "name" }
+    },
+    {
+      "id": "toolace-2-8b",
+      "name": "ToolACE 2.8B",
+      "org": "Huawei Noah & USTC",
+      "size": { "paramsB": 2.8, "source": "name" }
+    },
+    {
       "id": "gemma-2-9b",
       "name": "Gemma 2 (9B)",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      },
+      "size": { "paramsB": 9, "source": "name" }
+    },
+    {
+      "id": "gemma-2-9b-it",
+      "name": "Gemma 2 9B It",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      },
+      "size": { "paramsB": 9, "source": "name" }
+    },
+    {
+      "id": "gemma-2-9b-it-simpo",
+      "name": "Gemma 2 9B It Simpo",
       "org": "Google",
       "access": {
         "official": {
@@ -4651,10 +5028,16 @@
       }
     },
     {
-      "id": "xlam-2-1b-fc-r",
-      "name": "XLAM 2.1B Fc R",
-      "org": "Salesforce",
-      "size": { "paramsB": 2.1, "source": "name" }
+      "id": "hammer2-1-3b",
+      "name": "Hammer2.1 3B",
+      "org": "MadeAgents",
+      "size": { "paramsB": 3, "source": "name" }
+    },
+    {
+      "id": "hammer2-1-7b",
+      "name": "Hammer2.1 7B",
+      "org": "MadeAgents",
+      "size": { "paramsB": 7, "source": "name" }
     },
     {
       "id": "minimax-m2-1",
@@ -4705,34 +5088,10 @@
       "size": { "paramsB": 1.5, "source": "name" }
     },
     {
-      "id": "hammer2-1-3b",
-      "name": "Hammer2.1.3b",
-      "org": "MadeAgents",
-      "size": { "paramsB": 3, "source": "name" }
-    },
-    {
-      "id": "hammer2-1-7b",
-      "name": "Hammer2.1.7b",
-      "org": "MadeAgents",
-      "size": { "paramsB": 7, "source": "name" }
-    },
-    {
       "id": "smollm2-1-7b-instruct",
       "name": "Smollm2.1.7b Instruct",
       "org": "Other",
       "size": { "paramsB": 1.7, "source": "name" }
-    },
-    {
-      "id": "gemma-2-2b-it",
-      "name": "Gemma 2.2B It",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      },
-      "size": { "paramsB": 2.2, "source": "name" }
     },
     {
       "id": "dolphin-2-2-1-mistral-7b",
@@ -4745,12 +5104,6 @@
         }
       },
       "size": { "paramsB": 7, "source": "name" }
-    },
-    {
-      "id": "xlam-2-3b-fc-r",
-      "name": "XLAM 2.3B Fc R",
-      "org": "Salesforce",
-      "size": { "paramsB": 2.3, "source": "name" }
     },
     {
       "id": "qwen3-8-2-4t-a95b",
@@ -4811,6 +5164,18 @@
       }
     },
     {
+      "id": "qwq-32b-qwen-2-5-coder-instruct",
+      "name": "QwQ-32B + Qwen 2.5 Coder Instruct",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 32, "source": "name" }
+    },
+    {
       "id": "qwen2-5-coder-32b-instruct",
       "name": "Qwen2.5 Coder 32B Instruct",
       "org": "Alibaba",
@@ -4834,18 +5199,6 @@
         }
       },
       "size": { "paramsB": 32.8, "source": "huggingface" }
-    },
-    {
-      "id": "qwq-32b-qwen-2-5-coder-instruct",
-      "name": "QwQ-32B + Qwen 2.5 Coder Instruct",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 32, "source": "name" }
     },
     {
       "id": "qwen2-5-vl-32b-instruct",
@@ -5152,8 +5505,8 @@
           "id": "minimax/minimax-m2.5",
           "url": "https://openrouter.ai/minimax/minimax-m2.5",
           "contextLength": 204800,
-          "inputPerM": 0.3,
-          "outputPerM": 1.2,
+          "inputPerM": 0.27,
+          "outputPerM": 1.08,
           "listedAt": "2026-02-12",
           "modalities": ["text"]
         },
@@ -5169,8 +5522,8 @@
       "size": { "paramsB": 228.7, "source": "huggingface" }
     },
     {
-      "id": "qwen2-5",
-      "name": "Qwen2.5",
+      "id": "qwen2-5-max",
+      "name": "Qwen2.5 Max",
       "org": "Alibaba",
       "access": {
         "official": {
@@ -5236,12 +5589,6 @@
       "size": { "paramsB": 2.6, "source": "name" }
     },
     {
-      "id": "chatglm2-6b",
-      "name": "Chatglm2.6b",
-      "org": "Other",
-      "size": { "paramsB": 6, "source": "name" }
-    },
-    {
       "id": "ling-2-6-flash",
       "name": "Ling 2.6 Flash",
       "org": "InclusionAI",
@@ -5301,24 +5648,6 @@
       "size": { "paramsB": 1000, "source": "name" }
     },
     {
-      "id": "llama-2-7b-chat",
-      "name": "Llama 2.7B Chat",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      },
-      "size": { "paramsB": 2.7, "source": "name" }
-    },
-    {
-      "id": "opencua-qwen2-7b",
-      "name": "Opencua Qwen2.7b",
-      "org": "The",
-      "size": { "paramsB": 7, "source": "name" }
-    },
-    {
       "id": "kimi-k2-7-code",
       "name": "Kimi K2.7 Code",
       "org": "Moonshot",
@@ -5367,55 +5696,6 @@
         }
       },
       "size": { "paramsB": 228.7, "source": "huggingface" }
-    },
-    {
-      "id": "xlam-2-8b-fc-r",
-      "name": "XLAM 2.8B Fc R",
-      "org": "Salesforce",
-      "size": { "paramsB": 2.8, "source": "name" }
-    },
-    {
-      "id": "internvl2-8b",
-      "name": "InternVL2.8B",
-      "org": "Other",
-      "size": { "paramsB": 8, "source": "name" }
-    },
-    {
-      "id": "molmo-2-8b",
-      "name": "Molmo 2.8B",
-      "org": "Ai2",
-      "access": { "official": { "name": "Ai2", "url": "https://allenai.org" } },
-      "size": { "paramsB": 2.8, "source": "name" }
-    },
-    {
-      "id": "toolace-2-8b",
-      "name": "ToolACE 2.8B",
-      "org": "Huawei Noah & USTC",
-      "size": { "paramsB": 2.8, "source": "name" }
-    },
-    {
-      "id": "gemma-2-9b-it",
-      "name": "Gemma 2.9B It",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      },
-      "size": { "paramsB": 2.9, "source": "name" }
-    },
-    {
-      "id": "gemma-2-9b-it-simpo",
-      "name": "Gemma 2.9B It Simpo",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      },
-      "size": { "paramsB": 2.9, "source": "name" }
     },
     {
       "id": "grok-4-20",
@@ -5816,18 +6096,6 @@
         }
       },
       "size": { "paramsB": 235.7, "activeB": 22, "source": "huggingface" }
-    },
-    {
-      "id": "qwen3-235b-a22b-no",
-      "name": "Qwen3 235B A22B No",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 235, "activeB": 22, "source": "name" }
     },
     {
       "id": "qwen3-235b-a22b",
@@ -6331,6 +6599,30 @@
       "size": { "paramsB": 27.8, "source": "huggingface" }
     },
     {
+      "id": "idefics3-8b-llama3",
+      "name": "Idefics3.8B Llama3",
+      "org": "Meta",
+      "access": {
+        "official": {
+          "name": "Llama developer docs",
+          "url": "https://www.llama.com/docs"
+        }
+      },
+      "size": { "paramsB": 8, "source": "name" }
+    },
+    {
+      "id": "g9v3-3b",
+      "name": "G9v3.3B",
+      "org": "AI9Stars",
+      "size": { "paramsB": 3, "source": "name" }
+    },
+    {
+      "id": "falcon3-3b-instruct",
+      "name": "Falcon3.3B Instruct",
+      "org": "TII UAE",
+      "size": { "paramsB": 3, "source": "name" }
+    },
+    {
       "id": "ministral-3-3b",
       "name": "Ministral 3 3B",
       "org": "Mistral",
@@ -6350,16 +6642,36 @@
       "size": { "paramsB": 70, "source": "name" }
     },
     {
-      "id": "idefics3-8b-llama3",
-      "name": "Idefics3.8B Llama3",
+      "id": "llama-3-1-tulu-3-8b",
+      "name": "Llama 3.1 Tulu 3 8B",
+      "org": "Ai2",
+      "access": { "official": { "name": "Ai2", "url": "https://allenai.org" } },
+      "size": { "paramsB": 8, "source": "name" }
+    },
+    {
+      "id": "llama-3-2-3b-instruct",
+      "name": "Llama 3.2 3B Instruct",
       "org": "Meta",
       "access": {
+        "openrouter": {
+          "id": "meta-llama/llama-3.2-3b-instruct",
+          "url": "https://openrouter.ai/meta-llama/llama-3.2-3b-instruct",
+          "contextLength": 131072,
+          "inputPerM": 0.05,
+          "outputPerM": 0.33,
+          "listedAt": "2024-09-25",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "meta-llama/Llama-3.2-3B-Instruct",
+          "url": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct"
+        },
         "official": {
           "name": "Llama developer docs",
           "url": "https://www.llama.com/docs"
         }
       },
-      "size": { "paramsB": 8, "source": "name" }
+      "size": { "paramsB": 3.2, "source": "huggingface" }
     },
     {
       "id": "nvidia-nemotron-3-nano-30b-a3b",
@@ -6489,6 +6801,42 @@
       }
     },
     {
+      "id": "minicpm3-4b-fc",
+      "name": "MiniCPM3.4B FC",
+      "org": "OpenBMB",
+      "access": {
+        "official": {
+          "name": "OpenBMB on GitHub",
+          "url": "https://github.com/OpenBMB"
+        }
+      },
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "gemma-3-4b-it",
+      "name": "Gemma 3 4B It",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      },
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "minicpm3-4b",
+      "name": "MiniCPM3.4B",
+      "org": "OpenBMB",
+      "access": {
+        "official": {
+          "name": "OpenBMB on GitHub",
+          "url": "https://github.com/OpenBMB"
+        }
+      },
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
       "id": "nvidia-nemotron-3-nano-4b",
       "name": "NVIDIA Nemotron 3 Nano 4B",
       "org": "NVIDIA",
@@ -6568,6 +6916,12 @@
       "size": { "paramsB": 480, "activeB": 35, "source": "name" }
     },
     {
+      "id": "fastchat-t5-3b",
+      "name": "Fastchat T5 3B",
+      "org": "Other",
+      "size": { "paramsB": 3, "source": "name" }
+    },
+    {
       "id": "nemotron-3-ultra-550b-a55b",
       "name": "Nemotron 3 Ultra 550B A55B",
       "org": "NVIDIA",
@@ -6575,6 +6929,18 @@
         "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
       },
       "size": { "paramsB": 550, "activeB": 55, "source": "name" }
+    },
+    {
+      "id": "chatglm3-6b",
+      "name": "Chatglm3 6B",
+      "org": "Other",
+      "size": { "paramsB": 6, "source": "name" }
+    },
+    {
+      "id": "falcon3-7b-instruct",
+      "name": "Falcon3.7B Instruct",
+      "org": "TII UAE",
+      "size": { "paramsB": 7, "source": "name" }
     },
     {
       "id": "llama-3-70b-instruct",
@@ -6599,6 +6965,18 @@
         }
       },
       "size": { "paramsB": 70, "source": "name" }
+    },
+    {
+      "id": "llama-3-8b-instruct",
+      "name": "Llama 3 8B Instruct",
+      "org": "Meta",
+      "access": {
+        "official": {
+          "name": "Llama developer docs",
+          "url": "https://www.llama.com/docs"
+        }
+      },
+      "size": { "paramsB": 8, "source": "name" }
     },
     {
       "id": "ministral-3-8b",
@@ -6958,8 +7336,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -7005,8 +7383,8 @@
           "id": "moonshotai/kimi-k3",
           "url": "https://openrouter.ai/moonshotai/kimi-k3",
           "contextLength": 1048576,
-          "inputPerM": 2.34,
-          "outputPerM": 11.7,
+          "inputPerM": 1.616,
+          "outputPerM": 8.105,
           "listedAt": "2026-07-16",
           "modalities": ["text", "image", "video"]
         },
@@ -7069,8 +7447,8 @@
       }
     },
     {
-      "id": "qwen3",
-      "name": "Qwen3",
+      "id": "qwen3-max",
+      "name": "Qwen3 Max",
       "org": "Alibaba",
       "access": {
         "openrouter": {
@@ -7089,8 +7467,8 @@
       }
     },
     {
-      "id": "qwen-qwen3",
-      "name": "Qwen/qwen3",
+      "id": "qwen-qwen3-max",
+      "name": "Qwen/qwen3 Max",
       "org": "Alibaba",
       "access": {
         "openrouter": {
@@ -7285,6 +7663,18 @@
         }
       }
     },
+    {
+      "id": "granite-3-0-8b-instruct",
+      "name": "Granite 3.0 8B Instruct",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
+        }
+      },
+      "size": { "paramsB": 8, "source": "name" }
+    },
     { "id": "agnes-3-0-flash", "name": "Agnes 3.0 Flash", "org": "Sapiens AI" },
     {
       "id": "ling-3-0-flash",
@@ -7316,11 +7706,25 @@
       "name": "Ling 3.0 Flash VL",
       "org": "InclusionAI",
       "access": {
+        "openrouter": {
+          "id": "inclusionai/ling-3.0-flash-vl",
+          "url": "https://openrouter.ai/inclusionai/ling-3.0-flash-vl",
+          "contextLength": 131072,
+          "inputPerM": 0.06,
+          "outputPerM": 0.18,
+          "listedAt": "2026-09-10",
+          "modalities": ["text", "image", "video"]
+        },
+        "weights": {
+          "huggingFaceId": "inclusionAI/Ling-3.0-flash-VL",
+          "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL"
+        },
         "official": {
           "name": "inclusionAI on GitHub",
           "url": "https://github.com/inclusionAI"
         }
-      }
+      },
+      "size": { "paramsB": 124.8, "source": "huggingface" }
     },
     {
       "id": "ling-3-0-tiny",
@@ -7334,18 +7738,6 @@
       }
     },
     {
-      "id": "granite-3-0-2b-instruct",
-      "name": "Granite 3.0.2b Instruct",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 2, "source": "name" }
-    },
-    {
       "id": "qwen3-0-6b",
       "name": "Qwen3.0.6B",
       "org": "Alibaba",
@@ -7356,25 +7748,6 @@
         }
       },
       "size": { "paramsB": 0.6, "source": "name" }
-    },
-    {
-      "id": "granite-3-0-8b-instruct",
-      "name": "Granite 3.0.8b Instruct",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 8, "source": "name" }
-    },
-    {
-      "id": "llama-3-1-tulu-3-8b",
-      "name": "Llama 3.1 Tulu 3.8B",
-      "org": "Ai2",
-      "access": { "official": { "name": "Ai2", "url": "https://allenai.org" } },
-      "size": { "paramsB": 3.8, "source": "name" }
     },
     {
       "id": "olmo-3-1-32b-instruct",
@@ -7482,6 +7855,43 @@
       "size": { "paramsB": 70, "source": "name" }
     },
     {
+      "id": "granite-3-1-8b-instruct",
+      "name": "Granite 3.1 8B Instruct",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
+        }
+      },
+      "size": { "paramsB": 8, "source": "name" }
+    },
+    {
+      "id": "llama-3-1-8b-instruct",
+      "name": "Llama 3.1 8B Instruct",
+      "org": "Meta",
+      "access": {
+        "openrouter": {
+          "id": "meta-llama/llama-3.1-8b-instruct",
+          "url": "https://openrouter.ai/meta-llama/llama-3.1-8b-instruct",
+          "contextLength": 131072,
+          "inputPerM": 0.05,
+          "outputPerM": 0.08,
+          "listedAt": "2024-07-23",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+          "url": "https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct"
+        },
+        "official": {
+          "name": "Llama developer docs",
+          "url": "https://www.llama.com/docs"
+        }
+      },
+      "size": { "paramsB": 8, "source": "huggingface" }
+    },
+    {
       "id": "llama-3-1-instruct-turbo-8b",
       "name": "Llama 3.1 Instruct Turbo (8B)",
       "org": "Meta",
@@ -7492,24 +7902,6 @@
         }
       },
       "size": { "paramsB": 8, "source": "name" }
-    },
-    {
-      "id": "falcon3-1b-instruct",
-      "name": "Falcon3.1B Instruct",
-      "org": "TII UAE",
-      "size": { "paramsB": 1, "source": "name" }
-    },
-    {
-      "id": "gemma-3-1b-it",
-      "name": "Gemma 3.1B It",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      },
-      "size": { "paramsB": 3.1, "source": "name" }
     },
     {
       "id": "deepseek-chat-v3-1",
@@ -7664,18 +8056,6 @@
       }
     },
     {
-      "id": "granite-3-1-2b-instruct",
-      "name": "Granite 3.1.2b Instruct",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 2, "source": "name" }
-    },
-    {
       "id": "qwen3-1-7b",
       "name": "Qwen3.1.7B",
       "org": "Alibaba",
@@ -7688,25 +8068,13 @@
       "size": { "paramsB": 1.7, "source": "name" }
     },
     {
-      "id": "granite-3-1-8b-instruct",
-      "name": "Granite 3.1.8b Instruct",
+      "id": "granite-3-2-8b-instruct",
+      "name": "Granite 3.2.8B Instruct",
       "org": "IBM",
       "access": {
         "official": {
           "name": "IBM Granite",
           "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 8, "source": "name" }
-    },
-    {
-      "id": "llama-3-1-8b-instruct",
-      "name": "Llama 3.1.8b Instruct",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
         }
       },
       "size": { "paramsB": 8, "source": "name" }
@@ -7843,42 +8211,6 @@
       }
     },
     {
-      "id": "llama-3-2-1b-instruct",
-      "name": "Llama 3.2.1b Instruct",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      },
-      "size": { "paramsB": 1, "source": "name" }
-    },
-    {
-      "id": "llama-3-2-3b-instruct",
-      "name": "Llama 3.2.3b Instruct",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      },
-      "size": { "paramsB": 3, "source": "name" }
-    },
-    {
-      "id": "granite-3-2-8b-instruct",
-      "name": "Granite 3.2.8B Instruct",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 8, "source": "name" }
-    },
-    {
       "id": "llama-3-3-70b-instruct",
       "name": "Llama 3.3 70B Instruct",
       "org": "Meta",
@@ -7916,18 +8248,6 @@
       "size": { "paramsB": 70, "source": "name" }
     },
     {
-      "id": "g9v3-3b",
-      "name": "G9v3.3B",
-      "org": "AI9Stars",
-      "size": { "paramsB": 3, "source": "name" }
-    },
-    {
-      "id": "falcon3-3b-instruct",
-      "name": "Falcon3.3B Instruct",
-      "org": "TII UAE",
-      "size": { "paramsB": 3, "source": "name" }
-    },
-    {
       "id": "llama-3-3-nemotron-super",
       "name": "Llama 3.3 Nemotron Super",
       "org": "Meta",
@@ -7937,42 +8257,6 @@
           "url": "https://www.llama.com/docs"
         }
       }
-    },
-    {
-      "id": "minicpm3-4b-fc",
-      "name": "MiniCPM3.4B FC",
-      "org": "OpenBMB",
-      "access": {
-        "official": {
-          "name": "OpenBMB on GitHub",
-          "url": "https://github.com/OpenBMB"
-        }
-      },
-      "size": { "paramsB": 4, "source": "name" }
-    },
-    {
-      "id": "gemma-3-4b-it",
-      "name": "Gemma 3.4B It",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      },
-      "size": { "paramsB": 3.4, "source": "name" }
-    },
-    {
-      "id": "minicpm3-4b",
-      "name": "MiniCPM3.4B",
-      "org": "OpenBMB",
-      "access": {
-        "official": {
-          "name": "OpenBMB on GitHub",
-          "url": "https://github.com/OpenBMB"
-        }
-      },
-      "size": { "paramsB": 4, "source": "name" }
     },
     {
       "id": "nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
@@ -8043,8 +8327,8 @@
       "size": { "paramsB": 403.4, "activeB": 17, "source": "huggingface" }
     },
     {
-      "id": "qwen3-5-9b",
-      "name": "Qwen3.5 9B",
+      "id": "qwen3-5-4b",
+      "name": "Qwen3.5.4B",
       "org": "Alibaba",
       "access": {
         "official": {
@@ -8052,7 +8336,32 @@
           "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       },
-      "size": { "paramsB": 9, "source": "name" }
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "qwen3-5-9b",
+      "name": "Qwen3.5 9B",
+      "org": "Alibaba",
+      "access": {
+        "openrouter": {
+          "id": "qwen/qwen3.5-9b",
+          "url": "https://openrouter.ai/qwen/qwen3.5-9b",
+          "contextLength": 262144,
+          "inputPerM": 0.1,
+          "outputPerM": 0.15,
+          "listedAt": "2026-03-10",
+          "modalities": ["text", "image", "video"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3.5-9B",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-9B"
+        },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 9.7, "source": "huggingface" }
     },
     {
       "id": "gemini-3-5-flash",
@@ -8304,55 +8613,6 @@
       "size": { "paramsB": 0.8, "source": "name" }
     },
     {
-      "id": "qwen3-5-2b-2",
-      "name": "Qwen3.5.2B",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 2, "source": "name" }
-    },
-    {
-      "id": "qwen3-5-4b",
-      "name": "Qwen3.5.4B",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 4, "source": "name" }
-    },
-    {
-      "id": "qwen3-5-9b-2",
-      "name": "Qwen3.5.9B",
-      "org": "Alibaba",
-      "access": {
-        "openrouter": {
-          "id": "qwen/qwen3.5-9b",
-          "url": "https://openrouter.ai/qwen/qwen3.5-9b",
-          "contextLength": 262144,
-          "inputPerM": 0.1,
-          "outputPerM": 0.15,
-          "listedAt": "2026-03-10",
-          "modalities": ["text", "image", "video"]
-        },
-        "weights": {
-          "huggingFaceId": "Qwen/Qwen3.5-9B",
-          "url": "https://huggingface.co/Qwen/Qwen3.5-9B"
-        },
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 9.7, "source": "huggingface" }
-    },
-    {
       "id": "qwen3-6-35b-a3b",
       "name": "Qwen3.6 35B A3B",
       "org": "Alibaba",
@@ -8376,12 +8636,6 @@
         }
       },
       "size": { "paramsB": 36, "activeB": 3, "source": "huggingface" }
-    },
-    {
-      "id": "chatglm3-6b",
-      "name": "Chatglm3.6b",
-      "org": "Other",
-      "size": { "paramsB": 6, "source": "name" }
     },
     {
       "id": "gemini-3-6-flash",
@@ -8464,12 +8718,6 @@
       }
     },
     {
-      "id": "falcon3-7b-instruct",
-      "name": "Falcon3.7B Instruct",
-      "org": "TII UAE",
-      "size": { "paramsB": 7, "source": "name" }
-    },
-    {
       "id": "claude-3-7",
       "name": "Claude 3.7",
       "org": "Anthropic",
@@ -8537,8 +8785,8 @@
       }
     },
     {
-      "id": "qwen3-7",
-      "name": "Qwen3.7",
+      "id": "qwen3-7-max",
+      "name": "Qwen3.7 Max",
       "org": "Alibaba",
       "access": {
         "openrouter": {
@@ -8588,30 +8836,6 @@
       }
     },
     {
-      "id": "llama-3-8b-instruct",
-      "name": "Llama 3.8B Instruct",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      },
-      "size": { "paramsB": 3.8, "source": "name" }
-    },
-    {
-      "id": "qwen3-8b-2",
-      "name": "Qwen3.8B",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 8, "source": "name" }
-    },
-    {
       "id": "gemini-3-8-flash",
       "name": "Gemini 3.8 Flash",
       "org": "Google",
@@ -8643,8 +8867,8 @@
       }
     },
     {
-      "id": "qwen3-8",
-      "name": "Qwen3.8",
+      "id": "qwen3-8-max",
+      "name": "Qwen3.8 Max",
       "org": "Alibaba",
       "access": {
         "official": {
@@ -9397,6 +9621,18 @@
       }
     },
     {
+      "id": "granite-4-1-8b",
+      "name": "Granite 4.1 8B",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
+        }
+      },
+      "size": { "paramsB": 8, "source": "name" }
+    },
+    {
       "id": "deepseek-v4-1-flash",
       "name": "DeepSeek V4.1 Flash",
       "org": "DeepSeek",
@@ -9526,18 +9762,6 @@
       }
     },
     {
-      "id": "granite-4-1-8b",
-      "name": "Granite 4.1.8b",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 8, "source": "name" }
-    },
-    {
       "id": "granite-4-2-8b",
       "name": "Granite 4.2 8B",
       "org": "IBM",
@@ -9561,30 +9785,6 @@
         }
       },
       "size": { "paramsB": 8.8, "source": "huggingface" }
-    },
-    {
-      "id": "granite-4-2-3b-2",
-      "name": "Granite 4.2.3b",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 3, "source": "name" }
-    },
-    {
-      "id": "granite-4-2-8b-2",
-      "name": "Granite 4.2.8b",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 8, "source": "name" }
     },
     {
       "id": "grok-4-20-2",
@@ -10368,18 +10568,6 @@
       }
     },
     {
-      "id": "minicpm5-2b",
-      "name": "MiniCPM5.2B",
-      "org": "OpenBMB",
-      "access": {
-        "official": {
-          "name": "OpenBMB on GitHub",
-          "url": "https://github.com/OpenBMB"
-        }
-      },
-      "size": { "paramsB": 2, "source": "name" }
-    },
-    {
       "id": "gpt-5-2-codex",
       "name": "GPT-5.2 Codex",
       "org": "OpenAI",
@@ -10408,8 +10596,8 @@
           "id": "z-ai/glm-5.2",
           "url": "https://openrouter.ai/z-ai/glm-5.2",
           "contextLength": 1048576,
-          "inputPerM": 0.966,
-          "outputPerM": 3.036,
+          "inputPerM": 0.6,
+          "outputPerM": 2,
           "listedAt": "2026-06-16",
           "modalities": ["text"]
         },
@@ -10471,12 +10659,6 @@
           "url": "https://platform.openai.com/docs"
         }
       }
-    },
-    {
-      "id": "fastchat-t5-3b",
-      "name": "Fastchat T5.3b",
-      "org": "Other",
-      "size": { "paramsB": 3, "source": "name" }
     },
     {
       "id": "gpt-5-3-chat-latest",
@@ -11082,7 +11264,7 @@
     },
     {
       "id": "command-a",
-      "name": "Command A+",
+      "name": "Command A",
       "org": "Cohere",
       "access": {
         "openrouter": {
@@ -11101,6 +11283,14 @@
         "official": { "name": "Cohere docs", "url": "https://docs.cohere.com" }
       },
       "size": { "paramsB": 111.1, "source": "huggingface" }
+    },
+    {
+      "id": "command-a-2",
+      "name": "Command A+",
+      "org": "Cohere",
+      "access": {
+        "official": { "name": "Cohere docs", "url": "https://docs.cohere.com" }
+      }
     },
     {
       "id": "command-a-reasoning",
@@ -11216,8 +11406,8 @@
       "org": "Other"
     },
     {
-      "id": "mistralai-devstral",
-      "name": "Mistralai/devstral",
+      "id": "mistralai-devstral-medium",
+      "name": "Mistralai/devstral Medium",
       "org": "Mistral",
       "access": {
         "official": {
@@ -11416,8 +11606,8 @@
       "access": { "official": { "name": "01.AI", "url": "https://01.ai" } }
     },
     {
-      "id": "magistral",
-      "name": "Magistral",
+      "id": "magistral-medium",
+      "name": "Magistral Medium",
       "org": "Mistral",
       "access": {
         "official": {
@@ -11438,8 +11628,8 @@
       }
     },
     {
-      "id": "mistral",
-      "name": "Mistral",
+      "id": "mistral-medium",
+      "name": "Mistral Medium",
       "org": "Mistral",
       "access": {
         "official": {
@@ -11542,7 +11732,7 @@
     {
       "modelId": "zephyr-orpo-141b-a35b-v0-1",
       "benchmarkId": "lmarena",
-      "raw": 1212,
+      "raw": 1213,
       "stderr": 11,
       "sourceLabel": "zephyr-orpo-141b-A35b-v0.1"
     },
@@ -11687,7 +11877,7 @@
     {
       "modelId": "gemini-1-5-flash-8b-001",
       "benchmarkId": "lmarena",
-      "raw": 1258,
+      "raw": 1259,
       "stderr": 4,
       "sourceLabel": "gemini-1.5-flash-8b-001"
     },
@@ -12192,7 +12382,7 @@
     {
       "modelId": "grok-3-preview-02-24",
       "benchmarkId": "lmarena",
-      "raw": 1411,
+      "raw": 1412,
       "stderr": 4,
       "sourceLabel": "grok-3-preview-02-24"
     },
@@ -12355,7 +12545,7 @@
     {
       "modelId": "grok-4-20-beta-0309-reasoning",
       "benchmarkId": "lmarena",
-      "raw": 1472,
+      "raw": 1471,
       "stderr": 4,
       "sourceLabel": "grok-4.20-beta-0309-reasoning"
     },
@@ -12604,7 +12794,7 @@
     {
       "modelId": "gemini-advanced-0514",
       "benchmarkId": "lmarena",
-      "raw": 1335,
+      "raw": 1336,
       "stderr": 5,
       "sourceLabel": "gemini-advanced-0514"
     },
@@ -12661,7 +12851,7 @@
     {
       "modelId": "gemini-2-5-flash-lite-preview-06-17",
       "benchmarkId": "lmarena",
-      "raw": 1374,
+      "raw": 1375,
       "stderr": 5,
       "sourceLabel": "gemini-2.5-flash-lite-preview-06-17-thinking"
     },
@@ -12674,7 +12864,7 @@
     {
       "modelId": "gpt-4-0613",
       "benchmarkId": "lmarena",
-      "raw": 1275,
+      "raw": 1276,
       "stderr": 4,
       "sourceLabel": "gpt-4-0613"
     },
@@ -12687,7 +12877,7 @@
     {
       "modelId": "gpt-4o-mini-2024-07-18",
       "benchmarkId": "lmarena",
-      "raw": 1317,
+      "raw": 1318,
       "stderr": 4,
       "sourceLabel": "gpt-4o-mini-2024-07-18"
     },
@@ -13039,7 +13229,7 @@
     {
       "modelId": "grok-2-2024-08-13",
       "benchmarkId": "lmarena",
-      "raw": 1335,
+      "raw": 1336,
       "stderr": 4,
       "sourceLabel": "grok-2-2024-08-13"
     },
@@ -13430,6 +13620,12 @@
       "sourceLabel": "o1-2024-12-17 (high)"
     },
     {
+      "modelId": "xlam-2-1b-fc-r",
+      "benchmarkId": "bfcl",
+      "raw": 30.44,
+      "sourceLabel": "xLAM-2-1b-fc-r"
+    },
+    {
       "modelId": "deepseek-r1-claude-3-5-sonnet-20241022",
       "benchmarkId": "aider-polyglot",
       "raw": 64,
@@ -13445,7 +13641,7 @@
     {
       "modelId": "hunyuan-t1-20250711",
       "benchmarkId": "lmarena",
-      "raw": 1387,
+      "raw": 1388,
       "stderr": 9,
       "sourceLabel": "hunyuan-t1-20250711"
     },
@@ -13466,7 +13662,7 @@
     {
       "modelId": "llama-3-1-nemotron-ultra-253b-v1",
       "benchmarkId": "lmarena",
-      "raw": 1347,
+      "raw": 1348,
       "stderr": 12,
       "sourceLabel": "llama-3.1-nemotron-ultra-253b-v1"
     },
@@ -13475,6 +13671,31 @@
       "benchmarkId": "bfcl",
       "raw": 10,
       "sourceLabel": "Llama-3.1-Nemotron-Ultra-253B-v1"
+    },
+    {
+      "modelId": "falcon3-1b-instruct",
+      "benchmarkId": "bfcl",
+      "raw": 11.08,
+      "sourceLabel": "Falcon3-1B-Instruct"
+    },
+    {
+      "modelId": "gemma-3-1b-it",
+      "benchmarkId": "bfcl",
+      "raw": 7.17,
+      "sourceLabel": "Gemma-3-1b-it"
+    },
+    {
+      "modelId": "llama-3-2-1b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1111,
+      "stderr": 8,
+      "sourceLabel": "llama-3.2-1b-instruct"
+    },
+    {
+      "modelId": "llama-3-2-1b-instruct",
+      "benchmarkId": "bfcl",
+      "raw": 10.82,
+      "sourceLabel": "Llama-3.2-1B-Instruct"
     },
     {
       "modelId": "llama-3-3-nemotron-49b-super-v1",
@@ -13865,7 +14086,7 @@
     {
       "modelId": "amazon-nova-micro-v1-0-2",
       "benchmarkId": "lmarena",
-      "raw": 1240,
+      "raw": 1241,
       "stderr": 5,
       "sourceLabel": "amazon-nova-micro-v1.0"
     },
@@ -13877,10 +14098,24 @@
       "sourceLabel": "amazon-nova-pro-v1.0"
     },
     {
+      "modelId": "gemma-1-1-2b-it",
+      "benchmarkId": "lmarena",
+      "raw": 1116,
+      "stderr": 8,
+      "sourceLabel": "gemma-1.1-2b-it"
+    },
+    {
       "modelId": "opencodereasoning-nemotron-1-1-32b",
       "benchmarkId": "livecodebench",
       "raw": 66.8,
       "sourceLabel": "OpenCodeReasoning-Nemotron-1.1-32B"
+    },
+    {
+      "modelId": "gemma-1-1-7b-it",
+      "benchmarkId": "lmarena",
+      "raw": 1182,
+      "stderr": 6,
+      "sourceLabel": "gemma-1.1-7b-it"
     },
     {
       "modelId": "thedrummer-anubis-70b-v1-1",
@@ -13898,7 +14133,7 @@
     {
       "modelId": "muse-spark-1-1",
       "benchmarkId": "lmarena",
-      "raw": 1492,
+      "raw": 1494,
       "stderr": 5,
       "sourceLabel": "muse-spark-1.1"
     },
@@ -14058,20 +14293,6 @@
       "sourceLabel": "Muse Spark 1.1"
     },
     {
-      "modelId": "gemma-1-1-2b-it",
-      "benchmarkId": "lmarena",
-      "raw": 1116,
-      "stderr": 8,
-      "sourceLabel": "gemma-1.1-2b-it"
-    },
-    {
-      "modelId": "gemma-1-1-7b-it",
-      "benchmarkId": "lmarena",
-      "raw": 1182,
-      "stderr": 6,
-      "sourceLabel": "gemma-1.1-7b-it"
-    },
-    {
       "modelId": "magistral-medium-1-2",
       "benchmarkId": "aa-gdpval",
       "raw": 362,
@@ -14089,7 +14310,7 @@
       "modelId": "muse-spark-1-2",
       "benchmarkId": "lmarena",
       "raw": 1499,
-      "stderr": 10,
+      "stderr": 11,
       "sourceLabel": "muse-spark-1.2 (xHigh)"
     },
     {
@@ -14419,16 +14640,43 @@
     {
       "modelId": "qwen1-5-32b-chat",
       "benchmarkId": "lmarena",
-      "raw": 1203,
+      "raw": 1204,
       "stderr": 6,
       "sourceLabel": "qwen1.5-32b-chat"
     },
     {
       "modelId": "yi-1-5-34b-chat",
       "benchmarkId": "lmarena",
-      "raw": 1212,
+      "raw": 1213,
       "stderr": 5,
       "sourceLabel": "yi-1.5-34b-chat"
+    },
+    {
+      "modelId": "qwen1-5-4b-chat",
+      "benchmarkId": "lmarena",
+      "raw": 1091,
+      "stderr": 9,
+      "sourceLabel": "qwen1.5-4b-chat"
+    },
+    {
+      "modelId": "bytedance-ui-tars-1-5-7b",
+      "benchmarkId": "kagi",
+      "raw": 20.7,
+      "sourceLabel": "bytedance/ui-tars-1.5-7b"
+    },
+    {
+      "modelId": "qwen1-5-7b-chat",
+      "benchmarkId": "lmarena",
+      "raw": 1143,
+      "stderr": 10,
+      "sourceLabel": "qwen1.5-7b-chat"
+    },
+    {
+      "modelId": "uitars-1-5-7b",
+      "benchmarkId": "osworld",
+      "raw": 27.4,
+      "sourceLabel": "uitars-1.5-7b",
+      "scaffold": "Specialized model"
     },
     {
       "modelId": "qwen1-5-72b-chat",
@@ -14501,7 +14749,7 @@
     {
       "modelId": "jamba-1-5-mini",
       "benchmarkId": "lmarena",
-      "raw": 1239,
+      "raw": 1240,
       "stderr": 7,
       "sourceLabel": "jamba-1.5-mini"
     },
@@ -14532,33 +14780,6 @@
       "raw": 55.18,
       "stderr": 0.89,
       "sourceLabel": "Jamba 1.5 Mini"
-    },
-    {
-      "modelId": "qwen1-5-4b-chat",
-      "benchmarkId": "lmarena",
-      "raw": 1090,
-      "stderr": 9,
-      "sourceLabel": "qwen1.5-4b-chat"
-    },
-    {
-      "modelId": "bytedance-ui-tars-1-5-7b",
-      "benchmarkId": "kagi",
-      "raw": 20.7,
-      "sourceLabel": "bytedance/ui-tars-1.5-7b"
-    },
-    {
-      "modelId": "qwen1-5-7b-chat",
-      "benchmarkId": "lmarena",
-      "raw": 1143,
-      "stderr": 10,
-      "sourceLabel": "qwen1.5-7b-chat"
-    },
-    {
-      "modelId": "uitars-1-5-7b",
-      "benchmarkId": "osworld",
-      "raw": 27.4,
-      "sourceLabel": "uitars-1.5-7b",
-      "scaffold": "Specialized model"
     },
     {
       "modelId": "swe-1-6-fast",
@@ -14950,14 +15171,14 @@
     {
       "modelId": "gpt-3-5-turbo-1106",
       "benchmarkId": "lmarena",
-      "raw": 1203,
+      "raw": 1204,
       "stderr": 9,
       "sourceLabel": "gpt-3.5-turbo-1106"
     },
     {
       "modelId": "gpt-4-1106-preview",
       "benchmarkId": "lmarena",
-      "raw": 1312,
+      "raw": 1313,
       "stderr": 4,
       "sourceLabel": "gpt-4-1106-preview"
     },
@@ -15168,7 +15389,7 @@
     {
       "modelId": "amazon-nova-experimental-chat-12-10",
       "benchmarkId": "lmarena",
-      "raw": 1394,
+      "raw": 1395,
       "stderr": 10,
       "sourceLabel": "amazon-nova-experimental-chat-12-10"
     },
@@ -15419,7 +15640,7 @@
     {
       "modelId": "alpaca-13b",
       "benchmarkId": "lmarena",
-      "raw": 1069,
+      "raw": 1070,
       "stderr": 11,
       "sourceLabel": "alpaca-13b"
     },
@@ -15433,7 +15654,7 @@
     {
       "modelId": "llama-13b",
       "benchmarkId": "lmarena",
-      "raw": 974,
+      "raw": 975,
       "stderr": 16,
       "sourceLabel": "llama-13b"
     },
@@ -15533,7 +15754,7 @@
     {
       "modelId": "step-2-16k-exp-202412",
       "benchmarkId": "lmarena",
-      "raw": 1333,
+      "raw": 1334,
       "stderr": 9,
       "sourceLabel": "step-2-16k-exp-202412"
     },
@@ -15568,23 +15789,23 @@
     {
       "modelId": "gemini-2-5-flash-preview-4-17",
       "benchmarkId": "vals-tax_eval_v2",
-      "raw": 71.18,
+      "raw": 70.52,
       "stderr": 0.89,
-      "sourceLabel": "Gemini 2.5 Flash Preview 4/17 (Nonthinking)"
+      "sourceLabel": "Gemini 2.5 Flash Preview 4/17 (Thinking)"
     },
     {
       "modelId": "gemini-2-5-flash-preview-4-17",
       "benchmarkId": "vals-mortgage_tax",
-      "raw": 58.43,
-      "stderr": 0.98,
-      "sourceLabel": "Gemini 2.5 Flash Preview 4/17 (Nonthinking)"
+      "raw": 57.51,
+      "stderr": 0.99,
+      "sourceLabel": "Gemini 2.5 Flash Preview 4/17 (Thinking)"
     },
     {
       "modelId": "gemini-2-5-flash-preview-4-17",
       "benchmarkId": "vals-medqa",
-      "raw": 86.73,
-      "stderr": 0.31,
-      "sourceLabel": "Gemini 2.5 Flash Preview 4/17 (Nonthinking)"
+      "raw": 91.02,
+      "stderr": 0.26,
+      "sourceLabel": "Gemini 2.5 Flash Preview 4/17 (Thinking)"
     },
     {
       "modelId": "gemini-2-5-flash-preview-4-17",
@@ -15610,9 +15831,16 @@
     {
       "modelId": "falcon-180b-chat",
       "benchmarkId": "lmarena",
-      "raw": 1147,
+      "raw": 1148,
       "stderr": 17,
       "sourceLabel": "falcon-180b-chat"
+    },
+    {
+      "modelId": "gemma-2-2b-it",
+      "benchmarkId": "lmarena",
+      "raw": 1200,
+      "stderr": 4,
+      "sourceLabel": "gemma-2-2b-it"
     },
     {
       "modelId": "k2-think-v2",
@@ -15631,7 +15859,7 @@
     {
       "modelId": "internlm2-5-20b-chat",
       "benchmarkId": "lmarena",
-      "raw": 1190,
+      "raw": 1191,
       "stderr": 7,
       "sourceLabel": "internlm2_5-20b-chat"
     },
@@ -15676,11 +15904,79 @@
       "sourceLabel": "InternVL2-Llama3-76B"
     },
     {
+      "modelId": "xlam-2-3b-fc-r",
+      "benchmarkId": "bfcl",
+      "raw": 41.22,
+      "sourceLabel": "xLAM-2-3b-fc-r"
+    },
+    {
+      "modelId": "granite-3-0-2b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1156,
+      "stderr": 8,
+      "sourceLabel": "granite-3.0-2b-instruct"
+    },
+    {
+      "modelId": "granite-3-1-2b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1179,
+      "stderr": 11,
+      "sourceLabel": "granite-3.1-2b-instruct"
+    },
+    {
       "modelId": "qwen3-5-2b",
       "benchmarkId": "aa-gdpval",
       "raw": 166,
       "stderr": 21,
       "sourceLabel": "Qwen3.5 2B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
+      "raw": 54.9,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
+      "raw": 22.7,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
+      "raw": 43.6,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "ifm-k2-horizon:humaneval",
+      "raw": 75.6,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "ifm-k2-horizon:mbpp",
+      "raw": 67.7,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "ifm-k2-horizon:aime-2025",
+      "raw": 34.2,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "ifm-k2-horizon:aime-2026",
+      "raw": 38.8,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "ifm-k2-horizon:livecodebench-v6",
+      "raw": 29.8,
+      "sourceLabel": "Qwen3.5-2B"
     },
     {
       "modelId": "k2-horizon-3-7b",
@@ -16035,6 +16331,33 @@
       "sourceLabel": "cogito-v2-preview-llama-405b"
     },
     {
+      "modelId": "minicpm5-2b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 13,
+      "sourceLabel": "MiniCPM5-2B"
+    },
+    {
+      "modelId": "minicpm5-2b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 828,
+      "stderr": 22,
+      "sourceLabel": "MiniCPM5-2B"
+    },
+    {
+      "modelId": "minicpm5-2b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 434,
+      "stderr": 11,
+      "sourceLabel": "MiniCPM5-2B"
+    },
+    {
+      "modelId": "chatglm2-6b",
+      "benchmarkId": "lmarena",
+      "raw": 1024,
+      "stderr": 14,
+      "sourceLabel": "chatglm2-6b"
+    },
+    {
       "modelId": "cogito-v2-preview-deepseek-671b",
       "benchmarkId": "kagi",
       "raw": 58.4,
@@ -16046,6 +16369,13 @@
       "raw": 1164,
       "stderr": 12,
       "sourceLabel": "nous-hermes-2-mixtral-8x7b-dpo"
+    },
+    {
+      "modelId": "llama-2-7b-chat",
+      "benchmarkId": "lmarena",
+      "raw": 1108,
+      "stderr": 7,
+      "sourceLabel": "llama-2-7b-chat"
     },
     {
       "modelId": "k2-horizon-7b",
@@ -16109,6 +16439,13 @@
       "sourceLabel": "Llama 2 (7B)"
     },
     {
+      "modelId": "opencua-qwen2-7b",
+      "benchmarkId": "osworld",
+      "raw": 23.1,
+      "sourceLabel": "opencua-qwen2-7b",
+      "scaffold": "Specialized model"
+    },
+    {
       "modelId": "llama-2-70b-chat",
       "benchmarkId": "lmarena",
       "raw": 1170,
@@ -16156,11 +16493,50 @@
       "sourceLabel": "Qwen2-VL-72B"
     },
     {
+      "modelId": "xlam-2-8b-fc-r",
+      "benchmarkId": "bfcl",
+      "raw": 46.68,
+      "sourceLabel": "xLAM-2-8b-fc-r"
+    },
+    {
+      "modelId": "internvl2-8b",
+      "benchmarkId": "mmmu-pro",
+      "raw": 29,
+      "sourceLabel": "InternVL2-8B"
+    },
+    {
+      "modelId": "molmo-2-8b",
+      "benchmarkId": "lmarena",
+      "raw": 1328,
+      "stderr": 21,
+      "sourceLabel": "molmo-2-8b"
+    },
+    {
+      "modelId": "toolace-2-8b",
+      "benchmarkId": "bfcl",
+      "raw": 42.44,
+      "sourceLabel": "ToolACE-2-8B"
+    },
+    {
       "modelId": "gemma-2-9b",
       "benchmarkId": "vals-legal_bench",
       "raw": 68.14,
       "stderr": 0.73,
       "sourceLabel": "Gemma 2 (9B)"
+    },
+    {
+      "modelId": "gemma-2-9b-it",
+      "benchmarkId": "lmarena",
+      "raw": 1267,
+      "stderr": 4,
+      "sourceLabel": "gemma-2-9b-it"
+    },
+    {
+      "modelId": "gemma-2-9b-it-simpo",
+      "benchmarkId": "lmarena",
+      "raw": 1280,
+      "stderr": 7,
+      "sourceLabel": "gemma-2-9b-it-simpo"
     },
     {
       "modelId": "nvidia-nemotron-nano-9b-v2",
@@ -16592,7 +16968,7 @@
     {
       "modelId": "mercury-2",
       "benchmarkId": "lmarena",
-      "raw": 1347,
+      "raw": 1346,
       "stderr": 11,
       "sourceLabel": "mercury-2"
     },
@@ -16640,7 +17016,7 @@
     {
       "modelId": "palm-2",
       "benchmarkId": "lmarena",
-      "raw": 1138,
+      "raw": 1139,
       "stderr": 9,
       "sourceLabel": "palm-2"
     },
@@ -16676,6 +17052,13 @@
       "raw": 69.79,
       "stderr": 0.9,
       "sourceLabel": "Gemini 2.0 Flash Thinking Exp"
+    },
+    {
+      "modelId": "gemini-2-0-flash-exp",
+      "benchmarkId": "vals-mortgage_tax",
+      "raw": 60.37,
+      "stderr": 1.9,
+      "sourceLabel": "Gemini 2.0 Flash Exp"
     },
     {
       "modelId": "gemini-2-0-pro-exp",
@@ -16758,10 +17141,16 @@
       "sourceLabel": "Nova 2.0 Pro Preview (medium)"
     },
     {
-      "modelId": "xlam-2-1b-fc-r",
+      "modelId": "hammer2-1-3b",
       "benchmarkId": "bfcl",
-      "raw": 30.44,
-      "sourceLabel": "xLAM-2-1b-fc-r"
+      "raw": 29.71,
+      "sourceLabel": "Hammer2.1-3b"
+    },
+    {
+      "modelId": "hammer2-1-7b",
+      "benchmarkId": "bfcl",
+      "raw": 31.67,
+      "sourceLabel": "Hammer2.1-7b"
     },
     {
       "modelId": "minimax-m2-1",
@@ -16867,18 +17256,6 @@
       "sourceLabel": "Hammer2.1-1.5b"
     },
     {
-      "modelId": "hammer2-1-3b",
-      "benchmarkId": "bfcl",
-      "raw": 29.71,
-      "sourceLabel": "Hammer2.1-3b"
-    },
-    {
-      "modelId": "hammer2-1-7b",
-      "benchmarkId": "bfcl",
-      "raw": 31.67,
-      "sourceLabel": "Hammer2.1-7b"
-    },
-    {
       "modelId": "smollm2-1-7b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1114,
@@ -16886,24 +17263,11 @@
       "sourceLabel": "smollm2-1.7b-instruct"
     },
     {
-      "modelId": "gemma-2-2b-it",
-      "benchmarkId": "lmarena",
-      "raw": 1200,
-      "stderr": 4,
-      "sourceLabel": "gemma-2-2b-it"
-    },
-    {
       "modelId": "dolphin-2-2-1-mistral-7b",
       "benchmarkId": "lmarena",
       "raw": 1152,
       "stderr": 15,
       "sourceLabel": "dolphin-2.2.1-mistral-7b"
-    },
-    {
-      "modelId": "xlam-2-3b-fc-r",
-      "benchmarkId": "bfcl",
-      "raw": 41.22,
-      "sourceLabel": "xLAM-2-3b-fc-r"
     },
     {
       "modelId": "qwen3-8-2-4t-a95b",
@@ -17078,6 +17442,12 @@
       "sourceLabel": "MiniCPM-Llama3-V 2.5"
     },
     {
+      "modelId": "qwq-32b-qwen-2-5-coder-instruct",
+      "benchmarkId": "aider-polyglot",
+      "raw": 26.2,
+      "sourceLabel": "QwQ-32B + Qwen 2.5 Coder Instruct"
+    },
+    {
       "modelId": "qwen2-5-coder-32b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1270,
@@ -17089,12 +17459,6 @@
       "benchmarkId": "aider-polyglot",
       "raw": 16.4,
       "sourceLabel": "Qwen2.5-Coder-32B-Instruct"
-    },
-    {
-      "modelId": "qwq-32b-qwen-2-5-coder-instruct",
-      "benchmarkId": "aider-polyglot",
-      "raw": 26.2,
-      "sourceLabel": "QwQ-32B + Qwen 2.5 Coder Instruct"
     },
     {
       "modelId": "qwen2-5-vl-32b-instruct",
@@ -17112,7 +17476,7 @@
     {
       "modelId": "openhermes-2-5-mistral-7b",
       "benchmarkId": "lmarena",
-      "raw": 1175,
+      "raw": 1176,
       "stderr": 10,
       "sourceLabel": "openhermes-2.5-mistral-7b"
     },
@@ -17148,6 +17512,12 @@
       "benchmarkId": "osworld",
       "raw": 5,
       "sourceLabel": "qwen2.5-vl-72b-instruct"
+    },
+    {
+      "modelId": "agnes-2-5-pro-alpha",
+      "benchmarkId": "artificial-analysis",
+      "raw": 28,
+      "sourceLabel": "Agnes 2.5 Pro Alpha"
     },
     {
       "modelId": "agnes-2-5-pro-alpha",
@@ -17412,7 +17782,7 @@
     {
       "modelId": "kimi-k2-5",
       "benchmarkId": "lmarena",
-      "raw": 1451,
+      "raw": 1450,
       "stderr": 3,
       "sourceLabel": "kimi-k2.5-thinking"
     },
@@ -17558,7 +17928,7 @@
     {
       "modelId": "minimax-m2-5",
       "benchmarkId": "lmarena",
-      "raw": 1391,
+      "raw": 1390,
       "stderr": 4,
       "sourceLabel": "minimax-m2.5"
     },
@@ -17647,7 +18017,7 @@
       "sourceLabel": "MiniMax-M2.5"
     },
     {
-      "modelId": "qwen2-5",
+      "modelId": "qwen2-5-max",
       "benchmarkId": "lmarena",
       "raw": 1374,
       "stderr": 4,
@@ -17783,7 +18153,7 @@
     {
       "modelId": "mimo-v2-5",
       "benchmarkId": "lmarena",
-      "raw": 1434,
+      "raw": 1433,
       "stderr": 4,
       "sourceLabel": "mimo-v2.5"
     },
@@ -17920,13 +18290,6 @@
       "raw": 202,
       "stderr": 22,
       "sourceLabel": "LFM2.5-2.6B"
-    },
-    {
-      "modelId": "chatglm2-6b",
-      "benchmarkId": "lmarena",
-      "raw": 1024,
-      "stderr": 14,
-      "sourceLabel": "chatglm2-6b"
     },
     {
       "modelId": "ling-2-6-flash",
@@ -18143,20 +18506,6 @@
       "raw": 654,
       "stderr": 9.5,
       "sourceLabel": "Ring-2.6-1T"
-    },
-    {
-      "modelId": "llama-2-7b-chat",
-      "benchmarkId": "lmarena",
-      "raw": 1107,
-      "stderr": 7,
-      "sourceLabel": "llama-2-7b-chat"
-    },
-    {
-      "modelId": "opencua-qwen2-7b",
-      "benchmarkId": "osworld",
-      "raw": 23.1,
-      "sourceLabel": "opencua-qwen2-7b",
-      "scaffold": "Specialized model"
     },
     {
       "modelId": "kimi-k2-7-code",
@@ -18382,45 +18731,6 @@
       "raw": 91.04,
       "stderr": 0.73,
       "sourceLabel": "MiniMax-M2.7"
-    },
-    {
-      "modelId": "xlam-2-8b-fc-r",
-      "benchmarkId": "bfcl",
-      "raw": 46.68,
-      "sourceLabel": "xLAM-2-8b-fc-r"
-    },
-    {
-      "modelId": "internvl2-8b",
-      "benchmarkId": "mmmu-pro",
-      "raw": 29,
-      "sourceLabel": "InternVL2-8B"
-    },
-    {
-      "modelId": "molmo-2-8b",
-      "benchmarkId": "lmarena",
-      "raw": 1328,
-      "stderr": 21,
-      "sourceLabel": "molmo-2-8b"
-    },
-    {
-      "modelId": "toolace-2-8b",
-      "benchmarkId": "bfcl",
-      "raw": 42.44,
-      "sourceLabel": "ToolACE-2-8B"
-    },
-    {
-      "modelId": "gemma-2-9b-it",
-      "benchmarkId": "lmarena",
-      "raw": 1267,
-      "stderr": 4,
-      "sourceLabel": "gemma-2-9b-it"
-    },
-    {
-      "modelId": "gemma-2-9b-it-simpo",
-      "benchmarkId": "lmarena",
-      "raw": 1280,
-      "stderr": 7,
-      "sourceLabel": "gemma-2-9b-it-simpo"
     },
     {
       "modelId": "grok-4-20",
@@ -18725,7 +19035,7 @@
     {
       "modelId": "claude-haiku-4-5-20251001",
       "benchmarkId": "lmarena",
-      "raw": 1413,
+      "raw": 1414,
       "stderr": 3,
       "sourceLabel": "claude-haiku-4-5-20251001"
     },
@@ -18790,8 +19100,8 @@
     {
       "modelId": "deepseek-v4-pro-high-20260813",
       "benchmarkId": "lmarena",
-      "raw": 1460,
-      "stderr": 8,
+      "raw": 1462,
+      "stderr": 7,
       "sourceLabel": "deepseek-v4-pro-high-20260813"
     },
     {
@@ -18840,13 +19150,6 @@
       "raw": 1414,
       "stderr": 7,
       "sourceLabel": "qwen3-vl-235b-a22b-instruct"
-    },
-    {
-      "modelId": "qwen3-235b-a22b-no",
-      "benchmarkId": "lmarena",
-      "raw": 1402,
-      "stderr": 5,
-      "sourceLabel": "qwen3-235b-a22b-no-thinking"
     },
     {
       "modelId": "qwen3-235b-a22b",
@@ -19037,7 +19340,7 @@
     {
       "modelId": "magistral-medium-2506",
       "benchmarkId": "lmarena",
-      "raw": 1304,
+      "raw": 1305,
       "stderr": 6,
       "sourceLabel": "magistral-medium-2506"
     },
@@ -19306,8 +19609,8 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "lmarena",
-      "raw": 1436,
-      "stderr": 8,
+      "raw": 1438,
+      "stderr": 7,
       "sourceLabel": "qwen3.8-27b"
     },
     {
@@ -19539,6 +19842,67 @@
       "sourceLabel": "Qwen3.8-27B"
     },
     {
+      "modelId": "idefics3-8b-llama3",
+      "benchmarkId": "mmmu-pro",
+      "raw": 22.9,
+      "sourceLabel": "Idefics3-8B-Llama3"
+    },
+    {
+      "modelId": "g9v3-3b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 807,
+      "stderr": 26,
+      "sourceLabel": "G9v3-3B"
+    },
+    {
+      "modelId": "g9v3-3b",
+      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
+      "raw": 6,
+      "sourceLabel": "G9v3-3B"
+    },
+    {
+      "modelId": "g9v3-3b",
+      "benchmarkId": "ifm-k2-horizon:scicode",
+      "raw": 17.7,
+      "sourceLabel": "G9v3-3B"
+    },
+    {
+      "modelId": "g9v3-3b",
+      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
+      "raw": 43.8,
+      "sourceLabel": "G9v3-3B"
+    },
+    {
+      "modelId": "g9v3-3b",
+      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
+      "raw": 16.4,
+      "sourceLabel": "G9v3-3B"
+    },
+    {
+      "modelId": "g9v3-3b",
+      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
+      "raw": 34.1,
+      "sourceLabel": "G9v3-3B"
+    },
+    {
+      "modelId": "g9v3-3b",
+      "benchmarkId": "ifm-k2-horizon:hle",
+      "raw": 4.5,
+      "sourceLabel": "G9v3-3B"
+    },
+    {
+      "modelId": "g9v3-3b",
+      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
+      "raw": 47.9,
+      "sourceLabel": "G9v3-3B"
+    },
+    {
+      "modelId": "falcon3-3b-instruct",
+      "benchmarkId": "bfcl",
+      "raw": 16.25,
+      "sourceLabel": "Falcon3-3B-Instruct"
+    },
+    {
       "modelId": "ministral-3-3b",
       "benchmarkId": "artificial-analysis",
       "raw": 5,
@@ -19566,10 +19930,24 @@
       "sourceLabel": "llama-3.1-tulu-3-70b"
     },
     {
-      "modelId": "idefics3-8b-llama3",
-      "benchmarkId": "mmmu-pro",
-      "raw": 22.9,
-      "sourceLabel": "Idefics3-8B-Llama3"
+      "modelId": "llama-3-1-tulu-3-8b",
+      "benchmarkId": "lmarena",
+      "raw": 1220,
+      "stderr": 11,
+      "sourceLabel": "llama-3.1-tulu-3-8b"
+    },
+    {
+      "modelId": "llama-3-2-3b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1166,
+      "stderr": 8,
+      "sourceLabel": "llama-3.2-3b-instruct"
+    },
+    {
+      "modelId": "llama-3-2-3b-instruct",
+      "benchmarkId": "bfcl",
+      "raw": 21.95,
+      "sourceLabel": "Llama-3.2-3B-Instruct"
     },
     {
       "modelId": "nvidia-nemotron-3-nano-30b-a3b",
@@ -19740,6 +20118,37 @@
       "sourceLabel": "google/gemma-3n-e4b-it"
     },
     {
+      "modelId": "minicpm3-4b-fc",
+      "benchmarkId": "bfcl",
+      "raw": 25.55,
+      "sourceLabel": "MiniCPM3-4B-FC"
+    },
+    {
+      "modelId": "gemma-3-4b-it",
+      "benchmarkId": "lmarena",
+      "raw": 1303,
+      "stderr": 9,
+      "sourceLabel": "gemma-3-4b-it"
+    },
+    {
+      "modelId": "gemma-3-4b-it",
+      "benchmarkId": "bfcl",
+      "raw": 19.62,
+      "sourceLabel": "Gemma-3-4b-it"
+    },
+    {
+      "modelId": "gemma-3-4b-it",
+      "benchmarkId": "kagi",
+      "raw": 25.2,
+      "sourceLabel": "google/gemma-3-4b-it"
+    },
+    {
+      "modelId": "minicpm3-4b",
+      "benchmarkId": "bfcl",
+      "raw": 22.08,
+      "sourceLabel": "MiniCPM3-4B"
+    },
+    {
       "modelId": "nvidia-nemotron-3-nano-4b",
       "benchmarkId": "aa-gdpval",
       "raw": 159,
@@ -19804,6 +20213,13 @@
     },
     {
       "modelId": "granite-4-2-3b",
+      "benchmarkId": "lmarena",
+      "raw": 1294,
+      "stderr": 12,
+      "sourceLabel": "granite-4.2-3b"
+    },
+    {
+      "modelId": "granite-4-2-3b",
       "benchmarkId": "artificial-analysis",
       "raw": 9,
       "sourceLabel": "Granite 4.2 3B"
@@ -19823,6 +20239,54 @@
       "sourceLabel": "Granite 4.2 3B"
     },
     {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "ifm-k2-horizon:tau3-banking",
+      "raw": 5.6,
+      "sourceLabel": "Granite 4.2-3B"
+    },
+    {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
+      "raw": 13.9,
+      "sourceLabel": "Granite 4.2-3B"
+    },
+    {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "ifm-k2-horizon:scicode",
+      "raw": 24.9,
+      "sourceLabel": "Granite 4.2-3B"
+    },
+    {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
+      "raw": 55.9,
+      "sourceLabel": "Granite 4.2-3B"
+    },
+    {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
+      "raw": 32.2,
+      "sourceLabel": "Granite 4.2-3B"
+    },
+    {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
+      "raw": 57.2,
+      "sourceLabel": "Granite 4.2-3B"
+    },
+    {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "ifm-k2-horizon:hle",
+      "raw": 6.6,
+      "sourceLabel": "Granite 4.2-3B"
+    },
+    {
+      "modelId": "granite-4-2-3b",
+      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
+      "raw": 50.8,
+      "sourceLabel": "Granite 4.2-3B"
+    },
+    {
       "modelId": "llama-3-405b",
       "benchmarkId": "kagi",
       "raw": 45,
@@ -19834,6 +20298,13 @@
       "raw": 1387,
       "stderr": 5,
       "sourceLabel": "qwen3-coder-480b-a35b-instruct"
+    },
+    {
+      "modelId": "fastchat-t5-3b",
+      "benchmarkId": "lmarena",
+      "raw": 992,
+      "stderr": 12,
+      "sourceLabel": "fastchat-t5-3b"
     },
     {
       "modelId": "nemotron-3-ultra-550b-a55b",
@@ -19898,6 +20369,19 @@
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
+      "modelId": "chatglm3-6b",
+      "benchmarkId": "lmarena",
+      "raw": 1056,
+      "stderr": 12,
+      "sourceLabel": "chatglm3-6b"
+    },
+    {
+      "modelId": "falcon3-7b-instruct",
+      "benchmarkId": "bfcl",
+      "raw": 24.03,
+      "sourceLabel": "Falcon3-7B-Instruct"
+    },
+    {
       "modelId": "llama-3-70b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1276,
@@ -19909,6 +20393,13 @@
       "benchmarkId": "kagi",
       "raw": 35.1,
       "sourceLabel": "llama-3-70b"
+    },
+    {
+      "modelId": "llama-3-8b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1223,
+      "stderr": 4,
+      "sourceLabel": "llama-3-8b-instruct"
     },
     {
       "modelId": "ministral-3-8b",
@@ -19943,6 +20434,12 @@
       "raw": 0,
       "stderr": 0,
       "sourceLabel": "Qwen3 8B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-8b",
+      "benchmarkId": "bfcl",
+      "raw": 42.57,
+      "sourceLabel": "Qwen3-8B"
     },
     {
       "modelId": "phi-3-small-8k-instruct",
@@ -20353,8 +20850,8 @@
     {
       "modelId": "hy3",
       "benchmarkId": "lmarena",
-      "raw": 1455,
-      "stderr": 8,
+      "raw": 1456,
+      "stderr": 7,
       "sourceLabel": "hy3"
     },
     {
@@ -20380,7 +20877,7 @@
     {
       "modelId": "phi-3-medium-4k-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1197,
+      "raw": 1198,
       "stderr": 5,
       "sourceLabel": "phi-3-medium-4k-instruct"
     },
@@ -20394,7 +20891,7 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "lmarena",
-      "raw": 1489,
+      "raw": 1485,
       "stderr": 5,
       "sourceLabel": "kimi-k3-max"
     },
@@ -20407,15 +20904,15 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1584,
-      "stderr": 15,
+      "raw": 1572,
+      "stderr": 14,
       "sourceLabel": "Kimi K3 (max)"
     },
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1497,
-      "stderr": 6.5,
+      "raw": 1495,
+      "stderr": 6,
       "sourceLabel": "Kimi K3 (max)"
     },
     {
@@ -20600,9 +21097,105 @@
       "sourceLabel": "Kimi K3"
     },
     {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:gpqa-diamond-pass-1",
+      "raw": 92.9,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:hle-pass-1",
+      "raw": 43.5,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:matharena-apex-pass-1",
+      "raw": 65.6,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-2-1-pass-1",
+      "raw": 88.3,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-3-0-pass-1",
+      "raw": 17.7,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-4-0-pass-1",
+      "raw": 12.6,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:deepswe-v1-1-resolved",
+      "raw": 67.5,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:programbench-almost-1",
+      "raw": 17.5,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:nl2repo-bench-score",
+      "raw": 58,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:cybergym-pass-1",
+      "raw": 80,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:hle-w-tools-pass-1",
+      "raw": 59.8,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:automationbench-pass-1",
+      "raw": 46.7,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:agent-s-last-exam-pass-1",
+      "raw": 27.6,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:chartography-w-tools-pass-1",
+      "raw": 68.1,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:babyvision-w-tools-pass-1",
+      "raw": 85.7,
+      "sourceLabel": "K3"
+    },
+    {
+      "modelId": "kimi-k3",
+      "benchmarkId": "deepseek-v4-1-flash:zerobench-main-w-tools-pass-5",
+      "raw": 41,
+      "sourceLabel": "K3"
+    },
+    {
       "modelId": "mistral-large-3",
       "benchmarkId": "lmarena",
-      "raw": 1414,
+      "raw": 1413,
       "stderr": 3,
       "sourceLabel": "mistral-large-3"
     },
@@ -20712,7 +21305,7 @@
     {
       "modelId": "minimax-m3",
       "benchmarkId": "lmarena",
-      "raw": 1443,
+      "raw": 1442,
       "stderr": 4,
       "sourceLabel": "minimax-m3"
     },
@@ -21105,55 +21698,91 @@
       "sourceLabel": "Qwen 3 Max Preview"
     },
     {
-      "modelId": "qwen3",
+      "modelId": "qwen3-max",
       "benchmarkId": "kagi",
       "raw": 72.5,
       "sourceLabel": "qwen3-max"
     },
     {
-      "modelId": "qwen3",
+      "modelId": "qwen3-max",
       "benchmarkId": "vals-case_law_v2",
       "raw": 54.98,
       "stderr": 1.49,
       "sourceLabel": "Qwen 3 Max Thinking"
     },
     {
-      "modelId": "qwen3",
+      "modelId": "qwen3-max",
+      "benchmarkId": "vals-legal_bench",
+      "raw": 81.86,
+      "stderr": 0.4,
+      "sourceLabel": "Qwen 3 Max"
+    },
+    {
+      "modelId": "qwen3-max",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 68.03,
       "stderr": 0.92,
       "sourceLabel": "Qwen 3 Max Thinking"
     },
     {
-      "modelId": "qwen3",
+      "modelId": "qwen3-max",
+      "benchmarkId": "vals-tax_eval_v2",
+      "raw": 73.51,
+      "stderr": 0.86,
+      "sourceLabel": "Qwen 3 Max"
+    },
+    {
+      "modelId": "qwen3-max",
+      "benchmarkId": "vals-medqa",
+      "raw": 87.37,
+      "stderr": 0.3,
+      "sourceLabel": "Qwen 3 Max"
+    },
+    {
+      "modelId": "qwen3-max",
       "benchmarkId": "vals-medcode",
       "raw": 31.37,
       "stderr": 1.89,
       "sourceLabel": "Qwen 3 Max Thinking"
     },
     {
-      "modelId": "qwen3",
+      "modelId": "qwen3-max",
       "benchmarkId": "vals-medscribe",
       "raw": 72.71,
       "stderr": 1.91,
       "sourceLabel": "Qwen 3 Max Thinking"
     },
     {
-      "modelId": "qwen3",
+      "modelId": "qwen3-max",
+      "benchmarkId": "vals-vibe-code",
+      "raw": 3.51,
+      "stderr": 1.29,
+      "sourceLabel": "Qwen 3 Max",
+      "scaffold": "OpenHands"
+    },
+    {
+      "modelId": "qwen3-max",
       "benchmarkId": "vals-gpqa",
       "raw": 84.85,
       "stderr": 1.8,
       "sourceLabel": "Qwen 3 Max Thinking"
     },
     {
-      "modelId": "qwen3",
+      "modelId": "qwen3-max",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 84.98,
       "stderr": 0.35,
       "sourceLabel": "Qwen 3 Max Thinking"
     },
     {
-      "modelId": "qwen-qwen3",
+      "modelId": "qwen3-max",
+      "benchmarkId": "vals-aime",
+      "raw": 81.04,
+      "stderr": 1.1,
+      "sourceLabel": "Qwen 3 Max"
+    },
+    {
+      "modelId": "qwen-qwen3-max",
       "benchmarkId": "kagi",
       "raw": 55.9,
       "sourceLabel": "qwen/qwen3-max"
@@ -21727,6 +22356,13 @@
       "sourceLabel": "step-3"
     },
     {
+      "modelId": "granite-3-0-8b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1183,
+      "stderr": 9,
+      "sourceLabel": "granite-3.0-8b-instruct"
+    },
+    {
       "modelId": "agnes-3-0-flash",
       "benchmarkId": "aa-gdpval",
       "raw": 1573,
@@ -21881,31 +22517,10 @@
       "sourceLabel": "Ling 3.0 Tiny"
     },
     {
-      "modelId": "granite-3-0-2b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1156,
-      "stderr": 8,
-      "sourceLabel": "granite-3.0-2b-instruct"
-    },
-    {
       "modelId": "qwen3-0-6b",
       "benchmarkId": "bfcl",
       "raw": 23.93,
       "sourceLabel": "Qwen3-0.6B"
-    },
-    {
-      "modelId": "granite-3-0-8b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1182,
-      "stderr": 9,
-      "sourceLabel": "granite-3.0-8b-instruct"
-    },
-    {
-      "modelId": "llama-3-1-tulu-3-8b",
-      "benchmarkId": "lmarena",
-      "raw": 1220,
-      "stderr": 11,
-      "sourceLabel": "llama-3.1-tulu-3-8b"
     },
     {
       "modelId": "olmo-3-1-32b-instruct",
@@ -21991,6 +22606,32 @@
       "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
     },
     {
+      "modelId": "granite-3-1-8b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1208,
+      "stderr": 11,
+      "sourceLabel": "granite-3.1-8b-instruct"
+    },
+    {
+      "modelId": "granite-3-1-8b-instruct",
+      "benchmarkId": "bfcl",
+      "raw": 27.1,
+      "sourceLabel": "Granite-3.1-8B-Instruct"
+    },
+    {
+      "modelId": "llama-3-1-8b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1211,
+      "stderr": 4,
+      "sourceLabel": "llama-3.1-8b-instruct"
+    },
+    {
+      "modelId": "llama-3-1-8b-instruct",
+      "benchmarkId": "bfcl",
+      "raw": 25.83,
+      "sourceLabel": "Llama-3.1-8B-Instruct"
+    },
+    {
       "modelId": "llama-3-1-instruct-turbo-8b",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 37.8,
@@ -22012,18 +22653,6 @@
       "sourceLabel": "Llama 3.1 Instruct Turbo (8B)"
     },
     {
-      "modelId": "falcon3-1b-instruct",
-      "benchmarkId": "bfcl",
-      "raw": 11.08,
-      "sourceLabel": "Falcon3-1B-Instruct"
-    },
-    {
-      "modelId": "gemma-3-1b-it",
-      "benchmarkId": "bfcl",
-      "raw": 7.17,
-      "sourceLabel": "Gemma-3-1b-it"
-    },
-    {
       "modelId": "deepseek-chat-v3-1",
       "benchmarkId": "kagi",
       "raw": 53.2,
@@ -22032,7 +22661,7 @@
     {
       "modelId": "deepseek-v3-1-terminus",
       "benchmarkId": "lmarena",
-      "raw": 1418,
+      "raw": 1417,
       "stderr": 10,
       "sourceLabel": "deepseek-v3.1-terminus-thinking"
     },
@@ -22340,43 +22969,16 @@
       "sourceLabel": "Mistral Small 3.1"
     },
     {
-      "modelId": "granite-3-1-2b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1178,
-      "stderr": 11,
-      "sourceLabel": "granite-3.1-2b-instruct"
-    },
-    {
       "modelId": "qwen3-1-7b",
       "benchmarkId": "bfcl",
       "raw": 28.41,
       "sourceLabel": "Qwen3-1.7B"
     },
     {
-      "modelId": "granite-3-1-8b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1208,
-      "stderr": 11,
-      "sourceLabel": "granite-3.1-8b-instruct"
-    },
-    {
-      "modelId": "granite-3-1-8b-instruct",
+      "modelId": "granite-3-2-8b-instruct",
       "benchmarkId": "bfcl",
-      "raw": 27.1,
-      "sourceLabel": "Granite-3.1-8B-Instruct"
-    },
-    {
-      "modelId": "llama-3-1-8b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1211,
-      "stderr": 4,
-      "sourceLabel": "llama-3.1-8b-instruct"
-    },
-    {
-      "modelId": "llama-3-1-8b-instruct",
-      "benchmarkId": "bfcl",
-      "raw": 25.83,
-      "sourceLabel": "Llama-3.1-8B-Instruct"
+      "raw": 26.87,
+      "sourceLabel": "Granite-3.2-8B-Instruct"
     },
     {
       "modelId": "llama-3-2-vision-90b",
@@ -22529,41 +23131,9 @@
       "sourceLabel": "Mistral Small 3.2"
     },
     {
-      "modelId": "llama-3-2-1b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1111,
-      "stderr": 8,
-      "sourceLabel": "llama-3.2-1b-instruct"
-    },
-    {
-      "modelId": "llama-3-2-1b-instruct",
-      "benchmarkId": "bfcl",
-      "raw": 10.82,
-      "sourceLabel": "Llama-3.2-1B-Instruct"
-    },
-    {
-      "modelId": "llama-3-2-3b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1166,
-      "stderr": 8,
-      "sourceLabel": "llama-3.2-3b-instruct"
-    },
-    {
-      "modelId": "llama-3-2-3b-instruct",
-      "benchmarkId": "bfcl",
-      "raw": 21.95,
-      "sourceLabel": "Llama-3.2-3B-Instruct"
-    },
-    {
-      "modelId": "granite-3-2-8b-instruct",
-      "benchmarkId": "bfcl",
-      "raw": 26.87,
-      "sourceLabel": "Granite-3.2-8B-Instruct"
-    },
-    {
       "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1317,
+      "raw": 1318,
       "stderr": 4,
       "sourceLabel": "llama-3.3-70b-instruct"
     },
@@ -22622,61 +23192,6 @@
       "sourceLabel": "Llama 3.3 Instruct Turbo (70B)"
     },
     {
-      "modelId": "g9v3-3b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 807,
-      "stderr": 26,
-      "sourceLabel": "G9v3-3B"
-    },
-    {
-      "modelId": "g9v3-3b",
-      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 6,
-      "sourceLabel": "G9v3-3B"
-    },
-    {
-      "modelId": "g9v3-3b",
-      "benchmarkId": "ifm-k2-horizon:scicode",
-      "raw": 17.7,
-      "sourceLabel": "G9v3-3B"
-    },
-    {
-      "modelId": "g9v3-3b",
-      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 43.8,
-      "sourceLabel": "G9v3-3B"
-    },
-    {
-      "modelId": "g9v3-3b",
-      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
-      "raw": 16.4,
-      "sourceLabel": "G9v3-3B"
-    },
-    {
-      "modelId": "g9v3-3b",
-      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 34.1,
-      "sourceLabel": "G9v3-3B"
-    },
-    {
-      "modelId": "g9v3-3b",
-      "benchmarkId": "ifm-k2-horizon:hle",
-      "raw": 4.5,
-      "sourceLabel": "G9v3-3B"
-    },
-    {
-      "modelId": "g9v3-3b",
-      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 47.9,
-      "sourceLabel": "G9v3-3B"
-    },
-    {
-      "modelId": "falcon3-3b-instruct",
-      "benchmarkId": "bfcl",
-      "raw": 16.25,
-      "sourceLabel": "Falcon3-3B-Instruct"
-    },
-    {
       "modelId": "llama-3-3-nemotron-super",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 63.74,
@@ -22705,41 +23220,10 @@
       "sourceLabel": "Llama 3.3 Nemotron Super (Thinking)"
     },
     {
-      "modelId": "minicpm3-4b-fc",
-      "benchmarkId": "bfcl",
-      "raw": 25.55,
-      "sourceLabel": "MiniCPM3-4B-FC"
-    },
-    {
-      "modelId": "gemma-3-4b-it",
-      "benchmarkId": "lmarena",
-      "raw": 1303,
-      "stderr": 9,
-      "sourceLabel": "gemma-3-4b-it"
-    },
-    {
-      "modelId": "gemma-3-4b-it",
-      "benchmarkId": "bfcl",
-      "raw": 19.62,
-      "sourceLabel": "Gemma-3-4b-it"
-    },
-    {
-      "modelId": "gemma-3-4b-it",
-      "benchmarkId": "kagi",
-      "raw": 25.2,
-      "sourceLabel": "google/gemma-3-4b-it"
-    },
-    {
-      "modelId": "minicpm3-4b",
-      "benchmarkId": "bfcl",
-      "raw": 22.08,
-      "sourceLabel": "MiniCPM3-4B"
-    },
-    {
       "modelId": "nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
       "benchmarkId": "lmarena",
-      "raw": 1355,
-      "stderr": 9,
+      "raw": 1353,
+      "stderr": 8,
       "sourceLabel": "nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4"
     },
     {
@@ -22771,7 +23255,7 @@
     {
       "modelId": "qwen3-5-397b-a17b",
       "benchmarkId": "lmarena",
-      "raw": 1441,
+      "raw": 1442,
       "stderr": 3,
       "sourceLabel": "qwen3.5-397b-a17b"
     },
@@ -22802,6 +23286,54 @@
       "sourceLabel": "qwen-3-5-397b"
     },
     {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "ifm-k2-horizon:tau3-banking",
+      "raw": 6.8,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
+      "raw": 25.8,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "ifm-k2-horizon:scicode",
+      "raw": 16.1,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
+      "raw": 77.1,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
+      "raw": 41.2,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
+      "raw": 61.6,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "ifm-k2-horizon:hle",
+      "raw": 9.9,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
+      "raw": 55.7,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
       "modelId": "qwen3-5-9b",
       "benchmarkId": "aa-gdpval",
       "raw": 588,
@@ -22809,9 +23341,51 @@
       "sourceLabel": "Qwen3.5 9B (Reasoning)"
     },
     {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "ifm-k2-horizon:tau3-banking",
+      "raw": 7,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
+      "raw": 29.2,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "ifm-k2-horizon:scicode",
+      "raw": 27.5,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "ifm-k2-horizon:aa-lcr",
+      "raw": 65.3,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
+      "raw": 50.8,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
+      "raw": 65.7,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "ifm-k2-horizon:hle",
+      "raw": 14.9,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "lmarena",
-      "raw": 1479,
+      "raw": 1478,
       "stderr": 4,
       "sourceLabel": "gemini-3.5-flash-high"
     },
@@ -23497,14 +24071,14 @@
     {
       "modelId": "qwen3-5-max-preview",
       "benchmarkId": "lmarena",
-      "raw": 1466,
+      "raw": 1465,
       "stderr": 5,
       "sourceLabel": "qwen3.5-max-preview"
     },
     {
       "modelId": "mistral-medium-3-5",
       "benchmarkId": "lmarena",
-      "raw": 1427,
+      "raw": 1426,
       "stderr": 7,
       "sourceLabel": "mistral-medium-3.5"
     },
@@ -23650,7 +24224,7 @@
     {
       "modelId": "openchat-3-5",
       "benchmarkId": "lmarena",
-      "raw": 1182,
+      "raw": 1183,
       "stderr": 10,
       "sourceLabel": "openchat-3.5"
     },
@@ -23787,144 +24361,6 @@
       "sourceLabel": "Qwen3.5-0.8B"
     },
     {
-      "modelId": "qwen3-5-2b-2",
-      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 54.9,
-      "sourceLabel": "Qwen3.5-2B"
-    },
-    {
-      "modelId": "qwen3-5-2b-2",
-      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 22.7,
-      "sourceLabel": "Qwen3.5-2B"
-    },
-    {
-      "modelId": "qwen3-5-2b-2",
-      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 43.6,
-      "sourceLabel": "Qwen3.5-2B"
-    },
-    {
-      "modelId": "qwen3-5-2b-2",
-      "benchmarkId": "ifm-k2-horizon:humaneval",
-      "raw": 75.6,
-      "sourceLabel": "Qwen3.5-2B"
-    },
-    {
-      "modelId": "qwen3-5-2b-2",
-      "benchmarkId": "ifm-k2-horizon:mbpp",
-      "raw": 67.7,
-      "sourceLabel": "Qwen3.5-2B"
-    },
-    {
-      "modelId": "qwen3-5-2b-2",
-      "benchmarkId": "ifm-k2-horizon:aime-2025",
-      "raw": 34.2,
-      "sourceLabel": "Qwen3.5-2B"
-    },
-    {
-      "modelId": "qwen3-5-2b-2",
-      "benchmarkId": "ifm-k2-horizon:aime-2026",
-      "raw": 38.8,
-      "sourceLabel": "Qwen3.5-2B"
-    },
-    {
-      "modelId": "qwen3-5-2b-2",
-      "benchmarkId": "ifm-k2-horizon:livecodebench-v6",
-      "raw": 29.8,
-      "sourceLabel": "Qwen3.5-2B"
-    },
-    {
-      "modelId": "qwen3-5-4b",
-      "benchmarkId": "ifm-k2-horizon:tau3-banking",
-      "raw": 6.8,
-      "sourceLabel": "Qwen3.5-4B"
-    },
-    {
-      "modelId": "qwen3-5-4b",
-      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 25.8,
-      "sourceLabel": "Qwen3.5-4B"
-    },
-    {
-      "modelId": "qwen3-5-4b",
-      "benchmarkId": "ifm-k2-horizon:scicode",
-      "raw": 16.1,
-      "sourceLabel": "Qwen3.5-4B"
-    },
-    {
-      "modelId": "qwen3-5-4b",
-      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 77.1,
-      "sourceLabel": "Qwen3.5-4B"
-    },
-    {
-      "modelId": "qwen3-5-4b",
-      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
-      "raw": 41.2,
-      "sourceLabel": "Qwen3.5-4B"
-    },
-    {
-      "modelId": "qwen3-5-4b",
-      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 61.6,
-      "sourceLabel": "Qwen3.5-4B"
-    },
-    {
-      "modelId": "qwen3-5-4b",
-      "benchmarkId": "ifm-k2-horizon:hle",
-      "raw": 9.9,
-      "sourceLabel": "Qwen3.5-4B"
-    },
-    {
-      "modelId": "qwen3-5-4b",
-      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 55.7,
-      "sourceLabel": "Qwen3.5-4B"
-    },
-    {
-      "modelId": "qwen3-5-9b-2",
-      "benchmarkId": "ifm-k2-horizon:tau3-banking",
-      "raw": 7,
-      "sourceLabel": "Qwen3.5-9B"
-    },
-    {
-      "modelId": "qwen3-5-9b-2",
-      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 29.2,
-      "sourceLabel": "Qwen3.5-9B"
-    },
-    {
-      "modelId": "qwen3-5-9b-2",
-      "benchmarkId": "ifm-k2-horizon:scicode",
-      "raw": 27.5,
-      "sourceLabel": "Qwen3.5-9B"
-    },
-    {
-      "modelId": "qwen3-5-9b-2",
-      "benchmarkId": "ifm-k2-horizon:aa-lcr",
-      "raw": 65.3,
-      "sourceLabel": "Qwen3.5-9B"
-    },
-    {
-      "modelId": "qwen3-5-9b-2",
-      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
-      "raw": 50.8,
-      "sourceLabel": "Qwen3.5-9B"
-    },
-    {
-      "modelId": "qwen3-5-9b-2",
-      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 65.7,
-      "sourceLabel": "Qwen3.5-9B"
-    },
-    {
-      "modelId": "qwen3-5-9b-2",
-      "benchmarkId": "ifm-k2-horizon:hle",
-      "raw": 14.9,
-      "sourceLabel": "Qwen3.5-9B"
-    },
-    {
       "modelId": "qwen3-6-35b-a3b",
       "benchmarkId": "artificial-analysis",
       "raw": 19,
@@ -23999,16 +24435,9 @@
       "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
-      "modelId": "chatglm3-6b",
-      "benchmarkId": "lmarena",
-      "raw": 1056,
-      "stderr": 12,
-      "sourceLabel": "chatglm3-6b"
-    },
-    {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "lmarena",
-      "raw": 1480,
+      "raw": 1479,
       "stderr": 5,
       "sourceLabel": "gemini-3.6-flash-high"
     },
@@ -24244,7 +24673,7 @@
     {
       "modelId": "qwen3-6-plus",
       "benchmarkId": "lmarena",
-      "raw": 1444,
+      "raw": 1443,
       "stderr": 4,
       "sourceLabel": "qwen3.6-plus"
     },
@@ -24418,12 +24847,6 @@
       "sourceLabel": "Qwen 3.6 Plus"
     },
     {
-      "modelId": "falcon3-7b-instruct",
-      "benchmarkId": "bfcl",
-      "raw": 24.03,
-      "sourceLabel": "Falcon3-7B-Instruct"
-    },
-    {
       "modelId": "claude-3-7",
       "benchmarkId": "arc-agi-2",
       "raw": 0.7,
@@ -24432,7 +24855,7 @@
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "lmarena",
-      "raw": 1491,
+      "raw": 1490,
       "stderr": 8,
       "sourceLabel": "gemini-3.7-flash-high"
     },
@@ -24635,136 +25058,136 @@
     {
       "modelId": "qwen3-7-max-preview",
       "benchmarkId": "lmarena",
-      "raw": 1474,
+      "raw": 1473,
       "stderr": 10,
       "sourceLabel": "qwen3.7-max-preview"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "aa-gdpval",
       "raw": 1190,
       "stderr": 14,
       "sourceLabel": "Qwen3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "aa-briefcase",
       "raw": 918,
       "stderr": 6,
       "sourceLabel": "Qwen3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "livebench",
       "raw": 73.1,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "livebench-reasoning",
       "raw": 83.3,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "livebench-coding",
       "raw": 74.2,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "livebench-agentic-coding",
       "raw": 43.6,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "livebench-mathematics",
       "raw": 85.2,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "livebench-data-analysis",
       "raw": 71.8,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "livebench-language",
       "raw": 79.7,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "livebench-instruction-following",
       "raw": 74,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "simplebench",
       "raw": 70.4,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-legal_research",
       "raw": 25.48,
       "stderr": 3.03,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-legal_bench",
       "raw": 84.91,
       "stderr": 0.41,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-hlab",
       "raw": 1.67,
       "stderr": 0.84,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-fabv2",
       "raw": 47.78,
       "stderr": 0.73,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 63.71,
       "stderr": 0.95,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 75.31,
       "stderr": 0.84,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-medcode",
       "raw": 38.75,
       "stderr": 2.2,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-medscribe",
       "raw": 79.4,
       "stderr": 1.91,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-swebench",
       "raw": 68.8,
       "stderr": 2.07,
@@ -24772,7 +25195,7 @@
       "scaffold": "Mini-SWE-agent"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-vibe-code",
       "raw": 47.67,
       "stderr": 4.63,
@@ -24780,21 +25203,21 @@
       "scaffold": "OpenHands"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-code-migration",
       "raw": 13.07,
       "stderr": 2.86,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-gpqa",
       "raw": 90.15,
       "stderr": 1.5,
       "sourceLabel": "Qwen 3.7 Max"
     },
     {
-      "modelId": "qwen3-7",
+      "modelId": "qwen3-7-max",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 89.31,
       "stderr": 0.3,
@@ -24803,7 +25226,7 @@
     {
       "modelId": "qwen3-7-plus",
       "benchmarkId": "lmarena",
-      "raw": 1455,
+      "raw": 1456,
       "stderr": 4,
       "sourceLabel": "qwen3.7-plus"
     },
@@ -24940,22 +25363,9 @@
       "sourceLabel": "Claude 3.7 Sonnet (Thinking)"
     },
     {
-      "modelId": "llama-3-8b-instruct",
-      "benchmarkId": "lmarena",
-      "raw": 1223,
-      "stderr": 4,
-      "sourceLabel": "llama-3-8b-instruct"
-    },
-    {
-      "modelId": "qwen3-8b-2",
-      "benchmarkId": "bfcl",
-      "raw": 42.57,
-      "sourceLabel": "Qwen3-8B"
-    },
-    {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "lmarena",
-      "raw": 1494,
+      "raw": 1493,
       "stderr": 9,
       "sourceLabel": "gemini-3.8-flash-high"
     },
@@ -25224,145 +25634,145 @@
       "sourceLabel": "Qwen 3.8 Flash Nextopen"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "lmarena",
-      "raw": 1480,
+      "raw": 1481,
       "stderr": 6,
       "sourceLabel": "qwen3.8-max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "artificial-analysis",
       "raw": 40,
       "sourceLabel": "Qwen3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "aa-gdpval",
       "raw": 1630,
       "stderr": 14,
       "sourceLabel": "Qwen3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "aa-briefcase",
       "raw": 1388,
       "stderr": 6.5,
       "sourceLabel": "Qwen3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "livebench",
       "raw": 78.5,
       "sourceLabel": "Qwen 3.8 Maxopen"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-reasoning",
       "raw": 88.2,
       "sourceLabel": "Qwen 3.8 Maxopen"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-coding",
       "raw": 72.9,
       "sourceLabel": "Qwen 3.8 Maxopen"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-agentic-coding",
       "raw": 64.6,
       "sourceLabel": "Qwen 3.8 Maxopen"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-mathematics",
       "raw": 91.3,
       "sourceLabel": "Qwen 3.8 Maxopen"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-data-analysis",
       "raw": 78.4,
       "sourceLabel": "Qwen 3.8 Maxopen"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-language",
       "raw": 79.7,
       "sourceLabel": "Qwen 3.8 Maxopen"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-instruction-following",
       "raw": 74.1,
       "sourceLabel": "Qwen 3.8 Maxopen"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-legal_research",
       "raw": 47.6,
       "stderr": 3.47,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-legal_bench",
       "raw": 83.61,
       "stderr": 0.42,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-hlab",
       "raw": 10.42,
       "stderr": 2.29,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-fabv2",
       "raw": 50.59,
       "stderr": 0.58,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 65.85,
       "stderr": 0.94,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 75.55,
       "stderr": 0.84,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-mortgage_tax",
       "raw": 63.99,
       "stderr": 0.94,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-medcode",
       "raw": 40.67,
       "stderr": 2.03,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-medscribe",
       "raw": 84.95,
       "stderr": 2,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-swebench",
       "raw": 85.6,
       "stderr": 1.57,
@@ -25370,7 +25780,7 @@
       "scaffold": "Mini-SWE-agent"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-vibe-code",
       "raw": 64.7,
       "stderr": 5.36,
@@ -25378,28 +25788,28 @@
       "scaffold": "OpenHands"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-code-migration",
       "raw": 23.96,
       "stderr": 4.31,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-gpqa",
       "raw": 93.69,
       "stderr": 1.22,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 88.6,
       "stderr": 0.31,
       "sourceLabel": "Qwen 3.8 Max"
     },
     {
-      "modelId": "qwen3-8",
+      "modelId": "qwen3-8-max",
       "benchmarkId": "vals-proof_bench",
       "raw": 58,
       "stderr": 4.94,
@@ -25723,7 +26133,7 @@
     {
       "modelId": "vicuna-33b",
       "benchmarkId": "lmarena",
-      "raw": 1172,
+      "raw": 1173,
       "stderr": 6,
       "sourceLabel": "vicuna-33b"
     },
@@ -25913,6 +26323,90 @@
       "sourceLabel": "DeepSeek V4 Flash"
     },
     {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:gpqa-diamond-pass-1",
+      "raw": 89.9,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:codeforces-rating",
+      "raw": 3289,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:matharena-apex-pass-1",
+      "raw": 58.6,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-2-1-pass-1",
+      "raw": 82.7,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-3-0-pass-1",
+      "raw": 7.6,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-4-0-pass-1",
+      "raw": 7,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:deepswe-v1-1-resolved",
+      "raw": 54.4,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:nl2repo-bench-score",
+      "raw": 54.2,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:cybergym-pass-1",
+      "raw": 76.7,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:sec-bench-pro-pass-1",
+      "raw": 30.9,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:exploitgym-pass-1",
+      "raw": 1.8,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:hle-w-tools-pass-1",
+      "raw": 51.5,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:automationbench-pass-1",
+      "raw": 37.7,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-flash",
+      "benchmarkId": "deepseek-v4-1-flash:agent-s-last-exam-pass-1",
+      "raw": 25.2,
+      "sourceLabel": "DS-V4-Flash"
+    },
+    {
       "modelId": "deepseek-v4-flash-vision",
       "benchmarkId": "artificial-analysis",
       "raw": 35,
@@ -25942,7 +26436,7 @@
     {
       "modelId": "deepseek-v4-pro",
       "benchmarkId": "lmarena",
-      "raw": 1458,
+      "raw": 1457,
       "stderr": 4,
       "sourceLabel": "deepseek-v4-pro"
     },
@@ -25977,6 +26471,96 @@
       "benchmarkId": "simplebench",
       "raw": 50.9,
       "sourceLabel": "DeepSeek V4 Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:gpqa-diamond-pass-1",
+      "raw": 92.4,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:codeforces-rating",
+      "raw": 3348,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:matharena-apex-pass-1",
+      "raw": 65.3,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-2-1-pass-1",
+      "raw": 87.9,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-3-0-pass-1",
+      "raw": 11.8,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-4-0-pass-1",
+      "raw": 12.4,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:deepswe-v1-1-resolved",
+      "raw": 62.7,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:programbench-almost-1",
+      "raw": 15.5,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:nl2repo-bench-score",
+      "raw": 61.5,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:cybergym-pass-1",
+      "raw": 83.3,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:sec-bench-pro-pass-1",
+      "raw": 56.4,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:exploitgym-pass-1",
+      "raw": 5.4,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:hle-w-tools-pass-1",
+      "raw": 60,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:automationbench-pass-1",
+      "raw": 43.2,
+      "sourceLabel": "DS-V4-Pro"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "deepseek-v4-1-flash:agent-s-last-exam-pass-1",
+      "raw": 25.7,
+      "sourceLabel": "DS-V4-Pro"
     },
     {
       "modelId": "deepseek-v4",
@@ -26194,7 +26778,7 @@
     {
       "modelId": "grok-4-fast-reasoning",
       "benchmarkId": "lmarena",
-      "raw": 1404,
+      "raw": 1405,
       "stderr": 5,
       "sourceLabel": "grok-4-fast-reasoning"
     },
@@ -26895,7 +27479,7 @@
     {
       "modelId": "solar-pro4",
       "benchmarkId": "lmarena",
-      "raw": 1377,
+      "raw": 1376,
       "stderr": 12,
       "sourceLabel": "solar-pro4"
     },
@@ -26940,72 +27524,79 @@
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-legal_bench",
-      "raw": 82.95,
-      "stderr": 0.41,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 82.06,
+      "stderr": 0.46,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-corp_fin_v2",
-      "raw": 54.7,
-      "stderr": 0.98,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 61.23,
+      "stderr": 0.96,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-tax_eval_v2",
-      "raw": 69.62,
-      "stderr": 0.9,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 72,
+      "stderr": 0.88,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-mortgage_tax",
-      "raw": 62.47,
-      "stderr": 0.96,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 49.88,
+      "stderr": 0.98,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-medqa",
-      "raw": 90.35,
-      "stderr": 0.27,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 92.71,
+      "stderr": 0.24,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-medcode",
-      "raw": 33.94,
-      "stderr": 1.91,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 34.96,
+      "stderr": 1.94,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-medscribe",
-      "raw": 72.41,
-      "stderr": 1.93,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 69.35,
+      "stderr": 2.21,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-gpqa",
-      "raw": 69.44,
-      "stderr": 2.31,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 75,
+      "stderr": 2.19,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-mmlu_pro",
-      "raw": 79.43,
-      "stderr": 0.37,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 83.86,
+      "stderr": 0.36,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
       "modelId": "claude-4-sonnet",
       "benchmarkId": "vals-aime",
-      "raw": 38.54,
-      "stderr": 0.97,
-      "sourceLabel": "Claude Sonnet 4 (Nonthinking)"
+      "raw": 76.25,
+      "stderr": 1.44,
+      "sourceLabel": "Claude Sonnet 4 (Thinking)"
+    },
+    {
+      "modelId": "granite-4-1-8b",
+      "benchmarkId": "lmarena",
+      "raw": 1306,
+      "stderr": 10,
+      "sourceLabel": "granite-4.1-8b"
     },
     {
       "modelId": "deepseek-v4-1-flash",
@@ -27119,6 +27710,20 @@
     },
     {
       "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "vals-biomysterybench",
+      "raw": 67.78,
+      "stderr": 1.11,
+      "sourceLabel": "DeepSeek V4.1 Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "vals-cyber",
+      "raw": 78.82,
+      "stderr": 5.32,
+      "sourceLabel": "DeepSeek V4.1 Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "vals-srebench",
       "raw": 0.76,
       "stderr": 0.54,
@@ -27145,6 +27750,114 @@
       "raw": 54,
       "stderr": 5.01,
       "sourceLabel": "DeepSeek V4.1 Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:gpqa-diamond-pass-1",
+      "raw": 90.9,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:codeforces-rating",
+      "raw": 3471,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:matharena-apex-pass-1",
+      "raw": 65.6,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-2-1-pass-1",
+      "raw": 90.6,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-3-0-pass-1",
+      "raw": 30,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-4-0-pass-1",
+      "raw": 31.2,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:deepswe-v1-1-resolved",
+      "raw": 74.2,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:programbench-almost-1",
+      "raw": 20.3,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:nl2repo-bench-score",
+      "raw": 64,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:cybergym-pass-1",
+      "raw": 88.1,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:sec-bench-pro-pass-1",
+      "raw": 62.8,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:exploitgym-pass-1",
+      "raw": 15.3,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:hle-w-tools-pass-1",
+      "raw": 63.9,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:automationbench-pass-1",
+      "raw": 54.8,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:agent-s-last-exam-pass-1",
+      "raw": 31.8,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:chartography-w-tools-pass-1",
+      "raw": 78.9,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:babyvision-w-tools-pass-1",
+      "raw": 89.6,
+      "sourceLabel": "DS-V4.1-Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "deepseek-v4-1-flash:zerobench-main-w-tools-pass-5",
+      "raw": 49,
+      "sourceLabel": "DS-V4.1-Flash"
     },
     {
       "modelId": "grok-4-1-fast-non-reasoning",
@@ -27536,65 +28249,65 @@
     {
       "modelId": "claude-4-1-opus",
       "benchmarkId": "vals-tax_eval_v2",
-      "raw": 71.46,
-      "stderr": 0.88,
-      "sourceLabel": "Claude Opus 4.1 (Nonthinking)"
+      "raw": 73.67,
+      "stderr": 0.86,
+      "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
       "modelId": "claude-4-1-opus",
       "benchmarkId": "vals-mortgage_tax",
-      "raw": 61.09,
-      "stderr": 0.97,
-      "sourceLabel": "Claude Opus 4.1 (Nonthinking)"
+      "raw": 56.12,
+      "stderr": 0.99,
+      "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
       "modelId": "claude-4-1-opus",
       "benchmarkId": "vals-medqa",
-      "raw": 92.53,
-      "stderr": 0.24,
-      "sourceLabel": "Claude Opus 4.1 (Nonthinking)"
+      "raw": 93.59,
+      "stderr": 0.22,
+      "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
       "modelId": "claude-4-1-opus",
       "benchmarkId": "vals-medcode",
-      "raw": 41.37,
-      "stderr": 1.96,
-      "sourceLabel": "Claude Opus 4.1 (Nonthinking)"
+      "raw": 47.23,
+      "stderr": 2.07,
+      "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
       "modelId": "claude-4-1-opus",
       "benchmarkId": "vals-medscribe",
-      "raw": 71.75,
-      "stderr": 2.02,
-      "sourceLabel": "Claude Opus 4.1 (Nonthinking)"
+      "raw": 73.9,
+      "stderr": 1.97,
+      "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
       "modelId": "claude-4-1-opus",
       "benchmarkId": "vals-gpqa",
-      "raw": 69.95,
-      "stderr": 2.3,
-      "sourceLabel": "Claude Opus 4.1 (Nonthinking)"
+      "raw": 76.26,
+      "stderr": 2.16,
+      "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
       "modelId": "claude-4-1-opus",
       "benchmarkId": "vals-mmlu_pro",
-      "raw": 87.21,
+      "raw": 87.92,
       "stderr": 0.33,
-      "sourceLabel": "Claude Opus 4.1 (Nonthinking)"
+      "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
       "modelId": "claude-4-1-opus",
       "benchmarkId": "vals-aime",
-      "raw": 44.24,
-      "stderr": 1.68,
-      "sourceLabel": "Claude Opus 4.1 (Nonthinking)"
+      "raw": 78.18,
+      "stderr": 1.63,
+      "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
-      "modelId": "granite-4-1-8b",
+      "modelId": "granite-4-2-8b",
       "benchmarkId": "lmarena",
-      "raw": 1306,
-      "stderr": 10,
-      "sourceLabel": "granite-4.1-8b"
+      "raw": 1287,
+      "stderr": 11,
+      "sourceLabel": "granite-4.2-8b"
     },
     {
       "modelId": "granite-4-2-8b",
@@ -27617,111 +28330,49 @@
       "sourceLabel": "Granite 4.2 8B"
     },
     {
-      "modelId": "granite-4-2-3b-2",
-      "benchmarkId": "lmarena",
-      "raw": 1296,
-      "stderr": 12,
-      "sourceLabel": "granite-4.2-3b"
-    },
-    {
-      "modelId": "granite-4-2-3b-2",
-      "benchmarkId": "ifm-k2-horizon:tau3-banking",
-      "raw": 5.6,
-      "sourceLabel": "Granite 4.2-3B"
-    },
-    {
-      "modelId": "granite-4-2-3b-2",
-      "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
-      "raw": 13.9,
-      "sourceLabel": "Granite 4.2-3B"
-    },
-    {
-      "modelId": "granite-4-2-3b-2",
-      "benchmarkId": "ifm-k2-horizon:scicode",
-      "raw": 24.9,
-      "sourceLabel": "Granite 4.2-3B"
-    },
-    {
-      "modelId": "granite-4-2-3b-2",
-      "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
-      "raw": 55.9,
-      "sourceLabel": "Granite 4.2-3B"
-    },
-    {
-      "modelId": "granite-4-2-3b-2",
-      "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
-      "raw": 32.2,
-      "sourceLabel": "Granite 4.2-3B"
-    },
-    {
-      "modelId": "granite-4-2-3b-2",
-      "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
-      "raw": 57.2,
-      "sourceLabel": "Granite 4.2-3B"
-    },
-    {
-      "modelId": "granite-4-2-3b-2",
-      "benchmarkId": "ifm-k2-horizon:hle",
-      "raw": 6.6,
-      "sourceLabel": "Granite 4.2-3B"
-    },
-    {
-      "modelId": "granite-4-2-3b-2",
-      "benchmarkId": "ifm-k2-horizon:bfcl-v4",
-      "raw": 50.8,
-      "sourceLabel": "Granite 4.2-3B"
-    },
-    {
-      "modelId": "granite-4-2-8b-2",
-      "benchmarkId": "lmarena",
-      "raw": 1288,
-      "stderr": 11,
-      "sourceLabel": "granite-4.2-8b"
-    },
-    {
-      "modelId": "granite-4-2-8b-2",
+      "modelId": "granite-4-2-8b",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 7.6,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b-2",
+      "modelId": "granite-4-2-8b",
       "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
       "raw": 18.4,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b-2",
+      "modelId": "granite-4-2-8b",
       "benchmarkId": "ifm-k2-horizon:scicode",
       "raw": 30.4,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b-2",
+      "modelId": "granite-4-2-8b",
       "benchmarkId": "ifm-k2-horizon:aa-lcr",
       "raw": 43.3,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b-2",
+      "modelId": "granite-4-2-8b",
       "benchmarkId": "ifm-k2-horizon:swe-bench-verified",
       "raw": 47.7,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b-2",
+      "modelId": "granite-4-2-8b",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
       "raw": 66.5,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b-2",
+      "modelId": "granite-4-2-8b",
       "benchmarkId": "ifm-k2-horizon:hle",
       "raw": 9.7,
       "sourceLabel": "Granite 4.2-8B"
     },
     {
-      "modelId": "granite-4-2-8b-2",
+      "modelId": "granite-4-2-8b",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
       "raw": 48.4,
       "sourceLabel": "Granite 4.2-8B"
@@ -28157,7 +28808,7 @@
     {
       "modelId": "grok-4-5",
       "benchmarkId": "lmarena",
-      "raw": 1471,
+      "raw": 1469,
       "stderr": 5,
       "sourceLabel": "grok-4.5"
     },
@@ -28907,8 +29558,8 @@
     {
       "modelId": "grok-4-6",
       "benchmarkId": "lmarena",
-      "raw": 1461,
-      "stderr": 10,
+      "raw": 1456,
+      "stderr": 6,
       "sourceLabel": "grok-4.6-high"
     },
     {
@@ -29282,7 +29933,7 @@
     {
       "modelId": "claude-sonnet-4-6",
       "benchmarkId": "lmarena",
-      "raw": 1472,
+      "raw": 1473,
       "stderr": 4,
       "sourceLabel": "claude-sonnet-4-6"
     },
@@ -30018,7 +30669,7 @@
     {
       "modelId": "claude-fable-5",
       "benchmarkId": "lmarena",
-      "raw": 1507,
+      "raw": 1506,
       "stderr": 5,
       "sourceLabel": "claude-fable-5"
     },
@@ -30338,7 +30989,7 @@
     {
       "modelId": "gpt-5",
       "benchmarkId": "lmarena",
-      "raw": 1434,
+      "raw": 1435,
       "stderr": 5,
       "sourceLabel": "gpt-5-high"
     },
@@ -30469,7 +31120,7 @@
     {
       "modelId": "gpt-5-mini",
       "benchmarkId": "lmarena",
-      "raw": 1389,
+      "raw": 1390,
       "stderr": 5,
       "sourceLabel": "gpt-5-mini-high"
     },
@@ -30702,7 +31353,7 @@
     {
       "modelId": "claude-opus-5",
       "benchmarkId": "lmarena",
-      "raw": 1488,
+      "raw": 1487,
       "stderr": 6,
       "sourceLabel": "claude-opus-5-max"
     },
@@ -30929,9 +31580,99 @@
       "sourceLabel": "Claude Opus 5"
     },
     {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:gpqa-diamond-pass-1",
+      "raw": 93.4,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:hle-pass-1",
+      "raw": 56.3,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-2-1-pass-1",
+      "raw": 89.1,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-3-0-pass-1",
+      "raw": 43.3,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-4-0-pass-1",
+      "raw": 51.8,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:deepswe-v1-1-resolved",
+      "raw": 74,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:programbench-almost-1",
+      "raw": 37,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:nl2repo-bench-score",
+      "raw": 75.3,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:exploitgym-pass-1",
+      "raw": 22.1,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:hle-w-tools-pass-1",
+      "raw": 63.6,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:automationbench-pass-1",
+      "raw": 50.3,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:agent-s-last-exam-pass-1",
+      "raw": 28.6,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:chartography-w-tools-pass-1",
+      "raw": 84,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:babyvision-w-tools-pass-1",
+      "raw": 94.1,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
+      "modelId": "claude-opus-5",
+      "benchmarkId": "deepseek-v4-1-flash:zerobench-main-w-tools-pass-5",
+      "raw": 52,
+      "sourceLabel": "Opus-5.0"
+    },
+    {
       "modelId": "claude-sonnet-5",
       "benchmarkId": "lmarena",
-      "raw": 1462,
+      "raw": 1461,
       "stderr": 5,
       "sourceLabel": "claude-sonnet-5-high"
     },
@@ -31232,8 +31973,8 @@
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "lmarena",
-      "raw": 1504,
-      "stderr": 11,
+      "raw": 1501,
+      "stderr": 8,
       "sourceLabel": "claude-fable-5.1-max"
     },
     {
@@ -31478,51 +32219,9 @@
       "sourceLabel": "Claude Fable 5.1"
     },
     {
-      "modelId": "claude-fable-5-1",
-      "benchmarkId": "datacamp-astra-vs-fable:batch-discount",
-      "raw": 50,
-      "sourceLabel": "Claude Fable 5.1"
-    },
-    {
-      "modelId": "claude-fable-5-1",
-      "benchmarkId": "datacamp-astra-vs-fable:turns",
-      "raw": 2,
-      "sourceLabel": "Claude Fable 5.1"
-    },
-    {
-      "modelId": "claude-fable-5-1",
-      "benchmarkId": "datacamp-astra-vs-fable:tool-calls",
-      "raw": 1,
-      "sourceLabel": "Claude Fable 5.1"
-    },
-    {
-      "modelId": "claude-fable-5-1",
-      "benchmarkId": "datacamp-astra-vs-fable:physics-correctness",
-      "raw": 4,
-      "sourceLabel": "Claude Fable 5.1"
-    },
-    {
-      "modelId": "claude-fable-5-1",
-      "benchmarkId": "datacamp-astra-vs-fable:stability-over-time",
-      "raw": 5,
-      "sourceLabel": "Claude Fable 5.1"
-    },
-    {
-      "modelId": "claude-fable-5-1",
-      "benchmarkId": "datacamp-astra-vs-fable:visual-quality",
-      "raw": 4,
-      "sourceLabel": "Claude Fable 5.1"
-    },
-    {
-      "modelId": "claude-fable-5-1",
-      "benchmarkId": "datacamp-astra-vs-fable:rubric-score",
-      "raw": 4.3,
-      "sourceLabel": "Claude Fable 5.1"
-    },
-    {
       "modelId": "glm-5-1",
       "benchmarkId": "lmarena",
-      "raw": 1466,
+      "raw": 1465,
       "stderr": 4,
       "sourceLabel": "glm-5.1"
     },
@@ -31771,26 +32470,6 @@
       "raw": 93.33,
       "stderr": 0.62,
       "sourceLabel": "GPT 5.1"
-    },
-    {
-      "modelId": "minicpm5-2b",
-      "benchmarkId": "artificial-analysis",
-      "raw": 13,
-      "sourceLabel": "MiniCPM5-2B"
-    },
-    {
-      "modelId": "minicpm5-2b",
-      "benchmarkId": "aa-gdpval",
-      "raw": 828,
-      "stderr": 22,
-      "sourceLabel": "MiniCPM5-2B"
-    },
-    {
-      "modelId": "minicpm5-2b",
-      "benchmarkId": "aa-briefcase",
-      "raw": 434,
-      "stderr": 11,
-      "sourceLabel": "MiniCPM5-2B"
     },
     {
       "modelId": "gpt-5-2-codex",
@@ -32373,13 +33052,6 @@
       "sourceLabel": "GPT-5.2 (Refine.)"
     },
     {
-      "modelId": "fastchat-t5-3b",
-      "benchmarkId": "lmarena",
-      "raw": 992,
-      "stderr": 12,
-      "sourceLabel": "fastchat-t5-3b"
-    },
-    {
       "modelId": "gpt-5-3-chat-latest",
       "benchmarkId": "lmarena",
       "raw": 1449,
@@ -32412,8 +33084,8 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "lmarena",
-      "raw": 1474,
-      "stderr": 9,
+      "raw": 1475,
+      "stderr": 7,
       "sourceLabel": "glm-5.3-flash"
     },
     {
@@ -32580,7 +33252,7 @@
     {
       "modelId": "glm-5-3",
       "benchmarkId": "lmarena",
-      "raw": 1482,
+      "raw": 1486,
       "stderr": 7,
       "sourceLabel": "glm-5.3-max"
     },
@@ -32760,9 +33432,81 @@
       "sourceLabel": "GLM 5.3"
     },
     {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:gpqa-diamond-pass-1",
+      "raw": 88.1,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-2-1-pass-1",
+      "raw": 88.2,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-3-0-pass-1",
+      "raw": 28.3,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-4-0-pass-1",
+      "raw": 37.9,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:deepswe-v1-1-resolved",
+      "raw": 66.9,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:programbench-almost-1",
+      "raw": 19,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:nl2repo-bench-score",
+      "raw": 58,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:cybergym-pass-1",
+      "raw": 84.5,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:exploitgym-pass-1",
+      "raw": 15,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:hle-w-tools-pass-1",
+      "raw": 62.5,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:automationbench-pass-1",
+      "raw": 48.8,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "deepseek-v4-1-flash:agent-s-last-exam-pass-1",
+      "raw": 28.5,
+      "sourceLabel": "GLM-5.3"
+    },
+    {
       "modelId": "gpt-5-4",
       "benchmarkId": "lmarena",
-      "raw": 1477,
+      "raw": 1476,
       "stderr": 4,
       "sourceLabel": "gpt-5.4-high"
     },
@@ -33882,7 +34626,7 @@
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "lmarena",
-      "raw": 1483,
+      "raw": 1482,
       "stderr": 5,
       "sourceLabel": "gpt-5.6-sol-xhigh"
     },
@@ -34114,6 +34858,102 @@
       "benchmarkId": "vals-proof_bench",
       "raw": 83,
       "stderr": 3.76,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:gpqa-diamond-pass-1",
+      "raw": 94.1,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:hle-pass-1",
+      "raw": 44.5,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-2-1-pass-1",
+      "raw": 88.8,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-3-0-pass-1",
+      "raw": 34.4,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:terminal-bench-4-0-pass-1",
+      "raw": 39.9,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:deepswe-v1-1-resolved",
+      "raw": 73,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:programbench-almost-1",
+      "raw": 23,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:nl2repo-bench-score",
+      "raw": 56.8,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:cybergym-pass-1",
+      "raw": 84.5,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:sec-bench-pro-pass-1",
+      "raw": 74.3,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:exploitgym-pass-1",
+      "raw": 33.7,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:automationbench-pass-1",
+      "raw": 45.8,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:agent-s-last-exam-pass-1",
+      "raw": 26.7,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:chartography-w-tools-pass-1",
+      "raw": 79.9,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:babyvision-w-tools-pass-1",
+      "raw": 88.9,
+      "sourceLabel": "GPT-5.6 Sol"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "deepseek-v4-1-flash:zerobench-main-w-tools-pass-5",
+      "raw": 53,
       "sourceLabel": "GPT-5.6 Sol"
     },
     {
@@ -34416,6 +35256,13 @@
     },
     {
       "modelId": "gpt-6-astra",
+      "benchmarkId": "lmarena",
+      "raw": 1478,
+      "stderr": 13,
+      "sourceLabel": "gpt-6-astra-max"
+    },
+    {
+      "modelId": "gpt-6-astra",
       "benchmarkId": "artificial-analysis",
       "raw": 53,
       "sourceLabel": "GPT-6 Astra (max)"
@@ -34628,48 +35475,6 @@
       "sourceLabel": "GPT-6 Astra"
     },
     {
-      "modelId": "gpt-6-astra",
-      "benchmarkId": "datacamp-astra-vs-fable:batch-discount",
-      "raw": 50,
-      "sourceLabel": "GPT-6 Astra"
-    },
-    {
-      "modelId": "gpt-6-astra",
-      "benchmarkId": "datacamp-astra-vs-fable:turns",
-      "raw": 6,
-      "sourceLabel": "GPT-6 Astra"
-    },
-    {
-      "modelId": "gpt-6-astra",
-      "benchmarkId": "datacamp-astra-vs-fable:tool-calls",
-      "raw": 9,
-      "sourceLabel": "GPT-6 Astra"
-    },
-    {
-      "modelId": "gpt-6-astra",
-      "benchmarkId": "datacamp-astra-vs-fable:physics-correctness",
-      "raw": 5,
-      "sourceLabel": "GPT-6 Astra"
-    },
-    {
-      "modelId": "gpt-6-astra",
-      "benchmarkId": "datacamp-astra-vs-fable:stability-over-time",
-      "raw": 5,
-      "sourceLabel": "GPT-6 Astra"
-    },
-    {
-      "modelId": "gpt-6-astra",
-      "benchmarkId": "datacamp-astra-vs-fable:visual-quality",
-      "raw": 5,
-      "sourceLabel": "GPT-6 Astra"
-    },
-    {
-      "modelId": "gpt-6-astra",
-      "benchmarkId": "datacamp-astra-vs-fable:rubric-score",
-      "raw": 5,
-      "sourceLabel": "GPT-6 Astra"
-    },
-    {
       "modelId": "gpt-6-astra-pro",
       "benchmarkId": "simplebench",
       "raw": 86.5,
@@ -34727,7 +35532,7 @@
     {
       "modelId": "zephyr-7b-alpha",
       "benchmarkId": "lmarena",
-      "raw": 1126,
+      "raw": 1127,
       "stderr": 16,
       "sourceLabel": "zephyr-7b-alpha"
     },
@@ -34912,26 +35717,6 @@
     },
     {
       "modelId": "command-a",
-      "benchmarkId": "artificial-analysis",
-      "raw": 14,
-      "sourceLabel": "Command A+"
-    },
-    {
-      "modelId": "command-a",
-      "benchmarkId": "aa-gdpval",
-      "raw": 658,
-      "stderr": 18,
-      "sourceLabel": "Command A+"
-    },
-    {
-      "modelId": "command-a",
-      "benchmarkId": "aa-briefcase",
-      "raw": 366,
-      "stderr": 9.5,
-      "sourceLabel": "Command A+"
-    },
-    {
-      "modelId": "command-a",
       "benchmarkId": "bfcl",
       "raw": 46.49,
       "sourceLabel": "Command A"
@@ -34999,6 +35784,26 @@
       "raw": 13.33,
       "stderr": 0.94,
       "sourceLabel": "Command A"
+    },
+    {
+      "modelId": "command-a-2",
+      "benchmarkId": "artificial-analysis",
+      "raw": 14,
+      "sourceLabel": "Command A+"
+    },
+    {
+      "modelId": "command-a-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 658,
+      "stderr": 18,
+      "sourceLabel": "Command A+"
+    },
+    {
+      "modelId": "command-a-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 366,
+      "stderr": 9.5,
+      "sourceLabel": "Command A+"
     },
     {
       "modelId": "command-a-reasoning",
@@ -35113,7 +35918,7 @@
     {
       "modelId": "snowflake-arctic-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1179,
+      "raw": 1180,
       "stderr": 6,
       "sourceLabel": "snowflake-arctic-instruct"
     },
@@ -35183,6 +35988,40 @@
       "sourceLabel": "command-r-plus"
     },
     {
+      "modelId": "command-r-plus",
+      "benchmarkId": "simplebench",
+      "raw": 17.4,
+      "sourceLabel": "Command R+"
+    },
+    {
+      "modelId": "command-r-plus",
+      "benchmarkId": "vals-legal_bench",
+      "raw": 68.29,
+      "stderr": 0.65,
+      "sourceLabel": "Command R+"
+    },
+    {
+      "modelId": "command-r-plus",
+      "benchmarkId": "vals-medqa",
+      "raw": 2.65,
+      "stderr": 0.29,
+      "sourceLabel": "Command R+"
+    },
+    {
+      "modelId": "command-r-plus",
+      "benchmarkId": "vals-gpqa",
+      "raw": 31.06,
+      "stderr": 2.28,
+      "sourceLabel": "Command R+"
+    },
+    {
+      "modelId": "command-r-plus",
+      "benchmarkId": "vals-mmlu_pro",
+      "raw": 44,
+      "stderr": 0.48,
+      "sourceLabel": "Command R+"
+    },
+    {
       "modelId": "command-r",
       "benchmarkId": "lmarena",
       "raw": 1226,
@@ -35191,37 +36030,10 @@
     },
     {
       "modelId": "command-r",
-      "benchmarkId": "simplebench",
-      "raw": 17.4,
-      "sourceLabel": "Command R+"
-    },
-    {
-      "modelId": "command-r",
       "benchmarkId": "vals-legal_bench",
-      "raw": 68.29,
-      "stderr": 0.65,
-      "sourceLabel": "Command R+"
-    },
-    {
-      "modelId": "command-r",
-      "benchmarkId": "vals-medqa",
-      "raw": 2.65,
-      "stderr": 0.29,
-      "sourceLabel": "Command R+"
-    },
-    {
-      "modelId": "command-r",
-      "benchmarkId": "vals-gpqa",
-      "raw": 31.06,
-      "stderr": 2.28,
-      "sourceLabel": "Command R+"
-    },
-    {
-      "modelId": "command-r",
-      "benchmarkId": "vals-mmlu_pro",
-      "raw": 44,
-      "stderr": 0.48,
-      "sourceLabel": "Command R+"
+      "raw": 32.97,
+      "stderr": 0.71,
+      "sourceLabel": "Command R"
     },
     {
       "modelId": "computer-use-preview",
@@ -35238,7 +36050,7 @@
       "sourceLabel": "dbrx-instruct-preview"
     },
     {
-      "modelId": "mistralai-devstral",
+      "modelId": "mistralai-devstral-medium",
       "benchmarkId": "kagi",
       "raw": 37.7,
       "sourceLabel": "mistralai/devstral-medium"
@@ -35305,7 +36117,7 @@
     {
       "modelId": "ibm-granite-h-small",
       "benchmarkId": "lmarena",
-      "raw": 1285,
+      "raw": 1286,
       "stderr": 8,
       "sourceLabel": "ibm-granite-h-small"
     },
@@ -35646,8 +36458,8 @@
     {
       "modelId": "inkling-small",
       "benchmarkId": "lmarena",
-      "raw": 1407,
-      "stderr": 6,
+      "raw": 1404,
+      "stderr": 5,
       "sourceLabel": "Inkling Small"
     },
     {
@@ -35805,7 +36617,7 @@
     {
       "modelId": "trinity-large-preview",
       "benchmarkId": "lmarena",
-      "raw": 1379,
+      "raw": 1378,
       "stderr": 4,
       "sourceLabel": "trinity-large-preview"
     },
@@ -35864,13 +36676,13 @@
       "sourceLabel": "yi-lightning"
     },
     {
-      "modelId": "magistral",
+      "modelId": "magistral-medium",
       "benchmarkId": "arc-agi-2",
       "raw": 0,
       "sourceLabel": "Magistral Medium"
     },
     {
-      "modelId": "magistral",
+      "modelId": "magistral-medium",
       "benchmarkId": "kagi",
       "raw": 16.2,
       "sourceLabel": "magistral-medium"
@@ -35888,14 +36700,14 @@
       "sourceLabel": "magistral-small"
     },
     {
-      "modelId": "mistral",
+      "modelId": "mistral-medium",
       "benchmarkId": "lmarena",
       "raw": 1222,
       "stderr": 5,
       "sourceLabel": "mistral-medium"
     },
     {
-      "modelId": "mistral",
+      "modelId": "mistral-medium",
       "benchmarkId": "kagi",
       "raw": 50,
       "sourceLabel": "mistral-medium"
