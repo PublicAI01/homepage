@@ -133,7 +133,7 @@ const method = [
   },
   {
     title: 'Reports ✱ stay out of the headline',
-    text: 'A one-off publication shapes domain columns, never the Overall index — and an independent write-up counts for more than a vendor’s own post.',
+    text: 'A one-off publication shapes domain columns, never the Overall index — and an independent write-up counts for more than a vendor’s own post. A model only reports have placed keeps its score but takes no number in the column.',
   },
   {
     title: 'Estimate the rest, and say so',

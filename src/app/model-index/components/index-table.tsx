@@ -402,18 +402,23 @@ export default function IndexTable({
 
   const rankedCount = rows.filter((r) => r.ranked).length;
   const shown = filtered.slice(0, PAGE);
-  // Position in the list on screen, for rows eligible in this scope. On
-  // Overall that is the model's rank; in a scope it is its place there.
+  // Where each row stands in the scope — the same rule as query.ts's
+  // scopePositions, so the badge, the API and the model page print the
+  // number shown here. Numbered over the whole scope, not the filtered
+  // view: #14 stays #14 whether or not the Qwen family filter is on. Only
+  // board-measured rows take a number; a row placed by report ✱ figures
+  // alone shows "—✱" and does not push the rows below it down a place.
   const positionOf = useMemo(() => {
-    const m = new Map<string, number>();
     if (rankKey.level === 'overall') return rankOf;
-    // In a scope every listed row is numbered by where it sits; a row placed
-    // by report figures alone carries a ✱ after its number, so the grade of
-    // evidence shows without the place being taken away.
+    const m = new Map<string, number>();
+    const order = rows
+      .filter((r) => keyOf(r, rankKey) !== null)
+      .sort(compareScores<AggregateRow>((r) => keyOf(r, rankKey)));
     let n = 0;
-    for (const r of filtered) m.set(r.model.id, ++n);
+    for (const r of order) if (eligible(r, rankKey)) m.set(r.model.id, ++n);
     return m;
-  }, [filtered, rankKey, rankOf]);
+  }, [rows, rankKey, rankOf]);
+  const scopeTotal = positionOf.size;
   const coverable = rows[0]?.coverable ?? boards.length;
   // How many boards measure the current scope — the denominator a reader
   // needs beside a domain score. "5/15" is Overall coverage, and in a domain
@@ -787,7 +792,13 @@ export default function IndexTable({
             <>
               {' '}
               · ranked by{' '}
-              <span className="text-[#D9D7E0]">{rankLabel(rankKey)}</span>
+              <span className="text-[#D9D7E0]">{rankLabel(rankKey)}</span>,{' '}
+              <span
+                className="text-[#D9D7E0]"
+                title="Models a recognised board measured in this scope — what a place here is out of">
+                {scopeTotal}
+              </span>{' '}
+              placed
             </>
           ) : null}
         </p>
@@ -964,19 +975,18 @@ function Row({
         onClick={onToggle}
         aria-expanded={open}>
         <td className="text-g2 px-2.5 py-2.5 font-mono">
-          {position === undefined ? (
+          {position !== undefined ? (
+            position
+          ) : rankKey.level === 'overall' ? (
             <span
               title={`Provisional — fewer than ${MIN_SOURCES} independent publishers`}>
               —
             </span>
-          ) : inScope || rankKey.level === 'overall' ? (
-            position
           ) : (
             <span
               className="text-[#B9B7C4]"
-              title="Placed by report ✱ figures only; no recognised board measures this model here">
-              {position}
-              <span className="text-[#E8A9F0]">✱</span>
+              title="Placed by report ✱ figures only; no recognised board measures this model here. Takes no place in the numbering.">
+              —<span className="text-[#E8A9F0]">✱</span>
             </span>
           )}
         </td>

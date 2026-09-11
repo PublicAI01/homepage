@@ -221,7 +221,7 @@ export interface ModelSummary {
   ranked: boolean;
   /** Ranked in the requested scope: a recognised board measured the model there. Equals `ranked` for Overall. */
   rankedInScope: boolean;
-  /** Place in the returned list. Overall: the rank (null when provisional). A scope: every row's place; rankedInScope says whether a recognised board put it there. */
+  /** Overall: the rank (null when provisional). A scope: the place among rows a recognised board measured there, independent of filters; null when only report ✱ figures placed the model. */
   position: number | null;
   /** Total parameters in billions where known (counted from the weights, or read from the name); null when undisclosed. */
   size: {
@@ -361,6 +361,63 @@ export interface RankQuery {
 }
 
 /**
+ * Where a model stands in a scope — the one answer the table, the API, the
+ * badge and the model page all print.
+ *
+ * The order is every row with a score in the scope, reports in or out as
+ * asked. The number goes only to rows a recognised board measured there; a
+ * row placed by report ✱ figures alone sits where its score puts it and
+ * takes no number, so the board-measured rows below it are not each pushed
+ * down a place by a launch post. Filters (family, size, a minimum board
+ * count) hide rows without renumbering the rest: #14 is #14 whether or
+ * not you are looking at the Qwen family. Until 2026-09-11 four outlets
+ * each numbered their own filtered list, and one model was #16 on the
+ * badge and #14 on its page.
+ */
+// Keyed by level as well as name: the category "Reasoning" and the domain
+// "Reasoning" share a label and are different lists.
+const scopeKey = (scope: Scope, includeReports: boolean) =>
+  `${includeReports ? 'with' : 'without'}:${scope.level}:${scopeLabel(scope)}`;
+
+const scopeOrderCache = new Map<string, AggregateRow[]>();
+function scopeOrder(scope: Scope, includeReports: boolean): AggregateRow[] {
+  const key = scopeKey(scope, includeReports);
+  const hit = scopeOrderCache.get(key);
+  if (hit) return hit;
+  const set = includeReports ? WITH : WITHOUT;
+  const out = set.rows.filter((r) =>
+    scope.level === 'overall'
+      ? r.score !== null || r.estimate !== null
+      : scopeScore(r, scope) !== null,
+  );
+  const sorted =
+    scope.level === 'overall'
+      ? out
+      : [...out].sort(compareScores<AggregateRow>((r) => scopeScore(r, scope)));
+  scopeOrderCache.set(key, sorted);
+  return sorted;
+}
+
+const scopePositionCache = new Map<string, Map<string, number>>();
+function scopePositions(scope: Scope, includeReports: boolean) {
+  if (scope.level === 'overall') return rankOf;
+  const key = scopeKey(scope, includeReports);
+  const hit = scopePositionCache.get(key);
+  if (hit) return hit;
+  const m = new Map<string, number>();
+  let n = 0;
+  for (const r of scopeOrder(scope, includeReports))
+    if (eligible(r, scope)) m.set(r.model.id, ++n);
+  scopePositionCache.set(key, m);
+  return m;
+}
+
+/** Board-measured rows in the scope: the count a position is "of". */
+export function scopeTotal(scope: Scope, includeReports = true) {
+  return scopePositions(scope, includeReports).size;
+}
+
+/**
  * Every row a query lists, in order, before the response cap. One filter and
  * one comparator for the API, the MCP server and the badge, so a position
  * means the same thing wherever it is printed.
@@ -423,14 +480,6 @@ function listScope(q: RankQuery): Listed {
   return { scope, out, minBoards, includeReports };
 }
 
-/** Place in the listed order: the rank on Overall (null when provisional), the row number in a scope. */
-const positionAt = (out: AggregateRow[], i: number, scope: Scope) =>
-  scope.level === 'overall'
-    ? out[i].ranked
-      ? out.slice(0, i + 1).filter((r) => r.ranked).length
-      : null
-    : i + 1;
-
 /**
  * One model's row in a query's full list, uncapped. The badge asks this:
  * it used to read the first hundred rows of rankModels and print "not
@@ -440,11 +489,11 @@ const positionAt = (out: AggregateRow[], i: number, scope: Scope) =>
 export function positionIn(modelId: string, q: RankQuery = {}) {
   const listed = listScope(q);
   if ('error' in listed) return null;
-  const { scope, out } = listed;
+  const { scope, out, includeReports } = listed;
   const i = out.findIndex((r) => r.model.id === modelId);
   if (i === -1) return null;
   const m = summarize(out[i], scope);
-  m.position = positionAt(out, i, scope);
+  m.position = scopePositions(scope, includeReports).get(modelId) ?? null;
   return m;
 }
 
@@ -453,9 +502,10 @@ export function rankModels(q: RankQuery = {}) {
   if ('error' in listed) return listed;
   const { scope, out, minBoards, includeReports } = listed;
   const limit = Math.max(1, Math.min(q.limit ?? 20, 100));
-  const models = out.slice(0, limit).map((r, i) => {
+  const positions = scopePositions(scope, includeReports);
+  const models = out.slice(0, limit).map((r) => {
     const m = summarize(r, scope);
-    m.position = positionAt(out, i, scope);
+    m.position = positions.get(r.model.id) ?? null;
     return m;
   });
   const inScope =
@@ -492,6 +542,8 @@ export function rankModels(q: RankQuery = {}) {
     reports: includeReports,
     ...(q.size ? { size: q.size } : {}),
     total: out.length,
+    /** Rows a recognised board measured in this scope, filters aside — what a position is "of". Overall: the ranked count. */
+    scopeTotal: positions.size,
     models,
     note: 'Scores are 0–100 standardized across the models each source lists; 50 is that measure’s average, not a grade. Overall ranks a model once boards from two independent publishers have scored it; a category or domain ranks any model a recognised board measured there. Report (✱) figures never rank a model on their own. This is a snapshot dated generatedAt, not a live feed; every figure links to its publisher.',
   };
@@ -576,6 +628,7 @@ export function describeIndex() {
       'Where a source publishes an error bar, the figure’s weight is discounted by how wide it is relative to the board’s spread.',
       `A model absent from a source is excluded from that term, never imputed; a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the in-scope weight pulls thin evidence toward 50.`,
       `Overall ranks a model once ${MIN_SOURCES} independent publishers among the boards that build the index have scored it — a board that shapes only a domain does not count toward it; otherwise the model is provisional. A category or domain ranks any model a recognised board has measured there.`,
+      `In a category or domain, position counts only models a recognised board measured there; a model placed by report ✱ figures alone keeps its score and takes no number (position null). Filters hide rows without renumbering the rest.`,
       `Reports (launch posts, blogs) are marked ✱ and shape their domain only, never the Overall index. An independent write-up carries ${INDEPENDENT_REPORT_WEIGHT} against a board measure's ${BOARD_MEASURE_WEIGHT}; a figure the model's own publisher printed carries ${VENDOR_REPORT_WEIGHT}.`,
       `scopes lists the domains offered as headline rankings: measured by at least ${MIN_BOARDS_TO_VOTE_IN} boards, or by one board that ranks at least ${MIN_MODELS_FOR_HEADLINE} models there. Every other domain a board measured is still on the model pages and accepted as a scope by name.`,
       'A model with no Overall index gets an estimate ✱ (estimatedIndex): its figures on each shared measure are placed among models that have an index, and theirs is read at that position; outside their range the nearest anchor is a bound (ceiling or floor), not a point. Never a rank.',
@@ -627,7 +680,8 @@ export interface Peer {
   name: string;
   org: string;
   score: number;
-  position: number;
+  /** Null when only report ✱ figures placed the model here. */
+  position: number | null;
   isSubject: boolean;
 }
 
@@ -662,7 +716,9 @@ export interface Standing {
   /** The scope's leader, so a score can be read as a distance rather than alone. */
   leader: { name: string; score: number };
   /** Where a model sits and how crowded the scope is. */
-  position: number;
+  /** Place among board-measured rows; null when only report ✱ figures placed the model here. */
+  position: number | null;
+  /** Board-measured rows in the scope. */
   total: number;
   score: number;
   /** Recognised boards with a measure here. 0 means every figure is a report ✱. */
@@ -688,17 +744,6 @@ export interface Standing {
  * and they are the point of the comparison. Same filter and same comparator,
  * and a test asserts the two never disagree.
  */
-function fullRanking(scope: Scope) {
-  const out = WITH.rows.filter((r) => {
-    if (r.covered < MIN_SOURCES) return false;
-    if (scope.level === 'overall' && r.estimate) return true;
-    return scopeScore(r, scope) !== null;
-  });
-  if (scope.level === 'overall') return out;
-  return [...out].sort(
-    compareScores<AggregateRow>((r) => scopeScore(r, scope)),
-  );
-}
 
 /** Rows either side of a model, plus the leader as the scale's anchor. */
 const NEIGHBOURS = 3;
@@ -738,7 +783,8 @@ export function modelStandings(query: string): StandingsHit | StandingsMiss {
   >();
 
   for (const scope of scopes) {
-    const ranked = fullRanking(scope);
+    const ranked = scopeOrder(scope, true);
+    const positions = scopePositions(scope, true);
     const idx = ranked.findIndex((r) => r.model.id === model.id);
     if (idx === -1) continue;
     const me = summarize(ranked[idx], scope);
@@ -746,7 +792,11 @@ export function modelStandings(query: string): StandingsHit | StandingsMiss {
 
     // The leader anchors the scale — without it, "#49 scored 55.9" says
     // nothing about whether that is close to the front or nowhere near it.
-    const wanted = new Set<number>([0]);
+    const lead = Math.max(
+      0,
+      ranked.findIndex((r) => eligible(r, scope)),
+    );
+    const wanted = new Set<number>([lead]);
     for (let i = idx - NEIGHBOURS; i <= idx + NEIGHBOURS; i++)
       if (i >= 0 && i < ranked.length) wanted.add(i);
 
@@ -759,7 +809,7 @@ export function modelStandings(query: string): StandingsHit | StandingsMiss {
           name: m.name,
           org: m.org,
           score: m.scopeScore ?? 0,
-          position: i + 1,
+          position: positions.get(m.id) ?? null,
           isSubject: m.id === model.id,
         };
       });
@@ -780,7 +830,12 @@ export function modelStandings(query: string): StandingsHit | StandingsMiss {
           ? b.domain === scope.domain
           : false,
     );
-    const head = summarize(ranked[0], scope);
+    // The leader is #1 — the first board-measured row. Only when nothing
+    // in the scope is board-measured does the top report-only row stand in.
+    const head = summarize(
+      ranked.find((r) => eligible(r, scope)) ?? ranked[0],
+      scope,
+    );
     standings.push({
       scope: scopeLabel(scope),
       level: scope.level,
@@ -788,8 +843,8 @@ export function modelStandings(query: string): StandingsHit | StandingsMiss {
         ? { category: inScope[0].category }
         : {}),
       leader: { name: head.name, score: head.scopeScore ?? 0 },
-      position: idx + 1,
-      total: ranked.length,
+      position: positions.get(model.id) ?? null,
+      total: positions.size,
       score: me.scopeScore,
       boards: new Set(
         inScope.filter((b) => b.kind !== 'report').map((b) => b.group),
@@ -804,7 +859,11 @@ export function modelStandings(query: string): StandingsHit | StandingsMiss {
       peers,
     });
   }
-  standings.sort((a, b) => a.position - b.position || b.total - a.total);
+  // Numbered standings first, best place first; report-only ones after.
+  standings.sort(
+    (a, b) =>
+      (a.position ?? Infinity) - (b.position ?? Infinity) || b.total - a.total,
+  );
 
   // Only models met nearly everywhere: one shared scope says nothing, and a
   // list of near-strangers is the noise this section exists to remove.

@@ -5,7 +5,9 @@ import { ACCESS_RULE } from './access';
 import {
   describeIndex,
   getModel,
+  modelStandings,
   type ModelSummary,
+  positionIn,
   rankModels,
   resolveScope,
 } from './query';
@@ -237,5 +239,47 @@ describe('the taxonomy offers nothing empty', () => {
     expect(hidden.length).toBeGreaterThan(0);
     for (const d of hidden)
       expect(resolveScope(`domain:${d}`), d).not.toBeNull();
+  });
+});
+
+describe('one position, wherever it is printed', () => {
+  const scopes = describeIndex().scopes.flatMap((s) => [
+    s.category,
+    ...s.domains.map((d) => `domain:${d}`),
+  ]);
+
+  it('numbers only board-measured rows, and does not renumber for a filter', () => {
+    for (const scope of scopes) {
+      const all = ok(rankModels({ scope, minBoards: 0, limit: 100 }));
+      const thin = ok(rankModels({ scope, minBoards: 3, limit: 100 }));
+      const bySeen = new Map(all.models.map((m) => [m.id, m.position]));
+      let last = 0;
+      for (const m of all.models) {
+        if (m.rankedInScope) {
+          expect(m.position, `${scope} ${m.name}`).toBe(last + 1);
+          last = m.position!;
+        } else {
+          expect(m.position, `${scope} ${m.name}`).toBeNull();
+        }
+      }
+      // A stricter filter hides rows; the ones left keep their number.
+      for (const m of thin.models)
+        if (bySeen.has(m.id)) expect(m.position).toBe(bySeen.get(m.id));
+    }
+  });
+
+  it('agrees between the list, the badge and the model page', () => {
+    for (const scope of scopes.slice(0, 12)) {
+      const listed = ok(rankModels({ scope, minBoards: 0, limit: 25 }));
+      for (const m of listed.models) {
+        const badge = positionIn(m.id, { scope, minBoards: 0 });
+        expect(badge?.position, `${scope} ${m.name}`).toBe(m.position);
+        const page = modelStandings(m.id);
+        if ('error' in page) throw new Error(page.error);
+        const s = page.standings.find((x) => x.scope === listed.scope);
+        expect(s?.position, `${scope} ${m.name}`).toBe(m.position);
+        expect(s?.total).toBe(listed.scopeTotal);
+      }
+    }
   });
 });

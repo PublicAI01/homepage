@@ -22,7 +22,7 @@ describe('modelStandings', () => {
         expect(me.position).toBe(s.position);
         expect(me.scopeScore).toBe(s.score);
       }
-      expect(r.total).toBe(s.total);
+      expect(r.scopeTotal).toBe(s.total);
     }
   });
 
@@ -34,38 +34,56 @@ describe('modelStandings', () => {
   });
 
   it('shows the leader, so the scale has an anchor', () => {
-    for (const s of found.standings) expect(s.peers[0].position).toBe(1);
+    for (const s of found.standings) {
+      // In a scope no board measures, the top report-only row stands in.
+      if (s.total === 0) continue;
+      expect(s.peers[0].position).toBe(1);
+      expect(s.peers[0].name).toBe(s.leader.name);
+    }
   });
 
   it('shows the neighbours either side, clipped at the ends', () => {
     for (const s of found.standings) {
+      if (s.position === null) continue;
+      const pos = s.position;
       const near = s.peers.filter(
-        (p) => Math.abs(p.position - s.position) <= 3,
+        (p) => p.position !== null && Math.abs(p.position - pos) <= 3,
       );
-      const expected =
-        Math.min(s.total, s.position + 3) - Math.max(1, s.position - 3) + 1;
-      expect(near.length).toBe(expected);
+      // Report-only rows sit between numbered ones without a number, so
+      // the window can hold fewer numbered peers than its width, never more.
+      const width = Math.min(s.total, pos + 3) - Math.max(1, pos - 3) + 1;
+      expect(near.length).toBeGreaterThanOrEqual(1);
+      expect(near.length).toBeLessThanOrEqual(width);
     }
   });
 
   it('lists peers in rank order, never repeating one', () => {
     for (const s of found.standings) {
-      const ps = s.peers.map((p) => p.position);
+      const ps = s.peers.flatMap((p) =>
+        p.position === null ? [] : [p.position],
+      );
       expect([...ps].sort((a, b) => a - b)).toEqual(ps);
       expect(new Set(ps).size).toBe(ps.length);
+      expect(new Set(s.peers.map((p) => p.id)).size).toBe(s.peers.length);
     }
   });
 
   it('never ranks a model past the size of its scope', () => {
     for (const s of found.standings) {
+      if (s.position === null) continue;
       expect(s.position).toBeGreaterThanOrEqual(1);
       expect(s.position).toBeLessThanOrEqual(s.total);
     }
   });
 
-  it('orders by placement, strongest first', () => {
-    const positions = found.standings.map((s) => s.position);
+  it('orders by placement, strongest first, report-only placements last', () => {
+    const positions = found.standings.map((s) => s.position ?? Infinity);
     expect([...positions].sort((a, b) => a - b)).toEqual(positions);
+  });
+
+  it('gives no number to a placement only reports ✱ made', () => {
+    for (const s of found.standings)
+      expect(s.position === null).toBe(!s.rankedInScope);
   });
 
   it('never claims a board placed a model a board did not measure', () => {
@@ -146,7 +164,9 @@ describe('standings — nesting and scale', () => {
   });
 
   it('gives the model itself as leader only when it leads', () => {
-    for (const s of found.standings)
+    for (const s of found.standings) {
+      if (s.total === 0) continue;
       expect(s.leader.name === found.model.name).toBe(s.position === 1);
+    }
   });
 });

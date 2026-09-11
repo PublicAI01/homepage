@@ -53,7 +53,8 @@ export function GET(request: Request) {
         minBoards: 0,
       });
       if (row) {
-        value = `${where} #${row.position}${row.rankedInScope ? '' : '✱'} · ${row.scopeScore?.toFixed(1)}`;
+        // A place only reports ✱ made has a score but no number.
+        value = `${where} ${row.position === null ? '—✱' : `#${row.position}`} · ${row.scopeScore?.toFixed(1)}`;
         tone = row.rankedInScope ? '#4000C8' : '#7A5CFF';
       } else {
         value = `${where}: not scored`;

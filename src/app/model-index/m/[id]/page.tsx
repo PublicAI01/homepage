@@ -37,7 +37,7 @@ export async function generateMetadata({
   const found = await load(params);
   if (!found) return { title: 'Model not found — PublicAI Index' };
   const { model, standings } = found;
-  const best = standings[0];
+  const best = standings.find((s) => s.position !== null);
   const title = `${model.name} — PublicAI Index`;
   const description = best
     ? `${model.name} (${model.org}) across ${standings.length} domains on the PublicAI Index: #${best.position} of ${best.total} in ${best.scope}. Every figure traceable to its publisher.`
@@ -63,9 +63,17 @@ const Placement = ({ s }: { s: Standing }) => (
       <span
         className={cn(
           'font-mono text-xl leading-none font-bold',
-          s.position <= 3 ? 'text-[#B08BFF]' : 'text-white',
+          s.position !== null && s.position <= 3
+            ? 'text-[#B08BFF]'
+            : 'text-white',
         )}>
-        #{s.position}
+        {s.position === null ? (
+          <span title="Placed by report ✱ figures only; no recognised board measures this model here">
+            —<span className="text-[#E8A9F0]">✱</span>
+          </span>
+        ) : (
+          `#${s.position}`
+        )}
       </span>
       <span className="font-mono text-xs text-[#8E8BA0]">of {s.total}</span>
       <span className="ml-auto font-mono text-xs text-[#8E8BA0]">
@@ -164,9 +172,16 @@ const ProfileRow = ({ s, nested }: { s: Standing; nested?: boolean }) => {
       <span
         className={cn(
           'w-20 shrink-0 text-right font-mono text-xs',
-          s.position <= 3 ? 'text-[#B08BFF]' : 'text-[#8E8BA0]',
-        )}>
-        #{s.position}
+          s.position !== null && s.position <= 3
+            ? 'text-[#B08BFF]'
+            : 'text-[#8E8BA0]',
+        )}
+        title={
+          s.position === null
+            ? 'Placed by report ✱ figures only; no recognised board measures this model here'
+            : undefined
+        }>
+        {s.position === null ? '—' : `#${s.position}`}
         <span className="text-[#6E6C7A]">/{s.total}</span>
         {!s.rankedInScope ? <span className="text-[#E8A9F0]">✱</span> : null}
       </span>
@@ -202,8 +217,11 @@ export default async function ModelPage({
   const { model, standings, rivals, generatedAt } = found;
   // Three from each end, and never the same panel twice when there are few.
   const abovePar = standings.filter((s) => s.score > 50).length;
-  const best = standings[0];
-  const worst = standings[standings.length - 1];
+  // Numbered standings only: a place only reports ✱ made is not a
+  // "strongest in" claim.
+  const numbered = standings.filter((s) => s.position !== null);
+  const best = numbered[0];
+  const worst = numbered[numbered.length - 1];
   const beats = rivals.filter((r) => r.ahead / r.met < 0.5);
   const beaten = rivals.filter((r) => r.ahead / r.met > 0.5);
   const names = (rs: typeof rivals, n = 2) =>
@@ -222,11 +240,13 @@ export default async function ModelPage({
       const sorted = [...rows].sort(
         (a, b) =>
           Number(b.level === 'category') - Number(a.level === 'category') ||
-          a.position - b.position,
+          (a.position ?? Infinity) - (b.position ?? Infinity),
       );
       return [c, sorted] as const;
     })
-    .sort((a, b) => a[1][0].position - b[1][0].position);
+    .sort(
+      (a, b) => (a[1][0].position ?? Infinity) - (b[1][0].position ?? Infinity),
+    );
 
   const day = generatedAt.slice(0, 10);
   const starred = standings.some((s) => !s.rankedInScope);
