@@ -44,8 +44,15 @@ import { LinkedInMark, XMark } from './social-marks';
 
 const PANEL = 'rounded-xl border border-[#2C2C31] bg-white/[0.045]';
 const INDEX_TONE = 'text-white';
+// `color-scheme: dark` is for the native popup. A <select>'s option list is
+// drawn by the OS on Windows and Linux, not by the page, and it takes the
+// system's light theme unless told otherwise — so `text-white` inherited by
+// the options became white on white, and the list looked empty except for
+// the highlighted row (reported from a colleague's machine; macOS paints its
+// own popup and never showed it). The explicit option colours are for the
+// browsers that draw the list themselves but ignore color-scheme.
 const CONTROL =
-  'text-caption h-8 rounded-md border border-white/12 bg-transparent px-2.5 text-white outline-none transition-colors hover:border-white/25 focus:border-primary';
+  'text-caption h-8 rounded-md border border-white/12 bg-transparent px-2.5 text-white outline-none transition-colors hover:border-white/25 focus:border-primary [color-scheme:dark] [&>option]:bg-[#0B0B0D] [&>option]:text-white';
 const CHIP =
   'text-caption rounded-md border px-2.5 py-1 font-medium transition-colors';
 const CHIP_ON = 'border-white/40 bg-white/10 text-white';
