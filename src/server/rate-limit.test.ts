@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { createRateLimiter } from '@/server/rate-limit';
+import { clientIp, createRateLimiter } from '@/server/rate-limit';
 
 const MINUTE = 60_000;
 const DAY = 86_400_000;
@@ -76,5 +76,44 @@ describe('createRateLimiter', () => {
     limiter.check('a', t0 + 2);
     expect(limiter.check('a', t0 + 3).allowed).toBe(false);
     expect(limiter.check('b', t0 + 3).allowed).toBe(true);
+  });
+});
+
+describe('clientIp', () => {
+  const req = (h: Record<string, string>) =>
+    new Request('https://publicai.io/x', { headers: h });
+
+  it('behind Cloudflare, reads only the header Cloudflare overwrites', () => {
+    expect(
+      clientIp(
+        req({
+          'cf-connecting-ip': '203.0.113.9',
+          'x-forwarded-for': '1.1.1.1',
+        }),
+        'cloudflare',
+      ),
+    ).toBe('203.0.113.9');
+    // A forged x-forwarded-for on its own buys nothing.
+    expect(clientIp(req({ 'x-forwarded-for': '1.1.1.1' }), 'cloudflare')).toBe(
+      'unknown',
+    );
+  });
+
+  it('behind nginx, takes the address nginx appended, not the one the client sent', () => {
+    expect(
+      clientIp(req({ 'x-forwarded-for': '9.9.9.9, 203.0.113.9' }), 'nginx'),
+    ).toBe('203.0.113.9');
+    expect(clientIp(req({ 'cf-connecting-ip': '9.9.9.9' }), 'nginx')).toBe(
+      'unknown',
+    );
+  });
+
+  it('with nothing trusted in front, trusts no header at all', () => {
+    expect(
+      clientIp(
+        req({ 'cf-connecting-ip': '9.9.9.9', 'x-forwarded-for': '8.8.8.8' }),
+        'none',
+      ),
+    ).toBe('direct');
   });
 });

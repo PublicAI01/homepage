@@ -85,10 +85,41 @@ export const verifyRateLimiter = createRateLimiter([
   { limit: 100, windowMs: DAY_MS },
 ]);
 
-export function clientIp(request: Request): string {
-  const cfIp = request.headers.get('cf-connecting-ip');
-  if (cfIp) return cfIp.trim();
-  const forwarded = request.headers.get('x-forwarded-for');
-  if (forwarded) return forwarded.split(',')[0].trim();
-  return 'unknown';
+/**
+ * Which proxy's word to take for the visitor's address. A client can put
+ * any value in cf-connecting-ip or x-forwarded-for; only a header a trusted
+ * proxy overwrites on every request can bucket a rate limit, or the limit
+ * is one header away from not existing (a fresh fake address per request,
+ * an unbounded stream of sign-ups into the Resend audience).
+ *
+ *   cloudflare — publicai.io's shape: Cloudflare sets cf-connecting-ip and
+ *                strips the client's own copy. The origin must not be
+ *                reachable except through Cloudflare, or this is moot.
+ *   nginx      — a reverse proxy that sets x-forwarded-for; the last entry
+ *                is the one it appended, everything before it is hearsay.
+ *   none       — nothing in front (local dev): every request shares one
+ *                bucket rather than trusting a header.
+ */
+export type TrustedProxy = 'cloudflare' | 'nginx' | 'none';
+
+export function trustedProxy(): TrustedProxy {
+  const v = process.env.TRUSTED_PROXY?.trim().toLowerCase();
+  if (v === 'cloudflare' || v === 'nginx' || v === 'none') return v;
+  return process.env.NODE_ENV === 'production' ? 'cloudflare' : 'none';
+}
+
+export function clientIp(
+  request: Request,
+  proxy: TrustedProxy = trustedProxy(),
+): string {
+  if (proxy === 'cloudflare') {
+    const cfIp = request.headers.get('cf-connecting-ip')?.trim();
+    return cfIp || 'unknown';
+  }
+  if (proxy === 'nginx') {
+    const forwarded = request.headers.get('x-forwarded-for');
+    const last = forwarded?.split(',').at(-1)?.trim();
+    return last || 'unknown';
+  }
+  return 'direct';
 }

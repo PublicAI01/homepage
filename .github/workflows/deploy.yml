@@ -157,6 +157,7 @@ jobs:
                 -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION \
                 -e RECAPTCHA_SECRET_KEY -e CONTACT_EMAIL_TO -e OFFICIAL_ACCOUNTS_JSON \
                 -e RESEND_API_KEY -e RESEND_AUDIENCE_ID \
+                -e TRUSTED_PROXY=cloudflare \
                 --log-driver json-file \
                 --log-opt max-size=10m --log-opt max-file=3 \
                 "$1"
