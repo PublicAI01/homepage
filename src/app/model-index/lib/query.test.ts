@@ -184,3 +184,20 @@ describe('reports switch', () => {
     }
   });
 });
+
+describe('the taxonomy offers nothing empty', () => {
+  it('never lists a scope that opens with no models in it', () => {
+    // A source can be read and score nothing — a two-model comparison is
+    // dropped before aggregation — and its domain used to be offered anyway.
+    const { scopes } = describeIndex();
+    for (const s of scopes) {
+      expect(
+        ok(rankModels({ scope: s.category, minBoards: 0 })).models.length,
+      ).toBeGreaterThan(0);
+      for (const d of s.domains)
+        expect(
+          ok(rankModels({ scope: d, minBoards: 0 })).models.length,
+        ).toBeGreaterThan(0);
+    }
+  });
+});

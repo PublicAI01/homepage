@@ -64,8 +64,16 @@ const benchById = new Map(benchmarks.map((b) => [b.id, b]));
 const sources = groupBoards(benchmarks);
 
 const taxonomy: [string, string[]][] = (() => {
+  // Built from the measures that actually placed a model, not from every
+  // measure in the snapshot. A source can be read and still score nothing —
+  // a two-model comparison is dropped before aggregation — and listing its
+  // domain anyway offers a column that opens empty.
+  const scored = new Set(
+    rows.flatMap((r) => r.perBenchmark.map((s) => s.benchmarkId)),
+  );
   const m = new Map<string, string[]>();
   for (const b of benchmarks) {
+    if (!scored.has(b.id)) continue;
     const list = m.get(b.category) ?? [];
     if (!list.includes(b.domain)) list.push(b.domain);
     m.set(b.category, list);
