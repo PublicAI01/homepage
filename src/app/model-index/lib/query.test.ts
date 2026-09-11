@@ -9,7 +9,12 @@ import {
   rankModels,
   resolveScope,
 } from './query';
-import { MIN_SOURCES, WEIGHTING } from './weights';
+import {
+  MIN_BOARDS_TO_VOTE_IN,
+  MIN_MODELS_FOR_HEADLINE,
+  MIN_SOURCES,
+  WEIGHTING,
+} from './weights';
 
 const ok = (r: ReturnType<typeof rankModels>) => {
   if ('error' in r) throw new Error(r.error);
@@ -199,5 +204,38 @@ describe('the taxonomy offers nothing empty', () => {
           ok(rankModels({ scope: d, minBoards: 0 })).models.length,
         ).toBeGreaterThan(0);
     }
+  });
+
+  it('offers a domain only when boards voted it in or it is broad enough', () => {
+    // One board's sub-score wearing a domain's name is not a headline
+    // ranking. Voted in by several boards, or wide on the one — otherwise
+    // it stays on the model pages and off the Rank-by strip.
+    const { scopes } = describeIndex();
+    for (const s of scopes)
+      for (const d of s.domains) {
+        const r = ok(rankModels({ scope: `domain:${d}`, reports: false }));
+        const boards = r.scopeBoards ?? 0;
+        expect(boards, d).toBeGreaterThanOrEqual(1);
+        if (boards < MIN_BOARDS_TO_VOTE_IN)
+          expect(r.total, d).toBeGreaterThanOrEqual(MIN_MODELS_FOR_HEADLINE);
+      }
+  });
+
+  it('keeps every domain reachable by link, listed or not', () => {
+    // A quieter domain is off the strip, not out of the data: an agent or a
+    // saved link still resolves it, and the model page still shows it.
+    const listed = new Set(describeIndex().scopes.flatMap((s) => s.domains));
+    // Only domains that placed a model: a measure that scored nothing has
+    // no ranking to reach, listed or not.
+    const scored = new Set(
+      ok(rankModels({ minBoards: 0, limit: 1000 })).models.flatMap((m) => {
+        const d = getModel(m.id);
+        return 'error' in d ? [] : d.model.figures.map((f) => f.domain);
+      }),
+    );
+    const hidden = [...scored].filter((d) => !listed.has(d));
+    expect(hidden.length).toBeGreaterThan(0);
+    for (const d of hidden)
+      expect(resolveScope(`domain:${d}`), d).not.toBeNull();
   });
 });

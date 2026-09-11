@@ -16,6 +16,8 @@ import {
   BOARD_MEASURE_WEIGHT,
   categoryRank,
   INDEPENDENT_REPORT_WEIGHT,
+  MIN_BOARDS_TO_VOTE_IN,
+  MIN_MODELS_FOR_HEADLINE,
   MIN_SOURCES,
   OVERALL,
   PRIOR_FRACTION,
@@ -363,7 +365,10 @@ export function rankModels(q: RankQuery = {}) {
   if (!scope) {
     return {
       error: `Unknown scope "${q.scope}". Use "overall", a category or a domain; see describe_index.`,
-      scopes: taxonomy.map(([category, domains]) => ({ category, domains })),
+      scopes: headlineTaxonomy().map(([category, domains]) => ({
+        category,
+        domains,
+      })),
     };
   }
   const minBoards = q.minBoards ?? MIN_SOURCES;
@@ -471,6 +476,36 @@ export function getModel(query: string) {
   };
 }
 
+/**
+ * The taxonomy a reader is offered to rank by: every category, and only the
+ * domains that are voted in by several boards or broad enough on one (see
+ * weights.ts). `taxonomy` itself stays complete so a direct link or an
+ * agent's query to a quieter domain still resolves.
+ */
+export function isHeadlineDomain(boards: number, models: number) {
+  return (
+    boards >= MIN_BOARDS_TO_VOTE_IN ||
+    (boards >= 1 && models >= MIN_MODELS_FOR_HEADLINE)
+  );
+}
+
+let headlineCache: [string, string[]][] | undefined;
+export function headlineTaxonomy(): [string, string[]][] {
+  if (headlineCache) return headlineCache;
+  headlineCache = taxonomy.map(([category, domains]) => [
+    category,
+    domains.filter((domain) => {
+      const r = rankModels({
+        scope: `domain:${domain}`,
+        reports: false,
+        limit: 1,
+      });
+      return 'total' in r && isHeadlineDomain(r.scopeBoards ?? 0, r.total);
+    }),
+  ]);
+  return headlineCache;
+}
+
 export function describeIndex() {
   const boards = sources.filter((s) => s.kind !== 'report');
   const reports = sources.filter((s) => s.kind === 'report');
@@ -489,7 +524,8 @@ export function describeIndex() {
       reports: reports.length,
       measures: benchmarks.length,
       categories: taxonomy.length,
-      domains: taxonomy.reduce((n, [, d]) => n + d.length, 0),
+      /** Domains offered as headline rankings; every domain a board measured is still on the model pages and resolvable by name. */
+      domains: headlineTaxonomy().reduce((n, [, d]) => n + d.length, 0),
     },
     method: [
       'Each measure is z-scored across the models its source lists and mapped to 0–100 (mean 50, sd 15).',
@@ -497,6 +533,7 @@ export function describeIndex() {
       `A model absent from a source is excluded from that term, never imputed; a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the in-scope weight pulls thin evidence toward 50.`,
       `Overall ranks a model once ${MIN_SOURCES} independent publishers among the boards that build the index have scored it — a board that shapes only a domain does not count toward it; otherwise the model is provisional. A category or domain ranks any model a recognised board has measured there.`,
       `Reports (launch posts, blogs) are marked ✱ and shape their domain only, never the Overall index. An independent write-up carries ${INDEPENDENT_REPORT_WEIGHT} against a board measure's ${BOARD_MEASURE_WEIGHT}; a figure the model's own publisher printed carries ${VENDOR_REPORT_WEIGHT}.`,
+      `scopes lists the domains offered as headline rankings: measured by at least ${MIN_BOARDS_TO_VOTE_IN} boards, or by one board that ranks at least ${MIN_MODELS_FOR_HEADLINE} models there. Every other domain a board measured is still on the model pages and accepted as a scope by name.`,
       'A model with no Overall index gets an estimate ✱ (estimatedIndex): its figures on each shared measure are placed among models that have an index, and theirs is read at that position; outside their range the nearest anchor is a bound (ceiling or floor), not a point. Never a rank.',
     ],
     overallWeighting: boards
@@ -526,7 +563,10 @@ export function describeIndex() {
     })),
     excluded,
     catalogs,
-    scopes: taxonomy.map(([category, domains]) => ({ category, domains })),
+    scopes: headlineTaxonomy().map(([category, domains]) => ({
+      category,
+      domains,
+    })),
     access: recommend(undefined).rule,
     limits: [
       'Reasoning-effort tiers are matched by rule; the highest published tier is indexed and the exact label kept.',

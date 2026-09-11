@@ -29,7 +29,6 @@ import {
   type ViewState,
 } from '../lib/view-state';
 import {
-  categoryRank,
   domainLabel,
   FALLBACK_BADGE,
   MIN_SOURCES,
@@ -70,6 +69,9 @@ interface Props {
   /** Models that entered the index recently — computed on the server, because
       the history file is a quarter of a megabyte and this is a list of ids. */
   newcomers: { ids: string[]; from: string; until: string };
+  /** category → the domains offered as headline rankings (see weights.ts).
+      Decided on the server so the chips and the API agree on what is listed. */
+  headline: [string, string[]][];
 }
 
 /* Twenty, not ten: the exported chart is portrait for phone timelines, and
@@ -253,6 +255,7 @@ export default function IndexTable({
   catalogs,
   generatedAt,
   newcomers,
+  headline,
 }: Props) {
   const searchParams = useSearchParams();
   // The URL sets the filters on first render — on the server and the client
@@ -312,19 +315,16 @@ export default function IndexTable({
     [sources],
   );
 
-  /** category → its domains, in first-seen order; categories in display order. */
-  const taxonomy = useMemo(() => {
-    const m = new Map<string, string[]>();
-    for (const b of benchmarks) {
-      const list = m.get(b.category) ?? [];
-      if (!list.includes(b.domain)) list.push(b.domain);
-      m.set(b.category, list);
-    }
-    return [...m.entries()].sort(
-      (a, b) =>
-        categoryRank(a[0]) - categoryRank(b[0]) || a[0].localeCompare(b[0]),
+  // A domain reached by link that is not offered as a headline still gets
+  // its chip, so the URL and the chips never disagree about what is ranked.
+  const taxonomy = useMemo<[string, string[]][]>(() => {
+    if (rankKey.level !== 'domain') return headline;
+    return headline.map(([category, domains]) =>
+      category === rankKey.category && !domains.includes(rankKey.domain)
+        ? [category, [...domains, rankKey.domain]]
+        : [category, domains],
     );
-  }, [benchmarks]);
+  }, [headline, rankKey]);
 
   const families = useMemo(
     () =>

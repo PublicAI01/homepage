@@ -18,7 +18,7 @@ import {
 } from './data';
 import { groupBoards } from './lib/boards';
 import { enteredSince } from './lib/changes';
-import { API_URL, MCP_URL } from './lib/query';
+import { API_URL, headlineTaxonomy, MCP_URL } from './lib/query';
 import { SIZE_TIERS } from './lib/size';
 import { decodeView, encodeView, rankName } from './lib/view-state';
 import {
@@ -126,6 +126,10 @@ const method = [
   {
     title: 'Two publishers to rank',
     text: 'Overall ranks a model once two independent publishers among the boards that build the index have scored it — a board that shapes only a domain does not count. A domain ranks on its own board evidence.',
+  },
+  {
+    title: 'A domain must earn its column',
+    text: 'Rank by offers a domain only when several boards measure it, or one board ranks at least twenty models there. A single board’s sub-score is not offered as a peer of Coding; it stays on each model’s page.',
   },
   {
     title: 'Reports ✱ stay out of the headline',
@@ -304,6 +308,7 @@ export default function ModelIndex() {
                 catalogs={catalogs}
                 generatedAt={generatedAt}
                 newcomers={newcomers}
+                headline={headlineTaxonomy()}
               />
             </Suspense>
           </main>

@@ -124,6 +124,25 @@ export const PRIOR_FRACTION = 0.25;
  */
 export const MIN_SOURCES = 2;
 
+/**
+ * What it takes for a domain to be offered as a headline ranking.
+ *
+ * The categories are the divisions a person actually thinks in — coding,
+ * agents, reasoning, professional work. The domains beneath them are how the
+ * benchmarks happened to slice things, and most are a single board's
+ * sub-score wearing a domain's name. Ranking by "Code editing" is ranking by
+ * Aider; ranking by "Multimodal understanding" was one model. Neither is a
+ * ranking a reader should be handed as a peer of Coding.
+ *
+ * Two ways in. A domain that several boards measure independently is voted
+ * in — the field has agreed it is a thing worth measuring, whatever its size.
+ * A domain only one board measures has to be broad enough on its own: at
+ * least this many models ranked. Everything else stays in the data and on
+ * every model's page; it is just not offered as a headline.
+ */
+export const MIN_BOARDS_TO_VOTE_IN = 2;
+export const MIN_MODELS_FOR_HEADLINE = 20;
+
 /** Display order of the top-level categories. Anything unlisted goes after, alphabetically. */
 export const CATEGORY_ORDER = [
   'Human preference',
