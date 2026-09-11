@@ -415,6 +415,28 @@ export default function IndexTable({
     return m;
   }, [filtered, rankKey, rankOf]);
   const coverable = rows[0]?.coverable ?? boards.length;
+  // How many boards measure the current scope — the denominator a reader
+  // needs beside a domain score. "5/15" is Overall coverage, and in a domain
+  // it answered the wrong question: DeepSeek V4.1 Flash led Agentic coding
+  // on two of that domain's three boards, missing the one where the models
+  // below it are strongest, and the row said 5/15.
+  const scopeBoardTotal = useMemo(() => {
+    if (rankKey.level === 'overall') return coverable;
+    const inScope = benchmarks.filter((b) =>
+      b.kind === 'report'
+        ? false
+        : rankKey.level === 'category'
+          ? b.category === rankKey.category
+          : b.domain === rankKey.domain,
+    );
+    return new Set(inScope.map((b) => b.group)).size;
+  }, [rankKey, benchmarks, coverable]);
+  const scopeCovered = (r: AggregateRow) =>
+    rankKey.level === 'overall'
+      ? r.covered
+      : rankKey.level === 'category'
+        ? (r.boardsByCategory[rankKey.category] ?? 0)
+        : (r.boardsByDomain[rankKey.domain] ?? 0);
   const catalogDate = catalogs[0]?.retrievedAt;
 
   /**
@@ -846,6 +868,9 @@ export default function IndexTable({
                 isNew={isNew.has(row.model.id)}
                 position={positionOf.get(row.model.id)}
                 inScope={eligible(row, rankKey)}
+                scopeCovered={scopeCovered(row)}
+                scopeBoardTotal={scopeBoardTotal}
+                scoped={rankKey.level !== 'overall'}
                 rankKey={rankKey}
                 taxonomy={taxonomy}
                 boards={boards}
@@ -897,6 +922,9 @@ function Row({
   open,
   onToggle,
   isNew,
+  scopeCovered,
+  scopeBoardTotal,
+  scoped,
 }: {
   row: AggregateRow;
   rank: number | undefined;
@@ -912,8 +940,14 @@ function Row({
   open: boolean;
   onToggle: () => void;
   isNew: boolean;
+  /** Boards that scored this model in the current scope, out of those that measure it. */
+  scopeCovered: number;
+  scopeBoardTotal: number;
+  scoped: boolean;
 }) {
-  const thin = row.ranked && row.covered < row.coverable;
+  const thin = scoped
+    ? scopeCovered < scopeBoardTotal
+    : row.ranked && row.covered < row.coverable;
   const scored = new Map(row.perBenchmark.map((s) => [s.benchmarkId, s]));
   const reportsScoring = reports.filter((r) =>
     r.measures.some((m) => scored.has(m.id)),
@@ -1035,8 +1069,13 @@ function Row({
               className={cn(
                 'text-caption ml-1.5 font-mono',
                 thin ? 'text-[#F5C86B]' : 'text-[#78758A]',
-              )}>
-              {row.covered}/{row.coverable}
+              )}
+              title={
+                scoped
+                  ? `Measured by ${scopeCovered} of the ${scopeBoardTotal} boards that cover this scope${scopeCovered < scopeBoardTotal ? ' — its score here averages fewer boards than a fully-covered model’s' : ''}`
+                  : `Scored by ${row.covered} of ${row.coverable} recognised boards`
+              }>
+              {scoped ? `${scopeCovered}/${scopeBoardTotal}` : `${row.covered}/${row.coverable}`}
             </span>
           </span>
         </td>
