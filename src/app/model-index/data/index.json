@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T02:08:56.503Z",
+  "generatedAt": "2026-09-11T11:09:30.239Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -1971,8 +1971,8 @@
           "id": "deepseek/deepseek-chat-v3-0324",
           "url": "https://openrouter.ai/deepseek/deepseek-chat-v3-0324",
           "contextLength": 163840,
-          "inputPerM": 0.29,
-          "outputPerM": 1.14,
+          "inputPerM": 0.25,
+          "outputPerM": 1,
           "listedAt": "2025-03-24",
           "modalities": ["text"]
         },
@@ -2538,8 +2538,8 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
           "contextLength": 1048576,
-          "inputPerM": 1.049,
-          "outputPerM": 3.148,
+          "inputPerM": 0.66,
+          "outputPerM": 1.98,
           "listedAt": "2026-08-12",
           "modalities": ["text"]
         },
@@ -7285,6 +7285,7 @@
         }
       }
     },
+    { "id": "agnes-3-0-flash", "name": "Agnes 3.0 Flash", "org": "Sapiens AI" },
     {
       "id": "ling-3-0-flash",
       "name": "Ling 3.0 Flash",
@@ -7443,8 +7444,8 @@
           "id": "meta-llama/llama-3.1-70b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.1-70b-instruct",
           "contextLength": 131072,
-          "inputPerM": 0.72,
-          "outputPerM": 0.72,
+          "inputPerM": 0.4,
+          "outputPerM": 0.4,
           "listedAt": "2024-07-23",
           "modalities": ["text"]
         },
@@ -9404,8 +9405,8 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.3,
-          "outputPerM": 1.2,
+          "inputPerM": 0.15,
+          "outputPerM": 0.6,
           "listedAt": "2026-09-10",
           "modalities": ["text", "image"]
         },
@@ -17151,15 +17152,15 @@
     {
       "modelId": "agnes-2-5-pro-alpha",
       "benchmarkId": "aa-gdpval",
-      "raw": 1093,
+      "raw": 1088,
       "stderr": 17,
       "sourceLabel": "Agnes 2.5 Pro Alpha"
     },
     {
       "modelId": "agnes-2-5-pro-alpha",
       "benchmarkId": "aa-briefcase",
-      "raw": 1196,
-      "stderr": 9.5,
+      "raw": 1195,
+      "stderr": 9,
       "sourceLabel": "Agnes 2.5 Pro Alpha"
     },
     {
@@ -21724,6 +21725,13 @@
       "raw": 1349,
       "stderr": 8,
       "sourceLabel": "step-3"
+    },
+    {
+      "modelId": "agnes-3-0-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1573,
+      "stderr": 22,
+      "sourceLabel": "Agnes 3.0 Flash"
     },
     {
       "modelId": "ling-3-0-flash",
