@@ -222,16 +222,31 @@ export function aggregate({
   const overallWeight = sumWeight(
     weighted.filter((b) => overallIds.has(b.id)).map((b) => b.id),
   );
+  // The prior in a domain or category is measured against the recognised
+  // boards that score it, not against every measure filed there. Counting a
+  // report ✱ in the denominator made a report's mere existence pull toward
+  // 50 the score of every model it never mentioned: on 2026-09-11 Claude
+  // Fable 5.1 read 70.9 in Knowledge work with reports on and 72.7 with them
+  // off, with no report figure of its own in that domain — while the toggle
+  // is documented as removing only the reports' own figures. Where no board
+  // measures the scope, the reports are all the evidence there is, and the
+  // prior is measured against them as before.
+  const priorWeight = (inScope: Benchmark[]) => {
+    const boards = sumWeight(
+      inScope.filter((b) => b.kind !== 'report').map((b) => b.id),
+    );
+    return boards > 0 ? boards : sumWeight(inScope.map((b) => b.id));
+  };
   const domainWeight = new Map(
     domains.map((d) => [
       d,
-      sumWeight(weighted.filter((b) => b.domain === d).map((b) => b.id)),
+      priorWeight(weighted.filter((b) => b.domain === d)),
     ]),
   );
   const categoryWeight = new Map(
     categories.map((c) => [
       c,
-      sumWeight(weighted.filter((b) => b.category === c).map((b) => b.id)),
+      priorWeight(weighted.filter((b) => b.category === c)),
     ]),
   );
 

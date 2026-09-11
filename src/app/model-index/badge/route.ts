@@ -1,4 +1,4 @@
-import { getModel, rankModels, resolveScope, scopeLabel } from '../lib/query';
+import { getModel, positionIn, resolveScope, scopeLabel } from '../lib/query';
 
 /**
  * An SVG badge for a model's README or launch post:
@@ -9,6 +9,12 @@ import { getModel, rankModels, resolveScope, scopeLabel } from '../lib/query';
  * Renders the live position, so a badge never goes stale; the tooltip
  * carries the snapshot date. Provisional models show "provisional", an
  * estimate shows "~55✱", and a position placed by reports alone shows ✱.
+ *
+ * The position comes from the scope's full list, not the API's first
+ * hundred rows: a model at #120 in Agentic coding is measured there, and
+ * a badge that said "not scored" was stating the opposite of the record.
+ * A scope that does not resolve says so, rather than "not listed", which
+ * would deny a model that is (2026-09-11).
  */
 const esc = (s: string) =>
   s
@@ -28,10 +34,12 @@ export function GET(request: Request) {
   let value = 'not listed';
   let title = 'No such model on the PublicAI Index';
   let tone = '#6F6D7A';
-  if (!('error' in found) && scope) {
+  if (!('error' in found)) {
     const m = found.model;
-    const where = scopeLabel(scope);
-    if (scope.level === 'overall') {
+    title = `${m.name} on the PublicAI Index, snapshot ${found.generatedAt.slice(0, 10)}. Scores are 0–100 standardized; ✱ from reports.`;
+    if (!scope) {
+      value = 'unknown scope';
+    } else if (scope.level === 'overall') {
       value = m.ranked
         ? `#${m.rank} · ${m.index?.toFixed(1)}`
         : m.estimatedIndex
@@ -39,13 +47,11 @@ export function GET(request: Request) {
           : 'provisional';
       tone = m.ranked ? '#4000C8' : '#6F6D7A';
     } else {
-      const list = rankModels({
+      const where = scopeLabel(scope);
+      const row = positionIn(m.id, {
         scope: p.get('scope') ?? undefined,
         minBoards: 0,
-        limit: 100,
       });
-      const row =
-        'error' in list ? undefined : list.models.find((x) => x.id === m.id);
       if (row) {
         value = `${where} #${row.position}${row.rankedInScope ? '' : '✱'} · ${row.scopeScore?.toFixed(1)}`;
         tone = row.rankedInScope ? '#4000C8' : '#7A5CFF';
@@ -53,7 +59,6 @@ export function GET(request: Request) {
         value = `${where}: not scored`;
       }
     }
-    title = `${m.name} on the PublicAI Index, snapshot ${found.generatedAt.slice(0, 10)}. Scores are 0–100 standardized; ✱ from reports.`;
   }
   const lw = width(label);
   const vw = width(value);

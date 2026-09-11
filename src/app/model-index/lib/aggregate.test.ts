@@ -475,6 +475,50 @@ describe('reports and categories', () => {
       6,
     );
   });
+
+  it('does not let a report’s existence move the score of a model it never mentioned', () => {
+    // m4 is scored by board a alone in Coding; the report r:x never lists
+    // it. Its Coding score must be the same whether the report carries
+    // weight or not — the toggle is documented as removing the report's
+    // own figures, nothing else. It was not: the prior was measured against
+    // every measure in scope, report included, so adding a report to a
+    // domain pulled every unmentioned model toward 50 (2026-09-11).
+    const run = (reportWeight: number) =>
+      aggregate({
+        models: [...ms, model('m4')],
+        benchmarks: bs,
+        scores: [...ss, score('m4', 'a', 70)],
+        weights: { a: 50, b: 50, 'r:x': reportWeight },
+        overall: new Set(['a', 'b']),
+        priorFraction: 0.25,
+        minSources: 2,
+      });
+    const coding = (w: number) =>
+      run(w).find((r) => r.model.id === 'm4')!.byCategory.Coding!;
+    expect(coding(10)).toBeCloseTo(coding(0), 9);
+    // And the report still shapes the column for a model it does list.
+    const m1 = (w: number) =>
+      run(w).find((r) => r.model.id === 'm1')!.byCategory.Coding!;
+    expect(m1(10)).not.toBeCloseTo(m1(0), 6);
+  });
+
+  it('still shrinks a scope that only reports measure, against their weight', () => {
+    const out = aggregate({
+      models: ms,
+      benchmarks: bs,
+      scores: ss,
+      weights: { a: 50, b: 50, 'r:x': 10 },
+      overall: new Set(['a', 'b']),
+      priorFraction: 0.25,
+      minSources: 2,
+    });
+    const m1 = out.find((r) => r.model.id === 'm1')!;
+    const rx = m1.perBenchmark.find((s) => s.benchmarkId === 'r:x')!;
+    expect(m1.byDomain['Tool use']).toBeCloseTo(
+      (rx.normalized * 10 + 50 * 0.25 * 10) / (10 + 0.25 * 10),
+      6,
+    );
+  });
 });
 
 describe('weighting', () => {

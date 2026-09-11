@@ -360,7 +360,21 @@ export interface RankQuery {
   must?: string[];
 }
 
-export function rankModels(q: RankQuery = {}) {
+/**
+ * Every row a query lists, in order, before the response cap. One filter and
+ * one comparator for the API, the MCP server and the badge, so a position
+ * means the same thing wherever it is printed.
+ */
+type Listed =
+  | { error: string; scopes: { category: string; domains: string[] }[] }
+  | {
+      scope: Scope;
+      out: AggregateRow[];
+      minBoards: number;
+      includeReports: boolean;
+    };
+
+function listScope(q: RankQuery): Listed {
   const scope = resolveScope(q.scope);
   if (!scope) {
     return {
@@ -372,7 +386,6 @@ export function rankModels(q: RankQuery = {}) {
     };
   }
   const minBoards = q.minBoards ?? MIN_SOURCES;
-  const limit = Math.max(1, Math.min(q.limit ?? 20, 100));
   const orgQ = q.org ? fold(q.org) : null;
   const includeReports = q.reports ?? true;
   const set = includeReports ? WITH : WITHOUT;
@@ -407,11 +420,42 @@ export function rankModels(q: RankQuery = {}) {
     // board-measured rows remain in the scope.
     out = [...out].filter((r) => includeReports || eligible(r, scope)).sort(by);
   }
-  let n = 0;
-  const models = out.slice(0, limit).map((r) => {
+  return { scope, out, minBoards, includeReports };
+}
+
+/** Place in the listed order: the rank on Overall (null when provisional), the row number in a scope. */
+const positionAt = (out: AggregateRow[], i: number, scope: Scope) =>
+  scope.level === 'overall'
+    ? out[i].ranked
+      ? out.slice(0, i + 1).filter((r) => r.ranked).length
+      : null
+    : i + 1;
+
+/**
+ * One model's row in a query's full list, uncapped. The badge asks this:
+ * it used to read the first hundred rows of rankModels and print "not
+ * scored" for any model placed below them, which in every headline scope
+ * was a real, measured position (2026-09-11).
+ */
+export function positionIn(modelId: string, q: RankQuery = {}) {
+  const listed = listScope(q);
+  if ('error' in listed) return null;
+  const { scope, out } = listed;
+  const i = out.findIndex((r) => r.model.id === modelId);
+  if (i === -1) return null;
+  const m = summarize(out[i], scope);
+  m.position = positionAt(out, i, scope);
+  return m;
+}
+
+export function rankModels(q: RankQuery = {}) {
+  const listed = listScope(q);
+  if ('error' in listed) return listed;
+  const { scope, out, minBoards, includeReports } = listed;
+  const limit = Math.max(1, Math.min(q.limit ?? 20, 100));
+  const models = out.slice(0, limit).map((r, i) => {
     const m = summarize(r, scope);
-    if (scope.level === 'overall') m.position = m.ranked ? ++n : null;
-    else m.position = ++n;
+    m.position = positionAt(out, i, scope);
     return m;
   });
   const inScope =
