@@ -2,6 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { POST } from './route';
 
+// The route buckets by the address Cloudflare vouches for, as in production.
+process.env.TRUSTED_PROXY = 'cloudflare';
+
 const post = (
   body: unknown,
   ip: string,
