@@ -1125,7 +1125,7 @@ function ModelCard({
             rel="noreferrer"
             className="text-caption text-p1 border-p1/40 bg-p1/10 hover:border-p1/70 hover:bg-p1/20 ml-auto inline-flex shrink-0 items-center gap-1.5 rounded-md border px-2.5 py-1 font-medium transition-colors"
             onClick={(e) => e.stopPropagation()}>
-            Every domain, every source ↗
+            See details ↗
           </a>
         </div>
         <p className="text-caption text-[#9C9AA8]">
