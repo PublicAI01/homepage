@@ -22716,7 +22716,7 @@
     },
     {
       "date": "2026-09-11",
-      "generatedAt": "2026-09-11T02:08:56.503Z",
+      "generatedAt": "2026-09-11T11:09:30.239Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -23900,6 +23900,13 @@
           "rank": null,
           "covered": 1
         },
+        "agnes-3-0-flash": {
+          "name": "Agnes 3.0 Flash",
+          "org": "Sapiens AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
         "ernie-5-0-preview-1022": {
           "name": "Ernie 5.0 Preview 1022",
           "org": "Baidu",
@@ -24074,6 +24081,13 @@
           "index": null,
           "rank": null,
           "covered": 1
+        },
+        "agnes-2-5-pro-alpha": {
+          "name": "Agnes 2.5 Pro Alpha",
+          "org": "Sapiens AI",
+          "index": null,
+          "rank": null,
+          "covered": 2
         },
         "gemini-2-5-flash": {
           "name": "Gemini 2.5 Flash",
@@ -24879,13 +24893,6 @@
           "index": 51.4,
           "rank": null,
           "covered": 1
-        },
-        "agnes-2-5-pro-alpha": {
-          "name": "Agnes 2.5 Pro Alpha",
-          "org": "Sapiens AI",
-          "index": null,
-          "rank": null,
-          "covered": 2
         },
         "deepseek-chat-v3-prev": {
           "name": "DeepSeek Chat V3 (prev)",
