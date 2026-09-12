@@ -73,7 +73,12 @@ export interface AggregateRow {
   evidence: number;
   /** Scored by enough boards to be placed in the ranking. */
   ranked: boolean;
-  /** Spread of the model's normalized scores. High means the boards disagree. */
+  /**
+   * Spread of the model's normalized scores across every recognised board
+   * measure that scored it — the same boards `covered` counts, so "boards
+   * disagree" and "scored by N boards" describe one set. Reports ✱ are left
+   * out, as they are from `covered`.
+   */
   dispersion: number;
   /**
    * For a model with no Overall score: an estimate anchored on models that
@@ -385,7 +390,13 @@ export function aggregate({
       // Pro sat at #20 on ARC-AGI-2 alone. An index whose case is that no
       // single benchmark can be tuned to it cannot rank half its field on one.
       ranked: overallPublishers >= minSources && score !== null,
-      dispersion: stdDev(inOverall.map((s) => s.normalized)),
+      // Over the recognised boards, not only the Overall measures. Measured
+      // on `inOverall` while the "boards agree" label was gated on `covered`,
+      // a model scored by five boards of which one builds the Overall index
+      // had a dispersion of exactly 0 — one number has no spread — and 167
+      // models read "consistent" on the API for boards that were never
+      // compared (2026-09-12).
+      dispersion: stdDev(boardScores.map((s) => s.normalized)),
       estimate: null,
     };
   });

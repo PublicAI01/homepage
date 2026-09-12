@@ -218,6 +218,52 @@ describe('aggregate', () => {
     expect(m1.dispersion).toBeGreaterThan(m2.dispersion);
   });
 
+  it('measures dispersion over every recognised board, not only the Overall ones', () => {
+    // Board c shapes a domain but not the Overall index. m1 tops a and
+    // trails c: the boards disagree, and a reader told "scored by 2 boards"
+    // must be told so — dispersion over the one Overall measure alone is
+    // zero, which reads as "consistent" (2026-09-12).
+    const out = aggregate({
+      models: ms,
+      benchmarks: [bench('a'), bench('c')],
+      scores: [
+        score('m1', 'a', 90),
+        score('m2', 'a', 50),
+        score('m3', 'a', 10),
+        score('m1', 'c', 10),
+        score('m2', 'c', 50),
+        score('m3', 'c', 90),
+      ],
+      weights: { a: 50, c: 50 },
+      overall: new Set(['a']),
+    });
+    const m1 = out.find((r) => r.model.id === 'm1')!;
+    const m2 = out.find((r) => r.model.id === 'm2')!;
+    expect(m1.covered).toBe(2);
+    expect(m1.dispersion).toBeGreaterThan(0);
+    expect(m1.dispersion).toBeGreaterThan(m2.dispersion);
+  });
+
+  it('leaves report figures out of dispersion, as out of coverage', () => {
+    const out = aggregate({
+      models: ms,
+      benchmarks: [bench('a'), bench('r', 'r', { kind: 'report' })],
+      scores: [
+        score('m1', 'a', 90),
+        score('m2', 'a', 50),
+        score('m3', 'a', 10),
+        score('m1', 'r', 10),
+        score('m2', 'r', 50),
+        score('m3', 'r', 90),
+      ],
+      weights: { a: 50, r: 10 },
+      overall: new Set(['a']),
+    });
+    const m1 = out.find((r) => r.model.id === 'm1')!;
+    expect(m1.covered).toBe(1);
+    expect(m1.dispersion).toBe(0);
+  });
+
   it('down-weights a score whose publisher reports a wide error bar', () => {
     // Board a and board b rank the models in opposite orders, so b is what
     // drags m1 down. Widening only b's error bars must lift m1.
