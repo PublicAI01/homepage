@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T03:30:43.209Z",
+  "generatedAt": "2026-09-12T10:38:09.575Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -2600,8 +2600,8 @@
           "id": "deepseek/deepseek-v4-flash-0731",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
           "contextLength": 1310720,
-          "inputPerM": 0.065,
-          "outputPerM": 0.18,
+          "inputPerM": 0.04,
+          "outputPerM": 0.08,
           "listedAt": "2026-07-31",
           "modalities": ["text"]
         },
@@ -5505,8 +5505,8 @@
           "id": "minimax/minimax-m2.5",
           "url": "https://openrouter.ai/minimax/minimax-m2.5",
           "contextLength": 204800,
-          "inputPerM": 0.3,
-          "outputPerM": 1.2,
+          "inputPerM": 0.27,
+          "outputPerM": 1.08,
           "listedAt": "2026-02-12",
           "modalities": ["text"]
         },
@@ -10700,8 +10700,8 @@
           "id": "z-ai/glm-5.3-flash",
           "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
           "contextLength": 1310720,
-          "inputPerM": 0.15,
-          "outputPerM": 0.5,
+          "inputPerM": 0.075,
+          "outputPerM": 0.25,
           "listedAt": "2026-08-26",
           "modalities": ["text", "image", "video"]
         },
@@ -20904,15 +20904,15 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1571,
+      "raw": 1569,
       "stderr": 14,
       "sourceLabel": "Kimi K3 (max)"
     },
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1494,
-      "stderr": 6.5,
+      "raw": 1493,
+      "stderr": 5.5,
       "sourceLabel": "Kimi K3 (max)"
     },
     {
@@ -33097,15 +33097,15 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1657,
+      "raw": 1656,
       "stderr": 15,
       "sourceLabel": "GLM-5.3-Flash"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-briefcase",
-      "raw": 1450,
-      "stderr": 8.5,
+      "raw": 1449,
+      "stderr": 9,
       "sourceLabel": "GLM-5.3-Flash"
     },
     {

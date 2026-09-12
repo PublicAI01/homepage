@@ -28399,7 +28399,7 @@
     },
     {
       "date": "2026-09-12",
-      "generatedAt": "2026-09-12T03:30:43.209Z",
+      "generatedAt": "2026-09-12T10:38:09.575Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -29038,13 +29038,6 @@
           "rank": null,
           "covered": 1
         },
-        "agnes-3-0-flash": {
-          "name": "Agnes 3.0 Flash",
-          "org": "Sapiens AI",
-          "index": null,
-          "rank": null,
-          "covered": 1
-        },
         "muse-spark": {
           "name": "Muse Spark",
           "org": "Meta",
@@ -29062,6 +29055,13 @@
         "moonshotai-kimi-k2": {
           "name": "Moonshotai/kimi K2",
           "org": "Moonshot",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "agnes-3-0-flash": {
+          "name": "Agnes 3.0 Flash",
+          "org": "Sapiens AI",
           "index": null,
           "rank": null,
           "covered": 1
