@@ -117,8 +117,12 @@ mail_out() {
 
 # The fix session's own words for what it left to a person — the block it is
 # told to end with. Empty when it skipped nothing.
+# Empty when nothing was skipped: the fix session writes the heading every
+# time, and "本轮无跳过项" under it is not something to mail a person about
+# (2026-09-12: "修了 1 处,0 处要你拍板" went out as a section of the digest).
 skipped_summary() {
   [ -f "${FIX_OUT:-/nonexistent}" ] || return 0
+  [ "${NSKIP:-0}" -gt 0 ] || return 0
   sed -n '/^【跳过项·大白话总结】/,$p' "$FIX_OUT" | sed '/^【已发信】/,$d'
 }
 
