@@ -8,7 +8,11 @@ export { diff } from './diff';
  * The change feed over the history file the refresh job appends to. Agents
  * poll this; the RSS feed and the weekly digest are views of the same diff.
  */
-const entries = (history as { entries: HistoryEntry[] }).entries;
+// Through `unknown`: TypeScript types the JSON import literally, and once
+// the snapshots disagree on which model ids exist (a rename, 2026-09-11)
+// the literal type no longer "sufficiently overlaps" HistoryEntry[] and
+// the build fails on a data change.
+const entries = (history as unknown as { entries: HistoryEntry[] }).entries;
 
 export const snapshots = () => entries.map((e) => e.date);
 export const latest = () => entries[entries.length - 1];
