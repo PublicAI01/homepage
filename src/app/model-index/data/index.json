@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T10:38:09.575Z",
+  "generatedAt": "2026-09-13T11:41:43.687Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -7,7 +7,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "snapshot": "8,126,041 votes across 401 models",
       "metric": "elo",
       "category": "Human preference",
@@ -23,7 +23,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/leaderboards/models",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "index",
       "category": "General",
       "domain": "General intelligence",
@@ -38,7 +38,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "elo",
       "category": "Agents",
       "domain": "Knowledge work",
@@ -53,7 +53,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/evaluations/aa-briefcase",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "elo",
       "category": "Agents",
       "domain": "Knowledge work",
@@ -68,7 +68,7 @@
       "publisher": "Terminal-Bench",
       "independent": true,
       "url": "https://www.tbench.ai/leaderboard",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "snapshot": "Top entry dated Sep 3, 2026",
       "metric": "percent",
       "category": "Coding",
@@ -84,7 +84,7 @@
       "publisher": "ARC Prize",
       "independent": true,
       "url": "https://arcprize.org/leaderboard",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Reasoning",
@@ -99,7 +99,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "index",
       "category": "General",
       "domain": "General intelligence",
@@ -114,7 +114,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "index",
       "category": "Reasoning",
       "domain": "Reasoning",
@@ -129,7 +129,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "index",
       "category": "Coding",
       "domain": "Code generation",
@@ -144,7 +144,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "index",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -159,7 +159,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "index",
       "category": "Reasoning",
       "domain": "Mathematics",
@@ -174,7 +174,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "index",
       "category": "General",
       "domain": "Data analysis",
@@ -189,7 +189,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "index",
       "category": "General",
       "domain": "Language",
@@ -204,7 +204,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "index",
       "category": "General",
       "domain": "Instruction following",
@@ -219,7 +219,7 @@
       "publisher": "LiveCodeBench",
       "independent": true,
       "url": "https://livecodebench.github.io/leaderboard.html",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Coding",
       "domain": "Code generation",
@@ -234,7 +234,7 @@
       "publisher": "Aider",
       "independent": true,
       "url": "https://aider.chat/docs/leaderboards/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -249,7 +249,7 @@
       "publisher": "UC Berkeley (Gorilla)",
       "independent": true,
       "url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Agents",
       "domain": "Tool use",
@@ -264,7 +264,7 @@
       "publisher": "XLANG Lab",
       "independent": true,
       "url": "https://osworld-v1.xlang.ai/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Agents",
       "domain": "Computer use",
@@ -279,7 +279,7 @@
       "publisher": "MMMU",
       "independent": true,
       "url": "https://mmmu-benchmark.github.io/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Multimodal understanding",
@@ -294,7 +294,7 @@
       "publisher": "Kagi",
       "independent": true,
       "url": "https://help.kagi.com/kagi/ai/llm-benchmark.html",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "General",
       "domain": "General intelligence",
@@ -309,7 +309,7 @@
       "publisher": "SimpleBench",
       "independent": true,
       "url": "https://simple-bench.com/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Reasoning",
@@ -324,7 +324,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal",
@@ -339,7 +339,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal",
@@ -354,7 +354,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal",
@@ -369,7 +369,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal",
@@ -384,7 +384,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Finance",
@@ -399,7 +399,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Finance",
@@ -414,7 +414,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Finance",
@@ -429,7 +429,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Finance",
@@ -444,7 +444,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Medical",
@@ -459,7 +459,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Medical",
@@ -474,7 +474,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Medical",
@@ -489,7 +489,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Biology research",
@@ -504,7 +504,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "Cybersecurity",
@@ -519,7 +519,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Professional",
       "domain": "IT operations",
@@ -534,7 +534,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Agents",
       "domain": "Web research",
@@ -549,7 +549,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -564,7 +564,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -579,7 +579,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -594,7 +594,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Science",
@@ -609,7 +609,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Academic knowledge",
@@ -624,7 +624,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Mathematics",
@@ -639,7 +639,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Mathematics",
@@ -1086,7 +1086,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Reasoning",
@@ -1102,7 +1102,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Reasoning",
@@ -1118,7 +1118,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Agents",
@@ -1134,7 +1134,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Professional",
@@ -1150,7 +1150,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-05",
       "metric": "index",
       "category": "General",
@@ -1166,7 +1166,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1182,7 +1182,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1198,7 +1198,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1214,7 +1214,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1230,7 +1230,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-04",
       "metric": "elo",
       "category": "Agents",
@@ -1246,7 +1246,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1262,7 +1262,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1278,7 +1278,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1294,7 +1294,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1310,7 +1310,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1326,7 +1326,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1342,7 +1342,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1358,7 +1358,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1374,7 +1374,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1390,7 +1390,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1406,7 +1406,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1422,7 +1422,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1438,7 +1438,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1454,7 +1454,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1470,7 +1470,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1486,7 +1486,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -1502,7 +1502,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -1518,7 +1518,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -1534,7 +1534,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1550,7 +1550,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Agents",
@@ -1566,7 +1566,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1582,7 +1582,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -1598,7 +1598,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -1614,7 +1614,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -2136,8 +2136,8 @@
       }
     },
     {
-      "id": "grok-4-20-beta-0309-reasoning",
-      "name": "Grok 4.20 Beta 0309 Reasoning",
+      "id": "grok-4-20-beta-0309",
+      "name": "Grok 4.20 Beta 0309",
       "org": "SpaceXAI",
       "access": {
         "official": { "name": "xAI API", "url": "https://docs.x.ai" }
@@ -2868,7 +2868,7 @@
     {
       "id": "dart-gui-7b-0924",
       "name": "DART GUI 7B 0924",
-      "org": "BIGAI",
+      "org": "BIGAI & BIT & DataCanvas",
       "size": { "paramsB": 7, "source": "name" }
     },
     {
@@ -3400,6 +3400,18 @@
       "size": { "paramsB": 32, "source": "name" }
     },
     {
+      "id": "gui-owl-1-5-32b",
+      "name": "GUI-Owl-1.5 32B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 32, "source": "name" }
+    },
+    {
       "id": "yi-1-5-34b-chat",
       "name": "Yi 1.5 34B Chat",
       "org": "01.AI",
@@ -3439,13 +3451,7 @@
     {
       "id": "uitars-1-5-7b",
       "name": "Uitars 1.5 7B",
-      "org": "ByteDance",
-      "access": {
-        "official": {
-          "name": "Volcengine Doubao",
-          "url": "https://www.volcengine.com/product/doubao"
-        }
-      },
+      "org": "ByteDance Seed & Tsinghua University",
       "size": { "paramsB": 7, "source": "name" }
     },
     {
@@ -3477,7 +3483,6 @@
         }
       }
     },
-    { "id": "gui-owl-1-5", "name": "GUI Owl 1.5", "org": "32B" },
     {
       "id": "hunyuan-vision-1-5",
       "name": "Hunyuan Vision 1.5",
@@ -4465,7 +4470,7 @@
     {
       "id": "opencua-qwen2-7b",
       "name": "Opencua Qwen2 7B",
-      "org": "The",
+      "org": "The University of Hong Kong & Moonshot AI",
       "size": { "paramsB": 7, "source": "name" }
     },
     {
@@ -6329,8 +6334,8 @@
           "id": "qwen/qwen3-30b-a3b-instruct-2507",
           "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-instruct-2507",
           "contextLength": 262144,
-          "inputPerM": 0.09,
-          "outputPerM": 0.3,
+          "inputPerM": 0.048,
+          "outputPerM": 0.193,
           "listedAt": "2025-07-29",
           "modalities": ["text"]
         },
@@ -6441,8 +6446,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.042,
-          "outputPerM": 0.22,
+          "inputPerM": 0.09,
+          "outputPerM": 0.3,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -6776,7 +6781,7 @@
     {
       "id": "holo3-35b-a3b",
       "name": "Holo3 35B A3B",
-      "org": "H",
+      "org": "H Company",
       "size": { "paramsB": 35, "activeB": 3, "source": "name" }
     },
     { "id": "g9v3-39a5b", "name": "G9v3 39A5B", "org": "AI9Stars" },
@@ -7289,14 +7294,6 @@
       }
     },
     {
-      "id": "grok-3-mini-reasoning",
-      "name": "Grok 3 Mini Reasoning",
-      "org": "SpaceXAI",
-      "access": {
-        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
-      }
-    },
-    {
       "id": "claude-3-haiku",
       "name": "Claude 3 Haiku",
       "org": "Anthropic",
@@ -7383,8 +7380,8 @@
           "id": "moonshotai/kimi-k3",
           "url": "https://openrouter.ai/moonshotai/kimi-k3",
           "contextLength": 1048576,
-          "inputPerM": 2.303,
-          "outputPerM": 11.55,
+          "inputPerM": 2.648,
+          "outputPerM": 13.283,
           "listedAt": "2026-07-16",
           "modalities": ["text", "image", "video"]
         },
@@ -7817,8 +7814,8 @@
           "id": "meta-llama/llama-3.1-70b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.1-70b-instruct",
           "contextLength": 131072,
-          "inputPerM": 0.72,
-          "outputPerM": 0.72,
+          "inputPerM": 0.4,
+          "outputPerM": 0.4,
           "listedAt": "2024-07-23",
           "modalities": ["text"]
         },
@@ -8928,8 +8925,8 @@
           "id": "meta/muse-glimmer-30b",
           "url": "https://openrouter.ai/meta/muse-glimmer-30b",
           "contextLength": 131072,
-          "inputPerM": 0.3,
-          "outputPerM": 1.1,
+          "inputPerM": 0.35,
+          "outputPerM": 1.5,
           "listedAt": "2026-08-09",
           "modalities": ["text", "image"]
         },
@@ -9035,7 +9032,7 @@
     {
       "id": "opencua-32b",
       "name": "Opencua 32B",
-      "org": "The",
+      "org": "The University of Hong Kong & Moonshot AI",
       "size": { "paramsB": 32, "source": "name" }
     },
     {
@@ -9279,14 +9276,6 @@
     {
       "id": "grok-4-fast",
       "name": "Grok 4 Fast",
-      "org": "SpaceXAI",
-      "access": {
-        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
-      }
-    },
-    {
-      "id": "grok-4-fast-reasoning",
-      "name": "Grok 4 Fast Reasoning",
       "org": "SpaceXAI",
       "access": {
         "official": { "name": "xAI API", "url": "https://docs.x.ai" }
@@ -9658,16 +9647,8 @@
       "size": { "paramsB": 763.2, "source": "huggingface" }
     },
     {
-      "id": "grok-4-1-fast-non-reasoning",
-      "name": "Grok 4.1 Fast Non Reasoning",
-      "org": "SpaceXAI",
-      "access": {
-        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
-      }
-    },
-    {
-      "id": "grok-4-1-fast-reasoning",
-      "name": "Grok 4.1 Fast Reasoning",
+      "id": "grok-4-1-fast",
+      "name": "Grok 4.1 Fast",
       "org": "SpaceXAI",
       "access": {
         "official": { "name": "xAI API", "url": "https://docs.x.ai" }
@@ -10480,6 +10461,26 @@
       "org": "OpenAI",
       "access": {
         "openrouter": {
+          "id": "openai/gpt-5.1-codex",
+          "url": "https://openrouter.ai/openai/gpt-5.1-codex",
+          "contextLength": 400000,
+          "inputPerM": 1.25,
+          "outputPerM": 10,
+          "listedAt": "2025-11-13",
+          "modalities": ["text", "image"]
+        },
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "gpt-5-1-codex-max",
+      "name": "GPT 5.1 Codex Max",
+      "org": "OpenAI",
+      "access": {
+        "openrouter": {
           "id": "openai/gpt-5.1-codex-max",
           "url": "https://openrouter.ai/openai/gpt-5.1-codex-max",
           "contextLength": 400000,
@@ -10700,8 +10701,8 @@
           "id": "z-ai/glm-5.3-flash",
           "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
           "contextLength": 1310720,
-          "inputPerM": 0.075,
-          "outputPerM": 0.25,
+          "inputPerM": 0.15,
+          "outputPerM": 0.5,
           "listedAt": "2026-08-26",
           "modalities": ["text", "image", "video"]
         },
@@ -10722,8 +10723,8 @@
           "id": "z-ai/glm-5.3",
           "url": "https://openrouter.ai/z-ai/glm-5.3",
           "contextLength": 1310720,
-          "inputPerM": 1.4,
-          "outputPerM": 4.4,
+          "inputPerM": 1.092,
+          "outputPerM": 3.432,
           "listedAt": "2026-08-18",
           "modalities": ["text"]
         },
@@ -11068,7 +11069,7 @@
     {
       "id": "deepminer-mano-7b",
       "name": "DeepMiner Mano 7B",
-      "org": "Mininglamp",
+      "org": "Mininglamp Technology",
       "size": { "paramsB": 7, "source": "name" }
     },
     {
@@ -11086,7 +11087,13 @@
     {
       "id": "gui-owl-7b",
       "name": "Gui Owl 7B",
-      "org": "Tongyi",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
       "size": { "paramsB": 7, "source": "name" }
     },
     {
@@ -11153,7 +11160,7 @@
     {
       "id": "opencua-7b",
       "name": "Opencua 7B",
-      "org": "The",
+      "org": "The University of Hong Kong & Moonshot AI",
       "size": { "paramsB": 7, "source": "name" }
     },
     {
@@ -11195,19 +11202,13 @@
     {
       "id": "deepminer-mano-72b",
       "name": "DeepMiner Mano 72B",
-      "org": "Mininglamp",
+      "org": "Mininglamp Technology",
       "size": { "paramsB": 72, "source": "name" }
     },
     {
       "id": "uitars-72b-dpo",
       "name": "Uitars 72B Dpo",
-      "org": "ByteDance",
-      "access": {
-        "official": {
-          "name": "Volcengine Doubao",
-          "url": "https://www.volcengine.com/product/doubao"
-        }
-      },
+      "org": "ByteDance Seed & Tsinghua University",
       "size": { "paramsB": 72, "source": "name" }
     },
     {
@@ -11225,7 +11226,7 @@
     {
       "id": "opencua-72b-preview",
       "name": "Opencua 72B Preview",
-      "org": "The",
+      "org": "The University of Hong Kong & Moonshot AI",
       "size": { "paramsB": 72, "source": "name" }
     },
     {
@@ -11542,27 +11543,6 @@
       "size": { "paramsB": 266, "source": "huggingface" }
     },
     {
-      "id": "kimi",
-      "name": "Kimi",
-      "org": "K2.6",
-      "access": {
-        "openrouter": {
-          "id": "moonshotai/kimi-k2.6",
-          "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-          "contextLength": 262144,
-          "inputPerM": 0.95,
-          "outputPerM": 4,
-          "listedAt": "2026-04-20",
-          "modalities": ["text", "image"]
-        },
-        "weights": {
-          "huggingFaceId": "moonshotai/Kimi-K2.6",
-          "url": "https://huggingface.co/moonshotai/Kimi-K2.6"
-        }
-      },
-      "size": { "paramsB": 1026.9, "source": "huggingface" }
-    },
-    {
       "id": "kimi-vl-a3b",
       "name": "Kimi Vl A3B",
       "org": "Moonshot",
@@ -11650,27 +11630,6 @@
       }
     },
     {
-      "id": "minimax",
-      "name": "MiniMax",
-      "org": "M3",
-      "access": {
-        "openrouter": {
-          "id": "minimax/minimax-m3",
-          "url": "https://openrouter.ai/minimax/minimax-m3",
-          "contextLength": 1048576,
-          "inputPerM": 0.3,
-          "outputPerM": 1.2,
-          "listedAt": "2026-05-31",
-          "modalities": ["text", "image", "video"]
-        },
-        "weights": {
-          "huggingFaceId": "MiniMaxAI/Minimax-M3",
-          "url": "https://huggingface.co/MiniMaxAI/Minimax-M3"
-        }
-      },
-      "size": { "paramsB": 427, "source": "huggingface" }
-    },
-    {
       "id": "mistral-small",
       "name": "Mistral Small",
       "org": "Mistral",
@@ -11686,7 +11645,6 @@
       "name": "Tiny Recursion Model (TRM)",
       "org": "Other"
     },
-    { "id": "muse", "name": "Muse", "org": "Spark" },
     {
       "id": "muse-spark",
       "name": "Muse Spark",
@@ -11699,8 +11657,11 @@
       }
     },
     { "id": "nvarc", "name": "NVARC", "org": "Other" },
-    { "id": "opencua-a3b", "name": "Opencua A3B", "org": "The" },
-    { "id": "qwen", "name": "Qwen", "org": "3.7" },
+    {
+      "id": "opencua-a3b",
+      "name": "Opencua A3B",
+      "org": "The University of Hong Kong & Moonshot AI"
+    },
     { "id": "rzn-t", "name": "RZN T", "org": "Phronetic AI" }
   ],
   "scores": [
@@ -12543,7 +12504,7 @@
       "sourceLabel": "grok-4.20-multi-agent-beta-0309"
     },
     {
-      "modelId": "grok-4-20-beta-0309-reasoning",
+      "modelId": "grok-4-20-beta-0309",
       "benchmarkId": "lmarena",
       "raw": 1471,
       "stderr": 4,
@@ -14201,6 +14162,12 @@
     },
     {
       "modelId": "muse-spark-1-1",
+      "benchmarkId": "osworld",
+      "raw": 80.7,
+      "sourceLabel": "Muse Spark 1.1"
+    },
+    {
+      "modelId": "muse-spark-1-1",
       "benchmarkId": "vals-legal_research",
       "raw": 37.98,
       "stderr": 3.37,
@@ -14645,6 +14612,13 @@
       "sourceLabel": "qwen1.5-32b-chat"
     },
     {
+      "modelId": "gui-owl-1-5-32b",
+      "benchmarkId": "osworld",
+      "raw": 55.4,
+      "sourceLabel": "GUI-Owl-1.5 32B",
+      "scaffold": "Specialized model"
+    },
+    {
       "modelId": "yi-1-5-34b-chat",
       "benchmarkId": "lmarena",
       "raw": 1213,
@@ -14696,13 +14670,6 @@
       "benchmarkId": "arc-agi-2",
       "raw": 0.8,
       "sourceLabel": "Gemini 1.5 Pro"
-    },
-    {
-      "modelId": "gui-owl-1-5",
-      "benchmarkId": "osworld",
-      "raw": 55.4,
-      "sourceLabel": "GUI-Owl-1.5",
-      "scaffold": "Specialized model"
     },
     {
       "modelId": "hunyuan-vision-1-5",
@@ -16149,16 +16116,22 @@
     },
     {
       "modelId": "k2-horizon-375b-a23b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 31,
+      "sourceLabel": "K2 Horizon 375B A23B"
+    },
+    {
+      "modelId": "k2-horizon-375b-a23b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1404,
+      "raw": 1400,
       "stderr": 19,
       "sourceLabel": "K2 Horizon 375B A23B"
     },
     {
       "modelId": "k2-horizon-375b-a23b",
       "benchmarkId": "aa-briefcase",
-      "raw": 1299,
-      "stderr": 8.5,
+      "raw": 1298,
+      "stderr": 8,
       "sourceLabel": "K2 Horizon 375B A23B"
     },
     {
@@ -17801,6 +17774,12 @@
     },
     {
       "modelId": "kimi-k2-5",
+      "benchmarkId": "osworld",
+      "raw": 63.3,
+      "sourceLabel": "Kimi K2.5"
+    },
+    {
+      "modelId": "kimi-k2-5",
       "benchmarkId": "kagi",
       "raw": 78.5,
       "sourceLabel": "kimi-k2-5-thinking"
@@ -18366,6 +18345,12 @@
       "benchmarkId": "livebench-instruction-following",
       "raw": 64.4,
       "sourceLabel": "Kimi K2.6 Thinkingopen"
+    },
+    {
+      "modelId": "kimi-k2-6",
+      "benchmarkId": "osworld",
+      "raw": 73.1,
+      "sourceLabel": "Kimi K2.6"
     },
     {
       "modelId": "kimi-k2-6",
@@ -20780,49 +20765,49 @@
       "sourceLabel": "grok-3-mini"
     },
     {
-      "modelId": "grok-3-mini-reasoning",
+      "modelId": "grok-3-mini",
       "benchmarkId": "vals-legal_bench",
       "raw": 83.14,
       "stderr": 0.42,
       "sourceLabel": "Grok 3 Mini Reasoning"
     },
     {
-      "modelId": "grok-3-mini-reasoning",
+      "modelId": "grok-3-mini",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 61.11,
       "stderr": 0.96,
       "sourceLabel": "Grok 3 Mini Reasoning"
     },
     {
-      "modelId": "grok-3-mini-reasoning",
+      "modelId": "grok-3-mini",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 72.98,
       "stderr": 0.87,
       "sourceLabel": "Grok 3 Mini Reasoning"
     },
     {
-      "modelId": "grok-3-mini-reasoning",
+      "modelId": "grok-3-mini",
       "benchmarkId": "vals-medqa",
       "raw": 90.1,
       "stderr": 0.27,
       "sourceLabel": "Grok 3 Mini Reasoning"
     },
     {
-      "modelId": "grok-3-mini-reasoning",
+      "modelId": "grok-3-mini",
       "benchmarkId": "vals-gpqa",
       "raw": 79.29,
       "stderr": 2.04,
       "sourceLabel": "Grok 3 Mini Reasoning"
     },
     {
-      "modelId": "grok-3-mini-reasoning",
+      "modelId": "grok-3-mini",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 81.37,
       "stderr": 0.38,
       "sourceLabel": "Grok 3 Mini Reasoning"
     },
     {
-      "modelId": "grok-3-mini-reasoning",
+      "modelId": "grok-3-mini",
       "benchmarkId": "vals-aime",
       "raw": 85,
       "stderr": 0.53,
@@ -20911,7 +20896,7 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1493,
+      "raw": 1492,
       "stderr": 5.5,
       "sourceLabel": "Kimi K3 (max)"
     },
@@ -21376,6 +21361,12 @@
       "benchmarkId": "livebench-instruction-following",
       "raw": 57.5,
       "sourceLabel": "Minimax M3"
+    },
+    {
+      "modelId": "minimax-m3",
+      "benchmarkId": "osworld",
+      "raw": 75.2,
+      "sourceLabel": "MiniMax M3"
     },
     {
       "modelId": "minimax-m3",
@@ -25252,6 +25243,12 @@
     },
     {
       "modelId": "qwen3-7-plus",
+      "benchmarkId": "osworld",
+      "raw": 73.3,
+      "sourceLabel": "Qwen 3.7 Plus"
+    },
+    {
+      "modelId": "qwen3-7-plus",
       "benchmarkId": "vals-legal_research",
       "raw": 16.35,
       "stderr": 2.57,
@@ -26678,6 +26675,19 @@
     },
     {
       "modelId": "grok-4-fast",
+      "benchmarkId": "lmarena",
+      "raw": 1405,
+      "stderr": 5,
+      "sourceLabel": "grok-4-fast-reasoning"
+    },
+    {
+      "modelId": "grok-4-fast",
+      "benchmarkId": "arc-agi-2",
+      "raw": 5.3,
+      "sourceLabel": "Grok 4 (Fast Reasoning)"
+    },
+    {
+      "modelId": "grok-4-fast",
       "benchmarkId": "kagi",
       "raw": 66.1,
       "sourceLabel": "grok-4-fast-thinking"
@@ -26774,19 +26784,6 @@
       "raw": 91.25,
       "stderr": 1.03,
       "sourceLabel": "Grok 4 Fast (Reasoning)"
-    },
-    {
-      "modelId": "grok-4-fast-reasoning",
-      "benchmarkId": "lmarena",
-      "raw": 1405,
-      "stderr": 5,
-      "sourceLabel": "grok-4-fast-reasoning"
-    },
-    {
-      "modelId": "grok-4-fast-reasoning",
-      "benchmarkId": "arc-agi-2",
-      "raw": 5.3,
-      "sourceLabel": "Grok 4 (Fast Reasoning)"
     },
     {
       "modelId": "glm-4-plus",
@@ -27486,7 +27483,7 @@
     {
       "modelId": "solar-pro4",
       "benchmarkId": "aa-gdpval",
-      "raw": 1195,
+      "raw": 1184,
       "stderr": 17,
       "sourceLabel": "Solar Pro 4"
     },
@@ -27860,75 +27857,82 @@
       "sourceLabel": "DS-V4.1-Flash"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
-      "benchmarkId": "bfcl",
-      "raw": 58.29,
-      "sourceLabel": "Grok-4-1-fast-non-reasoning"
+      "modelId": "grok-4-1-fast",
+      "benchmarkId": "lmarena",
+      "raw": 1430,
+      "stderr": 3,
+      "sourceLabel": "grok-4-1-fast-reasoning"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
+      "benchmarkId": "bfcl",
+      "raw": 69.57,
+      "sourceLabel": "Grok-4-1-fast-reasoning"
+    },
+    {
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "simplebench",
       "raw": 56,
       "sourceLabel": "Grok 4.1 Fast"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-case_law_v2",
       "raw": 60.45,
       "stderr": 0.81,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-legal_bench",
       "raw": 82.45,
       "stderr": 0.46,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 65.97,
       "stderr": 0.93,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 73.14,
       "stderr": 0.86,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-mortgage_tax",
       "raw": 42.61,
       "stderr": 0.95,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-medqa",
       "raw": 92.08,
       "stderr": 0.25,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-medcode",
       "raw": 28.08,
       "stderr": 1.99,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-medscribe",
       "raw": 78.73,
       "stderr": 1.87,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-swebench",
       "raw": 41.4,
       "stderr": 2.21,
@@ -27936,7 +27940,7 @@
       "scaffold": "Mini-SWE-agent"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-vibe-code",
       "raw": 1.2,
       "stderr": 1.2,
@@ -27944,38 +27948,25 @@
       "scaffold": "OpenHands"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-gpqa",
       "raw": 84.34,
       "stderr": 1.85,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 84.18,
       "stderr": 0.36,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
     },
     {
-      "modelId": "grok-4-1-fast-non-reasoning",
+      "modelId": "grok-4-1-fast",
       "benchmarkId": "vals-aime",
       "raw": 91.88,
       "stderr": 0.58,
       "sourceLabel": "Grok 4.1 Fast (Reasoning)"
-    },
-    {
-      "modelId": "grok-4-1-fast-reasoning",
-      "benchmarkId": "lmarena",
-      "raw": 1430,
-      "stderr": 3,
-      "sourceLabel": "grok-4-1-fast-reasoning"
-    },
-    {
-      "modelId": "grok-4-1-fast-reasoning",
-      "benchmarkId": "bfcl",
-      "raw": 69.57,
-      "sourceLabel": "Grok-4-1-fast-reasoning"
     },
     {
       "modelId": "gpt-4-1",
@@ -31958,6 +31949,14 @@
     {
       "modelId": "gpt-5-1-codex",
       "benchmarkId": "vals-vibe-code",
+      "raw": 13.12,
+      "stderr": 3.16,
+      "sourceLabel": "GPT 5.1 Codex",
+      "scaffold": "OpenHands"
+    },
+    {
+      "modelId": "gpt-5-1-codex-max",
+      "benchmarkId": "vals-vibe-code",
       "raw": 22.17,
       "stderr": 3.84,
       "sourceLabel": "GPT 5.1 Codex Max",
@@ -32544,6 +32543,12 @@
     },
     {
       "modelId": "glm-5-2",
+      "benchmarkId": "artificial-analysis",
+      "raw": 34,
+      "sourceLabel": "GLM-5.2 (max)"
+    },
+    {
+      "modelId": "glm-5-2",
       "benchmarkId": "aa-gdpval",
       "raw": 1406,
       "stderr": 13,
@@ -33097,7 +33102,7 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1656,
+      "raw": 1655,
       "stderr": 15,
       "sourceLabel": "GLM-5.3-Flash"
     },
@@ -33265,15 +33270,15 @@
     {
       "modelId": "glm-5-3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1667,
+      "raw": 1661,
       "stderr": 15,
       "sourceLabel": "GLM-5.3 (max)"
     },
     {
       "modelId": "glm-5-3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1513,
-      "stderr": 9,
+      "raw": 1511,
+      "stderr": 8.5,
       "sourceLabel": "GLM-5.3 (max)"
     },
     {
@@ -36603,12 +36608,6 @@
       "sourceLabel": "Inkling Small"
     },
     {
-      "modelId": "kimi",
-      "benchmarkId": "osworld",
-      "raw": 73.1,
-      "sourceLabel": "Kimi"
-    },
-    {
       "modelId": "kimi-vl-a3b",
       "benchmarkId": "osworld",
       "raw": 10.3,
@@ -36720,12 +36719,6 @@
       "sourceLabel": "mercury"
     },
     {
-      "modelId": "minimax",
-      "benchmarkId": "osworld",
-      "raw": 75.2,
-      "sourceLabel": "MiniMax"
-    },
-    {
       "modelId": "mistral-small",
       "benchmarkId": "kagi",
       "raw": 37.8,
@@ -36736,12 +36729,6 @@
       "benchmarkId": "arc-agi-2",
       "raw": 6.3,
       "sourceLabel": "Tiny Recursion Model (TRM)"
-    },
-    {
-      "modelId": "muse",
-      "benchmarkId": "osworld",
-      "raw": 80.7,
-      "sourceLabel": "Muse"
     },
     {
       "modelId": "muse-spark",
@@ -36857,12 +36844,6 @@
       "scaffold": "Specialized model"
     },
     {
-      "modelId": "qwen",
-      "benchmarkId": "osworld",
-      "raw": 73.3,
-      "sourceLabel": "Qwen"
-    },
-    {
       "modelId": "rzn-t",
       "benchmarkId": "bfcl",
       "raw": 22.25,
@@ -36882,7 +36863,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -36890,7 +36871,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-13",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
