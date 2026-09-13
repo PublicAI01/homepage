@@ -1,0 +1,40 @@
+# A read-only look at the origin host, run by hand.
+#
+# Nothing here changes the server: it prints which processes hold the web
+# ports and what containers are running, so a change like publishing the
+# app on loopback only can be made knowing what reaches it. Delete this
+# file once the question it was added for is answered.
+name: Probe the origin (read-only)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    name: What listens on the origin
+    runs-on: ubuntu-latest
+    steps:
+      - name: Look
+        uses: appleboy/ssh-action@v1.2.5
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            echo "=== listening sockets ==="
+            (ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null) | grep -E ':(80|443|3000|8080)\b' || echo "(none on 80/443/3000/8080)"
+            echo
+            echo "=== containers ==="
+            docker ps --format '{{.Names}}\t{{.Image}}\t{{.Ports}}' 2>/dev/null || echo "(docker not readable)"
+            echo
+            echo "=== host web servers ==="
+            for s in nginx caddy apache2 haproxy cloudflared traefik; do
+              if command -v "$s" >/dev/null 2>&1; then echo "$s: installed"; fi
+              if systemctl is-active "$s" >/dev/null 2>&1; then echo "$s: active"; fi
+            done
+            echo
+            echo "=== who proxies to 3000 ==="
+            grep -rls "3000" /etc/nginx /etc/caddy /etc/cloudflared 2>/dev/null | head || echo "(no config mentions 3000)"
+            echo
+            echo "=== firewall ==="
+            (ufw status 2>/dev/null || iptables -S 2>/dev/null | head -30) || echo "(not readable)"
