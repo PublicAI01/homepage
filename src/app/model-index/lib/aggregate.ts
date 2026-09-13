@@ -121,7 +121,23 @@ const clamp = (x: number, lo: number, hi: number) =>
  * A board where every model scores nearly the same (sd ~ 0) carries no
  * information to spread out, so every model lands at the mean rather than
  * having noise amplified into a ranking.
+ *
+ * And no single measure may place a model further than MAX_Z from the field
+ * it was measured against. Standardizing asks "how far ahead, in units of
+ * how far apart this board spreads its models", so a board whose models sit
+ * close together turns a modest lead into an enormous figure: on LiveBench's
+ * Agentic Coding, 52 models with a standard deviation of 9.6, being 11
+ * points clear of second place scored 89.4 — the fourth highest figure in
+ * the index — and carried a model measured by two of that domain's four
+ * boards past one measured by all four, which beat it on two of the three
+ * measures they share (2026-09-13).
+ *
+ * Past two standard deviations the board has stopped discriminating and
+ * started extrapolating: it is saying the model is off its chart, which is
+ * worth recording as "best here" and not as worth four boards. The cap
+ * changes no board's own order, and touches 3% of the index's figures.
  */
+const MAX_Z = 2;
 /**
  * Below this many models on one measure there is no population to standardize
  * against, and the scale stops meaning anything.
@@ -133,7 +149,11 @@ export function normalizeBoard(raws: number[]): number[] {
   const sd = stdDev(raws);
   if (sd === 0) return raws.map(() => T_SCORE_MEAN);
   return raws.map((r) =>
-    clamp(T_SCORE_MEAN + T_SCORE_SD * ((r - m) / sd), 0, 100),
+    clamp(
+      T_SCORE_MEAN + T_SCORE_SD * clamp((r - m) / sd, -MAX_Z, MAX_Z),
+      0,
+      100,
+    ),
   );
 }
 

@@ -80,6 +80,20 @@ describe('normalizeBoard', () => {
     expect(Math.min(...out)).toBeGreaterThanOrEqual(0);
     expect(Math.max(...out)).toBeLessThanOrEqual(100);
   });
+
+  it('lets no measure place a model further than two sd from the field', () => {
+    // A board whose models sit close together turned a modest lead into an
+    // enormous figure, and one such figure outweighed four boards.
+    const bunched = [50, 50, 50, 50, 77];
+    const out = normalizeBoard(bunched);
+    expect(Math.max(...out)).toBe(80);
+    expect(Math.min(...out)).toBeGreaterThanOrEqual(20);
+    // The board's own order is untouched, and a lead inside two sd still
+    // counts for exactly what it did.
+    const ordinary = normalizeBoard([10, 30, 50, 70, 90]);
+    expect(ordinary).toEqual([...ordinary].sort((a, b) => a - b));
+    expect(Math.max(...ordinary)).toBeLessThan(80);
+  });
 });
 
 describe('confidenceOf', () => {
