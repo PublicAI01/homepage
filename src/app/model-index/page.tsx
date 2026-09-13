@@ -133,7 +133,7 @@ const method = [
   },
   {
     title: 'Reports ✱ stay out of the headline',
-    text: 'A one-off publication shapes domain columns, never the Overall index — and an independent write-up counts for more than a vendor’s own post. One publication is one voice per column, however many rows it printed. A model only reports have placed keeps its score but takes no number.',
+    text: 'A ✱ figure decides nothing a board has measured: in a column, the boards’ number stands, and a report speaks only where no board has. Those rows are listed with their ✱ score and take no number. One publication is one voice per column, however many rows it printed — and an independent write-up counts for more than a vendor’s own post.',
   },
   {
     title: 'Estimate the rest, and say so',
@@ -392,7 +392,7 @@ export default function ModelIndex() {
           <SectionHead
             n="2"
             title="Sources"
-            lede="Leaderboards form the Overall index; reports ✱ widen the domain columns; catalogs say where a model can be called. Every figure links to its source."
+            lede="Leaderboards form the Overall index and every column’s numbers; reports ✱ widen the coverage, and speak only where no board has; catalogs say where a model can be called. Every figure links to its source."
           />
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {boards.map((b) => (

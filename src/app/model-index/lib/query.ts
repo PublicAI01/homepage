@@ -8,7 +8,12 @@ import {
 } from '../data';
 import type { Benchmark } from '../data/types';
 import { recommend, type Recommendation } from './access';
-import { aggregate, type AggregateRow, compareScores } from './aggregate';
+import {
+  aggregate,
+  type AggregateRow,
+  boardsFirst,
+  compareScores,
+} from './aggregate';
 import { groupBoards } from './boards';
 import { familyOf } from './family';
 import { sizeLabel, type SizeTier, tierOf } from './size';
@@ -37,9 +42,11 @@ export const API_URL = `${INDEX_URL}/api`;
 
 /**
  * Two aggregates, computed once: with reports ✱ (launch posts, blogs) and
- * without. Turning them off drops their figures from every score and hides
- * models nothing else has measured; it never changes the Overall rank,
- * which reports do not enter.
+ * without. The default is neither: `boardsFirst` takes the board number
+ * wherever there is one and the ✱ number only where there is not, so a
+ * launch post can widen the index without re-ranking what boards measured.
+ * Asking for reports explicitly gives the combined numbers. Neither ever
+ * changes the Overall rank, which reports do not enter.
  */
 function build(includeReports: boolean) {
   const weights = weightsFor(benchmarks);
@@ -61,7 +68,11 @@ function build(includeReports: boolean) {
 }
 const WITH = build(true);
 const WITHOUT = build(false);
-const { rows, rankOf } = WITH;
+const DEFAULT = {
+  rows: boardsFirst(WITHOUT.rows, WITH.rows),
+  rankOf: WITHOUT.rankOf,
+};
+const { rows, rankOf } = DEFAULT;
 const benchById = new Map(benchmarks.map((b) => [b.id, b]));
 const sources = groupBoards(benchmarks);
 
@@ -384,7 +395,7 @@ function scopeOrder(scope: Scope, includeReports: boolean): AggregateRow[] {
   const key = scopeKey(scope, includeReports);
   const hit = scopeOrderCache.get(key);
   if (hit) return hit;
-  const set = includeReports ? WITH : WITHOUT;
+  const set = includeReports ? WITH : DEFAULT;
   const out = set.rows.filter((r) =>
     scope.level === 'overall'
       ? r.score !== null || r.estimate !== null
@@ -444,12 +455,15 @@ function listScope(q: RankQuery): Listed {
   }
   const minBoards = q.minBoards ?? MIN_SOURCES;
   const orgQ = q.org ? fold(q.org) : null;
-  const includeReports = q.reports ?? true;
-  const set = includeReports ? WITH : WITHOUT;
+  const includeReports = q.reports ?? false;
+  const set = includeReports ? WITH : DEFAULT;
 
   let out = set.rows.filter((r) => {
     if (r.covered < minBoards) return false;
-    if (!includeReports && r.covered === 0) return false;
+    // A model only a report ✱ has measured is listed either way: its
+    // figures are the only evidence there is for it, and it takes no
+    // number. `minBoards` is how a reader asks for board-measured rows
+    // only.
     if (orgQ && fold(r.model.org) !== orgQ) return false;
     if (q.family && fold(familyOf(r.model.name)) !== fold(q.family))
       return false;
@@ -471,11 +485,12 @@ function listScope(q: RankQuery): Listed {
     return scopeScore(r, scope) !== null;
   });
   if (scope.level !== 'overall') {
+    // Every row with a figure here, in score order. A row only a report ✱
+    // placed sits where its figure puts it and takes no number
+    // (rankedInScope false, position null) — it is not hidden, because its
+    // ✱ figure is the only evidence there is for it.
     const by = compareScores<AggregateRow>((r) => scopeScore(r, scope));
-    // With reports in, a row sits where its figure puts it (rankedInScope
-    // false, position null when only reports placed it). Without, only
-    // board-measured rows remain in the scope.
-    out = [...out].filter((r) => includeReports || eligible(r, scope)).sort(by);
+    out = [...out].sort(by);
   }
   return { scope, out, minBoards, includeReports };
 }
@@ -629,7 +644,7 @@ export function describeIndex() {
       `A model absent from a source is excluded from that term, never imputed; a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the in-scope weight pulls thin evidence toward 50.`,
       `Overall ranks a model once ${MIN_SOURCES} independent publishers among the boards that build the index have scored it — a board that shapes only a domain does not count toward it; otherwise the model is provisional. A category or domain ranks any model a recognised board has measured there.`,
       `In a category or domain, position counts only models a recognised board measured there; a model placed by report ✱ figures alone keeps its score and takes no number (position null). Filters hide rows without renumbering the rest.`,
-      `Reports (launch posts, blogs) are marked ✱ and shape their domain only, never the Overall index. An independent write-up carries ${INDEPENDENT_REPORT_WEIGHT} against a board measure's ${BOARD_MEASURE_WEIGHT}; a figure the model's own publisher printed carries ${VENDOR_REPORT_WEIGHT}. One publication is one voice in a scope: the measures it contributes there are averaged and enter once, so a post that printed five numbers does not outweigh a board that ran a fixed set on everyone.`,
+      `Reports (launch posts, blogs) are marked ✱. They never enter the Overall index, and in a category or domain they decide nothing a recognised board measured: the boards' number stands, and a ✱ figure sets the score only for a model no board measured there (which takes no position). Pass reports=true to let ✱ figures into every score instead. An independent write-up carries ${INDEPENDENT_REPORT_WEIGHT} against a board measure's ${BOARD_MEASURE_WEIGHT}; a figure the model's own publisher printed carries ${VENDOR_REPORT_WEIGHT}. One publication is one voice in a scope: the measures it contributes there are averaged and enter once, so a post that printed five numbers does not outweigh a board that ran a fixed set on everyone.`,
       `scopes lists the domains offered as headline rankings: measured by at least ${MIN_BOARDS_TO_VOTE_IN} boards, or by one board that ranks at least ${MIN_MODELS_FOR_HEADLINE} models there. Every other domain a board measured is still on the model pages and accepted as a scope by name.`,
       'A model with no Overall index gets an estimate ✱ (estimatedIndex): its figures on each shared measure are placed among models that have an index, and theirs is read at that position; outside their range the nearest anchor is a bound (ceiling or floor), not a point. Never a rank.',
     ],
@@ -783,8 +798,8 @@ export function modelStandings(query: string): StandingsHit | StandingsMiss {
   >();
 
   for (const scope of scopes) {
-    const ranked = scopeOrder(scope, true);
-    const positions = scopePositions(scope, true);
+    const ranked = scopeOrder(scope, false);
+    const positions = scopePositions(scope, false);
     const idx = ranked.findIndex((r) => r.model.id === model.id);
     if (idx === -1) continue;
     const me = summarize(ranked[idx], scope);

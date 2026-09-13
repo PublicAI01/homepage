@@ -13,7 +13,9 @@ describe('modelStandings', () => {
 
   it('agrees with the table it asked — same position, same total', () => {
     for (const s of found.standings) {
-      const r = rankModels({ scope: s.scope, reports: true, limit: 100 });
+      // No `reports`: the model page and the table must agree on the
+      // default, which is boards-first.
+      const r = rankModels({ scope: s.scope, limit: 100 });
       if ('error' in r || !('models' in r))
         throw new Error(`no scope ${s.scope}`);
       const me = r.models.find((m) => m.id === found.model.id);

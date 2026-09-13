@@ -157,10 +157,10 @@ describe('reports switch', () => {
       ...scopes.flatMap((s) => s.domains),
     ];
     for (const scope of all) {
-      const on = ok(rankModels({ scope, minBoards: 0, limit: 500 }));
-      const off = ok(
-        rankModels({ scope, minBoards: 0, limit: 500, reports: false }),
+      const on = ok(
+        rankModels({ scope, minBoards: 0, limit: 500, reports: true }),
       );
+      const off = ok(rankModels({ scope, minBoards: 0, limit: 500 }));
       // Overall leaves a provisional row unnumbered, so the run of numbers
       // is over the rows that have one — and it still has to be 1..k with no
       // gaps, which is what "numbered by its place" means.
@@ -169,25 +169,16 @@ describe('reports switch', () => {
         .filter((p): p is number => p !== null);
       expect(numbered).toEqual(numbered.map((_, i) => i + 1));
 
-      // One direction only. A row flagged as report-placed can never appear
-      // once reports are off; the converse would need both lists whole, and
-      // both are cut to the same limit from different orderings.
-      // Domains only. In a domain, `rankedInScope` means "no recognised board
-      // measured it here", so such a row cannot be in the reports-off list. In
-      // Overall the same flag means "fewer than two publishers among the boards
-      // that build the index" — a board-measured model can fail that and still
-      // belong in the list, which is the rule doing its job, not a leak.
-      if (scope !== 'overall') {
-        const byBoard = new Set(off.models.map((m) => m.id));
-        for (const m of on.models) {
-          if (!m.rankedInScope) expect(byBoard.has(m.id)).toBe(false);
-        }
-      }
-      // Same reason: with reports off, every row in a domain is there because
-      // a board measured it. Overall's flag is the ranking rule, and a
-      // board-measured model can fail that rule.
+      // In a domain, `rankedInScope` false means "no recognised board
+      // measured it here". Such a row is listed either way — its ✱ figure
+      // is the only evidence there is for it — and never numbered, either
+      // way. In Overall the same flag means "fewer than two publishers
+      // among the boards that build the index", which a board-measured
+      // model can fail; that is the rule working, not a leak.
       if (scope !== 'overall')
-        for (const m of off.models) expect(m.rankedInScope).toBe(true);
+        for (const list of [on, off])
+          for (const m of list.models)
+            expect(m.position === null).toBe(!m.rankedInScope);
     }
   });
 });

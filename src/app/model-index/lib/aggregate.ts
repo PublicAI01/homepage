@@ -252,6 +252,54 @@ export interface AggregateInput {
   useConfidence?: boolean;
 }
 
+/**
+ * Boards decide the numbers; reports ✱ speak where no board has.
+ *
+ * A report's figures used to move a model's score in every column they
+ * touched, so two numbers a rival printed in its launch post carried
+ * GPT-5.6 Terra from #24 to #1 in Science, with nothing on the page to say
+ * so (2026-09-13). A launch post is a comparison set its author chose, and
+ * choosing it is not measuring.
+ *
+ * So a column's score is the board-only score wherever boards measured the
+ * model, and the ✱ score only where they did not — those rows keep their
+ * figures and their place in the ordering, and take no number (see
+ * scopePositions in query.ts). Every ✱ figure is still listed on the
+ * model's page, and a reader who wants them in the numbers can ask.
+ *
+ * `boards` and `withReports` must be the same models in the same order:
+ * two runs of `aggregate` over one snapshot, differing only in weights.
+ */
+export function boardsFirst(
+  boards: AggregateRow[],
+  withReports: AggregateRow[],
+): AggregateRow[] {
+  const starred = new Map(withReports.map((r) => [r.model.id, r]));
+  return boards.map((b) => {
+    const s = starred.get(b.model.id);
+    if (!s) return b;
+    const fill = (
+      board: Record<string, number | null>,
+      star: Record<string, number | null>,
+    ) =>
+      Object.fromEntries(
+        Object.keys(board).map((k) => [k, board[k] ?? star[k] ?? null]),
+      );
+    return {
+      ...b,
+      byDomain: fill(b.byDomain, s.byDomain),
+      byCategory: fill(b.byCategory, s.byCategory),
+      // Same rule for the Overall estimate ✱, which is never a rank: where
+      // boards give nothing to place a model by, its ✱ figures do.
+      estimate: b.estimate ?? s.estimate,
+      // The ✱ figures themselves stay: they are shown, cited and counted,
+      // they just do not move a number a board already decided.
+      perBenchmark: s.perBenchmark,
+      reports: s.reports,
+    };
+  });
+}
+
 export function aggregate({
   models,
   benchmarks,

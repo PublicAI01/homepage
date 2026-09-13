@@ -5,7 +5,7 @@ import type { SizeTier } from './size';
  * social-card image and the exported chart all read the same state, so what
  * a reader shares is what they filtered — never the unfiltered page.
  *
- *   ?rank=domain:Tool use&family=K2&size=large&min=0&reports=0&q=k2
+ *   ?rank=domain:Tool use&family=K2&size=large&min=0&reports=1&q=k2
  *
  * `model` is the row left open. It is in the URL for the same reason the
  * filters are: a link to "how this model scores" should land on the answer,
@@ -33,7 +33,7 @@ export const DEFAULT_VIEW: ViewState = {
   family: 'all',
   size: 'all',
   minBoards: 1,
-  reports: true,
+  reports: false,
   model: '',
   onlyNew: false,
 };
@@ -46,7 +46,7 @@ export function encodeView(v: ViewState): URLSearchParams {
   if (v.family !== 'all') p.set('family', v.family);
   if (v.size !== 'all') p.set('size', v.size);
   if (v.minBoards !== DEFAULT_VIEW.minBoards) p.set('min', String(v.minBoards));
-  if (!v.reports) p.set('reports', '0');
+  if (v.reports) p.set('reports', '1');
   if (v.model) p.set('model', v.model);
   if (v.onlyNew) p.set('new', '1');
   return p;
@@ -67,7 +67,7 @@ export function decodeView(p: URLSearchParams): ViewState {
   v.size = size && SIZES.has(size) ? (size as SizeTier) : 'all';
   const min = Number(p.get('min'));
   v.minBoards = p.has('min') && Number.isInteger(min) && min >= 0 ? min : 1;
-  v.reports = p.get('reports') !== '0';
+  v.reports = p.get('reports') === '1';
   v.model = p.get('model') ?? '';
   v.onlyNew = p.get('new') === '1';
   return v;

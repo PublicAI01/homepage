@@ -15,6 +15,7 @@ import {
 import {
   aggregate,
   type AggregateRow,
+  boardsFirst,
   compareScores,
   type NormalizedScore,
 } from '../lib/aggregate';
@@ -284,18 +285,19 @@ export default function IndexTable({
     initial.model || null,
   );
   const [onlyNew, setOnlyNew] = useState(initial.onlyNew);
-  // Reports ✱ — launch posts, blogs, write-ups — are in by default and can
-  // be switched off, which drops their figures from every score and hides
-  // models nothing else has measured.
+  // Reports ✱ — launch posts, blogs, write-ups — are shown and cited
+  // always; this asks for their figures to enter the scores too. Off by
+  // default: boards decide a number wherever they measured the model, and
+  // a ✱ figure speaks only where they did not (see boardsFirst).
   const [includeReports, setIncludeReports] = useState(initial.reports);
   const [sizeTier, setSizeTier] = useState<SizeTier | 'all'>(initial.size);
 
-  const weights = useMemo(() => {
+  const weights = useMemo(() => weightsFor(benchmarks), [benchmarks]);
+  const boardWeights = useMemo(() => {
     const w = weightsFor(benchmarks);
-    if (!includeReports)
-      for (const b of benchmarks) if (b.kind === 'report') w[b.id] = 0;
+    for (const b of benchmarks) if (b.kind === 'report') w[b.id] = 0;
     return w;
-  }, [benchmarks, includeReports]);
+  }, [benchmarks]);
   const sources = useMemo(() => groupBoards(benchmarks), [benchmarks]);
   const boards = useMemo(
     () => sources.filter((s) => s.kind !== 'report'),
@@ -334,19 +336,22 @@ export default function IndexTable({
     [models],
   );
 
-  const rows = useMemo(
-    () =>
+  const rows = useMemo(() => {
+    const run = (w: Record<string, number>) =>
       aggregate({
         models,
         benchmarks,
         scores,
-        weights,
+        weights: w,
         overall: OVERALL,
         priorFraction: PRIOR_FRACTION,
         minSources: MIN_SOURCES,
-      }),
-    [models, benchmarks, scores, weights],
-  );
+      });
+    const withReports = run(weights);
+    return includeReports
+      ? withReports
+      : boardsFirst(run(boardWeights), withReports);
+  }, [models, benchmarks, scores, weights, boardWeights, includeReports]);
 
   const rankOf = useMemo(() => {
     const m = new Map<string, number>();
@@ -369,7 +374,6 @@ export default function IndexTable({
     let out = rows.filter((r) => {
       if (onlyNew && !isNew.has(r.model.id)) return false;
       if (r.covered < minBoards) return false;
-      if (!includeReports && r.covered === 0) return false;
       if (family !== 'all' && familyOf(r.model.name) !== family) return false;
       if (sizeTier !== 'all' && tierOf(r.model.size) !== sizeTier) return false;
       if (q && !`${r.model.name} ${r.model.org}`.toLowerCase().includes(q))
@@ -381,24 +385,10 @@ export default function IndexTable({
       out = [...out]
         // A model with no figure in this scope is not "last": it is absent.
         .filter((r) => keyOf(r, rankKey) !== null)
-        // With reports in, a row sits where its figure puts it and carries
-        // a ✱ instead of a number if no board measured it here. With
-        // reports out, only board-measured rows remain in this scope.
-        .filter((r) => includeReports || eligible(r, rankKey))
         .sort(by);
     }
     return out;
-  }, [
-    rows,
-    query,
-    family,
-    minBoards,
-    rankKey,
-    includeReports,
-    sizeTier,
-    onlyNew,
-    isNew,
-  ]);
+  }, [rows, query, family, minBoards, rankKey, sizeTier, onlyNew, isNew]);
 
   const rankedCount = rows.filter((r) => r.ranked).length;
   const shown = filtered.slice(0, PAGE);
@@ -715,14 +705,14 @@ export default function IndexTable({
         </select>
         <label
           className="text-caption flex cursor-pointer items-center gap-1.5 text-[#D9D7E0] select-none"
-          title="Launch posts, blogs and write-ups. Off: their figures leave every score and models nothing else measured are hidden.">
+          title="Launch posts, blogs and write-ups are always listed and cited. This lets their figures into the scores too. Off — the default — a board's measurement decides the number wherever there is one, and a ✱ figure speaks only where no board has.">
           <input
             type="checkbox"
             checked={includeReports}
             onChange={(e) => setIncludeReports(e.target.checked)}
             className="accent-primary size-3.5"
           />
-          Include reports{' '}
+          Count reports{' '}
           <span className={cn('font-mono', REPORT_BADGE.tone.split(' ').pop())}>
             ✱
           </span>
