@@ -153,6 +153,63 @@ export function confidenceOf(stderr: number | undefined, spread: number) {
 }
 
 /**
+ * One publication, one voice in a scope.
+ *
+ * A report's figures are weighted per measure, like a board's — so a launch
+ * post that printed five coding numbers carried five times a report's
+ * weight in Agentic coding, more than triple Terminal-Bench's whole share,
+ * while the published method says a write-up counts for less than a board
+ * measure (2026-09-13). A board earns its per-measure weight by running a
+ * fixed set on everyone; a blog prints the rows it chose to print, and the
+ * number of rows is a choice, not evidence. So the measures one report
+ * contributes to one scope are averaged first and enter once.
+ *
+ * Boards are untouched: their measures each count, which is what the
+ * weighting table beside the index says they do.
+ */
+function oneVotePerReport(
+  scores: NormalizedScore[],
+  weights: Record<string, number>,
+  isReport: (benchmarkId: string) => boolean,
+  groupOf: (benchmarkId: string) => string | undefined,
+): NormalizedScore[] {
+  const byGroup = new Map<string, NormalizedScore[]>();
+  const out: NormalizedScore[] = [];
+  for (const s of scores) {
+    if (!isReport(s.benchmarkId)) {
+      out.push(s);
+      continue;
+    }
+    const g = groupOf(s.benchmarkId) ?? s.benchmarkId;
+    byGroup.set(g, [...(byGroup.get(g) ?? []), s]);
+  }
+  for (const group of byGroup.values()) {
+    if (group.length === 1) {
+      out.push(group[0]);
+      continue;
+    }
+    // Weighted by confidence, so a figure with a wide error bar does not
+    // drag the publication's one voice as hard as a precise one.
+    const conf = group.reduce((t, s) => t + s.confidence, 0);
+    const mean =
+      conf > 0
+        ? group.reduce((t, s) => t + s.normalized * s.confidence, 0) / conf
+        : group.reduce((t, s) => t + s.normalized, 0) / group.length;
+    // The measure whose weight the voice carries: they are equal within a
+    // report, so the first is the report's own per-measure weight.
+    const carrier = group.reduce((a, b) =>
+      (weights[a.benchmarkId] ?? 0) >= (weights[b.benchmarkId] ?? 0) ? a : b,
+    );
+    out.push({
+      ...carrier,
+      normalized: mean,
+      confidence: conf / group.length,
+    });
+  }
+  return out;
+}
+
+/**
  * Weighted mean of normalized scores, pulled toward 50 by a prior whose
  * weight is `priorFraction` of the total weight available in scope. With
  * full evidence the pull is mild; with one small board it dominates.
@@ -311,10 +368,18 @@ export function aggregate({
       priorFraction,
     );
 
+    const oneVote = (inScope: NormalizedScore[]) =>
+      oneVotePerReport(
+        inScope,
+        weights,
+        (id) => kindOf.get(id) === 'report',
+        (id) => boardOf.get(id),
+      );
+
     const byDomain: Record<string, number | null> = {};
     for (const d of domains) {
       byDomain[d] = shrunkMean(
-        contributing.filter((s) => domainOf.get(s.benchmarkId) === d),
+        oneVote(contributing.filter((s) => domainOf.get(s.benchmarkId) === d)),
         weights,
         domainWeight.get(d) ?? 0,
         priorFraction,
@@ -324,7 +389,9 @@ export function aggregate({
     const byCategory: Record<string, number | null> = {};
     for (const c of categories) {
       byCategory[c] = shrunkMean(
-        contributing.filter((s) => categoryOf.get(s.benchmarkId) === c),
+        oneVote(
+          contributing.filter((s) => categoryOf.get(s.benchmarkId) === c),
+        ),
         weights,
         categoryWeight.get(c) ?? 0,
         priorFraction,

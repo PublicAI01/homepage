@@ -4,6 +4,7 @@ import { benchmarks, models, scores } from '../data';
 import type { Benchmark, Model, Score } from '../data/types';
 import {
   aggregate,
+  type AggregateRow,
   confidenceOf,
   normalizeBoard,
   placeAmong,
@@ -779,5 +780,66 @@ describe('what a one-off publication is worth', () => {
     expect(INDEPENDENT_REPORT_WEIGHT).toBeGreaterThan(VENDOR_REPORT_WEIGHT);
     for (const w of WEIGHTING)
       expect(w.weight).toBeGreaterThan(INDEPENDENT_REPORT_WEIGHT);
+  });
+});
+
+describe('one publication, one voice', () => {
+  it('weighs a five-row write-up like a one-row one, and boards per measure', () => {
+    // A launch post that printed five coding numbers carried five times a
+    // report's weight in Agentic coding — more than triple Terminal-Bench's
+    // whole share (2026-09-13).
+    const models = ['a', 'b', 'c'].map((id) => ({ id, name: id, org: 'o' }));
+    const bench = (id: string, kind: 'board' | 'report', group: string) => ({
+      id,
+      name: id,
+      publisher: group,
+      url: 'u',
+      retrievedAt: '2026-09-13',
+      metric: 'percent' as const,
+      category: 'Coding',
+      domain: 'Agentic coding',
+      kind,
+      source: group,
+      group,
+    });
+    const benchmarks = [
+      bench('board-1', 'board', 'board'),
+      ...['r1', 'r2', 'r3', 'r4', 'r5'].map((id) =>
+        bench(id, 'report', 'blog'),
+      ),
+    ];
+    // The blog says the same thing five times; the board disagrees.
+    const scores = [
+      ...models.map((m, i) => ({
+        modelId: m.id,
+        benchmarkId: 'board-1',
+        raw: [10, 50, 90][i],
+        sourceLabel: m.id,
+      })),
+      ...['r1', 'r2', 'r3', 'r4', 'r5'].flatMap((b) =>
+        models.map((m, i) => ({
+          modelId: m.id,
+          benchmarkId: b,
+          raw: [90, 50, 10][i],
+          sourceLabel: m.id,
+        })),
+      ),
+    ];
+    const extra = ['r2', 'r3', 'r4', 'r5'];
+    const weights = Object.fromEntries(
+      benchmarks.map((b) => [b.id, b.kind === 'board' ? 25 : 12]),
+    );
+    const five = aggregate({ models, benchmarks, scores, weights });
+    const one = aggregate({
+      models,
+      benchmarks: benchmarks.filter((b) => !extra.includes(b.id)),
+      scores: scores.filter((s) => !extra.includes(s.benchmarkId)),
+      weights,
+    });
+    const at = (rows: AggregateRow[], id: string) =>
+      rows.find((r) => r.model.id === id)!.byDomain['Agentic coding']!;
+    expect(at(five, 'a')).toBeCloseTo(at(one, 'a'), 6);
+    // And the board still outweighs the one voice: 'a' lost on the board.
+    expect(at(five, 'a')).toBeLessThan(at(five, 'c'));
   });
 });
