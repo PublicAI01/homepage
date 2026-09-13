@@ -134,8 +134,28 @@ jobs:
             echo "$GHCR_TOKEN" | docker login ghcr.io -u "$GHCR_USER" --password-stdin
             trap 'docker logout ghcr.io >/dev/null 2>&1 || true' EXIT
 
+            # Loopback only, both families. Published on every interface,
+            # Docker writes its own iptables rules ahead of ufw, so the origin
+            # answered the public internet directly — and a request that never
+            # passed Cloudflare can put any address it likes in
+            # cf-connecting-ip, the key the subscribe and contact rate limits
+            # bucket by (2026-09-13). Both families because nginx proxies to
+            # "localhost", which resolves to ::1 on this host: binding 127.0.0.1
+            # alone would leave nginx talking to a closed port.
+            PUBLISH='-p 127.0.0.1:3000:3000 -p [::1]:3000:3000'
+            PUBLISH_FALLBACK='-p 3000:3000'
+
             # No -S: early attempts fail while the container boots.
             probe() { curl -fs -o /dev/null --max-time 3 http://127.0.0.1:3000/; }
+
+            # The app answering on loopback is not the site being up: nginx has
+            # to reach it too. Anything but a connection error means nginx got
+            # through — a redirect to https is a fine answer here.
+            edge_probe() {
+              code=$(curl -s -o /dev/null --max-time 5 -w '%{http_code}' \
+                -H "Host: publicai.io" http://127.0.0.1/ || echo 000)
+              [ "$code" != "000" ] && [ "$code" -lt 500 ]
+            }
 
             health_check() {
               for i in $(seq 1 30); do
@@ -150,10 +170,14 @@ jobs:
               # Value-less -e flags inherit from the SSH session env, so
               # secret values never appear in the command line or ps. The
               # rollback path reuses this function and inherits the same env.
+              # $PUBLISH is loopback only (see below), with the old
+              # every-interface form kept as a fallback the script can put
+              # back without a human.
+              # shellcheck disable=SC2086
               docker run -d \
                 --name "$CONTAINER_NAME" \
                 --restart always \
-                -p 3000:3000 \
+                $PUBLISH \
                 -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION \
                 -e RECAPTCHA_SECRET_KEY -e CONTACT_EMAIL_TO -e OFFICIAL_ACCOUNTS_JSON \
                 -e RESEND_API_KEY -e RESEND_AUDIENCE_ID \
@@ -173,7 +197,27 @@ jobs:
             echo "Starting new container..."
             start_container "$IMAGE"
 
-            if ! health_check; then
+            # Not `health_check && HEALTHY=1`: under `set -e` that whole list
+            # returning non-zero would end the job before the rollback ran.
+            HEALTHY=0
+            if health_check; then HEALTHY=1; fi
+
+            # If nginx cannot reach the loopback-only port, put the old
+            # publish form back rather than leave the site dark, and fail.
+            if [ "$HEALTHY" = 1 ] && ! edge_probe; then
+              echo "::error::nginx cannot reach the container on loopback; restoring $PUBLISH_FALLBACK"
+              PUBLISH="$PUBLISH_FALLBACK"
+              start_container "$IMAGE"
+              health_check || true
+              if edge_probe; then
+                echo "Site is serving again on the old binding."
+              else
+                echo "::error::Still unreachable through nginx - manual intervention required."
+              fi
+              exit 1
+            fi
+
+            if [ "$HEALTHY" != 1 ]; then
               echo "::error::Health check failed for $IMAGE"
               docker logs --tail 200 "$CONTAINER_NAME" 2>&1 || true
 
