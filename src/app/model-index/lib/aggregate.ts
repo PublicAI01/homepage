@@ -298,12 +298,22 @@ export function boardsFirst(
   return boards.map((b) => {
     const s = starred.get(b.model.id);
     if (!s) return b;
+    // Over the keys of both runs, not the board run's alone. The board run
+    // gives report measures weight 0, so a domain no board measures has no
+    // key there at all — and iterating only those keys left every such
+    // domain out of the default view: on 2026-09-14 five domains (Expert
+    // reasoning, Factuality, Long context, Repository Q&A, Workflow
+    // automation) answered with no rows under a warning that said every
+    // figure in them was a report ✱. Those are exactly the columns where a
+    // report is meant to speak, because no board has.
     const fill = (
       board: Record<string, number | null>,
       star: Record<string, number | null>,
     ) =>
       Object.fromEntries(
-        Object.keys(board).map((k) => [k, board[k] ?? star[k] ?? null]),
+        [...new Set([...Object.keys(board), ...Object.keys(star)])].map(
+          (k) => [k, board[k] ?? star[k] ?? null],
+        ),
       );
     return {
       ...b,

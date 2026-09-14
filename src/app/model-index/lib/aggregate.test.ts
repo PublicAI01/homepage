@@ -5,6 +5,7 @@ import type { Benchmark, Model, Score } from '../data/types';
 import {
   aggregate,
   type AggregateRow,
+  boardsFirst,
   confidenceOf,
   normalizeBoard,
   placeAmong,
@@ -855,5 +856,54 @@ describe('one publication, one voice', () => {
     expect(at(five, 'a')).toBeCloseTo(at(one, 'a'), 6);
     // And the board still outweighs the one voice: 'a' lost on the board.
     expect(at(five, 'a')).toBeLessThan(at(five, 'c'));
+  });
+});
+
+describe('boardsFirst', () => {
+  // One board in `test`; one report ✱ whose only measure sits in `solo`, a
+  // domain no board measures. Three rows on the report so it standardizes.
+  const bs = [
+    bench('b1'),
+    bench('r:x', 'r', { kind: 'report', domain: 'solo', source: 'r' }),
+  ];
+  const ms = [model('m1'), model('m2'), model('m3')];
+  const ss = [
+    score('m1', 'b1', 30),
+    score('m2', 'b1', 50),
+    score('m3', 'b1', 70),
+    score('m1', 'r:x', 10),
+    score('m2', 'r:x', 20),
+    score('m3', 'r:x', 30),
+  ];
+  const run = (w: Record<string, number>) =>
+    aggregate({ models: ms, benchmarks: bs, scores: ss, weights: w });
+  const withReports = run(weightsFor(bs));
+  const boardOnly = run({ ...weightsFor(bs), 'r:x': 0 });
+  const rows = boardsFirst(boardOnly, withReports);
+  const byId = new Map(rows.map((r) => [r.model.id, r]));
+  const starred = new Map(withReports.map((r) => [r.model.id, r]));
+
+  it('lets a report ✱ score a domain no board measures, instead of dropping the column', () => {
+    // Regression: the board run has no `solo` key at all (the report weighs
+    // 0 there), and filling over its keys alone left `solo` absent — every
+    // report-only domain answered with no rows (2026-09-14).
+    for (const r of rows) {
+      expect(r.byDomain.solo, r.model.id).toBe(
+        starred.get(r.model.id)!.byDomain.solo,
+      );
+      expect(typeof r.byDomain.solo).toBe('number');
+    }
+  });
+
+  it('keeps the board number where a board measured the model', () => {
+    for (const r of rows)
+      expect(r.byDomain.test).toBe(
+        boardOnly.find((b) => b.model.id === r.model.id)!.byDomain.test,
+      );
+  });
+
+  it('still gives no board coverage in a report-only domain, so it takes no place', () => {
+    for (const r of rows) expect(r.boardsByDomain.solo ?? 0).toBe(0);
+    expect(byId.get('m3')!.reports).toBe(1);
   });
 });

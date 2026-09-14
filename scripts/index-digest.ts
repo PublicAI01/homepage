@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 import { diff, type HistoryEntry } from '../src/app/model-index/lib/diff.ts';
@@ -55,6 +55,54 @@ const line = (m: (typeof c.models)[number]) =>
           ? `${m.name} (${m.org}) listed`
           : `${m.name} no longer listed`;
 
+/**
+ * A week where dozens of models gain or lose their rank at once is not
+ * dozens of pieces of news: it is one change to what ranking requires, or
+ * one board that stopped answering. Listing them line by line buries the
+ * week's actual movement and reads as chaos — the first Index Weekly would
+ * have opened with 112 bullets saying "leaves the Overall ranking", all of
+ * them the two-publisher rule tightening on 2026-09-10 (2026-09-14).
+ *
+ * Above this many in one direction, they are summarised as one line naming
+ * the highest-placed few.
+ */
+const MANY = 8;
+
+const movers = c.models.filter(
+  (m) => m.kind === 'moved' || m.kind === 'ranked' || m.kind === 'unranked',
+);
+const gained = movers.filter((m) => m.kind === 'ranked');
+const lost = movers.filter((m) => m.kind === 'unranked');
+const bulk = (
+  list: typeof movers,
+  verb: string,
+  at: (m: (typeof movers)[number]) => number | undefined,
+) => {
+  const named = [...list]
+    .sort((a, b) => (at(a) ?? 1e9) - (at(b) ?? 1e9))
+    .slice(0, 3)
+    .map((m) => m.name)
+    .join(', ');
+  return `${list.length} models ${verb} the Overall ranking at once — ${named} and ${list.length - 3} more. A whole group moving together is a change to what ranking requires, or to which boards answered; the method is on the index page.`;
+};
+// When a group that size joins or leaves, every place below it shifts by
+// about as much, and a rank delta stops meaning "this model moved". Those
+// lines are left out for the week rather than printed as news.
+const renumbered = gained.length > MANY || lost.length > MANY;
+const moverLines = [
+  ...(gained.length > MANY
+    ? [bulk(gained, 'entered', (m) => m.rank)]
+    : gained.map((m) => line(m))),
+  ...(lost.length > MANY
+    ? [bulk(lost, 'left', (m) => m.previousRank)]
+    : lost.map((m) => line(m))),
+  ...(renumbered
+    ? [
+        'Places below them shifted with that change, so this week’s individual rank moves would say more about the renumbering than about the models. They are left out.',
+      ]
+    : movers.filter((m) => m.kind === 'moved').map((m) => line(m))),
+];
+
 const md = `# PublicAI Index Weekly — ${to.date}
 
 Changes since ${c.since} (${c.snapshots} snapshot${c.snapshots === 1 ? '' : 's'}).
@@ -63,15 +111,7 @@ Changes since ${c.since} (${c.snapshots} snapshot${c.snapshots === 1 ? '' : 's'}
 ${top.map(([, m]) => `${m.rank}. ${m.name} — ${m.index}`).join('\n')}
 
 ## Movers
-${
-  c.models
-    .filter(
-      (m) => m.kind === 'moved' || m.kind === 'ranked' || m.kind === 'unranked',
-    )
-    .map(line)
-    .map((l) => `- ${l}`)
-    .join('\n') || '- No moves of three places or more.'
-}
+${moverLines.map((l) => `- ${l}`).join('\n') || '- No moves of three places or more.'}
 
 ## New this week
 ${
@@ -99,12 +139,8 @@ const html = `<!doctype html><html><body style="margin:0;background:#0B0B0D;colo
 <ol style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${top.map(([, m]) => `<li>${esc(m.name)} <span style="color:#8E8BA0">${m.index}</span></li>`).join('')}</ol>
 <h2 style="font-size:16px;margin:0 0 8px">Movers</h2>
 <ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${
-  c.models
-    .filter(
-      (m) => m.kind === 'moved' || m.kind === 'ranked' || m.kind === 'unranked',
-    )
-    .map((m) => `<li>${esc(line(m))}</li>`)
-    .join('') || '<li>No moves of three places or more.</li>'
+  moverLines.map((l) => `<li>${esc(l)}</li>`).join('') ||
+  '<li>No moves of three places or more.</li>'
 }</ul>
 <h2 style="font-size:16px;margin:0 0 8px">New this week</h2>
 <ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${
@@ -119,6 +155,11 @@ ${c.newSources.length ? `<h2 style="font-size:16px;margin:0 0 8px">New sources</
 <p style="font-size:12px;color:#6F6D7A;margin-top:32px">Scores are 0–100 standardized; 50 is the average of the models each source lists. Scores belong to their publishers; PublicAI normalizes and weights them. <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#6F6D7A">Unsubscribe</a></p>
 </div></body></html>`;
 
+// The caller names a directory; making it is this script's job, not the
+// caller's. The weekly workflow created it after calling this, so the very
+// first Monday the digest never got written and nobody was sent one
+// (2026-09-14).
+await mkdir(OUT, { recursive: true });
 await writeFile(join(OUT, 'digest.md'), md);
 await writeFile(join(OUT, 'digest.html'), html);
 console.log(
