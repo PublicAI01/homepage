@@ -60,7 +60,7 @@ done
 # A pattern grep cannot compile matches nothing, so an invalid FORBID_RE does
 # not fail closed — it opens the gate completely and says nothing. Checked
 # here, loudly, because that is exactly how it would go unnoticed.
-for re_name in FORBID_RE EXEMPT_RE; do
+for re_name in FORBID_RE EXEMPT_RE SIZE_EXEMPT_RE; do
   re_value=${!re_name:-}
   [ -n "$re_value" ] || continue
   if ! printf 'probe\n' | grep -qE "$re_value" 2>/dev/null; then
@@ -116,14 +116,25 @@ mail_out() {
 }
 
 # The fix session's own words for what it left to a person — the block it is
-# told to end with. Empty when it skipped nothing.
-# Empty when nothing was skipped: the fix session writes the heading every
-# time, and "本轮无跳过项" under it is not something to mail a person about
-# (2026-09-12: "修了 1 处,0 处要你拍板" went out as a section of the digest).
+# told to end with.
+#
+# Empty when nothing was skipped: the session writes the heading every time,
+# and "本轮无跳过项" under it is not something to mail about (2026-09-12).
+# Empty too when everything under it has already been said: an unresolved
+# judgement call used to be rewritten and mailed every morning until someone
+# acted on it (see new-skips.py).
+SKIPS="$STATE/skips.json"
 skipped_summary() {
   [ -f "${FIX_OUT:-/nonexistent}" ] || return 0
   [ "${NSKIP:-0}" -gt 0 ] || return 0
-  sed -n '/^【跳过项·大白话总结】/,$p' "$FIX_OUT" | sed '/^【已发信】/,$d'
+  sed -n '/^【跳过项·大白话总结】/,$p' "$FIX_OUT" | sed '/^【已发信】/,$d' \
+    | python3 "$SELF_DIR/new-skips.py" "$SKIPS"
+}
+
+# What is already with a person, for the fix session to recognise rather
+# than explain again.
+open_skips() {
+  [ -f "$SKIPS" ] && python3 "$SELF_DIR/new-skips.py" "$SKIPS" --open 2>/dev/null
 }
 
 # One run at a time per repository. A stale lock older than six hours is a
@@ -252,7 +263,9 @@ $FIX_NOTES
 **禁改路径**(脚本有同源硬闸,命中即整批作废、白干一轮),匹配这个正则:
   $FORBID_RE
 
-**规模闸**:本轮全部改动(含新增测试)合计不得超过 $MAX_LINES 行(added+deleted)。
+**规模闸**:本轮全部改动(含新增测试)合计不得超过 $MAX_LINES 行(added+deleted)。$( [ -n "${SIZE_EXEMPT_RE:-}" ] && printf '
+自动生成的回归快照不计入这个上限(匹配 %s),它按 FIX_NOTES 里那两条规矩兜住。
+所以「补丁只有几行、但快照要重跑几千行」不是跳过的理由 —— 那种就直接修。' "$SIZE_EXEMPT_RE" )
 
 **测试**:改完自己跑一遍;脚本随后会独立重跑这些复核,你说过了不算:
 $gate_list
@@ -263,7 +276,15 @@ $gate_list
 
 **跳过项不用你发信**:外层脚本统一发,一天一封。你只要把输出末尾那段
 【跳过项·大白话总结】写完整 —— 脚本会原样摘走。【已发信】一行写「由脚本统一发」。
-不要调用 notify.sh,不要发任何邮件。"
+不要调用 notify.sh,不要发任何邮件。
+
+**每条跳过项开头写一个稳定代号** \`[skip:短横线小写名]\`,例如
+\`**[skip:reports-in-rankings] 博文数字进了领域排名**\`。同一个底层问题,以后每次
+都必须用同一个代号 —— 措辞可以变,代号不能变。脚本靠它认出「这条人已经知道了」,
+从而不再每天重发同一件事。
+$(open_skips | sed 's/^/  · /' | { grep . && printf '%s\n' '
+(上面这些已经在人那里等着了 —— 代号 + 标题。今天如果又跳过其中某条,照旧用同一个代号
+写出来,脚本会自己压掉、不会重复打扰人;**不要**因为它在等就绕开它,也不要换个代号重报。)'; } || true)"
 
 if ! ask_claude "$FIX_TIMEOUT" "$FIX_OUT" -p "$fix_prompt" --resume "$SID" \
      --dangerously-skip-permissions; then
@@ -363,14 +384,34 @@ if [ $? -ne 0 ]; then
 fi
 log "  ✓ 密钥检查"
 
-lines=$(git diff --numstat | awk '{a+=$1; d+=$2} END {print a+d+0}')
+# The size gate is there to stop a runaway refactor, so it counts what a
+# person would have to read. A regenerated snapshot is not that: its size
+# measures the data, not the change, and a five-line parsing fix rewrites
+# two thousand lines of it. Counting those turned real one-line fixes into
+# mail asking a human to do them by hand (Grok 4.20 and the Grok Reasoning
+# merge, 2026-09-12 and -14). Such files are named per repository in
+# SIZE_EXEMPT_RE and are held to their own rules instead — a parse test
+# against the raw captures, and every change explained by the stated cause.
+size_of() {
+  local f=$1
+  if git ls-files --error-unmatch "$f" >/dev/null 2>&1; then
+    git diff --numstat -- "$f" | awk '{a+=$1; d+=$2} END {print a+d+0}'
+  else
+    wc -l <"$f" 2>/dev/null || echo 0
+  fi
+}
+lines=0 generated=0
 while IFS= read -r f; do
-  git ls-files --error-unmatch "$f" >/dev/null 2>&1 \
-    || lines=$((lines + $(wc -l <"$f" 2>/dev/null || echo 0)))
+  n=$(size_of "$f")
+  if [ -n "${SIZE_EXEMPT_RE:-}" ] && printf '%s\n' "$f" | grep -qE "$SIZE_EXEMPT_RE"; then
+    generated=$((generated + n))
+  else
+    lines=$((lines + n))
+  fi
 done <"$CHANGED"
-log "改动规模 $lines 行(上限 $MAX_LINES)"
+log "改动规模 $lines 行(上限 $MAX_LINES)$( [ "$generated" -gt 0 ] && echo " + 生成物 $generated 行不计")"
 [ "$lines" -gt "$MAX_LINES" ] && fail_batch "改动太大($lines 行)" \
-  "改动 $lines 行,超过 $MAX_LINES 行的规模闸,整批作废。"
+  "改动 $lines 行(不含生成物),超过 $MAX_LINES 行的规模闸,整批作废。"
 
 log "复核 ${#GATE_STEPS[@]} 项检查…"
 gate_log="$STATE/$DAY.gates.log"
