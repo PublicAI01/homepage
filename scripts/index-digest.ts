@@ -28,10 +28,35 @@ const history = JSON.parse(
 };
 const entries = history.entries;
 // For naming sources: history records ids, the snapshot holds the names.
-const { benchmarks } = JSON.parse(
+const { benchmarks, scores: scoresIn } = JSON.parse(
   await readFile(join(DIR, 'index.json'), 'utf8'),
-) as { benchmarks: Benchmark[] };
+) as {
+  benchmarks: Benchmark[];
+  scores: { modelId: string; benchmarkId: string }[];
+};
 const named = (id: string) => sourceLabel(benchmarks, id);
+
+/**
+ * What a new source is, in a sentence a reader who has never heard of it
+ * can act on: who published it, what it measures, and what it counts for
+ * here. A name alone does not do that — the first issue announced
+ * "DeepSeek — V4.1 Flash model card ✱" and left the reader to guess
+ * (2026-09-14).
+ */
+const describeSource = (id: string) => {
+  const mine = benchmarks.filter((b) => b.group === id);
+  if (mine.length === 0) return named(id);
+  const measures = new Set(mine.map((b) => b.id)).size;
+  const covered = new Set(
+    scoresIn
+      .filter((s) => mine.some((b) => b.id === s.benchmarkId))
+      .map((s) => s.modelId),
+  ).size;
+  const what = `${measures} benchmark${measures === 1 ? '' : 's'} covering ${covered} model${covered === 1 ? '' : 's'}`;
+  return mine[0].kind === 'report'
+    ? `${named(id)} — a one-off write-up from ${mine[0].publisher}, ${what}. Figures a publisher printed once, not a leaderboard that re-runs: they are marked ✱, they never count toward the Overall index, and they never override a number a recognised board measured.`
+    : `${named(id)} — a leaderboard from ${mine[0].publisher}, ${what}. Its figures count toward the Overall index.`;
+};
 const to = entries[entries.length - 1];
 const sinceDate =
   opt('--since') ??
@@ -117,10 +142,10 @@ Changes since ${c.since} (${c.snapshots} snapshot${c.snapshots === 1 ? '' : 's'}
 ## Top 10 Overall
 ${top.map(([, m]) => `${m.rank}. ${m.name} — ${m.index}`).join('\n')}
 
-## Movers
+## Movers in the Overall ranking
 ${moverLines.map((l) => `- ${l}`).join('\n') || '- No moves of three places or more.'}
 
-## New this week
+## Models new to the index
 ${
   c.models
     .filter((m) => m.kind === 'entered')
@@ -129,7 +154,7 @@ ${
     .map((l) => `- ${l}`)
     .join('\n') || '- No new models.'
 }
-${c.newSources.length ? `\n## New sources\n${c.newSources.map((s) => `- ${named(s)}`).join('\n')}\n` : ''}
+${c.newSources.length ? `\n## New sources of figures\n${c.newSources.map((s) => `- ${describeSource(s)}`).join('\n')}\n` : ''}
 [Open the Index](${url}) · [RSS](${url}/feed.xml) · [MCP for agents](${MCP_DOCS})
 
 Scores are 0–100 standardized; 50 is the average of the models each source lists. Scores belong to their publishers; PublicAI normalizes and weights them.
@@ -144,12 +169,12 @@ const html = `<!doctype html><html><body style="margin:0;background:#0B0B0D;colo
 <img src="${url}/og" width="552" alt="Top ten on the PublicAI Index" style="width:100%;border-radius:12px;margin-bottom:24px">
 <h2 style="font-size:16px;margin:0 0 8px">Top 10 Overall</h2>
 <ol style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${top.map(([, m]) => `<li>${esc(m.name)} <span style="color:#8E8BA0">${m.index}</span></li>`).join('')}</ol>
-<h2 style="font-size:16px;margin:0 0 8px">Movers</h2>
+<h2 style="font-size:16px;margin:0 0 8px">Movers in the Overall ranking</h2>
 <ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${
   moverLines.map((l) => `<li>${esc(l)}</li>`).join('') ||
   '<li>No moves of three places or more.</li>'
 }</ul>
-<h2 style="font-size:16px;margin:0 0 8px">New this week</h2>
+<h2 style="font-size:16px;margin:0 0 8px">Models new to the index</h2>
 <ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${
   c.models
     .filter((m) => m.kind === 'entered')
@@ -157,7 +182,7 @@ const html = `<!doctype html><html><body style="margin:0;background:#0B0B0D;colo
     .map((m) => `<li>${esc(line(m))}</li>`)
     .join('') || '<li>No new models.</li>'
 }</ul>
-${c.newSources.length ? `<h2 style="font-size:16px;margin:0 0 8px">New sources</h2><ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${c.newSources.map((s) => `<li>${esc(named(s))}</li>`).join('')}</ul>` : ''}
+${c.newSources.length ? `<h2 style="font-size:16px;margin:0 0 8px">New sources of figures</h2><ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${c.newSources.map((s) => `<li>${esc(describeSource(s))}</li>`).join('')}</ul>` : ''}
 <p><a href="${url}" style="color:#B08BFF">Open the Index</a> · <a href="${url}/feed.xml" style="color:#B08BFF">RSS</a> · <a href="${MCP_DOCS}" style="color:#B08BFF">MCP for agents</a></p>
 <p style="font-size:12px;color:#6F6D7A;margin-top:32px">Scores are 0–100 standardized; 50 is the average of the models each source lists. Scores belong to their publishers; PublicAI normalizes and weights them. <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#6F6D7A">Unsubscribe</a></p>
 </div></body></html>`;
