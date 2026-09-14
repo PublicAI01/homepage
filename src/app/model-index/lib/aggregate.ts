@@ -311,9 +311,10 @@ export function boardsFirst(
       star: Record<string, number | null>,
     ) =>
       Object.fromEntries(
-        [...new Set([...Object.keys(board), ...Object.keys(star)])].map(
-          (k) => [k, board[k] ?? star[k] ?? null],
-        ),
+        [...new Set([...Object.keys(board), ...Object.keys(star)])].map((k) => [
+          k,
+          board[k] ?? star[k] ?? null,
+        ]),
       );
     return {
       ...b,

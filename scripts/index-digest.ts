@@ -1,6 +1,8 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
+import type { Benchmark } from '../src/app/model-index/data/types.ts';
+import { sourceLabel } from '../src/app/model-index/lib/boards.ts';
 import { diff, type HistoryEntry } from '../src/app/model-index/lib/diff.ts';
 
 /**
@@ -25,6 +27,11 @@ const history = JSON.parse(
   entries: HistoryEntry[];
 };
 const entries = history.entries;
+// For naming sources: history records ids, the snapshot holds the names.
+const { benchmarks } = JSON.parse(
+  await readFile(join(DIR, 'index.json'), 'utf8'),
+) as { benchmarks: Benchmark[] };
+const named = (id: string) => sourceLabel(benchmarks, id);
 const to = entries[entries.length - 1];
 const sinceDate =
   opt('--since') ??
@@ -122,7 +129,7 @@ ${
     .map((l) => `- ${l}`)
     .join('\n') || '- No new models.'
 }
-${c.newSources.length ? `\n## New sources\n${c.newSources.map((s) => `- ${s}`).join('\n')}\n` : ''}
+${c.newSources.length ? `\n## New sources\n${c.newSources.map((s) => `- ${named(s)}`).join('\n')}\n` : ''}
 [Open the Index](${url}) · [RSS](${url}/feed.xml) · [MCP for agents](${MCP_DOCS})
 
 Scores are 0–100 standardized; 50 is the average of the models each source lists. Scores belong to their publishers; PublicAI normalizes and weights them.
@@ -150,7 +157,7 @@ const html = `<!doctype html><html><body style="margin:0;background:#0B0B0D;colo
     .map((m) => `<li>${esc(line(m))}</li>`)
     .join('') || '<li>No new models.</li>'
 }</ul>
-${c.newSources.length ? `<h2 style="font-size:16px;margin:0 0 8px">New sources</h2><ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${c.newSources.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>` : ''}
+${c.newSources.length ? `<h2 style="font-size:16px;margin:0 0 8px">New sources</h2><ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${c.newSources.map((s) => `<li>${esc(named(s))}</li>`).join('')}</ul>` : ''}
 <p><a href="${url}" style="color:#B08BFF">Open the Index</a> · <a href="${url}/feed.xml" style="color:#B08BFF">RSS</a> · <a href="${MCP_DOCS}" style="color:#B08BFF">MCP for agents</a></p>
 <p style="font-size:12px;color:#6F6D7A;margin-top:32px">Scores are 0–100 standardized; 50 is the average of the models each source lists. Scores belong to their publishers; PublicAI normalizes and weights them. <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#6F6D7A">Unsubscribe</a></p>
 </div></body></html>`;

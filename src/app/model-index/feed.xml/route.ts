@@ -1,3 +1,5 @@
+import { benchmarks } from '../data';
+import { sourceLabel } from '../lib/boards';
 import { changesSince, snapshots } from '../lib/changes';
 import { INDEX_URL } from '../lib/query';
 
@@ -18,7 +20,9 @@ export function GET() {
       const prev = dates[dates.indexOf(date) - 1];
       const c = changesSince(prev, 3, date);
       const lines = [
-        c.newSources.length ? `New sources: ${c.newSources.join(', ')}.` : '',
+        c.newSources.length
+          ? `New sources: ${c.newSources.map((id) => sourceLabel(benchmarks, id)).join(', ')}.`
+          : '',
         ...c.models
           .slice(0, 15)
           .map((m) =>

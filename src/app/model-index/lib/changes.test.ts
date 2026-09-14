@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
+import type { Benchmark } from '../data/types';
+import { sourceLabel } from './boards';
 import { changesSince, snapshots } from './changes';
 import { diff, type HistoryEntry } from './diff';
 
@@ -77,5 +79,33 @@ describe('changesSince with an end date', () => {
     expect(c.since).toBe(dates[0]);
     expect(c.until).toBe(dates[1]);
     expect(c.snapshots).toBe(1);
+  });
+});
+
+describe('sourceLabel', () => {
+  const bs = [
+    {
+      group: 'lmarena',
+      source: 'LMArena Text',
+      kind: 'board' as const,
+    },
+    {
+      group: 'deepseek-v4-1-flash',
+      source: 'DeepSeek — V4.1 Flash model card',
+      kind: 'report' as const,
+    },
+  ] as Benchmark[];
+
+  it('names the source the history file only has an id for', () => {
+    // The weekly digest and the feed told readers a new source called
+    // "deepseek-v4-1-flash" had appeared.
+    expect(sourceLabel(bs, 'lmarena')).toBe('LMArena Text');
+    expect(sourceLabel(bs, 'deepseek-v4-1-flash')).toBe(
+      'DeepSeek — V4.1 Flash model card ✱',
+    );
+  });
+
+  it('falls back to the id for a source no longer in the snapshot', () => {
+    expect(sourceLabel(bs, 'retired-blog')).toBe('retired-blog');
   });
 });

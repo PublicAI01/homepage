@@ -15,6 +15,21 @@ export interface BoardView {
 }
 
 /** Pure; safe to call from server components. */
+/**
+ * How a source is named to a reader, from the id the history file records.
+ *
+ * History stores the group id — "lmarena", "deepseek-v4-1-flash" — because
+ * that is what identifies a source across snapshots. Printed raw, the
+ * weekly digest and the feed told readers a new source called
+ * "deepseek-v4-1-flash" had appeared (2026-09-14). A source that has since
+ * been retired is not in the snapshot any more; its id is all there is, so
+ * that is what comes back.
+ */
+export function sourceLabel(benchmarks: Benchmark[], id: string): string {
+  const b = benchmarks.find((x) => x.group === id);
+  return b ? `${b.source}${b.kind === 'report' ? ' ✱' : ''}` : id;
+}
+
 export function groupBoards(benchmarks: Benchmark[]): BoardView[] {
   const out: BoardView[] = [];
   for (const b of benchmarks) {
