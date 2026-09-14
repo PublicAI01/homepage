@@ -20,6 +20,13 @@ const opt = (k: string) => {
   return i === -1 ? undefined : args[i + 1];
 };
 const DIR = join(process.cwd(), 'src', 'app', 'model-index', 'data');
+/**
+ * A line or two from a person, above the lists — for a week when the rules
+ * changed and the diff alone would read as chaos. Keep it short: a reader
+ * opened this for what moved, and an explanation they have to wade through
+ * is one they will not read.
+ */
+const NOTE = opt('--note');
 const OUT = opt('--out') ?? process.cwd();
 const history = JSON.parse(
   await readFile(join(DIR, 'history.json'), 'utf8'),
@@ -150,6 +157,7 @@ const moverLines = [
 const md = `# PublicAI Index Weekly — ${to.date}
 
 Changes since ${c.since} (${c.snapshots} snapshot${c.snapshots === 1 ? '' : 's'}).
+${NOTE ? `\n${NOTE}\n` : ''}
 
 ## Top 10 Overall
 ${top.map(([, m]) => `${m.rank}. ${m.name} — ${m.index}`).join('\n')}
@@ -178,6 +186,7 @@ const html = `<!doctype html><html><body style="margin:0;background:#0B0B0D;colo
 <p style="font-size:12px;letter-spacing:3px;color:#8E8BFF;margin:0 0 8px">PUBLICAI INDEX WEEKLY</p>
 <h1 style="font-size:24px;margin:0 0 6px">Snapshot ${to.date}</h1>
 <p style="color:#8E8BA0;margin:0 0 24px">Changes since ${c.since}.</p>
+${NOTE ? `<p style="margin:0 0 24px;padding:12px 14px;border-left:2px solid #B08BFF;background:#17161C;color:#D9D7E0">${esc(NOTE)}</p>` : ''}
 <img src="${url}/og" width="552" alt="Top ten on the PublicAI Index" style="width:100%;border-radius:12px;margin-bottom:24px">
 <h2 style="font-size:16px;margin:0 0 8px">Top 10 Overall</h2>
 <ol style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${top.map(([, m]) => `<li>${esc(m.name)} <span style="color:#8E8BA0">${m.index}</span></li>`).join('')}</ol>
