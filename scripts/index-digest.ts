@@ -37,11 +37,8 @@ const { benchmarks, scores: scoresIn } = JSON.parse(
 const named = (id: string) => sourceLabel(benchmarks, id);
 
 /**
- * What a new source is, in a sentence a reader who has never heard of it
- * can act on: who published it, what it measures, and what it counts for
- * here. A name alone does not do that — the first issue announced
- * "DeepSeek — V4.1 Flash model card ✱" and left the reader to guess
- * (2026-09-14).
+ * What a new board is, in a sentence a reader who has never heard of it
+ * can act on: who publishes it, what it measures, and what it counts for.
  */
 const describeSource = (id: string) => {
   const mine = benchmarks.filter((b) => b.group === id);
@@ -53,9 +50,7 @@ const describeSource = (id: string) => {
       .map((s) => s.modelId),
   ).size;
   const what = `${measures} benchmark${measures === 1 ? '' : 's'} covering ${covered} model${covered === 1 ? '' : 's'}`;
-  return mine[0].kind === 'report'
-    ? `${named(id)} — a one-off write-up from ${mine[0].publisher}, ${what}. Figures a publisher printed once, not a leaderboard that re-runs: they are marked ✱, they never count toward the Overall index, and they never override a number a recognised board measured.`
-    : `${named(id)} — a leaderboard from ${mine[0].publisher}, ${what}. Its figures count toward the Overall index.`;
+  return `${named(id)} — a leaderboard from ${mine[0].publisher}, ${what}. Its figures count toward the Overall index.`;
 };
 const to = entries[entries.length - 1];
 const sinceDate =
@@ -64,6 +59,23 @@ const sinceDate =
 const before = entries.filter((e) => e.date <= sinceDate);
 const from = before[before.length - 1] ?? entries[0];
 const c = diff(from, to, sinceDate, 3, entries);
+
+/**
+ * New leaderboards only.
+ *
+ * A board arriving can move ranks, so a reader tracking them needs to know.
+ * A report ✱ cannot: since boards took over deciding a column's number, a
+ * write-up sets a score only where no board has measured the model, and
+ * never displaces one. Announcing "DeepSeek — V4.1 Flash model card ✱" in a
+ * digest about ranking changes told a reader nothing they could act on and
+ * left them asking what it was (2026-09-14). Every source, ✱ included, is
+ * still listed on the index with every figure linking to its publisher —
+ * this is an edit to what counts as this week's news, not to what is
+ * disclosed.
+ */
+const newBoards = c.newSources.filter(
+  (id) => benchmarks.find((b) => b.group === id)?.kind === 'board',
+);
 
 const top = Object.entries(to.models)
   .filter(([, m]) => m.rank !== null)
@@ -154,7 +166,7 @@ ${
     .map((l) => `- ${l}`)
     .join('\n') || '- No new models.'
 }
-${c.newSources.length ? `\n## New sources of figures\n${c.newSources.map((s) => `- ${describeSource(s)}`).join('\n')}\n` : ''}
+${newBoards.length ? `\n## New leaderboards\n${newBoards.map((s) => `- ${describeSource(s)}`).join('\n')}\n` : ''}
 [Open the Index](${url}) · [RSS](${url}/feed.xml) · [MCP for agents](${MCP_DOCS})
 
 Scores are 0–100 standardized; 50 is the average of the models each source lists. Scores belong to their publishers; PublicAI normalizes and weights them.
@@ -182,7 +194,7 @@ const html = `<!doctype html><html><body style="margin:0;background:#0B0B0D;colo
     .map((m) => `<li>${esc(line(m))}</li>`)
     .join('') || '<li>No new models.</li>'
 }</ul>
-${c.newSources.length ? `<h2 style="font-size:16px;margin:0 0 8px">New sources of figures</h2><ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${c.newSources.map((s) => `<li>${esc(describeSource(s))}</li>`).join('')}</ul>` : ''}
+${newBoards.length ? `<h2 style="font-size:16px;margin:0 0 8px">New leaderboards</h2><ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${newBoards.map((s) => `<li>${esc(describeSource(s))}</li>`).join('')}</ul>` : ''}
 <p><a href="${url}" style="color:#B08BFF">Open the Index</a> · <a href="${url}/feed.xml" style="color:#B08BFF">RSS</a> · <a href="${MCP_DOCS}" style="color:#B08BFF">MCP for agents</a></p>
 <p style="font-size:12px;color:#6F6D7A;margin-top:32px">Scores are 0–100 standardized; 50 is the average of the models each source lists. Scores belong to their publishers; PublicAI normalizes and weights them. <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#6F6D7A">Unsubscribe</a></p>
 </div></body></html>`;
@@ -195,5 +207,5 @@ await mkdir(OUT, { recursive: true });
 await writeFile(join(OUT, 'digest.md'), md);
 await writeFile(join(OUT, 'digest.html'), html);
 console.log(
-  `digest: ${to.date} since ${c.since}; ${c.models.length} change(s), ${c.newSources.length} new source(s)`,
+  `digest: ${to.date} since ${c.since}; ${c.models.length} change(s), ${newBoards.length} new board(s) of ${c.newSources.length} new source(s)`,
 );
