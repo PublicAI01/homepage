@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import type { Benchmark } from '../data/types';
 import { sourceLabel } from './boards';
 import { changesSince, snapshots } from './changes';
-import { diff, type HistoryEntry } from './diff';
+import { diff, type HistoryEntry, lineage } from './diff';
 
 const entry = (
   date: string,
@@ -107,5 +107,64 @@ describe('sourceLabel', () => {
 
   it('falls back to the id for a source no longer in the snapshot', () => {
     expect(sourceLabel(bs, 'retired-blog')).toBe('retired-blog');
+  });
+});
+
+describe('renames and merges', () => {
+  // Day 1: "qwen3" and a duplicate "grok-4-20-2" exist. Day 2: the naming
+  // rules change — qwen3 is retitled qwen3-max, and grok-4-20-2's figures
+  // fold into grok-4-20. Day 3: nothing happens.
+  const d1 = entry('2026-09-01', {
+    qwen3: [4, 62],
+    'grok-4-20': [9, 55],
+    'grok-4-20-2': [null, null],
+    other: [1, 70],
+  });
+  const d2: HistoryEntry = {
+    ...entry('2026-09-02', {
+      'qwen3-max': [4, 62],
+      'grok-4-20': [8, 56],
+      other: [1, 70],
+    }),
+    aliases: { 'qwen3-max': ['qwen3'], 'grok-4-20': ['grok-4-20-2'] },
+  };
+  const d3 = entry('2026-09-03', {
+    'qwen3-max': [2, 66],
+    'grok-4-20': [8, 56],
+    other: [1, 70],
+  });
+  const all = [d1, d2, d3];
+
+  it('follows a model through its old names', () => {
+    expect(lineage('qwen3-max', d1, d3, all)).toEqual(['qwen3-max', 'qwen3']);
+    expect(lineage('grok-4-20', d1, d3, all)).toEqual([
+      'grok-4-20',
+      'grok-4-20-2',
+    ]);
+    expect(lineage('other', d1, d3, all)).toEqual(['other']);
+  });
+
+  it('reports a renamed model as itself, not as one leaving and one arriving', () => {
+    const c = diff(d1, d3, '2026-09-01', 1, all);
+    const kinds = Object.fromEntries(c.models.map((m) => [m.id, m.kind]));
+    // Renamed, and it moved: the move is reported under the new name.
+    expect(kinds['qwen3-max']).toBe('moved');
+    expect(c.models.find((m) => m.id === 'qwen3-max')?.previousRank).toBe(4);
+    // Neither old id "left", and nothing "entered".
+    expect(kinds['qwen3']).toBeUndefined();
+    expect(kinds['grok-4-20-2']).toBeUndefined();
+    expect(c.models.filter((m) => m.kind === 'entered')).toEqual([]);
+    expect(c.models.filter((m) => m.kind === 'left')).toEqual([]);
+  });
+
+  it('still reports a genuine arrival and a genuine exit', () => {
+    const d4 = entry('2026-09-04', {
+      'qwen3-max': [2, 66],
+      newcomer: [null, null],
+      other: [1, 70],
+    });
+    const c = diff(d1, d4, '2026-09-01', 1, [...all, d4]);
+    expect(c.models.find((m) => m.id === 'newcomer')?.kind).toBe('entered');
+    expect(c.models.find((m) => m.id === 'grok-4-20')?.kind).toBe('left');
   });
 });

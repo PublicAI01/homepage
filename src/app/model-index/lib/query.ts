@@ -15,6 +15,7 @@ import {
   compareScores,
 } from './aggregate';
 import { groupBoards } from './boards';
+import { currentId } from './changes';
 import { familyOf } from './family';
 import { sizeLabel, type SizeTier, tierOf } from './size';
 import {
@@ -566,8 +567,11 @@ export function rankModels(q: RankQuery = {}) {
 
 export function getModel(query: string) {
   const q = fold(query);
+  // An old id — from a link, a badge in someone's README, an agent's cached
+  // call — still finds the model it named before a rename or merge.
   const exact =
     rows.find((r) => r.model.id === query.trim()) ??
+    rows.find((r) => r.model.id === currentId(query.trim())) ??
     rows.find((r) => fold(r.model.name) === q) ??
     rows.find((r) => fold(`${r.model.org} ${r.model.name}`) === q);
   if (exact) return { generatedAt, model: detail(exact) };

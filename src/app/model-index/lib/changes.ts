@@ -59,3 +59,28 @@ export function enteredSince(days = 7) {
     ),
   };
 }
+
+/**
+ * The id a model is listed under today, given any id it has ever carried.
+ *
+ * An id is a display name, slugged, so a naming fix changes it — and every
+ * link, badge and API call that used the old one would answer "no such
+ * model". The history file records what each renamed or merged id took
+ * over from; this follows that forward.
+ */
+const forward = new Map<string, string>();
+for (const e of entries)
+  for (const [now, olds] of Object.entries(e.aliases ?? {}))
+    for (const old of olds) forward.set(old, now);
+
+export function currentId(id: string): string {
+  let cur = id;
+  // A chain, not a loop: an id renamed twice resolves twice. Bounded so a
+  // malformed history cannot spin.
+  for (let i = 0; i < 20; i++) {
+    const next = forward.get(cur);
+    if (next === undefined || next === cur) break;
+    cur = next;
+  }
+  return cur;
+}

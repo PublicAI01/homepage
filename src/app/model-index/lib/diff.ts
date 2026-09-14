@@ -16,6 +16,40 @@ export interface HistoryEntry {
       covered: number;
     }
   >;
+  /**
+   * New id → the ids it took over from, on the snapshot where a model was
+   * renamed or two rows merged. Written by scripts/index-history.ts from
+   * what each source printed, which does not change when the naming rules
+   * do. Absent on a snapshot with no such change.
+   */
+  aliases?: Record<string, string[]>;
+}
+
+/**
+ * Every id that `id` in the later snapshot may have carried in the earlier
+ * one: itself, then whatever it was renamed from or absorbed, following the
+ * snapshots between. A renamed model lists its new id first (absent back
+ * then) and its old one second; a merge lists the survivor and what it took
+ * in. Just `[id]` when nothing happened to it.
+ */
+export function lineage(
+  id: string,
+  from: HistoryEntry,
+  to: HistoryEntry,
+  all: HistoryEntry[],
+): string[] {
+  const between = all
+    .filter((e) => e.date > from.date && e.date <= to.date)
+    .sort((a, b) => b.date.localeCompare(a.date));
+  let current = [id];
+  for (const e of between) {
+    const next: string[] = [];
+    for (const c of current) {
+      next.push(c, ...(e.aliases?.[c] ?? []));
+    }
+    current = [...new Set(next)];
+  }
+  return current;
 }
 
 export interface Change {
@@ -63,8 +97,17 @@ export function diff(
     };
   }
   const models: Change[] = [];
+  // A model renamed or merged since `from` is the same model, not one that
+  // left and one that arrived: the first Index Weekly listed thirteen "new"
+  // models that were renames (2026-09-14). Its earlier row is the primary
+  // of its lineage; every id in the lineage is spoken for.
+  const spokenFor = new Set<string>();
   for (const [id, now] of Object.entries(to.models)) {
-    const was = from.models[id];
+    const before = lineage(id, from, to, all);
+    for (const b of before) if (from.models[b]) spokenFor.add(b);
+    const was =
+      from.models[id] ??
+      before.map((b) => from.models[b]).find((m) => m !== undefined);
     if (!was) {
       models.push({ id, ...now, kind: 'entered' });
       continue;
@@ -111,7 +154,7 @@ export function diff(
     }
   }
   for (const [id, was] of Object.entries(from.models)) {
-    if (!to.models[id])
+    if (!to.models[id] && !spokenFor.has(id))
       models.push({ id, name: was.name, org: was.org, kind: 'left' });
   }
   const order = { ranked: 0, unranked: 1, moved: 2, entered: 3, left: 4 };
