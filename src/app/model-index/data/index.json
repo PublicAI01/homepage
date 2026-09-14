@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T11:41:43.687Z",
+  "generatedAt": "2026-09-14T12:35:15.432Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -7,8 +7,8 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text",
-      "retrievedAt": "2026-09-13",
-      "snapshot": "8,126,041 votes across 401 models",
+      "retrievedAt": "2026-09-14",
+      "snapshot": "8,146,274 votes across 402 models",
       "metric": "elo",
       "category": "Human preference",
       "domain": "Human preference",
@@ -23,7 +23,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/leaderboards/models",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "index",
       "category": "General",
       "domain": "General intelligence",
@@ -38,7 +38,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "elo",
       "category": "Agents",
       "domain": "Knowledge work",
@@ -53,7 +53,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/evaluations/aa-briefcase",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "elo",
       "category": "Agents",
       "domain": "Knowledge work",
@@ -68,7 +68,7 @@
       "publisher": "Terminal-Bench",
       "independent": true,
       "url": "https://www.tbench.ai/leaderboard",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "snapshot": "Top entry dated Sep 3, 2026",
       "metric": "percent",
       "category": "Coding",
@@ -84,7 +84,7 @@
       "publisher": "ARC Prize",
       "independent": true,
       "url": "https://arcprize.org/leaderboard",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Reasoning",
@@ -99,7 +99,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "index",
       "category": "General",
       "domain": "General intelligence",
@@ -114,7 +114,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "index",
       "category": "Reasoning",
       "domain": "Reasoning",
@@ -129,7 +129,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "index",
       "category": "Coding",
       "domain": "Code generation",
@@ -144,7 +144,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "index",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -159,7 +159,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "index",
       "category": "Reasoning",
       "domain": "Mathematics",
@@ -174,7 +174,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "index",
       "category": "General",
       "domain": "Data analysis",
@@ -189,7 +189,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "index",
       "category": "General",
       "domain": "Language",
@@ -204,7 +204,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "index",
       "category": "General",
       "domain": "Instruction following",
@@ -219,7 +219,7 @@
       "publisher": "LiveCodeBench",
       "independent": true,
       "url": "https://livecodebench.github.io/leaderboard.html",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Coding",
       "domain": "Code generation",
@@ -234,7 +234,7 @@
       "publisher": "Aider",
       "independent": true,
       "url": "https://aider.chat/docs/leaderboards/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -249,7 +249,7 @@
       "publisher": "UC Berkeley (Gorilla)",
       "independent": true,
       "url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Agents",
       "domain": "Tool use",
@@ -264,7 +264,7 @@
       "publisher": "XLANG Lab",
       "independent": true,
       "url": "https://osworld-v1.xlang.ai/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Agents",
       "domain": "Computer use",
@@ -279,7 +279,7 @@
       "publisher": "MMMU",
       "independent": true,
       "url": "https://mmmu-benchmark.github.io/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Multimodal understanding",
@@ -294,7 +294,7 @@
       "publisher": "Kagi",
       "independent": true,
       "url": "https://help.kagi.com/kagi/ai/llm-benchmark.html",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "General",
       "domain": "General intelligence",
@@ -309,7 +309,7 @@
       "publisher": "SimpleBench",
       "independent": true,
       "url": "https://simple-bench.com/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Reasoning",
@@ -324,7 +324,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal",
@@ -339,7 +339,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal",
@@ -354,7 +354,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal",
@@ -369,7 +369,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Legal",
@@ -384,7 +384,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Finance",
@@ -399,7 +399,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Finance",
@@ -414,7 +414,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Finance",
@@ -429,7 +429,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Finance",
@@ -444,7 +444,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Medical",
@@ -459,7 +459,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Medical",
@@ -474,7 +474,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Medical",
@@ -489,7 +489,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Biology research",
@@ -504,7 +504,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "Cybersecurity",
@@ -519,7 +519,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Professional",
       "domain": "IT operations",
@@ -534,7 +534,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Agents",
       "domain": "Web research",
@@ -549,7 +549,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -564,7 +564,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -579,7 +579,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Coding",
       "domain": "Agentic coding",
@@ -594,7 +594,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Science",
@@ -609,7 +609,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Academic knowledge",
@@ -624,7 +624,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Mathematics",
@@ -639,7 +639,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "metric": "percent",
       "category": "Reasoning",
       "domain": "Mathematics",
@@ -654,7 +654,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "elo",
       "category": "Agents",
@@ -670,7 +670,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -686,7 +686,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -702,7 +702,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -718,7 +718,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -734,7 +734,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -750,7 +750,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -766,7 +766,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -782,7 +782,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -798,7 +798,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -814,7 +814,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -830,7 +830,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -846,7 +846,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -862,7 +862,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -878,7 +878,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -894,7 +894,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "General",
@@ -910,7 +910,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Knowledge",
@@ -926,7 +926,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Knowledge",
@@ -942,7 +942,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -958,7 +958,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -974,7 +974,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -990,7 +990,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Agents",
@@ -1006,7 +1006,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -1022,7 +1022,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -1038,7 +1038,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -1054,7 +1054,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Reasoning",
@@ -1070,7 +1070,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-09-12",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "category": "Coding",
@@ -1086,7 +1086,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Reasoning",
@@ -1102,7 +1102,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Reasoning",
@@ -1118,7 +1118,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Agents",
@@ -1134,7 +1134,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Professional",
@@ -1150,7 +1150,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-05",
       "metric": "index",
       "category": "General",
@@ -1166,7 +1166,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1182,7 +1182,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1198,7 +1198,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1214,7 +1214,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1230,7 +1230,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-04",
       "metric": "elo",
       "category": "Agents",
@@ -1246,7 +1246,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1262,7 +1262,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1278,7 +1278,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1294,7 +1294,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1310,7 +1310,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1326,7 +1326,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1342,7 +1342,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1358,9 +1358,9 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
-      "metric": "percent",
+      "metric": "elo",
       "category": "Coding",
       "domain": "Code generation",
       "caveat": "Vendor model card. Competitor figures are as DeepSeek printed them; the card does not say whether they were re-run or taken from the competitors’ own reports.",
@@ -1374,7 +1374,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1390,7 +1390,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1406,7 +1406,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1422,7 +1422,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1438,7 +1438,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1454,7 +1454,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1470,7 +1470,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1486,7 +1486,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -1502,7 +1502,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -1518,7 +1518,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -1534,7 +1534,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1550,7 +1550,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Agents",
@@ -1566,7 +1566,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1582,7 +1582,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -1598,7 +1598,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -1614,7 +1614,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -2600,8 +2600,8 @@
           "id": "deepseek/deepseek-v4-flash-0731",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
           "contextLength": 1310720,
-          "inputPerM": 0.04,
-          "outputPerM": 0.08,
+          "inputPerM": 0.06,
+          "outputPerM": 0.12,
           "listedAt": "2026-07-31",
           "modalities": ["text"]
         },
@@ -2739,8 +2739,8 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
           "contextLength": 1048576,
-          "inputPerM": 0.578,
-          "outputPerM": 1.734,
+          "inputPerM": 0.983,
+          "outputPerM": 2.95,
           "listedAt": "2026-08-12",
           "modalities": ["text"]
         },
@@ -4057,8 +4057,8 @@
           "id": "qwen/qwen3-14b",
           "url": "https://openrouter.ai/qwen/qwen3-14b",
           "contextLength": 131072,
-          "inputPerM": 0.227,
-          "outputPerM": 0.91,
+          "inputPerM": 0.12,
+          "outputPerM": 0.24,
           "listedAt": "2025-04-28",
           "modalities": ["text"]
         },
@@ -4730,6 +4730,17 @@
       "name": "Kimi K2",
       "org": "Moonshot",
       "access": {
+        "official": {
+          "name": "Moonshot AI Platform",
+          "url": "https://platform.moonshot.ai/docs"
+        }
+      }
+    },
+    {
+      "id": "moonshotai-kimi-k2-thinking",
+      "name": "Moonshotai/kimi K2 Thinking",
+      "org": "Moonshot",
+      "access": {
         "openrouter": {
           "id": "moonshotai/kimi-k2-thinking",
           "url": "https://openrouter.ai/moonshotai/kimi-k2-thinking",
@@ -4751,8 +4762,8 @@
       "size": { "paramsB": 1026.4, "source": "huggingface" }
     },
     {
-      "id": "moonshotai-kimi-k2",
-      "name": "Moonshotai/kimi K2",
+      "id": "kimi-k2-thinking",
+      "name": "Kimi K2 Thinking",
       "org": "Moonshot",
       "access": {
         "openrouter": {
@@ -4946,6 +4957,17 @@
       }
     },
     {
+      "id": "gemini-2-0-flash-thinking-exp",
+      "name": "Gemini 2.0 Flash Thinking Exp",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
       "id": "gemini-2-0-pro-exp",
       "name": "Gemini 2.0 Pro Exp",
       "org": "Google",
@@ -4959,6 +4981,17 @@
     {
       "id": "gemini-2-0-flash",
       "name": "Gemini 2.0 Flash",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "gemini-2-0-flash-thinking",
+      "name": "Gemini 2.0 Flash Thinking",
       "org": "Google",
       "access": {
         "official": {
@@ -7521,8 +7554,8 @@
           "id": "nvidia/nemotron-3-super-120b-a12b",
           "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b",
           "contextLength": 262144,
-          "inputPerM": 0.085,
-          "outputPerM": 0.4,
+          "inputPerM": 0.08,
+          "outputPerM": 0.45,
           "listedAt": "2026-03-11",
           "modalities": ["text"]
         },
@@ -7543,8 +7576,8 @@
           "id": "nvidia/nemotron-3-ultra-550b-a55b",
           "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
           "contextLength": 262144,
-          "inputPerM": 0.625,
-          "outputPerM": 3.125,
+          "inputPerM": 0.6,
+          "outputPerM": 2.4,
           "listedAt": "2026-06-04",
           "modalities": ["text"]
         },
@@ -10597,8 +10630,8 @@
           "id": "z-ai/glm-5.2",
           "url": "https://openrouter.ai/z-ai/glm-5.2",
           "contextLength": 1048576,
-          "inputPerM": 0.6,
-          "outputPerM": 2,
+          "inputPerM": 0.683,
+          "outputPerM": 2.147,
           "listedAt": "2026-06-16",
           "modalities": ["text"]
         },
@@ -10723,8 +10756,8 @@
           "id": "z-ai/glm-5.3",
           "url": "https://openrouter.ai/z-ai/glm-5.3",
           "contextLength": 1310720,
-          "inputPerM": 1.092,
-          "outputPerM": 3.432,
+          "inputPerM": 1.4,
+          "outputPerM": 4.4,
           "listedAt": "2026-08-18",
           "modalities": ["text"]
         },
@@ -11789,6 +11822,13 @@
     },
     {
       "modelId": "k2-horizon-0-9b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 0,
+      "stderr": 0,
+      "sourceLabel": "K2 Horizon 0.9B"
+    },
+    {
+      "modelId": "k2-horizon-0-9b",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 27.3,
       "sourceLabel": "K2-Horizon-0.9B"
@@ -12580,7 +12620,7 @@
     {
       "modelId": "gpt-4-1-mini-2025-04-14",
       "benchmarkId": "lmarena",
-      "raw": 1382,
+      "raw": 1383,
       "stderr": 4,
       "sourceLabel": "gpt-4.1-mini-2025-04-14"
     },
@@ -12606,7 +12646,7 @@
     {
       "modelId": "o3-2025-04-16",
       "benchmarkId": "lmarena",
-      "raw": 1431,
+      "raw": 1432,
       "stderr": 4,
       "sourceLabel": "o3-2025-04-16"
     },
@@ -13602,7 +13642,7 @@
     {
       "modelId": "hunyuan-t1-20250711",
       "benchmarkId": "lmarena",
-      "raw": 1388,
+      "raw": 1387,
       "stderr": 9,
       "sourceLabel": "hunyuan-t1-20250711"
     },
@@ -14094,7 +14134,7 @@
     {
       "modelId": "muse-spark-1-1",
       "benchmarkId": "lmarena",
-      "raw": 1494,
+      "raw": 1493,
       "stderr": 5,
       "sourceLabel": "muse-spark-1.1"
     },
@@ -14276,7 +14316,7 @@
     {
       "modelId": "muse-spark-1-2",
       "benchmarkId": "lmarena",
-      "raw": 1499,
+      "raw": 1500,
       "stderr": 11,
       "sourceLabel": "muse-spark-1.2 (xHigh)"
     },
@@ -14463,6 +14503,13 @@
     },
     {
       "modelId": "muse-spark-1-3",
+      "benchmarkId": "lmarena",
+      "raw": 1493,
+      "stderr": 9,
+      "sourceLabel": "muse-spark-1.3-max"
+    },
+    {
+      "modelId": "muse-spark-1-3",
       "benchmarkId": "artificial-analysis",
       "raw": 48,
       "sourceLabel": "Muse Spark 1.3 (max)"
@@ -14641,7 +14688,7 @@
     {
       "modelId": "qwen1-5-7b-chat",
       "benchmarkId": "lmarena",
-      "raw": 1143,
+      "raw": 1144,
       "stderr": 10,
       "sourceLabel": "qwen1.5-7b-chat"
     },
@@ -15614,7 +15661,7 @@
     {
       "modelId": "koala-13b",
       "benchmarkId": "lmarena",
-      "raw": 1070,
+      "raw": 1071,
       "stderr": 10,
       "sourceLabel": "koala-13b"
     },
@@ -15947,6 +15994,20 @@
     },
     {
       "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 962,
+      "stderr": 21,
+      "sourceLabel": "K2 Horizon 3.7B"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 793,
+      "stderr": 10.5,
+      "sourceLabel": "K2 Horizon 3.7B"
+    },
+    {
+      "modelId": "k2-horizon-3-7b",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 17.7,
       "sourceLabel": "K2-Horizon-3.7B"
@@ -16059,6 +16120,20 @@
       "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
       "raw": 58.3,
       "sourceLabel": "K2-Horizon-32B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1243,
+      "stderr": 21,
+      "sourceLabel": "K2 Horizon MoVA 36B A4B"
+    },
+    {
+      "modelId": "k2-horizon-mova-36b-a4b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1170,
+      "stderr": 10.5,
+      "sourceLabel": "K2 Horizon MoVA 36B A4B"
     },
     {
       "modelId": "k2-horizon-mova-36b-a4b",
@@ -16352,6 +16427,20 @@
     },
     {
       "modelId": "k2-horizon-7b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1091,
+      "stderr": 21,
+      "sourceLabel": "K2 Horizon 7B"
+    },
+    {
+      "modelId": "k2-horizon-7b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1021,
+      "stderr": 10,
+      "sourceLabel": "K2 Horizon 7B"
+    },
+    {
+      "modelId": "k2-horizon-7b",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 25.8,
       "sourceLabel": "K2-Horizon-7B"
@@ -16455,7 +16544,7 @@
     {
       "modelId": "qwen2-72b-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1261,
+      "raw": 1262,
       "stderr": 5,
       "sourceLabel": "qwen2-72b-instruct"
     },
@@ -16740,46 +16829,58 @@
     {
       "modelId": "kimi-k2",
       "benchmarkId": "simplebench",
+      "raw": 26.3,
+      "sourceLabel": "Kimi K2"
+    },
+    {
+      "modelId": "moonshotai-kimi-k2-thinking",
+      "benchmarkId": "kagi",
+      "raw": 64.4,
+      "sourceLabel": "moonshotai/kimi-k2-thinking"
+    },
+    {
+      "modelId": "kimi-k2-thinking",
+      "benchmarkId": "simplebench",
       "raw": 39.6,
       "sourceLabel": "Kimi K2 Thinking"
     },
     {
-      "modelId": "kimi-k2",
+      "modelId": "kimi-k2-thinking",
       "benchmarkId": "vals-case_law_v2",
       "raw": 65.7,
       "stderr": 1.82,
       "sourceLabel": "Kimi K2 Thinking"
     },
     {
-      "modelId": "kimi-k2",
+      "modelId": "kimi-k2-thinking",
       "benchmarkId": "vals-legal_bench",
       "raw": 80.2,
       "stderr": 0.46,
       "sourceLabel": "Kimi K2 Thinking"
     },
     {
-      "modelId": "kimi-k2",
+      "modelId": "kimi-k2-thinking",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 60.57,
       "stderr": 0.96,
       "sourceLabel": "Kimi K2 Thinking"
     },
     {
-      "modelId": "kimi-k2",
+      "modelId": "kimi-k2-thinking",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 71.71,
       "stderr": 0.88,
       "sourceLabel": "Kimi K2 Thinking"
     },
     {
-      "modelId": "kimi-k2",
+      "modelId": "kimi-k2-thinking",
       "benchmarkId": "vals-medqa",
       "raw": 92.59,
       "stderr": 0.24,
       "sourceLabel": "Kimi K2 Thinking"
     },
     {
-      "modelId": "kimi-k2",
+      "modelId": "kimi-k2-thinking",
       "benchmarkId": "vals-swebench",
       "raw": 60.2,
       "stderr": 2.19,
@@ -16787,31 +16888,25 @@
       "scaffold": "Mini-SWE-agent"
     },
     {
-      "modelId": "kimi-k2",
+      "modelId": "kimi-k2-thinking",
       "benchmarkId": "vals-gpqa",
       "raw": 78.54,
       "stderr": 2.18,
       "sourceLabel": "Kimi K2 Thinking"
     },
     {
-      "modelId": "kimi-k2",
+      "modelId": "kimi-k2-thinking",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 81.07,
       "stderr": 0.4,
       "sourceLabel": "Kimi K2 Thinking"
     },
     {
-      "modelId": "kimi-k2",
+      "modelId": "kimi-k2-thinking",
       "benchmarkId": "vals-aime",
       "raw": 85.42,
       "stderr": 1.33,
       "sourceLabel": "Kimi K2 Thinking"
-    },
-    {
-      "modelId": "moonshotai-kimi-k2",
-      "benchmarkId": "kagi",
-      "raw": 64.4,
-      "sourceLabel": "moonshotai/kimi-k2-thinking"
     },
     {
       "modelId": "kimi-k2-thinking-turbo",
@@ -17022,9 +17117,9 @@
     {
       "modelId": "gemini-2-0-flash-exp",
       "benchmarkId": "vals-tax_eval_v2",
-      "raw": 69.79,
-      "stderr": 0.9,
-      "sourceLabel": "Gemini 2.0 Flash Thinking Exp"
+      "raw": 67.74,
+      "stderr": 0.92,
+      "sourceLabel": "Gemini 2.0 Flash Exp"
     },
     {
       "modelId": "gemini-2-0-flash-exp",
@@ -17032,6 +17127,13 @@
       "raw": 60.37,
       "stderr": 1.9,
       "sourceLabel": "Gemini 2.0 Flash Exp"
+    },
+    {
+      "modelId": "gemini-2-0-flash-thinking-exp",
+      "benchmarkId": "vals-tax_eval_v2",
+      "raw": 69.79,
+      "stderr": 0.9,
+      "sourceLabel": "Gemini 2.0 Flash Thinking Exp"
     },
     {
       "modelId": "gemini-2-0-pro-exp",
@@ -17060,7 +17162,7 @@
       "sourceLabel": "gemini-flash 2.0"
     },
     {
-      "modelId": "gemini-2-0-flash",
+      "modelId": "gemini-2-0-flash-thinking",
       "benchmarkId": "simplebench",
       "raw": 30.7,
       "sourceLabel": "Gemini 2.0 Flash Thinking"
@@ -17664,7 +17766,7 @@
     {
       "modelId": "gemini-2-5-pro",
       "benchmarkId": "lmarena",
-      "raw": 1446,
+      "raw": 1445,
       "stderr": 2,
       "sourceLabel": "gemini-2.5-pro"
     },
@@ -18005,7 +18107,7 @@
     {
       "modelId": "mimo-v2-5-pro",
       "benchmarkId": "lmarena",
-      "raw": 1468,
+      "raw": 1467,
       "stderr": 4,
       "sourceLabel": "mimo-v2.5-pro"
     },
@@ -18132,7 +18234,7 @@
     {
       "modelId": "mimo-v2-5",
       "benchmarkId": "lmarena",
-      "raw": 1433,
+      "raw": 1434,
       "stderr": 4,
       "sourceLabel": "mimo-v2.5"
     },
@@ -18280,7 +18382,7 @@
     {
       "modelId": "kimi-k2-6",
       "benchmarkId": "lmarena",
-      "raw": 1461,
+      "raw": 1460,
       "stderr": 5,
       "sourceLabel": "kimi-k2.6"
     },
@@ -18835,7 +18937,7 @@
     {
       "modelId": "reka-flash-21b-20240226",
       "benchmarkId": "lmarena",
-      "raw": 1226,
+      "raw": 1227,
       "stderr": 6,
       "sourceLabel": "reka-flash-21b-20240226"
     },
@@ -19020,7 +19122,7 @@
     {
       "modelId": "claude-haiku-4-5-20251001",
       "benchmarkId": "lmarena",
-      "raw": 1414,
+      "raw": 1415,
       "stderr": 3,
       "sourceLabel": "claude-haiku-4-5-20251001"
     },
@@ -19085,7 +19187,7 @@
     {
       "modelId": "deepseek-v4-pro-high-20260813",
       "benchmarkId": "lmarena",
-      "raw": 1462,
+      "raw": 1463,
       "stderr": 7,
       "sourceLabel": "deepseek-v4-pro-high-20260813"
     },
@@ -19437,7 +19539,7 @@
     {
       "modelId": "longcat-flash-chat-2602-exp",
       "benchmarkId": "lmarena",
-      "raw": 1436,
+      "raw": 1435,
       "stderr": 5,
       "sourceLabel": "longcat-flash-chat-2602-exp"
     },
@@ -19594,8 +19696,8 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "lmarena",
-      "raw": 1438,
-      "stderr": 7,
+      "raw": 1437,
+      "stderr": 6,
       "sourceLabel": "qwen3.8-27b"
     },
     {
@@ -19924,7 +20026,7 @@
     {
       "modelId": "llama-3-2-3b-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1166,
+      "raw": 1167,
       "stderr": 8,
       "sourceLabel": "llama-3.2-3b-instruct"
     },
@@ -20280,7 +20382,7 @@
     {
       "modelId": "qwen3-coder-480b-a35b-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1387,
+      "raw": 1388,
       "stderr": 5,
       "sourceLabel": "qwen3-coder-480b-a35b-instruct"
     },
@@ -20650,7 +20752,7 @@
     {
       "modelId": "gemini-3-pro",
       "benchmarkId": "lmarena",
-      "raw": 1486,
+      "raw": 1485,
       "stderr": 4,
       "sourceLabel": "gemini-3-pro"
     },
@@ -20889,7 +20991,7 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1569,
+      "raw": 1565,
       "stderr": 14,
       "sourceLabel": "Kimi K3 (max)"
     },
@@ -20897,7 +20999,7 @@
       "modelId": "kimi-k3",
       "benchmarkId": "aa-briefcase",
       "raw": 1492,
-      "stderr": 5.5,
+      "stderr": 6,
       "sourceLabel": "Kimi K3 (max)"
     },
     {
@@ -21290,7 +21392,7 @@
     {
       "modelId": "minimax-m3",
       "benchmarkId": "lmarena",
-      "raw": 1442,
+      "raw": 1441,
       "stderr": 4,
       "sourceLabel": "minimax-m3"
     },
@@ -23213,8 +23315,8 @@
     {
       "modelId": "nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
       "benchmarkId": "lmarena",
-      "raw": 1353,
-      "stderr": 8,
+      "raw": 1351,
+      "stderr": 7,
       "sourceLabel": "nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4"
     },
     {
@@ -23579,7 +23681,7 @@
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "lmarena",
-      "raw": 1457,
+      "raw": 1456,
       "stderr": 5,
       "sourceLabel": "gemini-3.5-flash-lite"
     },
@@ -24428,7 +24530,7 @@
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "lmarena",
-      "raw": 1479,
+      "raw": 1480,
       "stderr": 5,
       "sourceLabel": "gemini-3.6-flash-high"
     },
@@ -26144,7 +26246,7 @@
     {
       "modelId": "codellama-34b-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1136,
+      "raw": 1137,
       "stderr": 9,
       "sourceLabel": "codellama-34b-instruct"
     },
@@ -28799,7 +28901,7 @@
     {
       "modelId": "grok-4-5",
       "benchmarkId": "lmarena",
-      "raw": 1469,
+      "raw": 1468,
       "stderr": 5,
       "sourceLabel": "grok-4.5"
     },
@@ -30425,7 +30527,7 @@
     {
       "modelId": "claude-opus-4-8",
       "benchmarkId": "lmarena",
-      "raw": 1482,
+      "raw": 1481,
       "stderr": 4,
       "sourceLabel": "claude-opus-4-8-high"
     },
@@ -31345,7 +31447,7 @@
       "modelId": "claude-opus-5",
       "benchmarkId": "lmarena",
       "raw": 1487,
-      "stderr": 6,
+      "stderr": 5,
       "sourceLabel": "claude-opus-5-max"
     },
     {
@@ -31972,7 +32074,7 @@
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "lmarena",
-      "raw": 1501,
+      "raw": 1498,
       "stderr": 8,
       "sourceLabel": "claude-fable-5.1-max"
     },
@@ -32220,7 +32322,7 @@
     {
       "modelId": "glm-5-1",
       "benchmarkId": "lmarena",
-      "raw": 1465,
+      "raw": 1466,
       "stderr": 4,
       "sourceLabel": "glm-5.1"
     },
@@ -33257,8 +33359,8 @@
     {
       "modelId": "glm-5-3",
       "benchmarkId": "lmarena",
-      "raw": 1486,
-      "stderr": 7,
+      "raw": 1483,
+      "stderr": 6,
       "sourceLabel": "glm-5.3-max"
     },
     {
@@ -33270,7 +33372,7 @@
     {
       "modelId": "glm-5-3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1661,
+      "raw": 1658,
       "stderr": 15,
       "sourceLabel": "GLM-5.3 (max)"
     },
@@ -33278,7 +33380,7 @@
       "modelId": "glm-5-3",
       "benchmarkId": "aa-briefcase",
       "raw": 1511,
-      "stderr": 8.5,
+      "stderr": 8,
       "sourceLabel": "GLM-5.3 (max)"
     },
     {
@@ -34301,7 +34403,7 @@
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "lmarena",
-      "raw": 1453,
+      "raw": 1452,
       "stderr": 5,
       "sourceLabel": "gpt-5.6-luna-xhigh"
     },
@@ -34631,7 +34733,7 @@
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "lmarena",
-      "raw": 1482,
+      "raw": 1483,
       "stderr": 5,
       "sourceLabel": "gpt-5.6-sol-xhigh"
     },
@@ -35262,8 +35364,8 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "lmarena",
-      "raw": 1478,
-      "stderr": 13,
+      "raw": 1480,
+      "stderr": 12,
       "sourceLabel": "gpt-6-astra-max"
     },
     {
@@ -35495,7 +35597,7 @@
     {
       "modelId": "deepseek-llm-67b-chat",
       "benchmarkId": "lmarena",
-      "raw": 1184,
+      "raw": 1185,
       "stderr": 11,
       "sourceLabel": "deepseek-llm-67b-chat"
     },
@@ -35551,7 +35653,7 @@
     {
       "modelId": "zephyr-7b-beta",
       "benchmarkId": "lmarena",
-      "raw": 1130,
+      "raw": 1131,
       "stderr": 9,
       "sourceLabel": "zephyr-7b-beta"
     },
@@ -35988,7 +36090,7 @@
     {
       "modelId": "command-r-plus",
       "benchmarkId": "lmarena",
-      "raw": 1261,
+      "raw": 1262,
       "stderr": 4,
       "sourceLabel": "command-r-plus"
     },
@@ -36029,7 +36131,7 @@
     {
       "modelId": "command-r",
       "benchmarkId": "lmarena",
-      "raw": 1226,
+      "raw": 1227,
       "stderr": 5,
       "sourceLabel": "command-r"
     },
@@ -36154,7 +36256,7 @@
     {
       "modelId": "inkling",
       "benchmarkId": "lmarena",
-      "raw": 1439,
+      "raw": 1440,
       "stderr": 5,
       "sourceLabel": "inkling"
     },
@@ -36463,7 +36565,7 @@
     {
       "modelId": "inkling-small",
       "benchmarkId": "lmarena",
-      "raw": 1404,
+      "raw": 1405,
       "stderr": 5,
       "sourceLabel": "Inkling Small"
     },
@@ -36863,7 +36965,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -36871,7 +36973,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-13",
+      "retrievedAt": "2026-09-14",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
