@@ -65,6 +65,47 @@ export const WEIGHTING: Weighting[] = [
 /** Measures that form the Overall index. */
 export const OVERALL = new Set(WEIGHTING.map((w) => w.benchmarkId));
 
+/**
+ * The image and video tracks: each its own index, with its own Overall.
+ *
+ * Both are built from two arenas run by the same two independent
+ * publishers, so both can rank (MIN_SOURCES). Half each: two blind-vote
+ * arenas asking the same question of different crowds, with nothing yet to
+ * say one crowd is the better judge. Arena Image Edit and Artificial
+ * Analysis's Image to Video are domain boards — a different task, not a
+ * second opinion on the same one — and shape their own columns only.
+ */
+export const IMAGE_WEIGHTING: Weighting[] = [
+  {
+    benchmarkId: 'arena-text-to-image',
+    weight: 50,
+    rationale:
+      'The largest blind-vote image arena, millions of votes. Measures what people prefer to look at.',
+  },
+  {
+    benchmarkId: 'aa-text-to-image',
+    weight: 50,
+    rationale:
+      'A second blind-vote arena with its own crowd and prompt set, from an independent publisher.',
+  },
+];
+export const VIDEO_WEIGHTING: Weighting[] = [
+  {
+    benchmarkId: 'arena-text-to-video',
+    weight: 50,
+    rationale:
+      'The largest blind-vote video arena. Measures what people prefer to watch.',
+  },
+  {
+    benchmarkId: 'aa-text-to-video',
+    weight: 50,
+    rationale:
+      'A second blind-vote arena, without audio, from an independent publisher.',
+  },
+];
+export const overallOf = (weighting: Weighting[]) =>
+  new Set(weighting.map((w) => w.benchmarkId));
+
 /** A recognised board's category figure carries its board's share within its domain. */
 export const BOARD_MEASURE_WEIGHT = 25;
 
@@ -89,10 +130,11 @@ export const VENDOR_REPORT_WEIGHT = 10;
 /** @deprecated The figure a caller means depends on who published it. */
 export const REPORT_WEIGHT = VENDOR_REPORT_WEIGHT;
 
-const explicit = new Map(WEIGHTING.map((w) => [w.benchmarkId, w.weight]));
-
-export function weightFor(b: Benchmark): number {
-  const w = explicit.get(b.id);
+export function weightFor(
+  b: Benchmark,
+  weighting: Weighting[] = WEIGHTING,
+): number {
+  const w = weighting.find((x) => x.benchmarkId === b.id)?.weight;
   if (w !== undefined) return w;
   if (b.kind !== 'report') return BOARD_MEASURE_WEIGHT;
   // `independent` is absent from snapshots written before the field existed;
@@ -101,8 +143,11 @@ export function weightFor(b: Benchmark): number {
 }
 
 /** benchmarkId → weight, for every measure in a snapshot. */
-export const weightsFor = (benchmarks: Benchmark[]): Record<string, number> =>
-  Object.fromEntries(benchmarks.map((b) => [b.id, weightFor(b)]));
+export const weightsFor = (
+  benchmarks: Benchmark[],
+  weighting: Weighting[] = WEIGHTING,
+): Record<string, number> =>
+  Object.fromEntries(benchmarks.map((b) => [b.id, weightFor(b, weighting)]));
 
 /**
  * How hard thin evidence is pulled toward the middle, as a fraction of the
@@ -153,6 +198,11 @@ export const CATEGORY_ORDER = [
   'Knowledge',
   'General',
   'Safety',
+  // The image and video tracks, each on its own page.
+  'Text-to-image',
+  'Image editing',
+  'Text-to-video',
+  'Image-to-video',
 ];
 
 export const categoryRank = (c: string) => {

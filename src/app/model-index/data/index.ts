@@ -6,7 +6,7 @@ import type { IndexData } from './types';
  * literal types, so `metric` arrives as `string`. The pipeline that writes the
  * file validates it against the same schema before opening a PR.
  */
-const data = raw as IndexData;
+export const data = raw as IndexData;
 
 export const { generatedAt, benchmarks, models, scores, excluded, catalogs } =
   data;
