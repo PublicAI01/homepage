@@ -68,12 +68,12 @@ export const OVERALL = new Set(WEIGHTING.map((w) => w.benchmarkId));
 /**
  * The image and video tracks: each its own index, with its own Overall.
  *
- * Both are built from two arenas run by the same two independent
- * publishers, so both can rank (MIN_SOURCES). Half each: two blind-vote
- * arenas asking the same question of different crowds, with nothing yet to
- * say one crowd is the better judge. Arena Image Edit and Artificial
- * Analysis's Image to Video are domain boards — a different task, not a
- * second opinion on the same one — and shape their own columns only.
+ * Both are built from arenas run by the same two independent publishers,
+ * so both can rank (MIN_SOURCES). Text-to-image and text-to-video get the
+ * same share from each crowd, with nothing yet to say one is the better
+ * judge. Arena Image Edit is a domain board — a different task, not a
+ * second opinion on the same one — and shapes its own column only; image-
+ * to-video is in the video Overall at a smaller share, see below.
  */
 export const IMAGE_WEIGHTING: Weighting[] = [
   {
@@ -92,15 +92,26 @@ export const IMAGE_WEIGHTING: Weighting[] = [
 export const VIDEO_WEIGHTING: Weighting[] = [
   {
     benchmarkId: 'arena-text-to-video',
-    weight: 50,
+    weight: 40,
     rationale:
       'The largest blind-vote video arena. Measures what people prefer to watch.',
   },
   {
     benchmarkId: 'aa-text-to-video',
-    weight: 50,
+    weight: 40,
     rationale:
       'A second blind-vote arena, without audio, from an independent publisher.',
+  },
+  {
+    // Animating a still is the other half of what a video model is for,
+    // and the arenas rank it differently from text-to-video — Seedance 2.0
+    // is #2 here and #5 there. Less than the two text-to-video arenas
+    // because it is one publisher's one arena, and because most models are
+    // asked for text-to-video first (2026-09-15, Steven).
+    benchmarkId: 'aa-image-to-video',
+    weight: 20,
+    rationale:
+      'Image-to-video from the same publisher: the other half of the job, one arena’s word on it.',
   },
 ];
 export const overallOf = (weighting: Weighting[]) =>
