@@ -1,12 +1,8 @@
 import { NextResponse } from 'next/server';
 
 import { changesSince } from '../lib/changes';
-import {
-  describeIndex,
-  getModel,
-  rankModels,
-  type RankQuery,
-} from '../lib/query';
+import type { RankQuery } from '../lib/query';
+import { trackOf,TRACKS } from '../lib/tracks';
 
 /**
  * The same three answers as the MCP server, over plain GET, for agents and
@@ -17,11 +13,23 @@ import {
  *   /model-index/api?since=2026-09-01       → whats_new (changes since that snapshot)
  *   /model-index/api?scope=coding&limit=10  → rank_models
  *     (also org, family, minBoards, openWeights, callable, reports=false, size=small|medium|large|xlarge|undisclosed)
+ *   /model-index/api?track=image&scope=text-to-image → the same, on the image track
+ *     (track=text|image|video; text is the default. `since` is text-only.)
  */
 export function GET(request: Request) {
   const p = new URL(request.url).searchParams;
   const bool = (k: string) => (p.has(k) ? p.get(k) !== 'false' : undefined);
   const int = (k: string) => (p.has(k) ? Number(p.get(k)) : undefined);
+  const track = trackOf(p.get('track') ?? 'text');
+  if (!track) {
+    return NextResponse.json(
+      {
+        error: `Unknown track "${p.get('track')}". One of: ${Object.keys(TRACKS).join(', ')}.`,
+      },
+      { status: 404, headers: { 'access-control-allow-origin': '*' } },
+    );
+  }
+  const { describeIndex, getModel, rankModels } = track.index;
 
   const body = p.has('since')
     ? changesSince(p.get('since')!, int('minDelta') ?? 3)
