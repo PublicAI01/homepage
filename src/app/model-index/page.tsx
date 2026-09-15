@@ -113,7 +113,7 @@ const callable = models.filter((m) => m.access?.openrouter).length;
 const method = [
   {
     title: 'Standardize, discount uncertainty',
-    text: 'Every figure is z-scored across the models its source lists and mapped to 0–100, so an Elo and a pass rate share one scale. No single measure may place a model more than two standard deviations from the field it was measured against: on a board whose models sit close together, a modest lead standardizes into an enormous figure, and one of those could outweigh four boards. Where a publisher prints an error bar, the figure counts for less.',
+    text: 'Every figure is z-scored across the models its source lists and mapped to 0–100, so an Elo and a pass rate share one scale. No single measure may place a model more than two standard deviations from the field it was measured against: on a board whose models sit close together, a modest lead standardizes into an enormous figure, and one of those could outweigh four boards. A figure a source prints as a risk or an error rate is read the other way round: the raw stays as printed, and the model with the least of it is the one ahead. Where a publisher prints an error bar, the figure counts for less.',
   },
   {
     title: 'Shrink, never impute',

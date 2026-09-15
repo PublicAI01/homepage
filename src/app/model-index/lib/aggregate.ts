@@ -144,13 +144,16 @@ const MAX_Z = 2;
  */
 export const MIN_MODELS_TO_STANDARDIZE = 3;
 
-export function normalizeBoard(raws: number[]): number[] {
+export function normalizeBoard(raws: number[], direction?: 'lower'): number[] {
   const m = mean(raws);
   const sd = stdDev(raws);
   if (sd === 0) return raws.map(() => T_SCORE_MEAN);
+  // A risk or an error rate reads the other way: the model with the least
+  // of it is the one ahead. The raw is left as the source printed it.
+  const sign = direction === 'lower' ? -1 : 1;
   return raws.map((r) =>
     clamp(
-      T_SCORE_MEAN + T_SCORE_SD * clamp((r - m) / sd, -MAX_Z, MAX_Z),
+      T_SCORE_MEAN + T_SCORE_SD * clamp((sign * (r - m)) / sd, -MAX_Z, MAX_Z),
       0,
       100,
     ),
@@ -409,7 +412,7 @@ export function aggregate({
     if (rows.length < MIN_MODELS_TO_STANDARDIZE) continue;
 
     const raws = rows.map((r) => r.raw);
-    const normalized = normalizeBoard(raws);
+    const normalized = normalizeBoard(raws, bench.direction);
     const spread = Math.max(...raws) - Math.min(...raws);
 
     const byModel = new Map<string, NormalizedScore>();

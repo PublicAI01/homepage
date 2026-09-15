@@ -82,6 +82,18 @@ describe('normalizeBoard', () => {
     expect(Math.max(...out)).toBeLessThanOrEqual(100);
   });
 
+  it('reads a risk or error rate the other way round, raw untouched', () => {
+    // Enkrypt prints jailbreak risk as a percentage; Vectara a hallucination
+    // rate. The least of it is the model ahead.
+    const risk = [5, 20, 50];
+    expect(normalizeBoard(risk, 'lower')[0]).toBeGreaterThan(
+      normalizeBoard(risk, 'lower')[2],
+    );
+    expect(normalizeBoard(risk, 'lower')).toEqual(
+      normalizeBoard(risk.map((r) => -r)),
+    );
+  });
+
   it('lets no measure place a model further than two sd from the field', () => {
     // A board whose models sit close together turned a modest lead into an
     // enormous figure, and one such figure outweighed four boards.

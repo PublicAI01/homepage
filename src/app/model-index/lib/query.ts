@@ -643,7 +643,7 @@ export function describeIndex() {
       domains: headlineTaxonomy().reduce((n, [, d]) => n + d.length, 0),
     },
     method: [
-      'Each measure is z-scored across the models its source lists and mapped to 0–100 (mean 50, sd 15), with z capped at ±2 (so 20–80): past two standard deviations a board has stopped discriminating and started extrapolating, and one such figure could outweigh four boards. The cap changes no board’s own order.',
+      'Each measure is z-scored across the models its source lists and mapped to 0–100 (mean 50, sd 15), with z capped at ±2 (so 20–80): past two standard deviations a board has stopped discriminating and started extrapolating, and one such figure could outweigh four boards. The cap changes no board’s own order. A measure marked direction "lower" (a risk or error rate) is read the other way round; its raw stays as printed.',
       'Where a source publishes an error bar, the figure’s weight is discounted by how wide it is relative to the board’s spread.',
       `A model absent from a source is excluded from that term, never imputed; a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the in-scope weight pulls thin evidence toward 50.`,
       `Overall ranks a model once ${MIN_SOURCES} independent publishers among the boards that build the index have scored it — a board that shapes only a domain does not count toward it; otherwise the model is provisional. A category or domain ranks any model a recognised board has measured there.`,

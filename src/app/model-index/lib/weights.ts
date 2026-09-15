@@ -152,6 +152,7 @@ export const CATEGORY_ORDER = [
   'Reasoning',
   'Knowledge',
   'General',
+  'Safety',
 ];
 
 export const categoryRank = (c: string) => {

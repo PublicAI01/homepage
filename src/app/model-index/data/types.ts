@@ -43,6 +43,12 @@ export interface Benchmark {
    */
   independent?: boolean;
   metric: Metric;
+  /**
+   * Which way is good. Absent means higher; `lower` for a figure the source
+   * prints as a risk or an error rate. The raw stays as printed; only the
+   * standardized score flips.
+   */
+  direction?: 'lower';
   /** Top-level capability area. Fixed vocabulary. */
   category: string;
   /** The specific capability this number is evidence of. */

@@ -127,15 +127,20 @@ describe('describeIndex', () => {
 });
 
 describe('reports switch', () => {
-  it('drops report-only models and report figures when reports are off', () => {
-    const on = ok(rankModels({ scope: 'agents', minBoards: 0, limit: 100 }));
-    const off = ok(
-      rankModels({ scope: 'agents', minBoards: 0, limit: 100, reports: false }),
+  it('lists the same rows either way; only board-measured ones take a number', () => {
+    // Reports ✱ are always listed and cited; the switch decides whether
+    // their figures enter the scores. A row only reports placed is there
+    // both ways, unnumbered both ways.
+    const on = ok(
+      rankModels({ scope: 'agents', minBoards: 0, limit: 500, reports: true }),
     );
-    expect(off.total).toBeLessThanOrEqual(on.total);
+    const off = ok(rankModels({ scope: 'agents', minBoards: 0, limit: 500 }));
+    // The same universe (the response is capped, so totals, not pages).
+    expect(off.total).toBe(on.total);
+    expect(off.scopeTotal).toBe(on.scopeTotal);
     for (const m of off.models) {
-      expect(m.covered).toBeGreaterThan(0);
-      expect(m.rankedInScope).toBe(true);
+      expect(m.position === null).toBe(!m.rankedInScope);
+      if (m.rankedInScope) expect(m.covered).toBeGreaterThan(0);
     }
     // Overall rank is untouched by the switch: reports never enter it.
     const a = ok(rankModels({ limit: 20 })).models.map((m) => m.name);
