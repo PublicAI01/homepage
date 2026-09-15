@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T02:12:20.778Z",
+  "generatedAt": "2026-09-15T02:27:56.845Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -25177,15 +25177,15 @@
     {
       "modelId": "kimi-k2-6",
       "benchmarkId": "aa-gdpval",
-      "raw": 1115,
-      "stderr": 14,
+      "raw": 1096,
+      "stderr": 13,
       "sourceLabel": "Kimi K2.6"
     },
     {
       "modelId": "kimi-k2-6",
       "benchmarkId": "aa-briefcase",
-      "raw": 820,
-      "stderr": 7,
+      "raw": 824,
+      "stderr": 6,
       "sourceLabel": "Kimi K2.6"
     },
     {
@@ -33071,14 +33071,14 @@
     {
       "modelId": "mistral-medium-3-1",
       "benchmarkId": "aa-gdpval",
-      "raw": 555,
-      "stderr": 18,
+      "raw": 537,
+      "stderr": 17,
       "sourceLabel": "Mistral Medium 3.1"
     },
     {
       "modelId": "mistral-medium-3-1",
       "benchmarkId": "aa-briefcase",
-      "raw": 532,
+      "raw": 538,
       "stderr": 9,
       "sourceLabel": "Mistral Medium 3.1"
     },
@@ -38867,8 +38867,8 @@
     {
       "modelId": "solar-pro4",
       "benchmarkId": "aa-gdpval",
-      "raw": 1184,
-      "stderr": 17,
+      "raw": 1173,
+      "stderr": 16,
       "sourceLabel": "Solar Pro 4"
     },
     {
