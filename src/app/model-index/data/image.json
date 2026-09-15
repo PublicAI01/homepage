@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T03:05:15.848Z",
+  "generatedAt": "2026-09-15T11:38:10.375Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -1514,7 +1514,7 @@
     {
       "modelId": "flux-1-krea-dev-open-weights",
       "benchmarkId": "aa-text-to-image",
-      "raw": 846,
+      "raw": 847,
       "stderr": 9,
       "sourceLabel": "FLUX.1 Krea [dev]Open Weights"
     },
@@ -1598,7 +1598,7 @@
     {
       "modelId": "flux-1-schnell-open-weights",
       "benchmarkId": "aa-text-to-image",
-      "raw": 807,
+      "raw": 808,
       "stderr": 7,
       "sourceLabel": "FLUX.1 [schnell]Open Weights"
     },
@@ -1619,7 +1619,7 @@
     {
       "modelId": "gpt-image-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1003,
+      "raw": 1002,
       "stderr": 9,
       "sourceLabel": "GPT Image 1 (high)"
     },
@@ -1739,7 +1739,7 @@
       "modelId": "phoenix-1-0-ultra",
       "benchmarkId": "aa-text-to-image",
       "raw": 846,
-      "stderr": 9,
+      "stderr": 8,
       "sourceLabel": "Phoenix 1.0 Ultra"
     },
     {
@@ -1920,7 +1920,7 @@
     {
       "modelId": "nano-banana-2-lite-gemini-3-1-flash-lite-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1086,
+      "raw": 1087,
       "stderr": 8,
       "sourceLabel": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)"
     },
@@ -1962,7 +1962,7 @@
     {
       "modelId": "flux-2-klein-base-4b",
       "benchmarkId": "aa-text-to-image",
-      "raw": 776,
+      "raw": 777,
       "stderr": 9,
       "sourceLabel": "FLUX.2 [klein] Base 4BOpen Weights"
     },
@@ -2235,7 +2235,7 @@
     {
       "modelId": "krea-2-medium-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1017,
+      "raw": 1018,
       "stderr": 9,
       "sourceLabel": "Krea 2 Medium Turbo"
     },
@@ -2249,7 +2249,7 @@
     {
       "modelId": "omnigen-v2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 723,
+      "raw": 724,
       "stderr": 8,
       "sourceLabel": "OmniGen V2Open Weights"
     },
@@ -2368,7 +2368,7 @@
     {
       "modelId": "nano-banana-gemini-2-5-flash-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 987,
+      "raw": 988,
       "stderr": 9,
       "sourceLabel": "Nano Banana (Gemini 2.5 Flash Image)"
     },
@@ -2389,7 +2389,7 @@
     {
       "modelId": "gpt-image-2-5-flare",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1189,
+      "raw": 1188,
       "stderr": 11,
       "sourceLabel": "GPT Image 2.5 Flare (max)"
     },
@@ -2480,7 +2480,7 @@
     {
       "modelId": "mai-image-2-6-flash",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1096,
+      "raw": 1097,
       "stderr": 10,
       "sourceLabel": "MAI-Image-2.6-Flash"
     },
@@ -2515,7 +2515,7 @@
     {
       "modelId": "wan-2-6-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1016,
+      "raw": 1017,
       "stderr": 9,
       "sourceLabel": "Wan 2.6 Image"
     },
@@ -2571,7 +2571,7 @@
     {
       "modelId": "recraft-20b",
       "benchmarkId": "aa-text-to-image",
-      "raw": 769,
+      "raw": 770,
       "stderr": 7,
       "sourceLabel": "Recraft 20B"
     },
@@ -2676,7 +2676,7 @@
     {
       "modelId": "stable-diffusion-3-large-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 720,
+      "raw": 721,
       "stderr": 8,
       "sourceLabel": "Stable Diffusion 3 Large Turbo"
     },
@@ -2697,7 +2697,7 @@
     {
       "modelId": "recraft-v3",
       "benchmarkId": "aa-text-to-image",
-      "raw": 878,
+      "raw": 879,
       "stderr": 7,
       "sourceLabel": "Recraft V3"
     },
@@ -2760,7 +2760,7 @@
     {
       "modelId": "qwen-image-3-0-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1085,
+      "raw": 1086,
       "stderr": 10,
       "sourceLabel": "Qwen-Image-3.0-Pro"
     },
@@ -2774,7 +2774,7 @@
     {
       "modelId": "qwen-image-3-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1076,
+      "raw": 1074,
       "stderr": 10,
       "sourceLabel": "Qwen-Image-3.0"
     },
@@ -2816,7 +2816,7 @@
     {
       "modelId": "stable-diffusion-3-5-large-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 838,
+      "raw": 839,
       "stderr": 8,
       "sourceLabel": "Stable Diffusion 3.5 Large TurboOpen Weights"
     },
@@ -2872,7 +2872,7 @@
     {
       "modelId": "runway-gen-4-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 796,
+      "raw": 797,
       "stderr": 9,
       "sourceLabel": "Runway Gen-4 Image"
     },
@@ -2949,7 +2949,7 @@
     {
       "modelId": "ideogram-4-0-quality",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1017,
+      "raw": 1018,
       "stderr": 7,
       "sourceLabel": "Ideogram 4.0 (Quality)Open Weights"
     },
@@ -3068,7 +3068,7 @@
     {
       "modelId": "seedream-5-0-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1081,
+      "raw": 1082,
       "stderr": 8,
       "sourceLabel": "Seedream 5.0 Pro"
     },
@@ -3110,7 +3110,7 @@
     {
       "modelId": "infinity-8b",
       "benchmarkId": "aa-text-to-image",
-      "raw": 860,
+      "raw": 861,
       "stderr": 9,
       "sourceLabel": "Infinity 8BOpen Weights"
     },
@@ -3138,7 +3138,7 @@
     {
       "modelId": "z-image-base",
       "benchmarkId": "aa-text-to-image",
-      "raw": 869,
+      "raw": 870,
       "stderr": 7,
       "sourceLabel": "Z-Image Base"
     },
@@ -3271,21 +3271,21 @@
     {
       "modelId": "reve-image-halfmoon",
       "benchmarkId": "aa-text-to-image",
-      "raw": 917,
+      "raw": 918,
       "stderr": 9,
       "sourceLabel": "Reve Image (Halfmoon)"
     },
     {
       "modelId": "p-image-ideogram",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1004,
+      "raw": 1005,
       "stderr": 11,
       "sourceLabel": "P-Image-Ideogram (High)"
     },
     {
       "modelId": "p-image-ideogram-very-low",
       "benchmarkId": "aa-text-to-image",
-      "raw": 919,
+      "raw": 920,
       "stderr": 10,
       "sourceLabel": "P-Image-Ideogram (Very Low)"
     },
@@ -3383,7 +3383,7 @@
     {
       "modelId": "lucid-origin-ultra",
       "benchmarkId": "aa-text-to-image",
-      "raw": 924,
+      "raw": 925,
       "stderr": 7,
       "sourceLabel": "Lucid Origin Ultra"
     },
