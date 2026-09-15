@@ -616,9 +616,9 @@ export default function IndexTable({ tracks, newcomers }: Props) {
   return (
     <div>
       {/* ---------------- rank by: category, then domain ---------------- */}
-      {/* Which population: text models, image models, video models. Each
-          is its own index — its own boards, its own Overall — shown on one
-          table because a reader asks "which model" before "which kind". */}
+      {/* Which modality: text, image or video. Each is its own index — its
+          own boards, its own Overall — shown on one table because a reader
+          asks "which model" before "which kind". */}
       {tracks.length > 1 ? (
         <div
           role="tablist"
