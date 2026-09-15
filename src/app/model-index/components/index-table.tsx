@@ -622,9 +622,9 @@ export default function IndexTable({ tracks, newcomers }: Props) {
       {tracks.length > 1 ? (
         <div
           role="tablist"
-          aria-label="Models"
+          aria-label="Modality"
           className="mb-2 flex flex-wrap items-center gap-1">
-          <span className={cn(LABEL, 'mr-2')}>Models</span>
+          <span className={cn(LABEL, 'mr-2')}>Modality</span>
           {tracks.map((t) => (
             <button
               key={t.id}
