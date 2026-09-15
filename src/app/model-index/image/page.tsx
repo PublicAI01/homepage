@@ -1,25 +1,10 @@
-import type { Metadata } from 'next';
+import { permanentRedirect } from 'next/navigation';
 
-import TrackPage from '../components/track-page';
-import { TRACKS } from '../lib/tracks';
-
-const track = TRACKS.image;
-
-export const metadata: Metadata = {
-  title: 'PublicAI Index · Image',
-  description:
-    'Image generation and editing models, ranked from every blind-vote arena that publishes. Standardized and weighted by PublicAI; every figure links to its source.',
-  alternates: { canonical: track.index.INDEX_URL },
-  openGraph: {
-    title: 'PublicAI Index · Image',
-    description:
-      'Image generation and editing models, ranked from every blind-vote arena that publishes. Standardized and weighted by PublicAI; every figure links to its source.',
-    url: track.index.INDEX_URL,
-    siteName: 'PublicAI',
-    type: 'website',
-  },
-};
-
+/**
+ * The image track lives on the index page as a switch — one table, three
+ * populations — rather than a page of its own. Its model pages keep this
+ * path.
+ */
 export default function Page() {
-  return <TrackPage track={track} />;
+  permanentRedirect('/model-index?track=image');
 }

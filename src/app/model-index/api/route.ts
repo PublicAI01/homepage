@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 import { changesSince } from '../lib/changes';
 import type { RankQuery } from '../lib/query';
-import { trackOf,TRACKS } from '../lib/tracks';
+import { trackOf, TRACKS } from '../lib/tracks';
 
 /**
  * The same three answers as the MCP server, over plain GET, for agents and

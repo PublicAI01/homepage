@@ -38,7 +38,6 @@ import {
   REPORT_BADGE,
   SOURCE_BADGE,
   SOURCE_LOGO,
-  WEIGHTING,
   type Weighting,
   weightsFor,
 } from '../lib/weights';
@@ -63,21 +62,36 @@ const CHIP_OFF =
 const LABEL = 'text-micro tracking-[0.14em] text-[#78758A] uppercase';
 const PAGE = 100;
 
-interface Props {
+/**
+ * One population the table can show — text models, image models, video
+ * models — with its snapshot and the rules that rank it. A track switch on
+ * the table swaps all of it at once: different models, different boards,
+ * a different Overall, a different path for the model pages.
+ */
+export interface TrackData {
+  id: 'text' | 'image' | 'video';
+  label: string;
+  /** Where this track's model pages live. */
+  base: string;
+  /** The boards that form this track's Overall. */
+  weighting: Weighting[];
   models: Model[];
   benchmarks: Benchmark[];
   scores: Score[];
   catalogs: Catalog[];
   generatedAt: string;
-  /** Models that entered the index recently — computed on the server, because
-      the history file is a quarter of a megabyte and this is a list of ids. */
-  newcomers: { ids: string[]; from: string; until: string };
   /** category → the domains offered as headline rankings (see weights.ts).
       Decided on the server so the chips and the API agree on what is listed. */
   headline: [string, string[]][];
-  /** Which track this table shows: its path and the boards that form its
-      Overall. Defaults to the text index. */
-  track?: { base: string; weighting: Weighting[] };
+}
+
+interface Props {
+  /** The populations on offer, text first. One means no switch is shown. */
+  tracks: TrackData[];
+  /** Models that entered the index recently — computed on the server, because
+      the history file is a quarter of a megabyte and this is a list of ids.
+      Text track only. */
+  newcomers: { ids: string[]; from: string; until: string };
 }
 
 /* Twenty, not ten: the exported chart is portrait for phone timelines, and
@@ -253,19 +267,7 @@ function PublisherBadge({
   );
 }
 
-export default function IndexTable({
-  models,
-  benchmarks,
-  scores,
-  catalogs,
-  generatedAt,
-  newcomers,
-  headline,
-  track = { base: '/model-index', weighting: WEIGHTING },
-}: Props) {
-  const BASE = track.base;
-  const INDEX_URL = `${ORIGIN}${BASE}`;
-  const OVERALL = useMemo(() => overallOf(track.weighting), [track.weighting]);
+export default function IndexTable({ tracks, newcomers }: Props) {
   const searchParams = useSearchParams();
   // The URL sets the filters on first render — on the server and the client
   // alike, so a shared link opens on exactly the view that was shared.
@@ -273,6 +275,14 @@ export default function IndexTable({
     () => decodeView(new URLSearchParams(searchParams.toString())),
     [searchParams],
   );
+  const [trackId, setTrackId] = useState<TrackData['id']>(() =>
+    tracks.some((t) => t.id === initial.track) ? initial.track : tracks[0].id,
+  );
+  const track = tracks.find((t) => t.id === trackId) ?? tracks[0];
+  const { models, benchmarks, scores, catalogs, generatedAt, headline } = track;
+  const BASE = track.base;
+  const INDEX_URL = `${ORIGIN}${BASE}`;
+  const OVERALL = useMemo(() => overallOf(track.weighting), [track.weighting]);
   const [rankKey, setRankKey] = useState<RankKey>(() => {
     const r = initial.rank;
     if (r.level === 'category')
@@ -497,6 +507,7 @@ export default function IndexTable({
                 domain: rankKey.domain,
               },
       q: query.trim(),
+      track: trackId,
       family,
       size: sizeTier,
       minBoards,
@@ -507,6 +518,7 @@ export default function IndexTable({
     [
       rankKey,
       query,
+      trackId,
       family,
       sizeTier,
       minBoards,
@@ -516,6 +528,17 @@ export default function IndexTable({
     ],
   );
   const viewQuery = useMemo(() => encodeView(view).toString(), [view]);
+
+  // Another population: nothing chosen for this one carries over. The
+  // categories differ, the families differ, "new this week" is text-only.
+  const switchTrack = (id: TrackData['id']) => {
+    if (id === trackId) return;
+    setTrackId(id);
+    setRankKey({ level: 'overall' });
+    setFamily('all');
+    setOpenModel(null);
+    setOnlyNew(false);
+  };
   useEffect(() => {
     const next = `${window.location.pathname}${viewQuery ? `?${viewQuery}` : ''}`;
     if (next !== `${window.location.pathname}${window.location.search}`)
@@ -593,6 +616,28 @@ export default function IndexTable({
   return (
     <div>
       {/* ---------------- rank by: category, then domain ---------------- */}
+      {/* Which population: text models, image models, video models. Each
+          is its own index — its own boards, its own Overall — shown on one
+          table because a reader asks "which model" before "which kind". */}
+      {tracks.length > 1 ? (
+        <div
+          role="tablist"
+          aria-label="Models"
+          className="mb-2 flex flex-wrap items-center gap-1">
+          <span className={cn(LABEL, 'mr-2')}>Models</span>
+          {tracks.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              role="tab"
+              aria-selected={t.id === trackId}
+              onClick={() => switchTrack(t.id)}
+              className={cn(CHIP, t.id === trackId ? CHIP_ON : CHIP_OFF)}>
+              {t.label}
+            </button>
+          ))}
+        </div>
+      ) : null}
       <div
         role="tablist"
         aria-label="Rank by category"
@@ -757,7 +802,7 @@ export default function IndexTable({
       {/* A new model arriving is otherwise silent: it lands wherever its score
           puts it, and unless you already knew its name you would never see it.
           Above the table, not behind a tab — a tab still asks you to go look. */}
-      {newcomers.ids.length && !onlyNew ? (
+      {trackId === 'text' && newcomers.ids.length && !onlyNew ? (
         <div className="text-caption mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-lg border border-[#7C5CFF]/30 bg-[#7C5CFF]/8 px-3 py-2">
           <span className="text-p1 font-semibold">
             {newcomers.ids.length} new

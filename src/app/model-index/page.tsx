@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Suspense } from 'react';
 
 import { INDEX_TWITTER_LINK, LINKEDIN_LINK } from '@/constant';
@@ -9,18 +8,12 @@ import IndexTable, { SourceBadge } from './components/index-table';
 import { LinkedInMark, XMark } from './components/social-marks';
 import Subscribe from './components/subscribe';
 import SubscribePrompt from './components/subscribe-prompt';
-import {
-  benchmarks,
-  catalogs,
-  excluded,
-  generatedAt,
-  models,
-  scores,
-} from './data';
+import { benchmarks, catalogs, excluded, generatedAt, models } from './data';
 import { groupBoards } from './lib/boards';
 import { enteredSince } from './lib/changes';
-import { API_URL, headlineTaxonomy, MCP_URL } from './lib/query';
+import { API_URL, MCP_URL } from './lib/query';
 import { SIZE_TIERS } from './lib/size';
+import { TRACKS } from './lib/tracks';
 import { decodeView, encodeView, rankName } from './lib/view-state';
 import {
   categoryRank,
@@ -180,6 +173,25 @@ const newcomers = {
 };
 
 const snapshotDate = generatedAt.slice(0, 10);
+
+// Every population the table can switch to, text first. Each carries its
+// own snapshot and the rules that rank it; the table swaps all of it.
+const trackData = (['text', 'image', 'video'] as const).map((id) => {
+  const t = TRACKS[id];
+  const d = t.index.data;
+  return {
+    id,
+    label: id === 'text' ? 'Text' : id === 'image' ? 'Image' : 'Video',
+    base: t.base,
+    weighting: id === 'text' ? WEIGHTING : t.weighting,
+    models: d.models,
+    benchmarks: d.benchmarks,
+    scores: d.scores,
+    catalogs: d.catalogs,
+    generatedAt: d.generatedAt,
+    headline: t.index.headlineTaxonomy(),
+  };
+});
 const citation = `PublicAI Foundation (${snapshotDate.slice(0, 4)}). PublicAI Index, snapshot ${snapshotDate}. https://publicai.io/model-index`;
 
 const Card = ({
@@ -246,22 +258,6 @@ export default function ModelIndex() {
               marked ✱ and kept out of the headline. Agents get the same answers
               over MCP and a JSON API.
             </p>
-            {/* The other tracks. Different populations on the same
-                machinery, each with its own page and its own Overall. */}
-            <p className="text-caption mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-[#9C9AA8]">
-              <span className={LABEL}>Also indexed</span>
-              <Link
-                href="/model-index/image"
-                className="text-[#D9D7E0] underline underline-offset-2 hover:text-white">
-                Image generation
-              </Link>
-              <span aria-hidden>·</span>
-              <Link
-                href="/model-index/video"
-                className="text-[#D9D7E0] underline underline-offset-2 hover:text-white">
-                Video generation
-              </Link>
-            </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
               <span className={LABEL}>Follow PublicAI Index</span>
               {FOLLOW.map(({ label, href, Icon }) => (
@@ -319,13 +315,8 @@ export default function ModelIndex() {
             <p className={cn(LABEL, 'mb-3')}>§ 1 · Ranking</p>
             <Suspense>
               <IndexTable
-                models={models}
-                benchmarks={benchmarks}
-                scores={scores}
-                catalogs={catalogs}
-                generatedAt={generatedAt}
+                tracks={trackData}
                 newcomers={newcomers}
-                headline={headlineTaxonomy()}
               />
             </Suspense>
           </main>

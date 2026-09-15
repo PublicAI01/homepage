@@ -25,6 +25,8 @@ export interface ViewState {
   model: string;
   /** Only models that entered the index in the last week. */
   onlyNew: boolean;
+  /** Which population the table shows: text models, image models, video models. */
+  track: 'text' | 'image' | 'video';
 }
 
 export const DEFAULT_VIEW: ViewState = {
@@ -36,6 +38,7 @@ export const DEFAULT_VIEW: ViewState = {
   reports: false,
   model: '',
   onlyNew: false,
+  track: 'text',
 };
 
 export function encodeView(v: ViewState): URLSearchParams {
@@ -49,6 +52,7 @@ export function encodeView(v: ViewState): URLSearchParams {
   if (v.reports) p.set('reports', '1');
   if (v.model) p.set('model', v.model);
   if (v.onlyNew) p.set('new', '1');
+  if (v.track !== 'text') p.set('track', v.track);
   return p;
 }
 
@@ -70,6 +74,8 @@ export function decodeView(p: URLSearchParams): ViewState {
   v.reports = p.get('reports') === '1';
   v.model = p.get('model') ?? '';
   v.onlyNew = p.get('new') === '1';
+  const t = p.get('track');
+  v.track = t === 'image' || t === 'video' ? t : 'text';
   return v;
 }
 
