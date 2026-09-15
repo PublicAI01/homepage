@@ -1,0 +1,3429 @@
+{
+  "generatedAt": "2026-09-15T02:19:19.900Z",
+  "benchmarks": [
+    {
+      "id": "arena-text-to-image",
+      "name": "Arena Text-to-Image",
+      "publisher": "LMArena",
+      "independent": true,
+      "url": "https://arena.ai/leaderboard/text-to-image",
+      "retrievedAt": "2026-09-15",
+      "metric": "elo",
+      "category": "Text-to-image",
+      "domain": "Text-to-image",
+      "caveat": "Blind pairwise votes on images from the same prompt. Measures what people prefer to look at; a model marked Preliminary has few votes yet and a wide error bar.",
+      "kind": "board",
+      "source": "Arena Text-to-Image",
+      "group": "arena-text-to-image"
+    },
+    {
+      "id": "aa-text-to-image",
+      "name": "AA Text to Image Arena",
+      "publisher": "Artificial Analysis",
+      "independent": true,
+      "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
+      "retrievedAt": "2026-09-15",
+      "metric": "elo",
+      "category": "Text-to-image",
+      "domain": "Text-to-image",
+      "caveat": "Blind pairwise votes on images from the same prompt, collected by Artificial Analysis and reported as an Elo with a confidence interval. One publisher with several arenas: one independent voice.",
+      "kind": "board",
+      "source": "Artificial Analysis Text to Image",
+      "group": "aa-text-to-image"
+    },
+    {
+      "id": "arena-image-edit",
+      "name": "Arena Image Edit",
+      "publisher": "LMArena",
+      "independent": true,
+      "url": "https://arena.ai/leaderboard/image-edit",
+      "retrievedAt": "2026-09-15",
+      "metric": "elo",
+      "category": "Image editing",
+      "domain": "Image editing",
+      "caveat": "Blind pairwise votes on edits of the same source image under the same instruction. Preliminary marks a model with few votes yet.",
+      "kind": "board",
+      "source": "Arena Image Edit",
+      "group": "arena-image-edit"
+    }
+  ],
+  "models": [
+    {
+      "id": "phoenix-0-9-ultra",
+      "name": "Phoenix 0.9 Ultra",
+      "org": "Leonardo.Ai"
+    },
+    {
+      "id": "imagen-4-0-generate-001",
+      "name": "Imagen 4.0 Generate 001",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "imagen-ultra-4-0-generate-001",
+      "name": "Imagen Ultra 4.0 Generate 001",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "imagen-3-v002",
+      "name": "Imagen 3 (v002)",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "imagen-3-0-generate-002",
+      "name": "Imagen 3.0 Generate 002",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "image-01",
+      "name": "Image 01",
+      "org": "MiniMax",
+      "access": {
+        "official": {
+          "name": "MiniMax Platform",
+          "url": "https://platform.minimax.io/docs"
+        }
+      }
+    },
+    {
+      "id": "qwen-image-2-0-2026-03-03",
+      "name": "Qwen Image 2.0 (2026-03-03)",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen-image-2-0-pro-2026-04-22",
+      "name": "Qwen Image 2.0 Pro (2026-04-22)",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen-image-2-0-pro-2026-06-22",
+      "name": "Qwen Image 2.0 Pro 2026 06 22",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "hidream-o1-image-1-5",
+      "name": "HiDream O1 Image 1.5",
+      "org": "HiDream"
+    },
+    {
+      "id": "amazon-titan-g1-v2-standard",
+      "name": "Amazon Titan G1 v2 (Standard)",
+      "org": "Amazon",
+      "access": {
+        "official": {
+          "name": "Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock"
+        }
+      }
+    },
+    {
+      "id": "flux-1-dev-fp8",
+      "name": "Flux 1 Dev Fp8",
+      "org": "Black Forest Labs"
+    },
+    {
+      "id": "flux-1-kontext-dev",
+      "name": "Flux 1 Kontext Dev",
+      "org": "Black Forest Labs"
+    },
+    {
+      "id": "flux-1-krea-dev-open-weights",
+      "name": "FLUX.1 Krea [dev]Open Weights",
+      "org": "Black Forest Labs"
+    },
+    {
+      "id": "flux-1-dev-open-weights",
+      "name": "FLUX.1 [dev]Open Weights",
+      "org": "Black Forest Labs"
+    },
+    { "id": "hidream-i1-dev", "name": "HiDream I1 Dev", "org": "HiDream" },
+    {
+      "id": "hidream-o1-image-dev",
+      "name": "HiDream O1 Image Dev",
+      "org": "HiDream"
+    },
+    {
+      "id": "step1x-edit",
+      "name": "Step1x Edit",
+      "org": "StepFun",
+      "access": {
+        "official": {
+          "name": "StepFun Platform",
+          "url": "https://platform.stepfun.com"
+        }
+      }
+    },
+    { "id": "hidream-i1-fast", "name": "HiDream I1 Fast", "org": "HiDream" },
+    {
+      "id": "flux-1-kontext",
+      "name": "Flux 1 Kontext",
+      "org": "Black Forest Labs"
+    },
+    {
+      "id": "flux-1-kontext-pro",
+      "name": "Flux 1 Kontext Pro",
+      "org": "Black Forest Labs"
+    },
+    {
+      "id": "flux-1-schnell-open-weights",
+      "name": "FLUX.1 [schnell]Open Weights",
+      "org": "Black Forest Labs"
+    },
+    { "id": "flux-1-pro", "name": "FLUX.1 [pro]", "org": "Black Forest Labs" },
+    {
+      "id": "amazon-titan-g1-standard",
+      "name": "Amazon Titan G1 (Standard)",
+      "org": "Amazon",
+      "access": {
+        "official": {
+          "name": "Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock"
+        }
+      }
+    },
+    {
+      "id": "gpt-image-1",
+      "name": "GPT Image 1",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "gpt-image-1-mini",
+      "name": "GPT Image 1 Mini",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    { "id": "hidream-o1-image", "name": "Hidream O1 Image", "org": "HiDream" },
+    { "id": "image-1", "name": "Image 1", "org": "Api Airforce" },
+    { "id": "kling-image-o1", "name": "Kling Image O1", "org": "KlingAI" },
+    { "id": "mai-image-1", "name": "Mai Image 1", "org": "Microsoft AI" },
+    { "id": "krea-1", "name": "Krea 1", "org": "Krea" },
+    { "id": "luma-uni-1", "name": "Luma UNI 1", "org": "Luma Labs" },
+    { "id": "reve-v1", "name": "Reve V1", "org": "Reve" },
+    {
+      "id": "stable-diffusion-xl-1-0",
+      "name": "Stable Diffusion XL 1.0",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "phoenix-1-0-fast",
+      "name": "Phoenix 1.0 Fast",
+      "org": "Leonardo.Ai"
+    },
+    {
+      "id": "phoenix-1-0-ultra",
+      "name": "Phoenix 1.0 Ultra",
+      "org": "Leonardo.Ai"
+    },
+    { "id": "reve-v1-1-fast", "name": "Reve V1.1 Fast", "org": "Reve" },
+    {
+      "id": "flux-1-1-pro",
+      "name": "Flux 1.1 Pro",
+      "org": "Black Forest Labs"
+    },
+    {
+      "id": "flux1-1-pro-ultra",
+      "name": "FLUX1.1 [pro] Ultra",
+      "org": "Black Forest Labs"
+    },
+    { "id": "reve-v1-1", "name": "Reve V1.1", "org": "Reve" },
+    { "id": "uni-1-1", "name": "Uni 1.1", "org": "Luma AI" },
+    {
+      "id": "stable-diffusion-1-5",
+      "name": "Stable Diffusion 1.5",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "gpt-image-1-5-high-fidelity",
+      "name": "GPT Image 1.5 High Fidelity",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "gpt-image-1-5",
+      "name": "GPT Image 1.5",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "imagineart-1-5-preview",
+      "name": "ImagineArt 1.5 Preview",
+      "org": "ImagineArt"
+    },
+    { "id": "reve-v1-5", "name": "Reve V1.5", "org": "Reve" },
+    {
+      "id": "sana-sprint-1-6b",
+      "name": "Sana Sprint 1.6B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      },
+      "size": { "paramsB": 1.6, "source": "name" }
+    },
+    {
+      "id": "stable-diffusion-1-6",
+      "name": "Stable Diffusion 1.6",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "wan2-5-i2i-preview",
+      "name": "Wan2.5 I2i Preview",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "wan2-5-t2i-preview",
+      "name": "Wan2.5 T2i Preview",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "wan2-6-t2i",
+      "name": "Wan2.6 T2i",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "cosmos3-super-text2image-4step",
+      "name": "Cosmos3 Super Text2Image 4Step",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "cosmos3-super-text2image-agentic",
+      "name": "Cosmos3-Super-Text2Image (Agentic)",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "gemini-3-pro-image-2k-nano-banana-pro",
+      "name": "Gemini-3-pro-image-2k (nano-banana-pro)",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "cosmos3-super-text2image",
+      "name": "Cosmos3 Super Text2Image",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      }
+    },
+    {
+      "id": "gemini-3-1-flash-lite-image-nano-banana-2-lite",
+      "name": "Gemini-3.1-flash-lite-image (nano-banana-2-lite)",
+      "org": "Google",
+      "access": {
+        "openrouter": {
+          "id": "google/gemini-3.1-flash-lite-image",
+          "url": "https://openrouter.ai/google/gemini-3.1-flash-lite-image",
+          "contextLength": 65536,
+          "inputPerM": 0.25,
+          "outputPerM": 1.5,
+          "listedAt": "2026-06-30",
+          "modalities": ["image", "text"]
+        },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "nano-banana-2-gemini-3-1-flash-image",
+      "name": "Nano Banana 2 (Gemini 3.1 Flash Image)",
+      "org": "Google",
+      "access": {
+        "openrouter": {
+          "id": "google/gemini-3.1-flash-image",
+          "url": "https://openrouter.ai/google/gemini-3.1-flash-image",
+          "contextLength": 131072,
+          "inputPerM": 0.5,
+          "outputPerM": 3,
+          "listedAt": "2026-06-18",
+          "modalities": ["image", "text"]
+        },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "gemini-3-1-flash-image-nano-banana-2-web-search",
+      "name": "Gemini-3.1-flash-image (nano-banana-2) [web-search]",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "flux-2-klein-base-4b",
+      "name": "FLUX.2 [klein] Base 4B",
+      "org": "Black Forest Labs",
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "flux-2-klein-4b",
+      "name": "Flux 2 Klein 4B",
+      "org": "Black Forest Labs",
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "flux-2-klein-base-9b",
+      "name": "FLUX.2 [klein] Base 9B",
+      "org": "Black Forest Labs",
+      "size": { "paramsB": 9, "source": "name" }
+    },
+    {
+      "id": "flux-2-klein-9b",
+      "name": "Flux 2 Klein 9B",
+      "org": "Black Forest Labs",
+      "size": { "paramsB": 9, "source": "name" }
+    },
+    {
+      "id": "ideogram-v2a-turbo",
+      "name": "Ideogram v2a Turbo",
+      "org": "Ideogram"
+    },
+    { "id": "ideogram-v2a", "name": "Ideogram v2a", "org": "Ideogram" },
+    {
+      "id": "dalle-2",
+      "name": "DALLE 2",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    { "id": "flux-2-dev-flash", "name": "FLUX.2 [dev] Flash", "org": "Fal" },
+    { "id": "flux-2-dev", "name": "Flux 2 Dev", "org": "Black Forest Labs" },
+    { "id": "flux-2-dev-turbo", "name": "FLUX.2 [dev] Turbo", "org": "Fal" },
+    {
+      "id": "step-image-edit-2",
+      "name": "Step Image Edit 2",
+      "org": "StepFun",
+      "access": {
+        "official": {
+          "name": "StepFun Platform",
+          "url": "https://platform.stepfun.com"
+        }
+      }
+    },
+    {
+      "id": "mai-image-2-efficient",
+      "name": "MAI Image 2 Efficient",
+      "org": "Microsoft AI"
+    },
+    { "id": "flux-2-flex", "name": "Flux 2 Flex", "org": "Black Forest Labs" },
+    { "id": "flux-2", "name": "Flux 2", "org": "Black Forest Labs" },
+    { "id": "flux-2-pro", "name": "Flux 2 Pro", "org": "Black Forest Labs" },
+    {
+      "id": "gpt-image-2",
+      "name": "GPT Image 2",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "ideogram-v2-turbo",
+      "name": "Ideogram v2 Turbo",
+      "org": "Ideogram"
+    },
+    { "id": "ideogram-v2", "name": "Ideogram V2", "org": "Ideogram" },
+    { "id": "lumina-image-v2", "name": "Lumina Image v2", "org": "OpenGVLab" },
+    { "id": "mai-image-2", "name": "Mai Image 2", "org": "Microsoft AI" },
+    { "id": "krea-2", "name": "Krea 2", "org": "Krea" },
+    { "id": "krea-2-large", "name": "Krea 2 Large", "org": "Krea" },
+    { "id": "krea-2-turbo", "name": "Krea 2 Turbo", "org": "Krea" },
+    { "id": "omnigen-v2", "name": "OmniGen V2", "org": "VectorSpaceLab" },
+    { "id": "vidu-q2", "name": "Vidu Q2", "org": "Vidu" },
+    {
+      "id": "gemini-2-0-flash-preview-image-generation",
+      "name": "Gemini 2.0 Flash Preview Image Generation",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "grok-imagine-image-2-0",
+      "name": "Grok Imagine Image 2.0",
+      "org": "SpaceXAI",
+      "access": {
+        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
+      }
+    },
+    { "id": "imagineart-2-0", "name": "ImagineArt 2.0", "org": "ImagineArt" },
+    { "id": "reve-2-0", "name": "Reve 2.0", "org": "Reve" },
+    { "id": "vivago-2-0", "name": "Vivago 2.0", "org": "HiDream" },
+    {
+      "id": "stable-diffusion-2-1",
+      "name": "Stable Diffusion 2.1",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "hunyuanimage-2-1",
+      "name": "HunyuanImage 2.1",
+      "org": "Tencent",
+      "access": {
+        "official": {
+          "name": "Tencent Hunyuan",
+          "url": "https://cloud.tencent.com/product/hunyuan"
+        }
+      }
+    },
+    { "id": "kolors-2-1", "name": "Kolors 2.1", "org": "KlingAI" },
+    { "id": "reve-2-1", "name": "Reve 2.1", "org": "Reve" },
+    { "id": "vivago-2-1", "name": "Vivago 2.1", "org": "HiDream" },
+    {
+      "id": "nano-banana-gemini-2-5-flash-image",
+      "name": "Nano Banana (Gemini 2.5 Flash Image)",
+      "org": "Google",
+      "access": {
+        "openrouter": {
+          "id": "google/gemini-2.5-flash-image",
+          "url": "https://openrouter.ai/google/gemini-2.5-flash-image",
+          "contextLength": 32768,
+          "inputPerM": 0.3,
+          "outputPerM": 2.5,
+          "listedAt": "2025-10-07",
+          "modalities": ["image", "text"]
+        },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "gemini-2-5-flash-image-preview-nano-banana",
+      "name": "Gemini-2.5-flash-image-preview (nano-banana)",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "gpt-image-2-5-flare",
+      "name": "GPT Image 2.5 Flare",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "mai-image-2-5-flash",
+      "name": "MAI Image 2.5 Flash",
+      "org": "Microsoft AI"
+    },
+    {
+      "id": "gpt-image-2-5-sunburst",
+      "name": "GPT Image 2.5 Sunburst",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    { "id": "mai-image-2-5", "name": "Mai Image 2.5", "org": "Microsoft AI" },
+    {
+      "id": "mai-image-2-5-pro",
+      "name": "MAI Image 2.5 Pro",
+      "org": "Microsoft AI"
+    },
+    {
+      "id": "playground-v2-5",
+      "name": "Playground v2.5",
+      "org": "Playground AI"
+    },
+    {
+      "id": "wan-2-5-preview",
+      "name": "Wan 2.5 Preview",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "mai-image-2-6-flash",
+      "name": "MAI Image 2.6 Flash",
+      "org": "Microsoft AI"
+    },
+    { "id": "mai-image-2-6", "name": "Mai Image 2.6", "org": "Microsoft AI" },
+    {
+      "id": "wan2-6-text-to-image",
+      "name": "Wan2.6 Text to Image",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "wan-2-6-image",
+      "name": "Wan 2.6 Image",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "wan2-7-image-pro",
+      "name": "Wan2.7 Image Pro",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "wan2-7-image",
+      "name": "Wan2.7 Image",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "wan-2-7-pro",
+      "name": "Wan 2.7 Pro",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "wan-2-7",
+      "name": "Wan 2.7",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "recraft-20b",
+      "name": "Recraft 20B",
+      "org": "Recraft",
+      "size": { "paramsB": 20, "source": "name" }
+    },
+    {
+      "id": "chatgpt-image-latest-high-fidelity-20251216",
+      "name": "Chatgpt-image-latest-high-fidelity (20251216)",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "grok-imagine-image-quality-20260519",
+      "name": "Grok-imagine-image-quality (20260519)",
+      "org": "SpaceXAI",
+      "access": {
+        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
+      }
+    },
+    {
+      "id": "qwen-image-edit-2511",
+      "name": "Qwen Image Edit 2511",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen-image-max-2512",
+      "name": "Qwen Image Max 2512",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen-image-2512",
+      "name": "Qwen Image 2512",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen-image-plus-2601",
+      "name": "Qwen Image Plus 2601",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "gemini-3-pro-image-preview-nano-banana-pro",
+      "name": "Gemini-3-pro-image-preview (nano-banana-pro)",
+      "org": "Google",
+      "access": {
+        "openrouter": {
+          "id": "google/gemini-3-pro-image-preview",
+          "url": "https://openrouter.ai/google/gemini-3-pro-image-preview",
+          "contextLength": 65536,
+          "inputPerM": 2,
+          "outputPerM": 12,
+          "listedAt": "2025-11-20",
+          "modalities": ["image", "text"]
+        },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "nano-banana-pro-gemini-3-pro-image",
+      "name": "Nano Banana Pro (Gemini 3 Pro Image)",
+      "org": "Google",
+      "access": {
+        "openrouter": {
+          "id": "google/gemini-3-pro-image",
+          "url": "https://openrouter.ai/google/gemini-3-pro-image",
+          "contextLength": 131072,
+          "inputPerM": 2,
+          "outputPerM": 12,
+          "listedAt": "2026-06-18",
+          "modalities": ["image", "text"]
+        },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "playground-v3-beta",
+      "name": "Playground v3 (beta)",
+      "org": "Playground AI"
+    },
+    {
+      "id": "dall-e-3",
+      "name": "Dall E 3",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "dalle-3",
+      "name": "DALLE 3",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "dalle-3-hd",
+      "name": "DALLE 3 HD",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "stable-diffusion-3-large",
+      "name": "Stable Diffusion 3 Large",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "stable-diffusion-3-large-turbo",
+      "name": "Stable Diffusion 3 Large Turbo",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "stable-diffusion-3",
+      "name": "Stable Diffusion 3",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "ideogram-v3-quality",
+      "name": "Ideogram V3 Quality",
+      "org": "Ideogram"
+    },
+    { "id": "recraft-v3", "name": "Recraft V3", "org": "Recraft" },
+    {
+      "id": "seedream-3",
+      "name": "Seedream 3",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "hunyuanimage-3-0-fal",
+      "name": "HunyuanImage 3.0 (Fal)",
+      "org": "Tencent",
+      "access": {
+        "official": {
+          "name": "Tencent Hunyuan",
+          "url": "https://cloud.tencent.com/product/hunyuan"
+        }
+      }
+    },
+    {
+      "id": "hunyuanimage-3-0-instruct-fal",
+      "name": "HunyuanImage 3.0 Instruct (Fal)",
+      "org": "Tencent",
+      "access": {
+        "official": {
+          "name": "Tencent Hunyuan",
+          "url": "https://cloud.tencent.com/product/hunyuan"
+        }
+      }
+    },
+    {
+      "id": "hunyuan-image-3-0",
+      "name": "Hunyuan Image 3.0",
+      "org": "Tencent",
+      "access": {
+        "official": {
+          "name": "Tencent Hunyuan",
+          "url": "https://cloud.tencent.com/product/hunyuan"
+        }
+      }
+    },
+    {
+      "id": "hunyuan-image-3-0-instruct",
+      "name": "Hunyuan Image 3.0 Instruct",
+      "org": "Tencent",
+      "access": {
+        "official": {
+          "name": "Tencent Hunyuan",
+          "url": "https://cloud.tencent.com/product/hunyuan"
+        }
+      }
+    },
+    { "id": "ideogram-3-0", "name": "Ideogram 3.0", "org": "Ideogram" },
+    {
+      "id": "kling-image-3-0-omni",
+      "name": "Kling Image 3.0 Omni",
+      "org": "KlingAI"
+    },
+    {
+      "id": "qwen-image-3-0-pro",
+      "name": "Qwen Image 3.0 Pro",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "qwen-image-3-0",
+      "name": "Qwen Image 3.0",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "seededit-3-0",
+      "name": "Seededit 3.0",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "seedream-3-0",
+      "name": "Seedream 3.0",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "dreamina-3-1",
+      "name": "Dreamina 3.1",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    { "id": "bria-3-2", "name": "Bria 3.2", "org": "Bria" },
+    {
+      "id": "stable-diffusion-3-5-large",
+      "name": "Stable Diffusion 3.5 Large",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "stable-diffusion-3-5-large-turbo",
+      "name": "Stable Diffusion 3.5 Large Turbo",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "stable-diffusion-3-5",
+      "name": "Stable Diffusion 3.5",
+      "org": "Stability.ai"
+    },
+    {
+      "id": "stable-diffusion-v35-large",
+      "name": "Stable Diffusion V35 Large",
+      "org": "Other"
+    },
+    {
+      "id": "seedream-4-high-res-fal",
+      "name": "Seedream 4 High Res Fal",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "seedream-4-fal",
+      "name": "Seedream 4 Fal",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "imagen-4-fast",
+      "name": "Imagen 4 Fast",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "runway-gen-4-image",
+      "name": "Runway Gen-4 Image",
+      "org": "Runway"
+    },
+    { "id": "runway-gen4", "name": "Runway Gen4", "org": "Runway" },
+    {
+      "id": "imagen-4-standard",
+      "name": "Imagen 4 Standard",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "imagen-4-ultra",
+      "name": "Imagen 4 Ultra",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    { "id": "recraft-v4-pro", "name": "Recraft V4 Pro", "org": "Recraft" },
+    { "id": "recraft-v4", "name": "Recraft V4", "org": "Recraft" },
+    { "id": "ideogram-4-0-fast", "name": "Ideogram 4.0 Fast", "org": "Fal" },
+    {
+      "id": "ideogram-4-0-fast-quality",
+      "name": "Ideogram 4.0 Fast (Quality)",
+      "org": "Fal"
+    },
+    { "id": "ideogram-4-0", "name": "Ideogram 4.0", "org": "Ideogram" },
+    {
+      "id": "ideogram-4-0-instant",
+      "name": "Ideogram 4.0 Instant",
+      "org": "Fal"
+    },
+    {
+      "id": "ideogram-4-0-quality",
+      "name": "Ideogram 4.0 Quality",
+      "org": "Ideogram"
+    },
+    {
+      "id": "seedream-4-0",
+      "name": "Seedream 4.0",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "recraft-v4-1-utility-pro",
+      "name": "Recraft V4.1 Utility Pro",
+      "org": "Recraft"
+    },
+    { "id": "recraft-v4-1-pro", "name": "Recraft V4.1 Pro", "org": "Recraft" },
+    {
+      "id": "recraft-v4-1-utility",
+      "name": "Recraft V4.1 Utility",
+      "org": "Recraft"
+    },
+    { "id": "recraft-v4-1", "name": "Recraft V4.1", "org": "Recraft" },
+    {
+      "id": "seedream-4",
+      "name": "Seedream 4",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "seedream-4-5",
+      "name": "Seedream 4.5",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "seedream-5-0-lite",
+      "name": "Seedream 5.0 Lite",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "seedream-5-0-pro",
+      "name": "Seedream 5.0 Pro",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    { "id": "midjourney-v6", "name": "Midjourney v6", "org": "Midjourney" },
+    { "id": "midjourney-v6-1", "name": "Midjourney v6.1", "org": "Midjourney" },
+    {
+      "id": "midjourney-v7-alpha",
+      "name": "Midjourney v7 Alpha",
+      "org": "Midjourney"
+    },
+    {
+      "id": "infinity-8b",
+      "name": "Infinity 8B",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      },
+      "size": { "paramsB": 8, "source": "name" }
+    },
+    {
+      "id": "bagel",
+      "name": "Bagel",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "z-image-base",
+      "name": "Z-Image Base",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    { "id": "reve-edit-fast", "name": "Reve Edit Fast", "org": "Reve" },
+    { "id": "p-image-edit", "name": "P Image Edit", "org": "Other" },
+    {
+      "id": "qwen-image-edit",
+      "name": "Qwen Image Edit",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    { "id": "eigen-image", "name": "Eigen Image", "org": "Eigen AI" },
+    {
+      "id": "ernie-image",
+      "name": "ERNIE Image",
+      "org": "Baidu",
+      "access": {
+        "official": {
+          "name": "Baidu Qianfan",
+          "url": "https://cloud.baidu.com/product/wenxinworkshop"
+        }
+      }
+    },
+    {
+      "id": "ernie-image-turbo",
+      "name": "ERNIE Image Turbo",
+      "org": "Baidu",
+      "access": {
+        "official": {
+          "name": "Baidu Qianfan",
+          "url": "https://cloud.baidu.com/product/wenxinworkshop"
+        }
+      }
+    },
+    {
+      "id": "qwen-image-prompt-extend",
+      "name": "Qwen Image Prompt Extend",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "lucid-origin-fast",
+      "name": "Lucid Origin Fast",
+      "org": "Leonardo.Ai"
+    },
+    { "id": "fibo", "name": "FIBO", "org": "Bria" },
+    { "id": "fibo-lite", "name": "FIBO Lite", "org": "Bria" },
+    {
+      "id": "luma-photon-flash",
+      "name": "Luma Photon Flash",
+      "org": "Luma Labs"
+    },
+    {
+      "id": "glm-image",
+      "name": "GLM Image",
+      "org": "Z.ai",
+      "access": {
+        "official": { "name": "Z.ai API", "url": "https://docs.z.ai" }
+      }
+    },
+    {
+      "id": "grok-imagine-image",
+      "name": "Grok Imagine Image",
+      "org": "SpaceXAI",
+      "access": {
+        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
+      }
+    },
+    {
+      "id": "grok-imagine-image-pro",
+      "name": "Grok Imagine Image Pro",
+      "org": "SpaceXAI",
+      "access": {
+        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
+      }
+    },
+    {
+      "id": "grok-imagine-image-quality",
+      "name": "Grok Imagine Image Quality",
+      "org": "SpaceXAI",
+      "access": {
+        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
+      }
+    },
+    {
+      "id": "reve-image-halfmoon",
+      "name": "Reve Image (Halfmoon)",
+      "org": "Reve"
+    },
+    { "id": "p-image-ideogram", "name": "P Image Ideogram", "org": "Pruna AI" },
+    {
+      "id": "p-image-ideogram-very-low",
+      "name": "P-Image-Ideogram (Very Low)",
+      "org": "Pruna AI"
+    },
+    { "id": "longcat-image", "name": "LongCat Image", "org": "Meituan" },
+    {
+      "id": "muse-image",
+      "name": "Muse Image",
+      "org": "Meta",
+      "access": {
+        "official": {
+          "name": "Llama developer docs",
+          "url": "https://www.llama.com/docs"
+        }
+      }
+    },
+    { "id": "p-image", "name": "P Image", "org": "Pruna AI" },
+    {
+      "id": "qwen-image",
+      "name": "Qwen Image",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "z-image-turbo",
+      "name": "Z Image Turbo",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "janus-pro",
+      "name": "Janus Pro",
+      "org": "DeepSeek",
+      "access": {
+        "official": {
+          "name": "DeepSeek API",
+          "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
+    {
+      "id": "sdxl-lightning",
+      "name": "SDXL Lightning",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    { "id": "lucid-origin", "name": "Lucid Origin", "org": "Leonardo AI" },
+    {
+      "id": "lucid-origin-ultra",
+      "name": "Lucid Origin Ultra",
+      "org": "Leonardo.Ai"
+    },
+    { "id": "luma-photon", "name": "Luma Photon", "org": "Luma Labs" },
+    { "id": "photon", "name": "Photon", "org": "Luma AI" },
+    {
+      "id": "srpo",
+      "name": "SRPO",
+      "org": "Tencent",
+      "access": {
+        "official": {
+          "name": "Tencent Hunyuan",
+          "url": "https://cloud.tencent.com/product/hunyuan"
+        }
+      }
+    }
+  ],
+  "scores": [
+    {
+      "modelId": "phoenix-0-9-ultra",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 833,
+      "stderr": 7,
+      "sourceLabel": "Phoenix 0.9 Ultra"
+    },
+    {
+      "modelId": "imagen-4-0-generate-001",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1129,
+      "stderr": 3,
+      "sourceLabel": "imagen-4.0-generate-001"
+    },
+    {
+      "modelId": "imagen-ultra-4-0-generate-001",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1148,
+      "stderr": 4,
+      "sourceLabel": "imagen-ultra-4.0-generate-001"
+    },
+    {
+      "modelId": "imagen-3-v002",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 929,
+      "stderr": 8,
+      "sourceLabel": "Imagen 3 (v002)"
+    },
+    {
+      "modelId": "imagen-3-0-generate-002",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1058,
+      "stderr": 3,
+      "sourceLabel": "imagen-3.0-generate-002"
+    },
+    {
+      "modelId": "image-01",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 875,
+      "stderr": 9,
+      "sourceLabel": "Image-01"
+    },
+    {
+      "modelId": "qwen-image-2-0-2026-03-03",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 953,
+      "stderr": 8,
+      "sourceLabel": "Qwen Image 2.0 (2026-03-03)"
+    },
+    {
+      "modelId": "qwen-image-2-0-pro-2026-04-22",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1028,
+      "stderr": 9,
+      "sourceLabel": "Qwen Image 2.0 Pro (2026-04-22)"
+    },
+    {
+      "modelId": "qwen-image-2-0-pro-2026-06-22",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1191,
+      "stderr": 6,
+      "sourceLabel": "qwen-image-2.0-pro-2026-06-22"
+    },
+    {
+      "modelId": "qwen-image-2-0-pro-2026-06-22",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1304,
+      "stderr": 5,
+      "sourceLabel": "qwen-image-2.0-pro-2026-06-22"
+    },
+    {
+      "modelId": "hidream-o1-image-1-5",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1020,
+      "stderr": 8,
+      "sourceLabel": "HiDream-O1-Image-1.5"
+    },
+    {
+      "modelId": "amazon-titan-g1-v2-standard",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 727,
+      "stderr": 8,
+      "sourceLabel": "Amazon Titan G1 v2 (Standard)"
+    },
+    {
+      "modelId": "flux-1-dev-fp8",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 969,
+      "stderr": 4,
+      "sourceLabel": "flux-1-dev-fp8"
+    },
+    {
+      "modelId": "flux-1-kontext-dev",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 940,
+      "stderr": 4,
+      "sourceLabel": "flux-1-kontext-dev"
+    },
+    {
+      "modelId": "flux-1-kontext-dev",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1149,
+      "stderr": 3,
+      "sourceLabel": "flux-1-kontext-dev"
+    },
+    {
+      "modelId": "flux-1-krea-dev-open-weights",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 846,
+      "stderr": 9,
+      "sourceLabel": "FLUX.1 Krea [dev]Open Weights"
+    },
+    {
+      "modelId": "flux-1-dev-open-weights",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 842,
+      "stderr": 7,
+      "sourceLabel": "FLUX.1 [dev]Open Weights"
+    },
+    {
+      "modelId": "hidream-i1-dev",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 875,
+      "stderr": 9,
+      "sourceLabel": "HiDream-I1-DevOpen Weights"
+    },
+    {
+      "modelId": "hidream-o1-image-dev",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 871,
+      "stderr": 8,
+      "sourceLabel": "HiDream-O1-Image-DevOpen Weights"
+    },
+    {
+      "modelId": "step1x-edit",
+      "benchmarkId": "arena-image-edit",
+      "raw": 998,
+      "stderr": 4,
+      "sourceLabel": "step1x-edit"
+    },
+    {
+      "modelId": "hidream-i1-fast",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 867,
+      "stderr": 9,
+      "sourceLabel": "HiDream-I1-FastOpen Weights"
+    },
+    {
+      "modelId": "flux-1-kontext",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1074,
+      "stderr": 3,
+      "sourceLabel": "flux-1-kontext-max"
+    },
+    {
+      "modelId": "flux-1-kontext",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 941,
+      "stderr": 9,
+      "sourceLabel": "FLUX.1 Kontext [max]"
+    },
+    {
+      "modelId": "flux-1-kontext",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1181,
+      "stderr": 3,
+      "sourceLabel": "flux-1-kontext-max"
+    },
+    {
+      "modelId": "flux-1-kontext-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1059,
+      "stderr": 3,
+      "sourceLabel": "flux-1-kontext-pro"
+    },
+    {
+      "modelId": "flux-1-kontext-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 911,
+      "stderr": 7,
+      "sourceLabel": "FLUX.1 Kontext [pro]"
+    },
+    {
+      "modelId": "flux-1-kontext-pro",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1176,
+      "stderr": 3,
+      "sourceLabel": "flux-1-kontext-pro"
+    },
+    {
+      "modelId": "flux-1-schnell-open-weights",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 807,
+      "stderr": 7,
+      "sourceLabel": "FLUX.1 [schnell]Open Weights"
+    },
+    {
+      "modelId": "flux-1-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 887,
+      "stderr": 8,
+      "sourceLabel": "FLUX.1 [pro]"
+    },
+    {
+      "modelId": "amazon-titan-g1-standard",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 718,
+      "stderr": 8,
+      "sourceLabel": "Amazon Titan G1 (Standard)"
+    },
+    {
+      "modelId": "gpt-image-1",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1115,
+      "stderr": 3,
+      "sourceLabel": "gpt-image-1"
+    },
+    {
+      "modelId": "gpt-image-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1001,
+      "stderr": 9,
+      "sourceLabel": "GPT Image 1 (high)"
+    },
+    {
+      "modelId": "gpt-image-1",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1139,
+      "stderr": 3,
+      "sourceLabel": "gpt-image-1"
+    },
+    {
+      "modelId": "gpt-image-1-mini",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1109,
+      "stderr": 3,
+      "sourceLabel": "gpt-image-1-mini"
+    },
+    {
+      "modelId": "gpt-image-1-mini",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 918,
+      "stderr": 7,
+      "sourceLabel": "GPT Image 1 Mini (medium)"
+    },
+    {
+      "modelId": "gpt-image-1-mini",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1124,
+      "stderr": 3,
+      "sourceLabel": "gpt-image-1-mini"
+    },
+    {
+      "modelId": "hidream-o1-image",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1117,
+      "stderr": 4,
+      "sourceLabel": "hidream-o1-image"
+    },
+    {
+      "modelId": "hidream-o1-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 979,
+      "stderr": 8,
+      "sourceLabel": "HiDream-O1-ImageOpen Weights"
+    },
+    {
+      "modelId": "image-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 944,
+      "stderr": 8,
+      "sourceLabel": "image-1"
+    },
+    {
+      "modelId": "kling-image-o1",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1251,
+      "stderr": 4,
+      "sourceLabel": "kling-image-o1"
+    },
+    {
+      "modelId": "mai-image-1",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1093,
+      "stderr": 4,
+      "sourceLabel": "mai-image-1"
+    },
+    {
+      "modelId": "mai-image-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 866,
+      "stderr": 8,
+      "sourceLabel": "MAI Image 1"
+    },
+    {
+      "modelId": "krea-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 817,
+      "stderr": 9,
+      "sourceLabel": "Krea 1"
+    },
+    {
+      "modelId": "luma-uni-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1018,
+      "stderr": 9,
+      "sourceLabel": "Luma UNI 1 Max"
+    },
+    {
+      "modelId": "reve-v1",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1234,
+      "stderr": 5,
+      "sourceLabel": "reve-v1"
+    },
+    {
+      "modelId": "stable-diffusion-xl-1-0",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 688,
+      "stderr": 9,
+      "sourceLabel": "Stable Diffusion XL 1.0Open Weights"
+    },
+    {
+      "modelId": "phoenix-1-0-fast",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 825,
+      "stderr": 7,
+      "sourceLabel": "Phoenix 1.0 Fast"
+    },
+    {
+      "modelId": "phoenix-1-0-ultra",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 845,
+      "stderr": 9,
+      "sourceLabel": "Phoenix 1.0 Ultra"
+    },
+    {
+      "modelId": "reve-v1-1-fast",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1207,
+      "stderr": 3,
+      "sourceLabel": "reve-v1.1-fast"
+    },
+    {
+      "modelId": "flux-1-1-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1016,
+      "stderr": 4,
+      "sourceLabel": "flux-1.1-pro"
+    },
+    {
+      "modelId": "flux-1-1-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 897,
+      "stderr": 7,
+      "sourceLabel": "FLUX1.1 [pro]"
+    },
+    {
+      "modelId": "flux1-1-pro-ultra",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 902,
+      "stderr": 7,
+      "sourceLabel": "FLUX1.1 [pro] Ultra"
+    },
+    {
+      "modelId": "reve-v1-1",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1261,
+      "stderr": 3,
+      "sourceLabel": "reve-v1.1"
+    },
+    {
+      "modelId": "uni-1-1",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1188,
+      "stderr": 6,
+      "sourceLabel": "uni-1.1-max"
+    },
+    {
+      "modelId": "uni-1-1",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1333,
+      "stderr": 5,
+      "sourceLabel": "uni-1.1-max"
+    },
+    {
+      "modelId": "stable-diffusion-1-5",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 468,
+      "stderr": 12,
+      "sourceLabel": "Stable Diffusion 1.5Open Weights"
+    },
+    {
+      "modelId": "gpt-image-1-5-high-fidelity",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1239,
+      "stderr": 3,
+      "sourceLabel": "gpt-image-1.5-high-fidelity"
+    },
+    {
+      "modelId": "gpt-image-1-5-high-fidelity",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1370,
+      "stderr": 3,
+      "sourceLabel": "gpt-image-1.5-high-fidelity"
+    },
+    {
+      "modelId": "gpt-image-1-5",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1102,
+      "stderr": 9,
+      "sourceLabel": "GPT Image 1.5 (high)"
+    },
+    {
+      "modelId": "imagineart-1-5-preview",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 966,
+      "stderr": 7,
+      "sourceLabel": "ImagineArt 1.5 Preview"
+    },
+    {
+      "modelId": "reve-v1-5",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1154,
+      "stderr": 4,
+      "sourceLabel": "reve-v1.5"
+    },
+    {
+      "modelId": "sana-sprint-1-6b",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 744,
+      "stderr": 10,
+      "sourceLabel": "Sana Sprint 1.6BOpen Weights"
+    },
+    {
+      "modelId": "stable-diffusion-1-6",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 718,
+      "stderr": 8,
+      "sourceLabel": "Stable Diffusion 1.6"
+    },
+    {
+      "modelId": "wan2-5-i2i-preview",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1181,
+      "stderr": 3,
+      "sourceLabel": "wan2.5-i2i-preview"
+    },
+    {
+      "modelId": "wan2-5-t2i-preview",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1118,
+      "stderr": 3,
+      "sourceLabel": "wan2.5-t2i-preview"
+    },
+    {
+      "modelId": "wan2-6-t2i",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1137,
+      "stderr": 3,
+      "sourceLabel": "wan2.6-t2i"
+    },
+    {
+      "modelId": "cosmos3-super-text2image-4step",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 969,
+      "stderr": 8,
+      "sourceLabel": "Cosmos3-Super-Text2Image-4StepOpen Weights"
+    },
+    {
+      "modelId": "cosmos3-super-text2image-agentic",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1167,
+      "stderr": 8,
+      "sourceLabel": "Cosmos3-Super-Text2Image (Agentic)"
+    },
+    {
+      "modelId": "cosmos3-super-text2image-agentic",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 992,
+      "stderr": 8,
+      "sourceLabel": "Cosmos3-Super-Text2Image (agentic)Open Weights"
+    },
+    {
+      "modelId": "gemini-3-pro-image-2k-nano-banana-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1246,
+      "stderr": 3,
+      "sourceLabel": "gemini-3-pro-image-2k (nano-banana-pro)"
+    },
+    {
+      "modelId": "gemini-3-pro-image-2k-nano-banana-pro",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1390,
+      "stderr": 3,
+      "sourceLabel": "gemini-3-pro-image-2k (nano-banana-pro)"
+    },
+    {
+      "modelId": "cosmos3-super-text2image",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1154,
+      "stderr": 7,
+      "sourceLabel": "Cosmos3-Super-Text2Image"
+    },
+    {
+      "modelId": "cosmos3-super-text2image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 983,
+      "stderr": 8,
+      "sourceLabel": "Cosmos3-Super-Text2ImageOpen Weights"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite-image-nano-banana-2-lite",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1250,
+      "stderr": 6,
+      "sourceLabel": "gemini-3.1-flash-lite-image (nano-banana-2-lite)"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite-image-nano-banana-2-lite",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1086,
+      "stderr": 8,
+      "sourceLabel": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite-image-nano-banana-2-lite",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1314,
+      "stderr": 5,
+      "sourceLabel": "gemini-3.1-flash-lite-image (nano-banana-2-lite)"
+    },
+    {
+      "modelId": "nano-banana-2-gemini-3-1-flash-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1122,
+      "stderr": 8,
+      "sourceLabel": "Nano Banana 2 (Gemini 3.1 Flash Image)"
+    },
+    {
+      "modelId": "gemini-3-1-flash-image-nano-banana-2-web-search",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1261,
+      "stderr": 5,
+      "sourceLabel": "gemini-3.1-flash-image (nano-banana-2) [web-search]"
+    },
+    {
+      "modelId": "gemini-3-1-flash-image-nano-banana-2-web-search",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1387,
+      "stderr": 4,
+      "sourceLabel": "gemini-3.1-flash-image (nano-banana-2) [web-search]"
+    },
+    {
+      "modelId": "flux-2-klein-base-4b",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 776,
+      "stderr": 9,
+      "sourceLabel": "FLUX.2 [klein] Base 4BOpen Weights"
+    },
+    {
+      "modelId": "flux-2-klein-4b",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1030,
+      "stderr": 3,
+      "sourceLabel": "flux-2-klein-4b"
+    },
+    {
+      "modelId": "flux-2-klein-4b",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 864,
+      "stderr": 9,
+      "sourceLabel": "FLUX.2 [klein] 4BOpen Weights"
+    },
+    {
+      "modelId": "flux-2-klein-4b",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1188,
+      "stderr": 3,
+      "sourceLabel": "flux-2-klein-4b"
+    },
+    {
+      "modelId": "flux-2-klein-base-9b",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 902,
+      "stderr": 8,
+      "sourceLabel": "FLUX.2 [klein] Base 9BOpen Weights"
+    },
+    {
+      "modelId": "flux-2-klein-9b",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1070,
+      "stderr": 3,
+      "sourceLabel": "flux-2-klein-9b"
+    },
+    {
+      "modelId": "flux-2-klein-9b",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 947,
+      "stderr": 8,
+      "sourceLabel": "FLUX.2 [klein] 9BOpen Weights"
+    },
+    {
+      "modelId": "flux-2-klein-9b",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1224,
+      "stderr": 3,
+      "sourceLabel": "flux-2-klein-9b"
+    },
+    {
+      "modelId": "ideogram-v2a-turbo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 832,
+      "stderr": 9,
+      "sourceLabel": "Ideogram v2a Turbo"
+    },
+    {
+      "modelId": "ideogram-v2a",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 831,
+      "stderr": 9,
+      "sourceLabel": "Ideogram v2a"
+    },
+    {
+      "modelId": "dalle-2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 549,
+      "stderr": 10,
+      "sourceLabel": "DALLE 2"
+    },
+    {
+      "modelId": "flux-2-dev-flash",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 981,
+      "stderr": 9,
+      "sourceLabel": "FLUX.2 [dev] FlashOpen Weights"
+    },
+    {
+      "modelId": "flux-2-dev",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1145,
+      "stderr": 4,
+      "sourceLabel": "flux-2-dev"
+    },
+    {
+      "modelId": "flux-2-dev",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1226,
+      "stderr": 4,
+      "sourceLabel": "flux-2-dev"
+    },
+    {
+      "modelId": "flux-2-dev-turbo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1000,
+      "stderr": 9,
+      "sourceLabel": "FLUX.2 [dev] TurboOpen Weights"
+    },
+    {
+      "modelId": "step-image-edit-2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 810,
+      "stderr": 10,
+      "sourceLabel": "Step Image Edit 2"
+    },
+    {
+      "modelId": "mai-image-2-efficient",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 986,
+      "stderr": 8,
+      "sourceLabel": "MAI-Image-2-Efficient"
+    },
+    {
+      "modelId": "flux-2-flex",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1157,
+      "stderr": 3,
+      "sourceLabel": "flux-2-flex"
+    },
+    {
+      "modelId": "flux-2-flex",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1023,
+      "stderr": 9,
+      "sourceLabel": "FLUX.2 [flex]"
+    },
+    {
+      "modelId": "flux-2-flex",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1225,
+      "stderr": 3,
+      "sourceLabel": "flux-2-flex"
+    },
+    {
+      "modelId": "flux-2",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1162,
+      "stderr": 4,
+      "sourceLabel": "flux-2-max"
+    },
+    {
+      "modelId": "flux-2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1025,
+      "stderr": 8,
+      "sourceLabel": "FLUX.2 [max]"
+    },
+    {
+      "modelId": "flux-2",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1262,
+      "stderr": 3,
+      "sourceLabel": "flux-2-max"
+    },
+    {
+      "modelId": "flux-2-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1154,
+      "stderr": 3,
+      "sourceLabel": "flux-2-pro"
+    },
+    {
+      "modelId": "flux-2-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1009,
+      "stderr": 8,
+      "sourceLabel": "FLUX.2 [pro]"
+    },
+    {
+      "modelId": "flux-2-pro",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1245,
+      "stderr": 3,
+      "sourceLabel": "flux-2-pro"
+    },
+    {
+      "modelId": "gpt-image-2",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1381,
+      "stderr": 4,
+      "sourceLabel": "gpt-image-2 (medium)"
+    },
+    {
+      "modelId": "gpt-image-2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1172,
+      "stderr": 9,
+      "sourceLabel": "GPT Image 2 (high)"
+    },
+    {
+      "modelId": "gpt-image-2",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1461,
+      "stderr": 3,
+      "sourceLabel": "gpt-image-2 (medium)"
+    },
+    {
+      "modelId": "ideogram-v2-turbo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 880,
+      "stderr": 8,
+      "sourceLabel": "Ideogram v2 Turbo"
+    },
+    {
+      "modelId": "ideogram-v2",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1013,
+      "stderr": 4,
+      "sourceLabel": "ideogram-v2"
+    },
+    {
+      "modelId": "ideogram-v2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 887,
+      "stderr": 8,
+      "sourceLabel": "Ideogram v2"
+    },
+    {
+      "modelId": "lumina-image-v2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 781,
+      "stderr": 8,
+      "sourceLabel": "Lumina Image v2Open Weights"
+    },
+    {
+      "modelId": "mai-image-2",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1183,
+      "stderr": 5,
+      "sourceLabel": "mai-image-2"
+    },
+    {
+      "modelId": "mai-image-2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1014,
+      "stderr": 8,
+      "sourceLabel": "MAI-Image-2"
+    },
+    {
+      "modelId": "krea-2",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1123,
+      "stderr": 5,
+      "sourceLabel": "krea-2-medium"
+    },
+    {
+      "modelId": "krea-2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1016,
+      "stderr": 7,
+      "sourceLabel": "Krea 2 Medium"
+    },
+    {
+      "modelId": "krea-2-large",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1108,
+      "stderr": 5,
+      "sourceLabel": "krea-2-large"
+    },
+    {
+      "modelId": "krea-2-large",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1025,
+      "stderr": 7,
+      "sourceLabel": "Krea 2 Large"
+    },
+    {
+      "modelId": "krea-2-turbo",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1110,
+      "stderr": 5,
+      "sourceLabel": "krea-2-turbo"
+    },
+    {
+      "modelId": "krea-2-turbo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1017,
+      "stderr": 9,
+      "sourceLabel": "Krea 2 Medium Turbo"
+    },
+    {
+      "modelId": "omnigen-v2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 723,
+      "stderr": 8,
+      "sourceLabel": "OmniGen V2Open Weights"
+    },
+    {
+      "modelId": "vidu-q2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 915,
+      "stderr": 7,
+      "sourceLabel": "Vidu Q2"
+    },
+    {
+      "modelId": "gemini-2-0-flash-preview-image-generation",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 975,
+      "stderr": 3,
+      "sourceLabel": "gemini-2.0-flash-preview-image-generation"
+    },
+    {
+      "modelId": "gemini-2-0-flash-preview-image-generation",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1081,
+      "stderr": 2,
+      "sourceLabel": "gemini-2.0-flash-preview-image-generation"
+    },
+    {
+      "modelId": "grok-imagine-image-2-0",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1315,
+      "stderr": 12,
+      "sourceLabel": "grok-imagine-image-2.0 (low)"
+    },
+    {
+      "modelId": "grok-imagine-image-2-0",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1439,
+      "stderr": 8,
+      "sourceLabel": "grok-imagine-image-2.0 (low)"
+    },
+    {
+      "modelId": "imagineart-2-0",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 980,
+      "stderr": 9,
+      "sourceLabel": "ImagineArt 2.0"
+    },
+    {
+      "modelId": "reve-2-0",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1270,
+      "stderr": 6,
+      "sourceLabel": "reve-2.0"
+    },
+    {
+      "modelId": "reve-2-0",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1358,
+      "stderr": 7,
+      "sourceLabel": "reve-2.0"
+    },
+    {
+      "modelId": "vivago-2-0",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 930,
+      "stderr": 9,
+      "sourceLabel": "Vivago 2.0"
+    },
+    {
+      "modelId": "stable-diffusion-2-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 558,
+      "stderr": 10,
+      "sourceLabel": "Stable Diffusion 2.1Open Weights"
+    },
+    {
+      "modelId": "hunyuanimage-2-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 881,
+      "stderr": 8,
+      "sourceLabel": "HunyuanImage 2.1Open Weights"
+    },
+    {
+      "modelId": "kolors-2-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 946,
+      "stderr": 8,
+      "sourceLabel": "Kolors 2.1"
+    },
+    {
+      "modelId": "reve-2-1",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1301,
+      "stderr": 8,
+      "sourceLabel": "reve-2.1"
+    },
+    {
+      "modelId": "reve-2-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1127,
+      "stderr": 9,
+      "sourceLabel": "Reve 2.1"
+    },
+    {
+      "modelId": "reve-2-1",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1375,
+      "stderr": 6,
+      "sourceLabel": "reve-2.1"
+    },
+    {
+      "modelId": "vivago-2-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 954,
+      "stderr": 8,
+      "sourceLabel": "Vivago 2.1"
+    },
+    {
+      "modelId": "nano-banana-gemini-2-5-flash-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 987,
+      "stderr": 9,
+      "sourceLabel": "Nano Banana (Gemini 2.5 Flash Image)"
+    },
+    {
+      "modelId": "gemini-2-5-flash-image-preview-nano-banana",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1150,
+      "stderr": 2,
+      "sourceLabel": "gemini-2.5-flash-image-preview (nano-banana)"
+    },
+    {
+      "modelId": "gemini-2-5-flash-image-preview-nano-banana",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1293,
+      "stderr": 2,
+      "sourceLabel": "gemini-2.5-flash-image-preview (nano-banana)"
+    },
+    {
+      "modelId": "gpt-image-2-5-flare",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1399,
+      "stderr": 13,
+      "sourceLabel": "gpt-image-2.5-flare"
+    },
+    {
+      "modelId": "gpt-image-2-5-flare",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1188,
+      "stderr": 11,
+      "sourceLabel": "GPT Image 2.5 Flare (max)"
+    },
+    {
+      "modelId": "gpt-image-2-5-flare",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1491,
+      "stderr": 9,
+      "sourceLabel": "gpt-image-2.5-flare"
+    },
+    {
+      "modelId": "mai-image-2-5-flash",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1032,
+      "stderr": 9,
+      "sourceLabel": "MAI-Image-2.5-Flash"
+    },
+    {
+      "modelId": "gpt-image-2-5-sunburst",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1421,
+      "stderr": 13,
+      "sourceLabel": "gpt-image-2.5-sunburst"
+    },
+    {
+      "modelId": "gpt-image-2-5-sunburst",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1182,
+      "stderr": 11,
+      "sourceLabel": "GPT Image 2.5 Sunburst (max)"
+    },
+    {
+      "modelId": "gpt-image-2-5-sunburst",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1520,
+      "stderr": 9,
+      "sourceLabel": "gpt-image-2.5-sunburst"
+    },
+    {
+      "modelId": "mai-image-2-5",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1254,
+      "stderr": 4,
+      "sourceLabel": "mai-image-2.5"
+    },
+    {
+      "modelId": "mai-image-2-5",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1105,
+      "stderr": 9,
+      "sourceLabel": "MAI-Image-2.5"
+    },
+    {
+      "modelId": "mai-image-2-5",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1400,
+      "stderr": 4,
+      "sourceLabel": "mai-image-2.5"
+    },
+    {
+      "modelId": "mai-image-2-5-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1096,
+      "stderr": 8,
+      "sourceLabel": "MAI-Image-2.5-Pro"
+    },
+    {
+      "modelId": "playground-v2-5",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 776,
+      "stderr": 8,
+      "sourceLabel": "Playground v2.5Open Weights"
+    },
+    {
+      "modelId": "wan-2-5-preview",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 951,
+      "stderr": 8,
+      "sourceLabel": "Wan 2.5 Preview"
+    },
+    {
+      "modelId": "mai-image-2-6-flash",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1096,
+      "stderr": 10,
+      "sourceLabel": "MAI-Image-2.6-Flash"
+    },
+    {
+      "modelId": "mai-image-2-6",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1331,
+      "stderr": 7,
+      "sourceLabel": "mai-image-2.6"
+    },
+    {
+      "modelId": "mai-image-2-6",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1147,
+      "stderr": 11,
+      "sourceLabel": "MAI-Image-2.6"
+    },
+    {
+      "modelId": "mai-image-2-6",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1434,
+      "stderr": 8,
+      "sourceLabel": "mai-image-2.6"
+    },
+    {
+      "modelId": "wan2-6-text-to-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1011,
+      "stderr": 9,
+      "sourceLabel": "Wan2.6 Text to Image"
+    },
+    {
+      "modelId": "wan-2-6-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1016,
+      "stderr": 9,
+      "sourceLabel": "Wan 2.6 Image"
+    },
+    {
+      "modelId": "wan-2-6-image",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1230,
+      "stderr": 3,
+      "sourceLabel": "wan2.6-image"
+    },
+    {
+      "modelId": "wan2-7-image-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1103,
+      "stderr": 5,
+      "sourceLabel": "wan2.7-image-pro"
+    },
+    {
+      "modelId": "wan2-7-image-pro",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1302,
+      "stderr": 4,
+      "sourceLabel": "wan2.7-image-pro"
+    },
+    {
+      "modelId": "wan2-7-image",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1100,
+      "stderr": 5,
+      "sourceLabel": "wan2.7-image"
+    },
+    {
+      "modelId": "wan2-7-image",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1301,
+      "stderr": 4,
+      "sourceLabel": "wan2.7-image"
+    },
+    {
+      "modelId": "wan-2-7-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 978,
+      "stderr": 9,
+      "sourceLabel": "Wan 2.7 Pro"
+    },
+    {
+      "modelId": "wan-2-7",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 977,
+      "stderr": 9,
+      "sourceLabel": "Wan 2.7"
+    },
+    {
+      "modelId": "recraft-20b",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 769,
+      "stderr": 7,
+      "sourceLabel": "Recraft 20B"
+    },
+    {
+      "modelId": "chatgpt-image-latest-high-fidelity-20251216",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1389,
+      "stderr": 3,
+      "sourceLabel": "chatgpt-image-latest-high-fidelity (20251216)"
+    },
+    {
+      "modelId": "grok-imagine-image-quality-20260519",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1390,
+      "stderr": 6,
+      "sourceLabel": "grok-imagine-image-quality (20260519)"
+    },
+    {
+      "modelId": "qwen-image-edit-2511",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1235,
+      "stderr": 3,
+      "sourceLabel": "qwen-image-edit-2511"
+    },
+    {
+      "modelId": "qwen-image-max-2512",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 975,
+      "stderr": 9,
+      "sourceLabel": "Qwen Image Max 2512Open Weights"
+    },
+    {
+      "modelId": "qwen-image-2512",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1125,
+      "stderr": 4,
+      "sourceLabel": "qwen-image-2512"
+    },
+    {
+      "modelId": "qwen-image-plus-2601",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 916,
+      "stderr": 7,
+      "sourceLabel": "Qwen Image Plus 2601"
+    },
+    {
+      "modelId": "gemini-3-pro-image-preview-nano-banana-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1232,
+      "stderr": 5,
+      "sourceLabel": "gemini-3-pro-image-preview (nano-banana-pro)"
+    },
+    {
+      "modelId": "gemini-3-pro-image-preview-nano-banana-pro",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1385,
+      "stderr": 3,
+      "sourceLabel": "gemini-3-pro-image-preview (nano-banana-pro)"
+    },
+    {
+      "modelId": "nano-banana-pro-gemini-3-pro-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1098,
+      "stderr": 8,
+      "sourceLabel": "Nano Banana Pro (Gemini 3 Pro Image)"
+    },
+    {
+      "modelId": "playground-v3-beta",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 820,
+      "stderr": 8,
+      "sourceLabel": "Playground v3 (beta)"
+    },
+    {
+      "modelId": "dall-e-3",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 968,
+      "stderr": 4,
+      "sourceLabel": "dall-e-3"
+    },
+    {
+      "modelId": "dalle-3",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 772,
+      "stderr": 8,
+      "sourceLabel": "DALLE 3"
+    },
+    {
+      "modelId": "dalle-3-hd",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 771,
+      "stderr": 8,
+      "sourceLabel": "DALLE 3 HD"
+    },
+    {
+      "modelId": "stable-diffusion-3-large",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 846,
+      "stderr": 8,
+      "sourceLabel": "Stable Diffusion 3 Large"
+    },
+    {
+      "modelId": "stable-diffusion-3-large-turbo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 720,
+      "stderr": 8,
+      "sourceLabel": "Stable Diffusion 3 Large Turbo"
+    },
+    {
+      "modelId": "stable-diffusion-3",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 726,
+      "stderr": 8,
+      "sourceLabel": "Stable Diffusion 3 MediumOpen Weights"
+    },
+    {
+      "modelId": "ideogram-v3-quality",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1049,
+      "stderr": 4,
+      "sourceLabel": "ideogram-v3-quality"
+    },
+    {
+      "modelId": "recraft-v3",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1021,
+      "stderr": 4,
+      "sourceLabel": "recraft-v3"
+    },
+    {
+      "modelId": "recraft-v3",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 878,
+      "stderr": 7,
+      "sourceLabel": "Recraft V3"
+    },
+    {
+      "modelId": "seedream-3",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1082,
+      "stderr": 5,
+      "sourceLabel": "seedream-3"
+    },
+    {
+      "modelId": "hunyuanimage-3-0-fal",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 941,
+      "stderr": 9,
+      "sourceLabel": "HunyuanImage 3.0 (Fal)Open Weights"
+    },
+    {
+      "modelId": "hunyuanimage-3-0-instruct-fal",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 962,
+      "stderr": 9,
+      "sourceLabel": "HunyuanImage 3.0 Instruct (Fal)Open Weights"
+    },
+    {
+      "modelId": "hunyuan-image-3-0",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1151,
+      "stderr": 3,
+      "sourceLabel": "hunyuan-image-3.0"
+    },
+    {
+      "modelId": "hunyuan-image-3-0-instruct",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1302,
+      "stderr": 3,
+      "sourceLabel": "hunyuan-image-3.0-instruct"
+    },
+    {
+      "modelId": "ideogram-3-0",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 908,
+      "stderr": 7,
+      "sourceLabel": "Ideogram 3.0"
+    },
+    {
+      "modelId": "kling-image-3-0-omni",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 916,
+      "stderr": 7,
+      "sourceLabel": "Kling Image 3.0 Omni"
+    },
+    {
+      "modelId": "qwen-image-3-0-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1254,
+      "stderr": 7,
+      "sourceLabel": "qwen-image-3.0-pro"
+    },
+    {
+      "modelId": "qwen-image-3-0-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1085,
+      "stderr": 10,
+      "sourceLabel": "Qwen-Image-3.0-Pro"
+    },
+    {
+      "modelId": "qwen-image-3-0",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1075,
+      "stderr": 10,
+      "sourceLabel": "Qwen-Image-3.0"
+    },
+    {
+      "modelId": "seededit-3-0",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1139,
+      "stderr": 3,
+      "sourceLabel": "seededit-3.0"
+    },
+    {
+      "modelId": "seedream-3-0",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 964,
+      "stderr": 8,
+      "sourceLabel": "Seedream 3.0"
+    },
+    {
+      "modelId": "dreamina-3-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 917,
+      "stderr": 7,
+      "sourceLabel": "Dreamina 3.1"
+    },
+    {
+      "modelId": "bria-3-2",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 710,
+      "stderr": 10,
+      "sourceLabel": "Bria 3.2Open Weights"
+    },
+    {
+      "modelId": "stable-diffusion-3-5-large",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 838,
+      "stderr": 8,
+      "sourceLabel": "Stable Diffusion 3.5 LargeOpen Weights"
+    },
+    {
+      "modelId": "stable-diffusion-3-5-large-turbo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 838,
+      "stderr": 8,
+      "sourceLabel": "Stable Diffusion 3.5 Large TurboOpen Weights"
+    },
+    {
+      "modelId": "stable-diffusion-3-5",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 767,
+      "stderr": 9,
+      "sourceLabel": "Stable Diffusion 3.5 MediumOpen Weights"
+    },
+    {
+      "modelId": "stable-diffusion-v35-large",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 938,
+      "stderr": 5,
+      "sourceLabel": "stable-diffusion-v35-large"
+    },
+    {
+      "modelId": "seedream-4-high-res-fal",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1113,
+      "stderr": 3,
+      "sourceLabel": "seedream-4-high-res-fal"
+    },
+    {
+      "modelId": "seedream-4-high-res-fal",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1217,
+      "stderr": 3,
+      "sourceLabel": "seedream-4-high-res-fal"
+    },
+    {
+      "modelId": "seedream-4-fal",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1116,
+      "stderr": 7,
+      "sourceLabel": "seedream-4-fal"
+    },
+    {
+      "modelId": "seedream-4-fal",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1210,
+      "stderr": 6,
+      "sourceLabel": "seedream-4-fal"
+    },
+    {
+      "modelId": "imagen-4-fast",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 903,
+      "stderr": 9,
+      "sourceLabel": "Imagen 4 Fast"
+    },
+    {
+      "modelId": "runway-gen-4-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 796,
+      "stderr": 9,
+      "sourceLabel": "Runway Gen-4 Image"
+    },
+    {
+      "modelId": "runway-gen4",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1025,
+      "stderr": 5,
+      "sourceLabel": "runway-gen4"
+    },
+    {
+      "modelId": "imagen-4-standard",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 928,
+      "stderr": 8,
+      "sourceLabel": "Imagen 4 Standard"
+    },
+    {
+      "modelId": "imagen-4-ultra",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 993,
+      "stderr": 8,
+      "sourceLabel": "Imagen 4 Ultra"
+    },
+    {
+      "modelId": "recraft-v4-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 992,
+      "stderr": 9,
+      "sourceLabel": "Recraft V4 Pro"
+    },
+    {
+      "modelId": "recraft-v4",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1114,
+      "stderr": 3,
+      "sourceLabel": "recraft-v4"
+    },
+    {
+      "modelId": "recraft-v4",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 985,
+      "stderr": 9,
+      "sourceLabel": "Recraft V4"
+    },
+    {
+      "modelId": "ideogram-4-0-fast",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 976,
+      "stderr": 9,
+      "sourceLabel": "Ideogram 4.0 FastOpen Weights"
+    },
+    {
+      "modelId": "ideogram-4-0-fast-quality",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 993,
+      "stderr": 9,
+      "sourceLabel": "Ideogram 4.0 Fast (Quality)Open Weights"
+    },
+    {
+      "modelId": "ideogram-4-0",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1016,
+      "stderr": 8,
+      "sourceLabel": "Ideogram 4.0Open Weights"
+    },
+    {
+      "modelId": "ideogram-4-0-instant",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 991,
+      "stderr": 9,
+      "sourceLabel": "Ideogram 4.0 InstantOpen Weights"
+    },
+    {
+      "modelId": "ideogram-4-0-quality",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1204,
+      "stderr": 4,
+      "sourceLabel": "ideogram-4.0-quality"
+    },
+    {
+      "modelId": "ideogram-4-0-quality",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1017,
+      "stderr": 8,
+      "sourceLabel": "Ideogram 4.0 (Quality)Open Weights"
+    },
+    {
+      "modelId": "seedream-4-0",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1033,
+      "stderr": 10,
+      "sourceLabel": "Seedream 4.0"
+    },
+    {
+      "modelId": "recraft-v4-1-utility-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1169,
+      "stderr": 11,
+      "sourceLabel": "recraft-v4.1-utility-pro"
+    },
+    {
+      "modelId": "recraft-v4-1-utility-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1018,
+      "stderr": 7,
+      "sourceLabel": "Recraft V4.1 Utility Pro"
+    },
+    {
+      "modelId": "recraft-v4-1-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1130,
+      "stderr": 11,
+      "sourceLabel": "recraft-v4.1-pro"
+    },
+    {
+      "modelId": "recraft-v4-1-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 979,
+      "stderr": 9,
+      "sourceLabel": "Recraft V4.1 Pro"
+    },
+    {
+      "modelId": "recraft-v4-1-utility",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1027,
+      "stderr": 9,
+      "sourceLabel": "Recraft V4.1 Utility"
+    },
+    {
+      "modelId": "recraft-v4-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1000,
+      "stderr": 9,
+      "sourceLabel": "Recraft V4.1"
+    },
+    {
+      "modelId": "seedream-4",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1140,
+      "stderr": 7,
+      "sourceLabel": "seedream-4-2k"
+    },
+    {
+      "modelId": "seedream-4",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1271,
+      "stderr": 7,
+      "sourceLabel": "seedream-4-2k"
+    },
+    {
+      "modelId": "seedream-4-5",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1147,
+      "stderr": 3,
+      "sourceLabel": "seedream-4.5"
+    },
+    {
+      "modelId": "seedream-4-5",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1007,
+      "stderr": 9,
+      "sourceLabel": "Seedream 4.5"
+    },
+    {
+      "modelId": "seedream-4-5",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1302,
+      "stderr": 2,
+      "sourceLabel": "seedream-4.5"
+    },
+    {
+      "modelId": "seedream-5-0-lite",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1138,
+      "stderr": 3,
+      "sourceLabel": "seedream-5.0-lite"
+    },
+    {
+      "modelId": "seedream-5-0-lite",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1000,
+      "stderr": 9,
+      "sourceLabel": "Seedream 5.0 Lite"
+    },
+    {
+      "modelId": "seedream-5-0-lite",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1294,
+      "stderr": 3,
+      "sourceLabel": "seedream-5.0-lite"
+    },
+    {
+      "modelId": "seedream-5-0-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1257,
+      "stderr": 4,
+      "sourceLabel": "seedream-5.0-pro"
+    },
+    {
+      "modelId": "seedream-5-0-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1081,
+      "stderr": 8,
+      "sourceLabel": "Seedream 5.0 Pro"
+    },
+    {
+      "modelId": "seedream-5-0-pro",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1394,
+      "stderr": 4,
+      "sourceLabel": "seedream-5.0-pro"
+    },
+    {
+      "modelId": "midjourney-v6",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 881,
+      "stderr": 8,
+      "sourceLabel": "Midjourney v6"
+    },
+    {
+      "modelId": "midjourney-v6-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 862,
+      "stderr": 8,
+      "sourceLabel": "Midjourney v6.1"
+    },
+    {
+      "modelId": "midjourney-v7-alpha",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 897,
+      "stderr": 9,
+      "sourceLabel": "Midjourney v7 Alpha"
+    },
+    {
+      "modelId": "infinity-8b",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 860,
+      "stderr": 9,
+      "sourceLabel": "Infinity 8BOpen Weights"
+    },
+    {
+      "modelId": "bagel",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 898,
+      "stderr": 6,
+      "sourceLabel": "bagel"
+    },
+    {
+      "modelId": "bagel",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 698,
+      "stderr": 9,
+      "sourceLabel": "BagelOpen Weights"
+    },
+    {
+      "modelId": "bagel",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1026,
+      "stderr": 6,
+      "sourceLabel": "bagel"
+    },
+    {
+      "modelId": "z-image-base",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 870,
+      "stderr": 7,
+      "sourceLabel": "Z-Image Base"
+    },
+    {
+      "modelId": "reve-edit-fast",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1198,
+      "stderr": 4,
+      "sourceLabel": "reve-edit-fast"
+    },
+    {
+      "modelId": "p-image-edit",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1211,
+      "stderr": 3,
+      "sourceLabel": "p-image-edit"
+    },
+    {
+      "modelId": "qwen-image-edit",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1241,
+      "stderr": 3,
+      "sourceLabel": "qwen-image-edit"
+    },
+    {
+      "modelId": "eigen-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 926,
+      "stderr": 8,
+      "sourceLabel": "Eigen Image"
+    },
+    {
+      "modelId": "ernie-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 915,
+      "stderr": 8,
+      "sourceLabel": "ERNIE ImageOpen Weights"
+    },
+    {
+      "modelId": "ernie-image-turbo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 921,
+      "stderr": 8,
+      "sourceLabel": "ERNIE Image TurboOpen Weights"
+    },
+    {
+      "modelId": "qwen-image-prompt-extend",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1061,
+      "stderr": 3,
+      "sourceLabel": "qwen-image-prompt-extend"
+    },
+    {
+      "modelId": "lucid-origin-fast",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 913,
+      "stderr": 7,
+      "sourceLabel": "Lucid Origin Fast"
+    },
+    {
+      "modelId": "fibo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 876,
+      "stderr": 7,
+      "sourceLabel": "FIBOOpen Weights"
+    },
+    {
+      "modelId": "fibo-lite",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 828,
+      "stderr": 11,
+      "sourceLabel": "FIBO LiteOpen Weights"
+    },
+    {
+      "modelId": "luma-photon-flash",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 805,
+      "stderr": 7,
+      "sourceLabel": "Luma Photon Flash"
+    },
+    {
+      "modelId": "glm-image",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1010,
+      "stderr": 9,
+      "sourceLabel": "glm-image"
+    },
+    {
+      "modelId": "glm-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 879,
+      "stderr": 7,
+      "sourceLabel": "GLM-ImageOpen Weights"
+    },
+    {
+      "modelId": "grok-imagine-image",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1171,
+      "stderr": 3,
+      "sourceLabel": "grok-imagine-image"
+    },
+    {
+      "modelId": "grok-imagine-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1019,
+      "stderr": 9,
+      "sourceLabel": "grok-imagine-image"
+    },
+    {
+      "modelId": "grok-imagine-image",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1330,
+      "stderr": 3,
+      "sourceLabel": "grok-imagine-image"
+    },
+    {
+      "modelId": "grok-imagine-image-pro",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1161,
+      "stderr": 4,
+      "sourceLabel": "grok-imagine-image-pro"
+    },
+    {
+      "modelId": "grok-imagine-image-quality",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1041,
+      "stderr": 7,
+      "sourceLabel": "grok-imagine-image-quality"
+    },
+    {
+      "modelId": "reve-image-halfmoon",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 917,
+      "stderr": 9,
+      "sourceLabel": "Reve Image (Halfmoon)"
+    },
+    {
+      "modelId": "p-image-ideogram",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1004,
+      "stderr": 11,
+      "sourceLabel": "P-Image-Ideogram (High)"
+    },
+    {
+      "modelId": "p-image-ideogram-very-low",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 919,
+      "stderr": 10,
+      "sourceLabel": "P-Image-Ideogram (Very Low)"
+    },
+    {
+      "modelId": "longcat-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 857,
+      "stderr": 8,
+      "sourceLabel": "LongCat ImageOpen Weights"
+    },
+    {
+      "modelId": "muse-image",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1277,
+      "stderr": 6,
+      "sourceLabel": "muse-image"
+    },
+    {
+      "modelId": "muse-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1110,
+      "stderr": 10,
+      "sourceLabel": "Muse Image"
+    },
+    {
+      "modelId": "muse-image",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1403,
+      "stderr": 5,
+      "sourceLabel": "muse-image"
+    },
+    {
+      "modelId": "p-image",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1034,
+      "stderr": 4,
+      "sourceLabel": "p-image"
+    },
+    {
+      "modelId": "p-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 896,
+      "stderr": 7,
+      "sourceLabel": "P-Image"
+    },
+    {
+      "modelId": "qwen-image",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1057,
+      "stderr": 3,
+      "sourceLabel": "qwen-image"
+    },
+    {
+      "modelId": "qwen-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 882,
+      "stderr": 7,
+      "sourceLabel": "Qwen ImageOpen Weights"
+    },
+    {
+      "modelId": "z-image-turbo",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1084,
+      "stderr": 5,
+      "sourceLabel": "z-image-turbo"
+    },
+    {
+      "modelId": "z-image-turbo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 934,
+      "stderr": 8,
+      "sourceLabel": "Z-Image TurboOpen Weights"
+    },
+    {
+      "modelId": "janus-pro",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 525,
+      "stderr": 12,
+      "sourceLabel": "Janus ProOpen Weights"
+    },
+    {
+      "modelId": "sdxl-lightning",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 715,
+      "stderr": 8,
+      "sourceLabel": "SDXL LightningOpen Weights"
+    },
+    {
+      "modelId": "lucid-origin",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1013,
+      "stderr": 3,
+      "sourceLabel": "lucid-origin"
+    },
+    {
+      "modelId": "lucid-origin-ultra",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 924,
+      "stderr": 7,
+      "sourceLabel": "Lucid Origin Ultra"
+    },
+    {
+      "modelId": "luma-photon",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 880,
+      "stderr": 7,
+      "sourceLabel": "Luma Photon"
+    },
+    {
+      "modelId": "photon",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1035,
+      "stderr": 4,
+      "sourceLabel": "photon"
+    },
+    {
+      "modelId": "srpo",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 880,
+      "stderr": 7,
+      "sourceLabel": "SRPOOpen Weights"
+    }
+  ],
+  "excluded": [
+    {
+      "name": "SWE-bench Verified",
+      "url": "https://www.swebench.com/",
+      "reason": "Read on 2026-09-05: the newest of its 181 entries is dated 2026-02-17. None of the models above appear on it. Including a stale board would add a column of blanks, not a signal."
+    }
+  ],
+  "catalogs": [
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "publisher": "OpenRouter",
+      "url": "https://openrouter.ai/models",
+      "retrievedAt": "2026-09-06",
+      "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face",
+      "publisher": "Hugging Face",
+      "url": "https://huggingface.co",
+      "retrievedAt": "2026-09-06",
+      "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
+    }
+  ]
+}

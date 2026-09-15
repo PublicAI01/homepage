@@ -915,6 +915,8 @@ export function createTrack(input: TrackInput) {
   }
 
   return {
+    /** The snapshot itself, for a page that renders the table from it. */
+    data: input.data,
     INDEX_URL,
     MCP_URL,
     API_URL,

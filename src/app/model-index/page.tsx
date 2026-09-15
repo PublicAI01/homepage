@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Suspense } from 'react';
 
 import { INDEX_TWITTER_LINK, LINKEDIN_LINK } from '@/constant';
@@ -244,6 +245,22 @@ export default function ModelIndex() {
               a scheme printed beside the table. Launch posts are indexed too,
               marked ✱ and kept out of the headline. Agents get the same answers
               over MCP and a JSON API.
+            </p>
+            {/* The other tracks. Different populations on the same
+                machinery, each with its own page and its own Overall. */}
+            <p className="text-caption mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-[#9C9AA8]">
+              <span className={LABEL}>Also indexed</span>
+              <Link
+                href="/model-index/image"
+                className="text-[#D9D7E0] underline underline-offset-2 hover:text-white">
+                Image generation
+              </Link>
+              <span aria-hidden>·</span>
+              <Link
+                href="/model-index/video"
+                className="text-[#D9D7E0] underline underline-offset-2 hover:text-white">
+                Video generation
+              </Link>
             </p>
             <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
               <span className={LABEL}>Follow PublicAI Index</span>

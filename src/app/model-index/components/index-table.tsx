@@ -33,11 +33,13 @@ import {
   domainLabel,
   FALLBACK_BADGE,
   MIN_SOURCES,
-  OVERALL,
+  overallOf,
   PRIOR_FRACTION,
   REPORT_BADGE,
   SOURCE_BADGE,
   SOURCE_LOGO,
+  WEIGHTING,
+  type Weighting,
   weightsFor,
 } from '../lib/weights';
 import { LinkedInMark, XMark } from './social-marks';
@@ -73,13 +75,15 @@ interface Props {
   /** category → the domains offered as headline rankings (see weights.ts).
       Decided on the server so the chips and the API agree on what is listed. */
   headline: [string, string[]][];
+  /** Which track this table shows: its path and the boards that form its
+      Overall. Defaults to the text index. */
+  track?: { base: string; weighting: Weighting[] };
 }
 
 /* Twenty, not ten: the exported chart is portrait for phone timelines, and
    ten rows would leave half of it empty. */
 const CHART_ROWS = 20;
-const INDEX_ORIGIN = 'https://publicai.io/model-index';
-const INDEX_URL = 'https://publicai.io/model-index';
+const ORIGIN = 'https://publicai.io';
 
 /** What the table is ranked by: the overall index, a category, or a domain inside one. */
 type RankKey =
@@ -257,7 +261,11 @@ export default function IndexTable({
   generatedAt,
   newcomers,
   headline,
+  track = { base: '/model-index', weighting: WEIGHTING },
 }: Props) {
+  const BASE = track.base;
+  const INDEX_URL = `${ORIGIN}${BASE}`;
+  const OVERALL = useMemo(() => overallOf(track.weighting), [track.weighting]);
   const searchParams = useSearchParams();
   // The URL sets the filters on first render — on the server and the client
   // alike, so a shared link opens on exactly the view that was shared.
@@ -292,12 +300,15 @@ export default function IndexTable({
   const [includeReports, setIncludeReports] = useState(initial.reports);
   const [sizeTier, setSizeTier] = useState<SizeTier | 'all'>(initial.size);
 
-  const weights = useMemo(() => weightsFor(benchmarks), [benchmarks]);
+  const weights = useMemo(
+    () => weightsFor(benchmarks, track.weighting),
+    [benchmarks, track.weighting],
+  );
   const boardWeights = useMemo(() => {
-    const w = weightsFor(benchmarks);
+    const w = weightsFor(benchmarks, track.weighting);
     for (const b of benchmarks) if (b.kind === 'report') w[b.id] = 0;
     return w;
-  }, [benchmarks]);
+  }, [benchmarks, track.weighting]);
   const sources = useMemo(() => groupBoards(benchmarks), [benchmarks]);
   const boards = useMemo(
     () => sources.filter((s) => s.kind !== 'report'),
@@ -351,7 +362,15 @@ export default function IndexTable({
     return includeReports
       ? withReports
       : boardsFirst(run(boardWeights), withReports);
-  }, [models, benchmarks, scores, weights, boardWeights, includeReports]);
+  }, [
+    models,
+    benchmarks,
+    scores,
+    weights,
+    boardWeights,
+    includeReports,
+    OVERALL,
+  ]);
 
   const rankOf = useMemo(() => {
     const m = new Map<string, number>();
@@ -520,7 +539,7 @@ export default function IndexTable({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const shareUrl = `${INDEX_ORIGIN}${viewQuery ? `?${viewQuery}` : ''}`;
+  const shareUrl = `${INDEX_URL}${viewQuery ? `?${viewQuery}` : ''}`;
   const shareText = (() => {
     const tier = SIZE_TIERS.find((t) => t.id === sizeTier);
     const what = `${rankName(view.rank)}${tier ? ` · ${tier.label}` : ''}${family !== 'all' ? ` · ${family}` : ''}`;
@@ -878,6 +897,7 @@ export default function IndexTable({
                 publishers={publishers}
                 reports={reports}
                 catalogDate={catalogDate}
+                base={BASE}
                 open={openModel === row.model.id}
                 onToggle={() =>
                   setOpenModel(openModel === row.model.id ? null : row.model.id)
@@ -926,6 +946,7 @@ function Row({
   scopeCovered,
   scopeBoardTotal,
   scoped,
+  base,
 }: {
   row: AggregateRow;
   rank: number | undefined;
@@ -944,6 +965,8 @@ function Row({
   /** Boards that scored this model in the current scope, out of those that measure it. */
   scopeCovered: number;
   scopeBoardTotal: number;
+  /** The track's path: where a model's page lives. */
+  base: string;
   scoped: boolean;
 }) {
   const thin = scoped
@@ -986,7 +1009,7 @@ function Row({
               still opens the card — the summary and the full answer each get
               a target, and neither is hidden behind the other. */}
           <a
-            href={`/model-index/m/${row.model.id}`}
+            href={`${base}/m/${row.model.id}`}
             onClick={(e) => e.stopPropagation()}
             title={`${row.model.name} — every domain, every source`}
             className={cn(
@@ -1110,6 +1133,7 @@ function Row({
                 boards={boards}
                 reports={reports}
                 catalogDate={catalogDate}
+                base={base}
               />
             </div>
           </td>
@@ -1132,11 +1156,13 @@ function ModelCard({
   boards,
   reports,
   catalogDate,
+  base,
 }: {
   row: AggregateRow;
   rank: number | undefined;
   taxonomy: [string, string[]][];
   boards: BoardView[];
+  base: string;
   reports: BoardView[];
   catalogDate: string | undefined;
 }) {
@@ -1179,7 +1205,7 @@ function ModelCard({
               footnote in the corner. New tab: the reader opened this card, and
               navigating away closes it for them. */}
           <a
-            href={`/model-index/m/${row.model.id}`}
+            href={`${base}/m/${row.model.id}`}
             target="_blank"
             rel="noreferrer"
             className="text-caption text-p1 border-p1/40 bg-p1/10 hover:border-p1/70 hover:bg-p1/20 ml-auto inline-flex shrink-0 items-center gap-1.5 rounded-md border px-2.5 py-1 font-medium transition-colors"
