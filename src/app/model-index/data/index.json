@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T03:05:15.848Z",
+  "generatedAt": "2026-09-15T11:38:10.375Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -2949,8 +2949,8 @@
           "id": "deepseek/deepseek-v4-flash-0731",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
           "contextLength": 1310720,
-          "inputPerM": 0.05,
-          "outputPerM": 0.1,
+          "inputPerM": 0.06,
+          "outputPerM": 0.12,
           "listedAt": "2026-07-31",
           "modalities": ["text"]
         },
@@ -10958,8 +10958,8 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.3,
-          "outputPerM": 1.2,
+          "inputPerM": 0.15,
+          "outputPerM": 0.6,
           "listedAt": "2026-09-10",
           "modalities": ["text", "image"]
         },
@@ -15662,14 +15662,14 @@
     {
       "modelId": "deepseek-v4-flash-0731",
       "benchmarkId": "aa-gdpval",
-      "raw": 1456,
+      "raw": 1442,
       "stderr": 14,
       "sourceLabel": "DeepSeek V4 Flash 0731 (Reasoning, Max Effort)"
     },
     {
       "modelId": "deepseek-v4-flash-0731",
       "benchmarkId": "aa-briefcase",
-      "raw": 1257,
+      "raw": 1253,
       "stderr": 6.5,
       "sourceLabel": "DeepSeek V4 Flash 0731 (Reasoning, Max Effort)"
     },
@@ -19881,6 +19881,42 @@
       "raw": 644,
       "stderr": 16,
       "sourceLabel": "Nemotron 3 Super 120B A12B (Reasoning)"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-super-120b-a12b",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 28.1,
+      "sourceLabel": "nemotron-3-super-120b-a12b"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-super-120b-a12b",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 7.8,
+      "sourceLabel": "nemotron-3-super-120b-a12b"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-super-120b-a12b",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 49.2,
+      "sourceLabel": "nemotron-3-super-120b-a12b"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-super-120b-a12b",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 1.8,
+      "sourceLabel": "nemotron-3-super-120b-a12b"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-super-120b-a12b",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 85.3,
+      "sourceLabel": "nemotron-3-super-120b-a12b"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-super-120b-a12b",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 8,
+      "sourceLabel": "nemotron-3-super-120b-a12b"
     },
     {
       "modelId": "gpt-oss-120b",
@@ -24948,6 +24984,42 @@
       "sourceLabel": "MiMo V2.5 Pro"
     },
     {
+      "modelId": "mimo-v2-5-pro",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 24.5,
+      "sourceLabel": "mimo-v2.5-pro"
+    },
+    {
+      "modelId": "mimo-v2-5-pro",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 2.2,
+      "sourceLabel": "mimo-v2.5-pro"
+    },
+    {
+      "modelId": "mimo-v2-5-pro",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 47,
+      "sourceLabel": "mimo-v2.5-pro"
+    },
+    {
+      "modelId": "mimo-v2-5-pro",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 1.8,
+      "sourceLabel": "mimo-v2.5-pro"
+    },
+    {
+      "modelId": "mimo-v2-5-pro",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 71.1,
+      "sourceLabel": "mimo-v2.5-pro"
+    },
+    {
+      "modelId": "mimo-v2-5-pro",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 17.3,
+      "sourceLabel": "mimo-v2.5-pro"
+    },
+    {
       "modelId": "mimo-v2-5",
       "benchmarkId": "lmarena",
       "raw": 1434,
@@ -25355,6 +25427,42 @@
       "raw": 87.57,
       "stderr": 0.33,
       "sourceLabel": "Kimi K2.6"
+    },
+    {
+      "modelId": "kimi-k2-6",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 27.1,
+      "sourceLabel": "kimi-k2.6"
+    },
+    {
+      "modelId": "kimi-k2-6",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 9.4,
+      "sourceLabel": "kimi-k2.6"
+    },
+    {
+      "modelId": "kimi-k2-6",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 48.5,
+      "sourceLabel": "kimi-k2.6"
+    },
+    {
+      "modelId": "kimi-k2-6",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 4.7,
+      "sourceLabel": "kimi-k2.6"
+    },
+    {
+      "modelId": "kimi-k2-6",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 71.3,
+      "sourceLabel": "kimi-k2.6"
+    },
+    {
+      "modelId": "kimi-k2-6",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 12.4,
+      "sourceLabel": "kimi-k2.6"
     },
     {
       "modelId": "kimi-k2-6",
@@ -29195,6 +29303,42 @@
       "sourceLabel": "Nemotron 3 Ultra 550B A55Bopen"
     },
     {
+      "modelId": "nemotron-3-ultra-550b-a55b",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 27.2,
+      "sourceLabel": "nemotron-3-ultra-550b-a55b"
+    },
+    {
+      "modelId": "nemotron-3-ultra-550b-a55b",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 9.4,
+      "sourceLabel": "nemotron-3-ultra-550b-a55b"
+    },
+    {
+      "modelId": "nemotron-3-ultra-550b-a55b",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 52.7,
+      "sourceLabel": "nemotron-3-ultra-550b-a55b"
+    },
+    {
+      "modelId": "nemotron-3-ultra-550b-a55b",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 4.6,
+      "sourceLabel": "nemotron-3-ultra-550b-a55b"
+    },
+    {
+      "modelId": "nemotron-3-ultra-550b-a55b",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 87.3,
+      "sourceLabel": "nemotron-3-ultra-550b-a55b"
+    },
+    {
+      "modelId": "nemotron-3-ultra-550b-a55b",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 6.2,
+      "sourceLabel": "nemotron-3-ultra-550b-a55b"
+    },
+    {
       "modelId": "chatglm3-6b",
       "benchmarkId": "lmarena",
       "raw": 1056,
@@ -30503,14 +30647,14 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-gdpval",
-      "raw": 1565,
+      "raw": 1551,
       "stderr": 14,
       "sourceLabel": "Kimi K3 (max)"
     },
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1492,
+      "raw": 1488,
       "stderr": 6,
       "sourceLabel": "Kimi K3 (max)"
     },
@@ -34019,6 +34163,42 @@
       "sourceLabel": "Gemini 3.5 Flash"
     },
     {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 30.6,
+      "sourceLabel": "gemini-3.5-flash"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 15,
+      "sourceLabel": "gemini-3.5-flash"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 52,
+      "sourceLabel": "gemini-3.5-flash"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 2.7,
+      "sourceLabel": "gemini-3.5-flash"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 80.4,
+      "sourceLabel": "gemini-3.5-flash"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 11.6,
+      "sourceLabel": "gemini-3.5-flash"
+    },
+    {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "lmarena",
       "raw": 1456,
@@ -35169,6 +35349,42 @@
       "raw": 89.28,
       "stderr": 0.3,
       "sourceLabel": "Gemini 3.6 Flash"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 28.5,
+      "sourceLabel": "gemini-3.6-flash"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 8.9,
+      "sourceLabel": "gemini-3.6-flash"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 52.8,
+      "sourceLabel": "gemini-3.6-flash"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 4.6,
+      "sourceLabel": "gemini-3.6-flash"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 83.7,
+      "sourceLabel": "gemini-3.6-flash"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 27.6,
+      "sourceLabel": "gemini-3.6-flash"
     },
     {
       "modelId": "qwen-3-6-flash",
@@ -40968,6 +41184,42 @@
       "sourceLabel": "Grok 4.5"
     },
     {
+      "modelId": "grok-4-5",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 10.4,
+      "sourceLabel": "grok-4.5"
+    },
+    {
+      "modelId": "grok-4-5",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 0,
+      "sourceLabel": "grok-4.5"
+    },
+    {
+      "modelId": "grok-4-5",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 25.3,
+      "sourceLabel": "grok-4.5"
+    },
+    {
+      "modelId": "grok-4-5",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 5.6,
+      "sourceLabel": "grok-4.5"
+    },
+    {
+      "modelId": "grok-4-5",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 66.4,
+      "sourceLabel": "grok-4.5"
+    },
+    {
+      "modelId": "grok-4-5",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 0.4,
+      "sourceLabel": "grok-4.5"
+    },
+    {
       "modelId": "claude-4-5-haiku",
       "benchmarkId": "artificial-analysis",
       "raw": 18,
@@ -41744,6 +41996,42 @@
       "raw": 51,
       "stderr": 5.02,
       "sourceLabel": "Grok 4.6"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 7.3,
+      "sourceLabel": "grok-4.6"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 0.6,
+      "sourceLabel": "grok-4.6"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 24,
+      "sourceLabel": "grok-4.6"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 3.3,
+      "sourceLabel": "grok-4.6"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 35.1,
+      "sourceLabel": "grok-4.6"
+    },
+    {
+      "modelId": "grok-4-6",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 0.4,
+      "sourceLabel": "grok-4.6"
     },
     {
       "modelId": "claude-opus-4-6",
@@ -45194,6 +45482,42 @@
     },
     {
       "modelId": "glm-5-2",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 29.1,
+      "sourceLabel": "glm-5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 9.4,
+      "sourceLabel": "glm-5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 50.7,
+      "sourceLabel": "glm-5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 2.7,
+      "sourceLabel": "glm-5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 86.3,
+      "sourceLabel": "glm-5.2"
+    },
+    {
+      "modelId": "glm-5-2",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 13.8,
+      "sourceLabel": "glm-5.2"
+    },
+    {
+      "modelId": "glm-5-2",
       "benchmarkId": "ifm-k2-horizon:gdpval-aa",
       "raw": 1498,
       "sourceLabel": "GLM 5.2 (max)"
@@ -46850,14 +47174,14 @@
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "aa-gdpval",
-      "raw": 1489,
-      "stderr": 14,
+      "raw": 1464,
+      "stderr": 13,
       "sourceLabel": "GPT-5.6 Luna (max)"
     },
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "aa-briefcase",
-      "raw": 1339,
+      "raw": 1333,
       "stderr": 7,
       "sourceLabel": "GPT-5.6 Luna (max)"
     },

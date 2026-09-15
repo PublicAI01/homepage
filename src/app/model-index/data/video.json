@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T03:05:15.848Z",
+  "generatedAt": "2026-09-15T11:38:10.375Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -546,7 +546,7 @@
     {
       "modelId": "happyhorse-1-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1109,
+      "raw": 1108,
       "stderr": 7,
       "sourceLabel": "HappyHorse-1.1"
     },
@@ -651,7 +651,7 @@
     {
       "modelId": "sora-2",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1097,
+      "raw": 1098,
       "stderr": 9,
       "sourceLabel": "Sora 2 (December)"
     },
@@ -728,14 +728,14 @@
     {
       "modelId": "ltx-2-3-fast",
       "benchmarkId": "aa-text-to-video",
-      "raw": 978,
+      "raw": 979,
       "stderr": 6,
       "sourceLabel": "LTX-2.3 FastOpen Weights"
     },
     {
       "modelId": "ltx-2-3-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 956,
+      "raw": 957,
       "stderr": 7,
       "sourceLabel": "LTX-2.3 FastOpen Weights"
     },
@@ -784,7 +784,7 @@
     {
       "modelId": "ltx-2-5-fast",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1072,
+      "raw": 1073,
       "stderr": 9,
       "sourceLabel": "LTX-2.5 FastOpen Weights"
     },
@@ -805,14 +805,14 @@
     {
       "modelId": "ltx-2-5-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1058,
+      "raw": 1057,
       "stderr": 9,
       "sourceLabel": "LTX-2.5 ProOpen Weights"
     },
     {
       "modelId": "ltx-2-5-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1012,
+      "raw": 1011,
       "stderr": 9,
       "sourceLabel": "LTX-2.5 ProOpen Weights"
     },
@@ -875,7 +875,7 @@
     {
       "modelId": "wan-2-7",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1104,
+      "raw": 1105,
       "stderr": 7,
       "sourceLabel": "Wan 2.7"
     },
@@ -924,7 +924,7 @@
     {
       "modelId": "minimax-h3",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1225,
+      "raw": 1226,
       "stderr": 7,
       "sourceLabel": "MiniMax H3Open Weights"
     },
@@ -959,7 +959,7 @@
     {
       "modelId": "vidu-q3-turbo",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1024,
+      "raw": 1023,
       "stderr": 9,
       "sourceLabel": "Vidu Q3 Turbo"
     },
@@ -1008,7 +1008,7 @@
     {
       "modelId": "kling-3-0-omni-standard",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1058,
+      "raw": 1057,
       "stderr": 7,
       "sourceLabel": "Kling 3.0 Omni 720p (Standard)"
     },
@@ -1029,7 +1029,7 @@
     {
       "modelId": "kling-3-0-standard",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1102,
+      "raw": 1101,
       "stderr": 5,
       "sourceLabel": "Kling 3.0 720p (Standard)"
     },
@@ -1113,7 +1113,7 @@
     {
       "modelId": "veo-3-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1088,
+      "raw": 1089,
       "stderr": 7,
       "sourceLabel": "Veo 3.1"
     },
@@ -1183,14 +1183,14 @@
     {
       "modelId": "pixverse-v6",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1071,
+      "raw": 1073,
       "stderr": 7,
       "sourceLabel": "PixVerse V6"
     },
     {
       "modelId": "gemini-omni-flash",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1238,
+      "raw": 1239,
       "stderr": 6,
       "sourceLabel": "Gemini Omni Flash"
     },
