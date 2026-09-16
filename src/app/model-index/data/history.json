@@ -52179,6 +52179,70 @@
           "rank": null,
           "covered": 1
         }
+      },
+      "aliases": {
+        "mixtral-8x22b-instruct-v0-1": [
+          "together-mistralai-mixtral-8x22b-instruct-v0-1"
+        ],
+        "minimax-01": ["minimax-minimax-01"],
+        "gemini-2-5-flash-preview-05-20": [
+          "gemini-2-5-flash-preview-05-20-24k-think"
+        ],
+        "gemini-2-5-pro-preview-06-05": [
+          "gemini-2-5-pro-preview-06-05-32k-think"
+        ],
+        "o1-preview-2024-09-12": ["openai-o1-preview-2024-09-12"],
+        "valkyrie-49b-v1": ["thedrummer-valkyrie-49b-v1"],
+        "ling-1t": ["inclusionai-ling-1t"],
+        "nova-premier-v1": ["amazon-nova-premier-v1"],
+        "ring-1t": ["inclusionai-ring-1t"],
+        "anubis-70b-v1-1": ["thedrummer-anubis-70b-v1-1"],
+        "ui-tars-1-5-7b": ["bytedance-ui-tars-1-5-7b"],
+        "jamba-large-1-7": ["ai21-jamba-large-1-7"],
+        "jamba-mini-1-7": ["ai21-jamba-mini-1-7"],
+        "nova-experimental-chat-26-01-10": [
+          "amazon-nova-experimental-chat-26-01-10"
+        ],
+        "nova-experimental-chat-26-02-10": [
+          "amazon-nova-experimental-chat-26-02-10"
+        ],
+        "nova-experimental-chat-10-09": ["amazon-nova-experimental-chat-10-09"],
+        "nova-experimental-chat-10-20": ["amazon-nova-experimental-chat-10-20"],
+        "nova-experimental-chat-11-10": ["amazon-nova-experimental-chat-11-10"],
+        "nemotron-nano-12b-v2-vl": ["nvidia-nemotron-nano-12b-v2-vl"],
+        "nova-experimental-chat-12-10": ["amazon-nova-experimental-chat-12-10"],
+        "nemotron-nano-9b-v2": ["nvidia-nemotron-nano-9b-v2"],
+        "kimi-k2-thinking": ["moonshotai-kimi-k2-thinking"],
+        "nova-2-lite": ["amazon-nova-2-lite-v1-0"],
+        "minimax-m2": ["minimax-minimax-m2"],
+        "qwen2-5-vl-72b-instruct": ["qwen-qwen2-5-vl-72b-instruct"],
+        "devstral-small-2505": ["mistralai-devstral-small-2505"],
+        "codestral-2508": ["mistralai-codestral-2508"],
+        "gemma-3-27b-it-fast": ["google-gemma-3-27b-it-fast"],
+        "step-3": ["stepfun-ai-step3"],
+        "deepseek-v3-2-exp": ["deepseek-deepseek-v3-2-exp"],
+        "ernie-4-5-300b-a47b": ["baidu-ernie-4-5-300b-a47b"],
+        "glm-4-32b": ["thudm-glm-4-32b"],
+        "phi-4-multimodal-instruct": ["microsoft-phi-4-multimodal-instruct"],
+        "phi-4-reasoning-plus": ["microsoft-phi-4-reasoning-plus"],
+        "grok-4-20": ["grok-4-20-2"],
+        "afm-4-5b": ["arcee-ai-afm-4-5b"],
+        "glm-4-5-air": ["z-ai-glm-4-5-air"],
+        "glm-4-5v": ["z-ai-glm-4-5v"],
+        "glm-4-6-exacto": ["z-ai-glm-4-6-exacto"],
+        "glm-4-6": ["z-ai-glm-4-6"],
+        "command-a": ["cohere-command-a"],
+        "longcat-flash-chat": ["meituan-longcat-flash-chat"],
+        "mercury-coder": ["inception-mercury-coder"],
+        "devstral-medium": ["mistralai-devstral-medium"],
+        "devstral-small": ["mistralai-devstral-small"],
+        "virtuoso-large": ["arcee-ai-virtuoso-large"],
+        "nova-lite": ["amazon-nova-lite-v1-0"],
+        "maestro-reasoning": ["arcee-ai-maestro-reasoning"],
+        "mercury": ["inception-mercury"],
+        "nova-micro": ["amazon-nova-micro-v1-0-2", "amazon-nova-micro-v1-0"],
+        "nova-pro": ["amazon-nova-pro-v1-0-2", "amazon-nova-pro-v1-0"],
+        "spotlight": ["arcee-ai-spotlight"]
       }
     },
     {
