@@ -21,9 +21,18 @@ export function GET() {
       const c = changesSince(prev, 3, date);
       const lines = [
         c.newSources.length
-          ? `New sources: ${c.newSources.map((id) => sourceLabel(benchmarks, id)).join(', ')}.`
+          ? `New sources: ${c.newSources
+              .map((id) => {
+                const brought = c.models.filter(
+                  (m) => m.kind === 'entered' && m.via === id,
+                ).length;
+                return `${sourceLabel(benchmarks, id)}${brought ? ` (${brought} models listed for the first time)` : ''}`;
+              })
+              .join(', ')}.`
           : '',
+        // A model a new source brought is that source's news, counted above.
         ...c.models
+          .filter((m) => !m.via)
           .slice(0, 15)
           .map((m) =>
             m.kind === 'moved'

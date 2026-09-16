@@ -41,6 +41,9 @@ export function changesSince(since: string, minDelta = 3, until?: string) {
  * searched for it, you would never see it. `from` is the snapshot actually
  * compared against, not the requested cutoff — the history only goes back as
  * far as it goes, and saying otherwise would overstate the window.
+ *
+ * A model that arrived only because a source was added is not counted: it
+ * is the source that is new, and it is announced as such.
  */
 export function enteredSince(days = 7) {
   const to = latest();
@@ -55,7 +58,7 @@ export function enteredSince(days = 7) {
     from: from?.date ?? to.date,
     until: to.date,
     models: diff(from, to, cutoff, 3, entries).models.filter(
-      (m) => m.kind === 'entered',
+      (m) => m.kind === 'entered' && !m.via,
     ),
   };
 }

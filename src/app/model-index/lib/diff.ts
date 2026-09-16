@@ -23,6 +23,14 @@ export interface HistoryEntry {
    * do. Absent on a snapshot with no such change.
    */
   aliases?: Record<string, string[]>;
+  /**
+   * New source id → the ids that appeared on this snapshot only because
+   * that source was added: every figure they carry is from a source absent
+   * the day before. Written by scripts/index-history.ts. Absent on a
+   * snapshot that added no source, or whose new source listed nothing the
+   * index did not already have.
+   */
+  broughtBy?: Record<string, string[]>;
 }
 
 /**
@@ -72,8 +80,17 @@ export function appendEntry(
   entry: HistoryEntry,
   limit: number,
 ): HistoryEntry[] {
-  const earlier = entries.find((e) => e.date === entry.date)?.aliases;
+  const same = entries.find((e) => e.date === entry.date);
+  const earlier = same?.aliases;
   const merged = { ...entry };
+  // Likewise what a new source brought: the rerun compares against the
+  // day's earlier snapshot, where the source already is, and sees nothing.
+  if (same?.broughtBy) {
+    const broughtBy: Record<string, string[]> = { ...same.broughtBy };
+    for (const [src, ids] of Object.entries(entry.broughtBy ?? {}))
+      broughtBy[src] = [...new Set([...(broughtBy[src] ?? []), ...ids])];
+    merged.broughtBy = broughtBy;
+  }
   if (earlier) {
     const aliases: Record<string, string[]> = {};
     for (const [now, olds] of Object.entries(entry.aliases ?? {}))
@@ -95,6 +112,15 @@ export interface Change {
   org: string;
   /** `entered`: first appearance. `ranked`: gained an Overall rank. `unranked`: lost it, back to provisional. `moved`: rank changed by `delta`. `left`: no longer listed. */
   kind: 'entered' | 'ranked' | 'unranked' | 'moved' | 'left';
+  /**
+   * On `entered`: the source whose arrival listed this model, when every
+   * figure it carries is from a source added since `from`. A board joining
+   * with its whole back catalogue is one piece of news, not one per model —
+   * three safety boards listed 170 "new" models in a day, and the page said
+   * so for a week (2026-09-16). Readers filter on this; the count stays in
+   * the feed under the source.
+   */
+  via?: string;
   rank?: number | null;
   previousRank?: number | null;
   delta?: number;
@@ -139,6 +165,11 @@ export function diff(
   // models that were renames (2026-09-14). Its earlier row is the primary
   // of its lineage; every id in the lineage is spoken for.
   const spokenFor = new Set<string>();
+  const via = new Map<string, string>();
+  for (const e of all)
+    if (e.date > from.date && e.date <= to.date)
+      for (const [src, ids] of Object.entries(e.broughtBy ?? {}))
+        for (const bid of ids) via.set(bid, src);
   for (const [id, now] of Object.entries(to.models)) {
     const before = lineage(id, from, to, all);
     for (const b of before) if (from.models[b]) spokenFor.add(b);
@@ -146,7 +177,13 @@ export function diff(
       from.models[id] ??
       before.map((b) => from.models[b]).find((m) => m !== undefined);
     if (!was) {
-      models.push({ id, ...now, kind: 'entered' });
+      const src = via.get(id);
+      models.push({
+        id,
+        ...now,
+        kind: 'entered',
+        ...(src ? { via: src } : {}),
+      });
       continue;
     }
     if (now.rank !== null && was.rank === null) {

@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import type { Benchmark } from '../src/app/model-index/data/types.ts';
 import { sourceLabel } from '../src/app/model-index/lib/boards.ts';
 import { diff, type HistoryEntry } from '../src/app/model-index/lib/diff.ts';
+import { OVERALL } from '../src/app/model-index/lib/weights.ts';
 
 /**
  * Index Weekly, as HTML and Markdown, from the last seven days of history:
@@ -57,7 +58,20 @@ const describeSource = (id: string) => {
       .map((s) => s.modelId),
   ).size;
   const what = `${measures} benchmark${measures === 1 ? '' : 's'} covering ${covered} model${covered === 1 ? '' : 's'}`;
-  return `${named(id)} — a leaderboard from ${mine[0].publisher}, ${what}. Its figures count toward the Overall index.`;
+  // The models the board listed that the index had not: one line here
+  // rather than one bullet each under "new models" (2026-09-16).
+  const brought = c.models.filter(
+    (m) => m.kind === 'entered' && m.via === id,
+  ).length;
+  const news = brought
+    ? ` ${brought} of them are listed on the index for the first time.`
+    : '';
+  // A safety board's figures never enter the Overall index; saying they
+  // did would misstate the method (2026-09-16).
+  const counts = mine.some((b) => OVERALL.has(b.id))
+    ? 'Its figures count toward the Overall index.'
+    : `Its figures stand in the ${mine[0].category} column and do not enter the Overall index.`;
+  return `${named(id)} — a leaderboard from ${mine[0].publisher}, ${what}.${news} ${counts}`;
 };
 const to = entries[entries.length - 1];
 const sinceDate =
@@ -168,7 +182,7 @@ ${moverLines.map((l) => `- ${l}`).join('\n') || '- No moves of three places or m
 ## Models new to the index
 ${
   c.models
-    .filter((m) => m.kind === 'entered')
+    .filter((m) => m.kind === 'entered' && !m.via)
     .slice(0, 20)
     .map(line)
     .map((l) => `- ${l}`)
@@ -198,7 +212,7 @@ ${NOTE ? `<p style="margin:0 0 24px;padding:12px 14px;border-left:2px solid #B08
 <h2 style="font-size:16px;margin:0 0 8px">Models new to the index</h2>
 <ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${
   c.models
-    .filter((m) => m.kind === 'entered')
+    .filter((m) => m.kind === 'entered' && !m.via)
     .slice(0, 20)
     .map((m) => `<li>${esc(line(m))}</li>`)
     .join('') || '<li>No new models.</li>'

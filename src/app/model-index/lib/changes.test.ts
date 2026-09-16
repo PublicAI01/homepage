@@ -170,6 +170,54 @@ describe('renames and merges', () => {
   });
 });
 
+describe('a source arriving with its back catalogue', () => {
+  // Day 1: two sources. Day 2: a safety board joins and lists three models,
+  // two of which the index had never carried; a third model arrives on an
+  // existing source the same day. Day 3: nothing happens.
+  const d1 = entry('2026-09-14', { x: [1, 70], y: [2, 65] });
+  const d2: HistoryEntry = {
+    ...entry(
+      '2026-09-15',
+      { x: [1, 70], y: [2, 65], p: [null, null], q: [null, null], n: [3, 60] },
+      ['a', 'b', 'safety'],
+    ),
+    broughtBy: { safety: ['p', 'q'] },
+  };
+  const d3 = entry(
+    '2026-09-16',
+    { x: [1, 70], y: [2, 65], p: [null, null], q: [null, null], n: [3, 60] },
+    ['a', 'b', 'safety'],
+  );
+  const all = [d1, d2, d3];
+
+  it('marks what the source brought, and leaves a genuine arrival unmarked', () => {
+    const c = diff(d1, d3, '2026-09-14', 3, all);
+    const via = Object.fromEntries(
+      c.models.filter((m) => m.kind === 'entered').map((m) => [m.id, m.via]),
+    );
+    expect(via).toEqual({ p: 'safety', q: 'safety', n: undefined });
+    expect(c.newSources).toEqual(['safety']);
+  });
+
+  it('does not count them as new models on the page', () => {
+    // The page reads the data file; only the pure diff is exercised here.
+    const c = diff(d1, d3, '2026-09-14', 3, all);
+    expect(
+      c.models.filter((m) => m.kind === 'entered' && !m.via).map((m) => m.id),
+    ).toEqual(['n']);
+  });
+
+  it('keeps the record through a same-day rerun that saw no new source', () => {
+    const rerun = entry(
+      '2026-09-15',
+      { x: [1, 70], y: [2, 65], p: [null, null], q: [null, null] },
+      ['a', 'b', 'safety'],
+    );
+    const entries = appendEntry([d1, d2], rerun, 120);
+    expect(entries[1].broughtBy).toEqual({ safety: ['p', 'q'] });
+  });
+});
+
 describe('appendEntry: a rebuild on the same date', () => {
   // The renames each run computes are relative to the snapshot committed
   // before it. Run 1 of the day renamed a → b against yesterday; run 2 ran

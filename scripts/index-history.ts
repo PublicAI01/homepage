@@ -31,6 +31,7 @@ const LIMIT = 120;
 
 interface Snapshot {
   models: { id: string }[];
+  benchmarks: { id: string; group: string }[];
   scores: { modelId: string; benchmarkId: string; sourceLabel: string }[];
 }
 
@@ -68,6 +69,54 @@ function aliasesFrom(previous: Snapshot | null, next: Snapshot) {
   return out;
 }
 
+/**
+ * Which of today's models each newly added source brought with it.
+ *
+ * A board joins with its whole back catalogue. Three safety boards added
+ * on 2026-09-15 listed 170 models the index had not carried, and to the
+ * change feed each was a model that "entered" — the page then said
+ * "200+ new" for a week, as if that many had been released (2026-09-16).
+ * A model whose every figure is from a source absent yesterday is here
+ * because of the source, and is recorded under it so the feed can say
+ * "HELM Safety, with 60 models" once, rather than 60 times. A model that
+ * an existing board also lists is genuinely new to the index and is not
+ * recorded here.
+ */
+function broughtByFrom(
+  previous: Snapshot | null,
+  next: Snapshot,
+  aliases: Record<string, string[]>,
+) {
+  if (!previous) return {};
+  const before = new Set(previous.benchmarks.map((b) => b.group));
+  const groupOf = new Map(next.benchmarks.map((b) => [b.id, b.group]));
+  const added = [...new Set(next.benchmarks.map((b) => b.group))].filter(
+    (g) => !before.has(g),
+  );
+  if (!added.length) return {};
+  const known = new Set(previous.models.map((m) => m.id));
+  const on = new Map<string, Map<string, number>>();
+  for (const s of next.scores) {
+    const m = on.get(s.modelId) ?? new Map<string, number>();
+    const g = groupOf.get(s.benchmarkId) ?? '';
+    m.set(g, (m.get(g) ?? 0) + 1);
+    on.set(s.modelId, m);
+  }
+  const out: Record<string, string[]> = {};
+  for (const m of next.models) {
+    if (known.has(m.id) || aliases[m.id]) continue;
+    const groups = on.get(m.id);
+    if (!groups || [...groups.keys()].some((g) => before.has(g))) continue;
+    // Under the new source with most of its figures; ties to the earlier
+    // source in the snapshot's order.
+    const [src] = [...groups.entries()].sort(
+      (a, b) => b[1] - a[1] || added.indexOf(a[0]) - added.indexOf(b[0]),
+    )[0];
+    (out[src] ??= []).push(m.id);
+  }
+  return out;
+}
+
 /** The snapshot as committed, before today's copy — or null on a first run. */
 function committedSnapshot(): Snapshot | null {
   try {
@@ -100,7 +149,9 @@ const rows = aggregate({
   minSources: MIN_SOURCES,
 });
 
-const aliases = aliasesFrom(committedSnapshot(), data as Snapshot);
+const committed = committedSnapshot();
+const aliases = aliasesFrom(committed, data as Snapshot);
+const broughtBy = broughtByFrom(committed, data as Snapshot, aliases);
 const entry: HistoryEntry = {
   date: data.generatedAt.slice(0, 10),
   generatedAt: data.generatedAt,
@@ -109,6 +160,7 @@ const entry: HistoryEntry = {
   ],
   models: {},
   ...(Object.keys(aliases).length ? { aliases } : {}),
+  ...(Object.keys(broughtBy).length ? { broughtBy } : {}),
 };
 let rank = 0;
 for (const r of rows) {
@@ -138,5 +190,7 @@ console.log(
           .map(([n, o]) => `${o.join('+')} → ${n}`)
           .join(', ')}`
       : ''
-  }`,
+  }${Object.entries(broughtBy)
+    .map(([src, ids]) => `, ${src} brought ${ids.length}`)
+    .join('')}`,
 );
