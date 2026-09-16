@@ -31,7 +31,7 @@ import {
 } from '../lib/view-state';
 import {
   domainLabel,
-  FALLBACK_BADGE,
+  fallbackBadge,
   MIN_SOURCES,
   overallOf,
   PRIOR_FRACTION,
@@ -181,14 +181,16 @@ export function SourceBadge({
   const badge =
     source.kind === 'report'
       ? REPORT_BADGE
-      : (SOURCE_BADGE[source.id] ?? FALLBACK_BADGE);
+      : (SOURCE_BADGE[source.id] ?? fallbackBadge(source.name));
   const name = source.name;
   const label =
     given ??
     (present
       ? `${name}${detail ? ` — ${detail}` : ''}`
       : `${name} — not listed`);
-  const src = logo ? SOURCE_LOGO[source.id] : undefined;
+  // A mark someone chose, else the one the pipeline captured from the
+  // publisher's own site, else the code badge.
+  const src = logo ? (SOURCE_LOGO[source.id] ?? source.logo) : undefined;
   if (src) {
     return (
       <span

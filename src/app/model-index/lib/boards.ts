@@ -12,6 +12,8 @@ export interface BoardView {
   name: string;
   headline: Benchmark;
   measures: Benchmark[];
+  /** The publisher's own mark, captured by the pipeline and served from this site. */
+  logo?: string;
 }
 
 /** Pure; safe to call from server components. */
@@ -39,6 +41,7 @@ export function groupBoards(benchmarks: Benchmark[]): BoardView[] {
         id: b.group,
         kind: b.kind,
         name: b.source,
+        ...(b.logo ? { logo: b.logo } : {}),
         headline: b,
         measures: [],
       };

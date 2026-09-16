@@ -49,6 +49,8 @@ export interface Benchmark {
    * standardized score flips.
    */
   direction?: 'lower';
+  /** Site-relative path of the publisher's mark, captured by the pipeline; absent when it could not be. */
+  logo?: string;
   /** Top-level capability area. Fixed vocabulary. */
   category: string;
   /** The specific capability this number is evidence of. */

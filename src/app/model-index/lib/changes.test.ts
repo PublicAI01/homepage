@@ -4,6 +4,7 @@ import type { Benchmark } from '../data/types';
 import { sourceLabel } from './boards';
 import { changesSince, snapshots } from './changes';
 import { appendEntry, diff, type HistoryEntry, lineage } from './diff';
+import { fallbackBadge } from './weights';
 
 const entry = (
   date: string,
@@ -202,5 +203,14 @@ describe('appendEntry: a rebuild on the same date', () => {
   it('orders by date and keeps only the last `limit` entries', () => {
     const entries = appendEntry([run1, yesterday], entry('2026-09-16', {}), 2);
     expect(entries.map((e) => e.date)).toEqual(['2026-09-15', '2026-09-16']);
+  });
+});
+
+describe('fallbackBadge', () => {
+  it('gives a board with no mark its initials, never a question mark', () => {
+    expect(fallbackBadge('HELM Safety').code).toBe('HS');
+    expect(fallbackBadge('Vectara Hallucination Leaderboard').code).toBe('VH');
+    expect(fallbackBadge('Vectara').code).toBe('VE');
+    expect(fallbackBadge('').code).not.toBe('?');
   });
 });

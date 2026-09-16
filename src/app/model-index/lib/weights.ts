@@ -352,9 +352,21 @@ export const SOURCE_LOGO: Record<string, string> = {
   'aa-image-to-video': '/model-index/logos/artificial-analysis.png',
 };
 
-export const FALLBACK_BADGE = {
-  code: '?',
-  tone: 'border-white/20 bg-white/10 text-[#D9D7E0]',
+/**
+ * A board with no mark of its own gets its initials, never a "?": three
+ * safety boards shipped with question marks in every row's source strip
+ * (2026-09-16). "HELM Safety" → HS, "Vectara" → VE.
+ */
+export const fallbackBadge = (name: string) => {
+  const words = name.split(/[\s·—-]+/).filter((w) => /^[A-Za-z0-9]/.test(w));
+  const code =
+    words.length >= 2
+      ? words[0][0] + words[1][0]
+      : (words[0] ?? '??').slice(0, 2);
+  return {
+    code: code.toUpperCase(),
+    tone: 'border-white/20 bg-white/10 text-[#D9D7E0]',
+  };
 };
 
 /** Every report shares one mark. The name and date are on hover and in the expanded row. */
