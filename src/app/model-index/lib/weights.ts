@@ -280,6 +280,35 @@ export const SOURCE_BADGE: Record<string, { code: string; tone: string }> = {
     code: 'VA',
     tone: 'border-[#D4B5FF]/40 bg-[#D4B5FF]/15 text-[#D4B5FF]',
   },
+  // Safety boards.
+  'helm-safety': {
+    code: 'HS',
+    tone: 'border-[#8C1515]/60 bg-[#8C1515]/25 text-[#F2B8B5]',
+  },
+  enkrypt: {
+    code: 'EK',
+    tone: 'border-[#FF6B35]/40 bg-[#FF6B35]/15 text-[#FFB08C]',
+  },
+  vectara: {
+    code: 'VC',
+    tone: 'border-[#7C3AED]/40 bg-[#7C3AED]/15 text-[#C4B5FD]',
+  },
+  // Generation arenas: the same two publishers as the text boards.
+  'arena-text-to-image': { code: 'AR', tone: 'border-p1/40 bg-p1/15 text-p1' },
+  'arena-image-edit': { code: 'AE', tone: 'border-p1/40 bg-p1/15 text-p1' },
+  'arena-text-to-video': { code: 'AV', tone: 'border-p1/40 bg-p1/15 text-p1' },
+  'aa-text-to-image': {
+    code: 'AI',
+    tone: 'border-[#F0B4A2]/40 bg-[#F0B4A2]/10 text-[#E7A691]',
+  },
+  'aa-text-to-video': {
+    code: 'AV',
+    tone: 'border-[#F0B4A2]/40 bg-[#F0B4A2]/10 text-[#E7A691]',
+  },
+  'aa-image-to-video': {
+    code: 'IV',
+    tone: 'border-[#F0B4A2]/40 bg-[#F0B4A2]/10 text-[#E7A691]',
+  },
 };
 
 /**
@@ -311,6 +340,16 @@ export const SOURCE_LOGO: Record<string, string> = {
   vals: '/model-index/logos/vals.png',
   openrouter: '/model-index/logos/openrouter.png',
   huggingface: '/model-index/logos/huggingface.svg',
+  'helm-safety': '/model-index/logos/helm-safety.svg',
+  enkrypt: '/model-index/logos/enkrypt.png',
+  vectara: '/model-index/logos/vectara.png',
+  // The generation arenas are the text arenas' publishers, and wear their marks.
+  'arena-text-to-image': '/model-index/logos/lmarena.png',
+  'arena-image-edit': '/model-index/logos/lmarena.png',
+  'arena-text-to-video': '/model-index/logos/lmarena.png',
+  'aa-text-to-image': '/model-index/logos/artificial-analysis.png',
+  'aa-text-to-video': '/model-index/logos/artificial-analysis.png',
+  'aa-image-to-video': '/model-index/logos/artificial-analysis.png',
 };
 
 export const FALLBACK_BADGE = {

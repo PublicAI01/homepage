@@ -4,6 +4,10 @@ import { join } from 'node:path';
 
 import { aggregate } from '../src/app/model-index/lib/aggregate.ts';
 import {
+  appendEntry,
+  type HistoryEntry,
+} from '../src/app/model-index/lib/diff.ts';
+import {
   MIN_SOURCES,
   OVERALL,
   PRIOR_FRACTION,
@@ -19,28 +23,11 @@ import {
  *
  * The Overall index and rank are computed here with the page's own
  * aggregate, so history and page never disagree. One entry per snapshot
- * date; a rebuild on the same date replaces that date's entry.
+ * date; a rebuild on the same date replaces that date's entry, keeping the
+ * renames the earlier build recorded.
  */
 const DIR = join(process.cwd(), 'src', 'app', 'model-index', 'data');
 const LIMIT = 120;
-
-interface Entry {
-  date: string;
-  generatedAt: string;
-  sources: string[];
-  models: Record<
-    string,
-    {
-      name: string;
-      org: string;
-      index: number | null;
-      rank: number | null;
-      covered: number;
-    }
-  >;
-  /** New id → the ids it took over from, when a model was renamed or rows merged in this snapshot. */
-  aliases?: Record<string, string[]>;
-}
 
 interface Snapshot {
   models: { id: string }[];
@@ -96,7 +83,7 @@ function committedSnapshot(): Snapshot | null {
 }
 
 const data = JSON.parse(await readFile(join(DIR, 'index.json'), 'utf8'));
-let history: { entries: Entry[] } = { entries: [] };
+let history: { entries: HistoryEntry[] } = { entries: [] };
 try {
   history = JSON.parse(await readFile(join(DIR, 'history.json'), 'utf8'));
 } catch {
@@ -114,7 +101,7 @@ const rows = aggregate({
 });
 
 const aliases = aliasesFrom(committedSnapshot(), data as Snapshot);
-const entry: Entry = {
+const entry: HistoryEntry = {
   date: data.generatedAt.slice(0, 10),
   generatedAt: data.generatedAt,
   sources: [
@@ -134,11 +121,9 @@ for (const r of rows) {
   };
 }
 
-const entries = history.entries
-  .filter((e) => e.date !== entry.date)
-  .concat(entry)
-  .sort((a, b) => a.date.localeCompare(b.date))
-  .slice(-LIMIT);
+// Same-date reruns merge their aliases rather than replacing the day's
+// entry; see appendEntry.
+const entries = appendEntry(history.entries, entry, LIMIT);
 
 await writeFile(
   join(DIR, 'history.json'),

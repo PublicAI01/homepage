@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import type { Benchmark } from '../data/types';
 import { sourceLabel } from './boards';
 import { changesSince, snapshots } from './changes';
-import { diff, type HistoryEntry, lineage } from './diff';
+import { appendEntry, diff, type HistoryEntry, lineage } from './diff';
 
 const entry = (
   date: string,
@@ -166,5 +166,41 @@ describe('renames and merges', () => {
     const c = diff(d1, d4, '2026-09-01', 1, [...all, d4]);
     expect(c.models.find((m) => m.id === 'newcomer')?.kind).toBe('entered');
     expect(c.models.find((m) => m.id === 'grok-4-20')?.kind).toBe('left');
+  });
+});
+
+describe('appendEntry: a rebuild on the same date', () => {
+  // The renames each run computes are relative to the snapshot committed
+  // before it. Run 1 of the day renamed a → b against yesterday; run 2 ran
+  // against run 1's snapshot and saw b → c. The day's entry must carry both,
+  // chained, or a → c reads as one model leaving and another arriving.
+  const yesterday = entry('2026-09-14', { a: [1, 70], x: [2, 65] });
+  const run1: HistoryEntry = {
+    ...entry('2026-09-15', { b: [1, 70], x: [2, 65] }),
+    aliases: { b: ['a'] },
+  };
+  const run2: HistoryEntry = {
+    ...entry('2026-09-15', { c: [1, 70], x: [2, 65] }),
+    aliases: { c: ['b'] },
+  };
+
+  it('keeps the earlier run’s renames and follows them through', () => {
+    const entries = appendEntry([yesterday, run1], run2, 120);
+    expect(entries.map((e) => e.date)).toEqual(['2026-09-14', '2026-09-15']);
+    expect(entries[1].aliases).toEqual({ c: ['b', 'a'], b: ['a'] });
+    const c = diff(yesterday, entries[1], '2026-09-14', 3, entries);
+    expect(c.models).toEqual([]);
+  });
+
+  it('keeps them when the rerun saw no renames of its own', () => {
+    const rerun = entry('2026-09-15', { b: [1, 70], x: [2, 65] });
+    const entries = appendEntry([yesterday, run1], rerun, 120);
+    expect(entries[1].aliases).toEqual({ b: ['a'] });
+    expect(entries[1].models).toBe(rerun.models);
+  });
+
+  it('orders by date and keeps only the last `limit` entries', () => {
+    const entries = appendEntry([run1, yesterday], entry('2026-09-16', {}), 2);
+    expect(entries.map((e) => e.date)).toEqual(['2026-09-15', '2026-09-16']);
   });
 });

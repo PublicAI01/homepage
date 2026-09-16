@@ -52,6 +52,43 @@ export function lineage(
   return current;
 }
 
+/**
+ * `entries` with `entry` in place of any entry of the same date, oldest
+ * first, at most `limit` long.
+ *
+ * The refresh job rebuilds several times a day, and each run computes its
+ * aliases against the snapshot committed before it — on a rerun, that is
+ * the same day's earlier snapshot, so the renames the first run recorded
+ * against yesterday's are not in the new entry. Replacing the day's entry
+ * wholesale dropped them: on 2026-09-15 the first refresh recorded 52
+ * renames, three reruns left the entry with none, and the feed then listed
+ * 52 models as gone and 39 as new while every old id stopped resolving
+ * (2026-09-16). So the replaced entry's aliases are kept, and an old id
+ * that was itself renamed earlier the same day is followed through, so the
+ * entry reads as one day's renames however many runs made them.
+ */
+export function appendEntry(
+  entries: HistoryEntry[],
+  entry: HistoryEntry,
+  limit: number,
+): HistoryEntry[] {
+  const earlier = entries.find((e) => e.date === entry.date)?.aliases;
+  const merged = { ...entry };
+  if (earlier) {
+    const aliases: Record<string, string[]> = {};
+    for (const [now, olds] of Object.entries(entry.aliases ?? {}))
+      aliases[now] = [
+        ...new Set(olds.flatMap((old) => [old, ...(earlier[old] ?? [])])),
+      ];
+    for (const [now, olds] of Object.entries(earlier))
+      aliases[now] = [...new Set([...(aliases[now] ?? []), ...olds])];
+    merged.aliases = aliases;
+  }
+  return [...entries.filter((e) => e.date !== entry.date), merged]
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(-limit);
+}
+
 export interface Change {
   id: string;
   name: string;
