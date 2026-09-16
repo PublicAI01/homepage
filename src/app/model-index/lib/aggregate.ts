@@ -558,6 +558,12 @@ export function aggregate({
   );
   const anchorsOn = new Map<string, { raw: number; overall: number }[]>();
   for (const [benchId, byModel] of normalizedBy) {
+    // An estimate stands in for a capability index, so only a capability
+    // measure can anchor it. A safety figure says nothing about that:
+    // hallucination rate and the Overall index correlate at −0.23, and
+    // MiniMax M2p5, scored on nothing but a 9% hallucination rate, was
+    // estimated at 62.3 — front-ten territory (2026-09-16).
+    if (categoryOf.get(benchId) === 'Safety') continue;
     const list: { raw: number; overall: number }[] = [];
     for (const [modelId, s] of byModel) {
       const o = overallOf.get(modelId);

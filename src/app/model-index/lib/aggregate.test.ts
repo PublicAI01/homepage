@@ -919,3 +919,58 @@ describe('boardsFirst', () => {
     expect(byId.get('m3')!.reports).toBe(1);
   });
 });
+
+describe('estimates do not lean on safety figures', () => {
+  it('gives no estimate to a model only a safety board measured', () => {
+    // Hallucination rate says nothing about a capability index; a model
+    // with only that figure was estimated at front-ten level.
+    const models = ['anchor1', 'anchor2', 'anchor3', 'safe-only'].map((id) => ({
+      id,
+      name: id,
+      org: 'o',
+    }));
+    const bench = (id: string, category: string) => ({
+      id,
+      name: id,
+      publisher: id,
+      url: 'u',
+      retrievedAt: '2026-09-16',
+      metric: 'percent' as const,
+      category,
+      domain: category,
+      kind: 'board' as const,
+      source: id,
+      group: id,
+    });
+    const benchmarks = [
+      bench('cap-a', 'Coding'),
+      bench('cap-b', 'Reasoning'),
+      bench('halluc', 'Safety'),
+    ];
+    const anchors = ['anchor1', 'anchor2', 'anchor3'];
+    const scores = [
+      ...anchors.flatMap((m, i) => [
+        { modelId: m, benchmarkId: 'cap-a', raw: 30 + i * 20, sourceLabel: m },
+        { modelId: m, benchmarkId: 'cap-b', raw: 40 + i * 15, sourceLabel: m },
+        { modelId: m, benchmarkId: 'halluc', raw: 90 - i * 5, sourceLabel: m },
+      ]),
+      {
+        modelId: 'safe-only',
+        benchmarkId: 'halluc',
+        raw: 95,
+        sourceLabel: 's',
+      },
+    ];
+    const rows = aggregate({
+      models,
+      benchmarks,
+      scores,
+      weights: { 'cap-a': 50, 'cap-b': 50, halluc: 25 },
+      overall: new Set(['cap-a', 'cap-b']),
+      minSources: 2,
+    });
+    const safeOnly = rows.find((r) => r.model.id === 'safe-only')!;
+    expect(safeOnly.score).toBeNull();
+    expect(safeOnly.estimate).toBeNull();
+  });
+});

@@ -131,7 +131,7 @@ const method = [
   },
   {
     title: 'Estimate the rest, and say so',
-    text: 'A model with no Overall score is placed among models that have one and shown as ~55✱ — never ranked.',
+    text: 'A model with no Overall score is placed among models that have one, on capability measures only, and shown as ~55✱ — never ranked. A safety figure never stands in for a capability.',
   },
 ];
 
