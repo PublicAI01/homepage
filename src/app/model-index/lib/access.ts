@@ -17,6 +17,14 @@ export const OPENROUTER_DOCS = 'https://openrouter.ai/docs';
 export const ACCESS_RULE =
   'Recommended channel: the OpenRouter id through its OpenAI-compatible endpoint — one key, every listed model, ids stable across vendors. Use the vendor’s own API for first-party features, and the weights for self-hosting.';
 
+/**
+ * The generation tracks: no catalog here lists them under one endpoint,
+ * so recommending "the OpenRouter id" for a video model pointed at an id
+ * that does not exist (2026-09-16).
+ */
+export const UNCATALOGUED_RULE =
+  'No single channel is catalogued for these models: call the vendor’s own API, or a hosting platform that serves it, and check the source board for which build was scored.';
+
 export interface Channel {
   kind: 'openrouter' | 'vendor' | 'weights';
   name: string;

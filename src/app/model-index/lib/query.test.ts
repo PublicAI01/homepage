@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { models } from '../data';
-import { ACCESS_RULE } from './access';
+import { ACCESS_RULE, UNCATALOGUED_RULE } from './access';
 import {
   describeIndex,
   getModel,
@@ -11,6 +11,7 @@ import {
   rankModels,
   resolveScope,
 } from './query';
+import { video } from './tracks';
 import {
   MIN_BOARDS_TO_VOTE_IN,
   MIN_MODELS_FOR_HEADLINE,
@@ -83,6 +84,11 @@ describe('rankModels', () => {
   it('carries the access rule with every recommendation', () => {
     const m: ModelSummary = ok(rankModels({ limit: 1 })).models[0];
     expect(m.access.rule).toBe(ACCESS_RULE);
+    expect(describeIndex().access).toBe(ACCESS_RULE);
+  });
+
+  it('does not send a video model to OpenRouter', () => {
+    expect(video.describeIndex().access).toBe(UNCATALOGUED_RULE);
   });
 
   it('explains an unknown scope instead of guessing', () => {

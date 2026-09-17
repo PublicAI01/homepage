@@ -42,6 +42,7 @@ import {
   weightsFor,
 } from '../lib/weights';
 import { LinkedInMark, XMark } from './social-marks';
+import { useTrack } from './track-context';
 
 const PANEL = 'rounded-xl border border-[#2C2C31] bg-white/[0.045]';
 const INDEX_TONE = 'text-white';
@@ -277,13 +278,26 @@ export default function IndexTable({ tracks, newcomers }: Props) {
     () => decodeView(new URLSearchParams(searchParams.toString())),
     [searchParams],
   );
-  const [trackId, setTrackId] = useState<TrackData['id']>(() =>
-    tracks.some((t) => t.id === initial.track) ? initial.track : tracks[0].id,
-  );
+  const { track: chosen, setTrack: setTrackId } = useTrack();
+  const trackId = tracks.some((t) => t.id === chosen) ? chosen : tracks[0].id;
   const track = tracks.find((t) => t.id === trackId) ?? tracks[0];
+  // Controls that filter on something this population does not have are
+  // not offered: the generation tracks carry no reports and no parameter
+  // counts, and a "Count reports" switch or a size menu that can never
+  // change the table is a control that lies (2026-09-16).
+  const hasReports = track.benchmarks.some((b) => b.kind === 'report');
+  // A size menu is offered where sizes are a real axis of the population,
+  // not where two rows out of seventy happen to carry a parameter count.
+  const hasSizes =
+    track.models.filter((m) => m.size !== undefined && m.size !== null)
+      .length >=
+    track.models.length / 10;
   const { models, benchmarks, scores, catalogs, generatedAt, headline } = track;
   const BASE = track.base;
-  const INDEX_URL = `${ORIGIN}${BASE}`;
+  // Model cards live under the track's base; the table itself lives on
+  // one page and names its track in the query. A share link built from
+  // the base read ".../model-index/video?track=video" (2026-09-16).
+  const INDEX_URL = `${ORIGIN}${tracks[0].base}`;
   const OVERALL = useMemo(() => overallOf(track.weighting), [track.weighting]);
   const [rankKey, setRankKey] = useState<RankKey>(() => {
     const r = initial.rank;
@@ -351,13 +365,23 @@ export default function IndexTable({ tracks, newcomers }: Props) {
     );
   }, [headline, rankKey]);
 
-  const families = useMemo(
-    () =>
-      [...new Set(models.map((m) => familyOf(m.name)))].sort((a, b) =>
-        a.localeCompare(b, 'en', { sensitivity: 'base' }),
-      ),
-    [models],
-  );
+  // One entry per line, whatever case a source printed it in: "LTX" and
+  // "Ltx", "MiniMax" and "Minimax" were two chips each (2026-09-16). The
+  // spelling most models carry is the one shown; the filter compares
+  // case-insensitively, as the API does.
+  const families = useMemo(() => {
+    const spellings = new Map<string, Map<string, number>>();
+    for (const m of models) {
+      const f = familyOf(m.name);
+      const k = f.toLowerCase();
+      const seen = spellings.get(k) ?? new Map<string, number>();
+      seen.set(f, (seen.get(f) ?? 0) + 1);
+      spellings.set(k, seen);
+    }
+    return [...spellings.values()]
+      .map((seen) => [...seen.entries()].sort((a, b) => b[1] - a[1])[0][0])
+      .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
+  }, [models]);
 
   const rows = useMemo(() => {
     const run = (w: Record<string, number>) =>
@@ -405,7 +429,11 @@ export default function IndexTable({ tracks, newcomers }: Props) {
     let out = rows.filter((r) => {
       if (onlyNew && !isNew.has(r.model.id)) return false;
       if (r.covered < minBoards) return false;
-      if (family !== 'all' && familyOf(r.model.name) !== family) return false;
+      if (
+        family !== 'all' &&
+        familyOf(r.model.name).toLowerCase() !== family.toLowerCase()
+      )
+        return false;
       if (sizeTier !== 'all' && tierOf(r.model.size) !== sizeTier) return false;
       if (q && !`${r.model.name} ${r.model.org}`.toLowerCase().includes(q))
         return false;
@@ -538,6 +566,7 @@ export default function IndexTable({ tracks, newcomers }: Props) {
     setTrackId(id);
     setRankKey({ level: 'overall' });
     setFamily('all');
+    setSizeTier('all');
     setOpenModel(null);
     setOnlyNew(false);
   };
@@ -740,27 +769,31 @@ export default function IndexTable({ tracks, newcomers }: Props) {
             </option>
           ))}
         </select>
-        <select
-          value={sizeTier}
-          onChange={(e) => setSizeTier(e.target.value as SizeTier | 'all')}
-          aria-label="Model size"
-          title="Total parameters. Counted from the weights for open models, read from the name otherwise; closed models are undisclosed, not estimated."
-          className={CONTROL}>
-          <option value="all">All sizes</option>
-          {SIZE_TIERS.map((t) => (
-            <option
-              key={t.id}
-              value={t.id}>
-              {t.label}
-            </option>
-          ))}
-        </select>
+        {hasSizes ? (
+          <select
+            value={sizeTier}
+            onChange={(e) => setSizeTier(e.target.value as SizeTier | 'all')}
+            aria-label="Model size"
+            title="Total parameters. Counted from the weights for open models, read from the name otherwise; closed models are undisclosed, not estimated."
+            className={CONTROL}>
+            <option value="all">All sizes</option>
+            {SIZE_TIERS.map((t) => (
+              <option
+                key={t.id}
+                value={t.id}>
+                {t.label}
+              </option>
+            ))}
+          </select>
+        ) : null}
         <select
           value={minBoards}
           onChange={(e) => setMinBoards(Number(e.target.value))}
           aria-label="Minimum recognised boards"
           className={CONTROL}>
-          <option value={0}>Any coverage (incl. report-only)</option>
+          <option value={0}>
+            {hasReports ? 'Any coverage (incl. report-only)' : 'Any coverage'}
+          </option>
           {Array.from({ length: coverable }, (_, i) => i + 1).map((n) => (
             <option
               key={n}
@@ -769,20 +802,23 @@ export default function IndexTable({ tracks, newcomers }: Props) {
             </option>
           ))}
         </select>
-        <label
-          className="text-caption flex cursor-pointer items-center gap-1.5 text-[#D9D7E0] select-none"
-          title="Launch posts, blogs and write-ups are always listed and cited. This lets their figures into the scores too. Off — the default — a board's measurement decides the number wherever there is one, and a ✱ figure speaks only where no board has.">
-          <input
-            type="checkbox"
-            checked={includeReports}
-            onChange={(e) => setIncludeReports(e.target.checked)}
-            className="accent-primary size-3.5"
-          />
-          Count reports{' '}
-          <span className={cn('font-mono', REPORT_BADGE.tone.split(' ').pop())}>
-            ✱
-          </span>
-        </label>
+        {hasReports ? (
+          <label
+            className="text-caption flex cursor-pointer items-center gap-1.5 text-[#D9D7E0] select-none"
+            title="Launch posts, blogs and write-ups are always listed and cited. This lets their figures into the scores too. Off — the default — a board's measurement decides the number wherever there is one, and a ✱ figure speaks only where no board has.">
+            <input
+              type="checkbox"
+              checked={includeReports}
+              onChange={(e) => setIncludeReports(e.target.checked)}
+              className="accent-primary size-3.5"
+            />
+            Count reports{' '}
+            <span
+              className={cn('font-mono', REPORT_BADGE.tone.split(' ').pop())}>
+              ✱
+            </span>
+          </label>
+        ) : null}
       </div>
 
       {/* Whole-column caveat, not a per-row one: when no board measures this
@@ -1098,14 +1134,13 @@ function Row({
           {row.score === null && row.estimate ? (
             <span
               className="text-[#B9B7C4]"
-              title={`Estimate ✱ — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position.${row.estimate.bound === 'below' ? ' It trailed every such model there, so this is a ceiling.' : row.estimate.bound === 'above' ? ' It led every such model there, so this is a floor.' : ''} Never ranked.`}>
+              title={`Estimate — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position.${row.estimate.bound === 'below' ? ' It trailed every such model there, so this is a ceiling.' : row.estimate.bound === 'above' ? ' It led every such model there, so this is a floor.' : ''} Never ranked.`}>
               {row.estimate.bound === 'below'
                 ? '≤'
                 : row.estimate.bound === 'above'
                   ? '≥'
                   : '~'}
               {fmt(row.estimate.score)}
-              <span className="ml-0.5 text-[#E8A9F0]">✱</span>
             </span>
           ) : (
             fmt(row.score)
@@ -1278,7 +1313,7 @@ function ModelCard({
                       : row.estimate.bound === 'above'
                         ? '≥'
                         : '~'}
-                    {fmt(row.estimate.score)}✱
+                    {fmt(row.estimate.score)}
                   </b>
                 </span>
               ) : null}

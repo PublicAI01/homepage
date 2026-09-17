@@ -8,6 +8,11 @@ import IndexTable, { SourceBadge } from './components/index-table';
 import { LinkedInMark, XMark } from './components/social-marks';
 import Subscribe from './components/subscribe';
 import SubscribePrompt from './components/subscribe-prompt';
+import {
+  ByTrack,
+  type TrackId,
+  TrackProvider,
+} from './components/track-context';
 import { benchmarks, catalogs, excluded, generatedAt, models } from './data';
 import { groupBoards } from './lib/boards';
 import { enteredSince } from './lib/changes';
@@ -192,6 +197,35 @@ const trackData = (['text', 'image', 'video'] as const).map((id) => {
     headline: t.index.headlineTaxonomy(),
   };
 });
+// The rail's numbers and weighting, per track: the table switches
+// populations, and a rail that kept showing the text figures beside the
+// image ranking gave the wrong counts and the wrong weights (2026-09-16).
+const rail = Object.fromEntries(
+  trackData.map((t) => {
+    const srcs = groupBoards(t.benchmarks);
+    return [
+      t.id,
+      {
+        models: t.models.length,
+        boards: srcs.filter((s) => s.kind !== 'report').length,
+        reports: srcs.filter((s) => s.kind === 'report').length,
+        weighting: t.weighting,
+        sourceById: new Map(srcs.map((s) => [s.id, s])),
+      },
+    ];
+  }),
+) as Record<
+  TrackId,
+  {
+    models: number;
+    boards: number;
+    reports: number;
+    weighting: typeof WEIGHTING;
+    sourceById: Map<string, ReturnType<typeof groupBoards>[number]>;
+  }
+>;
+const TRACK_IDS = ['text', 'image', 'video'] as const;
+
 const citation = `PublicAI Foundation (${snapshotDate.slice(0, 4)}). PublicAI Index, snapshot ${snapshotDate}. https://publicai.io/model-index`;
 
 const Card = ({
@@ -233,165 +267,190 @@ export default function ModelIndex() {
     <div className="relative isolate before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:bg-[#08080A]">
       <div className="container mx-auto max-md:w-[calc(100vw-calc(var(--spacing-mobile-padding-x)*2))]">
         {/* ===================== HEADER ===================== */}
-        <header className="grid grid-cols-1 gap-8 pt-10 pb-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-10 lg:pt-14 lg:pb-10">
-          {/* Left: the name, the promise, the case. Right: the numbers, in a
+        <Suspense>
+          <TrackProvider>
+            <header className="grid grid-cols-1 gap-8 pt-10 pb-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-10 lg:pt-14 lg:pb-10">
+              {/* Left: the name, the promise, the case. Right: the numbers, in a
               panel the width of the sidebar below, so the two columns line
               up and the page reads as one grid from the top. */}
-          <div className="min-w-0">
-            <h1 className="text-display mb-3 font-bold text-white">
-              PublicAI Index
-            </h1>
-            <p className="text-subheading mb-5 max-w-[60ch] font-semibold text-[#B9B7C4]">
-              The LLM benchmark aggregator — the world’s most comprehensive and
-              robust LLM index, built from everyone’s benchmarks and none of our
-              own.
-            </p>
-            {/* Six lines became three. The method has its own section further
+              <div className="min-w-0">
+                <h1 className="text-display mb-3 font-bold text-white">
+                  PublicAI Index
+                </h1>
+                <p className="text-subheading mb-5 max-w-[60ch] font-semibold text-[#B9B7C4]">
+                  The LLM benchmark aggregator — the world’s most comprehensive
+                  and robust LLM index, built from everyone’s benchmarks and
+                  none of our own.
+                </p>
+                {/* Six lines became three. The method has its own section further
                 down and repeating it here only pushed the table below the
                 fold, which is the one thing this page is for. */}
-            <p className="text-caption max-w-[78ch] text-[#B9B7C4]">
-              A single benchmark is easy to target, so topping one board says
-              little about the next. PublicAI runs no evaluations of its own: it
-              aggregates the public ones onto one scale — discounted by
-              published uncertainty, shrunk where evidence is thin, weighted by
-              a scheme printed beside the table. Launch posts are indexed too,
-              marked ✱ and kept out of the headline. Agents get the same answers
-              over MCP and a JSON API.
-            </p>
-            <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
-              <span className={LABEL}>Follow PublicAI Index</span>
-              {FOLLOW.map(({ label, href, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="external noreferrer"
-                  aria-label={`PublicAI on ${label}`}
-                  title={label}
-                  className="text-g1 inline-flex size-8 items-center justify-center rounded-md border border-white/12 transition-colors hover:border-white/30 hover:text-white">
-                  <Icon className="size-4" />
-                </a>
-              ))}
-            </p>
-          </div>
+                <p className="text-caption max-w-[78ch] text-[#B9B7C4]">
+                  A single benchmark is easy to target, so topping one board
+                  says little about the next. PublicAI runs no evaluations of
+                  its own: it aggregates the public ones onto one scale —
+                  discounted by published uncertainty, shrunk where evidence is
+                  thin, weighted by a scheme printed beside the table. Launch
+                  posts are indexed too, marked ✱ and kept out of the headline.
+                  Agents get the same answers over MCP and a JSON API.
+                </p>
+                <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+                  <span className={LABEL}>Follow PublicAI Index</span>
+                  {FOLLOW.map(({ label, href, Icon }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="external noreferrer"
+                      aria-label={`PublicAI on ${label}`}
+                      title={label}
+                      className="text-g1 inline-flex size-8 items-center justify-center rounded-md border border-white/12 transition-colors hover:border-white/30 hover:text-white">
+                      <Icon className="size-4" />
+                    </a>
+                  ))}
+                </p>
+              </div>
 
-          <aside className={cn(PANEL, 'self-start p-4 lg:mt-2')}>
-            <h2 className={cn(LABEL, 'mb-3')}>This snapshot</h2>
-            <dl className="grid grid-cols-2 gap-x-4 gap-y-2">
-              {[
-                ['Updated', updated],
-                ['Models', models.length],
-                ['Leaderboards', boards.length],
-                ['Reports ✱', reports.length],
-              ].map(([k, v]) => (
-                <div
-                  key={String(k)}
-                  className="flex flex-col">
-                  <dt className="text-micro text-[#78758A]">{k}</dt>
-                  <dd className="text-body-sm font-mono font-semibold text-white">
-                    {v}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-            <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
-              Scores belong to their publishers; PublicAI only normalizes and
-              weights them.
-            </p>
-            <p className="text-micro mt-2 text-[#78758A]">
-              <span className={cn(LABEL, 'mr-1.5')}>Cite</span>
-              <code className="font-mono text-[#9C9AA8] select-all">
-                {citation}
-              </code>
-            </p>
-          </aside>
-        </header>
+              <aside className={cn(PANEL, 'self-start p-4 lg:mt-2')}>
+                <h2 className={cn(LABEL, 'mb-3')}>This snapshot</h2>
+                <ByTrack
+                  {...(Object.fromEntries(
+                    TRACK_IDS.map((id) => [
+                      id,
+                      <dl
+                        key={id}
+                        className="grid grid-cols-2 gap-x-4 gap-y-2">
+                        {[
+                          ['Updated', updated],
+                          ['Models', rail[id].models],
+                          ['Leaderboards', rail[id].boards],
+                          ['Reports ✱', rail[id].reports],
+                        ].map(([k, v]) => (
+                          <div
+                            key={String(k)}
+                            className="flex flex-col">
+                            <dt className="text-micro text-[#78758A]">{k}</dt>
+                            <dd className="text-body-sm font-mono font-semibold text-white">
+                              {v}
+                            </dd>
+                          </div>
+                        ))}
+                      </dl>,
+                    ]),
+                  ) as Record<TrackId, React.ReactNode>)}
+                />
+                <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
+                  Scores belong to their publishers; PublicAI only normalizes
+                  and weights them.
+                </p>
+                <p className="text-micro mt-2 text-[#78758A]">
+                  <span className={cn(LABEL, 'mr-1.5')}>Cite</span>
+                  <code className="font-mono text-[#9C9AA8] select-all">
+                    {citation}
+                  </code>
+                </p>
+              </aside>
+            </header>
 
-        {/* ===================== TABLE + SIDEBAR ===================== */}
-        <div
-          className="grid grid-cols-1 gap-8 border-t border-white/8 pt-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-10"
-          id="index">
-          <main className="min-w-0">
-            <p className={cn(LABEL, 'mb-3')}>§ 1 · Ranking</p>
-            <Suspense>
-              <IndexTable
-                tracks={trackData}
-                newcomers={newcomers}
-              />
-            </Suspense>
-          </main>
+            {/* ===================== TABLE + SIDEBAR ===================== */}
+            <div
+              className="grid grid-cols-1 gap-8 border-t border-white/8 pt-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-10"
+              id="index">
+              <main className="min-w-0">
+                <p className={cn(LABEL, 'mb-3')}>§ 1 · Ranking</p>
+                <Suspense>
+                  <IndexTable
+                    tracks={trackData}
+                    newcomers={newcomers}
+                  />
+                </Suspense>
+              </main>
 
-          {/* The rail is taller than a laptop viewport, so it scrolls inside its
+              {/* The rail is taller than a laptop viewport, so it scrolls inside its
               own sticky box; otherwise sticky does nothing and the cards below
               the fold are unreachable while reading the table. */}
-          <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1">
-            <Card title="For agents — MCP">
-              <p className="text-caption mb-2 text-[#D9D7E0]">
-                Four tools, no key. Every score arrives with its sources.
-              </p>
-              <pre className="text-micro overflow-x-auto rounded-md bg-black/40 px-2.5 py-2 font-mono whitespace-pre-wrap text-[#D9D7E0] select-all">
-                {mcpConfig}
-              </pre>
-              <p className="text-micro mt-2 text-[#78758A]">
-                Or plain JSON:{' '}
-                <a
-                  href={`${API_URL}?scope=coding&limit=10`}
-                  className="text-p1 underline underline-offset-2">
-                  {API_URL.replace('https://', '')}
-                </a>
-              </p>
-            </Card>
+              <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-1">
+                <Card title="For agents — MCP">
+                  <p className="text-caption mb-2 text-[#D9D7E0]">
+                    Four tools, no key. Every score arrives with its sources.
+                  </p>
+                  <pre className="text-micro overflow-x-auto rounded-md bg-black/40 px-2.5 py-2 font-mono whitespace-pre-wrap text-[#D9D7E0] select-all">
+                    {mcpConfig}
+                  </pre>
+                  <p className="text-micro mt-2 text-[#78758A]">
+                    Or plain JSON:{' '}
+                    <a
+                      href={`${API_URL}?scope=coding&limit=10`}
+                      className="text-p1 underline underline-offset-2">
+                      {API_URL.replace('https://', '')}
+                    </a>
+                  </p>
+                </Card>
 
-            <Card title="Index Weekly">
-              <p className="text-caption mb-2 text-[#D9D7E0]">
-                Mondays: the week’s biggest moves. No other mail.
-              </p>
-              <Subscribe />
-              <p className="text-micro mt-2 text-[#78758A]">
-                Or{' '}
-                <a
-                  href="/model-index/feed.xml"
-                  className="text-p1 underline underline-offset-2">
-                  RSS
-                </a>
-                .
-              </p>
-            </Card>
+                <Card title="Index Weekly">
+                  <p className="text-caption mb-2 text-[#D9D7E0]">
+                    Mondays: the week’s biggest moves. No other mail.
+                  </p>
+                  <Subscribe />
+                  <p className="text-micro mt-2 text-[#78758A]">
+                    Or{' '}
+                    <a
+                      href="/model-index/feed.xml"
+                      className="text-p1 underline underline-offset-2">
+                      RSS
+                    </a>
+                    .
+                  </p>
+                </Card>
 
-            <Card title="Weighting — Overall index">
-              {/* One line per board. The reasoning behind each share is a
+                <Card title="Weighting — Overall index">
+                  {/* One line per board. The reasoning behind each share is a
                   hover, not a paragraph: the rail is read at a glance. */}
-              <ol className="flex flex-col gap-1.5">
-                {WEIGHTING.map((w) => {
-                  const s = sourceById.get(w.benchmarkId);
-                  if (!s) return null;
-                  return (
-                    <li
-                      key={w.benchmarkId}
-                      title={w.rationale}
-                      className="flex items-center gap-2">
-                      <SourceBadge
-                        source={s}
-                        present
-                      />
-                      <span className="text-body-sm truncate text-[#D9D7E0]">
-                        {s.name}
-                      </span>
-                      <span className="text-caption text-p1 ml-auto font-mono">
-                        {w.weight}%
-                      </span>
-                    </li>
-                  );
-                })}
-              </ol>
-              <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
-                Reports ✱ carry {INDEPENDENT_REPORT_WEIGHT} when someone
-                independent ran them and {VENDOR_REPORT_WEIGHT} when the model’s
-                own publisher did, in domain columns only.
-              </p>
-            </Card>
-          </aside>
-        </div>
+                  <ByTrack
+                    {...(Object.fromEntries(
+                      TRACK_IDS.map((id) => [
+                        id,
+                        <div key={id}>
+                          <ol className="flex flex-col gap-1.5">
+                            {rail[id].weighting.map((w) => {
+                              const s = rail[id].sourceById.get(w.benchmarkId);
+                              if (!s) return null;
+                              return (
+                                <li
+                                  key={w.benchmarkId}
+                                  title={w.rationale}
+                                  className="flex items-center gap-2">
+                                  <SourceBadge
+                                    source={s}
+                                    present
+                                  />
+                                  <span className="text-body-sm truncate text-[#D9D7E0]">
+                                    {s.name}
+                                  </span>
+                                  <span className="text-caption text-p1 ml-auto font-mono">
+                                    {w.weight}%
+                                  </span>
+                                </li>
+                              );
+                            })}
+                          </ol>
+                          {rail[id].reports > 0 ? (
+                            <p className="text-micro mt-3 border-t border-white/8 pt-3 text-[#78758A]">
+                              Reports ✱ carry {INDEPENDENT_REPORT_WEIGHT} when
+                              someone independent ran them and{' '}
+                              {VENDOR_REPORT_WEIGHT} when the model’s own
+                              publisher did, in domain columns only.
+                            </p>
+                          ) : null}
+                        </div>,
+                      ]),
+                    ) as Record<TrackId, React.ReactNode>)}
+                  />
+                </Card>
+              </aside>
+            </div>
+          </TrackProvider>
+        </Suspense>
 
         {/* ===================== SOURCES ===================== */}
         <section

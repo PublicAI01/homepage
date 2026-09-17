@@ -1,5 +1,5 @@
 import type { Benchmark, IndexData } from '../data/types';
-import { recommend, type Recommendation } from './access';
+import { recommend, type Recommendation, UNCATALOGUED_RULE } from './access';
 import {
   aggregate,
   type AggregateRow,
@@ -751,7 +751,9 @@ export function createTrack(input: TrackInput) {
         category,
         domains,
       })),
-      access: recommend(undefined).rule,
+      access: models.some((m) => m.access?.openrouter)
+        ? recommend(undefined).rule
+        : UNCATALOGUED_RULE,
       limits: [
         'Reasoning-effort tiers are matched by rule; the highest published tier is indexed and the exact label kept.',
         'Some sources score a scaffold (model + agent framework), recorded beside the figure.',
