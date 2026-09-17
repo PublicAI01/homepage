@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T11:24:48.273Z",
+  "generatedAt": "2026-09-17T05:45:38.361Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,8 +7,9 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-09-16",
+      "retrievedAt": "2026-09-17",
       "metric": "elo",
+      "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
       "domain": "Text-to-video",
       "caveat": "Blind pairwise votes on clips from the same prompt, without audio, collected by Artificial Analysis and reported as an Elo with a confidence interval.",
@@ -22,8 +23,9 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-09-16",
+      "retrievedAt": "2026-09-17",
       "metric": "elo",
+      "logo": "/model-index/logos/arena-text-to-video.png",
       "category": "Text-to-video",
       "domain": "Text-to-video",
       "caveat": "Blind pairwise votes on clips from the same prompt. Measures what people prefer to watch; Preliminary marks a model with few votes yet.",
@@ -37,8 +39,9 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-09-16",
+      "retrievedAt": "2026-09-17",
       "metric": "elo",
+      "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
       "domain": "Image-to-video",
       "caveat": "Blind pairwise votes on clips animated from the same still image, collected by Artificial Analysis and reported as an Elo with a confidence interval.",
@@ -69,6 +72,11 @@
           "url": "https://platform.minimax.io/docs"
         }
       }
+    },
+    {
+      "id": "magi-2-preview-0912",
+      "name": "MAGI-2 Preview (0912)",
+      "org": "Sand.ai"
     },
     { "id": "hidream-o1-video", "name": "HiDream O1 Video", "org": "HiDream" },
     { "id": "kling-o1-pro", "name": "Kling O1 Pro", "org": "KlingAI" },
@@ -149,7 +157,7 @@
     {
       "id": "ltx-2-19b",
       "name": "Ltx 2 19B",
-      "org": "Other",
+      "org": "Lightricks",
       "size": { "paramsB": 19, "source": "name" }
     },
     { "id": "ltx-2-fast", "name": "LTX-2 Fast", "org": "Lightricks" },
@@ -195,8 +203,8 @@
       "org": "Sapiens AI"
     },
     {
-      "id": "dreamina-seedance-2-0",
-      "name": "Dreamina Seedance 2.0",
+      "id": "seedance-2-0",
+      "name": "Seedance 2.0",
       "org": "ByteDance",
       "access": {
         "official": {
@@ -236,17 +244,6 @@
     },
     { "id": "ltx-2-3-pro", "name": "LTX-2.3 Pro", "org": "Lightricks" },
     { "id": "agnes-video-2-5", "name": "Agnes Video 2.5", "org": "Sapiens AI" },
-    {
-      "id": "dreamina-seedance-2-5",
-      "name": "Dreamina Seedance 2.5",
-      "org": "ByteDance",
-      "access": {
-        "official": {
-          "name": "Volcengine Doubao",
-          "url": "https://www.volcengine.com/product/doubao"
-        }
-      }
-    },
     { "id": "ltx-2-5-fast", "name": "LTX-2.5 Fast", "org": "Lightricks" },
     { "id": "kling-2-5-turbo", "name": "Kling 2.5 Turbo", "org": "KlingAI" },
     { "id": "ltx-2-5-pro", "name": "LTX-2.5 Pro", "org": "Lightricks" },
@@ -258,6 +255,17 @@
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "seedance-2-5",
+      "name": "Seedance 2.5",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
         }
       }
     },
@@ -298,7 +306,13 @@
     {
       "id": "minimax-h3-max-post-trained-by-fal",
       "name": "Minimax H3 Max (post-trained by fal)",
-      "org": "Fal"
+      "org": "MiniMax",
+      "access": {
+        "official": {
+          "name": "MiniMax Platform",
+          "url": "https://platform.minimax.io/docs"
+        }
+      }
     },
     {
       "id": "veo-3-fast",
@@ -445,7 +459,7 @@
         }
       }
     },
-    { "id": "p-video", "name": "P Video", "org": "Other" },
+    { "id": "p-video", "name": "P Video", "org": "Pruna AI" },
     {
       "id": "sora",
       "name": "Sora",
@@ -474,10 +488,17 @@
       "sourceLabel": "hailuo-02-standard"
     },
     {
+      "modelId": "magi-2-preview-0912",
+      "benchmarkId": "aa-text-to-video",
+      "raw": 1156,
+      "stderr": 9,
+      "sourceLabel": "MAGI-2 Preview (0912)"
+    },
+    {
       "modelId": "hidream-o1-video",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1185,
-      "stderr": 10,
+      "raw": 1176,
+      "stderr": 11,
       "sourceLabel": "HiDream-O1-Video"
     },
     {
@@ -511,8 +532,8 @@
     {
       "modelId": "happyhorse-1-0",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1125,
-      "stderr": 6,
+      "raw": 1119,
+      "stderr": 7,
       "sourceLabel": "HappyHorse-1.0"
     },
     {
@@ -525,8 +546,8 @@
     {
       "modelId": "happyhorse-1-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1090,
-      "stderr": 7,
+      "raw": 1083,
+      "stderr": 8,
       "sourceLabel": "HappyHorse-1.0"
     },
     {
@@ -539,14 +560,14 @@
     {
       "modelId": "happyhorse-1-1",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1146,
+      "raw": 1147,
       "stderr": 6,
       "sourceLabel": "HappyHorse-1.1"
     },
     {
       "modelId": "happyhorse-1-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1109,
+      "raw": 1106,
       "stderr": 7,
       "sourceLabel": "HappyHorse-1.1"
     },
@@ -560,8 +581,8 @@
     {
       "modelId": "grok-imagine-video-1-5",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1115,
-      "stderr": 7,
+      "raw": 1099,
+      "stderr": 8,
       "sourceLabel": "grok-imagine-video-1.5"
     },
     {
@@ -588,50 +609,43 @@
     {
       "modelId": "ltx-2-fast",
       "benchmarkId": "aa-text-to-video",
-      "raw": 941,
-      "stderr": 8,
+      "raw": 924,
+      "stderr": 9,
       "sourceLabel": "LTX-2 FastOpen Weights"
     },
     {
       "modelId": "ltx-2-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 933,
-      "stderr": 8,
+      "raw": 923,
+      "stderr": 9,
       "sourceLabel": "LTX-2 FastOpen Weights"
     },
     {
       "modelId": "ltx-2-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 918,
-      "stderr": 8,
+      "raw": 905,
+      "stderr": 9,
       "sourceLabel": "LTX-2 ProOpen Weights"
     },
     {
       "modelId": "ltx-2-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 872,
-      "stderr": 9,
+      "raw": 862,
+      "stderr": 10,
       "sourceLabel": "LTX-2 ProOpen Weights"
     },
     {
       "modelId": "magi-2-preview",
-      "benchmarkId": "aa-text-to-video",
-      "raw": 1162,
-      "stderr": 9,
-      "sourceLabel": "MAGI-2 PreviewOpen Weights"
-    },
-    {
-      "modelId": "magi-2-preview",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1102,
+      "raw": 1096,
       "stderr": 7,
       "sourceLabel": "MAGI-2 PreviewOpen Weights"
     },
     {
       "modelId": "sora-2-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1078,
-      "stderr": 9,
+      "raw": 1059,
+      "stderr": 10,
       "sourceLabel": "Sora 2 Pro"
     },
     {
@@ -651,8 +665,8 @@
     {
       "modelId": "sora-2",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1097,
-      "stderr": 9,
+      "raw": 1083,
+      "stderr": 10,
       "sourceLabel": "Sora 2 (December)"
     },
     {
@@ -672,36 +686,36 @@
     {
       "modelId": "agnes-video-v2-0",
       "benchmarkId": "aa-text-to-video",
-      "raw": 917,
-      "stderr": 8,
+      "raw": 897,
+      "stderr": 9,
       "sourceLabel": "Agnes-Video-V2.0"
     },
     {
       "modelId": "agnes-video-v2-0",
       "benchmarkId": "aa-image-to-video",
       "raw": 925,
-      "stderr": 8,
+      "stderr": 9,
       "sourceLabel": "Agnes-Video-V2.0"
     },
     {
-      "modelId": "dreamina-seedance-2-0",
+      "modelId": "seedance-2-0",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1219,
+      "raw": 1210,
       "stderr": 6,
       "sourceLabel": "Dreamina Seedance 2.0 720p"
     },
     {
-      "modelId": "dreamina-seedance-2-0",
+      "modelId": "seedance-2-0",
       "benchmarkId": "arena-text-to-video",
       "raw": 1479,
       "stderr": 8,
       "sourceLabel": "dreamina-seedance-2.0-720p"
     },
     {
-      "modelId": "dreamina-seedance-2-0",
+      "modelId": "seedance-2-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1197,
-      "stderr": 6,
+      "raw": 1174,
+      "stderr": 7,
       "sourceLabel": "Dreamina Seedance 2.0 720p"
     },
     {
@@ -728,15 +742,15 @@
     {
       "modelId": "ltx-2-3-fast",
       "benchmarkId": "aa-text-to-video",
-      "raw": 979,
-      "stderr": 6,
+      "raw": 975,
+      "stderr": 7,
       "sourceLabel": "LTX-2.3 FastOpen Weights"
     },
     {
       "modelId": "ltx-2-3-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 957,
-      "stderr": 7,
+      "raw": 947,
+      "stderr": 8,
       "sourceLabel": "LTX-2.3 FastOpen Weights"
     },
     {
@@ -749,49 +763,42 @@
     {
       "modelId": "ltx-2-3-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 962,
-      "stderr": 6,
-      "sourceLabel": "LTX-2.3 ProOpen Weights"
-    },
-    {
-      "modelId": "ltx-2-3-pro",
-      "benchmarkId": "aa-image-to-video",
       "raw": 958,
       "stderr": 7,
       "sourceLabel": "LTX-2.3 ProOpen Weights"
     },
     {
+      "modelId": "ltx-2-3-pro",
+      "benchmarkId": "aa-image-to-video",
+      "raw": 948,
+      "stderr": 8,
+      "sourceLabel": "LTX-2.3 ProOpen Weights"
+    },
+    {
       "modelId": "agnes-video-2-5",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1088,
-      "stderr": 8,
+      "raw": 1076,
+      "stderr": 9,
       "sourceLabel": "Agnes-Video-2.5"
     },
     {
       "modelId": "agnes-video-2-5",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1040,
-      "stderr": 8,
+      "raw": 1031,
+      "stderr": 9,
       "sourceLabel": "Agnes-Video-2.5"
-    },
-    {
-      "modelId": "dreamina-seedance-2-5",
-      "benchmarkId": "arena-text-to-video",
-      "raw": 1482,
-      "stderr": 12,
-      "sourceLabel": "dreamina-seedance-2.5-720p"
     },
     {
       "modelId": "ltx-2-5-fast",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1071,
+      "raw": 1055,
       "stderr": 9,
       "sourceLabel": "LTX-2.5 FastOpen Weights"
     },
     {
       "modelId": "ltx-2-5-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1048,
+      "raw": 1037,
       "stderr": 9,
       "sourceLabel": "LTX-2.5 FastOpen Weights"
     },
@@ -805,15 +812,15 @@
     {
       "modelId": "ltx-2-5-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1057,
+      "raw": 1053,
       "stderr": 9,
       "sourceLabel": "LTX-2.5 ProOpen Weights"
     },
     {
       "modelId": "ltx-2-5-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1011,
-      "stderr": 9,
+      "raw": 1005,
+      "stderr": 10,
       "sourceLabel": "LTX-2.5 ProOpen Weights"
     },
     {
@@ -824,10 +831,17 @@
       "sourceLabel": "wan2.5-t2v-preview"
     },
     {
+      "modelId": "seedance-2-5",
+      "benchmarkId": "arena-text-to-video",
+      "raw": 1482,
+      "stderr": 12,
+      "sourceLabel": "dreamina-seedance-2.5-720p"
+    },
+    {
       "modelId": "kling-2-6-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 983,
-      "stderr": 7,
+      "raw": 974,
+      "stderr": 8,
       "sourceLabel": "Kling 2.6 Pro (January)"
     },
     {
@@ -840,14 +854,14 @@
     {
       "modelId": "kling-2-6-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1008,
-      "stderr": 7,
+      "raw": 990,
+      "stderr": 8,
       "sourceLabel": "Kling 2.6 Pro (January)"
     },
     {
       "modelId": "wan-2-6",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1026,
+      "raw": 1030,
       "stderr": 7,
       "sourceLabel": "Wan 2.6"
     },
@@ -861,21 +875,21 @@
     {
       "modelId": "wan-2-6",
       "benchmarkId": "aa-image-to-video",
-      "raw": 900,
-      "stderr": 8,
+      "raw": 887,
+      "stderr": 9,
       "sourceLabel": "Wan 2.6"
     },
     {
       "modelId": "wan2-7-260612",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1156,
+      "raw": 1149,
       "stderr": 6,
       "sourceLabel": "Wan2.7-260612"
     },
     {
       "modelId": "wan-2-7",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1105,
+      "raw": 1098,
       "stderr": 7,
       "sourceLabel": "Wan 2.7"
     },
@@ -889,22 +903,22 @@
     {
       "modelId": "wan-2-7",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1088,
-      "stderr": 7,
+      "raw": 1078,
+      "stderr": 8,
       "sourceLabel": "Wan 2.7"
     },
     {
       "modelId": "minimax-h3-max-post-trained-by-fal",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1229,
+      "raw": 1227,
       "stderr": 9,
       "sourceLabel": "Minimax H3 Max (post-trained by fal)"
     },
     {
       "modelId": "minimax-h3-max-post-trained-by-fal",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1206,
-      "stderr": 9,
+      "raw": 1195,
+      "stderr": 10,
       "sourceLabel": "Minimax H3 Max (post-trained by fal)"
     },
     {
@@ -924,8 +938,8 @@
     {
       "modelId": "minimax-h3",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1225,
-      "stderr": 7,
+      "raw": 1220,
+      "stderr": 8,
       "sourceLabel": "MiniMax H3Open Weights"
     },
     {
@@ -938,36 +952,36 @@
     {
       "modelId": "minimax-h3",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1190,
+      "raw": 1181,
       "stderr": 8,
       "sourceLabel": "MiniMax H3Open Weights"
     },
     {
       "modelId": "vidu-q3-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1075,
-      "stderr": 5,
+      "raw": 1078,
+      "stderr": 6,
       "sourceLabel": "Vidu Q3 Pro"
     },
     {
       "modelId": "vidu-q3-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1064,
-      "stderr": 6,
+      "raw": 1057,
+      "stderr": 7,
       "sourceLabel": "Vidu Q3 Pro"
     },
     {
       "modelId": "vidu-q3-turbo",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1022,
+      "raw": 1025,
       "stderr": 9,
       "sourceLabel": "Vidu Q3 Turbo"
     },
     {
       "modelId": "vidu-q3-turbo",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1039,
-      "stderr": 8,
+      "raw": 1030,
+      "stderr": 9,
       "sourceLabel": "Vidu Q3 Turbo"
     },
     {
@@ -987,63 +1001,63 @@
     {
       "modelId": "kling-3-0-omni-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1090,
-      "stderr": 6,
+      "raw": 1075,
+      "stderr": 7,
       "sourceLabel": "Kling 3.0 Omni 1080p (Pro)"
     },
     {
       "modelId": "kling-3-0-omni-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1066,
-      "stderr": 7,
+      "raw": 1045,
+      "stderr": 8,
       "sourceLabel": "Kling 3.0 Omni 1080p (Pro)"
     },
     {
       "modelId": "kling-3-0-omni-standard",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1091,
-      "stderr": 6,
+      "raw": 1082,
+      "stderr": 7,
       "sourceLabel": "Kling 3.0 Omni 720p (Standard)"
     },
     {
       "modelId": "kling-3-0-omni-standard",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1058,
-      "stderr": 7,
+      "raw": 1035,
+      "stderr": 8,
       "sourceLabel": "Kling 3.0 Omni 720p (Standard)"
     },
     {
       "modelId": "kling-3-0-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1108,
-      "stderr": 5,
+      "raw": 1095,
+      "stderr": 6,
       "sourceLabel": "Kling 3.0 1080p (Pro)"
     },
     {
       "modelId": "kling-3-0-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1077,
-      "stderr": 6,
+      "raw": 1055,
+      "stderr": 7,
       "sourceLabel": "Kling 3.0 1080p (Pro)"
     },
     {
       "modelId": "kling-3-0-standard",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1101,
-      "stderr": 5,
+      "raw": 1089,
+      "stderr": 6,
       "sourceLabel": "Kling 3.0 720p (Standard)"
     },
     {
       "modelId": "kling-3-0-standard",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1072,
-      "stderr": 6,
+      "raw": 1052,
+      "stderr": 7,
       "sourceLabel": "Kling 3.0 720p (Standard)"
     },
     {
       "modelId": "wan-3-0",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1240,
+      "raw": 1229,
       "stderr": 9,
       "sourceLabel": "Wan 3.0"
     },
@@ -1057,15 +1071,15 @@
     {
       "modelId": "wan-3-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1178,
-      "stderr": 8,
+      "raw": 1164,
+      "stderr": 9,
       "sourceLabel": "Wan 3.0"
     },
     {
       "modelId": "veo-3-1-fast",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1084,
-      "stderr": 5,
+      "raw": 1085,
+      "stderr": 6,
       "sourceLabel": "Veo 3.1 Fast"
     },
     {
@@ -1078,29 +1092,29 @@
     {
       "modelId": "veo-3-1-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1075,
-      "stderr": 6,
+      "raw": 1065,
+      "stderr": 7,
       "sourceLabel": "Veo 3.1 Fast"
     },
     {
       "modelId": "veo-3-1-lite",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1087,
-      "stderr": 6,
+      "raw": 1083,
+      "stderr": 7,
       "sourceLabel": "Veo 3.1 Lite"
     },
     {
       "modelId": "veo-3-1-lite",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1072,
-      "stderr": 7,
+      "raw": 1069,
+      "stderr": 8,
       "sourceLabel": "Veo 3.1 Lite"
     },
     {
       "modelId": "veo-3-1",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1089,
-      "stderr": 6,
+      "raw": 1088,
+      "stderr": 7,
       "sourceLabel": "Veo 3.1"
     },
     {
@@ -1113,22 +1127,22 @@
     {
       "modelId": "veo-3-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1088,
+      "raw": 1082,
       "stderr": 7,
       "sourceLabel": "Veo 3.1"
     },
     {
       "modelId": "skyreels-v4",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1102,
+      "raw": 1095,
       "stderr": 7,
       "sourceLabel": "SkyReels V4"
     },
     {
       "modelId": "skyreels-v4",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1088,
-      "stderr": 7,
+      "raw": 1070,
+      "stderr": 8,
       "sourceLabel": "SkyReels V4"
     },
     {
@@ -1155,8 +1169,8 @@
     {
       "modelId": "pixverse-v5-6",
       "benchmarkId": "aa-text-to-video",
-      "raw": 950,
-      "stderr": 7,
+      "raw": 952,
+      "stderr": 8,
       "sourceLabel": "PixVerse V5.6"
     },
     {
@@ -1176,8 +1190,8 @@
     {
       "modelId": "pixverse-v6",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1077,
-      "stderr": 6,
+      "raw": 1076,
+      "stderr": 7,
       "sourceLabel": "PixVerse V6"
     },
     {
@@ -1190,8 +1204,8 @@
     {
       "modelId": "gemini-omni-flash",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1237,
-      "stderr": 6,
+      "raw": 1233,
+      "stderr": 7,
       "sourceLabel": "Gemini Omni Flash"
     },
     {
@@ -1204,14 +1218,14 @@
     {
       "modelId": "gemini-omni-flash",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1181,
-      "stderr": 7,
+      "raw": 1177,
+      "stderr": 8,
       "sourceLabel": "Gemini Omni Flash"
     },
     {
       "modelId": "grok-imagine-video",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1062,
+      "raw": 1065,
       "stderr": 6,
       "sourceLabel": "grok-imagine-video"
     },
@@ -1225,8 +1239,8 @@
     {
       "modelId": "grok-imagine-video",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1079,
-      "stderr": 6,
+      "raw": 1073,
+      "stderr": 7,
       "sourceLabel": "grok-imagine-video"
     },
     {
@@ -1264,7 +1278,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-16",
+      "retrievedAt": "2026-09-17",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1272,7 +1286,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-16",
+      "retrievedAt": "2026-09-17",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
