@@ -13,6 +13,8 @@ export interface TrackInfo {
   /** Path under the site, and the base of every link on the track's pages. */
   base: string;
   title: string;
+  /** The track's one-word name where the three sit side by side: "Text", "Image", "Video". */
+  label: string;
   /** One line under the title. */
   lede: string;
   /** What a model on this track is, for copy: "model", "image model". */
@@ -42,6 +44,7 @@ export const video = createTrack({
 export const TRACKS: Record<TrackId, TrackInfo> = {
   text: {
     id: 'text',
+    label: 'Text',
     base: '/model-index',
     title: 'PublicAI Index',
     lede: 'The LLM benchmark aggregator.',
@@ -51,6 +54,7 @@ export const TRACKS: Record<TrackId, TrackInfo> = {
   },
   image: {
     id: 'image',
+    label: 'Image',
     base: '/model-index/image',
     title: 'PublicAI Index · Image',
     lede: 'Image generation and editing models, ranked from every blind-vote arena that publishes — none of our own.',
@@ -60,6 +64,7 @@ export const TRACKS: Record<TrackId, TrackInfo> = {
   },
   video: {
     id: 'video',
+    label: 'Video',
     base: '/model-index/video',
     title: 'PublicAI Index · Video',
     lede: 'Video generation models, ranked from every blind-vote arena that publishes — none of our own.',

@@ -219,7 +219,13 @@ export function createTrack(input: TrackInput) {
    * changes the Overall rank, which reports do not enter.
    */
   function build(includeReports: boolean) {
-    const weights = weightsFor(benchmarks);
+    // This track's weighting, not weightsFor's default (the text index's).
+    // Left implicit, every board on the image and video tracks fell to the
+    // flat board-measure share, so the video Overall was computed 25/25/25
+    // while the table beside it — and the rail printing the shares — said
+    // 40/40/20; the same model read up to three points apart on the page
+    // and in the API (2026-09-18).
+    const weights = weightsFor(benchmarks, WEIGHTING);
     if (!includeReports)
       for (const b of benchmarks) if (b.kind === 'report') weights[b.id] = 0;
     const rows: AggregateRow[] = aggregate({

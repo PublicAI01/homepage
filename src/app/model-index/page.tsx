@@ -54,8 +54,11 @@ export async function generateMetadata({
   const filtered = p.toString().length > 0;
   const scope = rankName(view.rank);
   const tier = SIZE_TIERS.find((t) => t.id === view.size);
+  // The track is part of what was shared: the card and this title name it
+  // the same way, or a link to the video ranking previews as the text one.
+  const track = TRACKS[view.track];
   const what = filtered
-    ? `${scope}${tier ? ` · ${tier.label}` : ''}${view.family !== 'all' ? ` · ${view.family}` : ''}`
+    ? `${scope}${tier ? ` · ${tier.label}` : ''}${view.family !== 'all' ? ` · ${view.family}` : ''}${track.id !== 'text' ? ` · ${track.label}` : ''}`
     : null;
   const title = what
     ? `${what} — PublicAI Index`
@@ -186,7 +189,7 @@ const trackData = (['text', 'image', 'video'] as const).map((id) => {
   const d = t.index.data;
   return {
     id,
-    label: id === 'text' ? 'Text' : id === 'image' ? 'Image' : 'Video',
+    label: t.label,
     base: t.base,
     weighting: id === 'text' ? WEIGHTING : t.weighting,
     models: d.models,

@@ -1,8 +1,7 @@
 import { ImageResponse } from 'next/og';
 
-import { rankModels } from '../lib/query';
-import { SIZE_TIERS } from '../lib/size';
-import { decodeView, rankName, rankScope } from '../lib/view-state';
+import { cardOf } from '../lib/card';
+import { decodeView } from '../lib/view-state';
 
 /**
  * The social card for a shared view: the same top ten the reader filtered,
@@ -31,21 +30,9 @@ const ascii = (t: string) =>
 
 export async function GET(request: Request) {
   const view = decodeView(new URL(request.url).searchParams);
-  const result = rankModels({
-    scope: rankScope(view.rank),
-    family: view.family === 'all' ? undefined : view.family,
-    size: view.size === 'all' ? undefined : view.size,
-    minBoards: view.minBoards,
-    reports: view.reports,
-    q: view.q || undefined,
-    limit: 10,
-  });
-  const rows = 'error' in result ? [] : result.models;
-  const scope = rankName(view.rank);
-  const tier = SIZE_TIERS.find((t) => t.id === view.size);
-  const title = ascii(
-    `Top ${rows.length} - ${scope}${tier ? ` · ${tier.label}` : ''}${view.family !== 'all' ? ` · ${view.family}` : ''}`,
-  );
+  const card = cardOf(view);
+  const rows = card.rows;
+  const title = ascii(card.title);
   const scoreOf = (m: (typeof rows)[number]) =>
     m.scopeScore ?? m.index ?? m.estimatedIndex?.score ?? null;
   const scores = rows.map(scoreOf).filter((n): n is number => n !== null);
@@ -53,7 +40,7 @@ export async function GET(request: Request) {
   const min = Math.min(...scores, max);
   const floor = Math.max(0, Math.floor((min - 5) / 10) * 10);
   const span = Math.max(1, Math.ceil((max + 2) / 10) * 10 - floor);
-  const generated = 'error' in result ? '' : result.generatedAt.slice(0, 10);
+  const generated = card.generatedAt;
 
   const bar = (m: (typeof rows)[number]) => {
     const v = scoreOf(m);
