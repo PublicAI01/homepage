@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T20:21:42.689Z",
+  "generatedAt": "2026-09-19T20:52:14.963Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -72,11 +72,6 @@
           "url": "https://platform.minimax.io/docs"
         }
       }
-    },
-    {
-      "id": "magi-2-preview-0912",
-      "name": "MAGI-2 Preview (0912)",
-      "org": "Sand.ai"
     },
     { "id": "hidream-o1-video", "name": "HiDream O1 Video", "org": "HiDream" },
     { "id": "kling-o1-pro", "name": "Kling O1 Pro", "org": "KlingAI" },
@@ -162,7 +157,7 @@
     },
     { "id": "ltx-2-fast", "name": "LTX-2 Fast", "org": "Lightricks" },
     { "id": "ltx-2-pro", "name": "LTX-2 Pro", "org": "Lightricks" },
-    { "id": "magi-2-preview", "name": "MAGI-2 Preview", "org": "Sand.ai" },
+    { "id": "magi-2", "name": "MAGI 2", "org": "Sand.ai" },
     {
       "id": "sora-2-pro",
       "name": "Sora 2 Pro",
@@ -248,17 +243,6 @@
     { "id": "kling-2-5-turbo", "name": "Kling 2.5 Turbo", "org": "KlingAI" },
     { "id": "ltx-2-5-pro", "name": "LTX-2.5 Pro", "org": "Lightricks" },
     {
-      "id": "wan2-5-preview",
-      "name": "Wan2.5 Preview",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
       "id": "seedance-2-5",
       "name": "Seedance 2.5",
       "org": "ByteDance",
@@ -266,6 +250,17 @@
         "official": {
           "name": "Volcengine Doubao",
           "url": "https://www.volcengine.com/product/doubao"
+        }
+      }
+    },
+    {
+      "id": "wan2-5",
+      "name": "Wan2.5",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       }
     },
@@ -282,19 +277,8 @@
       }
     },
     {
-      "id": "wan2-7-260612",
-      "name": "Wan2.7 260612",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "wan-2-7",
-      "name": "Wan 2.7",
+      "id": "wan2-7",
+      "name": "Wan2.7",
       "org": "Alibaba",
       "access": {
         "official": {
@@ -488,13 +472,6 @@
       "sourceLabel": "hailuo-02-standard"
     },
     {
-      "modelId": "magi-2-preview-0912",
-      "benchmarkId": "aa-text-to-video",
-      "raw": 1156,
-      "stderr": 9,
-      "sourceLabel": "MAGI-2 Preview (0912)"
-    },
-    {
       "modelId": "hidream-o1-video",
       "benchmarkId": "aa-image-to-video",
       "raw": 1176,
@@ -635,7 +612,14 @@
       "sourceLabel": "LTX-2 ProOpen Weights"
     },
     {
-      "modelId": "magi-2-preview",
+      "modelId": "magi-2",
+      "benchmarkId": "aa-text-to-video",
+      "raw": 1156,
+      "stderr": 9,
+      "sourceLabel": "MAGI-2 Preview (0912)"
+    },
+    {
+      "modelId": "magi-2",
       "benchmarkId": "aa-image-to-video",
       "raw": 1096,
       "stderr": 7,
@@ -824,18 +808,18 @@
       "sourceLabel": "LTX-2.5 ProOpen Weights"
     },
     {
-      "modelId": "wan2-5-preview",
-      "benchmarkId": "arena-text-to-video",
-      "raw": 1246,
-      "stderr": 9,
-      "sourceLabel": "wan2.5-t2v-preview"
-    },
-    {
       "modelId": "seedance-2-5",
       "benchmarkId": "arena-text-to-video",
       "raw": 1482,
       "stderr": 12,
       "sourceLabel": "dreamina-seedance-2.5-720p"
+    },
+    {
+      "modelId": "wan2-5",
+      "benchmarkId": "arena-text-to-video",
+      "raw": 1246,
+      "stderr": 9,
+      "sourceLabel": "wan2.5-t2v-preview"
     },
     {
       "modelId": "kling-2-6-pro",
@@ -880,28 +864,21 @@
       "sourceLabel": "Wan 2.6"
     },
     {
-      "modelId": "wan2-7-260612",
+      "modelId": "wan2-7",
       "benchmarkId": "aa-text-to-video",
       "raw": 1149,
       "stderr": 6,
       "sourceLabel": "Wan2.7-260612"
     },
     {
-      "modelId": "wan-2-7",
-      "benchmarkId": "aa-text-to-video",
-      "raw": 1098,
-      "stderr": 7,
-      "sourceLabel": "Wan 2.7"
-    },
-    {
-      "modelId": "wan-2-7",
+      "modelId": "wan2-7",
       "benchmarkId": "arena-text-to-video",
       "raw": 1341,
       "stderr": 8,
       "sourceLabel": "wan2.7-t2v"
     },
     {
-      "modelId": "wan-2-7",
+      "modelId": "wan2-7",
       "benchmarkId": "aa-image-to-video",
       "raw": 1078,
       "stderr": 8,
