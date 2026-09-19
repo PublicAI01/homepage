@@ -30,6 +30,7 @@ function mockAssessment(payload: unknown, ok = true) {
 
 afterEach(() => {
   vi.unstubAllGlobals();
+  vi.unstubAllEnvs();
 });
 
 describe('verifyRecaptchaToken', () => {
@@ -47,6 +48,21 @@ describe('verifyRecaptchaToken', () => {
         userIpAddress: '203.0.113.9',
       },
     });
+  });
+
+  // www.publicai.io serves the site without redirecting to the apex, so a
+  // token minted there names the www host; production rejected it and the
+  // contact form failed for every www visitor (2026-09-19).
+  it('accepts www.publicai.io in production', async () => {
+    vi.stubEnv('NODE_ENV', 'production');
+    mockAssessment({
+      ...ACCEPTED,
+      tokenProperties: {
+        ...ACCEPTED.tokenProperties,
+        hostname: 'www.publicai.io',
+      },
+    });
+    await expect(verifyRecaptchaToken(PARAMS)).resolves.toBe(true);
   });
 
   it.each(['localhost', '127.0.0.1'])(

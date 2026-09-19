@@ -2,7 +2,15 @@ const RECAPTCHA_PROJECT_ID = 'publicai-homepage';
 const ASSESSMENT_URL = `https://recaptchaenterprise.googleapis.com/v1/projects/${RECAPTCHA_PROJECT_ID}/assessments`;
 const ASSESSMENT_TIMEOUT_MS = 10_000;
 const MIN_SCORE = 0.5;
-const PRODUCTION_HOSTNAME = 'publicai.io';
+/**
+ * Every hostname the site is served from. https://www.publicai.io answers
+ * the same pages with no redirect to the apex, and a token minted on a www
+ * page carries `www.publicai.io` as its hostname — so with the apex alone
+ * on this list every contact submission from www failed with
+ * captcha_failed and nobody was told (2026-09-19). The reCAPTCHA site key's
+ * own domain list in the Google console must allow the same hosts.
+ */
+const SITE_HOSTNAMES = ['publicai.io', 'www.publicai.io'];
 
 interface AssessmentResponse {
   tokenProperties?: {
@@ -57,8 +65,8 @@ export async function verifyRecaptchaToken(
 
   const allowedHostnames =
     process.env.NODE_ENV === 'production'
-      ? [PRODUCTION_HOSTNAME]
-      : [PRODUCTION_HOSTNAME, 'localhost', '127.0.0.1'];
+      ? SITE_HOSTNAMES
+      : [...SITE_HOSTNAMES, 'localhost', '127.0.0.1'];
 
   const tokenProperties = data.tokenProperties;
   return (
