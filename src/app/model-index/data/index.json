@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T10:50:13.292Z",
+  "generatedAt": "2026-09-19T20:21:42.689Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -1359,6 +1359,7 @@
       "retrievedAt": "2026-09-19",
       "publishedAt": "2026-09-05",
       "metric": "percent",
+      "logo": "/model-index/logos/datacamp-astra-vs-fable.png",
       "category": "Reasoning",
       "domain": "Mathematics",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
@@ -1375,6 +1376,7 @@
       "retrievedAt": "2026-09-19",
       "publishedAt": "2026-09-05",
       "metric": "percent",
+      "logo": "/model-index/logos/datacamp-astra-vs-fable.png",
       "category": "Reasoning",
       "domain": "Expert reasoning",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
@@ -1391,6 +1393,7 @@
       "retrievedAt": "2026-09-19",
       "publishedAt": "2026-09-05",
       "metric": "percent",
+      "logo": "/model-index/logos/datacamp-astra-vs-fable.png",
       "category": "Agents",
       "domain": "Workflow automation",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
@@ -1407,6 +1410,7 @@
       "retrievedAt": "2026-09-19",
       "publishedAt": "2026-09-05",
       "metric": "percent",
+      "logo": "/model-index/logos/datacamp-astra-vs-fable.png",
       "category": "Professional",
       "domain": "Cybersecurity",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
@@ -1423,6 +1427,7 @@
       "retrievedAt": "2026-09-19",
       "publishedAt": "2026-09-05",
       "metric": "index",
+      "logo": "/model-index/logos/datacamp-astra-vs-fable.png",
       "category": "General",
       "domain": "General intelligence",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
@@ -1439,6 +1444,7 @@
       "retrievedAt": "2026-09-19",
       "publishedAt": "2026-09-05",
       "metric": "percent",
+      "logo": "/model-index/logos/datacamp-astra-vs-fable.png",
       "category": "Coding",
       "domain": "Agentic coding",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
@@ -1455,6 +1461,7 @@
       "retrievedAt": "2026-09-19",
       "publishedAt": "2026-09-05",
       "metric": "percent",
+      "logo": "/model-index/logos/datacamp-astra-vs-fable.png",
       "category": "Coding",
       "domain": "Agentic coding",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
@@ -1471,6 +1478,7 @@
       "retrievedAt": "2026-09-19",
       "publishedAt": "2026-09-05",
       "metric": "percent",
+      "logo": "/model-index/logos/datacamp-astra-vs-fable.png",
       "category": "Coding",
       "domain": "Agentic coding",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
@@ -1487,6 +1495,7 @@
       "retrievedAt": "2026-09-19",
       "publishedAt": "2026-09-05",
       "metric": "percent",
+      "logo": "/model-index/logos/datacamp-astra-vs-fable.png",
       "category": "Coding",
       "domain": "Agentic coding",
       "caveat": "Third-party write-up. Figures are the vendors’ own as compiled by the author; some rows are one vendor’s internal evaluations with no external replication. Two models only.",
@@ -2196,28 +2205,6 @@
       }
     },
     {
-      "id": "gpt-3-5-turbo-0125",
-      "name": "GPT-3.5 Turbo 0125",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-4-0125-preview",
-      "name": "GPT-4 0125 Preview",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "qwen-plus-0125",
       "name": "Qwen Plus 0125",
       "org": "Alibaba",
@@ -2335,17 +2322,6 @@
       }
     },
     {
-      "id": "gpt-4-0314",
-      "name": "GPT-4 0314",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "deepseek-v3-0324",
       "name": "DeepSeek V3 0324",
       "org": "DeepSeek",
@@ -2452,17 +2428,6 @@
       }
     },
     {
-      "id": "gpt-4o-0513",
-      "name": "GPT-4o (0513)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "gemini-advanced-0514",
       "name": "Gemini Advanced 0514",
       "org": "Google",
@@ -2549,28 +2514,6 @@
       }
     },
     {
-      "id": "gpt-3-5-turbo-0613",
-      "name": "GPT-3.5 Turbo (0613)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-4-0613",
-      "name": "GPT-4 0613",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "gemini-2-5-flash-lite-preview-06-17",
       "name": "Gemini 2.5 Flash Lite Preview 06 17",
       "org": "Google",
@@ -2578,17 +2521,6 @@
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      }
-    },
-    {
-      "id": "claude-3-5-sonnet-06-20",
-      "name": "Claude 3.5 Sonnet 06-20",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
         }
       }
     },
@@ -2743,17 +2675,6 @@
       "id": "k-exaone-2-0-0803",
       "name": "K-EXAONE 2.0 0803",
       "org": "LG AI Research"
-    },
-    {
-      "id": "gpt-4o-08-06",
-      "name": "GPT-4o 08-06",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
     },
     {
       "id": "deepseek-v4-pro-0813",
@@ -2980,50 +2901,6 @@
       "size": { "paramsB": 7, "source": "name" }
     },
     {
-      "id": "o1-mini-2024-09-12",
-      "name": "O1 Mini 2024 09 12",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "o1-preview-2024-09-12",
-      "name": "O1 Preview 2024 09 12",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "deepseek-r1-claude-3-5-sonnet-20241022",
-      "name": "DeepSeek R1 + claude-3-5-sonnet-20241022",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "o1-2024-12-17",
-      "name": "O1 2024 12 17",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "olmoe-1b-7b-instruct-january-2025",
       "name": "OLMoE 1B-7B Instruct January 2025",
       "org": "Ai2",
@@ -3146,6 +3023,17 @@
         "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
       },
       "size": { "paramsB": 49, "source": "name" }
+    },
+    {
+      "id": "deepseek-r1-claude-3-5-sonnet",
+      "name": "DeepSeek R1 + claude-3-5-sonnet",
+      "org": "Anthropic",
+      "access": {
+        "official": {
+          "name": "Claude Developer Platform",
+          "url": "https://docs.claude.com"
+        }
+      }
     },
     {
       "id": "finix-s1-32b",
@@ -3360,17 +3248,6 @@
           "listedAt": "2024-12-17",
           "modalities": ["text", "image", "file"]
         },
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "o1-preview",
-      "name": "O1 Preview",
-      "org": "OpenAI",
-      "access": {
         "official": {
           "name": "OpenAI Platform",
           "url": "https://platform.openai.com/docs"
@@ -3881,17 +3758,6 @@
       }
     },
     {
-      "id": "claude-3-5-sonnet-10-22",
-      "name": "Claude 3.5 Sonnet 10-22",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
       "id": "ernie-5-0-preview-1022",
       "name": "Ernie 5.0 Preview 1022",
       "org": "Baidu",
@@ -3936,28 +3802,6 @@
         }
       },
       "size": { "paramsB": 11, "source": "name" }
-    },
-    {
-      "id": "gpt-3-5-turbo-1106",
-      "name": "GPT-3.5 Turbo 1106",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-4-1106-preview",
-      "name": "GPT-4 1106 Preview",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
     },
     {
       "id": "nova-experimental-chat-11-10",
@@ -4203,8 +4047,7 @@
           "name": "Llama developer docs",
           "url": "https://www.llama.com/docs"
         }
-      },
-      "size": { "paramsB": 17, "source": "name" }
+      }
     },
     {
       "id": "llama-4-maverick-17bx128e-instruct-fp8",
@@ -4226,8 +4069,7 @@
           "name": "Llama developer docs",
           "url": "https://www.llama.com/docs"
         }
-      },
-      "size": { "paramsB": 17, "source": "name" }
+      }
     },
     {
       "id": "phi-3-medium-128k-instruct",
@@ -4460,8 +4302,7 @@
           "name": "Llama developer docs",
           "url": "https://www.llama.com/docs"
         }
-      },
-      "size": { "paramsB": 17, "source": "name" }
+      }
     },
     {
       "id": "llama-4-scout-17bx16e-instruct",
@@ -6277,121 +6118,6 @@
       "size": { "paramsB": 21, "source": "name" }
     },
     {
-      "id": "claude-3-opus-20240229",
-      "name": "Claude 3 Opus 20240229",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "claude-3-sonnet-20240229",
-      "name": "Claude 3 Sonnet 20240229",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "claude-3-haiku-20240307",
-      "name": "Claude 3 Haiku 20240307",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "gpt-4-turbo-2024-04-09",
-      "name": "GPT-4 Turbo 2024 04 09",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-4o-2024-05-13",
-      "name": "GPT-4o 2024 05 13",
-      "org": "OpenAI",
-      "access": {
-        "openrouter": {
-          "id": "openai/gpt-4o-2024-05-13",
-          "url": "https://openrouter.ai/openai/gpt-4o-2024-05-13",
-          "contextLength": 128000,
-          "inputPerM": 5,
-          "outputPerM": 15,
-          "listedAt": "2024-05-13",
-          "modalities": ["text", "image", "file"]
-        },
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "claude-3-5-sonnet-20240620",
-      "name": "Claude 3.5 Sonnet 20240620",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "gpt-4o-mini-2024-07-18",
-      "name": "GPT-4o Mini 2024 07 18",
-      "org": "OpenAI",
-      "access": {
-        "openrouter": {
-          "id": "openai/gpt-4o-mini-2024-07-18",
-          "url": "https://openrouter.ai/openai/gpt-4o-mini-2024-07-18",
-          "contextLength": 128000,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
-          "listedAt": "2024-07-18",
-          "modalities": ["text", "image", "file"]
-        },
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-4o-2024-08-06",
-      "name": "GPT-4o 2024 08 06",
-      "org": "OpenAI",
-      "access": {
-        "openrouter": {
-          "id": "openai/gpt-4o-2024-08-06",
-          "url": "https://openrouter.ai/openai/gpt-4o-2024-08-06",
-          "contextLength": 128000,
-          "inputPerM": 2.5,
-          "outputPerM": 10,
-          "listedAt": "2024-08-06",
-          "modalities": ["text", "image", "file"]
-        },
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "reka-core-20240904",
       "name": "Reka Core 20240904",
       "org": "Reka",
@@ -6404,48 +6130,6 @@
       "access": { "official": { "name": "Reka", "url": "https://www.reka.ai" } }
     },
     {
-      "id": "claude-3-5-haiku-20241022",
-      "name": "Claude 3.5 Haiku 20241022",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "claude-3-5-sonnet-20241022",
-      "name": "Claude 3.5 Sonnet 20241022",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "gpt-4o-2024-11-20",
-      "name": "GPT-4o 2024 11 20",
-      "org": "OpenAI",
-      "access": {
-        "openrouter": {
-          "id": "openai/gpt-4o-2024-11-20",
-          "url": "https://openrouter.ai/openai/gpt-4o-2024-11-20",
-          "contextLength": 128000,
-          "inputPerM": 2.5,
-          "outputPerM": 10,
-          "listedAt": "2024-11-20",
-          "modalities": ["text", "image", "file"]
-        },
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "qwen-max-2025-01-25",
       "name": "Qwen Max 2025 01 25",
       "org": "Alibaba",
@@ -6453,17 +6137,6 @@
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "o3-mini-2025-01-31",
-      "name": "O3 Mini 2025 01 31",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
         }
       }
     },
@@ -6490,28 +6163,6 @@
       }
     },
     {
-      "id": "chatgpt-4o-latest-2025-02-15",
-      "name": "Chatgpt-4o-latest (2025-02-15)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "claude-3-7-sonnet-20250219",
-      "name": "Claude 3.7 Sonnet 20250219",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
       "id": "hunyuan-turbos-20250226",
       "name": "Hunyuan Turbos 20250226",
       "org": "Tencent",
@@ -6519,94 +6170,6 @@
         "official": {
           "name": "Tencent Hunyuan",
           "url": "https://cloud.tencent.com/product/hunyuan"
-        }
-      }
-    },
-    {
-      "id": "gpt-4-5-preview-2025-02-27",
-      "name": "GPT-4.5 Preview 2025 02 27",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "chatgpt-4o-latest-20250326",
-      "name": "ChatGPT-4o Latest 20250326",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "chatgpt-4o-latest-2025-03-29",
-      "name": "Chatgpt-4o-latest (2025-03-29)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-4-1-2025-04-14",
-      "name": "GPT-4.1 2025 04 14",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-4-1-mini-2025-04-14",
-      "name": "GPT-4.1 Mini 2025 04 14",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-4-1-nano-2025-04-14",
-      "name": "GPT-4.1 Nano 2025 04 14",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "o3-2025-04-16",
-      "name": "O3 2025 04 16",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "o4-mini-2025-04-16",
-      "name": "O4 Mini 2025 04 16",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
         }
       }
     },
@@ -6622,28 +6185,6 @@
       }
     },
     {
-      "id": "claude-opus-4-20250514",
-      "name": "Claude Opus 4 20250514",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "claude-sonnet-4-20250514",
-      "name": "Claude Sonnet 4 20250514",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
       "id": "qwen-plus-2025-07-28",
       "name": "Qwen Plus 2025 07 28",
       "org": "Alibaba",
@@ -6651,50 +6192,6 @@
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "claude-opus-4-1-20250805",
-      "name": "Claude Opus 4.1 20250805",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-2025-08-07",
-      "name": "GPT-5 (2025-08-07)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-mini-2025-08-07",
-      "name": "GPT-5 Mini 2025 08 07",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-nano-2025-08-07",
-      "name": "GPT-5 Nano 2025 08 07",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
         }
       }
     },
@@ -6710,28 +6207,6 @@
       }
     },
     {
-      "id": "claude-sonnet-4-5-20250929",
-      "name": "Claude Sonnet 4.5 20250929",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "claude-haiku-4-5-20251001",
-      "name": "Claude Haiku 4.5 20251001",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
       "id": "qwen3-vl-flash-2025-10-25",
       "name": "Qwen3 Vl Flash 2025 10 25",
       "org": "Alibaba",
@@ -6743,67 +6218,12 @@
       }
     },
     {
-      "id": "claude-opus-4-5-20251101",
-      "name": "Claude Opus 4.5 20251101",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-1-2025-11-13",
-      "name": "GPT-5.1 (2025-11-13)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-2-2025-12-11",
-      "name": "GPT-5.2 2025 12 11",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-5-instant-june-2026",
-      "name": "GPT-5.5 Instant (June 2026)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "evocua-8b-20260105",
       "name": "EvoCUA 8B 20260105",
       "org": "Meituan",
       "size": { "paramsB": 8, "source": "name" }
     },
     { "id": "evocua-20260105", "name": "EvoCUA 20260105", "org": "Meituan" },
-    {
-      "id": "gpt-5-2-chat-latest-20260210",
-      "name": "GPT-5.2 Chat Latest 20260210",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
     {
       "id": "qwen3-5-plus-2026-02-15",
       "name": "Qwen3.5 Plus 2026 02 15",
@@ -6832,61 +6252,6 @@
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-4-2026-03-05",
-      "name": "GPT-5.4 2026 03 05",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-4-pro-2026-03-05",
-      "name": "GPT-5.4 Pro 2026 03 05",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-4-mini-2026-03-17",
-      "name": "GPT-5.4 Mini 2026 03 17",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-4-nano-2026-03-17",
-      "name": "GPT-5.4 Nano 2026 03 17",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
-      "id": "gpt-5-6-luna-2026-07-30",
-      "name": "GPT-5.6 Luna 2026-07-30",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
         }
       }
     },
@@ -8559,8 +7924,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -8772,17 +8137,6 @@
       }
     },
     {
-      "id": "o3-preview-low",
-      "name": "o3 (Preview, Low)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "o3-pro",
       "name": "O3 Pro",
       "org": "OpenAI",
@@ -8841,6 +8195,17 @@
         "official": {
           "name": "Upstage Console",
           "url": "https://console.upstage.ai"
+        }
+      }
+    },
+    {
+      "id": "claude-3-sonnet",
+      "name": "Claude 3 Sonnet",
+      "org": "Anthropic",
+      "access": {
+        "official": {
+          "name": "Claude Developer Platform",
+          "url": "https://docs.claude.com"
         }
       }
     },
@@ -9432,18 +8797,6 @@
         }
       },
       "size": { "paramsB": 70, "source": "name" }
-    },
-    {
-      "id": "granite-3-3-8b-instruct",
-      "name": "Granite 3.3 8B Instruct",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 8, "source": "name" }
     },
     {
       "id": "ibm-granite-3-3-8b-instruct",
@@ -10122,18 +9475,6 @@
       "size": { "paramsB": 30, "source": "name" }
     },
     {
-      "id": "ibm-granite-4-2-30b",
-      "name": "IBM Granite 4.2 30B",
-      "org": "IBM",
-      "access": {
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 30, "source": "name" }
-    },
-    {
       "id": "muse-glimmer-30b",
       "name": "Muse Glimmer-30B",
       "org": "Meta",
@@ -10445,6 +9786,17 @@
       }
     },
     {
+      "id": "chatgpt-4o-latest",
+      "name": "ChatGPT-4o Latest",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
       "id": "deepseek-v4-flash-vision-exp",
       "name": "DeepSeek V4 Flash Vision Exp",
       "org": "DeepSeek",
@@ -10573,7 +9925,7 @@
     },
     {
       "id": "gpt-4o-mini",
-      "name": "GPT-4o mini",
+      "name": "GPT-4o Mini",
       "org": "OpenAI",
       "access": {
         "openrouter": {
@@ -10597,12 +9949,12 @@
       "org": "OpenAI",
       "access": {
         "openrouter": {
-          "id": "openai/gpt-4o",
-          "url": "https://openrouter.ai/openai/gpt-4o",
+          "id": "openai/gpt-4o-2024-11-20",
+          "url": "https://openrouter.ai/openai/gpt-4o-2024-11-20",
           "contextLength": 128000,
           "inputPerM": 2.5,
           "outputPerM": 10,
-          "listedAt": "2024-05-13",
+          "listedAt": "2024-11-20",
           "modalities": ["text", "image", "file"]
         },
         "official": {
@@ -10870,8 +10222,8 @@
       }
     },
     {
-      "id": "claude-4-sonnet",
-      "name": "Claude 4 Sonnet",
+      "id": "claude-sonnet-4",
+      "name": "Claude Sonnet 4",
       "org": "Anthropic",
       "access": {
         "openrouter": {
@@ -10981,31 +10333,6 @@
       }
     },
     {
-      "id": "granite-4-0-micro",
-      "name": "Granite 4.0 Micro",
-      "org": "IBM",
-      "access": {
-        "openrouter": {
-          "id": "ibm-granite/granite-4.0-h-micro",
-          "url": "https://openrouter.ai/ibm-granite/granite-4.0-h-micro",
-          "contextLength": 131000,
-          "inputPerM": 0.017,
-          "outputPerM": 0.112,
-          "listedAt": "2025-10-20",
-          "modalities": ["text"]
-        },
-        "weights": {
-          "huggingFaceId": "ibm-granite/granite-4.0-h-micro",
-          "url": "https://huggingface.co/ibm-granite/granite-4.0-h-micro"
-        },
-        "official": {
-          "name": "IBM Granite",
-          "url": "https://www.ibm.com/granite"
-        }
-      },
-      "size": { "paramsB": 3.2, "source": "huggingface" }
-    },
-    {
       "id": "granite-4-1-8b",
       "name": "Granite 4.1 8B",
       "org": "IBM",
@@ -11072,7 +10399,7 @@
     },
     {
       "id": "gpt-4-1-mini",
-      "name": "GPT-4.1 mini",
+      "name": "GPT-4.1 Mini",
       "org": "OpenAI",
       "access": {
         "openrouter": {
@@ -11092,7 +10419,7 @@
     },
     {
       "id": "gpt-4-1-nano",
-      "name": "GPT-4.1 nano",
+      "name": "GPT-4.1 Nano",
       "org": "OpenAI",
       "access": {
         "openrouter": {
@@ -11119,8 +10446,8 @@
       }
     },
     {
-      "id": "claude-4-1-opus",
-      "name": "Claude 4.1 Opus",
+      "id": "claude-opus-4-1",
+      "name": "Claude Opus 4.1",
       "org": "Anthropic",
       "access": {
         "openrouter": {
@@ -11289,17 +10616,6 @@
       }
     },
     {
-      "id": "gpt-4-5-preview",
-      "name": "GPT-4.5 Preview",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "grok-4-5",
       "name": "Grok 4.5",
       "org": "SpaceXAI",
@@ -11317,8 +10633,8 @@
       }
     },
     {
-      "id": "claude-4-5-haiku",
-      "name": "Claude 4.5 Haiku",
+      "id": "claude-haiku-4-5",
+      "name": "Claude Haiku 4.5",
       "org": "Anthropic",
       "access": {
         "openrouter": {
@@ -11337,8 +10653,8 @@
       }
     },
     {
-      "id": "opus-4-5",
-      "name": "Opus 4.5",
+      "id": "claude-opus-4-5",
+      "name": "Claude Opus 4.5",
       "org": "Anthropic",
       "access": {
         "openrouter": {
@@ -11357,8 +10673,8 @@
       }
     },
     {
-      "id": "claude-4-5-sonnet",
-      "name": "Claude 4.5 Sonnet",
+      "id": "claude-sonnet-4-5",
+      "name": "Claude Sonnet 4.5",
       "org": "Anthropic",
       "access": {
         "openrouter": {
@@ -11995,6 +11311,17 @@
           "listedAt": "2025-12-10",
           "modalities": ["file", "image", "text"]
         },
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
+        }
+      }
+    },
+    {
+      "id": "gpt-5-2-chat-latest",
+      "name": "GPT-5.2 Chat Latest",
+      "org": "OpenAI",
+      "access": {
         "official": {
           "name": "OpenAI Platform",
           "url": "https://platform.openai.com/docs"
@@ -14107,86 +13434,6 @@
       "sourceLabel": "gemini-2.0-flash-thinking-exp-01-21"
     },
     {
-      "modelId": "gpt-3-5-turbo-0125",
-      "benchmarkId": "lmarena",
-      "raw": 1225,
-      "stderr": 5,
-      "sourceLabel": "gpt-3.5-turbo-0125"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-0125",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 63.3,
-      "sourceLabel": "GPT-3.5 Turbo (0125)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-0125",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 92,
-      "sourceLabel": "GPT-3.5 Turbo (0125)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-0125",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 96.7,
-      "sourceLabel": "GPT-3.5 Turbo (0125)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-0125",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 60.6,
-      "sourceLabel": "GPT-3.5 Turbo (0125)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-0125",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 94.2,
-      "sourceLabel": "GPT-3.5 Turbo (0125)"
-    },
-    {
-      "modelId": "gpt-4-0125-preview",
-      "benchmarkId": "lmarena",
-      "raw": 1313,
-      "stderr": 4,
-      "sourceLabel": "gpt-4-0125-preview"
-    },
-    {
-      "modelId": "gpt-4-0125-preview",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 3.2,
-      "sourceLabel": "gpt-4-0125-preview"
-    },
-    {
-      "modelId": "gpt-4-0125-preview",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 18.9,
-      "sourceLabel": "gpt-4-0125-preview"
-    },
-    {
-      "modelId": "gpt-4-0125-preview",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 5.5,
-      "sourceLabel": "gpt-4-0125-preview"
-    },
-    {
-      "modelId": "gpt-4-0125-preview",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 2.2,
-      "sourceLabel": "gpt-4-0125-preview"
-    },
-    {
-      "modelId": "gpt-4-0125-preview",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 63.3,
-      "sourceLabel": "gpt-4-0125-preview"
-    },
-    {
-      "modelId": "gpt-4-0125-preview",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 8.9,
-      "sourceLabel": "gpt-4-0125-preview"
-    },
-    {
       "modelId": "qwen-plus-0125",
       "benchmarkId": "lmarena",
       "raw": 1346,
@@ -14611,13 +13858,6 @@
       "sourceLabel": "grok-4.20-beta-0309-reasoning"
     },
     {
-      "modelId": "gpt-4-0314",
-      "benchmarkId": "lmarena",
-      "raw": 1287,
-      "stderr": 5,
-      "sourceLabel": "gpt-4-0314"
-    },
-    {
       "modelId": "deepseek-v3-0324",
       "benchmarkId": "lmarena",
       "raw": 1396,
@@ -14994,12 +14234,6 @@
       "sourceLabel": "Gemini 2.5 Pro Preview 05-06"
     },
     {
-      "modelId": "gpt-4o-0513",
-      "benchmarkId": "mmmu-pro",
-      "raw": 51.9,
-      "sourceLabel": "GPT-4o (0513)"
-    },
-    {
       "modelId": "gemini-advanced-0514",
       "benchmarkId": "lmarena",
       "raw": 1336,
@@ -15147,54 +14381,11 @@
       "sourceLabel": "Gemini 2.5 Pro (06-05)"
     },
     {
-      "modelId": "gpt-3-5-turbo-0613",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 68,
-      "sourceLabel": "GPT-3.5 Turbo (0613)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-0613",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 95.8,
-      "sourceLabel": "GPT-3.5 Turbo (0613)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-0613",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.6,
-      "sourceLabel": "GPT-3.5 Turbo (0613)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-0613",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 69.9,
-      "sourceLabel": "GPT-3.5 Turbo (0613)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-0613",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 93.2,
-      "sourceLabel": "GPT-3.5 Turbo (0613)"
-    },
-    {
-      "modelId": "gpt-4-0613",
-      "benchmarkId": "lmarena",
-      "raw": 1276,
-      "stderr": 4,
-      "sourceLabel": "gpt-4-0613"
-    },
-    {
       "modelId": "gemini-2-5-flash-lite-preview-06-17",
       "benchmarkId": "lmarena",
       "raw": 1375,
       "stderr": 5,
       "sourceLabel": "gemini-2.5-flash-lite-preview-06-17-thinking"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-06-20",
-      "benchmarkId": "simplebench",
-      "raw": 27.5,
-      "sourceLabel": "Claude 3.5 Sonnet 06-20"
     },
     {
       "modelId": "jamba-large-1-7-2025-07",
@@ -15571,12 +14762,6 @@
       "raw": 918,
       "stderr": 19,
       "sourceLabel": "K-EXAONE 2.0 0803"
-    },
-    {
-      "modelId": "gpt-4o-08-06",
-      "benchmarkId": "simplebench",
-      "raw": 17.8,
-      "sourceLabel": "GPT-4o 08-06"
     },
     {
       "modelId": "deepseek-v4-pro-0813",
@@ -16228,111 +15413,6 @@
       "sourceLabel": "Qwen2.5-7B-Instruct-1M"
     },
     {
-      "modelId": "o1-mini-2024-09-12",
-      "benchmarkId": "aider-polyglot",
-      "raw": 32.9,
-      "sourceLabel": "o1-mini-2024-09-12"
-    },
-    {
-      "modelId": "o1-mini-2024-09-12",
-      "benchmarkId": "vals-medqa",
-      "raw": 90.22,
-      "stderr": 0.53,
-      "sourceLabel": "openai/o1-mini-2024-09-12"
-    },
-    {
-      "modelId": "o1-mini-2024-09-12",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 88.5,
-      "sourceLabel": "o1-mini (2024-09-12)"
-    },
-    {
-      "modelId": "o1-mini-2024-09-12",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 97,
-      "sourceLabel": "o1-mini (2024-09-12)"
-    },
-    {
-      "modelId": "o1-mini-2024-09-12",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98.3,
-      "sourceLabel": "o1-mini (2024-09-12)"
-    },
-    {
-      "modelId": "o1-mini-2024-09-12",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 96.9,
-      "sourceLabel": "o1-mini (2024-09-12)"
-    },
-    {
-      "modelId": "o1-mini-2024-09-12",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97,
-      "sourceLabel": "o1-mini (2024-09-12)"
-    },
-    {
-      "modelId": "o1-preview-2024-09-12",
-      "benchmarkId": "vals-medqa",
-      "raw": 93.01,
-      "stderr": 0.46,
-      "sourceLabel": "openai/o1-preview-2024-09-12"
-    },
-    {
-      "modelId": "deepseek-r1-claude-3-5-sonnet-20241022",
-      "benchmarkId": "aider-polyglot",
-      "raw": 64,
-      "sourceLabel": "DeepSeek R1 + claude-3-5-sonnet-20241022"
-    },
-    {
-      "modelId": "o1-2024-12-17",
-      "benchmarkId": "lmarena",
-      "raw": 1402,
-      "stderr": 4,
-      "sourceLabel": "o1-2024-12-17"
-    },
-    {
-      "modelId": "o1-2024-12-17",
-      "benchmarkId": "aider-polyglot",
-      "raw": 61.7,
-      "sourceLabel": "o1-2024-12-17 (high)"
-    },
-    {
-      "modelId": "o1-2024-12-17",
-      "benchmarkId": "simplebench",
-      "raw": 40.1,
-      "sourceLabel": "o1-2024-12-17 (high)"
-    },
-    {
-      "modelId": "o1-2024-12-17",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 96.3,
-      "sourceLabel": "o1 (2024-12-17)"
-    },
-    {
-      "modelId": "o1-2024-12-17",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 99,
-      "sourceLabel": "o1 (2024-12-17)"
-    },
-    {
-      "modelId": "o1-2024-12-17",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98.3,
-      "sourceLabel": "o1 (2024-12-17)"
-    },
-    {
-      "modelId": "o1-2024-12-17",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 97.3,
-      "sourceLabel": "o1 (2024-12-17)"
-    },
-    {
-      "modelId": "o1-2024-12-17",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97,
-      "sourceLabel": "o1 (2024-12-17)"
-    },
-    {
       "modelId": "olmoe-1b-7b-instruct-january-2025",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 62.9,
@@ -16542,6 +15622,12 @@
       "raw": 1328,
       "stderr": 12,
       "sourceLabel": "llama-3.3-nemotron-49b-super-v1"
+    },
+    {
+      "modelId": "deepseek-r1-claude-3-5-sonnet",
+      "benchmarkId": "aider-polyglot",
+      "raw": 64,
+      "sourceLabel": "DeepSeek R1 + claude-3-5-sonnet-20241022"
     },
     {
       "modelId": "finix-s1-32b",
@@ -17053,9 +16139,52 @@
     },
     {
       "modelId": "o1-mini",
+      "benchmarkId": "aider-polyglot",
+      "raw": 32.9,
+      "sourceLabel": "o1-mini-2024-09-12"
+    },
+    {
+      "modelId": "o1-mini",
       "benchmarkId": "simplebench",
       "raw": 18.1,
       "sourceLabel": "o1-mini"
+    },
+    {
+      "modelId": "o1-mini",
+      "benchmarkId": "vals-medqa",
+      "raw": 90.22,
+      "stderr": 0.53,
+      "sourceLabel": "openai/o1-mini-2024-09-12"
+    },
+    {
+      "modelId": "o1-mini",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 88.5,
+      "sourceLabel": "o1-mini (2024-09-12)"
+    },
+    {
+      "modelId": "o1-mini",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 97,
+      "sourceLabel": "o1-mini (2024-09-12)"
+    },
+    {
+      "modelId": "o1-mini",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 98.3,
+      "sourceLabel": "o1-mini (2024-09-12)"
+    },
+    {
+      "modelId": "o1-mini",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 96.9,
+      "sourceLabel": "o1-mini (2024-09-12)"
+    },
+    {
+      "modelId": "o1-mini",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97,
+      "sourceLabel": "o1-mini (2024-09-12)"
     },
     {
       "modelId": "o1-mini",
@@ -17101,6 +16230,25 @@
     },
     {
       "modelId": "o1",
+      "benchmarkId": "lmarena",
+      "raw": 1402,
+      "stderr": 4,
+      "sourceLabel": "o1-2024-12-17"
+    },
+    {
+      "modelId": "o1",
+      "benchmarkId": "aider-polyglot",
+      "raw": 61.7,
+      "sourceLabel": "o1-2024-12-17 (high)"
+    },
+    {
+      "modelId": "o1",
+      "benchmarkId": "simplebench",
+      "raw": 40.1,
+      "sourceLabel": "o1-2024-12-17 (high)"
+    },
+    {
+      "modelId": "o1",
       "benchmarkId": "vals-legal_bench",
       "raw": 80.39,
       "stderr": 0.58,
@@ -17116,9 +16264,9 @@
     {
       "modelId": "o1",
       "benchmarkId": "vals-medqa",
-      "raw": 96.52,
-      "stderr": 0.33,
-      "sourceLabel": "o1"
+      "raw": 93.01,
+      "stderr": 0.46,
+      "sourceLabel": "openai/o1-preview-2024-09-12"
     },
     {
       "modelId": "o1",
@@ -17143,85 +16291,66 @@
     },
     {
       "modelId": "o1",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 0.9,
-      "sourceLabel": "o1"
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 96.3,
+      "sourceLabel": "o1 (2024-12-17)"
     },
     {
       "modelId": "o1",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 3.9,
-      "sourceLabel": "o1"
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 99,
+      "sourceLabel": "o1 (2024-12-17)"
     },
     {
       "modelId": "o1",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 3.7,
-      "sourceLabel": "o1"
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 98.3,
+      "sourceLabel": "o1 (2024-12-17)"
     },
     {
       "modelId": "o1",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 2.6,
-      "sourceLabel": "o1"
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 97.3,
+      "sourceLabel": "o1 (2024-12-17)"
     },
     {
       "modelId": "o1",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 82.2,
-      "sourceLabel": "o1"
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97,
+      "sourceLabel": "o1 (2024-12-17)"
     },
     {
       "modelId": "o1",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 11.1,
-      "sourceLabel": "o1"
-    },
-    {
-      "modelId": "o1-preview",
-      "benchmarkId": "lmarena",
-      "raw": 1388,
-      "stderr": 5,
-      "sourceLabel": "o1-preview"
-    },
-    {
-      "modelId": "o1-preview",
-      "benchmarkId": "simplebench",
-      "raw": 41.7,
-      "sourceLabel": "o1-preview"
-    },
-    {
-      "modelId": "o1-preview",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 0.9,
       "sourceLabel": "o1-preview"
     },
     {
-      "modelId": "o1-preview",
+      "modelId": "o1",
       "benchmarkId": "enkrypt-harmful",
       "raw": 1.7,
       "sourceLabel": "o1-preview"
     },
     {
-      "modelId": "o1-preview",
+      "modelId": "o1",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 4.5,
       "sourceLabel": "o1-preview"
     },
     {
-      "modelId": "o1-preview",
+      "modelId": "o1",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 2.4,
       "sourceLabel": "o1-preview"
     },
     {
-      "modelId": "o1-preview",
+      "modelId": "o1",
       "benchmarkId": "enkrypt-bias",
       "raw": 76.5,
       "sourceLabel": "o1-preview"
     },
     {
-      "modelId": "o1-preview",
+      "modelId": "o1",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 10.2,
       "sourceLabel": "o1-preview"
@@ -18757,12 +17886,6 @@
       "sourceLabel": "amazon-nova-experimental-chat-10-20"
     },
     {
-      "modelId": "claude-3-5-sonnet-10-22",
-      "benchmarkId": "simplebench",
-      "raw": 41.4,
-      "sourceLabel": "Claude 3.5 Sonnet 10-22"
-    },
-    {
       "modelId": "ernie-5-0-preview-1022",
       "benchmarkId": "lmarena",
       "raw": 1419,
@@ -18888,50 +18011,6 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 29.8,
       "sourceLabel": "Llama-3.2-11B-Vision-Instruct"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-1106",
-      "benchmarkId": "lmarena",
-      "raw": 1204,
-      "stderr": 9,
-      "sourceLabel": "gpt-3.5-turbo-1106"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-1106",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 68.6,
-      "sourceLabel": "GPT-3.5 Turbo (1106)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-1106",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 92.3,
-      "sourceLabel": "GPT-3.5 Turbo (1106)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-1106",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98,
-      "sourceLabel": "GPT-3.5 Turbo (1106)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-1106",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 64.9,
-      "sourceLabel": "GPT-3.5 Turbo (1106)"
-    },
-    {
-      "modelId": "gpt-3-5-turbo-1106",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 93.8,
-      "sourceLabel": "GPT-3.5 Turbo (1106)"
-    },
-    {
-      "modelId": "gpt-4-1106-preview",
-      "benchmarkId": "lmarena",
-      "raw": 1313,
-      "stderr": 4,
-      "sourceLabel": "gpt-4-1106-preview"
     },
     {
       "modelId": "nova-experimental-chat-11-10",
@@ -25344,574 +24423,6 @@
       "sourceLabel": "reka-flash-21b-20240226"
     },
     {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "lmarena",
-      "raw": 1322,
-      "stderr": 3,
-      "sourceLabel": "claude-3-opus-20240229"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 97.4,
-      "sourceLabel": "Claude 3 Opus (20240229)"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "Claude 3 Opus (20240229)"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.8,
-      "sourceLabel": "Claude 3 Opus (20240229)"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 94,
-      "sourceLabel": "Claude 3 Opus (20240229)"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 92.5,
-      "sourceLabel": "Claude 3 Opus (20240229)"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 1.5,
-      "sourceLabel": "claude-3-opus-20240229"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 7.8,
-      "sourceLabel": "claude-3-opus-20240229"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 4.3,
-      "sourceLabel": "claude-3-opus-20240229"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0.1,
-      "sourceLabel": "claude-3-opus-20240229"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 25.6,
-      "sourceLabel": "claude-3-opus-20240229"
-    },
-    {
-      "modelId": "claude-3-opus-20240229",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 15.1,
-      "sourceLabel": "claude-3-opus-20240229"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "lmarena",
-      "raw": 1281,
-      "stderr": 4,
-      "sourceLabel": "claude-3-sonnet-20240229"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 95.8,
-      "sourceLabel": "Claude 3 Sonnet (20240229)"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "Claude 3 Sonnet (20240229)"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.8,
-      "sourceLabel": "Claude 3 Sonnet (20240229)"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 90,
-      "sourceLabel": "Claude 3 Sonnet (20240229)"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 85.8,
-      "sourceLabel": "Claude 3 Sonnet (20240229)"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 2,
-      "sourceLabel": "claude-3-sonnet-20240229"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 6.7,
-      "sourceLabel": "claude-3-sonnet-20240229"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 3.7,
-      "sourceLabel": "claude-3-sonnet-20240229"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0.4,
-      "sourceLabel": "claude-3-sonnet-20240229"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 78.3,
-      "sourceLabel": "claude-3-sonnet-20240229"
-    },
-    {
-      "modelId": "claude-3-sonnet-20240229",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 20,
-      "sourceLabel": "claude-3-sonnet-20240229"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "lmarena",
-      "raw": 1261,
-      "stderr": 4,
-      "sourceLabel": "claude-3-haiku-20240307"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 91.3,
-      "sourceLabel": "Claude 3 Haiku (20240307)"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "Claude 3 Haiku (20240307)"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 100,
-      "sourceLabel": "Claude 3 Haiku (20240307)"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 62.5,
-      "sourceLabel": "Claude 3 Haiku (20240307)"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 85.3,
-      "sourceLabel": "Claude 3 Haiku (20240307)"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 4.1,
-      "sourceLabel": "claude-3-haiku-20240307"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 12.8,
-      "sourceLabel": "claude-3-haiku-20240307"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 7.3,
-      "sourceLabel": "claude-3-haiku-20240307"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0.6,
-      "sourceLabel": "claude-3-haiku-20240307"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 87.1,
-      "sourceLabel": "claude-3-haiku-20240307"
-    },
-    {
-      "modelId": "claude-3-haiku-20240307",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 22.7,
-      "sourceLabel": "claude-3-haiku-20240307"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "lmarena",
-      "raw": 1324,
-      "stderr": 4,
-      "sourceLabel": "gpt-4-turbo-2024-04-09"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "livecodebench",
-      "raw": 28.7,
-      "sourceLabel": "GPT-4-Turbo-2024-04-09"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 89.8,
-      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 99,
-      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.7,
-      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 94.1,
-      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.7,
-      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 3.9,
-      "sourceLabel": "gpt-4-turbo-2024-04-09"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 23.9,
-      "sourceLabel": "gpt-4-turbo-2024-04-09"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 5.3,
-      "sourceLabel": "gpt-4-turbo-2024-04-09"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 1.7,
-      "sourceLabel": "gpt-4-turbo-2024-04-09"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 73.6,
-      "sourceLabel": "gpt-4-turbo-2024-04-09"
-    },
-    {
-      "modelId": "gpt-4-turbo-2024-04-09",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 11.1,
-      "sourceLabel": "gpt-4-turbo-2024-04-09"
-    },
-    {
-      "modelId": "gpt-4o-2024-05-13",
-      "benchmarkId": "lmarena",
-      "raw": 1346,
-      "stderr": 3,
-      "sourceLabel": "gpt-4o-2024-05-13"
-    },
-    {
-      "modelId": "gpt-4o-2024-05-13",
-      "benchmarkId": "vals-gpqa",
-      "raw": 50.25,
-      "stderr": 2.51,
-      "sourceLabel": "GPT 4o (2024-05-13)"
-    },
-    {
-      "modelId": "gpt-4o-2024-05-13",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 82.9,
-      "sourceLabel": "GPT-4o (2024-05-13)"
-    },
-    {
-      "modelId": "gpt-4o-2024-05-13",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 98.5,
-      "sourceLabel": "GPT-4o (2024-05-13)"
-    },
-    {
-      "modelId": "gpt-4o-2024-05-13",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.1,
-      "sourceLabel": "GPT-4o (2024-05-13)"
-    },
-    {
-      "modelId": "gpt-4o-2024-05-13",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 95.1,
-      "sourceLabel": "GPT-4o (2024-05-13)"
-    },
-    {
-      "modelId": "gpt-4o-2024-05-13",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.3,
-      "sourceLabel": "GPT-4o (2024-05-13)"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "lmarena",
-      "raw": 1343,
-      "stderr": 3,
-      "sourceLabel": "claude-3-5-sonnet-20240620"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 98.1,
-      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.8,
-      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 94.9,
-      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 95.6,
-      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 2.6,
-      "sourceLabel": "claude-3-5-sonnet-20240620"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 5,
-      "sourceLabel": "claude-3-5-sonnet-20240620"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0,
-      "sourceLabel": "claude-3-5-sonnet-20240620"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 61.2,
-      "sourceLabel": "claude-3-5-sonnet-20240620"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20240620",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 24.9,
-      "sourceLabel": "claude-3-5-sonnet-20240620"
-    },
-    {
-      "modelId": "gpt-4o-mini-2024-07-18",
-      "benchmarkId": "lmarena",
-      "raw": 1318,
-      "stderr": 4,
-      "sourceLabel": "gpt-4o-mini-2024-07-18"
-    },
-    {
-      "modelId": "gpt-4o-mini-2024-07-18",
-      "benchmarkId": "livecodebench",
-      "raw": 27.5,
-      "sourceLabel": "GPT-4O-mini-2024-07-18"
-    },
-    {
-      "modelId": "gpt-4o-mini-2024-07-18",
-      "benchmarkId": "aider-polyglot",
-      "raw": 3.6,
-      "sourceLabel": "gpt-4o-mini-2024-07-18"
-    },
-    {
-      "modelId": "gpt-4o-mini-2024-07-18",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 84.9,
-      "sourceLabel": "GPT-4o mini (2024-07-18)"
-    },
-    {
-      "modelId": "gpt-4o-mini-2024-07-18",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 97.8,
-      "sourceLabel": "GPT-4o mini (2024-07-18)"
-    },
-    {
-      "modelId": "gpt-4o-mini-2024-07-18",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98.3,
-      "sourceLabel": "GPT-4o mini (2024-07-18)"
-    },
-    {
-      "modelId": "gpt-4o-mini-2024-07-18",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 88.2,
-      "sourceLabel": "GPT-4o mini (2024-07-18)"
-    },
-    {
-      "modelId": "gpt-4o-mini-2024-07-18",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 96,
-      "sourceLabel": "GPT-4o mini (2024-07-18)"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "lmarena",
-      "raw": 1335,
-      "stderr": 4,
-      "sourceLabel": "gpt-4o-2024-08-06"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "livecodebench",
-      "raw": 29.5,
-      "sourceLabel": "GPT-4O-2024-08-06"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "aider-polyglot",
-      "raw": 23.1,
-      "sourceLabel": "gpt-4o-2024-08-06"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "vals-legal_bench",
-      "raw": 80.12,
-      "stderr": 0.54,
-      "sourceLabel": "GPT 4o (2024-08-06)"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "vals-corp_fin_v2",
-      "raw": 39.43,
-      "stderr": 0.95,
-      "sourceLabel": "GPT 4o (2024-08-06)"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "vals-tax_eval_v2",
-      "raw": 71.14,
-      "stderr": 0.89,
-      "sourceLabel": "GPT 4o (2024-08-06)"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "vals-mortgage_tax",
-      "raw": 60.97,
-      "stderr": 1.86,
-      "sourceLabel": "GPT 4o (2024-08-06)"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "vals-medqa",
-      "raw": 88.16,
-      "stderr": 0.58,
-      "sourceLabel": "GPT 4o (2024-08-06)"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "vals-mmlu_pro",
-      "raw": 74.13,
-      "stderr": 0.42,
-      "sourceLabel": "GPT 4o (2024-08-06)"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "vals-aime",
-      "raw": 13.96,
-      "stderr": 0.97,
-      "sourceLabel": "GPT 4o (2024-08-06)"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 5.2,
-      "sourceLabel": "gpt-4o-2024-08-06"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 32.2,
-      "sourceLabel": "gpt-4o-2024-08-06"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 6.2,
-      "sourceLabel": "gpt-4o-2024-08-06"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 1.6,
-      "sourceLabel": "gpt-4o-2024-08-06"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 79.3,
-      "sourceLabel": "gpt-4o-2024-08-06"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 10.7,
-      "sourceLabel": "gpt-4o-2024-08-06"
-    },
-    {
-      "modelId": "gpt-4o-2024-08-06",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 90.4,
-      "sourceLabel": "openai/gpt-4o-2024-08-06"
-    },
-    {
       "modelId": "reka-core-20240904",
       "benchmarkId": "lmarena",
       "raw": 1288,
@@ -25926,212 +24437,10 @@
       "sourceLabel": "reka-flash-20240904"
     },
     {
-      "modelId": "claude-3-5-haiku-20241022",
-      "benchmarkId": "lmarena",
-      "raw": 1324,
-      "stderr": 3,
-      "sourceLabel": "claude-3-5-haiku-20241022"
-    },
-    {
-      "modelId": "claude-3-5-haiku-20241022",
-      "benchmarkId": "aider-polyglot",
-      "raw": 28,
-      "sourceLabel": "claude-3-5-haiku-20241022"
-    },
-    {
-      "modelId": "claude-3-5-haiku-20241022",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 1.1,
-      "sourceLabel": "claude-3-5-haiku-20241022"
-    },
-    {
-      "modelId": "claude-3-5-haiku-20241022",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 5.6,
-      "sourceLabel": "claude-3-5-haiku-20241022"
-    },
-    {
-      "modelId": "claude-3-5-haiku-20241022",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 3,
-      "sourceLabel": "claude-3-5-haiku-20241022"
-    },
-    {
-      "modelId": "claude-3-5-haiku-20241022",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0.6,
-      "sourceLabel": "claude-3-5-haiku-20241022"
-    },
-    {
-      "modelId": "claude-3-5-haiku-20241022",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 43.4,
-      "sourceLabel": "claude-3-5-haiku-20241022"
-    },
-    {
-      "modelId": "claude-3-5-haiku-20241022",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 52.4,
-      "sourceLabel": "claude-3-5-haiku-20241022"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "benchmarkId": "lmarena",
-      "raw": 1374,
-      "stderr": 3,
-      "sourceLabel": "claude-3-5-sonnet-20241022"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "benchmarkId": "livecodebench",
-      "raw": 36.4,
-      "sourceLabel": "Claude-3.5-Sonnet-20241022"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "benchmarkId": "aider-polyglot",
-      "raw": 51.6,
-      "sourceLabel": "claude-3-5-sonnet-20241022"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 0.2,
-      "sourceLabel": "claude-3-5-sonnet-20241022"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 0,
-      "sourceLabel": "claude-3-5-sonnet-20241022"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 1.8,
-      "sourceLabel": "claude-3-5-sonnet-20241022"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0.1,
-      "sourceLabel": "claude-3-5-sonnet-20241022"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 35.4,
-      "sourceLabel": "claude-3-5-sonnet-20241022"
-    },
-    {
-      "modelId": "claude-3-5-sonnet-20241022",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 32.9,
-      "sourceLabel": "claude-3-5-sonnet-20241022"
-    },
-    {
-      "modelId": "gpt-4o-2024-11-20",
-      "benchmarkId": "aider-polyglot",
-      "raw": 18.2,
-      "sourceLabel": "gpt-4o-2024-11-20"
-    },
-    {
-      "modelId": "gpt-4o-2024-11-20",
-      "benchmarkId": "vals-case_law_v2",
-      "raw": 59.7,
-      "stderr": 0.43,
-      "sourceLabel": "GPT 4o (2024-11-20)"
-    },
-    {
-      "modelId": "gpt-4o-2024-11-20",
-      "benchmarkId": "vals-legal_bench",
-      "raw": 82.21,
-      "stderr": 0.46,
-      "sourceLabel": "GPT 4o (2024-11-20)"
-    },
-    {
-      "modelId": "gpt-4o-2024-11-20",
-      "benchmarkId": "vals-corp_fin_v2",
-      "raw": 45.92,
-      "stderr": 0.97,
-      "sourceLabel": "GPT 4o (2024-11-20)"
-    },
-    {
-      "modelId": "gpt-4o-2024-11-20",
-      "benchmarkId": "vals-tax_eval_v2",
-      "raw": 74.53,
-      "stderr": 0.86,
-      "sourceLabel": "GPT 4o (2024-11-20)"
-    },
-    {
-      "modelId": "gpt-4o-2024-11-20",
-      "benchmarkId": "vals-mortgage_tax",
-      "raw": 57.43,
-      "stderr": 1.91,
-      "sourceLabel": "GPT 4o (2024-11-20)"
-    },
-    {
-      "modelId": "gpt-4o-2024-11-20",
-      "benchmarkId": "vals-gpqa",
-      "raw": 53.79,
-      "stderr": 2.51,
-      "sourceLabel": "GPT 4o (2024-11-20)"
-    },
-    {
-      "modelId": "gpt-4o-2024-11-20",
-      "benchmarkId": "vals-mmlu_pro",
-      "raw": 72.56,
-      "stderr": 0.44,
-      "sourceLabel": "GPT 4o (2024-11-20)"
-    },
-    {
-      "modelId": "gpt-4o-2024-11-20",
-      "benchmarkId": "vals-aime",
-      "raw": 11.88,
-      "stderr": 0.95,
-      "sourceLabel": "GPT 4o (2024-11-20)"
-    },
-    {
       "modelId": "qwen-max-2025-01-25",
       "benchmarkId": "aider-polyglot",
       "raw": 21.8,
       "sourceLabel": "qwen-max-2025-01-25"
-    },
-    {
-      "modelId": "o3-mini-2025-01-31",
-      "benchmarkId": "livecodebench",
-      "raw": 67.4,
-      "sourceLabel": "O3-Mini-2025-01-31 (High)"
-    },
-    {
-      "modelId": "o3-mini-2025-01-31",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 95.2,
-      "sourceLabel": "o3-mini (2025-01-31)"
-    },
-    {
-      "modelId": "o3-mini-2025-01-31",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 99,
-      "sourceLabel": "o3-mini (2025-01-31)"
-    },
-    {
-      "modelId": "o3-mini-2025-01-31",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98.6,
-      "sourceLabel": "o3-mini (2025-01-31)"
-    },
-    {
-      "modelId": "o3-mini-2025-01-31",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 94.1,
-      "sourceLabel": "o3-mini (2025-01-31)"
-    },
-    {
-      "modelId": "o3-mini-2025-01-31",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 94.1,
-      "sourceLabel": "o3-mini (2025-01-31)"
     },
     {
       "modelId": "hunyuan-large-2025-02-10",
@@ -26148,379 +24457,11 @@
       "sourceLabel": "hunyuan-standard-2025-02-10"
     },
     {
-      "modelId": "chatgpt-4o-latest-2025-02-15",
-      "benchmarkId": "aider-polyglot",
-      "raw": 27.1,
-      "sourceLabel": "chatgpt-4o-latest (2025-02-15)"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "lmarena",
-      "raw": 1388,
-      "stderr": 4,
-      "sourceLabel": "claude-3-7-sonnet-20250219-thinking-32k"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "aider-polyglot",
-      "raw": 64.9,
-      "sourceLabel": "claude-3-7-sonnet-20250219 (32k thinking tokens)"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "osworld",
-      "raw": 35.8,
-      "sourceLabel": "claude-3-7-sonnet-20250219"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 84.3,
-      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.7,
-      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 92.1,
-      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 96.4,
-      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 0.7,
-      "sourceLabel": "claude-3-7-sonnet-20250219"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 1.7,
-      "sourceLabel": "claude-3-7-sonnet-20250219"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 4.8,
-      "sourceLabel": "claude-3-7-sonnet-20250219"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0.7,
-      "sourceLabel": "claude-3-7-sonnet-20250219"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 84,
-      "sourceLabel": "claude-3-7-sonnet-20250219"
-    },
-    {
-      "modelId": "claude-3-7-sonnet-20250219",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 57.8,
-      "sourceLabel": "claude-3-7-sonnet-20250219"
-    },
-    {
       "modelId": "hunyuan-turbos-20250226",
       "benchmarkId": "lmarena",
       "raw": 1349,
       "stderr": 12,
       "sourceLabel": "hunyuan-turbos-20250226"
-    },
-    {
-      "modelId": "gpt-4-5-preview-2025-02-27",
-      "benchmarkId": "lmarena",
-      "raw": 1445,
-      "stderr": 6,
-      "sourceLabel": "gpt-4.5-preview-2025-02-27"
-    },
-    {
-      "modelId": "gpt-4-5-preview-2025-02-27",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 95.8,
-      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
-    },
-    {
-      "modelId": "gpt-4-5-preview-2025-02-27",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
-    },
-    {
-      "modelId": "gpt-4-5-preview-2025-02-27",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.4,
-      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
-    },
-    {
-      "modelId": "gpt-4-5-preview-2025-02-27",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 92,
-      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
-    },
-    {
-      "modelId": "gpt-4-5-preview-2025-02-27",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 95.1,
-      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
-    },
-    {
-      "modelId": "chatgpt-4o-latest-20250326",
-      "benchmarkId": "lmarena",
-      "raw": 1443,
-      "stderr": 3,
-      "sourceLabel": "chatgpt-4o-latest-20250326"
-    },
-    {
-      "modelId": "chatgpt-4o-latest-2025-03-29",
-      "benchmarkId": "aider-polyglot",
-      "raw": 45.3,
-      "sourceLabel": "chatgpt-4o-latest (2025-03-29)"
-    },
-    {
-      "modelId": "gpt-4-1-2025-04-14",
-      "benchmarkId": "lmarena",
-      "raw": 1414,
-      "stderr": 4,
-      "sourceLabel": "gpt-4.1-2025-04-14"
-    },
-    {
-      "modelId": "gpt-4-1-2025-04-14",
-      "benchmarkId": "bfcl",
-      "raw": 53.96,
-      "sourceLabel": "GPT-4.1-2025-04-14"
-    },
-    {
-      "modelId": "gpt-4-1-2025-04-14",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 91.7,
-      "sourceLabel": "GPT-4.1 (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-2025-04-14",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "GPT-4.1 (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-2025-04-14",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.3,
-      "sourceLabel": "GPT-4.1 (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-2025-04-14",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 92.6,
-      "sourceLabel": "GPT-4.1 (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-2025-04-14",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.9,
-      "sourceLabel": "GPT-4.1 (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-2025-04-14",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 94.4,
-      "sourceLabel": "openai/gpt-4.1-2025-04-14"
-    },
-    {
-      "modelId": "gpt-4-1-mini-2025-04-14",
-      "benchmarkId": "lmarena",
-      "raw": 1383,
-      "stderr": 4,
-      "sourceLabel": "gpt-4.1-mini-2025-04-14"
-    },
-    {
-      "modelId": "gpt-4-1-mini-2025-04-14",
-      "benchmarkId": "bfcl",
-      "raw": 50.45,
-      "sourceLabel": "GPT-4.1-mini-2025-04-14"
-    },
-    {
-      "modelId": "gpt-4-1-mini-2025-04-14",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 85.6,
-      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-mini-2025-04-14",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-mini-2025-04-14",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.3,
-      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-mini-2025-04-14",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 92.1,
-      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-mini-2025-04-14",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.4,
-      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-nano-2025-04-14",
-      "benchmarkId": "lmarena",
-      "raw": 1322,
-      "stderr": 8,
-      "sourceLabel": "gpt-4.1-nano-2025-04-14"
-    },
-    {
-      "modelId": "gpt-4-1-nano-2025-04-14",
-      "benchmarkId": "bfcl",
-      "raw": 33.05,
-      "sourceLabel": "GPT-4.1-nano-2025-04-14"
-    },
-    {
-      "modelId": "gpt-4-1-nano-2025-04-14",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 86.8,
-      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-nano-2025-04-14",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 99,
-      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-nano-2025-04-14",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.6,
-      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-nano-2025-04-14",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 87.5,
-      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
-    },
-    {
-      "modelId": "gpt-4-1-nano-2025-04-14",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 96,
-      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
-    },
-    {
-      "modelId": "o3-2025-04-16",
-      "benchmarkId": "lmarena",
-      "raw": 1432,
-      "stderr": 4,
-      "sourceLabel": "o3-2025-04-16"
-    },
-    {
-      "modelId": "o3-2025-04-16",
-      "benchmarkId": "bfcl",
-      "raw": 63.05,
-      "sourceLabel": "o3-2025-04-16"
-    },
-    {
-      "modelId": "o3-2025-04-16",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 98.4,
-      "sourceLabel": "o3 (2025-04-16)"
-    },
-    {
-      "modelId": "o3-2025-04-16",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 99,
-      "sourceLabel": "o3 (2025-04-16)"
-    },
-    {
-      "modelId": "o3-2025-04-16",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98.3,
-      "sourceLabel": "o3 (2025-04-16)"
-    },
-    {
-      "modelId": "o3-2025-04-16",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 97.9,
-      "sourceLabel": "o3 (2025-04-16)"
-    },
-    {
-      "modelId": "o3-2025-04-16",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.3,
-      "sourceLabel": "o3 (2025-04-16)"
-    },
-    {
-      "modelId": "o4-mini-2025-04-16",
-      "benchmarkId": "lmarena",
-      "raw": 1391,
-      "stderr": 4,
-      "sourceLabel": "o4-mini-2025-04-16"
-    },
-    {
-      "modelId": "o4-mini-2025-04-16",
-      "benchmarkId": "bfcl",
-      "raw": 53.24,
-      "sourceLabel": "o4-mini-2025-04-16"
-    },
-    {
-      "modelId": "o4-mini-2025-04-16",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 97,
-      "sourceLabel": "o4-mini (2025-04-16)"
-    },
-    {
-      "modelId": "o4-mini-2025-04-16",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "o4-mini (2025-04-16)"
-    },
-    {
-      "modelId": "o4-mini-2025-04-16",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98.2,
-      "sourceLabel": "o4-mini (2025-04-16)"
-    },
-    {
-      "modelId": "o4-mini-2025-04-16",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 94,
-      "sourceLabel": "o4-mini (2025-04-16)"
-    },
-    {
-      "modelId": "o4-mini-2025-04-16",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.4,
-      "sourceLabel": "o4-mini (2025-04-16)"
-    },
-    {
-      "modelId": "o4-mini-2025-04-16",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 81.4,
-      "sourceLabel": "openai/o4-mini-high-2025-04-16"
     },
     {
       "modelId": "hunyuan-turbos-20250416",
@@ -26530,319 +24471,10 @@
       "sourceLabel": "hunyuan-turbos-20250416"
     },
     {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "lmarena",
-      "raw": 1426,
-      "stderr": 4,
-      "sourceLabel": "claude-opus-4-20250514-thinking-16k"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "aider-polyglot",
-      "raw": 72,
-      "sourceLabel": "claude-opus-4-20250514 (32k thinking)"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 89.1,
-      "sourceLabel": "Claude 4 Opus (20250514)"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 99.5,
-      "sourceLabel": "Claude 4 Opus (20250514)"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98.9,
-      "sourceLabel": "Claude 4 Opus (20250514)"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 99.3,
-      "sourceLabel": "Claude 4 Opus (20250514)"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97,
-      "sourceLabel": "Claude 4 Opus (20250514)"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 2,
-      "sourceLabel": "claude-opus-4-20250514"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 1.1,
-      "sourceLabel": "claude-opus-4-20250514"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 25,
-      "sourceLabel": "claude-opus-4-20250514"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0.8,
-      "sourceLabel": "claude-opus-4-20250514"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 56.6,
-      "sourceLabel": "claude-opus-4-20250514"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 29.8,
-      "sourceLabel": "claude-opus-4-20250514"
-    },
-    {
-      "modelId": "claude-opus-4-20250514",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 88,
-      "sourceLabel": "anthropic/claude-opus-4-20250514"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "lmarena",
-      "raw": 1401,
-      "stderr": 4,
-      "sourceLabel": "claude-sonnet-4-20250514-thinking-32k"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "aider-polyglot",
-      "raw": 61.3,
-      "sourceLabel": "claude-sonnet-4-20250514 (32k thinking)"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "osworld",
-      "raw": 43.9,
-      "sourceLabel": "claude-4-sonnet-20250514"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 94.1,
-      "sourceLabel": "Claude 4 Sonnet (20250514)"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 99.5,
-      "sourceLabel": "Claude 4 Sonnet (20250514)"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98.4,
-      "sourceLabel": "Claude 4 Sonnet (20250514)"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 97.9,
-      "sourceLabel": "Claude 4 Sonnet (20250514)"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.2,
-      "sourceLabel": "Claude 4 Sonnet (20250514)"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 2.8,
-      "sourceLabel": "claude-sonnet-4-20250514"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 0.6,
-      "sourceLabel": "claude-sonnet-4-20250514"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 37,
-      "sourceLabel": "claude-sonnet-4-20250514"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0.2,
-      "sourceLabel": "claude-sonnet-4-20250514"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 57.1,
-      "sourceLabel": "claude-sonnet-4-20250514"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 14.7,
-      "sourceLabel": "claude-sonnet-4-20250514"
-    },
-    {
-      "modelId": "claude-sonnet-4-20250514",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 89.7,
-      "sourceLabel": "anthropic/claude-sonnet-4-20250514"
-    },
-    {
       "modelId": "qwen-plus-2025-07-28",
       "benchmarkId": "kagi",
       "raw": 63.3,
       "sourceLabel": "qwen-plus-2025-07-28"
-    },
-    {
-      "modelId": "claude-opus-4-1-20250805",
-      "benchmarkId": "lmarena",
-      "raw": 1450,
-      "stderr": 3,
-      "sourceLabel": "claude-opus-4-1-20250805-thinking-16k"
-    },
-    {
-      "modelId": "claude-opus-4-1-20250805",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 88.2,
-      "sourceLabel": "anthropic/claude-opus-4-1-20250805"
-    },
-    {
-      "modelId": "gpt-5-2025-08-07",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 97.6,
-      "sourceLabel": "GPT-5 (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-2025-08-07",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 99.8,
-      "sourceLabel": "GPT-5 (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-2025-08-07",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.1,
-      "sourceLabel": "GPT-5 (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-2025-08-07",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 96.8,
-      "sourceLabel": "GPT-5 (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-2025-08-07",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.1,
-      "sourceLabel": "GPT-5 (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-2025-08-07",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 84.9,
-      "sourceLabel": "openai/gpt-5-high-2025-08-07"
-    },
-    {
-      "modelId": "gpt-5-mini-2025-08-07",
-      "benchmarkId": "bfcl",
-      "raw": 55.46,
-      "sourceLabel": "GPT-5-mini-2025-08-07"
-    },
-    {
-      "modelId": "gpt-5-mini-2025-08-07",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 97.1,
-      "sourceLabel": "GPT-5 mini (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-mini-2025-08-07",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "GPT-5 mini (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-mini-2025-08-07",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.1,
-      "sourceLabel": "GPT-5 mini (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-mini-2025-08-07",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 96.3,
-      "sourceLabel": "GPT-5 mini (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-mini-2025-08-07",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.7,
-      "sourceLabel": "GPT-5 mini (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-mini-2025-08-07",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 87.1,
-      "sourceLabel": "openai/gpt-5-mini-2025-08-07"
-    },
-    {
-      "modelId": "gpt-5-nano-2025-08-07",
-      "benchmarkId": "bfcl",
-      "raw": 51.45,
-      "sourceLabel": "GPT-5-nano-2025-08-07"
-    },
-    {
-      "modelId": "gpt-5-nano-2025-08-07",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 98.4,
-      "sourceLabel": "GPT-5 nano (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-nano-2025-08-07",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "GPT-5 nano (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-nano-2025-08-07",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.6,
-      "sourceLabel": "GPT-5 nano (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-nano-2025-08-07",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 97.6,
-      "sourceLabel": "GPT-5 nano (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-nano-2025-08-07",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 97.6,
-      "sourceLabel": "GPT-5 nano (2025-08-07)"
-    },
-    {
-      "modelId": "gpt-5-nano-2025-08-07",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 89.5,
-      "sourceLabel": "openai/gpt-5-nano-2025-08-07"
     },
     {
       "modelId": "qwen3-max-2025-09-23",
@@ -26852,273 +24484,10 @@
       "sourceLabel": "qwen3-max-2025-09-23"
     },
     {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "lmarena",
-      "raw": 1456,
-      "stderr": 3,
-      "sourceLabel": "claude-sonnet-4-5-20250929-high-32k"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "bfcl",
-      "raw": 73.24,
-      "sourceLabel": "Claude-Sonnet-4-5-20250929"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "osworld",
-      "raw": 62.9,
-      "sourceLabel": "claude-sonnet-4-5-20250929"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 92,
-      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 100,
-      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 98.2,
-      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 98.9,
-      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 96.4,
-      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 4.3,
-      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 0.6,
-      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 13,
-      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 1.3,
-      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 52.5,
-      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 48.4,
-      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
-    },
-    {
-      "modelId": "claude-sonnet-4-5-20250929",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 88,
-      "sourceLabel": "anthropic/claude-sonnet-4-5-20250929"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "lmarena",
-      "raw": 1415,
-      "stderr": 3,
-      "sourceLabel": "claude-haiku-4-5-20251001"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "bfcl",
-      "raw": 68.7,
-      "sourceLabel": "Claude-Haiku-4-5-20251001"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 95.9,
-      "sourceLabel": "Claude 4.5 Haiku (20251001)"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 98.8,
-      "sourceLabel": "Claude 4.5 Haiku (20251001)"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 96.9,
-      "sourceLabel": "Claude 4.5 Haiku (20251001)"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 92.8,
-      "sourceLabel": "Claude 4.5 Haiku (20251001)"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 93.2,
-      "sourceLabel": "Claude 4.5 Haiku (20251001)"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 2.9,
-      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 1.1,
-      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 10.5,
-      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 1.1,
-      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 64.9,
-      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 43.6,
-      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
-    },
-    {
-      "modelId": "claude-haiku-4-5-20251001",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 90.2,
-      "sourceLabel": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
       "modelId": "qwen3-vl-flash-2025-10-25",
       "benchmarkId": "osworld",
       "raw": 41.6,
       "sourceLabel": "qwen3-vl-flash-2025-10-25"
-    },
-    {
-      "modelId": "claude-opus-4-5-20251101",
-      "benchmarkId": "lmarena",
-      "raw": 1473,
-      "stderr": 4,
-      "sourceLabel": "claude-opus-4-5-20251101-high-32k"
-    },
-    {
-      "modelId": "claude-opus-4-5-20251101",
-      "benchmarkId": "bfcl",
-      "raw": 77.47,
-      "sourceLabel": "Claude-Opus-4-5-20251101"
-    },
-    {
-      "modelId": "claude-opus-4-5-20251101",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 89.1,
-      "sourceLabel": "anthropic/claude-opus-4-5-20251101"
-    },
-    {
-      "modelId": "gpt-5-1-2025-11-13",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 97.6,
-      "sourceLabel": "GPT-5.1 (2025-11-13)"
-    },
-    {
-      "modelId": "gpt-5-1-2025-11-13",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 99.8,
-      "sourceLabel": "GPT-5.1 (2025-11-13)"
-    },
-    {
-      "modelId": "gpt-5-1-2025-11-13",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 99.5,
-      "sourceLabel": "GPT-5.1 (2025-11-13)"
-    },
-    {
-      "modelId": "gpt-5-1-2025-11-13",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 88.7,
-      "sourceLabel": "GPT-5.1 (2025-11-13)"
-    },
-    {
-      "modelId": "gpt-5-1-2025-11-13",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 98.2,
-      "sourceLabel": "GPT-5.1 (2025-11-13)"
-    },
-    {
-      "modelId": "gpt-5-1-2025-11-13",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 87.9,
-      "sourceLabel": "openai/gpt-5.1-high-2025-11-13"
-    },
-    {
-      "modelId": "gpt-5-2-2025-12-11",
-      "benchmarkId": "bfcl",
-      "raw": 55.87,
-      "sourceLabel": "GPT-5.2-2025-12-11"
-    },
-    {
-      "modelId": "gpt-5-2-2025-12-11",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 89.2,
-      "sourceLabel": "openai/gpt-5.2-high-2025-12-11"
-    },
-    {
-      "modelId": "gpt-5-5-instant-june-2026",
-      "benchmarkId": "artificial-analysis",
-      "raw": 27,
-      "sourceLabel": "GPT-5.5 Instant (June 2026)"
-    },
-    {
-      "modelId": "gpt-5-5-instant-june-2026",
-      "benchmarkId": "aa-gdpval",
-      "raw": 662,
-      "stderr": 17,
-      "sourceLabel": "GPT-5.5 Instant (June 2026)"
-    },
-    {
-      "modelId": "gpt-5-5-instant-june-2026",
-      "benchmarkId": "aa-briefcase",
-      "raw": 1082,
-      "stderr": 9.5,
-      "sourceLabel": "GPT-5.5 Instant (June 2026)"
     },
     {
       "modelId": "evocua-8b-20260105",
@@ -27133,13 +24502,6 @@
       "sourceLabel": "EvoCUA-20260105"
     },
     {
-      "modelId": "gpt-5-2-chat-latest-20260210",
-      "benchmarkId": "lmarena",
-      "raw": 1476,
-      "stderr": 4,
-      "sourceLabel": "gpt-5.2-chat-latest-20260210"
-    },
-    {
       "modelId": "qwen3-5-plus-2026-02-15",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 89.3,
@@ -27150,72 +24512,6 @@
       "benchmarkId": "vectara-factual-consistency",
       "raw": 89.5,
       "sourceLabel": "qwen/qwen3.5-flash-2026-02-23"
-    },
-    {
-      "modelId": "gpt-5-4-2026-03-05",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 6.3,
-      "sourceLabel": "gpt-5.4-2026-03-05"
-    },
-    {
-      "modelId": "gpt-5-4-2026-03-05",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 0,
-      "sourceLabel": "gpt-5.4-2026-03-05"
-    },
-    {
-      "modelId": "gpt-5-4-2026-03-05",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 16.7,
-      "sourceLabel": "gpt-5.4-2026-03-05"
-    },
-    {
-      "modelId": "gpt-5-4-2026-03-05",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 2.7,
-      "sourceLabel": "gpt-5.4-2026-03-05"
-    },
-    {
-      "modelId": "gpt-5-4-2026-03-05",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 87.1,
-      "sourceLabel": "gpt-5.4-2026-03-05"
-    },
-    {
-      "modelId": "gpt-5-4-2026-03-05",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 5.8,
-      "sourceLabel": "gpt-5.4-2026-03-05"
-    },
-    {
-      "modelId": "gpt-5-4-2026-03-05",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 93,
-      "sourceLabel": "openai/gpt-5.4-2026-03-05"
-    },
-    {
-      "modelId": "gpt-5-4-pro-2026-03-05",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 91.7,
-      "sourceLabel": "openai/gpt-5.4-pro-2026-03-05"
-    },
-    {
-      "modelId": "gpt-5-4-mini-2026-03-17",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 94.5,
-      "sourceLabel": "openai/gpt-5.4-mini-2026-03-17"
-    },
-    {
-      "modelId": "gpt-5-4-nano-2026-03-17",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 96.9,
-      "sourceLabel": "openai/gpt-5.4-nano-2026-03-17"
-    },
-    {
-      "modelId": "gpt-5-6-luna-2026-07-30",
-      "benchmarkId": "arc-agi-2",
-      "raw": 59.6,
-      "sourceLabel": "GPT-5.6 Luna 2026-07-30 (Max)"
     },
     {
       "modelId": "deepseek-v4-pro-high-20260813",
@@ -30818,6 +28114,13 @@
     },
     {
       "modelId": "claude-3-haiku",
+      "benchmarkId": "lmarena",
+      "raw": 1261,
+      "stderr": 4,
+      "sourceLabel": "claude-3-haiku-20240307"
+    },
+    {
+      "modelId": "claude-3-haiku",
       "benchmarkId": "livecodebench",
       "raw": 20.2,
       "sourceLabel": "Claude-3-Haiku"
@@ -30827,6 +28130,72 @@
       "benchmarkId": "kagi",
       "raw": 34.2,
       "sourceLabel": "claude-3-haiku"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 91.3,
+      "sourceLabel": "Claude 3 Haiku (20240307)"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "Claude 3 Haiku (20240307)"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 100,
+      "sourceLabel": "Claude 3 Haiku (20240307)"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 62.5,
+      "sourceLabel": "Claude 3 Haiku (20240307)"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 85.3,
+      "sourceLabel": "Claude 3 Haiku (20240307)"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 4.1,
+      "sourceLabel": "claude-3-haiku-20240307"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 12.8,
+      "sourceLabel": "claude-3-haiku-20240307"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 7.3,
+      "sourceLabel": "claude-3-haiku-20240307"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 0.6,
+      "sourceLabel": "claude-3-haiku-20240307"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 87.1,
+      "sourceLabel": "claude-3-haiku-20240307"
+    },
+    {
+      "modelId": "claude-3-haiku",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 22.7,
+      "sourceLabel": "claude-3-haiku-20240307"
     },
     {
       "modelId": "hunyuan-hy3-preview",
@@ -31869,6 +29238,12 @@
     },
     {
       "modelId": "o3-mini",
+      "benchmarkId": "livecodebench",
+      "raw": 67.4,
+      "sourceLabel": "O3-Mini-2025-01-31 (High)"
+    },
+    {
+      "modelId": "o3-mini",
       "benchmarkId": "aider-polyglot",
       "raw": 60.4,
       "sourceLabel": "o3-mini (high)"
@@ -31927,6 +29302,36 @@
       "raw": 86.46,
       "stderr": 1.05,
       "sourceLabel": "o3 Mini"
+    },
+    {
+      "modelId": "o3-mini",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 95.2,
+      "sourceLabel": "o3-mini (2025-01-31)"
+    },
+    {
+      "modelId": "o3-mini",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 99,
+      "sourceLabel": "o3-mini (2025-01-31)"
+    },
+    {
+      "modelId": "o3-mini",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 98.6,
+      "sourceLabel": "o3-mini (2025-01-31)"
+    },
+    {
+      "modelId": "o3-mini",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 94.1,
+      "sourceLabel": "o3-mini (2025-01-31)"
+    },
+    {
+      "modelId": "o3-mini",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 94.1,
+      "sourceLabel": "o3-mini (2025-01-31)"
     },
     {
       "modelId": "o3-mini",
@@ -32269,6 +29674,13 @@
     },
     {
       "modelId": "o3",
+      "benchmarkId": "lmarena",
+      "raw": 1432,
+      "stderr": 4,
+      "sourceLabel": "o3-2025-04-16"
+    },
+    {
+      "modelId": "o3",
       "benchmarkId": "arc-agi-2",
       "raw": 6.5,
       "sourceLabel": "o3 (High)"
@@ -32284,6 +29696,12 @@
       "benchmarkId": "aider-polyglot",
       "raw": 81.3,
       "sourceLabel": "o3 (high)"
+    },
+    {
+      "modelId": "o3",
+      "benchmarkId": "bfcl",
+      "raw": 63.05,
+      "sourceLabel": "o3-2025-04-16"
     },
     {
       "modelId": "o3",
@@ -32375,6 +29793,36 @@
     },
     {
       "modelId": "o3",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 98.4,
+      "sourceLabel": "o3 (2025-04-16)"
+    },
+    {
+      "modelId": "o3",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 99,
+      "sourceLabel": "o3 (2025-04-16)"
+    },
+    {
+      "modelId": "o3",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 98.3,
+      "sourceLabel": "o3 (2025-04-16)"
+    },
+    {
+      "modelId": "o3",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 97.9,
+      "sourceLabel": "o3 (2025-04-16)"
+    },
+    {
+      "modelId": "o3",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97.3,
+      "sourceLabel": "o3 (2025-04-16)"
+    },
+    {
+      "modelId": "o3",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 2,
       "sourceLabel": "o3"
@@ -32410,12 +29858,6 @@
       "sourceLabel": "o3"
     },
     {
-      "modelId": "o3-preview-low",
-      "benchmarkId": "arc-agi-2",
-      "raw": 4,
-      "sourceLabel": "o3 (Preview, Low) ¹"
-    },
-    {
       "modelId": "o3-pro",
       "benchmarkId": "arc-agi-2",
       "raw": 4.9,
@@ -32441,9 +29883,82 @@
     },
     {
       "modelId": "claude-3-opus",
+      "benchmarkId": "lmarena",
+      "raw": 1322,
+      "stderr": 3,
+      "sourceLabel": "claude-3-opus-20240229"
+    },
+    {
+      "modelId": "claude-3-opus",
       "benchmarkId": "simplebench",
       "raw": 23.5,
       "sourceLabel": "Claude 3 Opus"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 97.4,
+      "sourceLabel": "Claude 3 Opus (20240229)"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "Claude 3 Opus (20240229)"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.8,
+      "sourceLabel": "Claude 3 Opus (20240229)"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 94,
+      "sourceLabel": "Claude 3 Opus (20240229)"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 92.5,
+      "sourceLabel": "Claude 3 Opus (20240229)"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 1.5,
+      "sourceLabel": "claude-3-opus-20240229"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 7.8,
+      "sourceLabel": "claude-3-opus-20240229"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 4.3,
+      "sourceLabel": "claude-3-opus-20240229"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 0.1,
+      "sourceLabel": "claude-3-opus-20240229"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 25.6,
+      "sourceLabel": "claude-3-opus-20240229"
+    },
+    {
+      "modelId": "claude-3-opus",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 15.1,
+      "sourceLabel": "claude-3-opus-20240229"
     },
     {
       "modelId": "qwen-3-vl-plus",
@@ -32472,6 +29987,79 @@
       "raw": 122,
       "stderr": 9,
       "sourceLabel": "Solar Pro 3"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "lmarena",
+      "raw": 1281,
+      "stderr": 4,
+      "sourceLabel": "claude-3-sonnet-20240229"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 95.8,
+      "sourceLabel": "Claude 3 Sonnet (20240229)"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "Claude 3 Sonnet (20240229)"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.8,
+      "sourceLabel": "Claude 3 Sonnet (20240229)"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 90,
+      "sourceLabel": "Claude 3 Sonnet (20240229)"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 85.8,
+      "sourceLabel": "Claude 3 Sonnet (20240229)"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 2,
+      "sourceLabel": "claude-3-sonnet-20240229"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 6.7,
+      "sourceLabel": "claude-3-sonnet-20240229"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 3.7,
+      "sourceLabel": "claude-3-sonnet-20240229"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 0.4,
+      "sourceLabel": "claude-3-sonnet-20240229"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 78.3,
+      "sourceLabel": "claude-3-sonnet-20240229"
+    },
+    {
+      "modelId": "claude-3-sonnet",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 20,
+      "sourceLabel": "claude-3-sonnet-20240229"
     },
     {
       "modelId": "step-3",
@@ -34039,12 +31627,6 @@
       "sourceLabel": "meta-llama/Llama-3.3-70B-Instruct-Turbo"
     },
     {
-      "modelId": "granite-3-3-8b-instruct",
-      "benchmarkId": "vectara-factual-consistency",
-      "raw": 89.4,
-      "sourceLabel": "ibm-granite/granite-3.3-8b-instruct"
-    },
-    {
       "modelId": "ibm-granite-3-3-8b-instruct",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 81.2,
@@ -34073,6 +31655,12 @@
       "benchmarkId": "helm-safety-xstest",
       "raw": 90.7,
       "sourceLabel": "IBM Granite 3.3 8B Instruct"
+    },
+    {
+      "modelId": "ibm-granite-3-3-8b-instruct",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 89.4,
+      "sourceLabel": "ibm-granite/granite-3.3-8b-instruct"
     },
     {
       "modelId": "llama-3-3-nemotron-super",
@@ -34885,9 +32473,46 @@
     },
     {
       "modelId": "gpt-3-5-turbo",
+      "benchmarkId": "lmarena",
+      "raw": 1204,
+      "stderr": 9,
+      "sourceLabel": "gpt-3.5-turbo-1106"
+    },
+    {
+      "modelId": "gpt-3-5-turbo",
       "benchmarkId": "simplebench",
       "raw": 8,
       "sourceLabel": "GPT-3.5 Turbo"
+    },
+    {
+      "modelId": "gpt-3-5-turbo",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 68.6,
+      "sourceLabel": "GPT-3.5 Turbo (1106)"
+    },
+    {
+      "modelId": "gpt-3-5-turbo",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 92.3,
+      "sourceLabel": "GPT-3.5 Turbo (1106)"
+    },
+    {
+      "modelId": "gpt-3-5-turbo",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 98,
+      "sourceLabel": "GPT-3.5 Turbo (1106)"
+    },
+    {
+      "modelId": "gpt-3-5-turbo",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 64.9,
+      "sourceLabel": "GPT-3.5 Turbo (1106)"
+    },
+    {
+      "modelId": "gpt-3-5-turbo",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 93.8,
+      "sourceLabel": "GPT-3.5 Turbo (1106)"
     },
     {
       "modelId": "gpt-3-5-turbo",
@@ -34927,10 +32552,59 @@
     },
     {
       "modelId": "claude-3-5-haiku",
+      "benchmarkId": "lmarena",
+      "raw": 1324,
+      "stderr": 3,
+      "sourceLabel": "claude-3-5-haiku-20241022"
+    },
+    {
+      "modelId": "claude-3-5-haiku",
       "benchmarkId": "aa-gdpval",
       "raw": 408,
       "stderr": 18,
       "sourceLabel": "Claude 3.5 Haiku"
+    },
+    {
+      "modelId": "claude-3-5-haiku",
+      "benchmarkId": "aider-polyglot",
+      "raw": 28,
+      "sourceLabel": "claude-3-5-haiku-20241022"
+    },
+    {
+      "modelId": "claude-3-5-haiku",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 1.1,
+      "sourceLabel": "claude-3-5-haiku-20241022"
+    },
+    {
+      "modelId": "claude-3-5-haiku",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 5.6,
+      "sourceLabel": "claude-3-5-haiku-20241022"
+    },
+    {
+      "modelId": "claude-3-5-haiku",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 3,
+      "sourceLabel": "claude-3-5-haiku-20241022"
+    },
+    {
+      "modelId": "claude-3-5-haiku",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 0.6,
+      "sourceLabel": "claude-3-5-haiku-20241022"
+    },
+    {
+      "modelId": "claude-3-5-haiku",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 43.4,
+      "sourceLabel": "claude-3-5-haiku-20241022"
+    },
+    {
+      "modelId": "claude-3-5-haiku",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 52.4,
+      "sourceLabel": "claude-3-5-haiku-20241022"
     },
     {
       "modelId": "claude-3-5-haiku-latest",
@@ -35413,9 +33087,100 @@
     },
     {
       "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "lmarena",
+      "raw": 1374,
+      "stderr": 3,
+      "sourceLabel": "claude-3-5-sonnet-20241022"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "livecodebench",
+      "raw": 36.4,
+      "sourceLabel": "Claude-3.5-Sonnet-20241022"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "aider-polyglot",
+      "raw": 51.6,
+      "sourceLabel": "claude-3-5-sonnet-20241022"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
       "benchmarkId": "mmmu-pro",
       "raw": 51.5,
       "sourceLabel": "Claude 3.5 Sonnet"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "simplebench",
+      "raw": 41.4,
+      "sourceLabel": "Claude 3.5 Sonnet 10-22"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 98.1,
+      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.8,
+      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 94.9,
+      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 95.6,
+      "sourceLabel": "Claude 3.5 Sonnet (20240620)"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 0.2,
+      "sourceLabel": "claude-3-5-sonnet-20241022"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 0,
+      "sourceLabel": "claude-3-5-sonnet-20241022"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 1.8,
+      "sourceLabel": "claude-3-5-sonnet-20241022"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 0.1,
+      "sourceLabel": "claude-3-5-sonnet-20241022"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 35.4,
+      "sourceLabel": "claude-3-5-sonnet-20241022"
+    },
+    {
+      "modelId": "claude-3-5-sonnet",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 32.9,
+      "sourceLabel": "claude-3-5-sonnet-20241022"
     },
     {
       "modelId": "qwen3-6-35b-a3b",
@@ -36425,6 +34190,25 @@
     },
     {
       "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "lmarena",
+      "raw": 1388,
+      "stderr": 4,
+      "sourceLabel": "claude-3-7-sonnet-20250219-thinking-32k"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "aider-polyglot",
+      "raw": 64.9,
+      "sourceLabel": "claude-3-7-sonnet-20250219 (32k thinking tokens)"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "osworld",
+      "raw": 35.8,
+      "sourceLabel": "claude-3-7-sonnet-20250219"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
       "benchmarkId": "simplebench",
       "raw": 46.4,
       "sourceLabel": "Claude 3.7 Sonnet (thinking)"
@@ -36484,6 +34268,72 @@
       "raw": 44.58,
       "stderr": 1.75,
       "sourceLabel": "Claude 3.7 Sonnet (Thinking)"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 84.3,
+      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.7,
+      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 92.1,
+      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 96.4,
+      "sourceLabel": "Claude 3.7 Sonnet (20250219)"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 0.7,
+      "sourceLabel": "claude-3-7-sonnet-20250219"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 1.7,
+      "sourceLabel": "claude-3-7-sonnet-20250219"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 4.8,
+      "sourceLabel": "claude-3-7-sonnet-20250219"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 0.7,
+      "sourceLabel": "claude-3-7-sonnet-20250219"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 84,
+      "sourceLabel": "claude-3-7-sonnet-20250219"
+    },
+    {
+      "modelId": "claude-3-7-sonnet",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 57.8,
+      "sourceLabel": "claude-3-7-sonnet-20250219"
     },
     {
       "modelId": "gemini-3-8-flash",
@@ -37026,55 +34876,55 @@
       "sourceLabel": "Granite 4.2 30B"
     },
     {
-      "modelId": "ibm-granite-4-2-30b",
+      "modelId": "granite-4-2-30b",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 14.4,
       "sourceLabel": "IBM Granite 4.2 30B"
     },
     {
-      "modelId": "ibm-granite-4-2-30b",
+      "modelId": "granite-4-2-30b",
       "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
       "raw": 26.6,
       "sourceLabel": "IBM Granite 4.2 30B"
     },
     {
-      "modelId": "ibm-granite-4-2-30b",
+      "modelId": "granite-4-2-30b",
       "benchmarkId": "ifm-k2-horizon:scicode",
       "raw": 36.6,
       "sourceLabel": "IBM Granite 4.2 30B"
     },
     {
-      "modelId": "ibm-granite-4-2-30b",
+      "modelId": "granite-4-2-30b",
       "benchmarkId": "ifm-k2-horizon:humanity-s-last-exam-without-tools",
       "raw": 11.2,
       "sourceLabel": "IBM Granite 4.2 30B"
     },
     {
-      "modelId": "ibm-granite-4-2-30b",
+      "modelId": "granite-4-2-30b",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 64.4,
       "sourceLabel": "IBM Granite 4.2 30B"
     },
     {
-      "modelId": "ibm-granite-4-2-30b",
+      "modelId": "granite-4-2-30b",
       "benchmarkId": "ifm-k2-horizon:critpt",
       "raw": 0.3,
       "sourceLabel": "IBM Granite 4.2 30B"
     },
     {
-      "modelId": "ibm-granite-4-2-30b",
+      "modelId": "granite-4-2-30b",
       "benchmarkId": "ifm-k2-horizon:aa-lcr",
       "raw": 46.7,
       "sourceLabel": "IBM Granite 4.2 30B"
     },
     {
-      "modelId": "ibm-granite-4-2-30b",
+      "modelId": "granite-4-2-30b",
       "benchmarkId": "ifm-k2-horizon:aa-omniscience-accuracy",
       "raw": 10.1,
       "sourceLabel": "IBM Granite 4.2 30B"
     },
     {
-      "modelId": "ibm-granite-4-2-30b",
+      "modelId": "granite-4-2-30b",
       "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
       "raw": 74.4,
       "sourceLabel": "IBM Granite 4.2 30B"
@@ -37860,6 +35710,19 @@
       "sourceLabel": "llama4-scout-instruct-basic"
     },
     {
+      "modelId": "chatgpt-4o-latest",
+      "benchmarkId": "lmarena",
+      "raw": 1443,
+      "stderr": 3,
+      "sourceLabel": "chatgpt-4o-latest-20250326"
+    },
+    {
+      "modelId": "chatgpt-4o-latest",
+      "benchmarkId": "aider-polyglot",
+      "raw": 45.3,
+      "sourceLabel": "chatgpt-4o-latest (2025-03-29)"
+    },
+    {
       "modelId": "deepseek-v4-flash-vision-exp",
       "benchmarkId": "livebench",
       "raw": 76.8,
@@ -38485,6 +36348,13 @@
     },
     {
       "modelId": "gpt-4",
+      "benchmarkId": "lmarena",
+      "raw": 1313,
+      "stderr": 4,
+      "sourceLabel": "gpt-4-1106-preview"
+    },
+    {
+      "modelId": "gpt-4",
       "benchmarkId": "aa-gdpval",
       "raw": 189,
       "stderr": 18,
@@ -38493,38 +36363,45 @@
     {
       "modelId": "gpt-4",
       "benchmarkId": "enkrypt-jailbreak",
-      "raw": 4.5,
-      "sourceLabel": "gpt-4"
+      "raw": 3.2,
+      "sourceLabel": "gpt-4-0125-preview"
     },
     {
       "modelId": "gpt-4",
       "benchmarkId": "enkrypt-harmful",
-      "raw": 19.4,
-      "sourceLabel": "gpt-4"
+      "raw": 18.9,
+      "sourceLabel": "gpt-4-0125-preview"
     },
     {
       "modelId": "gpt-4",
       "benchmarkId": "enkrypt-cbrn",
-      "raw": 8.7,
-      "sourceLabel": "gpt-4"
+      "raw": 5.5,
+      "sourceLabel": "gpt-4-0125-preview"
     },
     {
       "modelId": "gpt-4",
       "benchmarkId": "enkrypt-toxicity",
-      "raw": 6.9,
-      "sourceLabel": "gpt-4"
+      "raw": 2.2,
+      "sourceLabel": "gpt-4-0125-preview"
     },
     {
       "modelId": "gpt-4",
       "benchmarkId": "enkrypt-bias",
-      "raw": 84.8,
-      "sourceLabel": "gpt-4"
+      "raw": 63.3,
+      "sourceLabel": "gpt-4-0125-preview"
     },
     {
       "modelId": "gpt-4",
       "benchmarkId": "enkrypt-insecure-code",
-      "raw": 16.9,
-      "sourceLabel": "gpt-4"
+      "raw": 8.9,
+      "sourceLabel": "gpt-4-0125-preview"
+    },
+    {
+      "modelId": "gpt-4o-mini",
+      "benchmarkId": "lmarena",
+      "raw": 1318,
+      "stderr": 4,
+      "sourceLabel": "gpt-4o-mini-2024-07-18"
     },
     {
       "modelId": "gpt-4o-mini",
@@ -38538,6 +36415,18 @@
       "benchmarkId": "arc-agi-2",
       "raw": 0,
       "sourceLabel": "GPT-4o-mini"
+    },
+    {
+      "modelId": "gpt-4o-mini",
+      "benchmarkId": "livecodebench",
+      "raw": 27.5,
+      "sourceLabel": "GPT-4O-mini-2024-07-18"
+    },
+    {
+      "modelId": "gpt-4o-mini",
+      "benchmarkId": "aider-polyglot",
+      "raw": 3.6,
+      "sourceLabel": "gpt-4o-mini-2024-07-18"
     },
     {
       "modelId": "gpt-4o-mini",
@@ -38608,6 +36497,36 @@
     },
     {
       "modelId": "gpt-4o-mini",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 84.9,
+      "sourceLabel": "GPT-4o mini (2024-07-18)"
+    },
+    {
+      "modelId": "gpt-4o-mini",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 97.8,
+      "sourceLabel": "GPT-4o mini (2024-07-18)"
+    },
+    {
+      "modelId": "gpt-4o-mini",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 98.3,
+      "sourceLabel": "GPT-4o mini (2024-07-18)"
+    },
+    {
+      "modelId": "gpt-4o-mini",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 88.2,
+      "sourceLabel": "GPT-4o mini (2024-07-18)"
+    },
+    {
+      "modelId": "gpt-4o-mini",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 96,
+      "sourceLabel": "GPT-4o mini (2024-07-18)"
+    },
+    {
+      "modelId": "gpt-4o-mini",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 5.9,
       "sourceLabel": "gpt-4o-mini"
@@ -38644,45 +36563,188 @@
     },
     {
       "modelId": "gpt-4o",
+      "benchmarkId": "lmarena",
+      "raw": 1335,
+      "stderr": 4,
+      "sourceLabel": "gpt-4o-2024-08-06"
+    },
+    {
+      "modelId": "gpt-4o",
       "benchmarkId": "arc-agi-2",
       "raw": 0,
       "sourceLabel": "GPT-4o"
     },
     {
       "modelId": "gpt-4o",
+      "benchmarkId": "livecodebench",
+      "raw": 29.5,
+      "sourceLabel": "GPT-4O-2024-08-06"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "aider-polyglot",
+      "raw": 18.2,
+      "sourceLabel": "gpt-4o-2024-11-20"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "mmmu-pro",
+      "raw": 51.9,
+      "sourceLabel": "GPT-4o (0513)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "simplebench",
+      "raw": 17.8,
+      "sourceLabel": "GPT-4o 08-06"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vals-case_law_v2",
+      "raw": 59.7,
+      "stderr": 0.43,
+      "sourceLabel": "GPT 4o (2024-11-20)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vals-legal_bench",
+      "raw": 82.21,
+      "stderr": 0.46,
+      "sourceLabel": "GPT 4o (2024-11-20)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vals-corp_fin_v2",
+      "raw": 45.92,
+      "stderr": 0.97,
+      "sourceLabel": "GPT 4o (2024-11-20)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vals-tax_eval_v2",
+      "raw": 74.53,
+      "stderr": 0.86,
+      "sourceLabel": "GPT 4o (2024-11-20)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vals-mortgage_tax",
+      "raw": 57.43,
+      "stderr": 1.91,
+      "sourceLabel": "GPT 4o (2024-11-20)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vals-medqa",
+      "raw": 88.16,
+      "stderr": 0.58,
+      "sourceLabel": "GPT 4o (2024-08-06)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vals-gpqa",
+      "raw": 53.79,
+      "stderr": 2.51,
+      "sourceLabel": "GPT 4o (2024-11-20)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vals-mmlu_pro",
+      "raw": 72.56,
+      "stderr": 0.44,
+      "sourceLabel": "GPT 4o (2024-11-20)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vals-aime",
+      "raw": 11.88,
+      "stderr": 0.95,
+      "sourceLabel": "GPT 4o (2024-11-20)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 82.9,
+      "sourceLabel": "GPT-4o (2024-05-13)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 98.5,
+      "sourceLabel": "GPT-4o (2024-05-13)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.1,
+      "sourceLabel": "GPT-4o (2024-05-13)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 95.1,
+      "sourceLabel": "GPT-4o (2024-05-13)"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97.3,
+      "sourceLabel": "GPT-4o (2024-05-13)"
+    },
+    {
+      "modelId": "gpt-4o",
       "benchmarkId": "enkrypt-jailbreak",
-      "raw": 3.7,
-      "sourceLabel": "gpt-4o"
+      "raw": 5.2,
+      "sourceLabel": "gpt-4o-2024-08-06"
     },
     {
       "modelId": "gpt-4o",
       "benchmarkId": "enkrypt-harmful",
-      "raw": 26.7,
-      "sourceLabel": "gpt-4o"
+      "raw": 32.2,
+      "sourceLabel": "gpt-4o-2024-08-06"
     },
     {
       "modelId": "gpt-4o",
       "benchmarkId": "enkrypt-cbrn",
-      "raw": 5.5,
-      "sourceLabel": "gpt-4o"
+      "raw": 6.2,
+      "sourceLabel": "gpt-4o-2024-08-06"
     },
     {
       "modelId": "gpt-4o",
       "benchmarkId": "enkrypt-toxicity",
-      "raw": 1.5,
-      "sourceLabel": "gpt-4o"
+      "raw": 1.6,
+      "sourceLabel": "gpt-4o-2024-08-06"
     },
     {
       "modelId": "gpt-4o",
       "benchmarkId": "enkrypt-bias",
-      "raw": 83.5,
-      "sourceLabel": "gpt-4o"
+      "raw": 79.3,
+      "sourceLabel": "gpt-4o-2024-08-06"
     },
     {
       "modelId": "gpt-4o",
       "benchmarkId": "enkrypt-insecure-code",
-      "raw": 11.6,
-      "sourceLabel": "gpt-4o"
+      "raw": 10.7,
+      "sourceLabel": "gpt-4o-2024-08-06"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 90.4,
+      "sourceLabel": "openai/gpt-4o-2024-08-06"
+    },
+    {
+      "modelId": "gpt-4-turbo",
+      "benchmarkId": "lmarena",
+      "raw": 1324,
+      "stderr": 4,
+      "sourceLabel": "gpt-4-turbo-2024-04-09"
+    },
+    {
+      "modelId": "gpt-4-turbo",
+      "benchmarkId": "livecodebench",
+      "raw": 28.7,
+      "sourceLabel": "GPT-4-Turbo-2024-04-09"
     },
     {
       "modelId": "gpt-4-turbo",
@@ -38706,39 +36768,69 @@
     },
     {
       "modelId": "gpt-4-turbo",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 89.8,
+      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
+    },
+    {
+      "modelId": "gpt-4-turbo",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 99,
+      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
+    },
+    {
+      "modelId": "gpt-4-turbo",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.7,
+      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
+    },
+    {
+      "modelId": "gpt-4-turbo",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 94.1,
+      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
+    },
+    {
+      "modelId": "gpt-4-turbo",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97.7,
+      "sourceLabel": "GPT-4 Turbo (2024-04-09)"
+    },
+    {
+      "modelId": "gpt-4-turbo",
       "benchmarkId": "enkrypt-jailbreak",
-      "raw": 3.2,
-      "sourceLabel": "gpt-4-turbo"
+      "raw": 3.9,
+      "sourceLabel": "gpt-4-turbo-2024-04-09"
     },
     {
       "modelId": "gpt-4-turbo",
       "benchmarkId": "enkrypt-harmful",
-      "raw": 20,
-      "sourceLabel": "gpt-4-turbo"
+      "raw": 23.9,
+      "sourceLabel": "gpt-4-turbo-2024-04-09"
     },
     {
       "modelId": "gpt-4-turbo",
       "benchmarkId": "enkrypt-cbrn",
-      "raw": 6,
-      "sourceLabel": "gpt-4-turbo"
+      "raw": 5.3,
+      "sourceLabel": "gpt-4-turbo-2024-04-09"
     },
     {
       "modelId": "gpt-4-turbo",
       "benchmarkId": "enkrypt-toxicity",
-      "raw": 1.6,
-      "sourceLabel": "gpt-4-turbo"
+      "raw": 1.7,
+      "sourceLabel": "gpt-4-turbo-2024-04-09"
     },
     {
       "modelId": "gpt-4-turbo",
       "benchmarkId": "enkrypt-bias",
-      "raw": 82.4,
-      "sourceLabel": "gpt-4-turbo"
+      "raw": 73.6,
+      "sourceLabel": "gpt-4-turbo-2024-04-09"
     },
     {
       "modelId": "gpt-4-turbo",
       "benchmarkId": "enkrypt-insecure-code",
-      "raw": 16,
-      "sourceLabel": "gpt-4-turbo"
+      "raw": 11.1,
+      "sourceLabel": "gpt-4-turbo-2024-04-09"
     },
     {
       "modelId": "grok-4",
@@ -39144,6 +37236,13 @@
     },
     {
       "modelId": "o4-mini",
+      "benchmarkId": "lmarena",
+      "raw": 1391,
+      "stderr": 4,
+      "sourceLabel": "o4-mini-2025-04-16"
+    },
+    {
+      "modelId": "o4-mini",
       "benchmarkId": "arc-agi-2",
       "raw": 6.1,
       "sourceLabel": "o4-mini (High)"
@@ -39159,6 +37258,12 @@
       "benchmarkId": "aider-polyglot",
       "raw": 72,
       "sourceLabel": "o4-mini (high)"
+    },
+    {
+      "modelId": "o4-mini",
+      "benchmarkId": "bfcl",
+      "raw": 53.24,
+      "sourceLabel": "o4-mini-2025-04-16"
     },
     {
       "modelId": "o4-mini",
@@ -39244,6 +37349,36 @@
     },
     {
       "modelId": "o4-mini",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 97,
+      "sourceLabel": "o4-mini (2025-04-16)"
+    },
+    {
+      "modelId": "o4-mini",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "o4-mini (2025-04-16)"
+    },
+    {
+      "modelId": "o4-mini",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 98.2,
+      "sourceLabel": "o4-mini (2025-04-16)"
+    },
+    {
+      "modelId": "o4-mini",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 94,
+      "sourceLabel": "o4-mini (2025-04-16)"
+    },
+    {
+      "modelId": "o4-mini",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97.4,
+      "sourceLabel": "o4-mini (2025-04-16)"
+    },
+    {
+      "modelId": "o4-mini",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 5.4,
       "sourceLabel": "o4-mini"
@@ -39277,6 +37412,12 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 12.4,
       "sourceLabel": "o4-mini"
+    },
+    {
+      "modelId": "o4-mini",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 81.4,
+      "sourceLabel": "openai/o4-mini-high-2025-04-16"
     },
     {
       "modelId": "phi-4-mini-instruct",
@@ -39375,6 +37516,13 @@
     },
     {
       "modelId": "claude-opus-4",
+      "benchmarkId": "lmarena",
+      "raw": 1426,
+      "stderr": 4,
+      "sourceLabel": "claude-opus-4-20250514-thinking-16k"
+    },
+    {
+      "modelId": "claude-opus-4",
       "benchmarkId": "arc-agi-2",
       "raw": 8.6,
       "sourceLabel": "Claude Opus 4 (Thinking 16K)"
@@ -39384,6 +37532,12 @@
       "benchmarkId": "livecodebench",
       "raw": 56.6,
       "sourceLabel": "Claude-Opus-4 (Thinking)"
+    },
+    {
+      "modelId": "claude-opus-4",
+      "benchmarkId": "aider-polyglot",
+      "raw": 72,
+      "sourceLabel": "claude-opus-4-20250514 (32k thinking)"
     },
     {
       "modelId": "claude-opus-4",
@@ -39477,6 +37631,48 @@
       "sourceLabel": "Claude 4 Opus (20250514, extended thinking)"
     },
     {
+      "modelId": "claude-opus-4",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 2,
+      "sourceLabel": "claude-opus-4-20250514"
+    },
+    {
+      "modelId": "claude-opus-4",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 1.1,
+      "sourceLabel": "claude-opus-4-20250514"
+    },
+    {
+      "modelId": "claude-opus-4",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 25,
+      "sourceLabel": "claude-opus-4-20250514"
+    },
+    {
+      "modelId": "claude-opus-4",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 0.8,
+      "sourceLabel": "claude-opus-4-20250514"
+    },
+    {
+      "modelId": "claude-opus-4",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 56.6,
+      "sourceLabel": "claude-opus-4-20250514"
+    },
+    {
+      "modelId": "claude-opus-4",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 29.8,
+      "sourceLabel": "claude-opus-4-20250514"
+    },
+    {
+      "modelId": "claude-opus-4",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 88,
+      "sourceLabel": "anthropic/claude-opus-4-20250514"
+    },
+    {
       "modelId": "phi-4",
       "benchmarkId": "lmarena",
       "raw": 1256,
@@ -39552,135 +37748,196 @@
       "sourceLabel": "Solar Pro 4"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "lmarena",
+      "raw": 1401,
+      "stderr": 4,
+      "sourceLabel": "claude-sonnet-4-20250514-thinking-32k"
+    },
+    {
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "aa-gdpval",
       "raw": 819,
       "stderr": 17,
       "sourceLabel": "Claude 4 Sonnet (Reasoning)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "arc-agi-2",
       "raw": 5.9,
       "sourceLabel": "Claude Sonnet 4 (Thinking 16K)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "livecodebench",
       "raw": 55.9,
       "sourceLabel": "Claude-Sonnet-4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "aider-polyglot",
+      "raw": 61.3,
+      "sourceLabel": "claude-sonnet-4-20250514 (32k thinking)"
+    },
+    {
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "osworld",
+      "raw": 43.9,
+      "sourceLabel": "claude-4-sonnet-20250514"
+    },
+    {
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "kagi",
       "raw": 73,
       "sourceLabel": "claude-4-sonnet-thinking"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "simplebench",
       "raw": 45.5,
       "sourceLabel": "Claude 4 Sonnet (thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-legal_bench",
       "raw": 82.06,
       "stderr": 0.46,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 61.23,
       "stderr": 0.96,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 72,
       "stderr": 0.88,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-mortgage_tax",
       "raw": 49.88,
       "stderr": 0.98,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-medqa",
       "raw": 92.71,
       "stderr": 0.24,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-medcode",
       "raw": 34.96,
       "stderr": 1.94,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-medscribe",
       "raw": 69.35,
       "stderr": 2.21,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-gpqa",
       "raw": 75,
       "stderr": 2.19,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 83.86,
       "stderr": 0.36,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "vals-aime",
       "raw": 76.25,
       "stderr": 1.44,
       "sourceLabel": "Claude Sonnet 4 (Thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 98,
       "sourceLabel": "Claude 4 Sonnet (20250514, extended thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "helm-safety-simplesafetytests",
       "raw": 100,
       "sourceLabel": "Claude 4 Sonnet (20250514, extended thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "helm-safety-anthropic-red-team",
       "raw": 99.2,
       "sourceLabel": "Claude 4 Sonnet (20250514, extended thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "helm-safety-bbq",
       "raw": 96.6,
       "sourceLabel": "Claude 4 Sonnet (20250514, extended thinking)"
     },
     {
-      "modelId": "claude-4-sonnet",
+      "modelId": "claude-sonnet-4",
       "benchmarkId": "helm-safety-xstest",
       "raw": 96.6,
       "sourceLabel": "Claude 4 Sonnet (20250514, extended thinking)"
+    },
+    {
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 2.8,
+      "sourceLabel": "claude-sonnet-4-20250514"
+    },
+    {
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 0.6,
+      "sourceLabel": "claude-sonnet-4-20250514"
+    },
+    {
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 37,
+      "sourceLabel": "claude-sonnet-4-20250514"
+    },
+    {
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 0.2,
+      "sourceLabel": "claude-sonnet-4-20250514"
+    },
+    {
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 57.1,
+      "sourceLabel": "claude-sonnet-4-20250514"
+    },
+    {
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 14.7,
+      "sourceLabel": "claude-sonnet-4-20250514"
+    },
+    {
+      "modelId": "claude-sonnet-4",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 89.7,
+      "sourceLabel": "anthropic/claude-sonnet-4-20250514"
     },
     {
       "modelId": "ibm-granite-4-0-micro-with-guardian",
@@ -39887,6 +38144,42 @@
       "sourceLabel": "IBM Granite 4.0 Micro"
     },
     {
+      "modelId": "ibm-granite-4-0-micro",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 6.3,
+      "sourceLabel": "granite-4.0-micro"
+    },
+    {
+      "modelId": "ibm-granite-4-0-micro",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 11.1,
+      "sourceLabel": "granite-4.0-micro"
+    },
+    {
+      "modelId": "ibm-granite-4-0-micro",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 9.8,
+      "sourceLabel": "granite-4.0-micro"
+    },
+    {
+      "modelId": "ibm-granite-4-0-micro",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 0.6,
+      "sourceLabel": "granite-4.0-micro"
+    },
+    {
+      "modelId": "ibm-granite-4-0-micro",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 85,
+      "sourceLabel": "granite-4.0-micro"
+    },
+    {
+      "modelId": "ibm-granite-4-0-micro",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 51.6,
+      "sourceLabel": "granite-4.0-micro"
+    },
+    {
       "modelId": "ibm-granite-4-0-small",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 71.1,
@@ -39915,42 +38208,6 @@
       "benchmarkId": "helm-safety-xstest",
       "raw": 94.6,
       "sourceLabel": "IBM Granite 4.0 Small"
-    },
-    {
-      "modelId": "granite-4-0-micro",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 6.3,
-      "sourceLabel": "granite-4.0-micro"
-    },
-    {
-      "modelId": "granite-4-0-micro",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 11.1,
-      "sourceLabel": "granite-4.0-micro"
-    },
-    {
-      "modelId": "granite-4-0-micro",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 9.8,
-      "sourceLabel": "granite-4.0-micro"
-    },
-    {
-      "modelId": "granite-4-0-micro",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0.6,
-      "sourceLabel": "granite-4.0-micro"
-    },
-    {
-      "modelId": "granite-4-0-micro",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 85,
-      "sourceLabel": "granite-4.0-micro"
-    },
-    {
-      "modelId": "granite-4-0-micro",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 51.6,
-      "sourceLabel": "granite-4.0-micro"
     },
     {
       "modelId": "granite-4-1-8b",
@@ -40376,6 +38633,13 @@
     },
     {
       "modelId": "gpt-4-1",
+      "benchmarkId": "lmarena",
+      "raw": 1414,
+      "stderr": 4,
+      "sourceLabel": "gpt-4.1-2025-04-14"
+    },
+    {
+      "modelId": "gpt-4-1",
       "benchmarkId": "arc-agi-2",
       "raw": 0.4,
       "sourceLabel": "GPT-4.1"
@@ -40385,6 +38649,12 @@
       "benchmarkId": "aider-polyglot",
       "raw": 52.4,
       "sourceLabel": "gpt-4.1"
+    },
+    {
+      "modelId": "gpt-4-1",
+      "benchmarkId": "bfcl",
+      "raw": 53.96,
+      "sourceLabel": "GPT-4.1-2025-04-14"
     },
     {
       "modelId": "gpt-4-1",
@@ -40463,6 +38733,36 @@
     },
     {
       "modelId": "gpt-4-1",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 91.7,
+      "sourceLabel": "GPT-4.1 (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "GPT-4.1 (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.3,
+      "sourceLabel": "GPT-4.1 (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 92.6,
+      "sourceLabel": "GPT-4.1 (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97.9,
+      "sourceLabel": "GPT-4.1 (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 7.2,
       "sourceLabel": "gpt-4.1"
@@ -40498,6 +38798,19 @@
       "sourceLabel": "gpt-4.1"
     },
     {
+      "modelId": "gpt-4-1",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 94.4,
+      "sourceLabel": "openai/gpt-4.1-2025-04-14"
+    },
+    {
+      "modelId": "gpt-4-1-mini",
+      "benchmarkId": "lmarena",
+      "raw": 1383,
+      "stderr": 4,
+      "sourceLabel": "gpt-4.1-mini-2025-04-14"
+    },
+    {
       "modelId": "gpt-4-1-mini",
       "benchmarkId": "aa-gdpval",
       "raw": 453,
@@ -40515,6 +38828,12 @@
       "benchmarkId": "aider-polyglot",
       "raw": 32.4,
       "sourceLabel": "gpt-4.1-mini"
+    },
+    {
+      "modelId": "gpt-4-1-mini",
+      "benchmarkId": "bfcl",
+      "raw": 50.45,
+      "sourceLabel": "GPT-4.1-mini-2025-04-14"
     },
     {
       "modelId": "gpt-4-1-mini",
@@ -40580,6 +38899,36 @@
     },
     {
       "modelId": "gpt-4-1-mini",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 85.6,
+      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-mini",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-mini",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.3,
+      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-mini",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 92.1,
+      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-mini",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97.4,
+      "sourceLabel": "GPT-4.1 mini (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-mini",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 10.8,
       "sourceLabel": "gpt-4.1-mini"
@@ -40616,6 +38965,13 @@
     },
     {
       "modelId": "gpt-4-1-nano",
+      "benchmarkId": "lmarena",
+      "raw": 1322,
+      "stderr": 8,
+      "sourceLabel": "gpt-4.1-nano-2025-04-14"
+    },
+    {
+      "modelId": "gpt-4-1-nano",
       "benchmarkId": "aa-gdpval",
       "raw": 13,
       "stderr": 19,
@@ -40632,6 +38988,12 @@
       "benchmarkId": "aider-polyglot",
       "raw": 8.9,
       "sourceLabel": "gpt-4.1-nano"
+    },
+    {
+      "modelId": "gpt-4-1-nano",
+      "benchmarkId": "bfcl",
+      "raw": 33.05,
+      "sourceLabel": "GPT-4.1-nano-2025-04-14"
     },
     {
       "modelId": "gpt-4-1-nano",
@@ -40697,6 +39059,36 @@
     },
     {
       "modelId": "gpt-4-1-nano",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 86.8,
+      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-nano",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 99,
+      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-nano",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.6,
+      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-nano",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 87.5,
+      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-nano",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 96,
+      "sourceLabel": "GPT-4.1 nano (2025-04-14)"
+    },
+    {
+      "modelId": "gpt-4-1-nano",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 9.7,
       "sourceLabel": "gpt-4.1-nano"
@@ -40739,73 +39131,86 @@
       "sourceLabel": "grok-4.1-thinking"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
+      "benchmarkId": "lmarena",
+      "raw": 1450,
+      "stderr": 3,
+      "sourceLabel": "claude-opus-4-1-20250805-thinking-16k"
+    },
+    {
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "simplebench",
       "raw": 60,
       "sourceLabel": "Claude 4.1 Opus"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "vals-legal_bench",
       "raw": 83.46,
       "stderr": 0.45,
       "sourceLabel": "Claude Opus 4.1 (Nonthinking)"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 73.67,
       "stderr": 0.86,
       "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "vals-mortgage_tax",
       "raw": 56.12,
       "stderr": 0.99,
       "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "vals-medqa",
       "raw": 93.59,
       "stderr": 0.22,
       "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "vals-medcode",
       "raw": 47.23,
       "stderr": 2.07,
       "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "vals-medscribe",
       "raw": 73.9,
       "stderr": 1.97,
       "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "vals-gpqa",
       "raw": 76.26,
       "stderr": 2.16,
       "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 87.92,
       "stderr": 0.33,
       "sourceLabel": "Claude Opus 4.1 (Thinking)"
     },
     {
-      "modelId": "claude-4-1-opus",
+      "modelId": "claude-opus-4-1",
       "benchmarkId": "vals-aime",
       "raw": 78.18,
       "stderr": 1.63,
       "sourceLabel": "Claude Opus 4.1 (Thinking)"
+    },
+    {
+      "modelId": "claude-opus-4-1",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 88.2,
+      "sourceLabel": "anthropic/claude-opus-4-1-20250805"
     },
     {
       "modelId": "granite-4-2-8b",
@@ -41402,9 +39807,22 @@
     },
     {
       "modelId": "gpt-4-5",
+      "benchmarkId": "lmarena",
+      "raw": 1445,
+      "stderr": 6,
+      "sourceLabel": "gpt-4.5-preview-2025-02-27"
+    },
+    {
+      "modelId": "gpt-4-5",
       "benchmarkId": "arc-agi-2",
       "raw": 0.8,
       "sourceLabel": "GPT-4.5"
+    },
+    {
+      "modelId": "gpt-4-5",
+      "benchmarkId": "aider-polyglot",
+      "raw": 44.9,
+      "sourceLabel": "gpt-4.5-preview"
     },
     {
       "modelId": "gpt-4-5",
@@ -41413,10 +39831,34 @@
       "sourceLabel": "GPT-4.5"
     },
     {
-      "modelId": "gpt-4-5-preview",
-      "benchmarkId": "aider-polyglot",
-      "raw": 44.9,
-      "sourceLabel": "gpt-4.5-preview"
+      "modelId": "gpt-4-5",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 95.8,
+      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
+    },
+    {
+      "modelId": "gpt-4-5",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
+    },
+    {
+      "modelId": "gpt-4-5",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.4,
+      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
+    },
+    {
+      "modelId": "gpt-4-5",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 92,
+      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
+    },
+    {
+      "modelId": "gpt-4-5",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 95.1,
+      "sourceLabel": "GPT-4.5 (2025-02-27 preview)"
     },
     {
       "modelId": "grok-4-5",
@@ -41672,110 +40114,123 @@
       "sourceLabel": "grok-4.5"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "lmarena",
+      "raw": 1415,
+      "stderr": 3,
+      "sourceLabel": "claude-haiku-4-5-20251001"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "artificial-analysis",
       "raw": 18,
       "sourceLabel": "Claude 4.5 Haiku"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "aa-gdpval",
       "raw": 854,
       "stderr": 15,
       "sourceLabel": "Claude 4.5 Haiku (Reasoning)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "aa-briefcase",
       "raw": 614,
       "stderr": 7,
       "sourceLabel": "Claude 4.5 Haiku (Reasoning)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "arc-agi-2",
       "raw": 4,
       "sourceLabel": "Claude Haiku 4.5 (Thinking 32K)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "bfcl",
+      "raw": 68.7,
+      "sourceLabel": "Claude-Haiku-4-5-20251001"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-legal_research",
       "raw": 10.58,
       "stderr": 2.14,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-case_law_v2",
       "raw": 56.48,
       "stderr": 0.92,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-legal_bench",
       "raw": 81.24,
       "stderr": 0.49,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-hlab",
       "raw": 0.83,
       "stderr": 0.83,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-fabv2",
       "raw": 31.01,
       "stderr": 0.56,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 60.61,
       "stderr": 0.96,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 67.54,
       "stderr": 0.91,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-mortgage_tax",
       "raw": 62.16,
       "stderr": 0.96,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-medqa",
       "raw": 79.57,
       "stderr": 0.37,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-medcode",
       "raw": 32.68,
       "stderr": 2,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-medscribe",
       "raw": 85.23,
       "stderr": 1.9,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-swebench",
       "raw": 66.6,
       "stderr": 2.11,
@@ -41783,7 +40238,7 @@
       "scaffold": "Mini-SWE-agent"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-vibe-code",
       "raw": 11.39,
       "stderr": 3.13,
@@ -41791,157 +40246,242 @@
       "scaffold": "OpenHands"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-code-migration",
       "raw": 7.55,
       "stderr": 1.06,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-gpqa",
       "raw": 72.22,
       "stderr": 2.47,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 78.72,
       "stderr": 0.48,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-haiku",
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "vals-aime",
       "raw": 82.71,
       "stderr": 0.92,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 95.9,
+      "sourceLabel": "Claude 4.5 Haiku (20251001)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 98.8,
+      "sourceLabel": "Claude 4.5 Haiku (20251001)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 96.9,
+      "sourceLabel": "Claude 4.5 Haiku (20251001)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 92.8,
+      "sourceLabel": "Claude 4.5 Haiku (20251001)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 93.2,
+      "sourceLabel": "Claude 4.5 Haiku (20251001)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 2.9,
+      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 1.1,
+      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 10.5,
+      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 1.1,
+      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 64.9,
+      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 43.6,
+      "sourceLabel": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 90.2,
+      "sourceLabel": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "modelId": "claude-opus-4-5",
+      "benchmarkId": "lmarena",
+      "raw": 1473,
+      "stderr": 4,
+      "sourceLabel": "claude-opus-4-5-20251101-high-32k"
+    },
+    {
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "arc-agi-2",
       "raw": 37.6,
       "sourceLabel": "Opus 4.5 (Thinking, 64K)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "livebench",
       "raw": 72.6,
       "sourceLabel": "Claude 4.5 Opus Thinking High Effort"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "livebench-reasoning",
       "raw": 80.1,
       "sourceLabel": "Claude 4.5 Opus Thinking High Effort"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "livebench-coding",
       "raw": 79.7,
       "sourceLabel": "Claude 4.5 Opus Thinking High Effort"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "livebench-agentic-coding",
       "raw": 39.7,
       "sourceLabel": "Claude 4.5 Opus Thinking High Effort"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "livebench-mathematics",
       "raw": 90.4,
       "sourceLabel": "Claude 4.5 Opus Thinking High Effort"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "livebench-data-analysis",
       "raw": 74.4,
       "sourceLabel": "Claude 4.5 Opus Thinking High Effort"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "livebench-language",
       "raw": 81.3,
       "sourceLabel": "Claude 4.5 Opus Thinking High Effort"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "livebench-instruction-following",
       "raw": 62.5,
       "sourceLabel": "Claude 4.5 Opus Thinking High Effort"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
+      "benchmarkId": "bfcl",
+      "raw": 77.47,
+      "sourceLabel": "Claude-Opus-4-5-20251101"
+    },
+    {
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "kagi",
       "raw": 80.2,
       "sourceLabel": "claude-4-5-opus-thinking"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "simplebench",
       "raw": 62,
       "sourceLabel": "Claude Opus 4.5"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-case_law_v2",
       "raw": 62.59,
       "stderr": 0.11,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-legal_bench",
       "raw": 84.6,
       "stderr": 0.39,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 65.07,
       "stderr": 0.94,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 74.86,
       "stderr": 0.85,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-mortgage_tax",
       "raw": 67.69,
       "stderr": 0.92,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-medqa",
       "raw": 95.88,
       "stderr": 0.18,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-medcode",
       "raw": 49.16,
       "stderr": 2.01,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-medscribe",
       "raw": 85.32,
       "stderr": 1.9,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-swebench",
       "raw": 76.4,
       "stderr": 1.9,
@@ -41949,7 +40489,7 @@
       "scaffold": "Mini-SWE-agent"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-vibe-code",
       "raw": 20.63,
       "stderr": 3.16,
@@ -41957,116 +40497,141 @@
       "scaffold": "OpenHands"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-gpqa",
       "raw": 85.86,
       "stderr": 2.48,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 87.26,
       "stderr": 0.38,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "opus-4-5",
+      "modelId": "claude-opus-4-5",
       "benchmarkId": "vals-aime",
       "raw": 95.42,
       "stderr": 0.37,
       "sourceLabel": "Claude Opus 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-opus-4-5",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 89.1,
+      "sourceLabel": "anthropic/claude-opus-4-5-20251101"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "lmarena",
+      "raw": 1456,
+      "stderr": 3,
+      "sourceLabel": "claude-sonnet-4-5-20250929-high-32k"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "aa-gdpval",
       "raw": 989,
       "stderr": 16,
       "sourceLabel": "Claude 4.5 Sonnet (Reasoning)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "aa-briefcase",
       "raw": 712,
       "stderr": 9.5,
       "sourceLabel": "Claude 4.5 Sonnet (Reasoning)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "arc-agi-2",
       "raw": 13.6,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking 32K)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "bfcl",
+      "raw": 73.24,
+      "sourceLabel": "Claude-Sonnet-4-5-20250929"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "osworld",
+      "raw": 62.9,
+      "sourceLabel": "claude-sonnet-4-5-20250929"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "kagi",
       "raw": 57.9,
       "sourceLabel": "claude-4-5-sonnet"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "simplebench",
       "raw": 54.3,
       "sourceLabel": "Claude 4.5 Sonnet"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-case_law_v2",
       "raw": 62.16,
       "stderr": 1.55,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-legal_bench",
       "raw": 84.08,
       "stderr": 0.45,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 61.97,
       "stderr": 0.96,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 73.3,
       "stderr": 0.86,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-mortgage_tax",
       "raw": 63.99,
       "stderr": 0.95,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-medqa",
       "raw": 94.71,
       "stderr": 0.2,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-medcode",
       "raw": 44.13,
       "stderr": 2,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-medscribe",
       "raw": 84.1,
       "stderr": 1.87,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-swebench",
       "raw": 70,
       "stderr": 2.05,
@@ -42074,7 +40639,7 @@
       "scaffold": "Mini-SWE-agent"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-vibe-code",
       "raw": 22.62,
       "stderr": 3.73,
@@ -42082,25 +40647,97 @@
       "scaffold": "OpenHands"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-gpqa",
       "raw": 81.63,
       "stderr": 2.25,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 87.36,
       "stderr": 0.39,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
     },
     {
-      "modelId": "claude-4-5-sonnet",
+      "modelId": "claude-sonnet-4-5",
       "benchmarkId": "vals-aime",
       "raw": 88.19,
       "stderr": 0.69,
       "sourceLabel": "Claude Sonnet 4.5 (Thinking)"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 92,
+      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 98.2,
+      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 98.9,
+      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 96.4,
+      "sourceLabel": "Claude 4.5 Sonnet (20250929)"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 4.3,
+      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 0.6,
+      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 13,
+      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 1.3,
+      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 52.5,
+      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 48.4,
+      "sourceLabel": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+    },
+    {
+      "modelId": "claude-sonnet-4-5",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 88,
+      "sourceLabel": "anthropic/claude-sonnet-4-5-20250929"
     },
     {
       "modelId": "glm-4-6-exacto",
@@ -44049,6 +42686,36 @@
     },
     {
       "modelId": "gpt-5",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 97.6,
+      "sourceLabel": "GPT-5 (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 99.8,
+      "sourceLabel": "GPT-5 (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.1,
+      "sourceLabel": "GPT-5 (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 96.8,
+      "sourceLabel": "GPT-5 (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97.1,
+      "sourceLabel": "GPT-5 (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 2.1,
       "sourceLabel": "gpt-5"
@@ -44084,6 +42751,12 @@
       "sourceLabel": "gpt-5"
     },
     {
+      "modelId": "gpt-5",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 84.9,
+      "sourceLabel": "openai/gpt-5-high-2025-08-07"
+    },
+    {
       "modelId": "gpt-5-mini",
       "benchmarkId": "lmarena",
       "raw": 1390,
@@ -44109,6 +42782,12 @@
       "benchmarkId": "arc-agi-2",
       "raw": 4.4,
       "sourceLabel": "GPT-5 Mini (High)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "bfcl",
+      "raw": 55.46,
+      "sourceLabel": "GPT-5-mini-2025-08-07"
     },
     {
       "modelId": "gpt-5-mini",
@@ -44211,6 +42890,36 @@
     },
     {
       "modelId": "gpt-5-mini",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 97.1,
+      "sourceLabel": "GPT-5 mini (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "GPT-5 mini (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.1,
+      "sourceLabel": "GPT-5 mini (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 96.3,
+      "sourceLabel": "GPT-5 mini (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97.7,
+      "sourceLabel": "GPT-5 mini (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-mini",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 2.6,
       "sourceLabel": "gpt-5-mini"
@@ -44246,6 +42955,12 @@
       "sourceLabel": "gpt-5-mini"
     },
     {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 87.1,
+      "sourceLabel": "openai/gpt-5-mini-2025-08-07"
+    },
+    {
       "modelId": "gpt-5-nano",
       "benchmarkId": "lmarena",
       "raw": 1337,
@@ -44257,6 +42972,12 @@
       "benchmarkId": "arc-agi-2",
       "raw": 2.6,
       "sourceLabel": "GPT-5 Nano (High)"
+    },
+    {
+      "modelId": "gpt-5-nano",
+      "benchmarkId": "bfcl",
+      "raw": 51.45,
+      "sourceLabel": "GPT-5-nano-2025-08-07"
     },
     {
       "modelId": "gpt-5-nano",
@@ -44336,6 +43057,36 @@
     },
     {
       "modelId": "gpt-5-nano",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 98.4,
+      "sourceLabel": "GPT-5 nano (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-nano",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 100,
+      "sourceLabel": "GPT-5 nano (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-nano",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.6,
+      "sourceLabel": "GPT-5 nano (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-nano",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 97.6,
+      "sourceLabel": "GPT-5 nano (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-nano",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 97.6,
+      "sourceLabel": "GPT-5 nano (2025-08-07)"
+    },
+    {
+      "modelId": "gpt-5-nano",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 1.9,
       "sourceLabel": "gpt-5-nano"
@@ -44369,6 +43120,12 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 1.3,
       "sourceLabel": "gpt-5-nano"
+    },
+    {
+      "modelId": "gpt-5-nano",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 89.5,
+      "sourceLabel": "openai/gpt-5-nano-2025-08-07"
     },
     {
       "modelId": "gpt-5-pro",
@@ -45677,6 +44434,36 @@
     },
     {
       "modelId": "gpt-5-1",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 97.6,
+      "sourceLabel": "GPT-5.1 (2025-11-13)"
+    },
+    {
+      "modelId": "gpt-5-1",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 99.8,
+      "sourceLabel": "GPT-5.1 (2025-11-13)"
+    },
+    {
+      "modelId": "gpt-5-1",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 99.5,
+      "sourceLabel": "GPT-5.1 (2025-11-13)"
+    },
+    {
+      "modelId": "gpt-5-1",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 88.7,
+      "sourceLabel": "GPT-5.1 (2025-11-13)"
+    },
+    {
+      "modelId": "gpt-5-1",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 98.2,
+      "sourceLabel": "GPT-5.1 (2025-11-13)"
+    },
+    {
+      "modelId": "gpt-5-1",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 7.2,
       "sourceLabel": "gpt-5.1"
@@ -45710,6 +44497,12 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 4,
       "sourceLabel": "gpt-5.1"
+    },
+    {
+      "modelId": "gpt-5-1",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 87.9,
+      "sourceLabel": "openai/gpt-5.1-high-2025-11-13"
     },
     {
       "modelId": "gpt-5-2-codex",
@@ -46206,6 +44999,12 @@
     },
     {
       "modelId": "gpt-5-2",
+      "benchmarkId": "bfcl",
+      "raw": 55.87,
+      "sourceLabel": "GPT-5.2-2025-12-11"
+    },
+    {
+      "modelId": "gpt-5-2",
       "benchmarkId": "kagi",
       "raw": 73.3,
       "sourceLabel": "gpt-5-2"
@@ -46344,6 +45143,19 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 0,
       "sourceLabel": "gpt-5.2"
+    },
+    {
+      "modelId": "gpt-5-2",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 89.2,
+      "sourceLabel": "openai/gpt-5.2-high-2025-12-11"
+    },
+    {
+      "modelId": "gpt-5-2-chat-latest",
+      "benchmarkId": "lmarena",
+      "raw": 1476,
+      "stderr": 4,
+      "sourceLabel": "gpt-5.2-chat-latest-20260210"
     },
     {
       "modelId": "gpt-5-2-pro",
@@ -46998,6 +45810,48 @@
       "sourceLabel": "GPT 5.4 (xhigh)"
     },
     {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 6.3,
+      "sourceLabel": "gpt-5.4-2026-03-05"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 0,
+      "sourceLabel": "gpt-5.4-2026-03-05"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 16.7,
+      "sourceLabel": "gpt-5.4-2026-03-05"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 2.7,
+      "sourceLabel": "gpt-5.4-2026-03-05"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 87.1,
+      "sourceLabel": "gpt-5.4-2026-03-05"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 5.8,
+      "sourceLabel": "gpt-5.4-2026-03-05"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 93,
+      "sourceLabel": "openai/gpt-5.4-2026-03-05"
+    },
+    {
       "modelId": "gpt-5-4-mini",
       "benchmarkId": "lmarena",
       "raw": 1448,
@@ -47170,6 +46024,12 @@
       "raw": 95.63,
       "stderr": 0.41,
       "sourceLabel": "GPT 5.4 Mini"
+    },
+    {
+      "modelId": "gpt-5-4-mini",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 94.5,
+      "sourceLabel": "openai/gpt-5.4-mini-2026-03-17"
     },
     {
       "modelId": "gpt-5-4-nano",
@@ -47367,10 +46227,22 @@
       "sourceLabel": "GPT 5.4 Nano"
     },
     {
+      "modelId": "gpt-5-4-nano",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 96.9,
+      "sourceLabel": "openai/gpt-5.4-nano-2026-03-17"
+    },
+    {
       "modelId": "gpt-5-4-pro",
       "benchmarkId": "arc-agi-2",
       "raw": 83.3,
       "sourceLabel": "GPT-5.4 Pro (XHigh)"
+    },
+    {
+      "modelId": "gpt-5-4-pro",
+      "benchmarkId": "vectara-factual-consistency",
+      "raw": 91.7,
+      "sourceLabel": "openai/gpt-5.4-pro-2026-03-05"
     },
     {
       "modelId": "gpt-5-5",
@@ -47630,6 +46502,26 @@
       "sourceLabel": "gpt-5.5-instant"
     },
     {
+      "modelId": "gpt-5-5-instant",
+      "benchmarkId": "artificial-analysis",
+      "raw": 27,
+      "sourceLabel": "GPT-5.5 Instant (June 2026)"
+    },
+    {
+      "modelId": "gpt-5-5-instant",
+      "benchmarkId": "aa-gdpval",
+      "raw": 662,
+      "stderr": 17,
+      "sourceLabel": "GPT-5.5 Instant (June 2026)"
+    },
+    {
+      "modelId": "gpt-5-5-instant",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1082,
+      "stderr": 9.5,
+      "sourceLabel": "GPT-5.5 Instant (June 2026)"
+    },
+    {
       "modelId": "gpt-5-5-pro",
       "benchmarkId": "arc-agi-2",
       "raw": 84.2,
@@ -47715,8 +46607,8 @@
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "arc-agi-2",
-      "raw": 59.5,
-      "sourceLabel": "GPT-5.6 Luna (Max)"
+      "raw": 59.6,
+      "sourceLabel": "GPT-5.6 Luna 2026-07-30 (Max)"
     },
     {
       "modelId": "gpt-5-6-luna",

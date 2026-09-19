@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T10:50:13.292Z",
+  "generatedAt": "2026-09-19T20:21:42.689Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -717,17 +717,6 @@
       "size": { "paramsB": 20, "source": "name" }
     },
     {
-      "id": "chatgpt-image-latest-high-fidelity-20251216",
-      "name": "Chatgpt-image-latest-high-fidelity (20251216)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
-    {
       "id": "grok-imagine-image-quality-20260519",
       "name": "Grok-imagine-image-quality (20260519)",
       "org": "SpaceXAI",
@@ -1166,6 +1155,17 @@
         "official": {
           "name": "Alibaba Cloud Model Studio",
           "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      }
+    },
+    {
+      "id": "chatgpt-image-latest-high-fidelity",
+      "name": "ChatGPT Image Latest High Fidelity",
+      "org": "OpenAI",
+      "access": {
+        "official": {
+          "name": "OpenAI Platform",
+          "url": "https://platform.openai.com/docs"
         }
       }
     },
@@ -2547,13 +2547,6 @@
       "sourceLabel": "Recraft 20B"
     },
     {
-      "modelId": "chatgpt-image-latest-high-fidelity-20251216",
-      "benchmarkId": "arena-image-edit",
-      "raw": 1389,
-      "stderr": 3,
-      "sourceLabel": "chatgpt-image-latest-high-fidelity (20251216)"
-    },
-    {
       "modelId": "grok-imagine-image-quality-20260519",
       "benchmarkId": "arena-image-edit",
       "raw": 1390,
@@ -3105,6 +3098,13 @@
       "raw": 874,
       "stderr": 8,
       "sourceLabel": "Z-Image Base"
+    },
+    {
+      "modelId": "chatgpt-image-latest-high-fidelity",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1389,
+      "stderr": 3,
+      "sourceLabel": "chatgpt-image-latest-high-fidelity (20251216)"
     },
     {
       "modelId": "reve-edit-fast",
