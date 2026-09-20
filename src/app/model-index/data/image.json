@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T20:52:14.963Z",
+  "generatedAt": "2026-09-20T02:20:55.508Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
-      "retrievedAt": "2026-09-19",
+      "retrievedAt": "2026-09-20",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-image.ico",
       "category": "Text-to-image",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-09-19",
+      "retrievedAt": "2026-09-20",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-image.png",
       "category": "Text-to-image",
@@ -39,7 +39,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-09-19",
+      "retrievedAt": "2026-09-20",
       "metric": "elo",
       "logo": "/model-index/logos/arena-image-edit.png",
       "category": "Image editing",
@@ -1061,8 +1061,8 @@
       }
     },
     {
-      "id": "chatgpt-image-latest-high-fidelity",
-      "name": "ChatGPT Image Latest High Fidelity",
+      "id": "chatgpt-image-high-fidelity",
+      "name": "ChatGPT Image High Fidelity",
       "org": "OpenAI",
       "access": {
         "official": {
@@ -2989,7 +2989,7 @@
       "sourceLabel": "Z-Image Base"
     },
     {
-      "modelId": "chatgpt-image-latest-high-fidelity",
+      "modelId": "chatgpt-image-high-fidelity",
       "benchmarkId": "arena-image-edit",
       "raw": 1389,
       "stderr": 3,
@@ -3296,7 +3296,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-19",
+      "retrievedAt": "2026-09-20",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -3304,7 +3304,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-19",
+      "retrievedAt": "2026-09-20",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
