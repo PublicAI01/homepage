@@ -7,6 +7,9 @@ BUGSCAN_LABEL='homepage'
 # 机器写入的数据、人定的常数、部署管线,和闸门脚本自己。
 FORBID_RE='^(\.github/|scripts/bugscan/|\.claude/|src/app/model-index/data/|src/app/model-index/lib/weights\.ts$|public/|\.env|\.gitignore$|package\.json$|pnpm-lock\.yaml$|next\.config)'
 
+# bugscan.md 里的「已拍板的口径」由修复器在人定了新原则后补全(2026-09-19)。
+EXEMPT_RE='^\.claude/bugscan\.md$'
+
 MAX_LINES=400
 
 GATE_STEPS=(
