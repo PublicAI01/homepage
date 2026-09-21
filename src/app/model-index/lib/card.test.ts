@@ -3,6 +3,8 @@ import { describe, expect, it } from 'vitest';
 import { models as textModels } from '../data';
 import { imageData, videoData } from '../data/tracks';
 import { cardOf } from './card';
+import { familyOf } from './family';
+import { rankModels } from './query';
 import { decodeView } from './view-state';
 
 const card = (query: string) => cardOf(decodeView(new URLSearchParams(query)));
@@ -42,5 +44,22 @@ describe('cardOf', () => {
       ...decodeView(new URLSearchParams('family=ClickThisLink')),
     });
     expect(family.title).not.toContain('ClickThisLink');
+  });
+
+  it('keeps a family filter whose models all sit past the API’s hundred rows', () => {
+    // The whitelist was read off rankModels, which caps at 100 rows, so 146
+    // of 168 families were "unknown" and their links previewed as the
+    // unfiltered Overall top ten (2026-09-21).
+    const top = rankModels({ limit: 100, minBoards: 0 });
+    if ('error' in top) throw new Error(top.error);
+    const seen = new Set(top.models.map((m) => m.family.toLowerCase()));
+    const beyond = textModels
+      .map((m) => familyOf(m.name))
+      .find((f) => !seen.has(f.toLowerCase()));
+    expect(beyond).toBeDefined();
+    const c = card(`family=${encodeURIComponent(beyond!)}`);
+    expect(c.title).toContain(beyond!);
+    expect(c.rows.length).toBeGreaterThan(0);
+    for (const m of c.rows) expect(m.family).toBe(beyond);
   });
 });

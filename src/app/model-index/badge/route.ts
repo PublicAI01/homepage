@@ -1,3 +1,4 @@
+import { estimateMark } from '../lib/estimate';
 import { getModel, positionIn, resolveScope, scopeLabel } from '../lib/query';
 
 /**
@@ -8,8 +9,9 @@ import { getModel, positionIn, resolveScope, scopeLabel } from '../lib/query';
  *
  * Renders the live position, so a badge never goes stale; the tooltip
  * carries the snapshot date. Provisional models show "provisional", an
- * estimate shows "~55" (the tilde is the mark: ✱ means a report, and an
- * estimate is not one), and a position placed by reports alone shows ✱.
+ * estimate shows "~55" — or "≤55" / "≥55" when it is a ceiling or a floor
+ * (the mark is the point: ✱ means a report, and an estimate is not one) —
+ * and a position placed by reports alone shows ✱.
  *
  * The position comes from the scope's full list, not the API's first
  * hundred rows: a model at #120 in Agentic coding is measured there, and
@@ -44,7 +46,7 @@ export function GET(request: Request) {
       value = m.ranked
         ? `#${m.rank} · ${m.index?.toFixed(1)}`
         : m.estimatedIndex
-          ? `~${m.estimatedIndex.score.toFixed(1)} provisional`
+          ? `${estimateMark(m.estimatedIndex.bound)}${m.estimatedIndex.score.toFixed(1)} provisional`
           : 'provisional';
       tone = m.ranked ? '#4000C8' : '#6F6D7A';
     } else {

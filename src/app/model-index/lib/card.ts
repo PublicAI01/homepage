@@ -1,3 +1,4 @@
+import { familyOf } from './family';
 import { SIZE_TIERS } from './size';
 import { TRACKS } from './tracks';
 import { rankName, rankScope, type ViewState } from './view-state';
@@ -18,9 +19,13 @@ export function cardOf(view: ViewState) {
   const scope = track.index.resolveScope(rankScope(view.rank))
     ? view.rank
     : ({ level: 'overall' } as const);
-  const all = track.index.rankModels({ limit: 1000, minBoards: 0 });
+  // Over every model in the snapshot, not the rows an API call returns:
+  // rankModels caps at 100 rows however large a limit is asked for, so a
+  // whitelist read off it held the families of the top hundred only — 22
+  // of 168 — and a link filtered to any other family (K2, Mixtral, Falcon)
+  // previewed as the unfiltered Overall top ten (2026-09-21).
   const families = new Set(
-    'models' in all ? all.models.map((m) => m.family.toLowerCase()) : [],
+    track.index.data.models.map((m) => familyOf(m.name).toLowerCase()),
   );
   const family =
     view.family !== 'all' && families.has(view.family.toLowerCase())

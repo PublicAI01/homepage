@@ -20,6 +20,7 @@ import {
   type NormalizedScore,
 } from '../lib/aggregate';
 import { type BoardView, groupBoards } from '../lib/boards';
+import { estimateMark } from '../lib/estimate';
 import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
 import { SIZE_TIERS, sizeLabel, type SizeTier, tierOf } from '../lib/size';
@@ -1135,11 +1136,7 @@ function Row({
             <span
               className="text-[#B9B7C4]"
               title={`Estimate — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position.${row.estimate.bound === 'below' ? ' It trailed every such model there, so this is a ceiling.' : row.estimate.bound === 'above' ? ' It led every such model there, so this is a floor.' : ''} Never ranked.`}>
-              {row.estimate.bound === 'below'
-                ? '≤'
-                : row.estimate.bound === 'above'
-                  ? '≥'
-                  : '~'}
+              {estimateMark(row.estimate.bound)}
               {fmt(row.estimate.score)}
             </span>
           ) : (
@@ -1308,11 +1305,7 @@ function ModelCard({
                 <span className="text-[#9C9AA8]">
                   , estimated{' '}
                   <b className="font-medium text-[#D9D7E0]">
-                    {row.estimate.bound === 'below'
-                      ? '≤'
-                      : row.estimate.bound === 'above'
-                        ? '≥'
-                        : '~'}
+                    {estimateMark(row.estimate.bound)}
                     {fmt(row.estimate.score)}
                   </b>
                 </span>

@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 
 import { cn } from '@/utils';
 
+import { estimateWords } from '../lib/estimate';
 import type { Standing } from '../lib/track';
 import type { TrackInfo } from '../lib/tracks';
 import BadgeCopy from './badge-copy';
@@ -352,7 +353,7 @@ export default async function ModelPage({
                 <p className="text-caption mt-1.5 text-[#E0B341]">
                   Only one publisher has scored it
                   {model.estimatedIndex
-                    ? ` — looks like about ${model.estimatedIndex.score}`
+                    ? ` — looks like ${estimateWords(model.estimatedIndex.bound)} ${model.estimatedIndex.score}`
                     : ''}
                 </p>
               </>

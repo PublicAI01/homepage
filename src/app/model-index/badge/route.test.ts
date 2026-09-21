@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { models } from '../data';
-import { headlineTaxonomy, positionIn, rankModels } from '../lib/query';
+import { getModel, headlineTaxonomy, positionIn, rankModels } from '../lib/query';
 import { GET } from './route';
 
 const svgFor = (query: string) =>
@@ -49,6 +49,21 @@ describe('badge', () => {
     );
     expect(svg).not.toContain('not scored');
     expect(svg).toContain(`#${row.position}`);
+  });
+
+  it('marks a ceiling estimate ≤, not ~ — and never ✱', async () => {
+    // A model that trailed every anchor has a ceiling, and the badge read
+    // it as a point (2026-09-21).
+    const bounded = models
+      .map((m) => getModel(m.id).model)
+      .find((m) => m?.estimatedIndex?.bound === 'below');
+    expect(bounded).toBeDefined();
+    const svg = await svgFor(`model=${encodeURIComponent(bounded!.id)}`);
+    // The value itself; the tooltip legitimately explains what ✱ means.
+    expect(svg).toContain(
+      `aria-label="PublicAI Index: ≤${bounded!.estimatedIndex!.score.toFixed(1)} provisional"`,
+    );
+    expect(svg).not.toContain('~');
   });
 
   it('says a scope is unknown rather than denying a listed model', async () => {

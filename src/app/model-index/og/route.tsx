@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 import { cardOf } from '../lib/card';
+import { estimateMark } from '../lib/estimate';
 import { decodeView } from '../lib/view-state';
 
 /**
@@ -26,7 +27,11 @@ const ONE_LINER =
   "The LLM benchmark aggregator - the world's most comprehensive and robust LLM index.";
 
 const ascii = (t: string) =>
-  t.replace(/≤/g, '<=').replace(/[–—]/g, '-').replace(/✱/g, '*');
+  t
+    .replace(/≤/g, '<=')
+    .replace(/≥/g, '>=')
+    .replace(/[–—]/g, '-')
+    .replace(/✱/g, '*');
 
 export async function GET(request: Request) {
   const view = decodeView(new URL(request.url).searchParams);
@@ -46,8 +51,13 @@ export async function GET(request: Request) {
     const v = scoreOf(m);
     const w = v === null ? 0 : ((v - floor) / span) * 640;
     const byReport = view.rank.level !== 'overall' && !m.rankedInScope;
+    // An estimate wears its own mark (~, <=, >=), never the report mark:
+    // `55.0*` under a legend reading "from reports" called a figure
+    // anchored on boards a launch-post number (2026-09-21).
     const estimated =
-      view.rank.level === 'overall' && m.index === null && m.estimatedIndex;
+      view.rank.level === 'overall' && m.index === null
+        ? m.estimatedIndex
+        : null;
     return (
       <div
         key={m.id}
@@ -85,7 +95,7 @@ export async function GET(request: Request) {
           }}
         />
         <div style={{ display: 'flex', marginLeft: 12, fontWeight: 600 }}>
-          {`${v === null ? '-' : v.toFixed(1)}${estimated ? '*' : ''}`}
+          {`${estimated ? estimateMark(estimated.bound, true) : ''}${v === null ? '-' : v.toFixed(1)}`}
         </div>
       </div>
     );
@@ -162,7 +172,7 @@ export async function GET(request: Request) {
 
       <div style={{ fontSize: 14, color: '#6F6D7A', flexShrink: 0 }}>
         {
-          'Scores 0-100; 50 is the average of the models each source lists. * placed or estimated from reports. Scores belong to their publishers.'
+          'Scores 0-100; 50 is the average of the models each source lists. * placed by reports; ~ <= >= estimated, never ranked. Scores belong to their publishers.'
         }
       </div>
     </div>,
