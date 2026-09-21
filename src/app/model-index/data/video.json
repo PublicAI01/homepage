@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T11:13:01.106Z",
+  "generatedAt": "2026-09-21T12:42:03.693Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-09-20",
+      "retrievedAt": "2026-09-21",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-09-20",
+      "retrievedAt": "2026-09-21",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-video.png",
       "category": "Text-to-video",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-09-20",
+      "retrievedAt": "2026-09-21",
       "metric": "elo",
       "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
@@ -1255,7 +1255,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-20",
+      "retrievedAt": "2026-09-21",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1263,7 +1263,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-20",
+      "retrievedAt": "2026-09-21",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
