@@ -1,10 +1,8 @@
 'use client';
 
-import Script from 'next/script';
 import { useState } from 'react';
 
 import {
-  RECAPTCHA_SCRIPT_SRC,
   requestRecaptchaToken,
 } from '@/client/recaptcha';
 import { RECAPTCHA_SUBSCRIBE_ACTION } from '@/constant/contact';
@@ -62,12 +60,6 @@ export default function Subscribe({
     <form
       onSubmit={submit}
       className={cn('flex flex-col gap-2', className)}>
-      {RECAPTCHA_SCRIPT_SRC ? (
-        <Script
-          src={RECAPTCHA_SCRIPT_SRC}
-          strategy="lazyOnload"
-        />
-      ) : null}
       <div className="flex gap-2">
         <input
           type="email"
