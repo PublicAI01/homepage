@@ -114,7 +114,11 @@ export interface RankQuery {
   openWeights?: boolean;
   /** Only models with a callable id in a catalog. */
   callable?: boolean;
-  /** Include report ✱ figures (launch posts, blogs). Default true. */
+  /**
+   * Count report ✱ figures in the scores. Default false: boards decide every
+   * number they have and ✱ fills only the gaps (boardsFirst); true lets ✱
+   * figures in alongside the boards.
+   */
   reports?: boolean;
   /** Size class by total parameters: small ≤ 15B, medium 15–100B, large 100B–1T, xlarge > 1T, undisclosed. */
   size?: SizeTier;
@@ -186,6 +190,13 @@ export interface TrackInput {
   apiBase?: string;
   /** Resolves an id a model used to carry to the one it carries now. */
   currentId?: (id: string) => string;
+  /**
+   * Whether one catalogued channel reaches this population. The text
+   * models are on OpenRouter; the generation models are not, and on the
+   * image track 4 of 194 with an id sent "use the OpenRouter id" to the
+   * 190 without (2026-09-20).
+   */
+  uncatalogued?: boolean;
 }
 
 /**
@@ -711,7 +722,9 @@ export function createTrack(input: TrackInput) {
       url: INDEX_URL,
       mcp: MCP_URL,
       api: API_URL,
-      feed: `${INDEX_URL}/feed.xml`,
+      // The feed lives on the text page; a generation track's INDEX_URL is
+      // a redirect and `/model-index/image/feed.xml` was a 404 (2026-09-20).
+      feed: `${API_BASE}/feed.xml`,
       generatedAt,
       counts: {
         models: models.length,
@@ -764,9 +777,9 @@ export function createTrack(input: TrackInput) {
         category,
         domains,
       })),
-      access: models.some((m) => m.access?.openrouter)
-        ? recommend(undefined).rule
-        : UNCATALOGUED_RULE,
+      access: input.uncatalogued
+        ? UNCATALOGUED_RULE
+        : recommend(undefined).rule,
       limits: [
         'Reasoning-effort tiers are matched by rule; the highest published tier is indexed and the exact label kept.',
         'Some sources score a scaffold (model + agent framework), recorded beside the figure.',

@@ -32,6 +32,7 @@ export const image = createTrack({
   weighting: IMAGE_WEIGHTING,
   url: `${ORIGIN}/model-index/image`,
   apiBase: `${ORIGIN}/model-index`,
+  uncatalogued: true,
 });
 
 export const video = createTrack({
@@ -39,6 +40,7 @@ export const video = createTrack({
   weighting: VIDEO_WEIGHTING,
   url: `${ORIGIN}/model-index/video`,
   apiBase: `${ORIGIN}/model-index`,
+  uncatalogued: true,
 });
 
 export const TRACKS: Record<TrackId, TrackInfo> = {

@@ -67,7 +67,7 @@ const handler = createMcpHandler(
             .boolean()
             .optional()
             .describe(
-              'Include report ✱ figures (launch posts, blogs, write-ups). Default true; false drops them from every score and hides models nothing else measured.',
+              'Count report ✱ figures (launch posts, blogs, write-ups) in the scores. Default false: a board’s measurement decides every number it has, and a ✱ figure speaks only where no board has measured the model; report-only models are still listed, unranked. True lets ✱ figures into the scores alongside the boards.',
             ),
           size: z
             .enum(['small', 'medium', 'large', 'xlarge', 'undisclosed'])

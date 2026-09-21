@@ -308,7 +308,7 @@ export function boardsFirst(
   withReports: AggregateRow[],
 ): AggregateRow[] {
   const starred = new Map(withReports.map((r) => [r.model.id, r]));
-  return boards.map((b) => {
+  const out = boards.map((b) => {
     const s = starred.get(b.model.id);
     if (!s) return b;
     // Over the keys of both runs, not the board run's alone. The board run
@@ -342,6 +342,16 @@ export function boardsFirst(
       reports: s.reports,
     };
   });
+  // The board run sorted report-only models last, with nothing to place
+  // them by; now that a ✱ estimate has been grafted on they belong among
+  // the other unranked rows by that figure, and `limit` must not cut them
+  // off first (2026-09-20). Ranked rows keep their order and their place.
+  const byScore = compareScores<AggregateRow>(
+    (r) => r.score ?? r.estimate?.score ?? null,
+  );
+  return out.sort(
+    (a, b) => Number(b.ranked) - Number(a.ranked) || byScore(a, b),
+  );
 }
 
 export function aggregate({
@@ -391,19 +401,6 @@ export function aggregate({
     );
     return boards > 0 ? boards : sumWeight(inScope.map((b) => b.id));
   };
-  const domainWeight = new Map(
-    domains.map((d) => [
-      d,
-      priorWeight(weighted.filter((b) => b.domain === d)),
-    ]),
-  );
-  const categoryWeight = new Map(
-    categories.map((c) => [
-      c,
-      priorWeight(weighted.filter((b) => b.category === c)),
-    ]),
-  );
-
   // Normalize within each measure, over the models actually present on it.
   const normalizedBy = new Map<string, Map<string, NormalizedScore>>();
 
@@ -439,6 +436,23 @@ export function aggregate({
     });
     normalizedBy.set(bench.id, byModel);
   }
+
+  // The prior's denominator is what actually standardized: a measure with
+  // too few models is dropped above, and counting it still pulled every
+  // model in its domain toward 50 for a figure nobody has (2026-09-20).
+  const standardized = weighted.filter((b) => normalizedBy.has(b.id));
+  const domainWeight = new Map(
+    domains.map((d) => [
+      d,
+      priorWeight(standardized.filter((b) => b.domain === d)),
+    ]),
+  );
+  const categoryWeight = new Map(
+    categories.map((c) => [
+      c,
+      priorWeight(standardized.filter((b) => b.category === c)),
+    ]),
+  );
 
   const rows = models.map((model): AggregateRow => {
     const perBenchmark = benchmarks

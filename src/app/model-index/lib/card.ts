@@ -11,6 +11,22 @@ import { rankName, rankScope, type ViewState } from './view-state';
  */
 export function cardOf(view: ViewState) {
   const track = TRACKS[view.track];
+  // Only what the index knows goes on the card: `rank=domain:<anything>`
+  // printed that text 38px tall under publicai.io's name, and every new
+  // string was a fresh render (2026-09-20). An unknown scope is Overall;
+  // an unknown family is no family.
+  const scope = track.index.resolveScope(rankScope(view.rank))
+    ? view.rank
+    : ({ level: 'overall' } as const);
+  const all = track.index.rankModels({ limit: 1000, minBoards: 0 });
+  const families = new Set(
+    'models' in all ? all.models.map((m) => m.family.toLowerCase()) : [],
+  );
+  const family =
+    view.family !== 'all' && families.has(view.family.toLowerCase())
+      ? view.family
+      : 'all';
+  view = { ...view, rank: scope, family };
   const result = track.index.rankModels({
     scope: rankScope(view.rank),
     family: view.family === 'all' ? undefined : view.family,

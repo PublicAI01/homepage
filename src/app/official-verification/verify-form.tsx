@@ -41,21 +41,34 @@ const VerifyForm = (props: VerifyFormProps) => {
   const [type, setType] = useState<QueryType>(QUERY_TYPE_LIST[0].value);
   const [query, setQuery] = useState('');
   const [visible, setVisible] = useState(false);
+  const [unavailable, setUnavailable] = useState(false);
   const [state, formAction] = useActionState<VerifyActionState | undefined>(
-    async () => {
-      if (!query) return;
-      const response = await fetch('/api/verify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type, name: query }),
-      });
-      if (response.ok) {
+    async (previous) => {
+      if (!query) return previous;
+      setUnavailable(false);
+      // A limit hit (10 a minute; an office NAT gets there) or a server
+      // error must say so: an anti-scam page that goes quiet reads as
+      // "nothing wrong", and a thrown fetch replaced the whole page with
+      // the error boundary (2026-09-20).
+      try {
+        const response = await fetch('/api/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type, name: query }),
+        });
+        if (!response.ok) {
+          setUnavailable(true);
+          return previous;
+        }
         const result = (await response.json()) as { result?: boolean };
         setVisible(true);
         return {
           query,
           result: result.result ?? false,
         };
+      } catch {
+        setUnavailable(true);
+        return previous;
       }
     },
     { query: '', result: false },
@@ -119,6 +132,14 @@ const VerifyForm = (props: VerifyFormProps) => {
           </div>
         </div>
         <SubmitButton />
+        {unavailable ? (
+          <p
+            role="alert"
+            className="mt-3 text-sm text-red-400">
+            Verification is not available right now. Please try again in a
+            minute.
+          </p>
+        ) : null}
       </form>
       <Modal
         className={

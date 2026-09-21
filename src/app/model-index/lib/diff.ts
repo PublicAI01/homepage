@@ -230,8 +230,17 @@ export function diff(
       });
     }
   }
+  // Whether anyone alive in `to` spoke for it, or — when a model that
+  // absorbed it has itself since left — whether it is in that model's
+  // lineage: B merged into A on day 2 and A left on day 3 read as two
+  // departures (2026-09-20).
+  const absorbed = new Set<string>();
+  for (const e of all)
+    if (e.date > from.date && e.date <= to.date)
+      for (const olds of Object.values(e.aliases ?? {}))
+        for (const old of olds) absorbed.add(old);
   for (const [id, was] of Object.entries(from.models)) {
-    if (!to.models[id] && !spokenFor.has(id))
+    if (!to.models[id] && !spokenFor.has(id) && !absorbed.has(id))
       models.push({ id, name: was.name, org: was.org, kind: 'left' });
   }
   const order = { ranked: 0, unranked: 1, moved: 2, entered: 3, left: 4 };

@@ -29,4 +29,18 @@ describe('cardOf', () => {
     for (const m of text.rows) expect(textIds.has(m.id)).toBe(true);
     expect(text.title).toBe(`Top ${text.rows.length} - Overall`);
   });
+
+  it('puts nothing on the card the index does not know', () => {
+    // `rank=domain:<any text>` printed that text as the card's title under
+    // publicai.io's name (2026-09-20).
+    const forged = cardOf({
+      ...decodeView(new URLSearchParams('rank=domain:FREE%20TOKENS%20HERE')),
+    });
+    expect(forged.title).not.toContain('FREE TOKENS');
+    expect(forged.title).toContain('Overall');
+    const family = cardOf({
+      ...decodeView(new URLSearchParams('family=ClickThisLink')),
+    });
+    expect(family.title).not.toContain('ClickThisLink');
+  });
 });

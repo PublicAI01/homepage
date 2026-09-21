@@ -166,6 +166,15 @@ export async function GET(request: Request) {
         }
       </div>
     </div>,
-    { width: W, height: H },
+    {
+      width: W,
+      height: H,
+      // The most expensive route on the site, keyed by a query string: a
+      // card rendered once a day is right for a daily snapshot, and a
+      // scraper cycling parameters hits the cache, not Satori (2026-09-20).
+      headers: {
+        'cache-control': 'public, max-age=3600, stale-while-revalidate=86400',
+      },
+    },
   );
 }

@@ -2,9 +2,7 @@
 
 import { useState } from 'react';
 
-import {
-  requestRecaptchaToken,
-} from '@/client/recaptcha';
+import { requestRecaptchaToken } from '@/client/recaptcha';
 import { RECAPTCHA_SUBSCRIBE_ACTION } from '@/constant/contact';
 import { cn } from '@/utils';
 

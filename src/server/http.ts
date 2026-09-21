@@ -1,6 +1,10 @@
 import type { RateLimitResult } from '@/server/rate-limit';
 
-const MAX_BODY_BYTES = 10 * 1024;
+// Sized to the largest form: 5,000 comment characters are up to 20,000
+// bytes in CJK, plus the other fields and a reCAPTCHA token (~2.5 KB). At
+// 10 KB a 3,400-character Chinese comment was refused as "Something went
+// wrong" and the lead lost (2026-09-20).
+const MAX_BODY_BYTES = 32 * 1024;
 
 export function jsonResponse(
   status: number,

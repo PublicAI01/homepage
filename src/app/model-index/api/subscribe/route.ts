@@ -65,18 +65,31 @@ export async function POST(request: Request) {
   }
   const captcha = await checkCaptcha(request, body.recaptchaToken);
   if (captcha) return captcha;
-  const res = await fetch(
-    `https://api.resend.com/audiences/${audience}/contacts`,
-    {
+  let res: Response;
+  try {
+    res = await fetch(`https://api.resend.com/audiences/${audience}/contacts`, {
       method: 'POST',
       headers: {
         authorization: `Bearer ${key}`,
         'content-type': 'application/json',
       },
       body: JSON.stringify({ email, unsubscribed: false }),
-    },
-  );
+      signal: AbortSignal.timeout(10_000),
+    });
+  } catch (error) {
+    // The status, never the body or the address: a rotated key (401), a
+    // wrong audience (404) and a quota (429) all read as the same 502 to
+    // the visitor, and nothing said so in the logs (2026-09-20).
+    console.error(
+      `subscribe: resend unreachable (${error instanceof Error ? error.name : 'error'})`,
+    );
+    return NextResponse.json(
+      { ok: false, error: 'Could not sign you up right now. Try again later.' },
+      { status: 502 },
+    );
+  }
   if (!res.ok && res.status !== 409) {
+    console.error(`subscribe: resend answered ${res.status}`);
     return NextResponse.json(
       { ok: false, error: 'Could not sign you up right now. Try again later.' },
       { status: 502 },
