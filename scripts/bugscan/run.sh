@@ -215,6 +215,12 @@ git ls-files --others --exclude-standard | sort >"$UNTRACKED_BEFORE"
 log "基线 $BASE"
 
 rollback() {
+  # Keep what is being thrown away. A batch voided for one bad hunk had
+  # four good fixes in it, and with the diff gone a person re-derived
+  # them from the fixer's prose (2026-09-20). The patch is the record:
+  # `git apply` it, drop the bad hunk, and the rest of the work stands.
+  { git add -N . 2>>"$LOG"; git diff >"$STATE/$DAY.rejected.patch" 2>>"$LOG"
+    git reset -q 2>>"$LOG"; } || true
   git checkout -q -- . 2>>"$LOG"
   git ls-files --others --exclude-standard | sort \
     | comm -13 "$UNTRACKED_BEFORE" - | while IFS= read -r f; do rm -f "$f"; done
@@ -345,6 +351,7 @@ fail_batch() {
     skipped=$(skipped_summary)
     [ -n "$skipped" ] && { echo "$skipped"; echo; }
     echo "修复方自述:"; sed -n '1,80p' "$FIX_OUT"; echo
+    echo "被回滚的补丁:$STATE/$DAY.rejected.patch(去掉出问题的那块,其余可以 git apply)"
     echo "扫描报告:$SCAN_OUT"; echo "日志:$LOG"; } \
     | mail_out "【bugscan/$BUGSCAN_LABEL】$gate,已回滚"
   exit 1

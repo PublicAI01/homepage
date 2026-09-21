@@ -29,8 +29,12 @@ function parseHandleUrl(value: string): URL | null {
 
 /**
  * Canonical form shared by queries and list entries:
- * trim, strip a leading `@`, unwrap known profile URLs to their last
- * path segment, lowercase.
+ * trim, strip a leading `@`, unwrap a known profile URL to its one path
+ * segment, lowercase.
+ *
+ * A profile URL has exactly one segment. Taking the last of several let
+ * "t.me/scam/public_ai01" verify as the official handle (2026-09-20); a
+ * deeper path is no handle at all, and an empty handle never matches.
  */
 export function normalizeAccount(value: string): string {
   let handle = value.trim();
@@ -38,7 +42,7 @@ export function normalizeAccount(value: string): string {
   const url = parseHandleUrl(handle);
   if (url) {
     const segments = url.pathname.split('/').filter(Boolean);
-    if (segments.length > 0) handle = segments[segments.length - 1];
+    handle = segments.length === 1 ? segments[0] : '';
   }
   return handle.toLowerCase();
 }

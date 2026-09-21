@@ -1,7 +1,13 @@
 'use client';
 
+import Script from 'next/script';
 import { useState } from 'react';
 
+import {
+  RECAPTCHA_SCRIPT_SRC,
+  requestRecaptchaToken,
+} from '@/client/recaptcha';
+import { RECAPTCHA_SUBSCRIBE_ACTION } from '@/constant/contact';
 import { cn } from '@/utils';
 
 /**
@@ -27,10 +33,15 @@ export default function Subscribe({
     e.preventDefault();
     setState('busy');
     try {
+      // A human at a keyboard, not a script signing up strangers: the
+      // route writes the address into the mailing list (2026-09-20).
+      const recaptchaToken = await requestRecaptchaToken(
+        RECAPTCHA_SUBSCRIBE_ACTION,
+      );
       const res = await fetch('/model-index/api/subscribe', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, recaptchaToken }),
       });
       const body = (await res.json()) as { ok: boolean; error?: string };
       if (body.ok) {
@@ -51,6 +62,12 @@ export default function Subscribe({
     <form
       onSubmit={submit}
       className={cn('flex flex-col gap-2', className)}>
+      {RECAPTCHA_SCRIPT_SRC ? (
+        <Script
+          src={RECAPTCHA_SCRIPT_SRC}
+          strategy="lazyOnload"
+        />
+      ) : null}
       <div className="flex gap-2">
         <input
           type="email"

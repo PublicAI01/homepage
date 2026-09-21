@@ -28,17 +28,35 @@ describe('normalizeAccount', () => {
     expect(normalizeAccount('x.com/Handle')).toBe('handle');
   });
 
-  it('takes the last non-empty path segment', () => {
+  it('takes the one path segment, trailing slash and query aside', () => {
     expect(normalizeAccount('t.me/handle/')).toBe('handle');
-    expect(normalizeAccount('https://x.com/a/Handle?x=1')).toBe('handle');
+    expect(normalizeAccount('https://x.com/Handle?x=1')).toBe('handle');
+  });
+
+  it('treats a deeper path on a profile host as no handle at all', () => {
+    // "t.me/scam/public_ai01" verified as public_ai01 (2026-09-20).
+    expect(normalizeAccount('https://x.com/a/Handle')).toBe('');
+    expect(normalizeAccount('t.me/scam/public_ai01')).toBe('');
+  });
+
+  it("does not verify a scammer's URL that ends in the official handle", () => {
+    const accounts = { email: [], x: [], telegram: ['public_ai01'] } as const;
+    expect(isOfficialAccount(accounts, 'telegram', 't.me/public_ai01')).toBe(
+      true,
+    );
+    expect(
+      isOfficialAccount(accounts, 'telegram', 't.me/scam/public_ai01'),
+    ).toBe(false);
   });
 
   it('leaves non-profile hosts as-is', () => {
     expect(normalizeAccount('example.com/handle')).toBe('example.com/handle');
   });
 
-  it('keeps a bare host URL unchanged', () => {
-    expect(normalizeAccount('https://t.me/')).toBe('https://t.me/');
+  it('reads a bare host URL as no handle', () => {
+    // It used to pass through as "https://t.me/", which matched nothing
+    // either; an empty handle says so plainly.
+    expect(normalizeAccount('https://t.me/')).toBe('');
   });
 });
 

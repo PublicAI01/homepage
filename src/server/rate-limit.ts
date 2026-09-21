@@ -108,6 +108,37 @@ export function trustedProxy(): TrustedProxy {
   return process.env.NODE_ENV === 'production' ? 'cloudflare' : 'none';
 }
 
+/**
+ * The address a rate limit counts against. An IPv4 address is itself; an
+ * IPv6 host has a whole /64 to itself, so counting each address separately
+ * gave one machine 2^64 fresh identities and no limit at all (2026-09-20).
+ * Only the limiter key uses this — the real address still goes to
+ * reCAPTCHA and into the contact notification, which want an address, not
+ * a bucket.
+ */
+export function ipBucket(ip: string): string {
+  // "::ffff:203.0.113.9" is an IPv4 address in IPv6 clothing.
+  const mapped = /^::ffff:(\d+\.\d+\.\d+\.\d+)$/i.exec(ip);
+  if (mapped) return mapped[1];
+  if (!ip.includes(':')) return ip;
+  // Expand "::" so the first four hextets can be read off.
+  const [head, tail = ''] = ip.split('::');
+  const left = head ? head.split(':') : [];
+  const right = tail ? tail.split(':') : [];
+  const missing = Math.max(0, 8 - left.length - right.length);
+  const hextets = [...left, ...Array(missing).fill('0'), ...right];
+  if (hextets.length !== 8) return ip;
+  return `${hextets
+    .slice(0, 4)
+    .map((h) => h.toLowerCase().replace(/^0+(?=.)/, ''))
+    .join(':')}::/64`;
+}
+
+/** The limiter key for a request: the visitor's bucket plus the route. */
+export function rateLimitKey(request: Request, route: string): string {
+  return `${ipBucket(clientIp(request))}:${route}`;
+}
+
 export function clientIp(
   request: Request,
   proxy: TrustedProxy = trustedProxy(),

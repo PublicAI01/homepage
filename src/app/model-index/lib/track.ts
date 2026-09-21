@@ -689,7 +689,14 @@ export function createTrack(input: TrackInput) {
           reports: false,
           limit: 1,
         });
-        return 'total' in r && isHeadlineDomain(r.scopeBoards ?? 0, r.total);
+        // What a board ranks there, not what the default list shows: the
+        // published rule is "one board that ranks at least 20 models", and
+        // `total` had the one-board rows filtered out, so OSWorld's 37
+        // models were never a headline (2026-09-20).
+        return (
+          'scopeTotal' in r &&
+          isHeadlineDomain(r.scopeBoards ?? 0, r.scopeTotal)
+        );
       }),
     ]);
     return headlineCache;

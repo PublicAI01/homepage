@@ -177,7 +177,10 @@ export function diff(
       from.models[id] ??
       before.map((b) => from.models[b]).find((m) => m !== undefined);
     if (!was) {
-      const src = via.get(id);
+      // The record names the id the model carried when the source brought
+      // it; renamed since, it is looked up under every id in its lineage —
+      // or the page counted a renamed arrival as a new model (2026-09-20).
+      const src = before.map((b) => via.get(b)).find((v) => v !== undefined);
       models.push({
         id,
         ...now,

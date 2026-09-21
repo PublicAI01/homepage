@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { clientIp, createRateLimiter } from '@/server/rate-limit';
+import { clientIp, createRateLimiter, ipBucket } from '@/server/rate-limit';
 
 const MINUTE = 60_000;
 const DAY = 86_400_000;
@@ -115,5 +115,36 @@ describe('clientIp', () => {
         'none',
       ),
     ).toBe('direct');
+  });
+});
+
+describe('ipBucket', () => {
+  it('leaves an IPv4 address alone, IPv4-mapped included', () => {
+    expect(ipBucket('203.0.113.9')).toBe('203.0.113.9');
+    expect(ipBucket('::ffff:203.0.113.9')).toBe('203.0.113.9');
+    expect(ipBucket('unknown')).toBe('unknown');
+  });
+
+  it('counts an IPv6 host by its /64, so a new address is not a new visitor', () => {
+    // One machine has 2^64 addresses in its /64; each was a fresh limit
+    // (2026-09-20).
+    expect(ipBucket('2001:db8:1:2:aaaa:bbbb:cccc:dddd')).toBe(
+      '2001:db8:1:2::/64',
+    );
+    expect(ipBucket('2001:db8:1:2:aaaa:bbbb:cccc:dddd')).toBe(
+      ipBucket('2001:db8:1:2:1111:2222:3333:4444'),
+    );
+    expect(ipBucket('2001:db8:1:2::1')).toBe('2001:db8:1:2::/64');
+    expect(ipBucket('2001:0db8:0001:0002::1')).toBe('2001:db8:1:2::/64');
+    expect(ipBucket('2001:db8:1:3::1')).not.toBe(ipBucket('2001:db8:1:2::1'));
+    expect(ipBucket('::1')).toBe('0:0:0:0::/64');
+  });
+
+  it('does not touch what clientIp returns', () => {
+    // The real address still goes to reCAPTCHA and into the contact mail.
+    const req = new Request('https://publicai.io/x', {
+      headers: { 'cf-connecting-ip': '2001:db8:1:2::1' },
+    });
+    expect(clientIp(req, 'cloudflare')).toBe('2001:db8:1:2::1');
   });
 });

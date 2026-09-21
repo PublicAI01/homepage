@@ -82,6 +82,25 @@ describe('normalizeBoard', () => {
     expect(Math.max(...out)).toBeLessThanOrEqual(100);
   });
 
+  it('keeps the board order among models beyond the cap, at no real weight', () => {
+    // Four models far past 2σ on a tight board. A hard clamp gave all four
+    // 80.0 and the tie fell to input order (2026-09-20); the order must
+    // survive, and no figure may print above 80.0.
+    const raws = [...Array(40).fill(10), 100, 101, 102, 103];
+    const out = normalizeBoard(raws).slice(-4);
+    for (let i = 1; i < out.length; i++)
+      expect(out[i]).toBeGreaterThan(out[i - 1]);
+    expect(out[3] - out[0]).toBeLessThan(0.01);
+    for (const v of out) expect(Math.round(v * 10) / 10).toBe(80);
+    // Bounded however far out a model sits.
+    const far = normalizeBoard([...Array(200).fill(10), 1e6]).at(-1)!;
+    expect(far).toBeLessThan(80.01);
+    // And the other way round for a risk.
+    const low = normalizeBoard([3, 2, 1, 0, ...Array(40).fill(90)], 'lower');
+    expect(low[3]).toBeGreaterThan(low[0]);
+    expect(low[3] - low[0]).toBeLessThan(0.01);
+  });
+
   it('reads a risk or error rate the other way round, raw untouched', () => {
     // Enkrypt prints jailbreak risk as a percentage; Vectara a hallucination
     // rate. The least of it is the model ahead.

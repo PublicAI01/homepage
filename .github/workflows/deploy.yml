@@ -157,9 +157,25 @@ jobs:
               [ "$code" != "000" ] && [ "$code" -lt 500 ]
             }
 
+            # The server config is read on the first request that needs it,
+            # so a bad OFFICIAL_ACCOUNTS_JSON (an entry the stricter handle
+            # rule of 2026-09-20 rejects, say) would pass the front-page
+            # probe and 500 on /api/verify and /api/contact for everyone.
+            # One verify call exercises the config; a 200 for a handle
+            # nobody owns is the healthy answer.
+            config_probe() {
+              curl -fs -o /dev/null --max-time 5 -X POST \
+                -H 'content-type: application/json' \
+                -d '{"type":1,"name":"deploy-probe"}' \
+                http://127.0.0.1:3000/api/verify
+            }
+
             health_check() {
               for i in $(seq 1 30); do
-                if probe; then echo "Health check passed (attempt $i)"; return 0; fi
+                if probe; then
+                  if config_probe; then echo "Health check passed (attempt $i)"; return 0; fi
+                  echo "Front page up but /api/verify failed: server config?"; return 1
+                fi
                 sleep 2
               done
               return 1

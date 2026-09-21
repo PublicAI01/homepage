@@ -1,7 +1,13 @@
 import { NextResponse } from 'next/server';
 
+import { RECAPTCHA_SUBSCRIBE_ACTION } from '@/constant/contact';
 import { guardContentHeaders, readJsonBody } from '@/server/http';
-import { clientIp, subscribeRateLimiter } from '@/server/rate-limit';
+import {
+  clientIp,
+  rateLimitKey,
+  subscribeRateLimiter,
+} from '@/server/rate-limit';
+import { verifyRecaptchaToken } from '@/server/recaptcha';
 import { isRecord } from '@/server/validation';
 
 /**
@@ -14,6 +20,7 @@ import { isRecord } from '@/server/validation';
  *   RESEND_AUDIENCE_ID  — the Audience that receives the weekly broadcast
  */
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_TOKEN_LENGTH = 5000;
 
 export async function POST(request: Request) {
   const key = process.env.RESEND_API_KEY;
@@ -29,11 +36,14 @@ export async function POST(request: Request) {
   }
   // The same guards as the contact form: this route writes a third party's
   // address into the audience, so an unmetered caller could sign up anyone
-  // (2026-09-10). No captcha yet; the limiter is the floor, not the ceiling.
+  // (2026-09-10). The limiter is the floor; the captcha below is the
+  // ceiling (2026-09-20) — a script with many machines could still have
+  // signed strangers up one by one, and each unsubscribe complaint lands
+  // on the sending domain.
   const headerError = guardContentHeaders(request);
   if (headerError) return headerError;
   const limit = subscribeRateLimiter.check(
-    `${clientIp(request)}:/model-index/api/subscribe`,
+    rateLimitKey(request, '/model-index/api/subscribe'),
   );
   if (!limit.allowed)
     return NextResponse.json(
@@ -53,6 +63,8 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
+  const captcha = await checkCaptcha(request, body.recaptchaToken);
+  if (captcha) return captcha;
   const res = await fetch(
     `https://api.resend.com/audiences/${audience}/contacts`,
     {
@@ -71,4 +83,53 @@ export async function POST(request: Request) {
     );
   }
   return NextResponse.json({ ok: true });
+}
+
+/**
+ * The same reCAPTCHA Enterprise check the contact form makes. Where the
+ * keys are not configured (local development, a preview build) there is
+ * nothing to check against and the form still works; in production the
+ * keys are set and a missing or bad token is refused. Never an exception:
+ * a captcha outage must read as "try again", not as a crashed route.
+ */
+async function checkCaptcha(
+  request: Request,
+  token: unknown,
+): Promise<NextResponse | null> {
+  const apiKey = process.env.RECAPTCHA_SECRET_KEY;
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  if (!apiKey || !siteKey) {
+    if (process.env.NODE_ENV === 'production')
+      return NextResponse.json(
+        {
+          ok: false,
+          error: 'Subscriptions are not configured on this server yet.',
+        },
+        { status: 503 },
+      );
+    return null;
+  }
+  const failed = NextResponse.json(
+    {
+      ok: false,
+      error:
+        'Could not confirm you are a person. Reload the page and try again.',
+    },
+    { status: 400 },
+  );
+  if (
+    typeof token !== 'string' ||
+    token.length < 1 ||
+    token.length > MAX_TOKEN_LENGTH
+  )
+    return failed;
+  const ip = clientIp(request);
+  const accepted = await verifyRecaptchaToken({
+    apiKey,
+    siteKey,
+    token,
+    expectedAction: RECAPTCHA_SUBSCRIBE_ACTION,
+    remoteIp: ip === 'unknown' || ip === 'direct' ? undefined : ip,
+  });
+  return accepted ? null : failed;
 }

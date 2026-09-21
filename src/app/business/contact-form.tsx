@@ -6,28 +6,14 @@ import Script from 'next/script';
 import { useState } from 'react';
 
 import Select from '@/app/business/select';
+import {
+  RECAPTCHA_SCRIPT_SRC,
+  requestRecaptchaToken,
+} from '@/client/recaptcha';
 import { OFFICE_EMAIL_ADDRESS } from '@/constant';
 import { COMPANY_TYPES, RECAPTCHA_CONTACT_ACTION } from '@/constant/contact';
 import { COUNTRIES } from '@/constant/countries';
 import { cn } from '@/utils';
-
-const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-
-// Tokens are single-use with a short TTL, so request one per attempt.
-// The lazily loaded script may not be present yet, hence the typeof guard.
-async function requestRecaptchaToken(): Promise<string | null> {
-  if (!SITE_KEY || typeof window.grecaptcha === 'undefined') return null;
-  const enterprise = window.grecaptcha.enterprise;
-  try {
-    await new Promise<void>((resolve) => enterprise.ready(resolve));
-    return await enterprise.execute(SITE_KEY, {
-      action: RECAPTCHA_CONTACT_ACTION,
-    });
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
 
 type SubmitError = 'rate_limited' | 'failed';
 
@@ -128,7 +114,9 @@ const ContactForm = () => {
     setStatus('submitting');
     setError(null);
 
-    const recaptchaToken = await requestRecaptchaToken();
+    const recaptchaToken = await requestRecaptchaToken(
+      RECAPTCHA_CONTACT_ACTION,
+    );
     if (!recaptchaToken) {
       setStatus('idle');
       setError('failed');
@@ -173,9 +161,9 @@ const ContactForm = () => {
 
   return (
     <>
-      {SITE_KEY ? (
+      {RECAPTCHA_SCRIPT_SRC ? (
         <Script
-          src={`https://www.recaptcha.net/recaptcha/enterprise.js?render=${SITE_KEY}`}
+          src={RECAPTCHA_SCRIPT_SRC}
           strategy="lazyOnload"
         />
       ) : null}

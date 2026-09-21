@@ -136,8 +136,22 @@ const clamp = (x: number, lo: number, hi: number) =>
  * started extrapolating: it is saying the model is off its chart, which is
  * worth recording as "best here" and not as worth four boards. The cap
  * changes no board's own order, and touches 3% of the index's figures.
+ *
+ * "Changes no board's own order" needs a soft edge: a hard clamp gave every
+ * model past 2σ exactly 80.0, the tie fell to input order — the Overall
+ * order — and a board's own #1 could sit below its #3 in that board's
+ * domain (2026-09-20). Beyond MAX_Z the standardized distance keeps a
+ * trace of itself, bounded so that no figure ever exceeds the cap by more
+ * than SOFT_EDGE (80.009 at most, printed 80.0): order survives, weight
+ * does not.
  */
 const MAX_Z = 2;
+const SOFT_EDGE = 0.0006;
+const soften = (z: number) =>
+  Math.abs(z) <= MAX_Z
+    ? z
+    : Math.sign(z) *
+      (MAX_Z + SOFT_EDGE * (1 - Math.exp(-(Math.abs(z) - MAX_Z))));
 /**
  * Below this many models on one measure there is no population to standardize
  * against, and the scale stops meaning anything.
@@ -152,11 +166,7 @@ export function normalizeBoard(raws: number[], direction?: 'lower'): number[] {
   // of it is the one ahead. The raw is left as the source printed it.
   const sign = direction === 'lower' ? -1 : 1;
   return raws.map((r) =>
-    clamp(
-      T_SCORE_MEAN + T_SCORE_SD * clamp((sign * (r - m)) / sd, -MAX_Z, MAX_Z),
-      0,
-      100,
-    ),
+    clamp(T_SCORE_MEAN + T_SCORE_SD * soften((sign * (r - m)) / sd), 0, 100),
   );
 }
 

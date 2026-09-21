@@ -7,7 +7,7 @@ import {
   readJsonBody,
 } from '@/server/http';
 import { isOfficialAccount, type Platform } from '@/server/official-accounts';
-import { clientIp, verifyRateLimiter } from '@/server/rate-limit';
+import { rateLimitKey, verifyRateLimiter } from '@/server/rate-limit';
 import { isRecord } from '@/server/validation';
 
 const TYPE_TO_PLATFORM: Record<number, Platform> = {
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
   const headerError = guardContentHeaders(request);
   if (headerError) return headerError;
 
-  const limit = verifyRateLimiter.check(`${clientIp(request)}:/api/verify`);
+  const limit = verifyRateLimiter.check(rateLimitKey(request, '/api/verify'));
   if (!limit.allowed) return rateLimited(limit);
 
   const read = await readJsonBody(request);

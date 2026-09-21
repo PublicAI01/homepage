@@ -14,7 +14,11 @@ import {
   rateLimited,
   readJsonBody,
 } from '@/server/http';
-import { clientIp, contactRateLimiter } from '@/server/rate-limit';
+import {
+  clientIp,
+  contactRateLimiter,
+  rateLimitKey,
+} from '@/server/rate-limit';
 import { verifyRecaptchaToken } from '@/server/recaptcha';
 import { isRecord } from '@/server/validation';
 
@@ -47,7 +51,7 @@ export async function POST(request: Request) {
   if (headerError) return headerError;
 
   const ip = clientIp(request);
-  const limit = contactRateLimiter.check(`${ip}:/api/contact`);
+  const limit = contactRateLimiter.check(rateLimitKey(request, '/api/contact'));
   if (!limit.allowed) return rateLimited(limit);
 
   const read = await readJsonBody(request);

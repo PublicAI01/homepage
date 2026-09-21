@@ -220,8 +220,12 @@ describe('the taxonomy offers nothing empty', () => {
         const r = ok(rankModels({ scope: `domain:${d}`, reports: false }));
         const boards = r.scopeBoards ?? 0;
         expect(boards, d).toBeGreaterThanOrEqual(1);
+        // "Ranks at least 20 models there" counts what the board ranked,
+        // not what the default list shows after its own filters.
         if (boards < MIN_BOARDS_TO_VOTE_IN)
-          expect(r.total, d).toBeGreaterThanOrEqual(MIN_MODELS_FOR_HEADLINE);
+          expect(r.scopeTotal, d).toBeGreaterThanOrEqual(
+            MIN_MODELS_FOR_HEADLINE,
+          );
       }
   });
 
