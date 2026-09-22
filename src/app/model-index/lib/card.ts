@@ -10,15 +10,22 @@ import { rankName, rankScope, type ViewState } from './view-state';
  * under the video ranking's title (2026-09-18). One place decides the rows
  * and the title, and the card only draws them.
  */
-export function cardOf(view: ViewState) {
+/**
+ * The view with anything the index does not know taken out — the one
+ * gate every outlet that prints a shared view's words must pass through.
+ *
+ * `rank=domain:<anything>` printed that text 38px tall on the social card
+ * under publicai.io's name (2026-09-20); the card was fixed, and the page's
+ * <title>, og:title and og:description kept reflecting the same parameter
+ * verbatim, so a link could still unfurl as "Claim your prize at
+ * evil.example — PublicAI Index" (2026-09-22). One function, so the title
+ * and the card cannot disagree again. An unknown scope is Overall; a known
+ * one comes back under its canonical name, whatever case the link used;
+ * an unknown family is no family.
+ */
+export function sanitizeView(view: ViewState): ViewState {
   const track = TRACKS[view.track];
-  // Only what the index knows goes on the card: `rank=domain:<anything>`
-  // printed that text 38px tall under publicai.io's name, and every new
-  // string was a fresh render (2026-09-20). An unknown scope is Overall;
-  // an unknown family is no family.
-  const scope = track.index.resolveScope(rankScope(view.rank))
-    ? view.rank
-    : ({ level: 'overall' } as const);
+  const scope = track.index.resolveScope(rankScope(view.rank));
   // Over every model in the snapshot, not the rows an API call returns:
   // rankModels caps at 100 rows however large a limit is asked for, so a
   // whitelist read off it held the families of the top hundred only — 22
@@ -31,7 +38,12 @@ export function cardOf(view: ViewState) {
     view.family !== 'all' && families.has(view.family.toLowerCase())
       ? view.family
       : 'all';
-  view = { ...view, rank: scope, family };
+  return { ...view, rank: scope ?? { level: 'overall' }, family };
+}
+
+export function cardOf(view: ViewState) {
+  view = sanitizeView(view);
+  const track = TRACKS[view.track];
   const result = track.index.rankModels({
     scope: rankScope(view.rank),
     family: view.family === 'all' ? undefined : view.family,

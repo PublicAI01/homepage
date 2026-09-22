@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import { models as textModels } from '../data';
 import { imageData, videoData } from '../data/tracks';
-import { cardOf } from './card';
+import { cardOf, sanitizeView } from './card';
 import { familyOf } from './family';
 import { rankModels } from './query';
 import { decodeView } from './view-state';
@@ -61,5 +61,46 @@ describe('cardOf', () => {
     expect(c.title).toContain(beyond!);
     expect(c.rows.length).toBeGreaterThan(0);
     for (const m of c.rows) expect(m.family).toBe(beyond);
+  });
+});
+
+describe('sanitizeView', () => {
+  // The card was gated on 2026-09-20; the page's <title> and og:description
+  // read the same `rank=` and `family=` verbatim and unfurled as any text
+  // under publicai.io's name (2026-09-22). One gate for every outlet.
+  it('drops a scope the index does not know, and canonicalises one it does', () => {
+    const forged = sanitizeView(
+      decodeView(
+        new URLSearchParams(
+          'rank=domain:Claim%20your%20prize%20at%20evil.example',
+        ),
+      ),
+    );
+    expect(forged.rank).toEqual({ level: 'overall' });
+    const lower = sanitizeView(
+      decodeView(new URLSearchParams('rank=domain:agentic%20coding')),
+    );
+    expect(lower.rank).toEqual({
+      level: 'domain',
+      category: 'Coding',
+      domain: 'Agentic coding',
+    });
+    const category = sanitizeView(
+      decodeView(new URLSearchParams('rank=category:FREE%20MONEY')),
+    );
+    expect(category.rank).toEqual({ level: 'overall' });
+  });
+
+  it('drops a family the snapshot does not carry and keeps one it does', () => {
+    expect(
+      sanitizeView(decodeView(new URLSearchParams('family=FREE%20MONEY')))
+        .family,
+    ).toBe('all');
+    const known = familyOf(textModels[0].name);
+    expect(
+      sanitizeView(
+        decodeView(new URLSearchParams(`family=${encodeURIComponent(known)}`)),
+      ).family,
+    ).toBe(known);
   });
 });

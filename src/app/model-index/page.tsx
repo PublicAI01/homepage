@@ -15,6 +15,7 @@ import {
 } from './components/track-context';
 import { benchmarks, catalogs, excluded, generatedAt, models } from './data';
 import { groupBoards } from './lib/boards';
+import { sanitizeView } from './lib/card';
 import { enteredSince } from './lib/changes';
 import { API_URL, MCP_URL } from './lib/query';
 import { SIZE_TIERS } from './lib/size';
@@ -50,7 +51,10 @@ export async function generateMetadata({
   const p = new URLSearchParams();
   for (const [k, v] of Object.entries(raw))
     if (typeof v === 'string') p.set(k, v);
-  const view = decodeView(p);
+  // Only what the index knows goes into the title and the description:
+  // unsanitized, `rank=` and `family=` unfurled as any text at all under
+  // publicai.io's name (2026-09-22). Same gate as the card image.
+  const view = sanitizeView(decodeView(p));
   const filtered = p.toString().length > 0;
   const scope = rankName(view.rank);
   const tier = SIZE_TIERS.find((t) => t.id === view.size);

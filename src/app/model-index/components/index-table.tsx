@@ -300,9 +300,15 @@ export default function IndexTable({ tracks, newcomers }: Props) {
   // the base read ".../model-index/video?track=video" (2026-09-16).
   const INDEX_URL = `${ORIGIN}${tracks[0].base}`;
   const OVERALL = useMemo(() => overallOf(track.weighting), [track.weighting]);
+  // A scope the snapshot does not measure is Overall, at both levels: an
+  // unknown category was kept as typed, headed the table and the share
+  // text as "Ranked by <anything>", and matched nothing (2026-09-22).
   const [rankKey, setRankKey] = useState<RankKey>(() => {
     const r = initial.rank;
-    if (r.level === 'category')
+    if (
+      r.level === 'category' &&
+      benchmarks.some((b) => b.category === r.category)
+    )
       return { level: 'category', category: r.category };
     if (r.level === 'domain') {
       const category = benchmarks.find((b) => b.domain === r.domain)?.category;
@@ -311,7 +317,14 @@ export default function IndexTable({ tracks, newcomers }: Props) {
     return { level: 'overall' };
   });
   const [query, setQuery] = useState(initial.q);
-  const [family, setFamily] = useState(initial.family);
+  // Likewise a family: the select cannot show a value it has no option for.
+  const [family, setFamily] = useState(() =>
+    models.some(
+      (m) => familyOf(m.name).toLowerCase() === initial.family.toLowerCase(),
+    )
+      ? initial.family
+      : 'all',
+  );
   // Everything a recognised board has scored is listed; ranked rows come
   // first, provisional ones after, so a model on one board is visible
   // without being ranked on that one board's word.
