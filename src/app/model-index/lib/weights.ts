@@ -207,7 +207,7 @@ export const CATEGORY_ORDER = [
   'Coding',
   'Reasoning',
   'Knowledge',
-  'General',
+  'Core abilities',
   'Safety',
   // The image and video tracks, each on its own page.
   'Text-to-image',

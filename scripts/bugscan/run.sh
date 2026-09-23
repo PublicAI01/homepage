@@ -221,10 +221,22 @@ rollback() {
   # `git apply` it, drop the bad hunk, and the rest of the work stands.
   { git add -N . 2>>"$LOG"; git diff >"$STATE/$DAY.rejected.patch" 2>>"$LOG"
     git reset -q 2>>"$LOG"; } || true
-  git checkout -q -- . 2>>"$LOG"
-  git ls-files --others --exclude-standard | sort \
-    | comm -13 "$UNTRACKED_BEFORE" - | while IFS= read -r f; do rm -f "$f"; done
-  log "已回滚到 $BASE"
+  # Stash, never discard. The tree was someone else's business when this
+  # run started (Stage 0) — but a person can start editing at 12:23 while
+  # the fixer is working, and then `git checkout -- .` deletes their
+  # uncommitted work with the batch. That happened on 2026-09-23: a
+  # half-applied rename in the tree failed the type check, the batch was
+  # voided for it, and the rollback took the rename with it. Nothing here
+  # is destroyed any more; `git stash list` has it.
+  if git stash push --include-untracked -q \
+       -m "bugscan $BUGSCAN_LABEL $DAY rollback" 2>>"$LOG"; then
+    log "已回滚到 $BASE(改动进了 git stash,没有丢)"
+  else
+    git checkout -q -- . 2>>"$LOG"
+    git ls-files --others --exclude-standard | sort \
+      | comm -13 "$UNTRACKED_BEFORE" - | while IFS= read -r f; do rm -f "$f"; done
+    log "已回滚到 $BASE"
+  fi
 }
 
 # ── Stage 1: scan (read-only) ───────────────────────────────────────────────
@@ -352,6 +364,11 @@ fail_batch() {
     [ -n "$skipped" ] && { echo "$skipped"; echo; }
     echo "修复方自述:"; sed -n '1,80p' "$FIX_OUT"; echo
     echo "被回滚的补丁:$STATE/$DAY.rejected.patch(去掉出问题的那块,其余可以 git apply)"
+    echo "也在 git stash 里(git stash list),什么都没有丢。"
+    echo
+    echo "如果你当时正好在这个仓里改东西:那些改动会混进上面的 diff,而且很可能"
+    echo "就是这批没过闸的原因 —— 这一轮的判决不作数。锁在 $LOCK,扫描期间"
+    echo "最好别动这个仓。"
     echo "扫描报告:$SCAN_OUT"; echo "日志:$LOG"; } \
     | mail_out "【bugscan/$BUGSCAN_LABEL】$gate,已回滚"
   exit 1

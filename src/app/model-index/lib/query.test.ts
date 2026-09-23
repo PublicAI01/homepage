@@ -289,6 +289,15 @@ describe('one position, wherever it is printed', () => {
     }
   });
 
+  it('still answers to a scope’s old name', () => {
+    // "General" became "Core abilities" on 2026-09-23; a saved link and an
+    // agent's stored query must not start answering "unknown scope".
+    const now = resolveScope('category:Core abilities');
+    expect(now).toEqual(resolveScope('category:General'));
+    expect(now).toEqual(resolveScope('General'));
+    expect(now?.level).toBe('category');
+  });
+
   it('lists every model it carries a figure for, even with no Overall to show', () => {
     // A model whose only figures may not stand in for a capability index —
     // a safety-only model, a System One model — has no score and no

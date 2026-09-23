@@ -297,13 +297,21 @@ export function createTrack(input: TrackInput) {
       .replace(/[^a-z0-9]+/g, ' ');
 
   /** "coding", "Agentic coding", "overall" → a scope, or null when nothing matches. */
+  /**
+   * Names a scope has been known by. A renamed scope keeps answering to the
+   * old name: an agent's saved query and a shared link outlive the word we
+   * changed our minds about (2026-09-23).
+   */
+  const ALIASES: Record<string, string> = { general: 'core abilities' };
+
   function resolveScope(input: string | undefined): Scope | null {
     if (!input || fold(input) === 'overall' || fold(input) === 'index')
       return { level: 'overall' };
     // "category:Reasoning" / "domain:Reasoning" settle a name used at both levels.
     const prefixed = /^(category|domain):(.+)$/.exec(input.trim());
     if (prefixed) {
-      const want = fold(prefixed[2]);
+      const raw = fold(prefixed[2]);
+      const want = prefixed[1] === 'category' ? (ALIASES[raw] ?? raw) : raw;
       for (const [category, domains] of taxonomy) {
         if (prefixed[1] === 'category' && fold(category) === want)
           return { level: 'category', category };
@@ -314,7 +322,7 @@ export function createTrack(input: TrackInput) {
       }
       return null;
     }
-    const q = fold(input);
+    const q = ALIASES[fold(input)] ?? fold(input);
     for (const [category] of taxonomy)
       if (fold(category) === q) return { level: 'category', category };
     for (const [category, domains] of taxonomy)

@@ -16,7 +16,7 @@ const board = (id: string, publisher: string): Benchmark => ({
   url: `https://example.com/${id}`,
   retrievedAt: '2026-09-18',
   metric: 'percent',
-  category: 'General',
+  category: 'Core abilities',
   domain: 'General',
   kind: 'board',
   source: id,
