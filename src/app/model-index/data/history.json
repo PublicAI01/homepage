@@ -93116,6 +93116,5206 @@
         ],
         "glm-4-5-air": ["glm-4-5-air-fp8"]
       }
+    },
+    {
+      "date": "2026-09-23",
+      "generatedAt": "2026-09-23T07:36:54.737Z",
+      "sources": [
+        "lmarena",
+        "artificial-analysis",
+        "aa-gdpval",
+        "aa-briefcase",
+        "terminal-bench",
+        "arc-agi-2",
+        "livebench",
+        "livecodebench",
+        "aider",
+        "bfcl",
+        "osworld",
+        "mmmu",
+        "kagi",
+        "simplebench",
+        "vals",
+        "helm-safety",
+        "enkrypt",
+        "vectara",
+        "ifm-k2-horizon",
+        "datacamp-astra-vs-fable",
+        "cellcog-k2-horizon",
+        "deepseek-v4-1-flash",
+        "largitdata-jev"
+      ],
+      "models": {
+        "claude-fable-5-1": {
+          "name": "Claude Fable 5.1",
+          "org": "Anthropic",
+          "index": 69.8,
+          "rank": 1,
+          "covered": 9
+        },
+        "claude-opus-5-5": {
+          "name": "Claude Opus 5.5",
+          "org": "Anthropic",
+          "index": 69.3,
+          "rank": 2,
+          "covered": 6
+        },
+        "gpt-6-astra": {
+          "name": "GPT-6 Astra",
+          "org": "OpenAI",
+          "index": 69.1,
+          "rank": 3,
+          "covered": 10
+        },
+        "claude-fable-5": {
+          "name": "Claude Fable 5",
+          "org": "Anthropic",
+          "index": 65.9,
+          "rank": 4,
+          "covered": 10
+        },
+        "muse-spark-1-3": {
+          "name": "Muse Spark 1.3",
+          "org": "Meta",
+          "index": 65.8,
+          "rank": 5,
+          "covered": 7
+        },
+        "claude-opus-5": {
+          "name": "Claude Opus 5",
+          "org": "Anthropic",
+          "index": 64.9,
+          "rank": 6,
+          "covered": 10
+        },
+        "gpt-5-5": {
+          "name": "GPT-5.5",
+          "org": "OpenAI",
+          "index": 63.4,
+          "rank": 7,
+          "covered": 10
+        },
+        "gpt-5-6-sol": {
+          "name": "GPT-5.6 Sol",
+          "org": "OpenAI",
+          "index": 63.3,
+          "rank": 8,
+          "covered": 11
+        },
+        "kimi-k3": {
+          "name": "Kimi K3",
+          "org": "Moonshot",
+          "index": 62.7,
+          "rank": 9,
+          "covered": 8
+        },
+        "qwen3-8-max": {
+          "name": "Qwen3.8 Max",
+          "org": "Alibaba",
+          "index": 62.6,
+          "rank": 10,
+          "covered": 7
+        },
+        "gpt-6-sol": {
+          "name": "GPT-6 Sol",
+          "org": "OpenAI",
+          "index": 62.2,
+          "rank": 11,
+          "covered": 6
+        },
+        "glm-5-3": {
+          "name": "GLM-5.3",
+          "org": "Z.ai",
+          "index": 61,
+          "rank": 12,
+          "covered": 8
+        },
+        "gpt-5-4": {
+          "name": "GPT-5.4",
+          "org": "OpenAI",
+          "index": 60.8,
+          "rank": 13,
+          "covered": 8
+        },
+        "deepseek-v4-1-flash": {
+          "name": "DeepSeek V4.1 Flash",
+          "org": "DeepSeek",
+          "index": 60.4,
+          "rank": 14,
+          "covered": 4
+        },
+        "muse-spark-1-2": {
+          "name": "Muse Spark 1.2",
+          "org": "Meta",
+          "index": 60.3,
+          "rank": 15,
+          "covered": 6
+        },
+        "gpt-5-6-terra": {
+          "name": "GPT-5.6 Terra",
+          "org": "OpenAI",
+          "index": 60.1,
+          "rank": 16,
+          "covered": 11
+        },
+        "gemini-3-pro": {
+          "name": "Gemini 3 Pro",
+          "org": "Google",
+          "index": 59.5,
+          "rank": 17,
+          "covered": 8
+        },
+        "deepseek-v4-pro": {
+          "name": "DeepSeek V4 Pro",
+          "org": "DeepSeek",
+          "index": 59.3,
+          "rank": 18,
+          "covered": 11
+        },
+        "gemini-3-1-pro": {
+          "name": "Gemini 3.1 Pro",
+          "org": "Google",
+          "index": 59.3,
+          "rank": 19,
+          "covered": 9
+        },
+        "grok-4-6": {
+          "name": "Grok 4.6",
+          "org": "SpaceXAI",
+          "index": 59.2,
+          "rank": 20,
+          "covered": 10
+        },
+        "grok-4-7": {
+          "name": "Grok 4.7",
+          "org": "SpaceXAI",
+          "index": 59.1,
+          "rank": 21,
+          "covered": 7
+        },
+        "claude-opus-4-7": {
+          "name": "Claude Opus 4.7",
+          "org": "Anthropic",
+          "index": 59.1,
+          "rank": 22,
+          "covered": 9
+        },
+        "claude-opus-4-6": {
+          "name": "Claude Opus 4.6",
+          "org": "Anthropic",
+          "index": 58.9,
+          "rank": 23,
+          "covered": 8
+        },
+        "gemini-3-5-flash": {
+          "name": "Gemini 3.5 Flash",
+          "org": "Google",
+          "index": 58.3,
+          "rank": 24,
+          "covered": 8
+        },
+        "gemini-3-7-flash": {
+          "name": "Gemini 3.7 Flash",
+          "org": "Google",
+          "index": 58.1,
+          "rank": 25,
+          "covered": 7
+        },
+        "muse-spark-1-1": {
+          "name": "Muse Spark 1.1",
+          "org": "Meta",
+          "index": 57.7,
+          "rank": 26,
+          "covered": 7
+        },
+        "gemini-3-8-flash": {
+          "name": "Gemini 3.8 Flash",
+          "org": "Google",
+          "index": 57.5,
+          "rank": 27,
+          "covered": 9
+        },
+        "glm-5-3-flash": {
+          "name": "GLM-5.3 Flash",
+          "org": "Z.ai",
+          "index": 57.2,
+          "rank": 28,
+          "covered": 7
+        },
+        "claude-opus-4-8": {
+          "name": "Claude Opus 4.8",
+          "org": "Anthropic",
+          "index": 57.2,
+          "rank": 29,
+          "covered": 10
+        },
+        "gemini-3-flash": {
+          "name": "Gemini 3 Flash",
+          "org": "Google",
+          "index": 56.9,
+          "rank": 30,
+          "covered": 5
+        },
+        "gemini-3-6-flash": {
+          "name": "Gemini 3.6 Flash",
+          "org": "Google",
+          "index": 56.7,
+          "rank": 31,
+          "covered": 7
+        },
+        "qwen3-8-flash-next": {
+          "name": "Qwen3.8 Flash Next",
+          "org": "Alibaba",
+          "index": 56.6,
+          "rank": 32,
+          "covered": 4
+        },
+        "gpt-5-5-instant": {
+          "name": "GPT-5.5 Instant",
+          "org": "OpenAI",
+          "index": 56.2,
+          "rank": 33,
+          "covered": 4
+        },
+        "qwen3-8-27b": {
+          "name": "Qwen3.8 27B",
+          "org": "Alibaba",
+          "index": 56.2,
+          "rank": 34,
+          "covered": 7
+        },
+        "mimo-v2-5-pro": {
+          "name": "Mimo V2.5 Pro",
+          "org": "Xiaomi",
+          "index": 55.9,
+          "rank": 35,
+          "covered": 6
+        },
+        "claude-sonnet-4-6": {
+          "name": "Claude Sonnet 4.6",
+          "org": "Anthropic",
+          "index": 55.9,
+          "rank": 36,
+          "covered": 9
+        },
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash",
+          "org": "DeepSeek",
+          "index": 55.7,
+          "rank": 37,
+          "covered": 9
+        },
+        "gpt-5-2": {
+          "name": "GPT-5.2",
+          "org": "OpenAI",
+          "index": 55.4,
+          "rank": 38,
+          "covered": 9
+        },
+        "deepseek-v4-flash-vision": {
+          "name": "DeepSeek V4 Flash Vision",
+          "org": "DeepSeek",
+          "index": 55.2,
+          "rank": 39,
+          "covered": 4
+        },
+        "claude-sonnet-5": {
+          "name": "Claude Sonnet 5",
+          "org": "Anthropic",
+          "index": 55.2,
+          "rank": 40,
+          "covered": 9
+        },
+        "qwen3-7-plus": {
+          "name": "Qwen3.7 Plus",
+          "org": "Alibaba",
+          "index": 55.2,
+          "rank": 41,
+          "covered": 6
+        },
+        "hy3": {
+          "name": "Hy3",
+          "org": "Tencent",
+          "index": 55.2,
+          "rank": 42,
+          "covered": 5
+        },
+        "qwen3-7-max": {
+          "name": "Qwen3.7 Max",
+          "org": "Alibaba",
+          "index": 54.9,
+          "rank": 43,
+          "covered": 7
+        },
+        "gpt-5-1": {
+          "name": "GPT-5.1",
+          "org": "OpenAI",
+          "index": 54.4,
+          "rank": 44,
+          "covered": 8
+        },
+        "inkling-small": {
+          "name": "Inkling Small",
+          "org": "Thinking Machines",
+          "index": 54.4,
+          "rank": 45,
+          "covered": 4
+        },
+        "claude-sonnet-4-5": {
+          "name": "Claude Sonnet 4.5",
+          "org": "Anthropic",
+          "index": 54,
+          "rank": 46,
+          "covered": 12
+        },
+        "claude-opus-4-5": {
+          "name": "Claude Opus 4.5",
+          "org": "Anthropic",
+          "index": 54,
+          "rank": 47,
+          "covered": 8
+        },
+        "grok-4-5": {
+          "name": "Grok 4.5",
+          "org": "SpaceXAI",
+          "index": 53.7,
+          "rank": 48,
+          "covered": 10
+        },
+        "kimi-k2-5": {
+          "name": "Kimi K2.5",
+          "org": "Moonshot",
+          "index": 53.6,
+          "rank": 49,
+          "covered": 9
+        },
+        "grok-4": {
+          "name": "Grok 4",
+          "org": "SpaceXAI",
+          "index": 53.5,
+          "rank": 50,
+          "covered": 9
+        },
+        "gpt-6-luna": {
+          "name": "GPT-6 Luna",
+          "org": "OpenAI",
+          "index": 53.5,
+          "rank": 51,
+          "covered": 6
+        },
+        "glm-5": {
+          "name": "GLM-5",
+          "org": "Z.ai",
+          "index": 53.2,
+          "rank": 52,
+          "covered": 6
+        },
+        "glm-5-2": {
+          "name": "GLM-5.2",
+          "org": "Z.ai",
+          "index": 53.2,
+          "rank": 53,
+          "covered": 9
+        },
+        "gpt-5-6-luna": {
+          "name": "GPT-5.6 Luna",
+          "org": "OpenAI",
+          "index": 53,
+          "rank": 54,
+          "covered": 10
+        },
+        "gpt-5": {
+          "name": "GPT-5",
+          "org": "OpenAI",
+          "index": 52.7,
+          "rank": 55,
+          "covered": 10
+        },
+        "gemini-2-5-pro": {
+          "name": "Gemini 2.5 Pro",
+          "org": "Google",
+          "index": 52.6,
+          "rank": 56,
+          "covered": 12
+        },
+        "gpt-4-5": {
+          "name": "GPT-4.5",
+          "org": "OpenAI",
+          "index": 52.2,
+          "rank": 57,
+          "covered": 5
+        },
+        "qwen3-5-397b-a17b": {
+          "name": "Qwen3.5 397B A17B",
+          "org": "Alibaba",
+          "index": 52.2,
+          "rank": 58,
+          "covered": 6
+        },
+        "o3": {
+          "name": "O3",
+          "org": "OpenAI",
+          "index": 52.2,
+          "rank": 59,
+          "covered": 11
+        },
+        "kimi-k2-6": {
+          "name": "Kimi K2.6",
+          "org": "Moonshot",
+          "index": 52.1,
+          "rank": 60,
+          "covered": 8
+        },
+        "claude-opus-4": {
+          "name": "Claude Opus 4",
+          "org": "Anthropic",
+          "index": 52.1,
+          "rank": 61,
+          "covered": 10
+        },
+        "inkling": {
+          "name": "Inkling",
+          "org": "Thinking Machines",
+          "index": 51.6,
+          "rank": 62,
+          "covered": 9
+        },
+        "deepseek-v3-2": {
+          "name": "DeepSeek V3.2",
+          "org": "DeepSeek",
+          "index": 51.6,
+          "rank": 63,
+          "covered": 9
+        },
+        "qwen3-235b-a22b-instruct": {
+          "name": "Qwen3 235B A22B Instruct",
+          "org": "Alibaba",
+          "index": 51.2,
+          "rank": 64,
+          "covered": 10
+        },
+        "muse-glimmer": {
+          "name": "Muse Glimmer",
+          "org": "Meta",
+          "index": 51.2,
+          "rank": 65,
+          "covered": 4
+        },
+        "deepseek-r1": {
+          "name": "DeepSeek R1",
+          "org": "DeepSeek",
+          "index": 51.1,
+          "rank": 66,
+          "covered": 12
+        },
+        "grok-4-fast": {
+          "name": "Grok 4 Fast",
+          "org": "SpaceXAI",
+          "index": 50.8,
+          "rank": 67,
+          "covered": 5
+        },
+        "gemini-2-5-flash": {
+          "name": "Gemini 2.5 Flash",
+          "org": "Google",
+          "index": 50.8,
+          "rank": 68,
+          "covered": 11
+        },
+        "gpt-4-1": {
+          "name": "GPT-4.1",
+          "org": "OpenAI",
+          "index": 50.7,
+          "rank": 69,
+          "covered": 10
+        },
+        "claude-sonnet-4": {
+          "name": "Claude Sonnet 4",
+          "org": "Anthropic",
+          "index": 50.7,
+          "rank": 70,
+          "covered": 12
+        },
+        "grok-3": {
+          "name": "Grok 3",
+          "org": "SpaceXAI",
+          "index": 50.6,
+          "rank": 71,
+          "covered": 7
+        },
+        "qwen3-5-122b-a10b": {
+          "name": "Qwen3.5 122B A10B",
+          "org": "Alibaba",
+          "index": 50.5,
+          "rank": 72,
+          "covered": 6
+        },
+        "o4-mini": {
+          "name": "O4 Mini",
+          "org": "OpenAI",
+          "index": 50.2,
+          "rank": 73,
+          "covered": 11
+        },
+        "mistral-medium-3-5": {
+          "name": "Mistral Medium 3.5",
+          "org": "Mistral",
+          "index": 50.2,
+          "rank": 74,
+          "covered": 6
+        },
+        "minimax-m2-5": {
+          "name": "MiniMax M2.5",
+          "org": "MiniMax",
+          "index": 50.1,
+          "rank": 75,
+          "covered": 4
+        },
+        "qwen3-6-plus": {
+          "name": "Qwen3.6 Plus",
+          "org": "Alibaba",
+          "index": 50,
+          "rank": 76,
+          "covered": 4
+        },
+        "gpt-5-mini": {
+          "name": "GPT-5 Mini",
+          "org": "OpenAI",
+          "index": 50,
+          "rank": 77,
+          "covered": 10
+        },
+        "minimax-m3": {
+          "name": "MiniMax M3",
+          "org": "MiniMax",
+          "index": 49.9,
+          "rank": 78,
+          "covered": 9
+        },
+        "gpt-4-1-mini": {
+          "name": "GPT-4.1 Mini",
+          "org": "OpenAI",
+          "index": 49.3,
+          "rank": 79,
+          "covered": 9
+        },
+        "o3-mini": {
+          "name": "O3 Mini",
+          "org": "OpenAI",
+          "index": 48.6,
+          "rank": 80,
+          "covered": 10
+        },
+        "claude-haiku-4-5": {
+          "name": "Claude Haiku 4.5",
+          "org": "Anthropic",
+          "index": 48.4,
+          "rank": 81,
+          "covered": 10
+        },
+        "grok-3-mini": {
+          "name": "Grok 3 Mini",
+          "org": "SpaceXAI",
+          "index": 48.4,
+          "rank": 82,
+          "covered": 5
+        },
+        "gemini-2-0-flash": {
+          "name": "Gemini 2.0 Flash",
+          "org": "Google",
+          "index": 48.3,
+          "rank": 83,
+          "covered": 8
+        },
+        "mistral-large-3": {
+          "name": "Mistral Large 3",
+          "org": "Mistral",
+          "index": 48,
+          "rank": 84,
+          "covered": 8
+        },
+        "gemini-1-5-pro": {
+          "name": "Gemini 1.5 Pro",
+          "org": "Google",
+          "index": 47.9,
+          "rank": 85,
+          "covered": 7
+        },
+        "gpt-5-nano": {
+          "name": "GPT-5 Nano",
+          "org": "OpenAI",
+          "index": 47.4,
+          "rank": 86,
+          "covered": 8
+        },
+        "gpt-5-4-mini": {
+          "name": "GPT-5.4 Mini",
+          "org": "OpenAI",
+          "index": 47.2,
+          "rank": 87,
+          "covered": 8
+        },
+        "o1-mini": {
+          "name": "O1 Mini",
+          "org": "OpenAI",
+          "index": 47.2,
+          "rank": 88,
+          "covered": 7
+        },
+        "gpt-4o": {
+          "name": "GPT-4o",
+          "org": "OpenAI",
+          "index": 47,
+          "rank": 89,
+          "covered": 10
+        },
+        "trinity-large": {
+          "name": "Trinity Large",
+          "org": "Arcee",
+          "index": 46.9,
+          "rank": 90,
+          "covered": 6
+        },
+        "gpt-5-4-nano": {
+          "name": "GPT-5.4 Nano",
+          "org": "OpenAI",
+          "index": 46.9,
+          "rank": 91,
+          "covered": 8
+        },
+        "llama-4-maverick-instruct": {
+          "name": "Llama 4 Maverick Instruct",
+          "org": "Meta",
+          "index": 46.7,
+          "rank": 92,
+          "covered": 11
+        },
+        "grok-4-3": {
+          "name": "Grok 4.3",
+          "org": "SpaceXAI",
+          "index": 46.5,
+          "rank": 93,
+          "covered": 6
+        },
+        "gpt-oss-120b": {
+          "name": "GPT OSS 120B",
+          "org": "OpenAI",
+          "index": 46.5,
+          "rank": 94,
+          "covered": 10
+        },
+        "gpt-4-1-nano": {
+          "name": "GPT-4.1 Nano",
+          "org": "OpenAI",
+          "index": 46.4,
+          "rank": 95,
+          "covered": 9
+        },
+        "llama-4-scout-instruct": {
+          "name": "Llama 4 Scout Instruct",
+          "org": "Meta",
+          "index": 46.4,
+          "rank": 96,
+          "covered": 9
+        },
+        "gpt-4o-mini": {
+          "name": "GPT-4o Mini",
+          "org": "OpenAI",
+          "index": 46.2,
+          "rank": 97,
+          "covered": 11
+        },
+        "gemini-3-5-flash-lite": {
+          "name": "Gemini 3.5 Flash Lite",
+          "org": "Google",
+          "index": 45.9,
+          "rank": 98,
+          "covered": 7
+        },
+        "magistral-medium": {
+          "name": "Magistral Medium",
+          "org": "Mistral",
+          "index": 45.6,
+          "rank": 99,
+          "covered": 4
+        },
+        "kimi-k2-7-code": {
+          "name": "Kimi K2.7 Code",
+          "org": "Moonshot",
+          "index": 44.7,
+          "rank": 100,
+          "covered": 7
+        },
+        "gpt-oss-20b": {
+          "name": "GPT OSS 20B",
+          "org": "OpenAI",
+          "index": 44.1,
+          "rank": 101,
+          "covered": 7
+        },
+        "granite-4-2-8b": {
+          "name": "Granite 4.2 8B",
+          "org": "IBM",
+          "index": 43.6,
+          "rank": 102,
+          "covered": 4
+        },
+        "granite-4-2-3b": {
+          "name": "Granite 4.2 3B",
+          "org": "IBM",
+          "index": 43.2,
+          "rank": 103,
+          "covered": 4
+        },
+        "alephprover": {
+          "name": "AlephProver",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-6-astra-pro": {
+          "name": "GPT-6 Astra Pro",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "agnes-3-0-flash": {
+          "name": "Agnes 3.0 Flash",
+          "org": "Sapiens AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "claude-fable": {
+          "name": "Claude Fable",
+          "org": "Anthropic",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "aristotle": {
+          "name": "Aristotle",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "agnes-2-5-pro-beta": {
+          "name": "Agnes 2.5 Pro Beta",
+          "org": "Sapiens AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mimo-v2-6-pro": {
+          "name": "MiMo V2.6 Pro",
+          "org": "Xiaomi",
+          "index": 60.6,
+          "rank": null,
+          "covered": 4
+        },
+        "muse-spark": {
+          "name": "Muse Spark",
+          "org": "Meta",
+          "index": 59.9,
+          "rank": null,
+          "covered": 4
+        },
+        "step-5": {
+          "name": "Step 5",
+          "org": "StepFun",
+          "index": 59.6,
+          "rank": null,
+          "covered": 3
+        },
+        "gpt-5-2-chat": {
+          "name": "GPT-5.2 Chat",
+          "org": "OpenAI",
+          "index": 59.1,
+          "rank": null,
+          "covered": 1
+        },
+        "grok-4-20-beta1": {
+          "name": "Grok 4.20 Beta1",
+          "org": "SpaceXAI",
+          "index": 59.1,
+          "rank": null,
+          "covered": 1
+        },
+        "grok-4-20-beta": {
+          "name": "Grok 4.20 Beta",
+          "org": "SpaceXAI",
+          "index": 58.8,
+          "rank": null,
+          "covered": 1
+        },
+        "mimo-v2-6-flash": {
+          "name": "MiMo V2.6 Flash",
+          "org": "Xiaomi",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "grok-4-20-multi-agent-beta": {
+          "name": "Grok 4.20 Multi Agent Beta",
+          "org": "SpaceXAI",
+          "index": 58.8,
+          "rank": null,
+          "covered": 1
+        },
+        "ernie-5-1": {
+          "name": "Ernie 5.1",
+          "org": "Baidu",
+          "index": 58.7,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-5-1": {
+          "name": "GLM-5.1",
+          "org": "Z.ai",
+          "index": 58.5,
+          "rank": null,
+          "covered": 6
+        },
+        "grok-4-1": {
+          "name": "Grok 4.1",
+          "org": "SpaceXAI",
+          "index": 58.5,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-5-max": {
+          "name": "Qwen3.5 Max",
+          "org": "Alibaba",
+          "index": 58.5,
+          "rank": null,
+          "covered": 1
+        },
+        "gemini-3-deep-think": {
+          "name": "Gemini 3 Deep Think",
+          "org": "Google",
+          "index": 58.4,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-5-5-pro": {
+          "name": "GPT-5.5 Pro",
+          "org": "OpenAI",
+          "index": 58.3,
+          "rank": null,
+          "covered": 2
+        },
+        "qwen3-6-max": {
+          "name": "Qwen3.6 Max",
+          "org": "Alibaba",
+          "index": 58.2,
+          "rank": null,
+          "covered": 3
+        },
+        "apodex-1-1": {
+          "name": "Apodex 1.1",
+          "org": "Apodex",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-5-4-pro": {
+          "name": "GPT-5.4 Pro",
+          "org": "OpenAI",
+          "index": 58.1,
+          "rank": null,
+          "covered": 2
+        },
+        "nemotron-nano-12b-v2-vl": {
+          "name": "Nemotron Nano 12B V2 Vl",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "dola-seed-2-0-pro": {
+          "name": "Dola Seed 2.0 Pro",
+          "org": "ByteDance",
+          "index": 57.9,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-4-31b": {
+          "name": "Gemma 4 31B",
+          "org": "Google",
+          "index": 57.6,
+          "rank": null,
+          "covered": 7
+        },
+        "claude-opus-4-1": {
+          "name": "Claude Opus 4.1",
+          "org": "Anthropic",
+          "index": 57.6,
+          "rank": null,
+          "covered": 4
+        },
+        "composer-2-5": {
+          "name": "Composer 2.5",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-5-3-chat": {
+          "name": "GPT-5.3 Chat",
+          "org": "OpenAI",
+          "index": 57.5,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-8-2-4t-a95b": {
+          "name": "Qwen3.8 2.4T A95B",
+          "org": "Alibaba",
+          "index": 57.5,
+          "rank": null,
+          "covered": 4
+        },
+        "mimo-v2-pro": {
+          "name": "Mimo V2 Pro",
+          "org": "Xiaomi",
+          "index": 57.5,
+          "rank": null,
+          "covered": 1
+        },
+        "ernie-5-0": {
+          "name": "Ernie 5.0",
+          "org": "Baidu",
+          "index": 57.3,
+          "rank": null,
+          "covered": 1
+        },
+        "holo3-35b-a3b": {
+          "name": "Holo3 35B A3B",
+          "org": "H Company",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "chatgpt-4o": {
+          "name": "ChatGPT-4o",
+          "org": "OpenAI",
+          "index": 57.2,
+          "rank": null,
+          "covered": 3
+        },
+        "glm-4-7": {
+          "name": "GLM-4.7",
+          "org": "Z.ai",
+          "index": 57.1,
+          "rank": null,
+          "covered": 4
+        },
+        "dots3-note": {
+          "name": "Dots3 Note",
+          "org": "Other",
+          "index": 57.1,
+          "rank": null,
+          "covered": 1
+        },
+        "claude-4-7": {
+          "name": "Claude 4.7",
+          "org": "Anthropic",
+          "index": 56.9,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-4-26b-a4b": {
+          "name": "Gemma 4 26B A4B",
+          "org": "Google",
+          "index": 56.8,
+          "rank": null,
+          "covered": 4
+        },
+        "hy4": {
+          "name": "Hy4",
+          "org": "Tencent",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "longcat-flash-chat": {
+          "name": "Longcat Flash Chat",
+          "org": "Meituan",
+          "index": 56.7,
+          "rank": null,
+          "covered": 2
+        },
+        "gpt-5-6-sol-pro": {
+          "name": "GPT-5.6 Sol Pro",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mimo-v2-5": {
+          "name": "Mimo V2.5",
+          "org": "Xiaomi",
+          "index": 56.6,
+          "rank": null,
+          "covered": 4
+        },
+        "glm-5v-turbo": {
+          "name": "GLM-5v Turbo",
+          "org": "Z.ai",
+          "index": 56.5,
+          "rank": null,
+          "covered": 1
+        },
+        "gemini-3-1-flash-lite": {
+          "name": "Gemini 3.1 Flash Lite",
+          "org": "Google",
+          "index": 56.5,
+          "rank": null,
+          "covered": 6
+        },
+        "kimi-k2-5-instant": {
+          "name": "Kimi K2.5 Instant",
+          "org": "Moonshot",
+          "index": 56.4,
+          "rank": null,
+          "covered": 1
+        },
+        "kimi-k2-thinking-turbo": {
+          "name": "Kimi K2 Thinking Turbo",
+          "org": "Moonshot",
+          "index": 56.4,
+          "rank": null,
+          "covered": 1
+        },
+        "grok-4-1-fast": {
+          "name": "Grok 4.1 Fast",
+          "org": "SpaceXAI",
+          "index": 56.4,
+          "rank": null,
+          "covered": 6
+        },
+        "nova-premier-v1": {
+          "name": "Nova Premier V1",
+          "org": "Amazon",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mimo-v2-omni": {
+          "name": "Mimo V2 Omni",
+          "org": "Xiaomi",
+          "index": 56.4,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-405b": {
+          "name": "Llama 3 405B",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ernie-4-5-300b-a47b": {
+          "name": "Ernie 4.5 300B A47B",
+          "org": "Baidu",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "agnes-2-5-pro-alpha-based-on-qwen3-5-397b-a17b": {
+          "name": "Agnes 2.5 Pro Alpha (based on Qwen3.5 397B A17B)",
+          "org": "Sapiens AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-5-chat": {
+          "name": "GPT-5 Chat",
+          "org": "OpenAI",
+          "index": 56.2,
+          "rank": null,
+          "covered": 1
+        },
+        "nvidia-nemotron-3-ultra-550b-a55b-nvfp4": {
+          "name": "NVIDIA Nemotron 3 Ultra 550B A55B Nvfp4",
+          "org": "NVIDIA",
+          "index": 56.1,
+          "rank": null,
+          "covered": 1
+        },
+        "nova-experimental-chat": {
+          "name": "Nova Experimental Chat",
+          "org": "Amazon",
+          "index": 56.1,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4-6": {
+          "name": "GLM-4.6",
+          "org": "Z.ai",
+          "index": 56.1,
+          "rank": null,
+          "covered": 7
+        },
+        "qwen3-max": {
+          "name": "Qwen3 Max",
+          "org": "Alibaba",
+          "index": 56,
+          "rank": null,
+          "covered": 3
+        },
+        "maestro-reasoning": {
+          "name": "Maestro Reasoning",
+          "org": "Arcee",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "cogito-v2-llama-4-scout": {
+          "name": "Cogito V2 Llama 4 Scout",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "kimi-k2": {
+          "name": "Kimi K2",
+          "org": "Moonshot",
+          "index": 55.6,
+          "rank": null,
+          "covered": 9
+        },
+        "deepseek-v3-1-terminus": {
+          "name": "DeepSeek V3.1 Terminus",
+          "org": "DeepSeek",
+          "index": 55.6,
+          "rank": null,
+          "covered": 4
+        },
+        "deepseek-v3-1": {
+          "name": "DeepSeek V3.1",
+          "org": "DeepSeek",
+          "index": 55.5,
+          "rank": null,
+          "covered": 5
+        },
+        "minimax-m2-7": {
+          "name": "MiniMax M2.7",
+          "org": "MiniMax",
+          "index": 55.5,
+          "rank": null,
+          "covered": 5
+        },
+        "deepseek-v4": {
+          "name": "DeepSeek V4",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-vl-235b-a22b-instruct": {
+          "name": "Qwen3 Vl 235B A22B Instruct",
+          "org": "Alibaba",
+          "index": 55.4,
+          "rank": null,
+          "covered": 2
+        },
+        "hunyuan-hy3": {
+          "name": "Hunyuan Hy3",
+          "org": "Tencent",
+          "index": 55.3,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4-5": {
+          "name": "GLM-4.5",
+          "org": "Z.ai",
+          "index": 55.2,
+          "rank": null,
+          "covered": 4
+        },
+        "quasar-438b-max-based-on-glm-5-2": {
+          "name": "Quasar 438B (max, based on GLM-5.2)",
+          "org": "Multiverse Computing",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "grok-4-20": {
+          "name": "Grok 4.20",
+          "org": "SpaceXAI",
+          "index": 55.1,
+          "rank": null,
+          "covered": 3
+        },
+        "mistral-medium": {
+          "name": "Mistral Medium",
+          "org": "Mistral",
+          "index": 55.1,
+          "rank": null,
+          "covered": 4
+        },
+        "qwen3-5-27b": {
+          "name": "Qwen3.5 27B",
+          "org": "Alibaba",
+          "index": 55,
+          "rank": null,
+          "covered": 3
+        },
+        "jt-4-1-flash-236b-a21b": {
+          "name": "JT-4.1 Flash 236B A21B",
+          "org": "China Mobile",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "o1": {
+          "name": "O1",
+          "org": "OpenAI",
+          "index": 54.7,
+          "rank": null,
+          "covered": 6
+        },
+        "qwen3-235b-a22b-thinking": {
+          "name": "Qwen3 235B A22B Thinking",
+          "org": "Alibaba",
+          "index": 54.6,
+          "rank": null,
+          "covered": 3
+        },
+        "qwen3-next-80b-a3b-instruct": {
+          "name": "Qwen3 Next 80B A3B Instruct",
+          "org": "Alibaba",
+          "index": 54.5,
+          "rank": null,
+          "covered": 2
+        },
+        "qwen3-5-flash": {
+          "name": "Qwen3.5 Flash",
+          "org": "Alibaba",
+          "index": 54.4,
+          "rank": null,
+          "covered": 3
+        },
+        "deepseek-r1-distill-llama-70b": {
+          "name": "DeepSeek R1 Distill Llama 70B",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-v3": {
+          "name": "DeepSeek V3",
+          "org": "DeepSeek",
+          "index": 54.3,
+          "rank": null,
+          "covered": 11
+        },
+        "qwen3-5-35b-a3b": {
+          "name": "Qwen3.5 35B A3B",
+          "org": "Alibaba",
+          "index": 54.3,
+          "rank": null,
+          "covered": 4
+        },
+        "qwen3-vl-235b-a22b-thinking": {
+          "name": "Qwen3 Vl 235B A22B Thinking",
+          "org": "Alibaba",
+          "index": 54.3,
+          "rank": null,
+          "covered": 1
+        },
+        "hunyuan-vision-1-5": {
+          "name": "Hunyuan Vision 1.5",
+          "org": "Tencent",
+          "index": 54.2,
+          "rank": null,
+          "covered": 1
+        },
+        "step-3-5-flash": {
+          "name": "Step 3.5 Flash",
+          "org": "StepFun",
+          "index": 54.2,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-r1-claude-3-5-sonnet": {
+          "name": "DeepSeek R1 + claude-3-5-sonnet",
+          "org": "Anthropic",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-5-1-codex-max": {
+          "name": "GPT 5.1 Codex Max",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen-3-coder": {
+          "name": "Qwen 3 Coder",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "seed-1-8": {
+          "name": "Seed 1.8",
+          "org": "ByteDance",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "claude-3-7-sonnet": {
+          "name": "Claude 3.7 Sonnet",
+          "org": "Anthropic",
+          "index": 53.8,
+          "rank": null,
+          "covered": 7
+        },
+        "qwen3-coder-480b-a35b-instruct": {
+          "name": "Qwen3 Coder 480B A35B Instruct",
+          "org": "Alibaba",
+          "index": 53.8,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-3-2-speciale": {
+          "name": "DeepSeek 3.2 Speciale",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "hunyuan-t1": {
+          "name": "Hunyuan T1",
+          "org": "Tencent",
+          "index": 53.8,
+          "rank": null,
+          "covered": 1
+        },
+        "mimo-v2-flash": {
+          "name": "Mimo V2 Flash",
+          "org": "Xiaomi",
+          "index": 53.7,
+          "rank": null,
+          "covered": 3
+        },
+        "opencua-32b": {
+          "name": "Opencua 32B",
+          "org": "The University of Hong Kong & Moonshot AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minimax-m2-1": {
+          "name": "MiniMax M2.1",
+          "org": "MiniMax",
+          "index": 53.6,
+          "rank": null,
+          "covered": 3
+        },
+        "hunyuan-turbos": {
+          "name": "Hunyuan Turbos",
+          "org": "Tencent",
+          "index": 53.5,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-30b-a3b-instruct": {
+          "name": "Qwen3 30B A3B Instruct",
+          "org": "Alibaba",
+          "index": 53.5,
+          "rank": null,
+          "covered": 3
+        },
+        "qwen3-30b-a3b-thinking": {
+          "name": "Qwen3 30B A3B Thinking",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "gui-owl-7b": {
+          "name": "Gui Owl 7B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-5-2-pro": {
+          "name": "GPT-5.2 Pro",
+          "org": "OpenAI",
+          "index": 53.3,
+          "rank": null,
+          "covered": 2
+        },
+        "k2-think-v2": {
+          "name": "K2 Think V2",
+          "org": "Institute of Foundation Models",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "computer-use": {
+          "name": "Computer Use",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4-6v": {
+          "name": "GLM-4.6v",
+          "org": "Z.ai",
+          "index": 53.2,
+          "rank": null,
+          "covered": 1
+        },
+        "xlam-2-3b-fc-r": {
+          "name": "XLAM 2 3B Fc R",
+          "org": "Salesforce",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-chat-v3-prev": {
+          "name": "DeepSeek Chat V3 (prev)",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ling-2-6-flash": {
+          "name": "Ling 2.6 Flash",
+          "org": "InclusionAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "toolace-2-8b": {
+          "name": "ToolACE 2 8B",
+          "org": "Huawei Noah & USTC",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "solar-pro4": {
+          "name": "Solar Pro4",
+          "org": "Upstage",
+          "index": 53.1,
+          "rank": null,
+          "covered": 1
+        },
+        "tianxi-action-7b": {
+          "name": "TianXi Action 7B",
+          "org": "Lenovo",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemini-2-5-flash-lite": {
+          "name": "Gemini 2.5 Flash Lite",
+          "org": "Google",
+          "index": 53.1,
+          "rank": null,
+          "covered": 6
+        },
+        "o3-gpt-4-1": {
+          "name": "O3 + gpt-4.1",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "claude-3-5-sonnet": {
+          "name": "Claude 3.5 Sonnet",
+          "org": "Anthropic",
+          "index": 53,
+          "rank": null,
+          "covered": 8
+        },
+        "qwen2-5-max": {
+          "name": "Qwen2.5 Max",
+          "org": "Alibaba",
+          "index": 53,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-235b-a22b-diff-no-think-alibaba-api": {
+          "name": "Qwen3 235B A22B diff, no think, Alibaba API",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4-5-air": {
+          "name": "GLM-4.5 Air",
+          "org": "Z.ai",
+          "index": 52.9,
+          "rank": null,
+          "covered": 4
+        },
+        "evocua": {
+          "name": "EvoCUA",
+          "org": "Meituan",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "k2-horizon-375b-a23b": {
+          "name": "K2 Horizon 375B A23B",
+          "org": "Institute of Foundation Models",
+          "index": 52.9,
+          "rank": null,
+          "covered": 3
+        },
+        "opencua-7b": {
+          "name": "Opencua 7B",
+          "org": "The University of Hong Kong & Moonshot AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ui-tars-72b-dpo": {
+          "name": "UI-TARS 72B Dpo",
+          "org": "ByteDance Seed & Tsinghua University",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gui-owl-1-5-32b": {
+          "name": "GUI-Owl-1.5 32B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-next-80b-a3b-thinking": {
+          "name": "Qwen3 Next 80B A3B Thinking",
+          "org": "Alibaba",
+          "index": 52.7,
+          "rank": null,
+          "covered": 5
+        },
+        "gpt-5-codex": {
+          "name": "GPT-5 Codex",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen-3-6-flash": {
+          "name": "Qwen 3.6 Flash",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4-7-flash": {
+          "name": "GLM-4.7 Flash",
+          "org": "Z.ai",
+          "index": 52.5,
+          "rank": null,
+          "covered": 2
+        },
+        "nova-2-0-pro-preview": {
+          "name": "Nova 2.0 Pro Preview",
+          "org": "Amazon",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "exaone-4-5-33b": {
+          "name": "EXAONE 4.5 33B",
+          "org": "LG AI Research",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "diffusiongemma-26b-a4b": {
+          "name": "DiffusionGemma 26B A4B",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-3-27b-it": {
+          "name": "Gemma 3 27B It",
+          "org": "Google",
+          "index": 52.5,
+          "rank": null,
+          "covered": 7
+        },
+        "deepminer-mano-72b": {
+          "name": "DeepMiner Mano 72B",
+          "org": "Mininglamp",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minimax-m1": {
+          "name": "MiniMax M1",
+          "org": "MiniMax",
+          "index": 52.4,
+          "rank": null,
+          "covered": 1
+        },
+        "mercury-2-5": {
+          "name": "Mercury 2.5",
+          "org": "Inception AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen-3-5-plus": {
+          "name": "Qwen 3.5 Plus",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "ui-tars-2": {
+          "name": "UI-TARS 2",
+          "org": "ByteDance",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mistral-small-3-2-24b-it": {
+          "name": "Mistral Small 3.2 24B It",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-3-27b-it-fast": {
+          "name": "Gemma 3 27B It Fast",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nvidia-nemotron-3-super-120b-a12b": {
+          "name": "NVIDIA Nemotron 3 Super 120B A12B",
+          "org": "NVIDIA",
+          "index": 52.2,
+          "rank": null,
+          "covered": 3
+        },
+        "doubao-1-5-thinking-vision-pro": {
+          "name": "Doubao 1.5 Thinking Vision Pro",
+          "org": "ByteDance",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen-3-vl-plus": {
+          "name": "Qwen 3 VL Plus",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "opencua-qwen2-7b": {
+          "name": "Opencua Qwen2 7B",
+          "org": "The University of Hong Kong & Moonshot AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-vl-32b-instruct": {
+          "name": "Qwen2.5 Vl 32B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "kimi-vl-a3b": {
+          "name": "Kimi Vl A3B",
+          "org": "Moonshot",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "opencua-a3b": {
+          "name": "Opencua A3B",
+          "org": "The University of Hong Kong & Moonshot AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "command-a-reasoning": {
+          "name": "Command A Reasoning",
+          "org": "Cohere",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "deepminer-mano-7b": {
+          "name": "DeepMiner Mano 7B",
+          "org": "Mininglamp",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "arch-agent-32b": {
+          "name": "Arch Agent 32B",
+          "org": "katanemo",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "hammer2-1-3b": {
+          "name": "Hammer2.1 3B",
+          "org": "MadeAgents",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minimax-01": {
+          "name": "MiniMax 01",
+          "org": "MiniMax",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nemotron-nano-9b-v2": {
+          "name": "Nemotron Nano 9B V2",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4-6-exacto": {
+          "name": "GLM-4.6:exacto",
+          "org": "Z.ai",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "kimi-k2-thinking": {
+          "name": "Kimi K2 Thinking",
+          "org": "Moonshot",
+          "index": null,
+          "rank": null,
+          "covered": 4
+        },
+        "grok-3-mini-beta": {
+          "name": "Grok 3 Mini Beta",
+          "org": "SpaceXAI",
+          "index": 52,
+          "rank": null,
+          "covered": 3
+        },
+        "nex-n2-pro-based-on-qwen3-5-397b-a17b": {
+          "name": "Nex-N2-Pro (based on Qwen3.5-397B-A17B)",
+          "org": "Nex AGI",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "dart-gui-7b": {
+          "name": "DART GUI 7B",
+          "org": "BIGAI & BIT & DataCanvas",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mistral-small": {
+          "name": "Mistral Small",
+          "org": "Mistral",
+          "index": 52,
+          "rank": null,
+          "covered": 6
+        },
+        "intellect-3": {
+          "name": "Intellect 3",
+          "org": "Prime Intellect",
+          "index": 51.9,
+          "rank": null,
+          "covered": 1
+        },
+        "bitagent-bounty-8b": {
+          "name": "BitAgent Bounty 8B",
+          "org": "Bittensor",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "command-a": {
+          "name": "Command A",
+          "org": "Cohere",
+          "index": 51.8,
+          "rank": null,
+          "covered": 6
+        },
+        "gpt-5-3-codex": {
+          "name": "GPT-5.3 Codex",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "xlam-2-8b-fc-r": {
+          "name": "XLAM 2 8B Fc R",
+          "org": "Salesforce",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ring-1t": {
+          "name": "Ring 1t",
+          "org": "InclusionAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "union-alpha": {
+          "name": "Union Alpha",
+          "org": "Other",
+          "index": 51.7,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-32b-fast": {
+          "name": "Qwen3 32B Fast",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemini-2-0-flash-lite": {
+          "name": "Gemini 2.0 Flash Lite",
+          "org": "Google",
+          "index": 51.7,
+          "rank": null,
+          "covered": 3
+        },
+        "glm-4-32b": {
+          "name": "GLM-4 32B",
+          "org": "Z.ai",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4-5v": {
+          "name": "GLM-4.5v",
+          "org": "Z.ai",
+          "index": 51.7,
+          "rank": null,
+          "covered": 2
+        },
+        "nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4": {
+          "name": "NVIDIA Nemotron 3.5 Lightning 30B A3B Nvfp4",
+          "org": "NVIDIA",
+          "index": 51.6,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-vl-flash": {
+          "name": "Qwen3 Vl Flash",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nanbeige3-5-pro": {
+          "name": "Nanbeige3.5 Pro",
+          "org": "Nanbeige",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ui-tars": {
+          "name": "UI-TARS",
+          "org": "ByteDance",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ling-3-0-flash": {
+          "name": "Ling 3.0 Flash",
+          "org": "InclusionAI",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "step-3": {
+          "name": "Step 3",
+          "org": "StepFun",
+          "index": 51.5,
+          "rank": null,
+          "covered": 2
+        },
+        "llama-3-1-nemotron-ultra-253b-v1": {
+          "name": "Llama 3.1 Nemotron Ultra 253B V1",
+          "org": "NVIDIA",
+          "index": 51.4,
+          "rank": null,
+          "covered": 2
+        },
+        "gemma-3-1b-it": {
+          "name": "Gemma 3 1B It",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-32b": {
+          "name": "Qwen3 32B",
+          "org": "Alibaba",
+          "index": 51.4,
+          "rank": null,
+          "covered": 6
+        },
+        "ling-1t": {
+          "name": "Ling 1t",
+          "org": "InclusionAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minimax-m2": {
+          "name": "MiniMax M2",
+          "org": "MiniMax",
+          "index": 51.3,
+          "rank": null,
+          "covered": 4
+        },
+        "qwen-plus": {
+          "name": "Qwen Plus",
+          "org": "Alibaba",
+          "index": 51.3,
+          "rank": null,
+          "covered": 2
+        },
+        "mercury-2": {
+          "name": "Mercury 2",
+          "org": "Inception AI",
+          "index": 51.3,
+          "rank": null,
+          "covered": 4
+        },
+        "ling-flash-2-0": {
+          "name": "Ling Flash 2.0",
+          "org": "Ant Group",
+          "index": 51.2,
+          "rank": null,
+          "covered": 1
+        },
+        "xbai-o4": {
+          "name": "XBai O4",
+          "org": "MetaStone",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4-plus": {
+          "name": "GLM-4 Plus",
+          "org": "Z.ai",
+          "index": 51.1,
+          "rank": null,
+          "covered": 1
+        },
+        "nvidia-llama-3-3-nemotron-super-49b-v1-5": {
+          "name": "NVIDIA Llama 3.3 Nemotron Super 49B V1.5",
+          "org": "NVIDIA",
+          "index": 51.1,
+          "rank": null,
+          "covered": 1
+        },
+        "evocua-8b": {
+          "name": "EvoCUA 8B",
+          "org": "Meituan",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-3-12b-it": {
+          "name": "Gemma 3 12B It",
+          "org": "Google",
+          "index": 51.1,
+          "rank": null,
+          "covered": 5
+        },
+        "granite-4-2-30b": {
+          "name": "Granite 4.2 30B",
+          "org": "IBM",
+          "index": 51.1,
+          "rank": null,
+          "covered": 2
+        },
+        "xlam-2-1b-fc-r": {
+          "name": "XLAM 2 1B Fc R",
+          "org": "Salesforce",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "hunyuan-turbo": {
+          "name": "Hunyuan Turbo",
+          "org": "Tencent",
+          "index": 51,
+          "rank": null,
+          "covered": 1
+        },
+        "cogito-v2-llama-405b": {
+          "name": "Cogito V2 Llama 405B",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-4b-instruct": {
+          "name": "Qwen3 4B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "claude-4-haiku": {
+          "name": "Claude 4 Haiku",
+          "org": "Anthropic",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "opencua-72b": {
+          "name": "Opencua 72B",
+          "org": "The University of Hong Kong & Moonshot AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "quasar-438b": {
+          "name": "Quasar 438B",
+          "org": "Multiverse Computing",
+          "index": 50.8,
+          "rank": null,
+          "covered": 1
+        },
+        "gemini": {
+          "name": "Gemini",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "quasar-alpha": {
+          "name": "Quasar Alpha",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "grok-3-beta": {
+          "name": "Grok 3 Beta",
+          "org": "SpaceXAI",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "optimus-alpha": {
+          "name": "Optimus Alpha",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-14b": {
+          "name": "Qwen3 14B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 4
+        },
+        "grok-2": {
+          "name": "Grok 2",
+          "org": "SpaceXAI",
+          "index": 50.7,
+          "rank": null,
+          "covered": 3
+        },
+        "qwq-32b": {
+          "name": "QwQ 32B",
+          "org": "Alibaba",
+          "index": 50.7,
+          "rank": null,
+          "covered": 3
+        },
+        "gemini-advanced": {
+          "name": "Gemini Advanced",
+          "org": "Google",
+          "index": 50.7,
+          "rank": null,
+          "covered": 1
+        },
+        "nova-2-lite": {
+          "name": "Nova 2 Lite",
+          "org": "Amazon",
+          "index": 50.7,
+          "rank": null,
+          "covered": 4
+        },
+        "nanbeige4-1-3b": {
+          "name": "Nanbeige4.1 3B",
+          "org": "Nanbeige",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-3-instruct-turbo-70b": {
+          "name": "Llama 3.3 Instruct Turbo (70B)",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "llama-3-2-vision-90b": {
+          "name": "Llama 3.2 Vision (90B)",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-405b-instruct-bf16": {
+          "name": "Llama 3.1 405B Instruct Bf16",
+          "org": "Meta",
+          "index": 50.6,
+          "rank": null,
+          "covered": 1
+        },
+        "ui-tars-1-5-7b": {
+          "name": "UI-TARS 1.5 7B",
+          "org": "ByteDance Seed & Tsinghua University",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "qwen-2-5-instruct-turbo-72b": {
+          "name": "Qwen 2.5 Instruct Turbo (72B)",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "step-2": {
+          "name": "Step 2",
+          "org": "StepFun",
+          "index": 50.6,
+          "rank": null,
+          "covered": 1
+        },
+        "k-exaone": {
+          "name": "K EXAONE",
+          "org": "LG AI Research",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-405b-instruct": {
+          "name": "Llama 3.1 405B Instruct",
+          "org": "Meta",
+          "index": 50.5,
+          "rank": null,
+          "covered": 2
+        },
+        "arch-agent-3b": {
+          "name": "Arch Agent 3B",
+          "org": "katanemo",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "xlam-2-32b-fc-r": {
+          "name": "XLAM 2 32B Fc R",
+          "org": "Salesforce",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "xlam-2-70b-fc-r": {
+          "name": "XLAM 2 70B Fc R",
+          "org": "Salesforce",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "hypernova-60b-high-based-on-gpt-oss-120b": {
+          "name": "HyperNova 60B (high, based on gpt-oss-120b)",
+          "org": "Multiverse Computing",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "olmo-3-1-32b-instruct": {
+          "name": "Olmo 3.1 32B Instruct",
+          "org": "Ai2",
+          "index": 50.3,
+          "rank": null,
+          "covered": 1
+        },
+        "yi-lightning": {
+          "name": "Yi Lightning",
+          "org": "01.AI",
+          "index": 50.2,
+          "rank": null,
+          "covered": 2
+        },
+        "llama-3-3-nemotron-49b-super-v1": {
+          "name": "Llama 3.3 Nemotron 49B Super V1",
+          "org": "NVIDIA",
+          "index": 50.2,
+          "rank": null,
+          "covered": 1
+        },
+        "molmo-2-8b": {
+          "name": "Molmo 2 8B",
+          "org": "Ai2",
+          "index": 50.2,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-2-vision-11b": {
+          "name": "Llama 3.2 Vision (11B)",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "grok-2-vision": {
+          "name": "Grok 2 Vision",
+          "org": "SpaceXAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "falcon3-10b-instruct": {
+          "name": "Falcon3 10B Instruct",
+          "org": "TII",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "hunyuan-large": {
+          "name": "Hunyuan Large",
+          "org": "Tencent",
+          "index": 50.1,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-4-turbo": {
+          "name": "GPT-4 Turbo",
+          "org": "OpenAI",
+          "index": 50,
+          "rank": null,
+          "covered": 6
+        },
+        "claude-3-5-haiku": {
+          "name": "Claude 3.5 Haiku",
+          "org": "Anthropic",
+          "index": 50,
+          "rank": null,
+          "covered": 5
+        },
+        "deepseek-v2-5": {
+          "name": "DeepSeek V2.5",
+          "org": "DeepSeek",
+          "index": 49.9,
+          "rank": null,
+          "covered": 2
+        },
+        "claude-3-opus": {
+          "name": "Claude 3 Opus",
+          "org": "Anthropic",
+          "index": 49.9,
+          "rank": null,
+          "covered": 4
+        },
+        "hammer2-1-7b": {
+          "name": "Hammer2.1 7B",
+          "org": "MadeAgents",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemini-1-0-pro": {
+          "name": "Gemini 1.0 Pro",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ring-flash-2-0": {
+          "name": "Ring Flash 2.0",
+          "org": "Ant Group",
+          "index": 49.8,
+          "rank": null,
+          "covered": 1
+        },
+        "k2-horizon-mova-36b-a4b": {
+          "name": "K2 Horizon MoVA 36B A4B",
+          "org": "Institute of Foundation Models",
+          "index": 49.8,
+          "rank": null,
+          "covered": 3
+        },
+        "ling-3-0-flash-vl": {
+          "name": "Ling 3.0 Flash VL",
+          "org": "InclusionAI",
+          "index": 49.8,
+          "rank": null,
+          "covered": 4
+        },
+        "exaone-4-0-32b": {
+          "name": "EXAONE 4.0 32B",
+          "org": "LG AI Research",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemini-2-0-flash-thinking": {
+          "name": "Gemini 2.0 Flash Thinking",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "step-1o-turbo": {
+          "name": "Step 1o Turbo",
+          "org": "StepFun",
+          "index": 49.7,
+          "rank": null,
+          "covered": 1
+        },
+        "openreasoning-nemotron-32b": {
+          "name": "OpenReasoning Nemotron 32B",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-8b": {
+          "name": "Qwen3 8B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 4
+        },
+        "mistral-medium-3-1": {
+          "name": "Mistral Medium 3.1",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "laguna-m-1": {
+          "name": "Laguna M.1",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen-max": {
+          "name": "Qwen Max",
+          "org": "Alibaba",
+          "index": 49.6,
+          "rank": null,
+          "covered": 3
+        },
+        "llama-3-3-70b-instruct": {
+          "name": "Llama 3.3 70B Instruct",
+          "org": "Meta",
+          "index": 49.6,
+          "rank": null,
+          "covered": 4
+        },
+        "llama-3-3-nemotron-super": {
+          "name": "Llama 3.3 Nemotron Super",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-3n-e4b-it": {
+          "name": "Gemma 3n E4b It",
+          "org": "Google",
+          "index": 49.6,
+          "rank": null,
+          "covered": 2
+        },
+        "qwq-32b-qwen-2-5-coder-instruct": {
+          "name": "QwQ-32B + Qwen 2.5 Coder Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "motif-3-beta": {
+          "name": "Motif 3 (Beta)",
+          "org": "Motif Technologies",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "laguna-xs-2": {
+          "name": "Laguna XS.2",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-vl-72b-instruct": {
+          "name": "Qwen2.5 Vl 72B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "qwen2-5-plus": {
+          "name": "Qwen2.5 Plus",
+          "org": "Alibaba",
+          "index": 49.4,
+          "rank": null,
+          "covered": 1
+        },
+        "k2-horizon-32b": {
+          "name": "K2 Horizon 32B",
+          "org": "IFM (MBZUAI)",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "muse-glimmer-30b": {
+          "name": "Muse Glimmer-30B",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "nvidia-nemotron-3-nano-30b-a3b-bf16": {
+          "name": "NVIDIA Nemotron 3 Nano 30B A3B Bf16",
+          "org": "NVIDIA",
+          "index": 49.4,
+          "rank": null,
+          "covered": 1
+        },
+        "athene-v2-chat": {
+          "name": "Athene V2 Chat",
+          "org": "Nexusflow",
+          "index": 49.4,
+          "rank": null,
+          "covered": 1
+        },
+        "command-a-quality": {
+          "name": "Command A Quality",
+          "org": "Cohere",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-3-2-8b-instruct": {
+          "name": "Granite 3.2 8B Instruct",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "mistral-large-v2": {
+          "name": "Mistral Large v2",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "grok-code-fast-1": {
+          "name": "Grok Code Fast 1",
+          "org": "SpaceXAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "swe-1-6-fast": {
+          "name": "SWE-1.6 Fast",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "hunyuan-standard-2": {
+          "name": "Hunyuan Standard",
+          "org": "Tencent",
+          "index": 49.2,
+          "rank": null,
+          "covered": 1
+        },
+        "command-r7b": {
+          "name": "Command R7B",
+          "org": "Cohere",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "kat-coder-pro-v1": {
+          "name": "KAT-Coder-Pro V1",
+          "org": "KwaiKAT",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "gemma-4-12b": {
+          "name": "Gemma 4 12B",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "gemini-1-5-flash": {
+          "name": "Gemini 1.5 Flash",
+          "org": "Google",
+          "index": 49.1,
+          "rank": null,
+          "covered": 4
+        },
+        "step-3-7-flash": {
+          "name": "Step 3.7 Flash",
+          "org": "StepFun",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mercury": {
+          "name": "Mercury",
+          "org": "Inception AI",
+          "index": 49,
+          "rank": null,
+          "covered": 2
+        },
+        "grok-2-mini": {
+          "name": "Grok 2 Mini",
+          "org": "SpaceXAI",
+          "index": 49,
+          "rank": null,
+          "covered": 1
+        },
+        "coalm-8b": {
+          "name": "CoALM 8B",
+          "org": "UIUC + Oumi",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "olmo-3-32b-think": {
+          "name": "Olmo 3 32B Think",
+          "org": "Ai2",
+          "index": 49,
+          "rank": null,
+          "covered": 1
+        },
+        "arch-agent-1-5b": {
+          "name": "Arch Agent 1.5B",
+          "org": "katanemo",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-5-2-codex": {
+          "name": "GPT-5.2 Codex",
+          "org": "OpenAI",
+          "index": 48.9,
+          "rank": null,
+          "covered": 2
+        },
+        "granite-4-1-8b": {
+          "name": "Granite 4.1 8B",
+          "org": "IBM",
+          "index": 48.9,
+          "rank": null,
+          "covered": 1
+        },
+        "athene-70b": {
+          "name": "Athene 70B",
+          "org": "Nexusflow",
+          "index": 48.9,
+          "rank": null,
+          "covered": 1
+        },
+        "magistral-medium-1-2": {
+          "name": "Magistral Medium 1.2",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "mistral-large": {
+          "name": "Mistral Large",
+          "org": "Mistral",
+          "index": 48.8,
+          "rank": null,
+          "covered": 5
+        },
+        "ling-3-0-flash-fin": {
+          "name": "Ling 3.0 Flash Fin",
+          "org": "InclusionAI",
+          "index": 48.8,
+          "rank": null,
+          "covered": 4
+        },
+        "nemotron-3-ultra": {
+          "name": "Nemotron 3 Ultra",
+          "org": "NVIDIA",
+          "index": 48.8,
+          "rank": null,
+          "covered": 3
+        },
+        "gemini-2-0-pro": {
+          "name": "Gemini 2.0 Pro",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "gemma-3-4b-it": {
+          "name": "Gemma 3 4B It",
+          "org": "Google",
+          "index": 48.7,
+          "rank": null,
+          "covered": 5
+        },
+        "mistral-small-3-1-24b-instruct": {
+          "name": "Mistral Small 3.1 24B Instruct",
+          "org": "Mistral",
+          "index": 48.7,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-72b-instruct": {
+          "name": "Qwen2.5 72B Instruct",
+          "org": "Alibaba",
+          "index": 48.7,
+          "rank": null,
+          "covered": 2
+        },
+        "llama-3-1-instruct-turbo-70b": {
+          "name": "Llama 3.1 Instruct Turbo (70B)",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "qwen-2-5-instruct-turbo-7b": {
+          "name": "Qwen 2.5 Instruct Turbo (7B)",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "cogito-v2-deepseek-671b": {
+          "name": "Cogito V2 DeepSeek 671B",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mistral-small-3-1": {
+          "name": "Mistral Small 3.1",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "codestral-25-01": {
+          "name": "Codestral 25.01",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-nemotron-70b-instruct": {
+          "name": "Llama 3.1 Nemotron 70B Instruct",
+          "org": "NVIDIA",
+          "index": 48.5,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-4-e2b": {
+          "name": "Gemma 4 E2B",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "mercury-coder": {
+          "name": "Mercury Coder",
+          "org": "Inception AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "opencodereasoning-nemotron-1-1-32b": {
+          "name": "OpenCodeReasoning Nemotron 1.1 32B",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-4-0-350m": {
+          "name": "Granite 4.0 350M",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "phi-4-reasoning-plus": {
+          "name": "Phi 4 Reasoning Plus",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "kat-coder-pro-v2": {
+          "name": "KAT Coder Pro V2",
+          "org": "KwaiKAT",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "g9v3-39a5b": {
+          "name": "G9v3 39A5B",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "hunyuan-large-vision": {
+          "name": "Hunyuan Large Vision",
+          "org": "Tencent",
+          "index": 48.2,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-3-5": {
+          "name": "GPT 3.5",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-70b-instruct": {
+          "name": "Llama 3.1 70B Instruct",
+          "org": "Meta",
+          "index": 48.1,
+          "rank": null,
+          "covered": 1
+        },
+        "devstral-medium": {
+          "name": "Devstral Medium",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "devstral-small": {
+          "name": "Devstral Small",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "jamba-large-1-7": {
+          "name": "Jamba Large 1.7",
+          "org": "AI21",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "virtuoso-large": {
+          "name": "Virtuoso Large",
+          "org": "Arcee",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nova-pro": {
+          "name": "Nova Pro",
+          "org": "Amazon",
+          "index": 47.9,
+          "rank": null,
+          "covered": 4
+        },
+        "jamba-1-6-mini": {
+          "name": "Jamba 1.6 Mini",
+          "org": "AI21",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "jamba-1-5-large": {
+          "name": "Jamba 1.5 Large",
+          "org": "AI21",
+          "index": 47.9,
+          "rank": null,
+          "covered": 3
+        },
+        "gemma-2-27b-it": {
+          "name": "Gemma 2 27B It",
+          "org": "Google",
+          "index": 47.9,
+          "rank": null,
+          "covered": 3
+        },
+        "codestral": {
+          "name": "Codestral",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "reka-core": {
+          "name": "Reka Core",
+          "org": "Reka",
+          "index": 47.8,
+          "rank": null,
+          "covered": 1
+        },
+        "magistral-small-1-2": {
+          "name": "Magistral Small 1.2",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "jamba-1-6-large": {
+          "name": "Jamba 1.6 Large",
+          "org": "AI21",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "k2-horizon-7b": {
+          "name": "K2 Horizon 7B",
+          "org": "Institute of Foundation Models",
+          "index": 47.7,
+          "rank": null,
+          "covered": 3
+        },
+        "mistral-small-3-2": {
+          "name": "Mistral Small 3.2",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-vl-72b": {
+          "name": "Qwen2 VL 72B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "llama-3-1-tulu-3-70b": {
+          "name": "Llama 3.1 Tulu 3 70B",
+          "org": "Ai2",
+          "index": 47.7,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-nemotron-51b-instruct": {
+          "name": "Llama 3.1 Nemotron 51B Instruct",
+          "org": "NVIDIA",
+          "index": 47.7,
+          "rank": null,
+          "covered": 1
+        },
+        "ibm-granite-h-small": {
+          "name": "IBM Granite H Small",
+          "org": "IBM",
+          "index": 47.7,
+          "rank": null,
+          "covered": 1
+        },
+        "olmo-3-1-32b-think": {
+          "name": "Olmo 3.1 32B Think",
+          "org": "Ai2",
+          "index": 47.7,
+          "rank": null,
+          "covered": 1
+        },
+        "openhands-lm-32b-v0-1": {
+          "name": "Openhands Lm 32B V0.1",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-instruct-turbo-405b": {
+          "name": "Llama 3.1 Instruct Turbo (405B)",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "nemotron-3-nano-omni-30b-a3b-reasoning": {
+          "name": "Nemotron 3 Nano Omni 30B A3B Reasoning",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nemotron-cascade-2-30b-a3b": {
+          "name": "Nemotron Cascade 2 30B A3B",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nanbeige4-3b": {
+          "name": "Nanbeige4 3B",
+          "org": "Nanbeige",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-5-pro": {
+          "name": "GPT-5 Pro",
+          "org": "OpenAI",
+          "index": 47.4,
+          "rank": null,
+          "covered": 3
+        },
+        "claude-3-sonnet": {
+          "name": "Claude 3 Sonnet",
+          "org": "Anthropic",
+          "index": 47.4,
+          "rank": null,
+          "covered": 3
+        },
+        "gemma-2-9b-it-simpo": {
+          "name": "Gemma 2 9B It Simpo",
+          "org": "Google",
+          "index": 47.3,
+          "rank": null,
+          "covered": 1
+        },
+        "spotlight": {
+          "name": "Spotlight",
+          "org": "Arcee",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nemotron-4-340b-instruct": {
+          "name": "Nemotron 4 340B Instruct",
+          "org": "NVIDIA",
+          "index": 47.2,
+          "rank": null,
+          "covered": 1
+        },
+        "falcon3-3b-instruct": {
+          "name": "Falcon3 3B Instruct",
+          "org": "TII",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "hermes-4-405b": {
+          "name": "Hermes 4 405B",
+          "org": "Nous Research",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "command-r-plus": {
+          "name": "Command R Plus",
+          "org": "Cohere",
+          "index": 47.1,
+          "rank": null,
+          "covered": 6
+        },
+        "llama-3-70b-instruct": {
+          "name": "Llama 3 70B Instruct",
+          "org": "Meta",
+          "index": 47.1,
+          "rank": null,
+          "covered": 4
+        },
+        "gpt-4": {
+          "name": "GPT-4",
+          "org": "OpenAI",
+          "index": 47.1,
+          "rank": null,
+          "covered": 3
+        },
+        "mistral-small-24b-instruct": {
+          "name": "Mistral Small 24B Instruct",
+          "org": "Mistral",
+          "index": 47,
+          "rank": null,
+          "covered": 2
+        },
+        "glm-4": {
+          "name": "GLM-4",
+          "org": "Z.ai",
+          "index": 46.9,
+          "rank": null,
+          "covered": 1
+        },
+        "falcon3-7b-instruct": {
+          "name": "Falcon3 7B Instruct",
+          "org": "TII",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "anubis-70b-v1-1": {
+          "name": "Anubis 70B V1.1",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "reka-flash": {
+          "name": "Reka Flash",
+          "org": "Reka",
+          "index": 46.9,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-0-6b": {
+          "name": "Qwen3 0.6B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-coder-32b-instruct": {
+          "name": "Qwen2.5 Coder 32B Instruct",
+          "org": "Alibaba",
+          "index": 46.7,
+          "rank": null,
+          "covered": 2
+        },
+        "longcat-2-0": {
+          "name": "LongCat 2.0",
+          "org": "LongCat",
+          "index": 46.7,
+          "rank": null,
+          "covered": 3
+        },
+        "qwen3-5-9b": {
+          "name": "Qwen3.5 9B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "internvl2-llama3-76b": {
+          "name": "InternVL2 Llama3 76B",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "c4ai-aya-expanse-32b": {
+          "name": "C4ai Aya Expanse 32B",
+          "org": "Cohere",
+          "index": 46.5,
+          "rank": null,
+          "covered": 3
+        },
+        "gemma-2-9b-it": {
+          "name": "Gemma 2 9B It",
+          "org": "Google",
+          "index": 46.5,
+          "rank": null,
+          "covered": 3
+        },
+        "deepseek-coder-v2": {
+          "name": "DeepSeek Coder V2",
+          "org": "DeepSeek",
+          "index": 46.4,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-4-1-3b": {
+          "name": "Granite 4.1 3B",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-72b-instruct": {
+          "name": "Qwen2 72B Instruct",
+          "org": "Alibaba",
+          "index": 46.2,
+          "rank": null,
+          "covered": 3
+        },
+        "valkyrie-49b-v1": {
+          "name": "Valkyrie 49B V1",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llava-next-13b": {
+          "name": "LLaVA NeXT 13B",
+          "org": "LLaVA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "internvl2-40b": {
+          "name": "InternVL2 40B",
+          "org": "InternLM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "internvl2-8b": {
+          "name": "InternVL2 8B",
+          "org": "InternLM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minicpm-llama3-v-2-5": {
+          "name": "MiniCPM-Llama3-V 2.5",
+          "org": "OpenBMB",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minicpm-v-2-6": {
+          "name": "MiniCPM-V 2.6",
+          "org": "OpenBMB",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "idefics3-8b-llama3": {
+          "name": "Idefics3 8B Llama3",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "phi-3-5-vision": {
+          "name": "Phi 3.5 Vision",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llava-next-34b": {
+          "name": "LLaVA NEXT 34B",
+          "org": "LLaVA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llava-next-mistral-7b": {
+          "name": "LLaVA NeXT Mistral 7B",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llava-next-vicuna-7b": {
+          "name": "LLaVA NeXT Vicuna 7B",
+          "org": "LMSYS",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llava-onevision-7b": {
+          "name": "LLaVA OneVision 7B",
+          "org": "LLaVA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llava-next-72b": {
+          "name": "LlaVA NEXT 72B",
+          "org": "LLaVA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llava-onevision-72b": {
+          "name": "LLaVA OneVision 72B",
+          "org": "LLaVA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-6-35b-a3b": {
+          "name": "Qwen3.6 35B A3B",
+          "org": "Alibaba",
+          "index": 46.2,
+          "rank": null,
+          "covered": 3
+        },
+        "phi-4-multimodal-instruct": {
+          "name": "Phi 4 Multimodal Instruct",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "claude-3-haiku": {
+          "name": "Claude 3 Haiku",
+          "org": "Anthropic",
+          "index": 46.2,
+          "rank": null,
+          "covered": 5
+        },
+        "qwen3-1-7b": {
+          "name": "Qwen3 1.7B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nova-lite": {
+          "name": "Nova Lite",
+          "org": "Amazon",
+          "index": 46.1,
+          "rank": null,
+          "covered": 3
+        },
+        "gemini-1-5-flash-8b": {
+          "name": "Gemini 1.5 Flash 8B",
+          "org": "Google",
+          "index": 46.1,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-instruct-turbo-8b": {
+          "name": "Llama 3.1 Instruct Turbo (8B)",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "granite-20b-functioncalling": {
+          "name": "Granite 20B FunctionCalling",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "coalm-70b": {
+          "name": "CoALM 70B",
+          "org": "UIUC + Oumi",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "phi-4": {
+          "name": "Phi 4",
+          "org": "Microsoft",
+          "index": 45.9,
+          "rank": null,
+          "covered": 4
+        },
+        "ring-2-6-1t": {
+          "name": "Ring 2.6.1T",
+          "org": "InclusionAI",
+          "index": 45.7,
+          "rank": null,
+          "covered": 3
+        },
+        "olmo-2-32b-instruct": {
+          "name": "Olmo 2 32B Instruct",
+          "org": "Ai2",
+          "index": 45.6,
+          "rank": null,
+          "covered": 2
+        },
+        "hammer2-1-1-5b": {
+          "name": "Hammer2.1 1.5B",
+          "org": "MadeAgents",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "palmyra-x": {
+          "name": "Palmyra X",
+          "org": "Writer",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "command-r": {
+          "name": "Command R",
+          "org": "Cohere",
+          "index": 45.5,
+          "rank": null,
+          "covered": 3
+        },
+        "solar-pro-3": {
+          "name": "Solar Pro 3",
+          "org": "Upstage",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "nemotron-3-5-30b-a3b": {
+          "name": "Nemotron 3.5 30B-A3B",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "k2-horizon-3-7b": {
+          "name": "K2 Horizon 3.7B",
+          "org": "Institute of Foundation Models",
+          "index": 45.2,
+          "rank": null,
+          "covered": 3
+        },
+        "o3-pro": {
+          "name": "O3 Pro",
+          "org": "OpenAI",
+          "index": 45.2,
+          "rank": null,
+          "covered": 4
+        },
+        "lfm2-5-2-6b": {
+          "name": "LFM2.5 2.6B",
+          "org": "Liquid AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "jamba-mini-1-7": {
+          "name": "Jamba Mini 1.7",
+          "org": "AI21",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "nova-micro": {
+          "name": "Nova Micro",
+          "org": "Amazon",
+          "index": 45,
+          "rank": null,
+          "covered": 4
+        },
+        "afm-4-5b": {
+          "name": "AFM 4.5B",
+          "org": "Arcee",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "jamba-1-5-mini": {
+          "name": "Jamba 1.5 Mini",
+          "org": "AI21",
+          "index": 44.9,
+          "rank": null,
+          "covered": 3
+        },
+        "granite-4-1-30b": {
+          "name": "Granite 4.1 30B",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ling-3-0-tiny": {
+          "name": "Ling 3.0 Tiny",
+          "org": "InclusionAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "phi-4-mini-instruct": {
+          "name": "Phi-4 Mini Instruct",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "ministral-8b": {
+          "name": "Ministral 8B",
+          "org": "Mistral",
+          "index": 44.7,
+          "rank": null,
+          "covered": 3
+        },
+        "open-mistral-nemo": {
+          "name": "Open Mistral Nemo",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minicpm3-4b-fc": {
+          "name": "MiniCPM3 4B FC",
+          "org": "OpenBMB",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemini-pro-dev-api": {
+          "name": "Gemini Pro Dev Api",
+          "org": "Google",
+          "index": 44.7,
+          "rank": null,
+          "covered": 1
+        },
+        "codex-mini-latest": {
+          "name": "Codex Mini (Latest)",
+          "org": "OpenAI",
+          "index": 44.6,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen1-5-110b-chat": {
+          "name": "Qwen1.5 110B Chat",
+          "org": "Alibaba",
+          "index": 44.6,
+          "rank": null,
+          "covered": 1
+        },
+        "hunyuan-standard": {
+          "name": "Hunyuan Standard",
+          "org": "Tencent",
+          "index": 44.5,
+          "rank": null,
+          "covered": 1
+        },
+        "reka-flash-21b-online": {
+          "name": "Reka Flash 21B Online",
+          "org": "Reka",
+          "index": 44.5,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen1-5-72b-chat": {
+          "name": "Qwen1.5 72B Chat",
+          "org": "Alibaba",
+          "index": 44.5,
+          "rank": null,
+          "covered": 2
+        },
+        "claude-3-7": {
+          "name": "Claude 3.7",
+          "org": "Anthropic",
+          "index": 44.5,
+          "rank": null,
+          "covered": 1
+        },
+        "rzn-t": {
+          "name": "RZN T",
+          "org": "Phronetic AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-4-e4b": {
+          "name": "Gemma 4 E4B",
+          "org": "Google",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "magistral-small": {
+          "name": "Magistral Small",
+          "org": "Mistral",
+          "index": 44.4,
+          "rank": null,
+          "covered": 3
+        },
+        "qwen3-5-4b": {
+          "name": "Qwen3.5 4B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "mixtral-8x22b-instruct-v0-1": {
+          "name": "Mixtral 8x22b Instruct V0.1",
+          "org": "Mistral",
+          "index": 44.3,
+          "rank": null,
+          "covered": 2
+        },
+        "falcon3-1b-instruct": {
+          "name": "Falcon3 1B Instruct",
+          "org": "TII",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "reka-flash-21b": {
+          "name": "Reka Flash 21B",
+          "org": "Reka",
+          "index": 44.1,
+          "rank": null,
+          "covered": 1
+        },
+        "gemini-pro": {
+          "name": "Gemini Pro",
+          "org": "Google",
+          "index": 43.9,
+          "rank": null,
+          "covered": 1
+        },
+        "c4ai-aya-expanse-8b": {
+          "name": "C4ai Aya Expanse 8B",
+          "org": "Cohere",
+          "index": 43.9,
+          "rank": null,
+          "covered": 3
+        },
+        "llama-3-8b-instruct": {
+          "name": "Llama 3 8B Instruct",
+          "org": "Meta",
+          "index": 43.9,
+          "rank": null,
+          "covered": 3
+        },
+        "qwen3-5-2b": {
+          "name": "Qwen3.5 2B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-tulu-3-8b": {
+          "name": "Llama 3.1 Tulu 3 8B",
+          "org": "Ai2",
+          "index": 43.7,
+          "rank": null,
+          "covered": 2
+        },
+        "minicpm-v-4-6-1-3b": {
+          "name": "MiniCPM-V 4.6 1.3B",
+          "org": "OpenBMB",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nemotron-3-super": {
+          "name": "Nemotron 3 Super",
+          "org": "NVIDIA",
+          "index": 43.6,
+          "rank": null,
+          "covered": 1
+        },
+        "nemotron-3-5-lightning": {
+          "name": "Nemotron 3.5 Lightning",
+          "org": "NVIDIA",
+          "index": 43.6,
+          "rank": null,
+          "covered": 4
+        },
+        "command-a-2": {
+          "name": "Command A+",
+          "org": "Cohere",
+          "index": 43.6,
+          "rank": null,
+          "covered": 3
+        },
+        "nvidia-nemotron-3-nano-4b": {
+          "name": "NVIDIA Nemotron 3 Nano 4B",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "zephyr-orpo-141b-a35b-v0-1": {
+          "name": "Zephyr Orpo 141B A35B V0.1",
+          "org": "Hugging Face",
+          "index": 43.3,
+          "rank": null,
+          "covered": 1
+        },
+        "yi-1-5-34b-chat": {
+          "name": "Yi 1.5 34B Chat",
+          "org": "01.AI",
+          "index": 43.3,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-8b-instruct": {
+          "name": "Llama 3.1 8B Instruct",
+          "org": "Meta",
+          "index": 43.2,
+          "rank": null,
+          "covered": 4
+        },
+        "minicpm5-2b": {
+          "name": "MiniCPM5 2B",
+          "org": "OpenBMB",
+          "index": 43.1,
+          "rank": null,
+          "covered": 3
+        },
+        "hammer2-1-0-5b": {
+          "name": "Hammer2.1 0.5B",
+          "org": "MadeAgents",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-3-1-8b-instruct": {
+          "name": "Granite 3.1 8B Instruct",
+          "org": "IBM",
+          "index": 43,
+          "rank": null,
+          "covered": 3
+        },
+        "gpt-3-5-turbo": {
+          "name": "GPT-3.5 Turbo",
+          "org": "OpenAI",
+          "index": 42.8,
+          "rank": null,
+          "covered": 4
+        },
+        "qwen1-5-32b-chat": {
+          "name": "Qwen1.5 32B Chat",
+          "org": "Alibaba",
+          "index": 42.8,
+          "rank": null,
+          "covered": 1
+        },
+        "mixtral-8x7b": {
+          "name": "Mixtral (8x7B)",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "mistral-small-4": {
+          "name": "Mistral Small 4",
+          "org": "Mistral",
+          "index": 42.6,
+          "rank": null,
+          "covered": 5
+        },
+        "gemma-2-2b-it": {
+          "name": "Gemma 2 2B It",
+          "org": "Google",
+          "index": 42.5,
+          "rank": null,
+          "covered": 2
+        },
+        "ox-alpha": {
+          "name": "Ox Alpha",
+          "org": "Other",
+          "index": 42.5,
+          "rank": null,
+          "covered": 2
+        },
+        "phi-3-medium-4k-instruct": {
+          "name": "Phi 3 Medium 4k Instruct",
+          "org": "Microsoft",
+          "index": 42.4,
+          "rank": null,
+          "covered": 2
+        },
+        "g9v3-3b": {
+          "name": "G9v3 3B",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "mixtral-8x7b-instruct-v0-1": {
+          "name": "Mixtral 8x7b Instruct V0.1",
+          "org": "Mistral",
+          "index": 42.3,
+          "rank": null,
+          "covered": 1
+        },
+        "minicpm3-4b": {
+          "name": "MiniCPM3 4B",
+          "org": "OpenBMB",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "dbrx-instruct": {
+          "name": "DBRX Instruct",
+          "org": "Databricks",
+          "index": 42.2,
+          "rank": null,
+          "covered": 3
+        },
+        "north-mini-code": {
+          "name": "North Mini Code",
+          "org": "Cohere",
+          "index": 42.1,
+          "rank": null,
+          "covered": 3
+        },
+        "qwen1-5-14b-chat": {
+          "name": "Qwen1.5 14B Chat",
+          "org": "Alibaba",
+          "index": 42,
+          "rank": null,
+          "covered": 2
+        },
+        "internlm2-5-20b-chat": {
+          "name": "Internlm2_5 20B Chat",
+          "org": "InternLM",
+          "index": 42,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-llm-67b-chat": {
+          "name": "DeepSeek LLM 67B Chat",
+          "org": "DeepSeek",
+          "index": 41.6,
+          "rank": null,
+          "covered": 3
+        },
+        "devstral-2": {
+          "name": "Devstral 2",
+          "org": "Mistral",
+          "index": 41.6,
+          "rank": null,
+          "covered": 4
+        },
+        "qwen3-coder-next": {
+          "name": "Qwen3 Coder Next",
+          "org": "Alibaba",
+          "index": 41.6,
+          "rank": null,
+          "covered": 3
+        },
+        "nemotron-3-nano": {
+          "name": "Nemotron 3 Nano",
+          "org": "NVIDIA",
+          "index": 41.6,
+          "rank": null,
+          "covered": 1
+        },
+        "wizardlm-70b": {
+          "name": "Wizardlm 70B",
+          "org": "Microsoft",
+          "index": 41.6,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-3-0-8b-instruct": {
+          "name": "Granite 3.0 8B Instruct",
+          "org": "IBM",
+          "index": 41.5,
+          "rank": null,
+          "covered": 2
+        },
+        "yi-34b-chat": {
+          "name": "Yi 34B Chat",
+          "org": "01.AI",
+          "index": 41.5,
+          "rank": null,
+          "covered": 1
+        },
+        "openchat-3-5": {
+          "name": "Openchat 3.5",
+          "org": "OpenChat",
+          "index": 41.4,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-1-1-7b-it": {
+          "name": "Gemma 1.1 7B It",
+          "org": "Google",
+          "index": 41.4,
+          "rank": null,
+          "covered": 1
+        },
+        "nvidia-nemotron-3-nano-30b-a3b": {
+          "name": "NVIDIA Nemotron 3 Nano 30B A3B",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 3
+        },
+        "snowflake-arctic-instruct": {
+          "name": "Snowflake Arctic Instruct",
+          "org": "Other",
+          "index": 41.3,
+          "rank": null,
+          "covered": 2
+        },
+        "qwen3-5-0-8b": {
+          "name": "Qwen3.5 0.8B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-3-1-2b-instruct": {
+          "name": "Granite 3.1 2B Instruct",
+          "org": "IBM",
+          "index": 41.3,
+          "rank": null,
+          "covered": 2
+        },
+        "tulu-2-dpo-70b": {
+          "name": "Tulu 2 Dpo 70B",
+          "org": "Ai2",
+          "index": 41.1,
+          "rank": null,
+          "covered": 1
+        },
+        "openhermes-2-5-mistral-7b": {
+          "name": "Openhermes 2.5 Mistral 7B",
+          "org": "Mistral",
+          "index": 41.1,
+          "rank": null,
+          "covered": 1
+        },
+        "devstral-small-2": {
+          "name": "Devstral Small 2",
+          "org": "Mistral",
+          "index": 41.1,
+          "rank": null,
+          "covered": 3
+        },
+        "vicuna-33b": {
+          "name": "Vicuna 33B",
+          "org": "LMSYS",
+          "index": 40.9,
+          "rank": null,
+          "covered": 1
+        },
+        "starling-lm-7b-beta": {
+          "name": "Starling Lm 7B Beta",
+          "org": "Nexusflow",
+          "index": 40.8,
+          "rank": null,
+          "covered": 2
+        },
+        "phi-3-small-8k-instruct": {
+          "name": "Phi 3 Small 8k Instruct",
+          "org": "Microsoft",
+          "index": 40.8,
+          "rank": null,
+          "covered": 2
+        },
+        "bielik-11b-v2-3-instruct": {
+          "name": "Bielik 11B V2.3 Instruct",
+          "org": "SpeakLeash & ACK Cyfronet AGH",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-2-70b-chat": {
+          "name": "Llama 2 70B Chat",
+          "org": "Meta",
+          "index": 40.7,
+          "rank": null,
+          "covered": 2
+        },
+        "grok-build-0-1": {
+          "name": "Grok Build 0.1",
+          "org": "SpaceXAI",
+          "index": 40.6,
+          "rank": null,
+          "covered": 4
+        },
+        "llama-3-2-3b-instruct": {
+          "name": "Llama 3.2 3B Instruct",
+          "org": "Meta",
+          "index": 40.5,
+          "rank": null,
+          "covered": 3
+        },
+        "starling-lm-7b-alpha": {
+          "name": "Starling Lm 7B Alpha",
+          "org": "Other",
+          "index": 40.5,
+          "rank": null,
+          "covered": 1
+        },
+        "nous-hermes-2-mixtral-8x7b-dpo": {
+          "name": "Nous Hermes 2 Mixtral 8x7b Dpo",
+          "org": "Nous Research",
+          "index": 40.4,
+          "rank": null,
+          "covered": 2
+        },
+        "nemotron-3-ultra-550b-a55b": {
+          "name": "Nemotron 3 Ultra 550B A55B",
+          "org": "NVIDIA",
+          "index": 40.1,
+          "rank": null,
+          "covered": 4
+        },
+        "celeris-1": {
+          "name": "Celeris 1",
+          "org": "Celeris",
+          "index": 40,
+          "rank": null,
+          "covered": 3
+        },
+        "ministral-3-14b": {
+          "name": "Ministral 3 14B",
+          "org": "Mistral",
+          "index": 40,
+          "rank": null,
+          "covered": 4
+        },
+        "gpt-5-1-codex": {
+          "name": "GPT 5.1 Codex",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-3-0-2b-instruct": {
+          "name": "Granite 3.0 2B Instruct",
+          "org": "IBM",
+          "index": 39.9,
+          "rank": null,
+          "covered": 2
+        },
+        "llama2-70b-steerlm-chat": {
+          "name": "Llama2 70B Steerlm Chat",
+          "org": "NVIDIA",
+          "index": 39.8,
+          "rank": null,
+          "covered": 1
+        },
+        "dolphin-2-2-1-mistral-7b": {
+          "name": "Dolphin 2.2.1 Mistral 7B",
+          "org": "Mistral",
+          "index": 39.7,
+          "rank": null,
+          "covered": 1
+        },
+        "solar-10-7b-instruct-v1-0": {
+          "name": "Solar 10.7B Instruct V1.0",
+          "org": "Upstage",
+          "index": 39.7,
+          "rank": null,
+          "covered": 1
+        },
+        "mpt-30b-chat": {
+          "name": "MPT 30B Chat",
+          "org": "MosaicML",
+          "index": 39.5,
+          "rank": null,
+          "covered": 1
+        },
+        "ministral-3-3b": {
+          "name": "Ministral 3 3B",
+          "org": "Mistral",
+          "index": 39.5,
+          "rank": null,
+          "covered": 3
+        },
+        "ministral-3-8b": {
+          "name": "Ministral 3 8B",
+          "org": "Mistral",
+          "index": 39.5,
+          "rank": null,
+          "covered": 4
+        },
+        "wizardlm-13b": {
+          "name": "Wizardlm 13B",
+          "org": "Microsoft",
+          "index": 39.5,
+          "rank": null,
+          "covered": 1
+        },
+        "falcon-180b-chat": {
+          "name": "Falcon 180B Chat",
+          "org": "TII",
+          "index": 39.4,
+          "rank": null,
+          "covered": 1
+        },
+        "mistral-7b-instruct-v0-2": {
+          "name": "Mistral 7B Instruct V0.2",
+          "org": "Mistral",
+          "index": 39.4,
+          "rank": null,
+          "covered": 2
+        },
+        "qwen1-5-7b-chat": {
+          "name": "Qwen1.5 7B Chat",
+          "org": "Alibaba",
+          "index": 39.2,
+          "rank": null,
+          "covered": 1
+        },
+        "phi-3-mini-4k-instruct": {
+          "name": "Phi 3 Mini 4k Instruct",
+          "org": "Microsoft",
+          "index": 39.1,
+          "rank": null,
+          "covered": 2
+        },
+        "llama-2-13b-chat": {
+          "name": "Llama 2 13B Chat",
+          "org": "Meta",
+          "index": 39,
+          "rank": null,
+          "covered": 2
+        },
+        "vicuna-13b": {
+          "name": "Vicuna 13B",
+          "org": "LMSYS",
+          "index": 39,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen-14b-chat": {
+          "name": "Qwen 14B Chat",
+          "org": "Alibaba",
+          "index": 38.9,
+          "rank": null,
+          "covered": 1
+        },
+        "palm-2": {
+          "name": "Palm 2",
+          "org": "Google",
+          "index": 38.9,
+          "rank": null,
+          "covered": 1
+        },
+        "codellama-34b-instruct": {
+          "name": "Codellama 34B Instruct",
+          "org": "Meta",
+          "index": 38.7,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-7b-it": {
+          "name": "Gemma 7B It",
+          "org": "Google",
+          "index": 38.7,
+          "rank": null,
+          "covered": 2
+        },
+        "k2-horizon-0-9b": {
+          "name": "K2 Horizon 0.9B",
+          "org": "Institute of Foundation Models",
+          "index": 38.5,
+          "rank": null,
+          "covered": 2
+        },
+        "openbmb-1b": {
+          "name": "OpenBMB 1B",
+          "org": "OpenBMB",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "zephyr-7b-beta": {
+          "name": "Zephyr 7B Beta",
+          "org": "Hugging Face",
+          "index": 38.4,
+          "rank": null,
+          "covered": 2
+        },
+        "phi-3-mini-128k-instruct": {
+          "name": "Phi 3 Mini 128k Instruct",
+          "org": "Microsoft",
+          "index": 38.2,
+          "rank": null,
+          "covered": 2
+        },
+        "zephyr-7b-alpha": {
+          "name": "Zephyr 7B Alpha",
+          "org": "Hugging Face",
+          "index": 38.2,
+          "rank": null,
+          "covered": 1
+        },
+        "guanaco-33b": {
+          "name": "Guanaco 33B",
+          "org": "Other",
+          "index": 38.1,
+          "rank": null,
+          "covered": 1
+        },
+        "stripedhyena-nous-7b": {
+          "name": "Stripedhyena Nous 7B",
+          "org": "Other",
+          "index": 37.8,
+          "rank": null,
+          "covered": 1
+        },
+        "codellama-70b-instruct": {
+          "name": "Codellama 70B Instruct",
+          "org": "Meta",
+          "index": 37.7,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma-1-1-2b-it": {
+          "name": "Gemma 1.1 2B It",
+          "org": "Google",
+          "index": 37.5,
+          "rank": null,
+          "covered": 1
+        },
+        "vicuna-7b": {
+          "name": "Vicuna 7B",
+          "org": "LMSYS",
+          "index": 37.4,
+          "rank": null,
+          "covered": 1
+        },
+        "smollm2-1-7b-instruct": {
+          "name": "Smollm2 1.7B Instruct",
+          "org": "Hugging Face",
+          "index": 37.4,
+          "rank": null,
+          "covered": 2
+        },
+        "llama-3-2-1b-instruct": {
+          "name": "Llama 3.2 1B Instruct",
+          "org": "Meta",
+          "index": 37.2,
+          "rank": null,
+          "covered": 3
+        },
+        "mistral-7b-instruct": {
+          "name": "Mistral 7B Instruct",
+          "org": "Mistral",
+          "index": 37.1,
+          "rank": null,
+          "covered": 2
+        },
+        "llama-2-7b-chat": {
+          "name": "Llama 2 7B Chat",
+          "org": "Meta",
+          "index": 37,
+          "rank": null,
+          "covered": 2
+        },
+        "qwen3-6-27b": {
+          "name": "Qwen3.6 27B",
+          "org": "Alibaba",
+          "index": 36.7,
+          "rank": null,
+          "covered": 4
+        },
+        "gemma-2b-it": {
+          "name": "Gemma 2B It",
+          "org": "Google",
+          "index": 36.1,
+          "rank": null,
+          "covered": 2
+        },
+        "qwen1-5-4b-chat": {
+          "name": "Qwen1.5 4B Chat",
+          "org": "Alibaba",
+          "index": 36,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-13b": {
+          "name": "Llama 13B",
+          "org": "Meta",
+          "index": 35.1,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt4all-13b-snoozy": {
+          "name": "Gpt4all 13B Snoozy",
+          "org": "OpenAI",
+          "index": 35.1,
+          "rank": null,
+          "covered": 1
+        },
+        "chatglm2-6b": {
+          "name": "Chatglm2 6B",
+          "org": "Z.ai",
+          "index": 35.1,
+          "rank": null,
+          "covered": 1
+        },
+        "chatglm-6b": {
+          "name": "Chatglm 6B",
+          "org": "Z.ai",
+          "index": 35.1,
+          "rank": null,
+          "covered": 1
+        },
+        "dolly-v2-12b": {
+          "name": "Dolly V2 12B",
+          "org": "Databricks",
+          "index": 35.1,
+          "rank": null,
+          "covered": 1
+        },
+        "stablelm-tuned-alpha-7b": {
+          "name": "Stablelm Tuned Alpha 7B",
+          "org": "Other",
+          "index": 35.1,
+          "rank": null,
+          "covered": 1
+        },
+        "mpt-7b-chat": {
+          "name": "MPT 7B Chat",
+          "org": "MosaicML",
+          "index": 35.1,
+          "rank": null,
+          "covered": 1
+        },
+        "chatglm3-6b": {
+          "name": "Chatglm3 6B",
+          "org": "Z.ai",
+          "index": 35.1,
+          "rank": null,
+          "covered": 1
+        },
+        "fastchat-t5-3b": {
+          "name": "Fastchat T5 3B",
+          "org": "LMSYS",
+          "index": 35.1,
+          "rank": null,
+          "covered": 1
+        },
+        "olmo-7b-instruct": {
+          "name": "Olmo 7B Instruct",
+          "org": "Ai2",
+          "index": 35,
+          "rank": null,
+          "covered": 1
+        },
+        "alpaca-13b": {
+          "name": "Alpaca 13B",
+          "org": "Other",
+          "index": 35,
+          "rank": null,
+          "covered": 1
+        },
+        "rwkv-4-raven-14b": {
+          "name": "RWKV 4 Raven 14B",
+          "org": "Other",
+          "index": 35,
+          "rank": null,
+          "covered": 1
+        },
+        "oasst-pythia-12b": {
+          "name": "Oasst Pythia 12B",
+          "org": "Other",
+          "index": 35,
+          "rank": null,
+          "covered": 1
+        },
+        "koala-13b": {
+          "name": "Koala 13B",
+          "org": "Other",
+          "index": 35,
+          "rank": null,
+          "covered": 1
+        },
+        "mistral-instruct-v0-1-7b": {
+          "name": "Mistral Instruct v0.1 (7B)",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "mistral-instruct-v0-3-7b": {
+          "name": "Mistral Instruct v0.3 (7B)",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "falcon-h1-0-5b-instruct": {
+          "name": "Falcon H1 0.5B Instruct",
+          "org": "TII",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-0-5b-instruct": {
+          "name": "Qwen2.5 0.5B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-14b-instruct-1m": {
+          "name": "Qwen2.5 14B Instruct 1M",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "cogito-671b-v2-p1": {
+          "name": "Cogito 671B V2 P1",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minimax-m2p1": {
+          "name": "MiniMax M2p1",
+          "org": "MiniMax",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-7b-instruct-1m": {
+          "name": "Qwen2.5 7B Instruct 1M",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-3-0-1b-a400m-instruct": {
+          "name": "Granite 3.0 1B A400M Instruct",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-v3p1": {
+          "name": "DeepSeek V3p1",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "finix-s1-32b": {
+          "name": "Finix_s1_32b",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "olmoe-1b-7b-instruct": {
+          "name": "OLMoE 1B-7B Instruct",
+          "org": "Ai2",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "deepseek-r1-distill-qwen-7b": {
+          "name": "DeepSeek R1 Distill Qwen 7B",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "sea-lion-v1-7b-it": {
+          "name": "SEA LION V1 7B IT",
+          "org": "AI Singapore",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-r1-distill-llama-8b": {
+          "name": "DeepSeek R1 Distill Llama 8B",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-r1-hide-reasoning": {
+          "name": "DeepSeek R1 (hide reasoning)",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "titan-text-express-v1": {
+          "name": "Titan Text Express V1",
+          "org": "Amazon",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "sarvam-1": {
+          "name": "Sarvam 1",
+          "org": "Sarvam",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "jev-1-13-0": {
+          "name": "Jev 1.13.0",
+          "org": "TypeSafe AI",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "lfm2-1-2b": {
+          "name": "LFM2 1.2B",
+          "org": "Liquid AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "apriel-1-5-15b-thinker": {
+          "name": "Apriel 1.5 15B Thinker",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-1-5b-instruct": {
+          "name": "Qwen2.5 1.5B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "yi-1-5-9b-chat": {
+          "name": "Yi 1.5 9B Chat",
+          "org": "01.AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "smollm-1-7b-instruct": {
+          "name": "SmolLM 1.7B Instruct",
+          "org": "Hugging Face",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "sarvam-105b": {
+          "name": "Sarvam 105B",
+          "org": "Sarvam",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "phi-3-medium-128k-instruct": {
+          "name": "Phi 3 Medium 128k Instruct",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "phi-3-small-128k-instruct": {
+          "name": "Phi 3 Small 128k Instruct",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-2-13b-chat-hf": {
+          "name": "Llama 2 13B Chat Hf",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nexusraven-v2-13b": {
+          "name": "NexusRaven V2 13B",
+          "org": "Nexusflow",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "olmo-2-13b-instruct": {
+          "name": "OLMo 2 13B Instruct",
+          "org": "Ai2",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-14b-instruct": {
+          "name": "Qwen2.5 14B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "internlm2-chat-20b": {
+          "name": "Internlm2 Chat 20B",
+          "org": "InternLM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "h2o-danube3-4b-chat": {
+          "name": "H2o Danube3 4B Chat",
+          "org": "H2O.ai",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "h2o-danube3-500m-chat": {
+          "name": "H2o Danube3 500M Chat",
+          "org": "H2O.ai",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gemma2-9b-cpt-sea-lionv3-instruct": {
+          "name": "Gemma2 9B Cpt Sea Lionv3 Instruct",
+          "org": "AI Singapore",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-3-2-2b-instruct": {
+          "name": "Granite 3.2 2B Instruct",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "lfm2-350m": {
+          "name": "LFM2 350M",
+          "org": "Liquid AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "smollm2-360m-instruct": {
+          "name": "SmolLM2 360M Instruct",
+          "org": "Hugging Face",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minimax-m2p5": {
+          "name": "MiniMax M2p5",
+          "org": "MiniMax",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-57b-a14b-instruct": {
+          "name": "Qwen2 57B A14B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-2-7b-chat-hf": {
+          "name": "Llama 2 7B Chat Hf",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "olmo-2-7b-instruct": {
+          "name": "OLMo 2 7B Instruct",
+          "org": "Ai2",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "qwen2-7b-instruct": {
+          "name": "Qwen2 7B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "seallm-7b-v2": {
+          "name": "SeaLLM 7B V2",
+          "org": "SeaLLMs",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "minimax-m2p7": {
+          "name": "MiniMax M2p7",
+          "org": "MiniMax",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-2-70b-chat-hf": {
+          "name": "Llama 2 70B Chat Hf",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "lfm2-700m": {
+          "name": "LFM2 700M",
+          "org": "Liquid AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "fugu-ultra-v2": {
+          "name": "Fugu Ultra V2",
+          "org": "sakana",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "jamba-mini-2": {
+          "name": "Jamba Mini 2",
+          "org": "AI21",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "k2-chat": {
+          "name": "K2 Chat",
+          "org": "LLM360",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "krutrim-2-instruct": {
+          "name": "Krutrim 2 Instruct",
+          "org": "Krutrim",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "phi-2": {
+          "name": "Phi 2",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "laguna-s-2-1": {
+          "name": "Laguna S 2.1",
+          "org": "SpaceXAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "laguna-xs-2-1": {
+          "name": "Laguna Xs 2.1",
+          "org": "poolside",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-3b-instruct": {
+          "name": "Qwen2.5 3B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-32b-instruct": {
+          "name": "Qwen2.5 32B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "dolphin-2-5-mixtral-8x7b": {
+          "name": "Dolphin 2.5 Mixtral 8x7b",
+          "org": "Cognitive Computations",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen2-5-7b-instruct": {
+          "name": "Qwen2.5 7B Instruct",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mimo-v2-6-pro-ultraspeed": {
+          "name": "Mimo V2.6 Pro Ultraspeed",
+          "org": "Xiaomi",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "wizardlm-2-8x22b": {
+          "name": "WizardLM 2.8x22B",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-oss-safeguard-20b": {
+          "name": "GPT OSS Safeguard 20B",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "open-mixtral-8x22b": {
+          "name": "Open Mixtral 8x22b",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mixtral-instruct-8x22b": {
+          "name": "Mixtral Instruct (8x22B)",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "aya-23-8b": {
+          "name": "Aya 23 8B",
+          "org": "Cohere",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "qwen3-235b-a22b-throughput": {
+          "name": "Qwen3 235B A22B Throughput",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-3-0-3b-a800m-instruct": {
+          "name": "Granite 3.0 3B A800M Instruct",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-tulu-3-8b-dpo": {
+          "name": "Llama 3.1 Tulu 3 8B DPO",
+          "org": "Ai2",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-tulu-3-8b-sft": {
+          "name": "Llama 3.1 Tulu 3 8B SFT",
+          "org": "Ai2",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-3-1-3b-a800m-instruct": {
+          "name": "Granite 3.1 3B A800M Instruct",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "seallms-v3-7b-chat": {
+          "name": "SeaLLMs V3 7B Chat",
+          "org": "SeaLLMs",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-70b-chat-hf": {
+          "name": "Llama 3 70B Chat HF",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "smaug-llama-3-70b-instruct": {
+          "name": "Smaug Llama 3 70B Instruct",
+          "org": "Abacus.AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-8b-chat-hf": {
+          "name": "Llama 3 8B Chat Hf",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-8b-instruct-mopeymule": {
+          "name": "Llama 3 8B Instruct MopeyMule",
+          "org": "failspy",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-8b-instruct-rr": {
+          "name": "Llama 3 8B Instruct RR",
+          "org": "GraySwanAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ministral-3b": {
+          "name": "Ministral 3B",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "powerlm-3b": {
+          "name": "PowerLM 3B",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "powermoe-3b": {
+          "name": "PowerMoE 3B",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mistral-small-3": {
+          "name": "Mistral Small 3",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-1-nemotron-70b-instruct-hf": {
+          "name": "Llama 3.1 Nemotron 70B Instruct HF",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "reflection-llama-3-1-70b": {
+          "name": "Reflection Llama 3.1 70B",
+          "org": "mattshumer",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "eai-llama-3-1-8b-instruct-sagealign": {
+          "name": "EAI Llama 3.1 8B Instruct SageAlign",
+          "org": "Enkrypt AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "llama-3-2-90b-vision-instruct-turbo": {
+          "name": "Llama 3.2 90B Vision Instruct Turbo",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ibm-granite-3-3-8b-instruct": {
+          "name": "IBM Granite 3.3 8B Instruct",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "phi-3-5-mini-instruct": {
+          "name": "Phi 3.5 Mini Instruct",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "phi-3-5-moe-instruct": {
+          "name": "Phi 3.5 MoE Instruct",
+          "org": "Microsoft",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "sarvam-30b": {
+          "name": "Sarvam 30B",
+          "org": "Sarvam",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "laya-322m": {
+          "name": "Laya 322M",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "smollm-360m-instruct": {
+          "name": "SmolLM 360M Instruct",
+          "org": "Hugging Face",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4p7": {
+          "name": "GLM-4p7",
+          "org": "Z.ai",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-4-9b-chat": {
+          "name": "GLM-4 9B Chat",
+          "org": "Z.ai",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "longwriter-glm4-9b": {
+          "name": "LongWriter Glm4 9B",
+          "org": "Z.ai",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ibm-granite-4-0-micro-with-guardian": {
+          "name": "IBM Granite 4.0 Micro (with guardian)",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ibm-granite-4-0-small-with-guardian": {
+          "name": "IBM Granite 4.0 Small (with guardian)",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-4-0-h-micro": {
+          "name": "Granite 4.0 H Micro",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "granite-4-0-h-small": {
+          "name": "Granite 4.0 H Small",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "granite-4-0-h-tiny": {
+          "name": "Granite 4.0 H Tiny",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "ibm-granite-4-0-micro": {
+          "name": "IBM Granite 4.0 Micro",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 2
+        },
+        "ibm-granite-4-0-small": {
+          "name": "IBM Granite 4.0 Small",
+          "org": "IBM",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "glm-5-turbo": {
+          "name": "GLM-5 Turbo",
+          "org": "Z.ai",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "palmyra-x5": {
+          "name": "Palmyra X5",
+          "org": "Writer",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "gpt-5-6-astra": {
+          "name": "GPT-5.6 Astra",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "open-mixtral-8x7b": {
+          "name": "Open Mixtral 8x7b",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "komodo-7b-base": {
+          "name": "Komodo 7B Base",
+          "org": "Yellow-AI-NLP",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "rakutenai-7b-chat": {
+          "name": "RakutenAI 7B Chat",
+          "org": "Rakuten",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "codellama-7b-instruct-hf": {
+          "name": "CodeLlama 7B Instruct Hf",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "falcon-mamba-7b-instruct": {
+          "name": "Falcon Mamba 7B Instruct",
+          "org": "TII",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "olmo-7b-instruct-hf": {
+          "name": "OLMo 7B Instruct Hf",
+          "org": "Ai2",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "rakutenai-7b-instruct": {
+          "name": "RakutenAI 7B Instruct",
+          "org": "Rakuten",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "apertus-70b-instruct": {
+          "name": "Apertus 70B Instruct",
+          "org": "SwissAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "apertus-8b-instruct": {
+          "name": "Apertus 8B Instruct",
+          "org": "SwissAI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "eai-sagealign-8b-lora": {
+          "name": "EAI SageAlign 8B LoRA",
+          "org": "Enkrypt AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "foundation-sec-8b-instruct": {
+          "name": "Foundation Sec 8B Instruct",
+          "org": "Foundation AI",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "marin-8b-instruct": {
+          "name": "Marin 8B Instruct",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "mistral-nemo-minitron-8b-instruct": {
+          "name": "Mistral NeMo Minitron 8B Instruct",
+          "org": "NVIDIA",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "meta-secalign-8b": {
+          "name": "Meta SecAlign 8B",
+          "org": "Meta",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "aya-23-35b": {
+          "name": "Aya 23 35B",
+          "org": "Cohere",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "open-codestral-mamba": {
+          "name": "Open Codestral Mamba",
+          "org": "Mistral",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-chat": {
+          "name": "DeepSeek Chat",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "deepseek-reasoner": {
+          "name": "DeepSeek Reasoner",
+          "org": "DeepSeek",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "djev-spark": {
+          "name": "Djev Spark",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        },
+        "palmyra-fin": {
+          "name": "Palmyra Fin",
+          "org": "Writer",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "fugu": {
+          "name": "Fugu",
+          "org": "sakana",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "hunyuan-a13b-instruct": {
+          "name": "Hunyuan A13B Instruct",
+          "org": "Tencent",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "jamba-instruct": {
+          "name": "Jamba Instruct",
+          "org": "AI21",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "palmyra-med": {
+          "name": "Palmyra Med",
+          "org": "Writer",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "nova-premier": {
+          "name": "Nova Premier",
+          "org": "Amazon",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "semif": {
+          "name": "SemIf",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 0
+        }
+      },
+      "broughtBy": {
+        "largitdata-jev": ["jev-1-13-0", "laya-322m", "djev-spark", "semif"]
+      }
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T11:28:47.247Z",
+  "generatedAt": "2026-09-23T07:36:54.737Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-09-22",
+      "retrievedAt": "2026-09-23",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-09-22",
+      "retrievedAt": "2026-09-23",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-video.png",
       "category": "Text-to-video",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-09-22",
+      "retrievedAt": "2026-09-23",
       "metric": "elo",
       "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
@@ -509,28 +509,28 @@
     {
       "modelId": "seedance-v1-lite",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1112,
+      "raw": 1113,
       "stderr": 10,
       "sourceLabel": "seedance-v1-lite"
     },
     {
       "modelId": "mochi-v1",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1006,
+      "raw": 1007,
       "stderr": 17,
       "sourceLabel": "mochi-v1"
     },
     {
       "modelId": "seedance-v1-pro",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1190,
+      "raw": 1191,
       "stderr": 11,
       "sourceLabel": "seedance-v1-pro"
     },
     {
       "modelId": "gemini-omni-1-1-flash",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1515,
+      "raw": 1516,
       "stderr": 15,
       "sourceLabel": "gemini-omni-1.1-flash"
     },
@@ -551,8 +551,8 @@
     {
       "modelId": "grok-imagine-video-1-5-agent",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1491,
-      "stderr": 19,
+      "raw": 1492,
+      "stderr": 18,
       "sourceLabel": "grok-imagine-video-1.5-agent"
     },
     {
@@ -649,7 +649,7 @@
     {
       "modelId": "sora-2-pro",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1367,
+      "raw": 1368,
       "stderr": 7,
       "sourceLabel": "sora-2-pro"
     },
@@ -691,7 +691,7 @@
     {
       "modelId": "sora-2",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1342,
+      "raw": 1343,
       "stderr": 6,
       "sourceLabel": "sora-2"
     },
@@ -705,7 +705,7 @@
     {
       "modelId": "kling-v2-1-master",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1162,
+      "raw": 1163,
       "stderr": 10,
       "sourceLabel": "kling-v2.1-master"
     },
@@ -740,7 +740,7 @@
     {
       "modelId": "hailuo-2-3",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1205,
+      "raw": 1206,
       "stderr": 6,
       "sourceLabel": "hailuo-2.3"
     },
@@ -789,7 +789,7 @@
     {
       "modelId": "kling-2-5-turbo",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1219,
+      "raw": 1220,
       "stderr": 17,
       "sourceLabel": "kling-2.5-turbo-1080p"
     },
@@ -810,14 +810,14 @@
     {
       "modelId": "seedance-2-5",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1482,
-      "stderr": 12,
+      "raw": 1474,
+      "stderr": 9,
       "sourceLabel": "dreamina-seedance-2.5-720p"
     },
     {
       "modelId": "wan2-5",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1246,
+      "raw": 1245,
       "stderr": 9,
       "sourceLabel": "wan2.5-t2v-preview"
     },
@@ -852,8 +852,8 @@
     {
       "modelId": "wan-2-6",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1328,
-      "stderr": 8,
+      "raw": 1327,
+      "stderr": 7,
       "sourceLabel": "wan2.6-t2v"
     },
     {
@@ -873,8 +873,8 @@
     {
       "modelId": "wan2-7",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1341,
-      "stderr": 8,
+      "raw": 1337,
+      "stderr": 7,
       "sourceLabel": "wan2.7-t2v"
     },
     {
@@ -908,7 +908,7 @@
     {
       "modelId": "flux-3-video",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1494,
+      "raw": 1493,
       "stderr": 17,
       "sourceLabel": "flux-3-video"
     },
@@ -922,8 +922,8 @@
     {
       "modelId": "minimax-h3",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1462,
-      "stderr": 10,
+      "raw": 1460,
+      "stderr": 9,
       "sourceLabel": "minimax-h3"
     },
     {
@@ -1020,7 +1020,7 @@
     {
       "modelId": "ray-3",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1205,
+      "raw": 1206,
       "stderr": 22,
       "sourceLabel": "ray-3"
     },
@@ -1041,8 +1041,8 @@
     {
       "modelId": "wan-3-0",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1494,
-      "stderr": 19,
+      "raw": 1476,
+      "stderr": 13,
       "sourceLabel": "wan3.0"
     },
     {
@@ -1125,8 +1125,8 @@
     {
       "modelId": "runway-gen-4-5",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1224,
-      "stderr": 9,
+      "raw": 1225,
+      "stderr": 8,
       "sourceLabel": "runway-gen-4.5"
     },
     {
@@ -1139,8 +1139,8 @@
     {
       "modelId": "kandinsky-5-0-pro",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1172,
-      "stderr": 20,
+      "raw": 1175,
+      "stderr": 21,
       "sourceLabel": "kandinsky-5.0-t2v-pro"
     },
     {
@@ -1153,7 +1153,7 @@
     {
       "modelId": "pixverse-v5-6",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1239,
+      "raw": 1240,
       "stderr": 11,
       "sourceLabel": "pixverse-v5.6"
     },
@@ -1188,8 +1188,8 @@
     {
       "modelId": "gemini-omni-flash",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1511,
-      "stderr": 10,
+      "raw": 1513,
+      "stderr": 9,
       "sourceLabel": "gemini-omni-flash"
     },
     {
@@ -1209,8 +1209,8 @@
     {
       "modelId": "grok-imagine-video",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1343,
-      "stderr": 7,
+      "raw": 1342,
+      "stderr": 6,
       "sourceLabel": "grok-imagine-video-720p"
     },
     {
@@ -1247,6 +1247,11 @@
       "name": "SWE-bench Verified",
       "url": "https://www.swebench.com/",
       "reason": "Read on 2026-09-05: the newest of its 181 entries is dated 2026-02-17. None of the models above appear on it. Including a stale board would add a column of blanks, not a signal."
+    },
+    {
+      "name": "LiteLLM — Jev vs Haiku 4.5 on request classification",
+      "url": "https://docs.litellm.ai/blog/jev-auto-router-benchmark",
+      "reason": "Read on 2026-09-22: a careful independent test — 80 authored cases, three runs, frozen results and reproduction scripts — but it compares exactly two models. This index drops any measure with fewer than three, because standardizing a pair places the loser at 35 and the winner at 65 whether they differ by two points or thirty. The figures are worth reading at the source; they are not worth a number here."
     }
   ],
   "catalogs": [
@@ -1255,7 +1260,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-22",
+      "retrievedAt": "2026-09-23",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1263,7 +1268,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-22",
+      "retrievedAt": "2026-09-23",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
