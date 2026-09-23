@@ -293,6 +293,10 @@ export const SOURCE_BADGE: Record<string, { code: string; tone: string }> = {
     code: 'VC',
     tone: 'border-[#7C3AED]/40 bg-[#7C3AED]/15 text-[#C4B5FD]',
   },
+  jevbench: {
+    code: 'JB',
+    tone: 'border-[#4FB6A8]/40 bg-[#4FB6A8]/15 text-[#7FD8CB]',
+  },
   // Generation arenas: the same two publishers as the text boards.
   'arena-text-to-image': { code: 'AR', tone: 'border-p1/40 bg-p1/15 text-p1' },
   'arena-image-edit': { code: 'AE', tone: 'border-p1/40 bg-p1/15 text-p1' },
@@ -343,6 +347,7 @@ export const SOURCE_LOGO: Record<string, string> = {
   'helm-safety': '/model-index/logos/helm-safety.svg',
   enkrypt: '/model-index/logos/enkrypt.png',
   vectara: '/model-index/logos/vectara.png',
+  jevbench: '/model-index/logos/jevbench.png',
   // The generation arenas are the text arenas' publishers, and wear their marks.
   'arena-text-to-image': '/model-index/logos/lmarena.png',
   'arena-image-edit': '/model-index/logos/lmarena.png',

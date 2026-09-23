@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T19:33:59.529Z",
+  "generatedAt": "2026-09-23T22:57:41.741Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -688,6 +688,38 @@
       "kind": "board",
       "source": "Vals.ai",
       "group": "vals"
+    },
+    {
+      "id": "jevbench-intelligence",
+      "name": "JevBench · Intelligence",
+      "publisher": "Benchmark Heaven",
+      "independent": true,
+      "url": "https://benchmarkheaven.com/jev-models",
+      "retrievedAt": "2026-09-23",
+      "metric": "percent",
+      "logo": "/model-index/logos/jevbench.png",
+      "category": "Agents",
+      "domain": "Routing & classification",
+      "caveat": "Two of JevBench’s four axes: Intelligence and Calibration. Its headline score also weighs speed and price, which this index does not read as capability. Benchmark Heaven runs a router of its own and says so; that entry is excluded from its ranking. Half the decisions are sealed, and the public-minus-sealed gap it publishes is large for several entrants.",
+      "kind": "board",
+      "source": "JevBench",
+      "group": "jevbench"
+    },
+    {
+      "id": "jevbench-calibration",
+      "name": "JevBench · Calibration",
+      "publisher": "Benchmark Heaven",
+      "independent": true,
+      "url": "https://benchmarkheaven.com/jev-models",
+      "retrievedAt": "2026-09-23",
+      "metric": "percent",
+      "logo": "/model-index/logos/jevbench.png",
+      "category": "Agents",
+      "domain": "Calibration",
+      "caveat": "Two of JevBench’s four axes: Intelligence and Calibration. Its headline score also weighs speed and price, which this index does not read as capability. Benchmark Heaven runs a router of its own and says so; that entry is excluded from its ranking. Half the decisions are sealed, and the public-minus-sealed gap it publishes is large for several entrants.",
+      "kind": "board",
+      "source": "JevBench",
+      "group": "jevbench"
     },
     {
       "id": "helm-safety-harmbench",
@@ -1997,6 +2029,7 @@
       },
       "size": { "paramsB": 7, "source": "name" }
     },
+    { "id": "jevk5-v0-2-0", "name": "JevK5 v0.2.0", "org": "Other" },
     {
       "id": "mistral-instruct-v0-3-7b",
       "name": "Mistral Instruct v0.3 (7B)",
@@ -2034,6 +2067,24 @@
       "size": { "paramsB": 0.5, "source": "name" }
     },
     {
+      "id": "kev-0-5b",
+      "name": "kev 0.5B",
+      "org": "Other",
+      "size": { "paramsB": 0.5, "source": "name" }
+    },
+    {
+      "id": "raw-qwen3-0-6b-direct-logits",
+      "name": "Raw Qwen3 0.6B direct logits",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 0.6, "source": "name" }
+    },
+    {
       "id": "qwen3-0-6b",
       "name": "Qwen3 0.6B",
       "org": "Alibaba",
@@ -2044,6 +2095,24 @@
         }
       },
       "size": { "paramsB": 0.6, "source": "name" }
+    },
+    {
+      "id": "kev-0-6b",
+      "name": "kev 0.6B",
+      "org": "Other",
+      "size": { "paramsB": 0.6, "source": "name" }
+    },
+    {
+      "id": "qwen3-5-0-8b-decision-model",
+      "name": "Qwen3.5-0.8B Decision Model",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 0.8, "source": "name" }
     },
     {
       "id": "qwen3-5-0-8b",
@@ -2255,6 +2324,12 @@
       "size": { "paramsB": 32, "source": "name" }
     },
     {
+      "id": "spark-s1-4b-v6",
+      "name": "Spark S1 4B V6",
+      "org": "Other",
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
       "id": "grok-4-20-beta1",
       "name": "Grok 4.20 Beta1",
       "org": "SpaceXAI",
@@ -2343,6 +2418,7 @@
       "size": { "paramsB": 1, "source": "name" }
     },
     { "id": "celeris-1", "name": "Celeris 1", "org": "Celeris" },
+    { "id": "certo-v1", "name": "Certo v1", "org": "Other" },
     {
       "id": "grok-code-fast-1",
       "name": "Grok Code Fast 1",
@@ -2352,6 +2428,11 @@
       }
     },
     { "id": "kat-coder-pro-v1", "name": "KAT-Coder-Pro V1", "org": "KwaiKAT" },
+    {
+      "id": "decision-machine-1",
+      "name": "Decision Machine 1",
+      "org": "Other"
+    },
     {
       "id": "deepseek-r1-hide-reasoning",
       "name": "DeepSeek R1 (hide reasoning)",
@@ -2662,6 +2743,11 @@
       }
     },
     {
+      "id": "openjev-verdict-1-4",
+      "name": "openJev Verdict 1.4",
+      "org": "Other"
+    },
+    {
       "id": "qwen1-5-110b-chat",
       "name": "Qwen1.5 110B Chat",
       "org": "Alibaba",
@@ -2906,6 +2992,18 @@
       "size": { "paramsB": 1.7, "source": "name" }
     },
     {
+      "id": "raw-qwen3-1-7b-direct-logits",
+      "name": "Raw Qwen3 1.7B direct logits",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 1.7, "source": "name" }
+    },
+    {
       "id": "qwen3-1-7b",
       "name": "Qwen3 1.7B",
       "org": "Alibaba",
@@ -3030,6 +3128,12 @@
           "url": "https://ai.google.dev/gemini-api/docs"
         }
       },
+      "size": { "paramsB": 12, "source": "name" }
+    },
+    {
+      "id": "winnow-12b-q8",
+      "name": "Winnow-12B Q8",
+      "org": "Other",
       "size": { "paramsB": 12, "source": "name" }
     },
     {
@@ -3453,6 +3557,11 @@
       "size": { "paramsB": 2, "source": "name" }
     },
     {
+      "id": "baai-bge-reranker-v2-m3",
+      "name": "BAAI bge-reranker-v2-m3",
+      "org": "Other"
+    },
+    {
       "id": "granite-3-1-2b-instruct",
       "name": "Granite 3.1 2B Instruct",
       "org": "IBM",
@@ -3481,6 +3590,18 @@
       "name": "Nex-N2-Pro (based on Qwen3.5-397B-A17B)",
       "org": "Nex AGI",
       "size": { "paramsB": 397, "activeB": 17, "source": "name" }
+    },
+    {
+      "id": "qwen3-5-9b-jev-like-data-mix-v2",
+      "name": "Qwen3.5-9B Jev-like data-mix v2",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 9, "source": "name" }
     },
     {
       "id": "qwen3-5-2b",
@@ -3851,6 +3972,18 @@
     },
     { "id": "athene-v2-chat", "name": "Athene V2 Chat", "org": "Nexusflow" },
     {
+      "id": "decider-2b",
+      "name": "Decider 2B",
+      "org": "Other",
+      "size": { "paramsB": 2, "source": "name" }
+    },
+    {
+      "id": "decision-2b",
+      "name": "Decision 2B",
+      "org": "Other",
+      "size": { "paramsB": 2, "source": "name" }
+    },
+    {
       "id": "gemma-2b-it",
       "name": "Gemma 2B It",
       "org": "Google",
@@ -3861,6 +3994,17 @@
         }
       },
       "size": { "paramsB": 2, "source": "name" }
+    },
+    {
+      "id": "open-jev-2b",
+      "name": "Open-Jev 2B",
+      "org": "Other",
+      "size": { "paramsB": 2, "source": "name" }
+    },
+    {
+      "id": "mixedbread-mxbai-rerank-base-v2",
+      "name": "Mixedbread mxbai-rerank-base-v2",
+      "org": "MetaStone"
     },
     {
       "id": "deepseek-coder-v2",
@@ -4014,6 +4158,8 @@
         }
       }
     },
+    { "id": "gliner2", "name": "GLiNER2", "org": "Other" },
+    { "id": "gliner2-large", "name": "GLiNER2 large", "org": "Other" },
     {
       "id": "grok-2",
       "name": "Grok 2",
@@ -4276,6 +4422,11 @@
           "url": "https://www.volcengine.com/product/doubao"
         }
       }
+    },
+    {
+      "id": "zeroentropy-zerank-2",
+      "name": "ZeroEntropy zerank-2",
+      "org": "Other"
     },
     {
       "id": "hammer2-1-3b",
@@ -4683,6 +4834,8 @@
         }
       }
     },
+    { "id": "gliner2-5-multi", "name": "GLiNER2.5 multi", "org": "Other" },
+    { "id": "gliner2-5-small", "name": "GLiNER2.5 small", "org": "Other" },
     {
       "id": "kimi-k2-5-instant",
       "name": "Kimi K2.5 Instant",
@@ -5490,6 +5643,18 @@
       "size": { "paramsB": 27.8, "source": "huggingface" }
     },
     {
+      "id": "ninfer-qwen3-8-27b-nvfp4",
+      "name": "NInfer Qwen3.8-27B NVFP4",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 27, "source": "name" }
+    },
+    {
       "id": "qwen3-8-27b",
       "name": "Qwen3.8 27B",
       "org": "Alibaba",
@@ -5513,6 +5678,24 @@
         }
       },
       "size": { "paramsB": 27.8, "source": "huggingface" }
+    },
+    {
+      "id": "simplejev-qwen3-8-27b",
+      "name": "SimpleJev Qwen3.8-27B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 27, "source": "name" }
+    },
+    {
+      "id": "reflex-27b",
+      "name": "Reflex 27B",
+      "org": "Other",
+      "size": { "paramsB": 27, "source": "name" }
     },
     {
       "id": "idefics3-8b-llama3",
@@ -5782,6 +5965,18 @@
       "size": { "paramsB": 550, "activeB": 55, "source": "name" }
     },
     {
+      "id": "raw-qwen3-4b-instruct-direct-logits",
+      "name": "Raw Qwen3 4B Instruct direct logits",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
       "id": "gemma-3n-e4b-it",
       "name": "Gemma 3n E4b It",
       "org": "Google",
@@ -5859,6 +6054,18 @@
     {
       "id": "qwen3-4b-instruct",
       "name": "Qwen3 4B Instruct",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "qwen3-reranker-4b",
+      "name": "Qwen3 Reranker 4B",
       "org": "Alibaba",
       "access": {
         "official": {
@@ -6033,6 +6240,18 @@
       "name": "Smaug Llama 3 70B Instruct",
       "org": "Abacus.AI",
       "size": { "paramsB": 70, "source": "name" }
+    },
+    {
+      "id": "raw-qwen3-8b-direct-logits",
+      "name": "Raw Qwen3 8B direct logits",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 8, "source": "name" }
     },
     {
       "id": "granite-3-0-8b-instruct",
@@ -6292,6 +6511,11 @@
           "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       }
+    },
+    {
+      "id": "open-jev-deberta-v3-large",
+      "name": "Open Jev Deberta V3 Large",
+      "org": "Other"
     },
     {
       "id": "gemini-3-deep-think",
@@ -7325,6 +7549,42 @@
       "size": { "paramsB": 403.4, "activeB": 17, "source": "huggingface" }
     },
     {
+      "id": "jev-qwen3-5-9b-base-nvfp4",
+      "name": "JEV Qwen3.5-9B Base NVFP4",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 9, "source": "name" }
+    },
+    {
+      "id": "local-jev-qwen3-5-4b",
+      "name": "local-jev Qwen3.5-4B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "jobe-qwen3-5-4b",
+      "name": "Jobe Qwen3.5-4B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
       "id": "qwen3-5-4b",
       "name": "Qwen3.5 4B",
       "org": "Alibaba",
@@ -7633,6 +7893,18 @@
       "size": { "paramsB": 36, "activeB": 3, "source": "huggingface" }
     },
     {
+      "id": "simplejev-qwen3-6-35b-a3b",
+      "name": "SimpleJev Qwen3.6-35B-A3B",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 35, "activeB": 3, "source": "name" }
+    },
+    {
       "id": "gemini-3-6-flash",
       "name": "Gemini 3.6 Flash",
       "org": "Google",
@@ -7836,6 +8108,17 @@
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "ninfer-qwen3-8-flash-next-mixed",
+      "name": "NInfer Qwen3.8-Flash-Next mixed",
+      "org": "Alibaba",
+      "access": {
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       }
     },
@@ -8079,6 +8362,12 @@
       "size": { "paramsB": 340, "source": "name" }
     },
     {
+      "id": "decider-35b-a3b",
+      "name": "Decider 35B A3B",
+      "org": "Other",
+      "size": { "paramsB": 35, "activeB": 3, "source": "name" }
+    },
+    {
       "id": "granite-4-0-350m",
       "name": "Granite 4.0 350M",
       "org": "IBM",
@@ -8089,6 +8378,7 @@
         }
       }
     },
+    { "id": "lev-350m", "name": "Lev 350M", "org": "Other" },
     {
       "id": "smollm-360m-instruct",
       "name": "SmolLM 360M Instruct",
@@ -8160,6 +8450,24 @@
         "official": { "name": "Z.ai API", "url": "https://docs.z.ai" }
       },
       "size": { "paramsB": 9, "source": "name" }
+    },
+    {
+      "id": "metask-jev-4b",
+      "name": "Metask Jev 4B",
+      "org": "Other",
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "kev-4b",
+      "name": "kev 4B",
+      "org": "Other",
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
+      "id": "reflex-4b",
+      "name": "reflex 4B",
+      "org": "Other",
+      "size": { "paramsB": 4, "source": "name" }
     },
     {
       "id": "chatgpt-4o",
@@ -8250,6 +8558,17 @@
         "official": {
           "name": "DeepSeek API",
           "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
+    {
+      "id": "raw-phi-4-mini-direct-logits",
+      "name": "Raw Phi-4 mini direct logits",
+      "org": "Microsoft",
+      "access": {
+        "official": {
+          "name": "Azure AI Foundry",
+          "url": "https://ai.azure.com"
         }
       }
     },
@@ -10517,6 +10836,12 @@
       "size": { "paramsB": 8, "source": "name" }
     },
     {
+      "id": "kev-8b",
+      "name": "kev 8B",
+      "org": "Other",
+      "size": { "paramsB": 8, "source": "name" }
+    },
+    {
       "id": "marin-8b-instruct",
       "name": "Marin 8B Instruct",
       "org": "Other",
@@ -10554,6 +10879,23 @@
         }
       },
       "size": { "paramsB": 8, "source": "name" }
+    },
+    {
+      "id": "bespoke-nimble-9b",
+      "name": "Bespoke Nimble 9B",
+      "org": "Other",
+      "size": { "paramsB": 9, "source": "name" }
+    },
+    {
+      "id": "open-jev-9b",
+      "name": "Open-Jev 9B",
+      "org": "Other",
+      "size": { "paramsB": 9, "source": "name" }
+    },
+    {
+      "id": "smalljev-semantic-v9",
+      "name": "Smalljev semantic-v9",
+      "org": "Other"
     },
     {
       "id": "command-a",
@@ -10622,10 +10964,20 @@
       }
     },
     { "id": "alephprover", "name": "AlephProver", "org": "Other" },
+    {
+      "id": "alibaba-gte-reranker-modernbert-base",
+      "name": "Alibaba GTE Reranker ModernBERT-base",
+      "org": "Other"
+    },
     { "id": "optimus-alpha", "name": "Optimus Alpha", "org": "Other" },
     { "id": "ox-alpha", "name": "Ox Alpha", "org": "Other" },
     { "id": "quasar-alpha", "name": "Quasar Alpha", "org": "Other" },
     { "id": "union-alpha", "name": "Union Alpha", "org": "Other" },
+    {
+      "id": "open-alternative-jev",
+      "name": "Open Alternative Jev",
+      "org": "Other"
+    },
     {
       "id": "gemini-pro-dev-api",
       "name": "Gemini Pro Dev Api",
@@ -10651,6 +11003,11 @@
         "official": { "name": "Cohere docs", "url": "https://docs.cohere.com" }
       },
       "size": { "paramsB": 35, "source": "name" }
+    },
+    {
+      "id": "open-jev-json-canvas",
+      "name": "Open Jev JSON Canvas",
+      "org": "TypeSafe AI"
     },
     {
       "id": "north-mini-code",
@@ -10765,6 +11122,7 @@
       "access": { "official": { "name": "Reka", "url": "https://www.reka.ai" } }
     },
     { "id": "dbrx-instruct", "name": "DBRX Instruct", "org": "Databricks" },
+    { "id": "decision-fast", "name": "Decision Fast", "org": "Other" },
     {
       "id": "deepseek-chat",
       "name": "DeepSeek Chat",
@@ -10809,6 +11167,7 @@
         }
       }
     },
+    { "id": "djev", "name": "Djev", "org": "Other" },
     { "id": "djev-spark", "name": "Djev Spark", "org": "Other" },
     { "id": "evocua", "name": "EvoCUA", "org": "Meituan" },
     { "id": "k-exaone", "name": "K EXAONE", "org": "LG AI Research" },
@@ -10924,6 +11283,7 @@
         }
       }
     },
+    { "id": "hopper", "name": "Hopper", "org": "Other" },
     {
       "id": "hunyuan-a13b-instruct",
       "name": "Hunyuan A13B Instruct",
@@ -11062,6 +11422,11 @@
         "official": { "name": "AI21 docs", "url": "https://docs.ai21.com" }
       }
     },
+    { "id": "jeff", "name": "Jeff", "org": "Other" },
+    { "id": "jev-local", "name": "Jev Local", "org": "TypeSafe AI" },
+    { "id": "jev-omni", "name": "Jev Omni", "org": "TypeSafe AI" },
+    { "id": "jevone", "name": "JevOne", "org": "Other" },
+    { "id": "jqv", "name": "Jqv", "org": "Other" },
     {
       "id": "kimi-vl-a3b",
       "name": "Kimi Vl A3B",
@@ -11115,6 +11480,7 @@
       "size": { "paramsB": 398.6, "source": "huggingface" }
     },
     { "id": "virtuoso-large", "name": "Virtuoso Large", "org": "Arcee" },
+    { "id": "laya", "name": "Laya", "org": "Other" },
     {
       "id": "yi-lightning",
       "name": "Yi Lightning",
@@ -11132,6 +11498,7 @@
         }
       }
     },
+    { "id": "litjev", "name": "LitJev", "org": "Other" },
     { "id": "maestro-reasoning", "name": "Maestro Reasoning", "org": "Arcee" },
     {
       "id": "magistral-medium",
@@ -11200,6 +11567,7 @@
         }
       }
     },
+    { "id": "mirror", "name": "Mirror", "org": "Other" },
     {
       "id": "open-mistral-nemo",
       "name": "Open Mistral Nemo",
@@ -11255,11 +11623,18 @@
         }
       }
     },
+    { "id": "system-one-open", "name": "System One Open", "org": "Other" },
+    { "id": "system-one", "name": "System One", "org": "Other" },
     {
       "id": "opencua-a3b",
       "name": "Opencua A3B",
       "org": "The University of Hong Kong & Moonshot AI"
     },
+    { "id": "opendecision", "name": "OpenDecision", "org": "Other" },
+    { "id": "openjev", "name": "OpenJev", "org": "Other" },
+    { "id": "openjev-sglang", "name": "Openjev Sglang", "org": "Other" },
+    { "id": "openjev-verdict", "name": "openJev Verdict", "org": "Other" },
+    { "id": "opensourcejev", "name": "OpenSourceJev", "org": "Other" },
     { "id": "palmyra-x", "name": "Palmyra X", "org": "Writer" },
     {
       "id": "qwen-plus",
@@ -11283,6 +11658,7 @@
     },
     { "id": "rzn-t", "name": "RZN T", "org": "Phronetic AI" },
     { "id": "semif", "name": "SemIf", "org": "Other" },
+    { "id": "simplejev", "name": "SimpleJev", "org": "Other" },
     { "id": "spotlight", "name": "Spotlight", "org": "Arcee" },
     {
       "id": "ui-tars",
@@ -11294,7 +11670,8 @@
           "url": "https://www.volcengine.com/product/doubao"
         }
       }
-    }
+    },
+    { "id": "von", "name": "Von", "org": "Other" }
   ],
   "scores": [
     {
@@ -11540,6 +11917,18 @@
       "sourceLabel": "Mistral-7B-Instruct-v0.2"
     },
     {
+      "modelId": "jevk5-v0-2-0",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 48.9,
+      "sourceLabel": "JevK5 v0.2.0"
+    },
+    {
+      "modelId": "jevk5-v0-2-0",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 74.5,
+      "sourceLabel": "JevK5 v0.2.0"
+    },
+    {
       "modelId": "mistral-instruct-v0-3-7b",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 34.4,
@@ -11684,10 +12073,58 @@
       "sourceLabel": "Qwen2.5-0.5B-Instruct"
     },
     {
+      "modelId": "kev-0-5b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 30.5,
+      "sourceLabel": "kev 0.5B"
+    },
+    {
+      "modelId": "kev-0-5b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 49.7,
+      "sourceLabel": "kev 0.5B"
+    },
+    {
+      "modelId": "raw-qwen3-0-6b-direct-logits",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 22.8,
+      "sourceLabel": "Raw Qwen3 0.6B direct logits"
+    },
+    {
+      "modelId": "raw-qwen3-0-6b-direct-logits",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 20.7,
+      "sourceLabel": "Raw Qwen3 0.6B direct logits"
+    },
+    {
       "modelId": "qwen3-0-6b",
       "benchmarkId": "bfcl",
       "raw": 23.93,
       "sourceLabel": "Qwen3-0.6B"
+    },
+    {
+      "modelId": "kev-0-6b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 34.2,
+      "sourceLabel": "kev 0.6B"
+    },
+    {
+      "modelId": "kev-0-6b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 50,
+      "sourceLabel": "kev 0.6B"
+    },
+    {
+      "modelId": "qwen3-5-0-8b-decision-model",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 28.1,
+      "sourceLabel": "Qwen3.5-0.8B Decision Model"
+    },
+    {
+      "modelId": "qwen3-5-0-8b-decision-model",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 68.2,
+      "sourceLabel": "Qwen3.5-0.8B Decision Model"
     },
     {
       "modelId": "qwen3-5-0-8b",
@@ -12104,6 +12541,18 @@
       "sourceLabel": "antgroup/finix_s1_32b"
     },
     {
+      "modelId": "spark-s1-4b-v6",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 45.1,
+      "sourceLabel": "spark-s1-4b-v6"
+    },
+    {
+      "modelId": "spark-s1-4b-v6",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 47.6,
+      "sourceLabel": "spark-s1-4b-v6"
+    },
+    {
       "modelId": "grok-4-20-beta1",
       "benchmarkId": "lmarena",
       "raw": 1475,
@@ -12365,6 +12814,18 @@
       "sourceLabel": "Celeris-1"
     },
     {
+      "modelId": "certo-v1",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 0.1,
+      "sourceLabel": "Certo v1"
+    },
+    {
+      "modelId": "certo-v1",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 83,
+      "sourceLabel": "Certo v1"
+    },
+    {
       "modelId": "grok-code-fast-1",
       "benchmarkId": "kagi",
       "raw": 52.5,
@@ -12383,6 +12844,18 @@
       "raw": 595,
       "stderr": 9.5,
       "sourceLabel": "KAT-Coder-Pro V1"
+    },
+    {
+      "modelId": "decision-machine-1",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 41.3,
+      "sourceLabel": "decision-machine-1"
+    },
+    {
+      "modelId": "decision-machine-1",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 68.3,
+      "sourceLabel": "decision-machine-1"
     },
     {
       "modelId": "deepseek-r1-hide-reasoning",
@@ -13247,6 +13720,18 @@
     },
     {
       "modelId": "jev-1-13-0",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 53.1,
+      "sourceLabel": "Jev 1.13.0"
+    },
+    {
+      "modelId": "jev-1-13-0",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 76.3,
+      "sourceLabel": "Jev 1.13.0"
+    },
+    {
+      "modelId": "jev-1-13-0",
       "benchmarkId": "largitdata-jev:decision-correct",
       "raw": 61.4,
       "sourceLabel": "Jev 1.13.0 (hosted API)"
@@ -13732,6 +14217,18 @@
       "raw": 58,
       "stderr": 4.96,
       "sourceLabel": "Muse Spark 1.3 Max"
+    },
+    {
+      "modelId": "openjev-verdict-1-4",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 29.4,
+      "sourceLabel": "openJev Verdict 1.4"
+    },
+    {
+      "modelId": "openjev-verdict-1-4",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 72,
+      "sourceLabel": "openJev Verdict 1.4"
     },
     {
       "modelId": "qwen1-5-110b-chat",
@@ -14648,6 +15145,18 @@
       "sourceLabel": "SmolLM2-1.7B-Instruct"
     },
     {
+      "modelId": "raw-qwen3-1-7b-direct-logits",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 33.2,
+      "sourceLabel": "Raw Qwen3 1.7B direct logits"
+    },
+    {
+      "modelId": "raw-qwen3-1-7b-direct-logits",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 24.3,
+      "sourceLabel": "Raw Qwen3 1.7B direct logits"
+    },
+    {
       "modelId": "qwen3-1-7b",
       "benchmarkId": "bfcl",
       "raw": 28.41,
@@ -15035,6 +15544,18 @@
       "benchmarkId": "ifm-k2-horizon:hle",
       "raw": 15.7,
       "sourceLabel": "Gemma 4-12B"
+    },
+    {
+      "modelId": "winnow-12b-q8",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 48.3,
+      "sourceLabel": "Winnow-12B Q8"
+    },
+    {
+      "modelId": "winnow-12b-q8",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 64.8,
+      "sourceLabel": "Winnow-12B Q8"
     },
     {
       "modelId": "oasst-pythia-12b",
@@ -16072,6 +16593,18 @@
       "sourceLabel": "granite-3.0-2b-instruct"
     },
     {
+      "modelId": "baai-bge-reranker-v2-m3",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 5,
+      "sourceLabel": "BAAI bge-reranker-v2-m3"
+    },
+    {
+      "modelId": "baai-bge-reranker-v2-m3",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 84.2,
+      "sourceLabel": "BAAI bge-reranker-v2-m3"
+    },
+    {
       "modelId": "granite-3-1-2b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1179,
@@ -16163,6 +16696,18 @@
       "raw": 935,
       "stderr": 9,
       "sourceLabel": "Nex-N2-Pro (based on Qwen3.5-397B-A17B)"
+    },
+    {
+      "modelId": "qwen3-5-9b-jev-like-data-mix-v2",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 47.4,
+      "sourceLabel": "Qwen3.5-9B Jev-like data-mix v2"
+    },
+    {
+      "modelId": "qwen3-5-9b-jev-like-data-mix-v2",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 61.3,
+      "sourceLabel": "Qwen3.5-9B Jev-like data-mix v2"
     },
     {
       "modelId": "qwen3-5-2b",
@@ -17472,6 +18017,30 @@
       "sourceLabel": "athene-v2-chat"
     },
     {
+      "modelId": "decider-2b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 38.5,
+      "sourceLabel": "decider-2b"
+    },
+    {
+      "modelId": "decider-2b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 43.5,
+      "sourceLabel": "decider-2b"
+    },
+    {
+      "modelId": "decision-2b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 38.8,
+      "sourceLabel": "Decision 2B"
+    },
+    {
+      "modelId": "decision-2b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 74.1,
+      "sourceLabel": "Decision 2B"
+    },
+    {
       "modelId": "gemma-2b-it",
       "benchmarkId": "lmarena",
       "raw": 1093,
@@ -17513,6 +18082,30 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 95.6,
       "sourceLabel": "gemma-2b-it"
+    },
+    {
+      "modelId": "open-jev-2b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 42.3,
+      "sourceLabel": "Open-Jev 2B"
+    },
+    {
+      "modelId": "open-jev-2b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 55.3,
+      "sourceLabel": "Open-Jev 2B"
+    },
+    {
+      "modelId": "mixedbread-mxbai-rerank-base-v2",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 6.8,
+      "sourceLabel": "Mixedbread mxbai-rerank-base-v2"
+    },
+    {
+      "modelId": "mixedbread-mxbai-rerank-base-v2",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 84.1,
+      "sourceLabel": "Mixedbread mxbai-rerank-base-v2"
     },
     {
       "modelId": "deepseek-coder-v2",
@@ -17948,6 +18541,30 @@
       "benchmarkId": "helm-safety-xstest",
       "raw": 95.4,
       "sourceLabel": "Gemini 2.0 Pro (02-05 preview)"
+    },
+    {
+      "modelId": "gliner2",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 27.4,
+      "sourceLabel": "GLiNER2"
+    },
+    {
+      "modelId": "gliner2",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 25.2,
+      "sourceLabel": "GLiNER2"
+    },
+    {
+      "modelId": "gliner2-large",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 31.1,
+      "sourceLabel": "GLiNER2 large"
+    },
+    {
+      "modelId": "gliner2-large",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 24.8,
+      "sourceLabel": "GLiNER2 large"
     },
     {
       "modelId": "grok-2",
@@ -18657,6 +19274,18 @@
       "raw": 53.1,
       "sourceLabel": "UI-TARS-2-2509",
       "scaffold": "Specialized model"
+    },
+    {
+      "modelId": "zeroentropy-zerank-2",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 42.1,
+      "sourceLabel": "ZeroEntropy zerank-2"
+    },
+    {
+      "modelId": "zeroentropy-zerank-2",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 75.8,
+      "sourceLabel": "ZeroEntropy zerank-2"
     },
     {
       "modelId": "hammer2-1-3b",
@@ -19831,6 +20460,30 @@
       "benchmarkId": "vectara-factual-consistency",
       "raw": 93,
       "sourceLabel": "google/gemini-2.5-pro"
+    },
+    {
+      "modelId": "gliner2-5-multi",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 23.1,
+      "sourceLabel": "GLiNER2.5 multi"
+    },
+    {
+      "modelId": "gliner2-5-multi",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 57.2,
+      "sourceLabel": "GLiNER2.5 multi"
+    },
+    {
+      "modelId": "gliner2-5-small",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 20.5,
+      "sourceLabel": "GLiNER2.5 small"
+    },
+    {
+      "modelId": "gliner2-5-small",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 50.7,
+      "sourceLabel": "GLiNER2.5 small"
     },
     {
       "modelId": "kimi-k2-5-instant",
@@ -22150,6 +22803,18 @@
       "scaffold": "OpenHands"
     },
     {
+      "modelId": "ninfer-qwen3-8-27b-nvfp4",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 51.5,
+      "sourceLabel": "NInfer Qwen3.8-27B NVFP4"
+    },
+    {
+      "modelId": "ninfer-qwen3-8-27b-nvfp4",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 76,
+      "sourceLabel": "NInfer Qwen3.8-27B NVFP4"
+    },
+    {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "lmarena",
       "raw": 1437,
@@ -22383,6 +23048,30 @@
       "benchmarkId": "ifm-k2-horizon:aa-omniscience-non-hallucination",
       "raw": 69.7,
       "sourceLabel": "Qwen3.8-27B"
+    },
+    {
+      "modelId": "simplejev-qwen3-8-27b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 51.6,
+      "sourceLabel": "SimpleJev Qwen3.8-27B"
+    },
+    {
+      "modelId": "simplejev-qwen3-8-27b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 74.5,
+      "sourceLabel": "SimpleJev Qwen3.8-27B"
+    },
+    {
+      "modelId": "reflex-27b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 46.4,
+      "sourceLabel": "reflex-27b"
+    },
+    {
+      "modelId": "reflex-27b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 77.2,
+      "sourceLabel": "reflex-27b"
     },
     {
       "modelId": "idefics3-8b-llama3",
@@ -22916,6 +23605,18 @@
       "sourceLabel": "nvidia-nemotron-3-ultra-550b-a55b-nvfp4"
     },
     {
+      "modelId": "raw-qwen3-4b-instruct-direct-logits",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 46.4,
+      "sourceLabel": "Raw Qwen3 4B Instruct 2507 direct logits"
+    },
+    {
+      "modelId": "raw-qwen3-4b-instruct-direct-logits",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 29.1,
+      "sourceLabel": "Raw Qwen3 4B Instruct 2507 direct logits"
+    },
+    {
       "modelId": "gemma-3n-e4b-it",
       "benchmarkId": "lmarena",
       "raw": 1317,
@@ -23061,6 +23762,18 @@
       "benchmarkId": "vectara-factual-consistency",
       "raw": 94.3,
       "sourceLabel": "qwen/qwen3-4b"
+    },
+    {
+      "modelId": "qwen3-reranker-4b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 44.6,
+      "sourceLabel": "Qwen3-Reranker-4B"
+    },
+    {
+      "modelId": "qwen3-reranker-4b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 65.2,
+      "sourceLabel": "Qwen3-Reranker-4B"
     },
     {
       "modelId": "phi-3-medium-4k-instruct",
@@ -23560,6 +24273,18 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 60.9,
       "sourceLabel": "Smaug-Llama-3-70B-Instruct"
+    },
+    {
+      "modelId": "raw-qwen3-8b-direct-logits",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 45.7,
+      "sourceLabel": "Raw Qwen3 8B direct logits"
+    },
+    {
+      "modelId": "raw-qwen3-8b-direct-logits",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 24.1,
+      "sourceLabel": "Raw Qwen3 8B direct logits"
     },
     {
       "modelId": "granite-3-0-8b-instruct",
@@ -24180,6 +24905,18 @@
       "benchmarkId": "kagi",
       "raw": 49.5,
       "sourceLabel": "qwen-3-coder"
+    },
+    {
+      "modelId": "open-jev-deberta-v3-large",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 25.6,
+      "sourceLabel": "open-jev-deberta-v3-large"
+    },
+    {
+      "modelId": "open-jev-deberta-v3-large",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 66.6,
+      "sourceLabel": "open-jev-deberta-v3-large"
     },
     {
       "modelId": "gemini-3-deep-think",
@@ -27795,6 +28532,18 @@
     },
     {
       "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 54.5,
+      "sourceLabel": "Gemini 3.1 Flash-Lite"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 59.3,
+      "sourceLabel": "Gemini 3.1 Flash-Lite"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 91.8,
       "sourceLabel": "google/gemini-3.1-flash-lite-preview"
@@ -28713,6 +29462,42 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 5.8,
       "sourceLabel": "qwen3.5-397b-a17b"
+    },
+    {
+      "modelId": "jev-qwen3-5-9b-base-nvfp4",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 46.8,
+      "sourceLabel": "JEV Qwen3.5-9B Base NVFP4"
+    },
+    {
+      "modelId": "jev-qwen3-5-9b-base-nvfp4",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 67.7,
+      "sourceLabel": "JEV Qwen3.5-9B Base NVFP4"
+    },
+    {
+      "modelId": "local-jev-qwen3-5-4b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 44.4,
+      "sourceLabel": "local-jev Qwen3.5-4B"
+    },
+    {
+      "modelId": "local-jev-qwen3-5-4b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 73.3,
+      "sourceLabel": "local-jev Qwen3.5-4B"
+    },
+    {
+      "modelId": "jobe-qwen3-5-4b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 44.1,
+      "sourceLabel": "Jobe Qwen3.5-4B"
+    },
+    {
+      "modelId": "jobe-qwen3-5-4b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 66.1,
+      "sourceLabel": "Jobe Qwen3.5-4B"
     },
     {
       "modelId": "qwen3-5-4b",
@@ -30135,6 +30920,18 @@
       "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
+      "modelId": "simplejev-qwen3-6-35b-a3b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 45.7,
+      "sourceLabel": "SimpleJev Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "simplejev-qwen3-6-35b-a3b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 59.8,
+      "sourceLabel": "SimpleJev Qwen3.6-35B-A3B"
+    },
+    {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "lmarena",
       "raw": 1480,
@@ -31439,6 +32236,18 @@
       "sourceLabel": "gemini-3.8-flash"
     },
     {
+      "modelId": "ninfer-qwen3-8-flash-next-mixed",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 49.5,
+      "sourceLabel": "NInfer Qwen3.8-Flash-Next mixed"
+    },
+    {
+      "modelId": "ninfer-qwen3-8-flash-next-mixed",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 78.6,
+      "sourceLabel": "NInfer Qwen3.8-Flash-Next mixed"
+    },
+    {
       "modelId": "qwen3-8-flash-next",
       "benchmarkId": "artificial-analysis",
       "raw": 40,
@@ -32229,10 +33038,34 @@
       "sourceLabel": "nemotron-4-340b-instruct"
     },
     {
+      "modelId": "decider-35b-a3b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 47.2,
+      "sourceLabel": "decider-35b-a3b"
+    },
+    {
+      "modelId": "decider-35b-a3b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 65.3,
+      "sourceLabel": "decider-35b-a3b"
+    },
+    {
       "modelId": "granite-4-0-350m",
       "benchmarkId": "bfcl",
       "raw": 18.98,
       "sourceLabel": "Granite-4.0-350m"
+    },
+    {
+      "modelId": "lev-350m",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 34.8,
+      "sourceLabel": "lev-350m"
+    },
+    {
+      "modelId": "lev-350m",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 70.6,
+      "sourceLabel": "lev-350m"
     },
     {
       "modelId": "smollm-360m-instruct",
@@ -32463,6 +33296,42 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 31.1,
       "sourceLabel": "LongWriter-glm4-9b"
+    },
+    {
+      "modelId": "metask-jev-4b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 44.7,
+      "sourceLabel": "metask-jev-4b"
+    },
+    {
+      "modelId": "metask-jev-4b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 66.9,
+      "sourceLabel": "metask-jev-4b"
+    },
+    {
+      "modelId": "kev-4b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 42.1,
+      "sourceLabel": "kev 4B"
+    },
+    {
+      "modelId": "kev-4b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 39.6,
+      "sourceLabel": "kev 4B"
+    },
+    {
+      "modelId": "reflex-4b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 47.5,
+      "sourceLabel": "reflex 4B"
+    },
+    {
+      "modelId": "reflex-4b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 70.4,
+      "sourceLabel": "reflex 4B"
     },
     {
       "modelId": "chatgpt-4o",
@@ -33296,6 +34165,18 @@
       "raw": 16,
       "stderr": 3.67,
       "sourceLabel": "DeepSeek V4"
+    },
+    {
+      "modelId": "raw-phi-4-mini-direct-logits",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 41.8,
+      "sourceLabel": "Raw Phi-4 mini direct logits"
+    },
+    {
+      "modelId": "raw-phi-4-mini-direct-logits",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 58.8,
+      "sourceLabel": "Raw Phi-4 mini direct logits"
     },
     {
       "modelId": "grok-4-fast",
@@ -35666,6 +36547,18 @@
       "benchmarkId": "vals-proof_bench",
       "raw": 54,
       "stderr": 5.01,
+      "sourceLabel": "DeepSeek V4.1 Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 94,
+      "sourceLabel": "DeepSeek V4.1 Flash"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 95.5,
       "sourceLabel": "DeepSeek V4.1 Flash"
     },
     {
@@ -44430,6 +45323,18 @@
     },
     {
       "modelId": "gpt-5-6-luna",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 93.1,
+      "sourceLabel": "GPT-5.6 Luna"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 87.4,
+      "sourceLabel": "GPT-5.6 Luna"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 9.6,
       "sourceLabel": "gpt-5.6-luna"
@@ -45653,6 +46558,18 @@
       "sourceLabel": "GPT-6 Luna"
     },
     {
+      "modelId": "gpt-6-luna",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 95.8,
+      "sourceLabel": "GPT-6 Luna"
+    },
+    {
+      "modelId": "gpt-6-luna",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 92,
+      "sourceLabel": "GPT-6 Luna"
+    },
+    {
       "modelId": "gpt-6-sol",
       "benchmarkId": "artificial-analysis",
       "raw": 48,
@@ -46669,6 +47586,18 @@
       "sourceLabel": "Foundation-Sec-8B-Instruct"
     },
     {
+      "modelId": "kev-8b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 41.8,
+      "sourceLabel": "kev 8B"
+    },
+    {
+      "modelId": "kev-8b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 40.2,
+      "sourceLabel": "kev 8B"
+    },
+    {
       "modelId": "marin-8b-instruct",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 75.1,
@@ -46788,6 +47717,42 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 15.6,
       "sourceLabel": "Meta-SecAlign-8B"
+    },
+    {
+      "modelId": "bespoke-nimble-9b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 46.3,
+      "sourceLabel": "Bespoke Nimble 9B"
+    },
+    {
+      "modelId": "bespoke-nimble-9b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 56.4,
+      "sourceLabel": "Bespoke Nimble 9B"
+    },
+    {
+      "modelId": "open-jev-9b",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 44.2,
+      "sourceLabel": "Open-Jev 9B"
+    },
+    {
+      "modelId": "open-jev-9b",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 61.8,
+      "sourceLabel": "Open-Jev 9B"
+    },
+    {
+      "modelId": "smalljev-semantic-v9",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 25.7,
+      "sourceLabel": "smalljev semantic-v9"
+    },
+    {
+      "modelId": "smalljev-semantic-v9",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 59.2,
+      "sourceLabel": "smalljev semantic-v9"
     },
     {
       "modelId": "command-a",
@@ -46961,6 +47926,18 @@
       "sourceLabel": "AlephProver"
     },
     {
+      "modelId": "alibaba-gte-reranker-modernbert-base",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 4.8,
+      "sourceLabel": "Alibaba GTE Reranker ModernBERT-base"
+    },
+    {
+      "modelId": "alibaba-gte-reranker-modernbert-base",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 78.9,
+      "sourceLabel": "Alibaba GTE Reranker ModernBERT-base"
+    },
+    {
       "modelId": "optimus-alpha",
       "benchmarkId": "aider-polyglot",
       "raw": 52.9,
@@ -47075,6 +48052,18 @@
       "sourceLabel": "Union Alpha"
     },
     {
+      "modelId": "open-alternative-jev",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 38.6,
+      "sourceLabel": "open-alternative-jev"
+    },
+    {
+      "modelId": "open-alternative-jev",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 58.7,
+      "sourceLabel": "open-alternative-jev"
+    },
+    {
       "modelId": "gemini-pro-dev-api",
       "benchmarkId": "lmarena",
       "raw": 1236,
@@ -47136,6 +48125,18 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 36.4,
       "sourceLabel": "aya-23-35B"
+    },
+    {
+      "modelId": "open-jev-json-canvas",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 48.2,
+      "sourceLabel": "Open Jev JSON Canvas"
+    },
+    {
+      "modelId": "open-jev-json-canvas",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 0,
+      "sourceLabel": "Open Jev JSON Canvas"
     },
     {
       "modelId": "north-mini-code",
@@ -47456,6 +48457,18 @@
       "sourceLabel": "dbrx-instruct"
     },
     {
+      "modelId": "decision-fast",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 37.1,
+      "sourceLabel": "Decision Fast"
+    },
+    {
+      "modelId": "decision-fast",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 65.3,
+      "sourceLabel": "Decision Fast"
+    },
+    {
       "modelId": "deepseek-chat",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 9.1,
@@ -47538,6 +48551,18 @@
       "benchmarkId": "kagi",
       "raw": 37.7,
       "sourceLabel": "mistralai/Devstral-Small-2505"
+    },
+    {
+      "modelId": "djev",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 47,
+      "sourceLabel": "djev"
+    },
+    {
+      "modelId": "djev",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 55.4,
+      "sourceLabel": "djev"
     },
     {
       "modelId": "djev-spark",
@@ -47709,6 +48734,18 @@
       "raw": 1286,
       "stderr": 8,
       "sourceLabel": "ibm-granite-h-small"
+    },
+    {
+      "modelId": "hopper",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 48,
+      "sourceLabel": "Hopper"
+    },
+    {
+      "modelId": "hopper",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 79.1,
+      "sourceLabel": "Hopper"
     },
     {
       "modelId": "hunyuan-a13b-instruct",
@@ -48283,6 +49320,66 @@
       "sourceLabel": "ai21.jamba-instruct-v1:0"
     },
     {
+      "modelId": "jeff",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 36.8,
+      "sourceLabel": "jeff"
+    },
+    {
+      "modelId": "jeff",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 67.9,
+      "sourceLabel": "jeff"
+    },
+    {
+      "modelId": "jev-local",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 45.2,
+      "sourceLabel": "jev-local"
+    },
+    {
+      "modelId": "jev-local",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 64.2,
+      "sourceLabel": "jev-local"
+    },
+    {
+      "modelId": "jev-omni",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 46.8,
+      "sourceLabel": "Jev-Omni"
+    },
+    {
+      "modelId": "jev-omni",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 64.1,
+      "sourceLabel": "Jev-Omni"
+    },
+    {
+      "modelId": "jevone",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 47.6,
+      "sourceLabel": "JevOne"
+    },
+    {
+      "modelId": "jevone",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 77.6,
+      "sourceLabel": "JevOne"
+    },
+    {
+      "modelId": "jqv",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 46.4,
+      "sourceLabel": "jqv"
+    },
+    {
+      "modelId": "jqv",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 71.6,
+      "sourceLabel": "jqv"
+    },
+    {
       "modelId": "kimi-vl-a3b",
       "benchmarkId": "osworld",
       "raw": 10.3,
@@ -48432,6 +49529,18 @@
       "sourceLabel": "arcee-ai/virtuoso-large"
     },
     {
+      "modelId": "laya",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 36.1,
+      "sourceLabel": "Laya"
+    },
+    {
+      "modelId": "laya",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 63.7,
+      "sourceLabel": "Laya"
+    },
+    {
       "modelId": "yi-lightning",
       "benchmarkId": "lmarena",
       "raw": 1328,
@@ -48492,6 +49601,18 @@
       "benchmarkId": "vectara-factual-consistency",
       "raw": 93.9,
       "sourceLabel": "amazon/nova-lite-v1:0"
+    },
+    {
+      "modelId": "litjev",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 46.3,
+      "sourceLabel": "LitJev"
+    },
+    {
+      "modelId": "litjev",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 76.6,
+      "sourceLabel": "LitJev"
     },
     {
       "modelId": "maestro-reasoning",
@@ -48773,6 +49894,18 @@
       "benchmarkId": "vectara-factual-consistency",
       "raw": 94.5,
       "sourceLabel": "amazon/nova-micro-v1:0"
+    },
+    {
+      "modelId": "mirror",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 13.6,
+      "sourceLabel": "Mirror"
+    },
+    {
+      "modelId": "mirror",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 26,
+      "sourceLabel": "Mirror"
     },
     {
       "modelId": "open-mistral-nemo",
@@ -49068,11 +50201,95 @@
       "sourceLabel": "amazon/nova-pro-v1:0"
     },
     {
+      "modelId": "system-one-open",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 44.2,
+      "sourceLabel": "system-one-open"
+    },
+    {
+      "modelId": "system-one-open",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 54.9,
+      "sourceLabel": "system-one-open"
+    },
+    {
+      "modelId": "system-one",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 43.6,
+      "sourceLabel": "system-one"
+    },
+    {
+      "modelId": "system-one",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 32.8,
+      "sourceLabel": "system-one"
+    },
+    {
       "modelId": "opencua-a3b",
       "benchmarkId": "osworld",
       "raw": 19.9,
       "sourceLabel": "opencua-a3b",
       "scaffold": "Specialized model"
+    },
+    {
+      "modelId": "opendecision",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 31.8,
+      "sourceLabel": "OpenDecision"
+    },
+    {
+      "modelId": "opendecision",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 57.1,
+      "sourceLabel": "OpenDecision"
+    },
+    {
+      "modelId": "openjev",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 45.4,
+      "sourceLabel": "OpenJev"
+    },
+    {
+      "modelId": "openjev",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 55,
+      "sourceLabel": "OpenJev"
+    },
+    {
+      "modelId": "openjev-sglang",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 49.4,
+      "sourceLabel": "openjev-sglang"
+    },
+    {
+      "modelId": "openjev-sglang",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 69.2,
+      "sourceLabel": "openjev-sglang"
+    },
+    {
+      "modelId": "openjev-verdict",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 30,
+      "sourceLabel": "openJev Verdict"
+    },
+    {
+      "modelId": "openjev-verdict",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 47,
+      "sourceLabel": "openJev Verdict"
+    },
+    {
+      "modelId": "opensourcejev",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 41.8,
+      "sourceLabel": "OpenSourceJev"
+    },
+    {
+      "modelId": "opensourcejev",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 60.3,
+      "sourceLabel": "OpenSourceJev"
     },
     {
       "modelId": "palmyra-x",
@@ -49131,9 +50348,33 @@
     },
     {
       "modelId": "semif",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 44.4,
+      "sourceLabel": "SemIf"
+    },
+    {
+      "modelId": "semif",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 66.8,
+      "sourceLabel": "SemIf"
+    },
+    {
+      "modelId": "semif",
       "benchmarkId": "largitdata-jev:decision-correct",
       "raw": 24,
       "sourceLabel": "SemIf (self-hosted)"
+    },
+    {
+      "modelId": "simplejev",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 21.5,
+      "sourceLabel": "SimpleJev"
+    },
+    {
+      "modelId": "simplejev",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 49.1,
+      "sourceLabel": "SimpleJev"
     },
     {
       "modelId": "spotlight",
@@ -49146,6 +50387,18 @@
       "benchmarkId": "osworld",
       "raw": 41.8,
       "sourceLabel": "UI-TARS-250705"
+    },
+    {
+      "modelId": "von",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 34.5,
+      "sourceLabel": "Von"
+    },
+    {
+      "modelId": "von",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 75.7,
+      "sourceLabel": "Von"
     }
   ],
   "excluded": [
