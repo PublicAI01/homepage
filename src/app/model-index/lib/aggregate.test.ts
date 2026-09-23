@@ -992,4 +992,59 @@ describe('estimates do not lean on safety figures', () => {
     expect(safeOnly.score).toBeNull();
     expect(safeOnly.estimate).toBeNull();
   });
+
+  it('nor from a figure for work nothing else in the index measures', () => {
+    // A System One model answers routing questions and not one other
+    // measure here; placed among chat models on that figure it would read
+    // as "Jev is about as good overall as Gemma 4 31B" (2026-09-22).
+    const models = ['anchor1', 'anchor2', 'anchor3', 'router-only'].map(
+      (id) => ({ id, name: id, org: 'o' }),
+    );
+    const bench = (id: string, category: string, domain: string) => ({
+      id,
+      name: id,
+      publisher: id,
+      independent: true,
+      url: 'u',
+      retrievedAt: '2026-09-22',
+      metric: 'percent' as const,
+      category,
+      domain,
+      kind: 'board' as const,
+      source: id,
+      group: id,
+    });
+    const benchmarks = [
+      bench('cap-a', 'Coding', 'Coding'),
+      bench('cap-b', 'Reasoning', 'Reasoning'),
+      bench('routing', 'Agents', 'Routing & classification'),
+    ];
+    const anchors = ['anchor1', 'anchor2', 'anchor3'];
+    const scores = [
+      ...anchors.flatMap((m, i) => [
+        { modelId: m, benchmarkId: 'cap-a', raw: 30 + i * 20, sourceLabel: m },
+        { modelId: m, benchmarkId: 'cap-b', raw: 40 + i * 15, sourceLabel: m },
+        { modelId: m, benchmarkId: 'routing', raw: 60 + i * 5, sourceLabel: m },
+      ]),
+      {
+        modelId: 'router-only',
+        benchmarkId: 'routing',
+        raw: 95,
+        sourceLabel: 'r',
+      },
+    ];
+    const rows = aggregate({
+      models,
+      benchmarks,
+      scores,
+      weights: { 'cap-a': 50, 'cap-b': 50, routing: 25 },
+      overall: new Set(['cap-a', 'cap-b']),
+      minSources: 2,
+    });
+    const routerOnly = rows.find((r) => r.model.id === 'router-only')!;
+    expect(routerOnly.score).toBeNull();
+    expect(routerOnly.estimate).toBeNull();
+    // The figure itself is kept and placed in its domain.
+    expect(routerOnly.byDomain['Routing & classification']).not.toBeNull();
+  });
 });

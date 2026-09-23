@@ -564,8 +564,15 @@ export function createTrack(input: TrackInput) {
       }
       if (q.openWeights && !r.model.access?.weights) return false;
       if (q.callable && !r.model.access?.openrouter) return false;
-      // Overall lists estimate-only rows too (estimatedIndex set, index null).
-      if (scope.level === 'overall' && r.estimate) return true;
+      // Overall lists estimate-only rows too (estimatedIndex set, index
+      // null) — and rows with neither, where the index carries figures
+      // that may not stand in for a capability score. Requiring a score or
+      // an estimate hid all 118 safety-only models from the day the safety
+      // anchors were excluded, and would have hidden the System One models
+      // the same way: their figures were on the site and no reader could
+      // reach them, by search or by scrolling (2026-09-22). They show a
+      // "—" and take no number, as they should.
+      if (scope.level === 'overall') return r.perBenchmark.length > 0;
       return scopeScore(r, scope) !== null;
     });
     if (scope.level !== 'overall') {

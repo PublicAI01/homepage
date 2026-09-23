@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { models } from '../data';
+import { benchmarks, models, scores } from '../data';
 import { ACCESS_RULE, UNCATALOGUED_RULE } from './access';
 import {
   describeIndex,
@@ -286,6 +286,39 @@ describe('one position, wherever it is printed', () => {
         expect(s?.position, `${scope} ${m.name}`).toBe(m.position);
         expect(s?.total).toBe(listed.scopeTotal);
       }
+    }
+  });
+
+  it('lists every model it carries a figure for, even with no Overall to show', () => {
+    // A model whose only figures may not stand in for a capability index —
+    // a safety-only model, a System One model — has no score and no
+    // estimate. Requiring one hid all 122 safety-only models from the day
+    // the safety anchors were excluded: the index carried their numbers
+    // and no reader could reach them, by search or by scrolling
+    // (2026-09-22). They belong on the list with a "—".
+    expect(ok(rankModels({ minBoards: 0, limit: 1 })).total).toBe(
+      models.length,
+    );
+    const categoryOf = new Map(benchmarks.map((b) => [b.id, b.category]));
+    const scoredIn = new Map<string, Set<string>>();
+    for (const s of scores) {
+      const set = scoredIn.get(s.modelId) ?? new Set<string>();
+      set.add(categoryOf.get(s.benchmarkId) ?? '');
+      scoredIn.set(s.modelId, set);
+    }
+    const capabilityFree = models.filter((m) => {
+      const cats = scoredIn.get(m.id);
+      return cats !== undefined && [...cats].every((c) => c === 'Safety');
+    });
+    expect(capabilityFree.length).toBeGreaterThan(0);
+    for (const m of capabilityFree.slice(0, 5)) {
+      const row = ok(rankModels({ q: m.name, minBoards: 0 })).models.find(
+        (x) => x.id === m.id,
+      );
+      expect(row, m.name).toBeDefined();
+      expect(row!.index, m.name).toBeNull();
+      expect(row!.rank, m.name).toBeNull();
+      expect(row!.estimatedIndex ?? null, m.name).toBeNull();
     }
   });
 });
