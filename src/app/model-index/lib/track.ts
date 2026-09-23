@@ -54,6 +54,8 @@ export interface ModelSummary {
   family: string;
   /** The Overall index, 0–100; null when no recognised board scores the model. */
   index: number | null;
+  /** Share of the Overall index's weighting a board has measured, 0-1. */
+  measuredWeight: number;
   /**
    * Only when `index` is null: an estimate ✱ anchored on models that have an
    * Overall index — the model's figures placed among theirs on each shared
@@ -382,7 +384,13 @@ export function createTrack(input: TrackInput) {
       name: r.model.name,
       org: r.model.org,
       family: familyOf(r.model.name),
-      index: r1(r.score),
+      // Published only where it is a placing, not a floor. Below the
+      // coverage threshold the prior is doing most of the work, and a
+      // number invites exactly the comparison a withheld rank refuses:
+      // 62.2 beside 63.3 says "worse than its predecessor" as loudly as a
+      // position would (Steven, 2026-09-23). The coverage is shown
+      // instead, and the model's own page still has every figure.
+      index: r.ranked ? r1(r.score) : null,
       estimatedIndex:
         r.score === null && r.estimate
           ? { ...r.estimate, score: r1(r.estimate.score)! }
@@ -391,6 +399,8 @@ export function createTrack(input: TrackInput) {
         ? { scopeScore: r1(scopeScore(r, scope)) }
         : {}),
       ranked: r.ranked,
+      /** Share of the Overall's weighting measured, 0-1; see MIN_OVERALL_WEIGHT. */
+      measuredWeight: Math.round(r.measuredWeight * 100) / 100,
       rankedInScope: eligible(r, scope),
       position: null,
       size: r.model.size

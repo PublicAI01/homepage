@@ -17,6 +17,7 @@ import {
   type AggregateRow,
   boardsFirst,
   compareScores,
+  MIN_OVERALL_WEIGHT,
   type NormalizedScore,
 } from '../lib/aggregate';
 import { type BoardView, groupBoards } from '../lib/boards';
@@ -1135,8 +1136,20 @@ function Row({
             </span>
           ) : null}
           {!inScope ? (
-            <span className="text-micro ml-2 rounded border border-white/12 px-1 py-px text-[#78758A]">
-              {rankKey.level === 'overall' ? 'provisional' : 'report only'}
+            <span
+              className="text-micro ml-2 rounded border border-white/12 px-1 py-px text-[#78758A]"
+              title={
+                rankKey.level === 'overall'
+                  ? row.measuredWeight > 0
+                    ? `${Math.round(row.measuredWeight * 100)}% of the Overall's weighting measured; ${Math.round(MIN_OVERALL_WEIGHT * 100)}% places a model.`
+                    : 'No board that builds the Overall index has scored it.'
+                  : undefined
+              }>
+              {rankKey.level !== 'overall'
+                ? 'report only'
+                : row.measuredWeight > 0
+                  ? `${Math.round(row.measuredWeight * 100)}% measured`
+                  : 'provisional'}
             </span>
           ) : null}
         </td>
@@ -1151,6 +1164,15 @@ function Row({
               title={`Estimate — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position.${row.estimate.bound === 'below' ? ' It trailed every such model there, so this is a ceiling.' : row.estimate.bound === 'above' ? ' It led every such model there, so this is a floor.' : ''} Never ranked.`}>
               {estimateMark(row.estimate.bound)}
               {fmt(row.estimate.score)}
+            </span>
+          ) : rankKey.level === 'overall' && !row.ranked ? (
+            // Below the coverage threshold the number is a floor, not a
+            // placing, and printing it invites the comparison the missing
+            // rank refuses (Steven, 2026-09-23).
+            <span
+              className="text-[#78758A]"
+              title={`Not placed: ${Math.round(row.measuredWeight * 100)}% of the Overall's weighting has been measured, and the index places a model at ${Math.round(MIN_OVERALL_WEIGHT * 100)}% or more. Every figure it does have is on its page.`}>
+              —
             </span>
           ) : (
             fmt(row.score)

@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 
 import { cn } from '@/utils';
 
+import { MIN_OVERALL_WEIGHT } from '../lib/aggregate';
 import { estimateWords } from '../lib/estimate';
 import type { Standing } from '../lib/track';
 import type { TrackInfo } from '../lib/tracks';
@@ -351,7 +352,14 @@ export default async function ModelPage({
                   Not ranked
                 </p>
                 <p className="text-caption mt-1.5 text-[#E0B341]">
-                  Only one publisher has scored it
+                  {/* The reason, not a guess at it: a model can miss a
+                      placing for want of a second publisher or for want of
+                      coverage, and the page named the first either way
+                      (2026-09-23). */}
+                  {model.measuredWeight > 0 &&
+                  model.measuredWeight < MIN_OVERALL_WEIGHT
+                    ? `${Math.round(model.measuredWeight * 100)}% of the Overall’s weighting measured — ${Math.round(MIN_OVERALL_WEIGHT * 100)}% places a model`
+                    : 'Only one publisher has scored it'}
                   {model.estimatedIndex
                     ? ` — looks like ${estimateWords(model.estimatedIndex.bound)} ${model.estimatedIndex.score}`
                     : ''}

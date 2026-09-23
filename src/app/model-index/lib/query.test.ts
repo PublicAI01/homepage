@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import { benchmarks, models, scores } from '../data';
 import { ACCESS_RULE, UNCATALOGUED_RULE } from './access';
+import { MIN_OVERALL_WEIGHT } from './aggregate';
 import {
   describeIndex,
   getModel,
@@ -329,5 +330,29 @@ describe('one position, wherever it is printed', () => {
       expect(row!.rank, m.name).toBeNull();
       expect(row!.estimatedIndex ?? null, m.name).toBeNull();
     }
+  });
+
+  it('places a model only when half the Overall’s weighting is measured', () => {
+    // GPT-6 Sol, three days old and on two of the five boards that build
+    // the index, scored 68.9 undiscounted and 62.2 after the prior — which
+    // put it below its own predecessor and read as a finding about the
+    // model rather than about our coverage (Steven, 2026-09-23).
+    const all = ok(rankModels({ limit: 1000, minBoards: 0 }));
+    for (const m of all.models) {
+      if (m.rank !== null) {
+        expect(m.measuredWeight, m.name).toBeGreaterThanOrEqual(
+          MIN_OVERALL_WEIGHT,
+        );
+        expect(m.index, m.name).not.toBeNull();
+      } else {
+        // No rank and no number: the number invites the same comparison.
+        expect(m.index, m.name).toBeNull();
+      }
+    }
+    // Ranked models are a minority of what the index carries, and that is
+    // the point — every one of them can be stood behind.
+    expect(all.models.filter((m) => m.rank !== null).length).toBeGreaterThan(
+      20,
+    );
   });
 });

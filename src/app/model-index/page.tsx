@@ -130,8 +130,8 @@ const method = [
     text: 'Each board’s share of the Overall index is fixed and printed beside the table, with its reason.',
   },
   {
-    title: 'Two publishers to rank',
-    text: 'Overall ranks a model once two independent publishers among the boards that build the index have scored it — a board that shapes only a domain does not count. A domain ranks on its own board evidence.',
+    title: 'Two publishers, and half the scheme',
+    text: 'Overall ranks a model once two independent publishers among the boards that build the index have scored it, and at least half the weighting printed beside the table has actually been measured. Below that the prior decides more than the boards do, so the model is listed with its coverage and no number — a floor is not a placing. A domain ranks on its own board evidence.',
   },
   {
     title: 'A domain must earn its column',

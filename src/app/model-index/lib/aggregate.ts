@@ -74,6 +74,11 @@ export interface AggregateRow {
   /** Scored by enough boards to be placed in the ranking. */
   ranked: boolean;
   /**
+   * Share of the Overall index's weighting that a board actually measured,
+   * 0–1. A model is ranked only above MIN_OVERALL_WEIGHT.
+   */
+  measuredWeight: number;
+  /**
    * Spread of the model's normalized scores across every recognised board
    * measure that scored it — the same boards `covered` counts, so "boards
    * disagree" and "scored by N boards" describe one set. Reports ✱ are left
@@ -268,6 +273,19 @@ function shrunkMean(
     evidence,
   };
 }
+
+/**
+ * How much of the Overall's weighting must be measured before a model takes
+ * a number and a place. Half: the scheme is printed beside the table, and
+ * "half of it has been filled in" is a sentence a reader can check.
+ *
+ * Five boards build the Overall and they reach very different distances —
+ * LMArena scores 95 of today's ranked models, Terminal-Bench 15 — so most
+ * models are measured on part of the scheme and the prior fills the rest.
+ * Below half, the prior is deciding, and a placing decided by the prior is
+ * an artefact of thin coverage rather than a finding about the model.
+ */
+export const MIN_OVERALL_WEIGHT = 0.5;
 
 export interface AggregateInput {
   models: Model[];
@@ -480,6 +498,14 @@ export function aggregate({
       overallWeight,
       priorFraction,
     );
+    // How much of the Overall's weighting was actually measured, before any
+    // discount for a wide error bar: the share a reader can check against
+    // the scheme printed beside the table.
+    const measuredWeight =
+      overallWeight > 0
+        ? sumWeight(new Set(inOverall.map((s) => s.benchmarkId))) /
+          overallWeight
+        : 0;
 
     const oneVote = (inScope: NormalizedScore[]) =>
       oneVotePerReport(
@@ -569,7 +595,19 @@ export function aggregate({
       // 193 ranked models had an Overall decided by exactly one board. GPT-5.5
       // Pro sat at #20 on ARC-AGI-2 alone. An index whose case is that no
       // single benchmark can be tuned to it cannot rank half its field on one.
-      ranked: overallPublishers >= minSources && score !== null,
+      // ...and on at least half the Overall's weighting having been
+      // measured. Below that the prior does most of the work and the
+      // number is a floor, not a placing: GPT-6 Sol, measured on two of
+      // the five boards that build the index, scored 68.9 undiscounted and
+      // 62.2 after the prior, which put a three-day-old model below its
+      // own predecessor. A rank nobody can stand behind costs more than a
+      // missing one, and the number alone invites the same comparison, so
+      // neither is shown (Steven, 2026-09-23).
+      ranked:
+        overallPublishers >= minSources &&
+        score !== null &&
+        measuredWeight >= MIN_OVERALL_WEIGHT,
+      measuredWeight,
       // Over the recognised boards, not only the Overall measures. Measured
       // on `inOverall` while the "boards agree" label was gated on `covered`,
       // a model scored by five boards of which one builds the Overall index
