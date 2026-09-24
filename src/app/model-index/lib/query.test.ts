@@ -355,4 +355,28 @@ describe('one position, wherever it is printed', () => {
       20,
     );
   });
+
+  it('estimates a model measured on part of the scheme, and orders the unranked rows by that estimate', () => {
+    // The withheld number was still on the row: 336 unranked models were
+    // sorted by it between rows showing an estimate, so a reader could
+    // read GPT-6 Sol's 62.2 off its neighbours, and a model on two of the
+    // five boards got no estimate while one on none did (2026-09-24).
+    const all = ok(rankModels({ limit: 1000, minBoards: 0 }));
+    const unranked = all.models.filter((m) => m.rank === null);
+    const partly = unranked.filter((m) => m.measuredWeight > 0);
+    expect(partly.length).toBeGreaterThan(20);
+    for (const m of partly) expect(m.estimatedIndex, m.name).not.toBeNull();
+    // Highest estimate first; rows with none after every row with one.
+    let last = Infinity;
+    let seenNone = false;
+    for (const m of unranked) {
+      if (m.estimatedIndex === null) {
+        seenNone = true;
+        continue;
+      }
+      expect(seenNone, m.name).toBe(false);
+      expect(m.estimatedIndex.score, m.name).toBeLessThanOrEqual(last);
+      last = m.estimatedIndex.score;
+    }
+  });
 });

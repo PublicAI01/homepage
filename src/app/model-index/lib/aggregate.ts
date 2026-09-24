@@ -51,7 +51,15 @@ export interface NormalizedScore {
 
 export interface AggregateRow {
   model: Model;
-  /** Final 0-100 index score, or null when the model has no usable scores. */
+  /**
+   * Final 0-100 index score, or null when the model is not ranked — either
+   * no board that builds the Overall scored it, or too few did (`ranked`).
+   * A withheld number is withheld here, at the source, not only where it
+   * is printed: with the score kept and only the display nulled, the
+   * unranked rows were still ordered by it, exported with it, used as
+   * anchors for the estimates, and given no estimate of their own
+   * (2026-09-24).
+   */
   score: number | null;
   /** The same computation, restricted to the measures in each domain. */
   byDomain: Record<string, number | null>;
@@ -571,9 +579,42 @@ export function aggregate({
         .map((s) => boardOf.get(s.benchmarkId)),
     ).size;
 
+    // Ranked on the word of at least `minSources` independent publishers,
+    // not boards: one publisher's several leaderboards agree with itself.
+    // And there must be an Overall score to rank on — two domain-only
+    // boards make a model comparable in their domains, not Overall.
+    // Publishers among the boards that build the Overall index, not among
+    // all boards. The rule reads "two independent publishers have scored
+    // it", and the number it qualifies is the Overall index — but a second
+    // publisher whose board never enters Overall was counting, so 114 of
+    // 193 ranked models had an Overall decided by exactly one board. GPT-5.5
+    // Pro sat at #20 on ARC-AGI-2 alone. An index whose case is that no
+    // single benchmark can be tuned to it cannot rank half its field on one.
+    // ...and on at least half the Overall's weighting having been
+    // measured. Below that the prior does most of the work and the
+    // number is a floor, not a placing: GPT-6 Sol, measured on two of
+    // the five boards that build the index, scored 68.9 undiscounted and
+    // 62.2 after the prior, which put a three-day-old model below its
+    // own predecessor. A rank nobody can stand behind costs more than a
+    // missing one, and the number alone invites the same comparison, so
+    // neither is shown (Steven, 2026-09-23).
+    const ranked =
+      overallPublishers >= minSources &&
+      score !== null &&
+      measuredWeight >= MIN_OVERALL_WEIGHT;
+
     return {
       model,
-      score,
+      // The number is withheld here, not in the display layer. Left on the
+      // row with only the printing suppressed, 336 unranked models were
+      // still sorted by it between rows showing an estimate — so a reader
+      // could read GPT-6 Sol's 62.2 off its neighbours — the exported chart
+      // printed it outright, 86% of the estimates' anchors were numbers the
+      // index had just called "a floor, not a placing", and a model on two
+      // of the five boards got no estimate while one on none did
+      // (2026-09-24). Null, the row takes the same path as any other
+      // unranked row: an estimate, ordered by it, anchored on ranked rows.
+      score: ranked ? score : null,
       byDomain,
       byCategory,
       perBenchmark,
@@ -584,29 +625,7 @@ export function aggregate({
       coverable,
       reports,
       evidence: overallWeight > 0 ? evidence / overallWeight : 0,
-      // Ranked on the word of at least `minSources` independent publishers,
-      // not boards: one publisher's several leaderboards agree with itself.
-      // And there must be an Overall score to rank on — two domain-only
-      // boards make a model comparable in their domains, not Overall.
-      // Publishers among the boards that build the Overall index, not among
-      // all boards. The rule reads "two independent publishers have scored
-      // it", and the number it qualifies is the Overall index — but a second
-      // publisher whose board never enters Overall was counting, so 114 of
-      // 193 ranked models had an Overall decided by exactly one board. GPT-5.5
-      // Pro sat at #20 on ARC-AGI-2 alone. An index whose case is that no
-      // single benchmark can be tuned to it cannot rank half its field on one.
-      // ...and on at least half the Overall's weighting having been
-      // measured. Below that the prior does most of the work and the
-      // number is a floor, not a placing: GPT-6 Sol, measured on two of
-      // the five boards that build the index, scored 68.9 undiscounted and
-      // 62.2 after the prior, which put a three-day-old model below its
-      // own predecessor. A rank nobody can stand behind costs more than a
-      // missing one, and the number alone invites the same comparison, so
-      // neither is shown (Steven, 2026-09-23).
-      ranked:
-        overallPublishers >= minSources &&
-        score !== null &&
-        measuredWeight >= MIN_OVERALL_WEIGHT,
+      ranked,
       measuredWeight,
       // Over the recognised boards, not only the Overall measures. Measured
       // on `inOverall` while the "boards agree" label was gated on `covered`,

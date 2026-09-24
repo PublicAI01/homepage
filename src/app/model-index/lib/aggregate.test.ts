@@ -397,10 +397,12 @@ describe('byDomain', () => {
 });
 
 describe('shrinkage', () => {
-  // Board a is worth 80, board b is worth 20. m1 is scored 90 by both;
-  // m2 is scored 90 only by the small board; m3 anchors the spread.
-  // m4 is a filler so both boards have the same score distribution, which
-  // makes m1's normalized value identical on a and b.
+  // Two boards of equal weight. m1 is scored 90 by both; m2 is scored 90
+  // by b alone; m3 anchors the spread. m4 is a filler so both boards have
+  // the same score distribution, which makes m1's normalized value
+  // identical on a and b. Equal shares and minSources 1 so that m2, on
+  // half the scheme, is still ranked and its score observable: an
+  // unranked row's score is withheld (null), not merely hidden.
   const bs = [bench('a'), bench('b')];
   const ms = [model('m1'), model('m2'), model('m3'), model('m4')];
   const ss = [
@@ -411,24 +413,24 @@ describe('shrinkage', () => {
     score('m2', 'b', 90),
     score('m3', 'b', 10),
   ];
-  const run = (priorFraction: number) =>
+  const run = (priorFraction: number, minSources = 1) =>
     aggregate({
       models: ms,
       benchmarks: bs,
       scores: ss,
-      weights: { a: 80, b: 20 },
+      weights: { a: 50, b: 50 },
       priorFraction,
-      minSources: 2,
+      minSources,
     });
   const of = (rows: ReturnType<typeof aggregate>, id: string) =>
     rows.find((r) => r.model.id === id)!;
 
-  it('with no prior, one small board can put a barely-tested model level with a fully tested one', () => {
+  it('with no prior, one board can put a barely-tested model level with a fully tested one', () => {
     const out = run(0);
     expect(of(out, 'm2').score).toBeCloseTo(of(out, 'm1').score!, 6);
   });
 
-  it('with a prior, the fully tested model comes out ahead of the same score on one small board', () => {
+  it('with a prior, the fully tested model comes out ahead of the same score on one board', () => {
     const out = run(0.25);
     expect(of(out, 'm1').score!).toBeGreaterThan(of(out, 'm2').score!);
   });
@@ -444,11 +446,11 @@ describe('shrinkage', () => {
   it('reports evidence as a fraction of the weight available', () => {
     const out = run(0.25);
     expect(of(out, 'm1').evidence).toBeCloseTo(1, 6);
-    expect(of(out, 'm2').evidence).toBeCloseTo(0.2, 6);
+    expect(of(out, 'm2').evidence).toBeCloseTo(0.5, 6);
   });
 
-  it('lists a model scored by too few boards as provisional and sorts it after the ranked ones', () => {
-    const out = run(0.25);
+  it('lists a model scored by too few publishers as provisional and sorts it after the ranked ones', () => {
+    const out = run(0.25, 2);
     expect(of(out, 'm2').ranked).toBe(false);
     expect(of(out, 'm1').ranked).toBe(true);
     expect(out.findIndex((r) => r.model.id === 'm2')).toBeGreaterThan(
@@ -792,6 +794,72 @@ describe('anchored estimates', () => {
     }
     for (const r of out.filter((r) => r.score !== null))
       expect(r.estimate).toBeNull();
+  });
+
+  // Three equal boards build the Overall; m1–m4 are on all three and
+  // ranked. m5 is on one board only: below half the scheme, so unranked.
+  // m6 is on one board too, with a figure between m5's and the field's.
+  const thin = () => {
+    const bs = [bench('a'), bench('b'), bench('c')];
+    const ms = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6'].map(model);
+    const ss = [
+      ...['a', 'b', 'c'].flatMap((b) => [
+        score('m1', b, 90),
+        score('m2', b, 70),
+        score('m3', b, 30),
+        score('m4', b, 10),
+      ]),
+      score('m5', 'a', 80),
+      score('m6', 'a', 60),
+    ];
+    const out = aggregate({
+      models: ms,
+      benchmarks: bs,
+      scores: ss,
+      weights: { a: 1, b: 1, c: 1 },
+      priorFraction: 0.25,
+      minSources: 2,
+    });
+    return {
+      out,
+      of: (id: string) => out.find((r) => r.model.id === id)!,
+    };
+  };
+
+  it('withholds the Overall score of an unranked row and estimates it instead', () => {
+    // The 2026-09-23 rule nulled the number only where it was printed;
+    // the row kept it, was sorted by it, exported with it, and — being
+    // "scored" — got no estimate while a model on no board did (2026-09-24).
+    const { of } = thin();
+    const m5 = of('m5');
+    expect(m5.ranked).toBe(false);
+    expect(m5.measuredWeight).toBeCloseTo(1 / 3, 6);
+    expect(m5.score).toBeNull();
+    expect(m5.estimate).not.toBeNull();
+    expect(m5.estimate!.measures).toBe(1);
+    // 80 sits between m1's 90 (Overall ≈ top) and m2's 70.
+    expect(m5.estimate!.score).toBeLessThan(of('m1').score!);
+    expect(m5.estimate!.score).toBeGreaterThan(of('m2').score!);
+  });
+
+  it('anchors an estimate on ranked rows only', () => {
+    // With m5's withheld score on the row it was an anchor for m6 — a
+    // number the index had just called a floor, not a placing.
+    const { of } = thin();
+    expect(of('m6').estimate!.anchors).toBe(4);
+    expect(of('m5').estimate!.anchors).toBe(4);
+  });
+
+  it('orders the unranked rows by their estimates', () => {
+    const { out } = thin();
+    const unranked = out.filter((r) => !r.ranked);
+    expect(unranked.map((r) => r.model.id)).toEqual(['m5', 'm6']);
+    expect(out.map((r) => r.model.id).slice(0, 4)).toEqual([
+      'm1',
+      'm2',
+      'm3',
+      'm4',
+    ]);
   });
 });
 
