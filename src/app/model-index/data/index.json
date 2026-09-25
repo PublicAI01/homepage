@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T20:35:45.861Z",
+  "generatedAt": "2026-09-25T20:40:49.278Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -8232,6 +8232,18 @@
       "size": { "paramsB": 300, "activeB": 47, "source": "name" }
     },
     {
+      "id": "gemma-4-31b-it-autoloops",
+      "name": "Gemma 4 31B IT (Autoloops)",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      },
+      "size": { "paramsB": 31, "source": "name" }
+    },
+    {
       "id": "gemma-4-31b",
       "name": "Gemma 4 31B",
       "org": "Google",
@@ -8255,18 +8267,6 @@
         }
       },
       "size": { "paramsB": 31.3, "source": "huggingface" }
-    },
-    {
-      "id": "kushal-patil-gemma-4-31b-it",
-      "name": "Kushal Patil — Gemma 4 31B IT",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      },
-      "size": { "paramsB": 31, "source": "name" }
     },
     {
       "id": "c4ai-aya-expanse-32b",
@@ -32890,6 +32890,18 @@
       "sourceLabel": "baidu/ernie-4.5-300b-a47b"
     },
     {
+      "modelId": "gemma-4-31b-it-autoloops",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 59.8,
+      "sourceLabel": "Gemma 4 31B IT (Autoloops)"
+    },
+    {
+      "modelId": "gemma-4-31b-it-autoloops",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 79.2,
+      "sourceLabel": "Gemma 4 31B IT (Autoloops)"
+    },
+    {
       "modelId": "gemma-4-31b",
       "benchmarkId": "lmarena",
       "raw": 1451,
@@ -33031,18 +33043,6 @@
       "benchmarkId": "largitdata-jev:decision-correct",
       "raw": 77,
       "sourceLabel": "Gemma 4 31B (self-hosted)"
-    },
-    {
-      "modelId": "kushal-patil-gemma-4-31b-it",
-      "benchmarkId": "jevbench-intelligence",
-      "raw": 59.8,
-      "sourceLabel": "Kushal Patil — Gemma 4 31B IT"
-    },
-    {
-      "modelId": "kushal-patil-gemma-4-31b-it",
-      "benchmarkId": "jevbench-calibration",
-      "raw": 79.2,
-      "sourceLabel": "Kushal Patil — Gemma 4 31B IT"
     },
     {
       "modelId": "c4ai-aya-expanse-32b",

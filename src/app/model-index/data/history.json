@@ -98858,7 +98858,7 @@
     },
     {
       "date": "2026-09-25",
-      "generatedAt": "2026-09-25T20:35:45.861Z",
+      "generatedAt": "2026-09-25T20:40:49.278Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -100503,8 +100503,8 @@
           "rank": null,
           "covered": 1
         },
-        "kushal-patil-gemma-4-31b-it": {
-          "name": "Kushal Patil — Gemma 4 31B IT",
+        "gemma-4-31b-it-autoloops": {
+          "name": "Gemma 4 31B IT (Autoloops)",
           "org": "Google",
           "index": null,
           "rank": null,
