@@ -15,6 +15,7 @@ const SITE_HOSTNAMES = ['publicai.io', 'www.publicai.io'];
 interface AssessmentResponse {
   tokenProperties?: {
     valid?: boolean;
+    invalidReason?: string;
     action?: string;
     hostname?: string;
   };
@@ -31,14 +32,17 @@ export interface VerifyTokenParams {
   remoteIp?: string;
 }
 
+/** Why an assessment was refused, in words safe to log: never the token or the key. */
+export type Assessment = { ok: true } | { ok: false; reason: string };
+
 /**
  * Creates a reCAPTCHA Enterprise assessment:
  * POST {ASSESSMENT_URL}?key={apiKey} with body
  * `{ "event": { "token", "siteKey", "expectedAction", "userIpAddress"? } }`.
  */
-export async function verifyRecaptchaToken(
+export async function assessRecaptcha(
   params: VerifyTokenParams,
-): Promise<boolean> {
+): Promise<Assessment> {
   const event: Record<string, string> = {
     token: params.token,
     siteKey: params.siteKey,
@@ -57,10 +61,17 @@ export async function verifyRecaptchaToken(
         signal: AbortSignal.timeout(ASSESSMENT_TIMEOUT_MS),
       },
     );
-    if (!response.ok) return false;
+    if (!response.ok)
+      return {
+        ok: false,
+        reason: `assessment API answered ${response.status}`,
+      };
     data = (await response.json()) as AssessmentResponse;
-  } catch {
-    return false;
+  } catch (error) {
+    return {
+      ok: false,
+      reason: `assessment API unreachable (${error instanceof Error ? error.name : 'error'})`,
+    };
   }
 
   const allowedHostnames =
@@ -68,11 +79,43 @@ export async function verifyRecaptchaToken(
       ? SITE_HOSTNAMES
       : [...SITE_HOSTNAMES, 'localhost', '127.0.0.1'];
 
-  const tokenProperties = data.tokenProperties;
-  return (
-    tokenProperties?.valid === true &&
-    tokenProperties.action === params.expectedAction &&
-    (data.riskAnalysis?.score ?? 0) >= MIN_SCORE &&
-    allowedHostnames.includes(tokenProperties.hostname ?? '')
-  );
+  const t = data.tokenProperties;
+  if (t?.valid !== true)
+    return {
+      ok: false,
+      reason: `token invalid (${t?.invalidReason ?? 'no reason given'})`,
+    };
+  if (t.action !== params.expectedAction)
+    return {
+      ok: false,
+      reason: `action "${t.action}" is not "${params.expectedAction}"`,
+    };
+  const score = data.riskAnalysis?.score ?? 0;
+  if (score < MIN_SCORE)
+    return { ok: false, reason: `score ${score} below ${MIN_SCORE}` };
+  if (!allowedHostnames.includes(t.hostname ?? ''))
+    return { ok: false, reason: `hostname "${t.hostname ?? ''}" not allowed` };
+  return { ok: true };
+}
+
+/**
+ * The assessment as a yes/no, with every no written to the log.
+ *
+ * A refusal used to be a bare `false`: the visitor saw "captcha failed",
+ * the server recorded nothing, and when the apex-only hostname list turned
+ * away every www visitor the contact form was dead for days with no line
+ * anywhere to say so (2026-09-19). A rotated API key, an exhausted quota
+ * or a changed site-key domain list fail the same silent way. The reason
+ * is logged with the action, so the route it hit is on the line; the
+ * token and the key never are.
+ */
+export async function verifyRecaptchaToken(
+  params: VerifyTokenParams,
+): Promise<boolean> {
+  const result = await assessRecaptcha(params);
+  if (!result.ok)
+    console.error(
+      `recaptcha: ${params.expectedAction} rejected — ${result.reason}`,
+    );
+  return result.ok;
 }
