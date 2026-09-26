@@ -50,7 +50,15 @@ export default function RootLayout({
           grotesque.variable,
           'bg-b1 has-dialog-open:overflow-hidden relative flex min-h-svh flex-col pb-8 text-white antialiased',
         )}>
-        <GridPattern className="top-header-height -z-1 h-[calc(100%-var(--spacing-header-height))]" />
+        {/*
+          Not behind prose. The animated grid and its flickering squares sit
+          directly under the body text of a post, which is fine for a landing
+          page of short lines and wrong for six hundred words: on the blog the
+          background is plain black and stays still (2026-09-26).
+        */}
+        <HideOn prefixes={['/blog']}>
+          <GridPattern className="top-header-height -z-1 h-[calc(100%-var(--spacing-header-height))]" />
+        </HideOn>
         <Header />
         <HideOn prefixes={['/model-index']}>
           <MediaPlatform />
