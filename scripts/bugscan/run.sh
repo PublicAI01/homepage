@@ -242,7 +242,14 @@ rollback() {
 # ── Stage 1: scan (read-only) ───────────────────────────────────────────────
 SCAN_OUT="$STATE/$DAY.scan.md"
 log "阶段 1/3 扫描…"
-if ! ask_claude "$SCAN_TIMEOUT" "$SCAN_OUT" -p "/bugscan" --permission-mode plan; then
+# 调用方可以追加一段动态附录(skill 的文件头就是这么说的):按合并触发的那条路
+# 用它把注意力放到这次的改动上,而**静态项目知识一律留在 .claude/bugscan.md**,
+# 不塞进 prompt —— 塞进来的那份没人 review,也不会跟着代码走。
+scan_prompt="/bugscan"
+[ -n "${BUGSCAN_APPENDIX:-}" ] && scan_prompt="/bugscan
+
+$BUGSCAN_APPENDIX"
+if ! ask_claude "$SCAN_TIMEOUT" "$SCAN_OUT" -p "$scan_prompt" --permission-mode plan; then
   printf '扫描阶段没跑完(超时或报错)。日志:%s\n' "$LOG" \
     | mail_out "【bugscan/$BUGSCAN_LABEL】今天没扫成,需要你看一眼"
   exit 1
