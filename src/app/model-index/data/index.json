@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T20:40:49.278Z",
+  "generatedAt": "2026-09-26T05:34:38.422Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -698,7 +698,7 @@
       "retrievedAt": "2026-09-25",
       "metric": "percent",
       "logo": "/model-index/logos/jevbench.png",
-      "category": "Agents",
+      "category": "Decisions",
       "domain": "Routing & classification",
       "caveat": "Two of JevBench’s four axes: Intelligence and Calibration. Its headline score also weighs speed and price, which this index does not read as capability. Benchmark Heaven runs a router of its own and says so; that entry is excluded from its ranking. Half the decisions are sealed, and the public-minus-sealed gap it publishes is large for several entrants.",
       "kind": "board",
@@ -714,7 +714,7 @@
       "retrievedAt": "2026-09-25",
       "metric": "percent",
       "logo": "/model-index/logos/jevbench.png",
-      "category": "Agents",
+      "category": "Decisions",
       "domain": "Calibration",
       "caveat": "Two of JevBench’s four axes: Intelligence and Calibration. Its headline score also weighs speed and price, which this index does not read as capability. Benchmark Heaven runs a router of its own and says so; that entry is excluded from its ranking. Half the decisions are sealed, and the public-minus-sealed gap it publishes is large for several entrants.",
       "kind": "board",
@@ -1945,7 +1945,7 @@
       "publishedAt": "2026-09-19",
       "metric": "percent",
       "logo": "/model-index/logos/largitdata-jev.png",
-      "category": "Agents",
+      "category": "Decisions",
       "domain": "Routing & classification",
       "caveat": "One hundred routing decisions over twenty conversations the authors wrote. A model is scored on agreeing with their intended route, so the figure is \"fits this routing scheme\", not a general accuracy.",
       "kind": "report",

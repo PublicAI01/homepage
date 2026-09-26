@@ -1085,7 +1085,7 @@ describe('estimates do not lean on safety figures', () => {
     const benchmarks = [
       bench('cap-a', 'Coding', 'Coding'),
       bench('cap-b', 'Reasoning', 'Reasoning'),
-      bench('routing', 'Agents', 'Routing & classification'),
+      bench('routing', 'Decisions', 'Routing & classification'),
     ];
     const anchors = ['anchor1', 'anchor2', 'anchor3'];
     const scores = [

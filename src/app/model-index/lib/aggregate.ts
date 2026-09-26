@@ -330,11 +330,16 @@ export interface AggregateInput {
  * two runs of `aggregate` over one snapshot, differing only in weights.
  */
 /**
- * Domains whose figures never stand in for a capability index — the same
- * rule as Safety, one level down, for work the rest of the index does not
- * measure at all.
+ * Categories whose figures never stand in for a capability index.
+ *
+ * Safety since 2026-09-16: hallucination rate and the Overall correlate at
+ * −0.23, and MiniMax M2p5, scored on nothing but a 9% rate, was estimated
+ * at 62.3. Decisions since 2026-09-25, for the same reason one level up: a
+ * System One model answers typed questions and not one other measure here,
+ * so placing its routing or calibration figure among chat models would
+ * print "Jev ≈ Gemma 4 31B overall", a sentence about nothing.
  */
-const NEVER_ANCHORS = new Set(['Routing & classification']);
+const NEVER_ANCHORS = new Set(['Safety', 'Decisions']);
 
 export function boardsFirst(
   boards: AggregateRow[],
@@ -651,13 +656,7 @@ export function aggregate({
     // hallucination rate and the Overall index correlate at −0.23, and
     // MiniMax M2p5, scored on nothing but a 9% hallucination rate, was
     // estimated at 62.3 — front-ten territory (2026-09-16).
-    if (categoryOf.get(benchId) === 'Safety') continue;
-    // Same for a domain no board measures and whose models do a different
-    // job: a System One model's routing accuracy placed beside a chat
-    // model's would read as "Jev ≈ Gemma 4 31B overall", which is a
-    // sentence about nothing — Jev cannot answer a single other measure
-    // in this index (2026-09-22).
-    if (NEVER_ANCHORS.has(domainOf.get(benchId) ?? '')) continue;
+    if (NEVER_ANCHORS.has(categoryOf.get(benchId) ?? '')) continue;
     const list: { raw: number; overall: number }[] = [];
     for (const [modelId, s] of byModel) {
       const o = overallOf.get(modelId);
