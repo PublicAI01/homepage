@@ -20,7 +20,7 @@ import {
   MIN_OVERALL_WEIGHT,
   type NormalizedScore,
 } from '../lib/aggregate';
-import { type BoardView, groupBoards } from '../lib/boards';
+import { type BoardView, figuresOn, groupBoards } from '../lib/boards';
 import { estimateMark } from '../lib/estimate';
 import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
@@ -116,6 +116,19 @@ function rawLabel(metric: Benchmark['metric'], raw: number) {
   if (metric === 'elo') return String(Math.round(raw));
   if (metric === 'percent') return `${raw}%`;
   return String(raw);
+}
+
+/**
+ * What tells one measure apart from its siblings on the same board: the
+ * measure's own name, with the board's and the publisher's name taken off
+ * ("Vals · CaseLaw" → "CaseLaw"). Empty when the two are the same word.
+ */
+function measureName(board: BoardView, m: Benchmark) {
+  const tail = m.name.split(/\s[·|]\s/).pop() ?? m.name;
+  return (tail === m.name ? tail.replace(board.name, '') : tail)
+    .replace(m.publisher, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 /** "2026-09-08" → "8 Sep". */
@@ -243,11 +256,28 @@ function PublisherBadge({
   group: BoardView[];
   scored: Map<string, NormalizedScore>;
 }) {
-  const hits = group.filter((b) => scored.has(b.headline.id));
+  // Any measure on the board, not just the headline one. `headline` is only
+  // the file's first measure unless a board publishes one whose id is its own
+  // — which vals, helm-safety, enkrypt, jevbench, aider and mmmu do not — so
+  // reading it alone called Vals "not listed" on the 114 rows it scored on
+  // something other than Legal Research Bench, while the coverage count in
+  // the same row counted Vals in (2026-09-26). The expanded card already
+  // uses this rule.
+  const hits = group.filter((b) => figuresOn(b, scored).length > 0);
   const label = group
     .map((b) => {
-      const s = scored.get(b.headline.id);
-      return `${b.name} — ${s ? rawLabel(b.headline.metric, s.raw) : 'not listed'}`;
+      const figures = figuresOn(b, scored);
+      if (figures.length === 0) return `${b.name} — not listed`;
+      const shown = figures
+        .slice(0, 3)
+        .map((m) => {
+          const raw = rawLabel(m.metric, scored.get(m.id)!.raw);
+          const which = b.measures.length > 1 ? measureName(b, m) : '';
+          return which ? `${which} ${raw}` : raw;
+        })
+        .join(', ');
+      const rest = figures.length - Math.min(figures.length, 3);
+      return `${b.name} — ${shown}${rest > 0 ? ` +${rest} more` : ''}`;
     })
     .join('\n');
   return (
@@ -1433,9 +1463,7 @@ function ModelCard({
               {[...publisherGroups.values()].map((group) => {
                 const lead = group[0];
                 const figures = group.flatMap((src) =>
-                  src.measures
-                    .filter((m) => scored.has(m.id))
-                    .map((m) => ({ src, m })),
+                  figuresOn(src, scored).map((m) => ({ src, m })),
                 );
                 if (figures.length === 0) return null;
                 const shown = figures.slice(0, group.length > 1 ? 3 : 2);

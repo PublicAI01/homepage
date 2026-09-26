@@ -32,6 +32,24 @@ export function sourceLabel(benchmarks: Benchmark[], id: string): string {
   return b ? `${b.source}${b.kind === 'report' ? ' ✱' : ''}` : id;
 }
 
+/**
+ * The measures on this board that a model was actually scored on.
+ *
+ * Whether a source measured a model is a question about the source, not
+ * about one of its measures: `headline` is only the file's first measure
+ * unless the board publishes one whose id is its own, which vals,
+ * helm-safety, enkrypt, jevbench, aider and mmmu do not. Read through
+ * `headline` alone, the badge strip called Vals "not listed" on the 114
+ * models it scored on something other than Legal Research Bench, on rows
+ * whose own coverage count included Vals (2026-09-26).
+ */
+export function figuresOn<T>(
+  board: BoardView,
+  scored: ReadonlyMap<string, T>,
+): Benchmark[] {
+  return board.measures.filter((m) => scored.has(m.id));
+}
+
 export function groupBoards(benchmarks: Benchmark[]): BoardView[] {
   const out: BoardView[] = [];
   for (const b of benchmarks) {
