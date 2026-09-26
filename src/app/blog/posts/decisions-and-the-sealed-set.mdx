@@ -1,0 +1,66 @@
+export const metadata = {
+  title: 'Decisions, a new category on the Index — and what a sealed set is for',
+  publishedAt: '2026-09-26',
+  summary:
+    'Routing, classification and calibration now have their own column on the PublicAI Index. The first board in it publishes its own control set, and the control disagrees with the leaderboard.',
+  // The Index's own card for the Decisions view, saved the day this was
+  // written. A live `/model-index/og?rank=…` would need next/image's
+  // localPatterns opened to query strings site-wide, and a cover dated
+  // with the post is the truer thing anyway.
+  image: '/images/decisions-sealed-set_cover.png',
+  keywords: [
+    'PublicAI Index',
+    'JevBench',
+    'LLM routing',
+    'model calibration',
+    'benchmark contamination',
+  ],
+};
+
+Most of what a model does in production is not clever. It is small and repeated: route this request, classify this ticket, decide whether to escalate. The question is not how well a system reasons — it is how often it is right, and whether it knows when it is not.
+
+That has a column on the **[PublicAI Index](/model-index)** now. **Decisions** sits beside Coding, Reasoning and the rest, with two domains: *Routing & classification* and *Calibration*.
+
+# The first board in it keeps a control set
+
+[JevBench](https://benchmarkheaven.com/jev-models), from Benchmark Heaven, ranks 93 entries — 85 models once variants of one system are folded together. What makes it unusual is not the ranking. It is that the board publishes its own control: 534 public decisions, 308 sealed ones, and the gap between how each entrant does on each.
+
+Few boards publish the thing that could embarrass them. This one prints it in a column.
+
+| | board rank | public (n=534) | sealed (n=308) | gap |
+| --- | --- | --- | --- | --- |
+| decider-4b v2 | 1 | 83.5% | 34.7% | +48.8 pp |
+| Jev 1.13.0 | 2 | 86.6% | 36.7% | +49.9 pp |
+| GPT-6 Luna | 35 | 99.6% | 95.5% | +4.1 pp |
+
+79 of the 93 entries lose twenty points or more when the decisions are ones they have not seen. The two at the top lose about half of what they scored.
+
+A gap is not proof of anything on its own — a sealed set can be harder, and a small model tuned for one shape of task can be genuinely brittle rather than fitted. But a fifty-point gap is not a rounding difference, and it is the board's own number, not ours.
+
+# Why the headline disagrees with the control
+
+JevBench's headline score is four axes: Intelligence, Calibration, Speed and Cost. GPT-6 Luna has the highest Intelligence on the board at 97.4 and places 35th, because by the board's measure it is slow and expensive.
+
+That is a fair thing to rank. It is a procurement question — what a decision costs at a thousand decisions an hour — and for a team choosing a router it may be the only question that matters.
+
+It is not a capability question, so the Index reads the two axes that describe the model and leaves the other two to the reader: **Intelligence** becomes *Routing & classification*, **Calibration** becomes *Calibration*. Price and latency belong to a contract, not to a model.
+
+# Knowing that you do not know
+
+Calibration reorders the board again, and this is the part worth sitting with.
+
+BAAI's bge-reranker-v2-m3 scores **5.0** on Intelligence — near the bottom of 85 — and **84.2** on Calibration, above most of the models that beat it on everything else. It is almost never the one to ask. It is unusually honest about that.
+
+DeepSeek V4.1 Flash tops Calibration at 95.5, ahead of GPT-6 Luna's 93.5, having lost to it on Intelligence.
+
+For anything that can fall back — to a bigger model, to a human, to asking again — the second number is the one that decides whether the fallback ever fires.
+
+# It does not touch the Overall ranking
+
+Decisions behaves like Safety on the Index: its figures fill their own column, never enter the Overall index, and never anchor an estimate for a model measured nowhere else. A system that appears only here gets a column and no rank, which is the honest amount to say about it.
+
+[LargitData's write-up](https://www.largitdata.com/en/blog/jev-system-one-model-open-source-benchmark/) of the same question is indexed in that column too, marked ✱, at a tenth of a board's weight, as every report is.
+
+One more piece of credit: Benchmark Heaven runs a router of its own, and excludes it from its own ranking.
+
+**[Open Decisions on the Index →](/model-index?rank=category:Decisions)**
