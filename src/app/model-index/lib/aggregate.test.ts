@@ -774,6 +774,31 @@ describe('anchored estimates', () => {
     expect(placeAmong(99, anchors)).toEqual({ overall: 70, bound: 'above' });
   });
 
+  it('reads the bound in the index, so on an error rate a figure under every anchor is a floor', () => {
+    // Sorted by the figure either way; on a `lower` measure the lowest
+    // figure is the strongest model, so the top of the range is at index 0.
+    const anchors = [
+      { raw: 5, overall: 70 },
+      { raw: 20, overall: 50 },
+      { raw: 40, overall: 40 },
+    ];
+    // Between anchors the placement itself never depended on direction.
+    expect(placeAmong(12.5, anchors, 'lower')).toEqual({
+      overall: 60,
+      bound: null,
+    });
+    // Cleaner than every anchor: at least the best anchor's index.
+    expect(placeAmong(1, anchors, 'lower')).toEqual({
+      overall: 70,
+      bound: 'above',
+    });
+    // Worse than every anchor: at most the weakest anchor's index.
+    expect(placeAmong(99, anchors, 'lower')).toEqual({
+      overall: 40,
+      bound: 'below',
+    });
+  });
+
   it('gives a model with no Overall score an estimate from its report figures, and none to a scored model', () => {
     const out = aggregate({
       models,

@@ -409,6 +409,7 @@ export function aggregate({
   const kindOf = new Map(benchmarks.map((b) => [b.id, b.kind]));
   const domainOf = new Map(benchmarks.map((b) => [b.id, b.domain]));
   const categoryOf = new Map(benchmarks.map((b) => [b.id, b.category]));
+  const directionOf = new Map(benchmarks.map((b) => [b.id, b.direction]));
 
   const domains = [...new Set(weighted.map((b) => b.domain))];
   const categories = [...new Set(weighted.map((b) => b.category))];
@@ -680,7 +681,7 @@ export function aggregate({
       const w = weights[s.benchmarkId] ?? 0;
       const list = anchorsOn.get(s.benchmarkId);
       if (w <= 0 || !list) continue;
-      const placed = placeAmong(s.raw, list);
+      const placed = placeAmong(s.raw, list, directionOf.get(s.benchmarkId));
       // A placement on two anchors says less than one on ten.
       const support = Math.min(list.length, 6) / 6;
       sum += placed.overall * w * support;
@@ -717,11 +718,21 @@ export function aggregate({
 export function placeAmong(
   raw: number,
   sorted: { raw: number; overall: number }[],
+  direction?: 'lower',
 ): { overall: number; bound: 'below' | 'above' | null } {
+  // The bound is read in the Overall index, not in the figure. On a measure
+  // the source prints as a risk or an error rate, being under every anchor
+  // is being better than all of them, so the estimate is a floor and not a
+  // ceiling. Nothing triggers this today — the six `lower` measures are all
+  // in Safety, and Safety never anchors — but a capability measure printed
+  // as an error rate would have every badge and card say "at most" where it
+  // means "at least", and nothing would fail (2026-09-26).
+  const ceiling = direction === 'lower' ? 'above' : 'below';
+  const floor = direction === 'lower' ? 'below' : 'above';
   if (raw < sorted[0].raw)
-    return { overall: sorted[0].overall, bound: 'below' };
+    return { overall: sorted[0].overall, bound: ceiling };
   const last = sorted[sorted.length - 1];
-  if (raw > last.raw) return { overall: last.overall, bound: 'above' };
+  if (raw > last.raw) return { overall: last.overall, bound: floor };
   for (let i = 1; i < sorted.length; i++) {
     const a = sorted[i - 1];
     const b = sorted[i];
