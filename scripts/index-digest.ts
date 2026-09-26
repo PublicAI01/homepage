@@ -45,6 +45,33 @@ const { benchmarks, scores: scoresIn } = JSON.parse(
 const named = (id: string) => sourceLabel(benchmarks, id);
 
 /**
+ * Everything this model is scored on, as source ids.
+ *
+ * `via` on a change is recorded by the refresh that first read a source,
+ * so it only marks the models that were on the board the day it arrived.
+ * JevBench was indexed on 2026-09-23 with 67 entrants recorded; the twelve
+ * rows the board itself added two days later carried no `via` and would
+ * have gone out as twelve new models — Cygnet, Instinct, Malkuth 2B and
+ * the rest, each with one figure on one board nobody had heard of on
+ * Friday. A model whose every figure comes from a source this digest is
+ * announcing is that source's backlog, whichever day it landed in it.
+ */
+const sourcesOf = (id: string) =>
+  new Set(
+    scoresIn
+      .filter((s) => s.modelId === id)
+      .map((s) => benchmarks.find((b) => b.id === s.benchmarkId)?.group)
+      .filter((g): g is string => g !== undefined),
+  );
+const broughtByNewSource = (id: string) => {
+  const groups = sourcesOf(id);
+  return groups.size > 0 && [...groups].every((g) => c.newSources.includes(g));
+};
+/** New to the index on its own account, not as a new source's back catalogue. */
+const trulyNew = (m: (typeof c.models)[number]) =>
+  m.kind === 'entered' && !m.via && !broughtByNewSource(m.id);
+
+/**
  * What a new board is, in a sentence a reader who has never heard of it
  * can act on: who publishes it, what it measures, and what it counts for.
  */
@@ -61,7 +88,9 @@ const describeSource = (id: string) => {
   // The models the board listed that the index had not: one line here
   // rather than one bullet each under "new models" (2026-09-16).
   const brought = c.models.filter(
-    (m) => m.kind === 'entered' && m.via === id,
+    (m) =>
+      m.kind === 'entered' &&
+      (m.via === id || (broughtByNewSource(m.id) && sourcesOf(m.id).has(id))),
   ).length;
   const news = brought
     ? ` ${brought} of them are listed on the index for the first time.`
@@ -148,7 +177,14 @@ const bulk = (
     .slice(0, 3)
     .map((m) => m.name)
     .join(', ');
-  return `${list.length} models ${verb} the Overall ranking at once — ${named} and ${list.length - 3} more. A whole group moving together is a change to what ranking requires, or to which boards answered; the method is on the index page.`;
+  // "a change to what ranking requires, or to which boards answered" made
+  // the reader guess which. When nothing stopped answering, it was the
+  // rule, and the mail can say so.
+  const why =
+    c.removedSources.length === 0
+      ? 'A whole group moving together is a change to what ranking requires, not to the models: the method is on the index page.'
+      : 'A whole group moving together is a change to what ranking requires, or to which boards answered; the method is on the index page.';
+  return `${list.length} models ${verb} the Overall ranking at once — ${named} and ${list.length - 3} more. ${why}`;
 };
 // When a group that size joins or leaves, every place below it shifts by
 // about as much, and a rank delta stops meaning "this model moved". Those
@@ -182,7 +218,7 @@ ${moverLines.map((l) => `- ${l}`).join('\n') || '- No moves of three places or m
 ## Models new to the index
 ${
   c.models
-    .filter((m) => m.kind === 'entered' && !m.via)
+    .filter(trulyNew)
     .slice(0, 20)
     .map(line)
     .map((l) => `- ${l}`)
@@ -212,7 +248,7 @@ ${NOTE ? `<p style="margin:0 0 24px;padding:12px 14px;border-left:2px solid #B08
 <h2 style="font-size:16px;margin:0 0 8px">Models new to the index</h2>
 <ul style="padding-left:20px;margin:0 0 24px;color:#D9D7E0">${
   c.models
-    .filter((m) => m.kind === 'entered' && !m.via)
+    .filter(trulyNew)
     .slice(0, 20)
     .map((m) => `<li>${esc(line(m))}</li>`)
     .join('') || '<li>No new models.</li>'
