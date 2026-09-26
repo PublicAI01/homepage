@@ -136,7 +136,12 @@ pnpm exec prettier --write "$D" >>"$LOG" 2>&1
 if git diff --quiet -- "$D"; then
   log "快照没有变化,不提交"; exit 0
 fi
-git add -A >>"$LOG" 2>&1
+# Only what this job produced. The guard above catches a dirty tree, but
+# `git diff` says nothing about a file nobody has added yet, so `git add -A`
+# would have swept an untracked draft sitting in the checkout into the
+# nightly commit and published it — which is how a bug fix once went out
+# inside somebody else's commit (2026-09-16).
+git add -- "$D" public/model-index/logos >>"$LOG" 2>&1
 git commit -q -m "📈 Refresh the model index snapshot
 
 Built and gated on this machine. The pipeline runs in a private
