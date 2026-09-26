@@ -1,5 +1,6 @@
 export const metadata = {
-  title: 'Decisions, a new category on the Index — and what a sealed set is for',
+  title:
+    'Decisions, a new category on the Index — and what a sealed set is for',
   publishedAt: '2026-09-26',
   summary:
     'Routing, classification and calibration now have their own column on the PublicAI Index. The first board in it publishes its own control set, and the control disagrees with the leaderboard.',
@@ -19,7 +20,7 @@ export const metadata = {
 
 Most of what a model does in production is not clever. It is small and repeated: route this request, classify this ticket, decide whether to escalate. The question is not how well a system reasons — it is how often it is right, and whether it knows when it is not.
 
-That has a column on the **[PublicAI Index](/model-index)** now. **Decisions** sits beside Coding, Reasoning and the rest, with two domains: *Routing & classification* and *Calibration*.
+That has a column on the **[PublicAI Index](/model-index)** now. **Decisions** sits beside Coding, Reasoning and the rest, with two domains: _Routing & classification_ and _Calibration_.
 
 # The first board in it keeps a control set
 
@@ -27,11 +28,11 @@ That has a column on the **[PublicAI Index](/model-index)** now. **Decisions** s
 
 Few boards publish the thing that could embarrass them. This one prints it in a column.
 
-| | board rank | public (n=534) | sealed (n=308) | gap |
-| --- | --- | --- | --- | --- |
-| decider-4b v2 | 1 | 83.5% | 34.7% | +48.8 pp |
-| Jev 1.13.0 | 2 | 86.6% | 36.7% | +49.9 pp |
-| GPT-6 Luna | 35 | 99.6% | 95.5% | +4.1 pp |
+|               | board rank | public (n=534) | sealed (n=308) | gap      |
+| ------------- | ---------- | -------------- | -------------- | -------- |
+| decider-4b v2 | 1          | 83.5%          | 34.7%          | +48.8 pp |
+| Jev 1.13.0    | 2          | 86.6%          | 36.7%          | +49.9 pp |
+| GPT-6 Luna    | 35         | 99.6%          | 95.5%          | +4.1 pp  |
 
 79 of the 93 entries lose twenty points or more when the decisions are ones they have not seen. The two at the top lose about half of what they scored.
 
@@ -43,7 +44,7 @@ JevBench's headline score is four axes: Intelligence, Calibration, Speed and Cos
 
 That is a fair thing to rank. It is a procurement question — what a decision costs at a thousand decisions an hour — and for a team choosing a router it may be the only question that matters.
 
-It is not a capability question, so the Index reads the two axes that describe the model and leaves the other two to the reader: **Intelligence** becomes *Routing & classification*, **Calibration** becomes *Calibration*. Price and latency belong to a contract, not to a model.
+It is not a capability question, so the Index reads the two axes that describe the model and leaves the other two to the reader: **Intelligence** becomes _Routing & classification_, **Calibration** becomes _Calibration_. Price and latency belong to a contract, not to a model.
 
 # Knowing that you do not know
 
