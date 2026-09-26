@@ -62,6 +62,15 @@ for repo in $REPOS; do
   BUGSCAN_REPO="$repo" "$SELF_DIR/run.sh" "$@" || rc=1
 done
 
+# Nobody scans the index itself, and nothing else notices when the nightly
+# refresh simply did not run — a shut Mac, an unloaded agent. This job fires
+# at noon whether or not that one did, so it is the one that can tell. Its
+# finding joins the day's digest; a stale index is not a failed scan, so it
+# does not touch rc.
+if [ "${1:-}" != "--dry-run" ]; then
+  "$SELF_DIR/../refresh/watchdog.sh" >>"$LOG" 2>&1 || true
+fi
+
 if [ -s "$DIGEST" ]; then
   # Subject: one clause per repository, from the section titles.
   subject=$(sed -E 's/^【bugscan\/?([^】]*)】/\1:/' "$DIGEST.subjects" \

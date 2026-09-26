@@ -30,3 +30,19 @@ a person; a generation track failing is held back alone, the text index
 ships, and one notice says which.
 
 State and logs: `~/.local/state/publicai-refresh/`.
+
+## watchdog.sh
+
+`daily.sh` 会在刷新跑挂时发信。**没跑**是另一回事:机器关着、LaunchAgent
+被卸了、launchd 没触发——这些不会发出任何声音。原来这一层由 Actions 自己的
+失败通知兜着,而失踪的正是 Actions。
+
+`watchdog.sh` 只做一件事:读线上 API 的 `generatedAt`,超过 36 小时就说话。
+它挂在中午 12 点的 bugscan 上跑——那个任务不依赖刷新有没有跑成。
+
+```
+scripts/refresh/watchdog.sh [--hours 36]
+```
+
+有 `BUGSCAN_DIGEST` 时写进当天的摘要(一天还是一封信),没有时自己发一封。
+三次取不到才报"取不到",一次超时算网络不算陈旧。
