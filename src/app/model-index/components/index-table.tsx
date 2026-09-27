@@ -24,6 +24,7 @@ import { type BoardView, figuresOn, groupBoards } from '../lib/boards';
 import { estimateMark } from '../lib/estimate';
 import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
+import { scopeNote } from '../lib/scope-notes';
 import { SIZE_TIERS, sizeLabel, type SizeTier, tierOf } from '../lib/size';
 import {
   decodeView,
@@ -980,6 +981,20 @@ export default function IndexTable({ tracks, newcomers }: Props) {
           <span aria-hidden>↓</span> Export chart
         </button>
       </div>
+
+      {/*
+        A column can be right and still answer a different question than the
+        one the reader is asking. Decisions is built from accuracy and
+        calibration and not from JevBench's speed and price axes, so the
+        large API models lead a column whose whole subject is what you would
+        run instead of one. Until now that was written only in a blog post
+        (2026-09-26).
+      */}
+      {scopeNote(rankKey) ? (
+        <p className="text-caption mb-3 border-l border-white/12 pl-3 text-[#8E8BA0]">
+          {scopeNote(rankKey)}
+        </p>
+      ) : null}
 
       {/* ---------------- table ---------------- */}
       <div className={cn(PANEL, 'overflow-x-auto')}>

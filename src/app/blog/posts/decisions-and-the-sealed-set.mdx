@@ -18,33 +18,23 @@ export const metadata = {
   ],
 };
 
-**Decisions** is live on the **[PublicAI Index](/model-index)**. It sits beside Coding, Reasoning and the rest of the categories, it ranks 85 models, and it has two domains: [Routing & classification](/model-index?rank=domain%3ARouting%20%26%20classification) and [Calibration](/model-index?rank=domain%3ACalibration).
+**Decisions** is live on the **[PublicAI Index](/model-index)**. It ranks 85 models on the small calls an application makes all day, it sits beside Coding, Reasoning and the rest, and it has two domains: [Routing & classification](/model-index?rank=domain%3ARouting%20%26%20classification) and [Calibration](/model-index?rank=domain%3ACalibration).
 
 ![The Decisions ranking on the PublicAI Index](/images/decisions-sealed-set_table.png)
 
-# What is being measured
+# The calls nobody logs
 
-Most of what a model does in production is not clever. It is small and repeated: which model should take this request, what label does this ticket get, is this one for a human. A decision model is the thing that answers those, usually small, usually cheap, usually running on every request that arrives.
+Which model takes this request. What label this ticket gets. Whether a human should see it. These run on every request that arrives, they are answered by something small and cheap, and when they are wrong nothing says so: the request goes to the weaker model, the answer comes back plausible, and no line in the log claims a better one would have done better. A wrong essay is visible. A wrong route is not.
 
-Twenty-six of the 85 models here have Jev in the name: Open-Jev, SimpleJev, LitJev, OpenSourceJev, Open Alternative Jev, JevAct, JevOne, Djev. One product named a category, and the category filled up with systems built to replace it.
+Which is why the category has two domains and not one. Whether a system is right is _Routing & classification_. Whether it knows when it is not is _Calibration_, and that is the number that decides whether a fallback ever fires. They come apart further than you would expect. BAAI's [bge-reranker-v2-m3](/model-index/m/baai-bge-reranker-v2-m3) scores **5.0** on the first, near the bottom of the board, and **84.2** on the second, above most models that beat it everywhere else. It is almost never the one to ask, and it rarely pretends otherwise. [DeepSeek V4.1 Flash](/model-index/m/deepseek-v4-1-flash) leads Calibration at 95.5, ahead of [GPT-6 Luna](/model-index/m/gpt-6-luna)'s 93.5, having lost to it on accuracy.
 
-Two things are worth knowing about such a system, and they are not the same thing. Whether it is right, which is _Routing & classification_. And whether it knows when it is not, which is _Calibration_.
+# Eighty-two of the eighty-five are on no other board
 
-# Why it matters
+That is the reason this column exists. These systems are small, specialised, and invisible to the general leaderboards, so until now a reader comparing them had nothing here to read. Twenty-six of them have Jev in the name: Open-Jev, SimpleJev, LitJev, OpenSourceJev, Open Alternative Jev, JevAct, JevOne, Djev. One product named a category, and the category filled with systems built to replace it.
 
-A wrong essay is visible. A wrong route is not. The request goes to the cheaper model, the answer comes back plausible, and nothing in the logs says a better model would have done better. These calls fail quietly, at volume, on the hot path.
+The bar for adding a category has not moved: a recognised publisher has to put a table on a public page we can read and link back to. [JevBench](https://benchmarkheaven.com/jev-models), from Benchmark Heaven, did. It is one board, plus one report ✱, and we would rather say that than let a badge strip imply more. So Decisions never enters the Overall index and never anchors an estimate; a model measured only here gets a column and no rank. A second publisher with a table would change that.
 
-Calibration is what makes the failure recoverable. A system that reports low confidence can fall back to a bigger model, or to a person, or ask again. One that is confidently wrong cannot. The two numbers come apart more than you would expect: BAAI's [bge-reranker-v2-m3](/model-index/m/baai-bge-reranker-v2-m3) scores **5.0** on Intelligence, near the bottom of the board, and **84.2** on Calibration, above most of the models that beat it everywhere else. It is almost never the one to ask, and it rarely pretends otherwise. [DeepSeek V4.1 Flash](/model-index/m/deepseek-v4-1-flash) tops Calibration at 95.5, ahead of [GPT-6 Luna](/model-index/m/gpt-6-luna)'s 93.5, having lost to it on Intelligence.
-
-# Why we added it
-
-Because 82 of these 85 systems appear nowhere else on the Index. They are small, specialised and unmeasured by the general leaderboards, so without a column of their own they are invisible here, and a reader comparing them has nothing to read.
-
-The rule for adding a category has not changed: a recognised publisher has to put a table on a public page that we can read and link back to. [JevBench](https://benchmarkheaven.com/jev-models), from Benchmark Heaven, did.
-
-It is one board, and we would rather say so than imply more. Decisions rests on that single source plus one report ✱, so its figures never enter the Overall index and never anchor an estimate for a model measured nowhere else. A system that appears only here gets a column and no rank. When a second publisher posts a table, the column gets sturdier.
-
-# Where the ranking stands today
+# The order today
 
 | #   | model                                                     | Decisions | Overall index |
 | --- | --------------------------------------------------------- | --------- | ------------- |
@@ -56,13 +46,11 @@ It is one board, and we would rather say so than imply more. Decisions rests on 
 | 6   | Instinct                                                  | 59.3      | not ranked    |
 | 7   | [Jev 1.13.0](/model-index/m/jev-1-13-0)                   | 59.3      | not ranked    |
 
-General-purpose models hold the top three. That is not what the board's own headline says, and the difference is worth understanding before you read either.
+General-purpose models hold the top three, and JevBench's own ranking does not, which is worth knowing before reading either. Its headline is four axes: Intelligence, Calibration, Speed and Cost. GPT-6 Luna has the highest Intelligence on the board at 97.4 and its two entries place 31st and 35th there, because by the board's measure it is slow and expensive. For a team paying per decision that may be the only thing that matters. It is not a capability question, so this column takes the two axes that describe the model and leaves price and latency to you, which is also why a large API model can lead a column about what you would run instead of one.
 
-# How to read it, and the sealed set
+# The half you cannot see
 
-JevBench's headline score is four axes: Intelligence, Calibration, Speed and Cost. GPT-6 Luna has the highest Intelligence on the board at 97.4, and its two entries place 31st and 35th there, because by the board's measure it is slow and expensive. That is a fair thing to rank, and for a team paying per decision it may be the only thing that matters. It is not a capability question, so the Index reads the two axes that describe the model and leaves price and latency to the reader.
-
-The board also keeps a control, which is rare and to its credit: 534 public decisions, 308 sealed ones, and a column for the gap.
+The board keeps a control, which is rare and to its credit: 534 public decisions, 308 sealed ones, and a column for the gap.
 
 |               | board rank | public (n=534) | sealed (n=308) | gap      |
 | ------------- | ---------- | -------------- | -------------- | -------- |
@@ -72,9 +60,9 @@ The board also keeps a control, which is rare and to its credit: 534 public deci
 
 Thirty-five entries score 80% or better on the public half. Thirty of them fall under 50% on the sealed one. Sort by the sealed column and the top four are general-purpose models, with the best specialist twenty-nine points behind the fourth.
 
-A gap is not proof of anything by itself. A sealed set can be harder, and a small model tuned for one shape of task can be brittle rather than fitted. But the two figures agree only loosely, so if you are choosing one of these systems, the sealed number is the one to ask for. It is the board's own column, not our inference.
+A gap is not proof of anything by itself: a sealed set can be harder, and a small model tuned for one shape of task can be brittle rather than fitted. But the two figures agree only loosely, so if you are choosing one of these systems, the sealed number is the one to ask for. It is the board's own column, not our inference.
 
-[LargitData's write-up](https://www.largitdata.com/en/blog/jev-system-one-model-open-source-benchmark/) of the same question is indexed in this category too, marked ✱, at a tenth of a board's weight, as every report is. And one more piece of credit: Benchmark Heaven runs a router of its own, and excludes it from its own ranking.
+[LargitData's write-up](https://www.largitdata.com/en/blog/jev-system-one-model-open-source-benchmark/) of the same question is indexed here too, marked ✱, at a tenth of a board's weight, as every report is. And one more piece of credit: Benchmark Heaven runs a router of its own, and excludes it from its own ranking.
 
 **[Open Decisions on the Index →](/model-index?rank=category%3ADecisions)**
 

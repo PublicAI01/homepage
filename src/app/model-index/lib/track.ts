@@ -8,6 +8,7 @@ import {
 } from './aggregate';
 import { groupBoards } from './boards';
 import { familyOf } from './family';
+import { scopeNote } from './scope-notes';
 import { sizeLabel, type SizeTier, tierOf } from './size';
 import {
   BOARD_MEASURE_WEIGHT,
@@ -657,6 +658,7 @@ export function createTrack(input: TrackInput) {
         ? {
             scopeBoards,
             scopeReports,
+            ...(scopeNote(scope) ? { scopeNote: scopeNote(scope) } : {}),
             ...(scopeBoards === 0
               ? {
                   warning: `No recognised board measures ${scopeLabel(scope)} yet. Every figure is from ${scopeReports.join(' and ')} ✱ — a comparison set the publisher chose. Models the publisher left out are absent, not behind; read positions as within that set.`,
