@@ -1,5 +1,6 @@
+import { benchmarks, scores } from '../data';
 import history from '../data/history.json';
-import { diff, type HistoryEntry } from './diff';
+import { backlogOf, diff, type HistoryEntry } from './diff';
 
 export type { Change, Changes, HistoryEntry } from './diff';
 export { diff } from './diff';
@@ -43,7 +44,9 @@ export function changesSince(since: string, minDelta = 3, until?: string) {
  * far as it goes, and saying otherwise would overstate the window.
  *
  * A model that arrived only because a source was added is not counted: it
- * is the source that is new, and it is announced as such.
+ * is the source that is new, and it is announced as such. That holds for
+ * the rows the source adds in the days after it arrived too, which carry
+ * no `via` (see backlogOf).
  */
 export function enteredSince(days = 7) {
   const to = latest();
@@ -54,11 +57,13 @@ export function enteredSince(days = 7) {
     .toISOString()
     .slice(0, 10);
   const from = snapshotAt(cutoff);
+  const c = diff(from, to, cutoff, 3, entries);
+  const backlog = backlogOf(c.newSources, scores, benchmarks);
   return {
     from: from?.date ?? to.date,
     until: to.date,
-    models: diff(from, to, cutoff, 3, entries).models.filter(
-      (m) => m.kind === 'entered' && !m.via,
+    models: c.models.filter(
+      (m) => m.kind === 'entered' && !m.via && !backlog.has(m.id),
     ),
   };
 }

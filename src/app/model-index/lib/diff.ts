@@ -106,6 +106,44 @@ export function appendEntry(
     .slice(-limit);
 }
 
+/**
+ * Models whose every figure comes from one of `sources` — a source's back
+ * catalogue, not new models.
+ *
+ * `via` on a change is written by the refresh that first read a source, so
+ * it marks only the models on the board the day it arrived. The rows a
+ * board itself adds over the following days carry no `via`, and each outlet
+ * that read `entered && !via` as "new model" announced them: JevBench was
+ * indexed on 2026-09-23, and by 2026-09-27 the page's "New this week" named
+ * 22 models of which 11 — Cygnet, Malkuth 2B, Standard One 8B and the rest
+ * — had no figure anywhere but on it. The digest had corrected this for
+ * itself two days earlier; one rule here, so the page and the mail cannot
+ * disagree about what is new again (2026-09-27).
+ *
+ * Pure: takes the snapshot's scores and benchmarks, so the digest script
+ * can call it under plain Node.
+ */
+export function backlogOf(
+  sources: readonly string[],
+  scores: readonly { modelId: string; benchmarkId: string }[],
+  benchmarks: readonly { id: string; group: string }[],
+): Set<string> {
+  const out = new Set<string>();
+  if (sources.length === 0) return out;
+  const fresh = new Set(sources);
+  const groupOf = new Map(benchmarks.map((b) => [b.id, b.group]));
+  // A model is backlog only if it has figures and all of them are fresh:
+  // one figure on an older board is the older board's word that it exists.
+  const seen = new Map<string, boolean>();
+  for (const s of scores) {
+    const g = groupOf.get(s.benchmarkId);
+    if (g === undefined) continue;
+    seen.set(s.modelId, (seen.get(s.modelId) ?? true) && fresh.has(g));
+  }
+  for (const [id, allFresh] of seen) if (allFresh) out.add(id);
+  return out;
+}
+
 export interface Change {
   id: string;
   name: string;

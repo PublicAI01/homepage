@@ -1,9 +1,16 @@
 import { describe, expect, it } from 'vitest';
 
+import { benchmarks, scores } from '../data';
 import type { Benchmark } from '../data/types';
 import { sourceLabel } from './boards';
-import { changesSince, snapshots } from './changes';
-import { appendEntry, diff, type HistoryEntry, lineage } from './diff';
+import { changesSince, enteredSince, snapshots } from './changes';
+import {
+  appendEntry,
+  backlogOf,
+  diff,
+  type HistoryEntry,
+  lineage,
+} from './diff';
 import { fallbackBadge } from './weights';
 
 const entry = (
@@ -205,6 +212,60 @@ describe('a source arriving with its back catalogue', () => {
     expect(
       c.models.filter((m) => m.kind === 'entered' && !m.via).map((m) => m.id),
     ).toEqual(['n']);
+  });
+
+  it('treats rows the source adds later, with no via, as its backlog too', () => {
+    // Day 3 again, but the safety board has since listed r on its own; r
+    // has no figure anywhere else. n is on an older board as well.
+    const later: HistoryEntry = {
+      ...d3,
+      models: { ...d3.models, r: d3.models.p },
+    };
+    const c = diff(d1, later, '2026-09-14', 3, all);
+    const snapshot = {
+      benchmarks: [
+        { id: 'a', group: 'a' },
+        { id: 'safety-harm', group: 'safety' },
+        { id: 'safety-bias', group: 'safety' },
+      ],
+      scores: [
+        { modelId: 'n', benchmarkId: 'a' },
+        { modelId: 'n', benchmarkId: 'safety-harm' },
+        { modelId: 'r', benchmarkId: 'safety-harm' },
+        { modelId: 'r', benchmarkId: 'safety-bias' },
+      ],
+    };
+    const backlog = backlogOf(
+      c.newSources,
+      snapshot.scores,
+      snapshot.benchmarks,
+    );
+    expect([...backlog]).toEqual(['r']);
+    expect(
+      c.models
+        .filter((m) => m.kind === 'entered' && !m.via && !backlog.has(m.id))
+        .map((m) => m.id),
+    ).toEqual(['n']);
+    // Nothing new: nothing is backlog, whatever it is scored on.
+    expect(backlogOf([], snapshot.scores, snapshot.benchmarks).size).toBe(0);
+  });
+
+  it('keeps the page’s "New this week" to models an older source also lists', () => {
+    // Over the real snapshot: every model the page calls new has a figure
+    // on a source that was there at the start of the week. On 2026-09-27
+    // eleven of the twenty-two named had none.
+    const { from, until, models } = enteredSince(7);
+    const fresh = new Set(changesSince(from, 3, until).newSources);
+    const groupOf = new Map(benchmarks.map((b) => [b.id, b.group]));
+    for (const m of models) {
+      const groups = scores
+        .filter((s) => s.modelId === m.id)
+        .map((s) => groupOf.get(s.benchmarkId));
+      expect(
+        groups.some((g) => g !== undefined && !fresh.has(g)),
+        `${m.id} is only on ${[...new Set(groups)].join(', ')}`,
+      ).toBe(true);
+    }
   });
 
   it('keeps the record through a same-day rerun that saw no new source', () => {

@@ -3,7 +3,11 @@ import { join } from 'node:path';
 
 import type { Benchmark } from '../src/app/model-index/data/types.ts';
 import { sourceLabel } from '../src/app/model-index/lib/boards.ts';
-import { diff, type HistoryEntry } from '../src/app/model-index/lib/diff.ts';
+import {
+  backlogOf,
+  diff,
+  type HistoryEntry,
+} from '../src/app/model-index/lib/diff.ts';
 import { OVERALL } from '../src/app/model-index/lib/weights.ts';
 
 /**
@@ -44,18 +48,7 @@ const { benchmarks, scores: scoresIn } = JSON.parse(
 };
 const named = (id: string) => sourceLabel(benchmarks, id);
 
-/**
- * Everything this model is scored on, as source ids.
- *
- * `via` on a change is recorded by the refresh that first read a source,
- * so it only marks the models that were on the board the day it arrived.
- * JevBench was indexed on 2026-09-23 with 67 entrants recorded; the twelve
- * rows the board itself added two days later carried no `via` and would
- * have gone out as twelve new models — Cygnet, Instinct, Malkuth 2B and
- * the rest, each with one figure on one board nobody had heard of on
- * Friday. A model whose every figure comes from a source this digest is
- * announcing is that source's backlog, whichever day it landed in it.
- */
+/** Everything this model is scored on, as source ids. */
 const sourcesOf = (id: string) =>
   new Set(
     scoresIn
@@ -63,13 +56,14 @@ const sourcesOf = (id: string) =>
       .map((s) => benchmarks.find((b) => b.id === s.benchmarkId)?.group)
       .filter((g): g is string => g !== undefined),
   );
-const broughtByNewSource = (id: string) => {
-  const groups = sourcesOf(id);
-  return groups.size > 0 && [...groups].every((g) => c.newSources.includes(g));
-};
-/** New to the index on its own account, not as a new source's back catalogue. */
+/**
+ * New to the index on its own account, not as a new source's back
+ * catalogue. The rule is backlogOf in lib/diff.ts, shared with the page's
+ * "New this week" since 2026-09-27; it used to live here alone, and the
+ * page named the JevBench backlog as new models while this mail did not.
+ */
 const trulyNew = (m: (typeof c.models)[number]) =>
-  m.kind === 'entered' && !m.via && !broughtByNewSource(m.id);
+  m.kind === 'entered' && !m.via && !backlog.has(m.id);
 
 /**
  * What a new board is, in a sentence a reader who has never heard of it
@@ -90,7 +84,7 @@ const describeSource = (id: string) => {
   const brought = c.models.filter(
     (m) =>
       m.kind === 'entered' &&
-      (m.via === id || (broughtByNewSource(m.id) && sourcesOf(m.id).has(id))),
+      (m.via === id || (backlog.has(m.id) && sourcesOf(m.id).has(id))),
   ).length;
   const news = brought
     ? ` ${brought} of them are listed on the index for the first time.`
@@ -109,6 +103,7 @@ const sinceDate =
 const before = entries.filter((e) => e.date <= sinceDate);
 const from = before[before.length - 1] ?? entries[0];
 const c = diff(from, to, sinceDate, 3, entries);
+const backlog = backlogOf(c.newSources, scoresIn, benchmarks);
 
 /**
  * New leaderboards only.
