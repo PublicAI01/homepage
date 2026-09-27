@@ -1003,18 +1003,26 @@ export default function IndexTable({ tracks, newcomers }: Props) {
             <tr className="text-micro bg-white/4 tracking-[0.1em] text-[#78758A] uppercase">
               <th className="w-10 px-2.5 py-3 font-medium">#</th>
               <th className="px-2.5 py-3 font-medium">Model</th>
-              <th
-                className={cn(
-                  'px-2.5 py-3 text-right font-medium',
-                  rankKey.level === 'overall' && 'text-white',
-                )}>
-                Index
-              </th>
-              {rankKey.level !== 'overall' ? (
+              {/*
+                One score column, and it is the one the table is ranked by.
+                Ranked by a category, the Overall column was a dash on most
+                rows: 63% of the top hundred under Coding, 78% under Safety,
+                96% under Decisions, each dash explaining itself only on
+                hover. A column header promises every row has one. The models
+                that do have an Overall index now carry it as a chip beside
+                their name, where three of them in eighty-five reads as a
+                fact about those three rather than as a gap in the other
+                eighty-two (Steven, 2026-09-26).
+              */}
+              {rankKey.level === 'overall' ? (
+                <th className="px-2.5 py-3 text-right font-medium text-white">
+                  Index
+                </th>
+              ) : (
                 <th className="max-w-28 px-2.5 py-3 text-right leading-tight font-medium whitespace-normal text-white">
                   {rankLabel(rankKey)}
                 </th>
-              ) : null}
+              )}
               {/* On a phone the badges would force a sideways scroll; the card has them. */}
               <th className="hidden px-2.5 py-3 font-medium sm:table-cell">
                 Sources
@@ -1180,6 +1188,21 @@ function Row({
               NEW
             </span>
           ) : null}
+          {/* Only where there is one: no dash, no empty column. */}
+          {rankKey.level !== 'overall' && (row.ranked || row.estimate) ? (
+            <span
+              className="text-micro ml-2 rounded border border-white/10 px-1 py-px font-mono text-[#8E8BA0]"
+              title={
+                row.ranked
+                  ? 'Overall index: this model’s weighted score across every board that builds it.'
+                  : `Overall estimate ✱ — no Overall score. Placed by its figures on ${row.estimate!.measures} measure${row.estimate!.measures > 1 ? 's' : ''} among ${row.estimate!.anchors} models that have one. Never ranked.`
+              }>
+              Overall{' '}
+              {row.ranked
+                ? fmt(row.score)
+                : `${estimateMark(row.estimate!.bound)}${fmt(row.estimate!.score)}`}
+            </span>
+          ) : null}
           {!inScope ? (
             <span
               className="text-micro ml-2 rounded border border-white/12 px-1 py-px text-[#78758A]"
@@ -1198,31 +1221,33 @@ function Row({
             </span>
           ) : null}
         </td>
-        <td
-          className={cn(
-            'px-2.5 py-2.5 text-right font-mono font-semibold',
-            row.ranked ? INDEX_TONE : 'text-[#78758A]',
-          )}>
-          {row.score === null && row.estimate ? (
-            <span
-              className="text-[#B9B7C4]"
-              title={`Estimate — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position.${row.estimate.bound === 'below' ? ' It trailed every such model there, so this is a ceiling.' : row.estimate.bound === 'above' ? ' It led every such model there, so this is a floor.' : ''} Never ranked.`}>
-              {estimateMark(row.estimate.bound)}
-              {fmt(row.estimate.score)}
-            </span>
-          ) : rankKey.level === 'overall' && !row.ranked ? (
-            // Below the coverage threshold the number is a floor, not a
-            // placing, and printing it invites the comparison the missing
-            // rank refuses (Steven, 2026-09-23).
-            <span
-              className="text-[#78758A]"
-              title={`Not placed: ${Math.round(row.measuredWeight * 100)}% of the Overall's weighting has been measured, and the index places a model at ${Math.round(MIN_OVERALL_WEIGHT * 100)}% or more. Every figure it does have is on its page.`}>
-              —
-            </span>
-          ) : (
-            fmt(row.score)
-          )}
-        </td>
+        {rankKey.level !== 'overall' ? null : (
+          <td
+            className={cn(
+              'px-2.5 py-2.5 text-right font-mono font-semibold',
+              row.ranked ? INDEX_TONE : 'text-[#78758A]',
+            )}>
+            {row.score === null && row.estimate ? (
+              <span
+                className="text-[#B9B7C4]"
+                title={`Estimate — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position.${row.estimate.bound === 'below' ? ' It trailed every such model there, so this is a ceiling.' : row.estimate.bound === 'above' ? ' It led every such model there, so this is a floor.' : ''} Never ranked.`}>
+                {estimateMark(row.estimate.bound)}
+                {fmt(row.estimate.score)}
+              </span>
+            ) : rankKey.level === 'overall' && !row.ranked ? (
+              // Below the coverage threshold the number is a floor, not a
+              // placing, and printing it invites the comparison the missing
+              // rank refuses (Steven, 2026-09-23).
+              <span
+                className="text-[#78758A]"
+                title={`Not placed: ${Math.round(row.measuredWeight * 100)}% of the Overall's weighting has been measured, and the index places a model at ${Math.round(MIN_OVERALL_WEIGHT * 100)}% or more. Every figure it does have is on its page.`}>
+                —
+              </span>
+            ) : (
+              fmt(row.score)
+            )}
+          </td>
+        )}
         {rankKey.level !== 'overall' ? (
           <td className="px-2.5 py-2.5 text-right font-mono text-white">
             {fmt(keyOf(row, rankKey))}
