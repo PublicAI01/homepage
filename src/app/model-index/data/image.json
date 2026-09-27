@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T06:03:03.526Z",
+  "generatedAt": "2026-09-27T06:03:08.268Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
-      "retrievedAt": "2026-09-26",
+      "retrievedAt": "2026-09-27",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-image.ico",
       "category": "Text-to-image",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-09-26",
+      "retrievedAt": "2026-09-27",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-image.png",
       "category": "Text-to-image",
@@ -39,7 +39,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-09-26",
+      "retrievedAt": "2026-09-27",
       "metric": "elo",
       "logo": "/model-index/logos/arena-image-edit.png",
       "category": "Image editing",
@@ -269,17 +269,6 @@
       }
     },
     {
-      "id": "gemini-3-pro-image-2k-nano-banana-pro",
-      "name": "Gemini-3-pro-image-2k (nano-banana-pro)",
-      "org": "Google",
-      "access": {
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      }
-    },
-    {
       "id": "cosmos3-super-text2image",
       "name": "Cosmos3 Super Text2Image",
       "org": "NVIDIA",
@@ -492,8 +481,8 @@
       "org": "Stability.ai"
     },
     {
-      "id": "hunyuanimage-2-1",
-      "name": "HunyuanImage 2.1",
+      "id": "hunyuan-image-2-1",
+      "name": "Hunyuan Image 2.1",
       "org": "Tencent",
       "access": {
         "official": {
@@ -684,11 +673,6 @@
       }
     },
     {
-      "id": "playground-v3-beta",
-      "name": "Playground v3 (beta)",
-      "org": "Playground AI"
-    },
-    {
       "id": "dall-e-3",
       "name": "DALL·E 3",
       "org": "OpenAI",
@@ -726,17 +710,6 @@
       "org": "Stability.ai"
     },
     {
-      "id": "hunyuanimage-3-0-instruct-fal",
-      "name": "HunyuanImage 3.0 Instruct (Fal)",
-      "org": "Tencent",
-      "access": {
-        "official": {
-          "name": "Tencent Hunyuan",
-          "url": "https://cloud.tencent.com/product/hunyuan"
-        }
-      }
-    },
-    {
       "id": "imagen-3-0-generate",
       "name": "Imagen 3.0 Generate",
       "org": "Google",
@@ -748,8 +721,8 @@
       }
     },
     {
-      "id": "hunyuan-image-3-0",
-      "name": "Hunyuan Image 3.0",
+      "id": "hunyuan-image-3-0-instruct",
+      "name": "Hunyuan Image 3.0 Instruct",
       "org": "Tencent",
       "access": {
         "official": {
@@ -802,6 +775,11 @@
         }
       }
     },
+    {
+      "id": "playground-v3-beta",
+      "name": "Playground v3 (beta)",
+      "org": "Playground AI"
+    },
     { "id": "recraft-v3", "name": "Recraft V3", "org": "Recraft" },
     {
       "id": "seededit-3-0",
@@ -853,28 +831,6 @@
       "org": "Stability.ai"
     },
     {
-      "id": "seedream-4-high-res-fal",
-      "name": "Seedream 4 High Res Fal",
-      "org": "ByteDance",
-      "access": {
-        "official": {
-          "name": "Volcengine Doubao",
-          "url": "https://www.volcengine.com/product/doubao"
-        }
-      }
-    },
-    {
-      "id": "seedream-4-fal",
-      "name": "Seedream 4 Fal",
-      "org": "ByteDance",
-      "access": {
-        "official": {
-          "name": "Volcengine Doubao",
-          "url": "https://www.volcengine.com/product/doubao"
-        }
-      }
-    },
-    {
       "id": "ideogram-4-0-fast",
       "name": "Ideogram 4.0 Fast",
       "org": "Ideogram"
@@ -920,6 +876,17 @@
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "seedream-4-high-res-fal",
+      "name": "Seedream 4 High Res Fal",
+      "org": "ByteDance",
+      "access": {
+        "official": {
+          "name": "Volcengine Doubao",
+          "url": "https://www.volcengine.com/product/doubao"
         }
       }
     },
@@ -986,17 +953,6 @@
       "org": "Recraft"
     },
     { "id": "recraft-v4-1", "name": "Recraft V4.1", "org": "Recraft" },
-    {
-      "id": "seedream-4",
-      "name": "Seedream 4",
-      "org": "ByteDance",
-      "access": {
-        "official": {
-          "name": "Volcengine Doubao",
-          "url": "https://www.volcengine.com/product/doubao"
-        }
-      }
-    },
     {
       "id": "seedream-4-5",
       "name": "Seedream 4.5",
@@ -1724,20 +1680,6 @@
       "sourceLabel": "Cosmos3-Super-Text2Image (Agentic)"
     },
     {
-      "modelId": "gemini-3-pro-image-2k-nano-banana-pro",
-      "benchmarkId": "arena-text-to-image",
-      "raw": 1247,
-      "stderr": 3,
-      "sourceLabel": "gemini-3-pro-image-2k (nano-banana-pro)"
-    },
-    {
-      "modelId": "gemini-3-pro-image-2k-nano-banana-pro",
-      "benchmarkId": "arena-image-edit",
-      "raw": 1390,
-      "stderr": 3,
-      "sourceLabel": "gemini-3-pro-image-2k (nano-banana-pro)"
-    },
-    {
       "modelId": "cosmos3-super-text2image",
       "benchmarkId": "aa-text-to-image",
       "raw": 985,
@@ -2193,7 +2135,7 @@
       "sourceLabel": "Stable Diffusion 2.1Open Weights"
     },
     {
-      "modelId": "hunyuanimage-2-1",
+      "modelId": "hunyuan-image-2-1",
       "benchmarkId": "aa-text-to-image",
       "raw": 886,
       "stderr": 9,
@@ -2489,23 +2431,16 @@
     {
       "modelId": "nano-banana-pro-gemini-3-pro-image",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1234,
-      "stderr": 5,
-      "sourceLabel": "gemini-3-pro-image-preview (nano-banana-pro)"
+      "raw": 1247,
+      "stderr": 3,
+      "sourceLabel": "gemini-3-pro-image-2k (nano-banana-pro)"
     },
     {
       "modelId": "nano-banana-pro-gemini-3-pro-image",
       "benchmarkId": "arena-image-edit",
-      "raw": 1385,
+      "raw": 1390,
       "stderr": 3,
-      "sourceLabel": "gemini-3-pro-image-preview (nano-banana-pro)"
-    },
-    {
-      "modelId": "playground-v3-beta",
-      "benchmarkId": "aa-text-to-image",
-      "raw": 809,
-      "stderr": 8,
-      "sourceLabel": "Playground v3 (beta)"
+      "sourceLabel": "gemini-3-pro-image-2k (nano-banana-pro)"
     },
     {
       "modelId": "dall-e-3",
@@ -2550,13 +2485,6 @@
       "sourceLabel": "Stable Diffusion 3 MediumOpen Weights"
     },
     {
-      "modelId": "hunyuanimage-3-0-instruct-fal",
-      "benchmarkId": "aa-text-to-image",
-      "raw": 963,
-      "stderr": 9,
-      "sourceLabel": "HunyuanImage 3.0 Instruct (Fal)Open Weights"
-    },
-    {
       "modelId": "imagen-3-0-generate",
       "benchmarkId": "arena-text-to-image",
       "raw": 1058,
@@ -2564,14 +2492,21 @@
       "sourceLabel": "imagen-3.0-generate-002"
     },
     {
-      "modelId": "hunyuan-image-3-0",
+      "modelId": "hunyuan-image-3-0-instruct",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 963,
+      "stderr": 9,
+      "sourceLabel": "HunyuanImage 3.0 Instruct (Fal)Open Weights"
+    },
+    {
+      "modelId": "hunyuan-image-3-0-instruct",
       "benchmarkId": "arena-text-to-image",
       "raw": 1150,
       "stderr": 3,
       "sourceLabel": "hunyuan-image-3.0"
     },
     {
-      "modelId": "hunyuan-image-3-0",
+      "modelId": "hunyuan-image-3-0-instruct",
       "benchmarkId": "arena-image-edit",
       "raw": 1302,
       "stderr": 3,
@@ -2625,6 +2560,13 @@
       "raw": 915,
       "stderr": 9,
       "sourceLabel": "Imagen 3 (v002)"
+    },
+    {
+      "modelId": "playground-v3-beta",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 809,
+      "stderr": 8,
+      "sourceLabel": "Playground v3 (beta)"
     },
     {
       "modelId": "recraft-v3",
@@ -2704,34 +2646,6 @@
       "sourceLabel": "Stable Diffusion 3.5 MediumOpen Weights"
     },
     {
-      "modelId": "seedream-4-high-res-fal",
-      "benchmarkId": "arena-text-to-image",
-      "raw": 1113,
-      "stderr": 3,
-      "sourceLabel": "seedream-4-high-res-fal"
-    },
-    {
-      "modelId": "seedream-4-high-res-fal",
-      "benchmarkId": "arena-image-edit",
-      "raw": 1217,
-      "stderr": 3,
-      "sourceLabel": "seedream-4-high-res-fal"
-    },
-    {
-      "modelId": "seedream-4-fal",
-      "benchmarkId": "arena-text-to-image",
-      "raw": 1117,
-      "stderr": 7,
-      "sourceLabel": "seedream-4-fal"
-    },
-    {
-      "modelId": "seedream-4-fal",
-      "benchmarkId": "arena-image-edit",
-      "raw": 1210,
-      "stderr": 6,
-      "sourceLabel": "seedream-4-fal"
-    },
-    {
       "modelId": "ideogram-4-0-fast",
       "benchmarkId": "aa-text-to-image",
       "raw": 969,
@@ -2779,6 +2693,20 @@
       "raw": 1148,
       "stderr": 4,
       "sourceLabel": "imagen-ultra-4.0-generate-001"
+    },
+    {
+      "modelId": "seedream-4-high-res-fal",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1113,
+      "stderr": 3,
+      "sourceLabel": "seedream-4-high-res-fal"
+    },
+    {
+      "modelId": "seedream-4-high-res-fal",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1217,
+      "stderr": 3,
+      "sourceLabel": "seedream-4-high-res-fal"
     },
     {
       "modelId": "ideogram-4-0",
@@ -2851,6 +2779,20 @@
       "sourceLabel": "Seedream 4.0"
     },
     {
+      "modelId": "seedream-4-0",
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1140,
+      "stderr": 7,
+      "sourceLabel": "seedream-4-2k"
+    },
+    {
+      "modelId": "seedream-4-0",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1271,
+      "stderr": 7,
+      "sourceLabel": "seedream-4-2k"
+    },
+    {
       "modelId": "recraft-v4-1-flash",
       "benchmarkId": "arena-text-to-image",
       "raw": 1100,
@@ -2898,20 +2840,6 @@
       "raw": 990,
       "stderr": 9,
       "sourceLabel": "Recraft V4.1"
-    },
-    {
-      "modelId": "seedream-4",
-      "benchmarkId": "arena-text-to-image",
-      "raw": 1140,
-      "stderr": 7,
-      "sourceLabel": "seedream-4-2k"
-    },
-    {
-      "modelId": "seedream-4",
-      "benchmarkId": "arena-image-edit",
-      "raw": 1271,
-      "stderr": 7,
-      "sourceLabel": "seedream-4-2k"
     },
     {
       "modelId": "seedream-4-5",
@@ -3352,7 +3280,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-26",
+      "retrievedAt": "2026-09-27",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -3360,7 +3288,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-26",
+      "retrievedAt": "2026-09-27",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
