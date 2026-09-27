@@ -22,6 +22,8 @@ export const metadata = {
 
 ![The Decisions ranking on the PublicAI Index](/images/decisions-sealed-set_table.png)
 
+Three rows carry an Overall chip. Those three are the only systems here that any other board on the Index has measured.
+
 # The calls nobody logs
 
 Which model takes this request. What label this ticket gets. Whether a human should see it. These run on every request that arrives, they are answered by something small and cheap, and when they are wrong nothing says so: the request goes to the weaker model, the answer comes back plausible, and no line in the log claims a better one would have done better. A wrong essay is visible. A wrong route is not.
@@ -36,15 +38,15 @@ The bar for adding a category has not moved: a recognised publisher has to put a
 
 # The order today
 
-| #   | model                                                     | Decisions | Overall index |
-| --- | --------------------------------------------------------- | --------- | ------------- |
-| 1   | [DeepSeek V4.1 Flash](/model-index/m/deepseek-v4-1-flash) | 73.3      | 62.4          |
-| 2   | [GPT-6 Luna](/model-index/m/gpt-6-luna)                   | 72.7      | 55.7          |
-| 3   | GPT-5.6 Luna                                              | 70.6      | 52.9          |
-| 4   | Djev                                                      | 70.0      | not ranked    |
-| 5   | Gemma 4 31B IT (Autoloops)                                | 62.7      | not ranked    |
-| 6   | Instinct                                                  | 59.3      | not ranked    |
-| 7   | [Jev 1.13.0](/model-index/m/jev-1-13-0)                   | 59.3      | not ranked    |
+| #   | model                                                     | Decisions |
+| --- | --------------------------------------------------------- | --------- |
+| 1   | [DeepSeek V4.1 Flash](/model-index/m/deepseek-v4-1-flash) | 73.3      |
+| 2   | [GPT-6 Luna](/model-index/m/gpt-6-luna)                   | 72.7      |
+| 3   | GPT-5.6 Luna                                              | 70.6      |
+| 4   | Djev                                                      | 70.0      |
+| 5   | Gemma 4 31B IT (Autoloops)                                | 62.7      |
+| 6   | Instinct                                                  | 59.3      |
+| 7   | [Jev 1.13.0](/model-index/m/jev-1-13-0)                   | 59.3      |
 
 General-purpose models hold the top three, and JevBench's own ranking does not, which is worth knowing before reading either. Its headline is four axes: Intelligence, Calibration, Speed and Cost. GPT-6 Luna has the highest Intelligence on the board at 97.4 and its two entries place 31st and 35th there, because by the board's measure it is slow and expensive. For a team paying per decision that may be the only thing that matters. It is not a capability question, so this column takes the two axes that describe the model and leaves price and latency to you, which is also why a large API model can lead a column about what you would run instead of one.
 
