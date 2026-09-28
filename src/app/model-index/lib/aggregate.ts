@@ -34,8 +34,8 @@ import type { Benchmark, Model, Score } from '../data/types';
  */
 
 /** Mean of the board, in standard-deviation units, rescaled so 50 is average. */
-const T_SCORE_MEAN = 50;
-const T_SCORE_SD = 15;
+export const T_SCORE_MEAN = 50;
+export const T_SCORE_SD = 15;
 
 export interface NormalizedScore {
   benchmarkId: string;
@@ -158,7 +158,7 @@ const clamp = (x: number, lo: number, hi: number) =>
  * than SOFT_EDGE (80.009 at most, printed 80.0): order survives, weight
  * does not.
  */
-const MAX_Z = 2;
+export const MAX_Z = 2;
 const SOFT_EDGE = 0.0006;
 const soften = (z: number) =>
   Math.abs(z) <= MAX_Z

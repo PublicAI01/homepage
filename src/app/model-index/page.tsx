@@ -453,6 +453,16 @@ export default function ModelIndex() {
                       ]),
                     ) as Record<TrackId, React.ReactNode>)}
                   />
+                  {/* The shares are a hover away from their reasons; the
+                      whole method was a page away from nowhere until this
+                      link existed (2026-09-28). */}
+                  <p className="text-micro mt-3 border-t border-white/8 pt-3">
+                    <a
+                      href="/model-index/method"
+                      className="text-p1 underline underline-offset-2">
+                      How the index is built →
+                    </a>
+                  </p>
                 </Card>
               </aside>
             </div>
