@@ -115,6 +115,12 @@ done
 if [ "$DRY" -eq 1 ]; then log "--dry-run:到此为止,没有改动 $SITE"; exit 0; fi
 
 cd "$SITE" || die "进不去 $SITE" "仓库不在"
+# The snapshot is data, but it is data the site's own tests read: a test
+# that counted how many models carry part of the Overall's weighting went
+# red at nineteen, and the deploy of a perfectly good snapshot died in CI
+# while this script reported success (2026-09-28). Three seconds here, and
+# a bad morning is a local failure with the site untouched.
+pnpm exec vitest run >>"$LOG" 2>&1 || die "首页仓的测试没过,快照没推" "测试没过"
 git diff --quiet && git diff --cached --quiet || die "首页仓工作区有未提交改动,不敢动" "工作区不干净"
 git pull -q --ff-only origin main 2>>"$LOG" || die "首页仓 pull 不动" "仓库分叉"
 
