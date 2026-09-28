@@ -18,6 +18,12 @@ set -uo pipefail
 
 SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 NOTIFY="$SELF_DIR/../bugscan/notify.sh"
+# Cache-busted, and asking the edge not to serve from cache either. The API
+# is sent with `max-age=3600, stale-while-revalidate=86400`, so a Cloudflare
+# node may keep answering with a day-old copy while it refreshes in the
+# background — which is how this check mailed "37 hours" about an index that
+# had been refreshed fourteen hours earlier (2026-09-27). A freshness check
+# that reads a cache is checking the cache.
 API="${INDEX_API:-https://publicai.io/model-index/api?limit=1}"
 HOURS=36
 [ "${1:-}" = "--hours" ] && HOURS="$2"
@@ -36,7 +42,9 @@ say() {
 
 # Three tries: one timeout at noon is the network, not a stale index.
 for i in 1 2 3; do
-  body=$(curl -fsS --max-time 20 "$API" 2>/dev/null) && break
+  sep='?'; case "$API" in *\?*) sep='&' ;; esac
+  body=$(curl -fsS --max-time 20 -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' \
+    "$API${sep}_cb=$(date +%s)$i" 2>/dev/null) && break
   body=''
   [ "$i" -lt 3 ] && sleep 20
 done

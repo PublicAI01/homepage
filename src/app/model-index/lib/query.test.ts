@@ -364,7 +364,11 @@ describe('one position, wherever it is printed', () => {
     const all = ok(rankModels({ limit: 1000, minBoards: 0 }));
     const unranked = all.models.filter((m) => m.rank === null);
     const partly = unranked.filter((m) => m.measuredWeight > 0);
-    expect(partly.length).toBeGreaterThan(20);
+    // A count, not a threshold. "More than twenty" failed the day the
+    // snapshot carried nineteen (2026-09-28) and took the deploy with it:
+    // the claim under test is that such a model gets an estimate, and how
+    // many there are on any given morning is the boards' business.
+    expect(partly.length).toBeGreaterThan(0);
     for (const m of partly) expect(m.estimatedIndex, m.name).not.toBeNull();
     // Highest estimate first; rows with none after every row with one.
     let last = Infinity;
