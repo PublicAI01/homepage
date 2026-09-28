@@ -2,7 +2,7 @@ export const metadata = {
   title: 'Introducing the PublicAI Index: the LLM benchmark aggregator',
   publishedAt: '2026-09-07',
   summary:
-    'One score from every recognised public leaderboard, standardized onto one scale, with launch-post figures marked ✱ and kept out of the headline. Built from everyone’s benchmarks and none of our own — and queryable by agents over MCP.',
+    'One score from every recognised public leaderboard, standardized onto one scale, with launch-post figures marked ✱ and kept out of the headline. Built from everyone’s benchmarks and none of our own, and queryable by agents over MCP.',
   image: '/images/publicai-index-launch_cover.png',
   keywords: [
     'PublicAI Index',
@@ -17,11 +17,11 @@ export const metadata = {
 
 Model evaluation has fragmented into dozens of leaderboards, each with its own harness, and every launch ships with a table the vendor chose. A single benchmark is easy to target: a score that tops one board says little about the next.
 
-Today we are launching the **[PublicAI Index](/model-index)** — the LLM benchmark aggregator. It is the world’s most comprehensive and robust LLM index, and it is built from everyone’s benchmarks and none of our own.
+Today we are launching the **[PublicAI Index](/model-index)**, the LLM benchmark aggregator. It is the world’s most comprehensive and robust LLM index, and it is built from everyone’s benchmarks and none of our own.
 
 # We evaluate nothing
 
-PublicAI runs no benchmarks. That is the point. Every figure on the Index is read from a public, first-party page — [LMArena](https://arena.ai/leaderboard/text), [Artificial Analysis](https://artificialanalysis.ai/leaderboards/models), [Terminal-Bench](https://www.tbench.ai/leaderboard), [ARC-AGI-2](https://arcprize.org/leaderboard), [LiveBench](https://livebench.ai/), [LiveCodeBench](https://livecodebench.github.io/leaderboard.html), [Aider](https://aider.chat/docs/leaderboards/), [BFCL](https://gorilla.cs.berkeley.edu/leaderboard.html), [OSWorld](https://osworld-v1.xlang.ai/), [MMMU](https://mmmu-benchmark.github.io/), [Kagi](https://help.kagi.com/kagi/ai/llm-benchmark.html), [SimpleBench](https://simple-bench.com/), [Vals.ai](https://www.vals.ai/benchmarks) — and every figure links back to it. We normalize and weight; we do not score. No conflict of interest, nothing to tune to.
+PublicAI runs no benchmarks. That is the point. Every figure on the Index is read from a public, first-party page. [LMArena](https://arena.ai/leaderboard/text), [Artificial Analysis](https://artificialanalysis.ai/leaderboards/models), [Terminal-Bench](https://www.tbench.ai/leaderboard), [ARC-AGI-2](https://arcprize.org/leaderboard), [LiveBench](https://livebench.ai/), [LiveCodeBench](https://livecodebench.github.io/leaderboard.html), [Aider](https://aider.chat/docs/leaderboards/), [BFCL](https://gorilla.cs.berkeley.edu/leaderboard.html), [OSWorld](https://osworld-v1.xlang.ai/), [MMMU](https://mmmu-benchmark.github.io/), [Kagi](https://help.kagi.com/kagi/ai/llm-benchmark.html), [SimpleBench](https://simple-bench.com/), [Vals.ai](https://www.vals.ai/benchmarks). Every figure links back to it. We normalize and weight; we do not score. No conflict of interest, nothing to tune to.
 
 # Six rules
 
@@ -29,16 +29,16 @@ PublicAI runs no benchmarks. That is the point. Every figure on the Index is rea
 2. **Shrink, never impute.** A missing figure stays missing. Thin evidence is pulled toward 50, so one generous board cannot lift a barely-tested model.
 3. **Weight by a published scheme.** Each board’s share of the Overall index is fixed and printed beside the table, with its reason.
 4. **Two publishers to rank.** A model enters the Overall ranking once boards from two independent publishers have scored it. A domain ranks on its own board evidence.
-5. **Reports ✱ stay out of the headline.** Launch posts and blogs are indexed too — they are how a brand-new model shows up before the boards catch it — but they are marked ✱, shape domain columns at a tenth of a board’s weight, and never enter the Overall index.
-6. **Estimate the rest, and say so.** A model with no Overall score is placed among models that have one and shown as ~55✱ — never ranked.
+5. **Reports ✱ stay out of the headline.** Launch posts and blogs are indexed too, because they are how a brand-new model shows up before the boards catch it, but they are marked ✱, shape domain columns at a tenth of a board’s weight, and never enter the Overall index.
+6. **Estimate the rest, and say so.** A model with no Overall score is placed among models that have one and shown as ~55✱, and never ranked.
 
 # What is in it today
 
-Fifteen recognised leaderboards from fourteen publishers, three reports ✱, 804 models, 51 domains under seven categories — from agentic coding, tool use and computer use to legal, finance, tax, medical and cybersecurity, with [Vals.ai](https://www.vals.ai/benchmarks)’s twenty-two expert-built evaluations giving the verticals real third-party measurement. Rank by category or domain; filter by model line, by size class (small ≤ 15B, medium, large, very large > 1T, undisclosed — counted from the weights on Hugging Face, never estimated), by coverage. Every row opens into a card: scores by domain, how to call the model, and every source figure with the label the source printed. Every view has a link and a share card that show exactly what you filtered.
+Fifteen recognised leaderboards from fourteen publishers, three reports ✱, 804 models, 51 domains under seven categories, from agentic coding, tool use and computer use to legal, finance, tax, medical and cybersecurity, with [Vals.ai](https://www.vals.ai/benchmarks)’s twenty-two expert-built evaluations giving the verticals real third-party measurement. Rank by category or domain; filter by model line, by size class (small ≤ 15B, medium, large, very large > 1T, undisclosed, all counted from the weights on Hugging Face and never estimated), by coverage. Every row opens into a card: scores by domain, how to call the model, and every source figure with the label the source printed. Every view has a link and a share card that show exactly what you filtered.
 
 # For agents, too
 
-The Index is served over MCP and a JSON API, so an agent can ask “which model, and how do I call it?” and get the same answer a person reads on the page — every score with its sources, every model with the way to reach it.
+The Index is served over MCP and a JSON API, so an agent can ask “which model, and how do I call it?” and get the same answer a person reads on the page: every score with its sources, every model with the way to reach it.
 
 ```json
 {
@@ -52,12 +52,12 @@ The Index is served over MCP and a JSON API, so an agent can ask “which model,
 
 The ranking moves when the boards move, which is not on a schedule you can guess. Three ways to hear about it without checking the page:
 
-- **Index Weekly** — one email on Mondays: the week's biggest moves, models that entered the ranking, and sources added. Nothing else. [Sign up on the Index](/model-index).
-- **[RSS](/model-index/feed.xml)** — the same changes as a feed.
-- **A change feed for agents** — `?since=2026-09-01` on the JSON API, or the `whats_new` tool over MCP, so a poller reads what moved instead of re-reading the whole ranking.
+- **Index Weekly**, one email on Mondays: the week's biggest moves, models that entered the ranking, and sources added. Nothing else. [Sign up on the Index](/model-index).
+- **[RSS](/model-index/feed.xml)**, the same changes as a feed.
+- **A change feed for agents**: `?since=2026-09-01` on the JSON API, or the `whats_new` tool over MCP, so a poller reads what moved instead of re-reading the whole ranking.
 
 # What is next
 
-More recognised boards toward twenty — [τ²-bench](https://github.com/sierra-research/tau2-bench), [SEAL](https://scale.com/leaderboard), [Epoch AI](https://epoch.ai/benchmarks), HealthBench and others as they publish tables — each bringing its own domains; more reports as new models land; and the same rules throughout. The weighting is stated so it can be disagreed with. Tell us where we are wrong.
+More recognised boards toward twenty: [τ²-bench](https://github.com/sierra-research/tau2-bench), [SEAL](https://scale.com/leaderboard), [Epoch AI](https://epoch.ai/benchmarks), HealthBench and others as they publish tables, each bringing its own domains; more reports as new models land; and the same rules throughout. The weighting is stated so it can be disagreed with. Tell us where we are wrong.
 
 **[Open the PublicAI Index →](/model-index)**
