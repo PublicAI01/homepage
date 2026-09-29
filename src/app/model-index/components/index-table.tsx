@@ -21,7 +21,7 @@ import {
   type NormalizedScore,
 } from '../lib/aggregate';
 import { type BoardView, figuresOn, groupBoards } from '../lib/boards';
-import { estimateMark } from '../lib/estimate';
+import { estimatedPosition,estimateMark } from '../lib/estimate';
 import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
 import { scopeNote } from '../lib/scope-notes';
@@ -496,6 +496,10 @@ export default function IndexTable({ tracks, newcomers }: Props) {
   }, [rows, query, family, minBoards, rankKey, sizeTier, onlyNew, isNew]);
 
   const rankedCount = rows.filter((r) => r.ranked).length;
+  const rankedScores = useMemo(
+    () => rows.filter((r) => r.ranked).map((r) => r.score!),
+    [rows],
+  );
   const shown = filtered.slice(0, PAGE);
   // Where each row stands in the scope — the same rule as query.ts's
   // scopePositions, so the badge, the API and the model page print the
@@ -1038,6 +1042,11 @@ export default function IndexTable({ tracks, newcomers }: Props) {
                 rank={rankOf.get(row.model.id)}
                 isNew={isNew.has(row.model.id)}
                 position={positionOf.get(row.model.id)}
+                approx={
+                  row.estimate?.bound === null
+                    ? estimatedPosition(row.estimate.score, rankedScores)
+                    : undefined
+                }
                 inScope={eligible(row, rankKey)}
                 scopeCovered={scopeCovered(row)}
                 scopeBoardTotal={scopeBoardTotal}
@@ -1084,6 +1093,7 @@ function Row({
   row,
   rank,
   position,
+  approx,
   inScope,
   rankKey,
   taxonomy,
@@ -1102,6 +1112,7 @@ function Row({
   row: AggregateRow;
   rank: number | undefined;
   position: number | undefined;
+  approx: number | undefined;
   inScope: boolean;
   rankKey: RankKey;
   taxonomy: [string, string[]][];
@@ -1141,6 +1152,12 @@ function Row({
         <td className="text-g2 px-2.5 py-2.5 font-mono">
           {position !== undefined ? (
             position
+          ) : rankKey.level === 'overall' && approx !== undefined ? (
+            <span
+              className="text-[#B9B7C4]"
+              title={`Approximate — not ranked yet. Its Overall estimate (~${fmt(row.estimate!.score)}) would stand about #${approx} among ranked models. Takes no place in the numbering.`}>
+              ~{approx}
+            </span>
           ) : rankKey.level === 'overall' ? (
             <span
               title={`Provisional — fewer than ${MIN_SOURCES} independent publishers`}>

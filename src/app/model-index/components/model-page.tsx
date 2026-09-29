@@ -361,7 +361,7 @@ export default async function ModelPage({
                     ? `${Math.round(model.measuredWeight * 100)}% of the Overall’s weighting measured — ${Math.round(MIN_OVERALL_WEIGHT * 100)}% places a model`
                     : 'Only one publisher has scored it'}
                   {model.estimatedIndex
-                    ? ` — looks like ${estimateWords(model.estimatedIndex.bound)} ${model.estimatedIndex.score}`
+                    ? ` — looks like ${estimateWords(model.estimatedIndex.bound)} ${model.estimatedIndex.score}${model.estimatedIndex.position ? `, around #${model.estimatedIndex.position} if ranked` : ''}`
                     : ''}
                 </p>
               </>

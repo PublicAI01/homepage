@@ -7,6 +7,7 @@ import {
   compareScores,
 } from './aggregate';
 import { groupBoards } from './boards';
+import { estimatedPosition } from './estimate';
 import { familyOf } from './family';
 import { scopeNote } from './scope-notes';
 import { sizeLabel, type SizeTier, tierOf } from './size';
@@ -69,6 +70,8 @@ export interface ModelSummary {
     anchors: number;
     /** `below`: trailed every anchor, score is a ceiling; `above`: led every anchor, score is a floor. */
     bound: 'below' | 'above' | null;
+    /** Where the estimate would stand among ranked models; null for a ceiling or floor. Approximate, never a rank. */
+    position: number | null;
   } | null;
   /** The figure the list is ranked by, when a scope other than Overall was asked for. */
   scopeScore?: number | null;
@@ -263,6 +266,7 @@ export function createTrack(input: TrackInput) {
     rankOf: WITHOUT.rankOf,
   };
   const { rows, rankOf } = DEFAULT;
+  const rankedScores = rows.filter((r) => r.ranked).map((r) => r.score!);
   const benchById = new Map(benchmarks.map((b) => [b.id, b]));
   const sources = groupBoards(benchmarks);
 
@@ -394,7 +398,14 @@ export function createTrack(input: TrackInput) {
       index: r.ranked ? r1(r.score) : null,
       estimatedIndex:
         r.score === null && r.estimate
-          ? { ...r.estimate, score: r1(r.estimate.score)! }
+          ? {
+              ...r.estimate,
+              score: r1(r.estimate.score)!,
+              position:
+                r.estimate.bound === null
+                  ? estimatedPosition(r.estimate.score, rankedScores)
+                  : null,
+            }
           : null,
       ...(scope.level !== 'overall'
         ? { scopeScore: r1(scopeScore(r, scope)) }

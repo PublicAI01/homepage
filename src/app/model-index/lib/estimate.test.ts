@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { estimateMark, estimateWords } from './estimate';
+import { estimatedPosition, estimateMark, estimateWords } from './estimate';
 
 describe('estimateMark', () => {
   it('never uses the report mark, and keeps the bound', () => {
@@ -20,5 +20,15 @@ describe('estimateMark', () => {
     expect(estimateWords(null)).toBe('about');
     expect(estimateWords('below')).toBe('at most');
     expect(estimateWords('above')).toBe('at least');
+  });
+});
+
+describe('estimatedPosition', () => {
+  it('is one plus the ranked scores above it, at the printed decimal', () => {
+    const ranked = [69.6, 65.5, 62.9, 62.9, 62.34, 60];
+    expect(estimatedPosition(62.7, ranked)).toBe(5);
+    expect(estimatedPosition(62.9, ranked)).toBe(3);
+    expect(estimatedPosition(70, ranked)).toBe(1);
+    expect(estimatedPosition(10, ranked)).toBe(7);
   });
 });

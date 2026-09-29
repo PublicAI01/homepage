@@ -24,3 +24,17 @@ export function estimateWords(bound: EstimateBound): string {
   if (bound === 'above') return 'at least';
   return 'about';
 }
+
+/**
+ * Where an estimate would stand among the ranked models: one plus the number
+ * of ranked scores above it, compared at the one decimal that is printed. An
+ * approximation, so it is only ever printed with `~`, and it takes no place
+ * in the numbering: the ranked rows keep the numbers they have.
+ */
+export function estimatedPosition(
+  score: number,
+  rankedScores: number[],
+): number {
+  const r1 = (n: number) => Math.round(n * 10) / 10;
+  return 1 + rankedScores.filter((s) => r1(s) > r1(score)).length;
+}
