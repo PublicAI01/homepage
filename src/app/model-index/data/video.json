@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T07:42:13.004Z",
+  "generatedAt": "2026-09-29T22:27:13.513Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-09-28",
+      "retrievedAt": "2026-09-29",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-09-28",
+      "retrievedAt": "2026-09-29",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-video.png",
       "category": "Text-to-video",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-09-28",
+      "retrievedAt": "2026-09-29",
       "metric": "elo",
       "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
@@ -73,8 +73,12 @@
         }
       }
     },
+    {
+      "id": "hidream-o1-video-1-0",
+      "name": "HiDream O1 Video 1.0",
+      "org": "HiDream"
+    },
     { "id": "happyhorse-1-0", "name": "HappyHorse 1.0", "org": "Alibaba-ATH" },
-    { "id": "hidream-o1-video", "name": "HiDream O1 Video", "org": "HiDream" },
     { "id": "kling-o1-pro", "name": "Kling O1 Pro", "org": "KlingAI" },
     {
       "id": "seedance-v1-lite",
@@ -472,6 +476,13 @@
       "sourceLabel": "hailuo-02-standard"
     },
     {
+      "modelId": "hidream-o1-video-1-0",
+      "benchmarkId": "aa-image-to-video",
+      "raw": 1174,
+      "stderr": 10,
+      "sourceLabel": "HiDream-O1-Video-1.0"
+    },
+    {
       "modelId": "happyhorse-1-0",
       "benchmarkId": "aa-text-to-video",
       "raw": 1119,
@@ -491,13 +502,6 @@
       "raw": 1083,
       "stderr": 7,
       "sourceLabel": "HappyHorse-1.0"
-    },
-    {
-      "modelId": "hidream-o1-video",
-      "benchmarkId": "aa-image-to-video",
-      "raw": 1174,
-      "stderr": 10,
-      "sourceLabel": "HiDream-O1-Video"
     },
     {
       "modelId": "kling-o1-pro",
@@ -1260,7 +1264,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-28",
+      "retrievedAt": "2026-09-29",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1268,7 +1272,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-28",
+      "retrievedAt": "2026-09-29",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
