@@ -121,7 +121,12 @@ cd "$SITE" || die "进不去 $SITE" "仓库不在"
 # while this script reported success (2026-09-28). Three seconds here, and
 # a bad morning is a local failure with the site untouched.
 pnpm exec vitest run >>"$LOG" 2>&1 || die "首页仓的测试没过,快照没推" "测试没过"
-git diff --quiet && git diff --cached --quiet || die "首页仓工作区有未提交改动,不敢动" "工作区不干净"
+# Only what this job writes has to be clean. Someone's draft in another file
+# is not ours to refuse over (2026-09-29: a half-written bugscan script
+# blocked the night's snapshot); the commit below names its paths, so it
+# cannot pick that draft up either.
+git diff --cached --quiet && git diff --quiet -- "$D" public/model-index/logos \
+  || die "首页仓里快照目录有未提交改动,不敢动" "工作区不干净"
 git pull -q --ff-only origin main 2>>"$LOG" || die "首页仓 pull 不动" "仓库分叉"
 
 for f in index image video; do
@@ -156,7 +161,7 @@ the same three gates the workflow applies.${held:+
 
 Held back at the gate, still on the previous copy:$held}
 
-Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>" >>"$LOG" 2>&1 \
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>" -- "$D" public/model-index/logos >>"$LOG" 2>&1 \
   || die "提交失败" "提交挂了"
 git push -q origin main >>"$LOG" 2>&1 || die "推送失败" "推送挂了"
 log "已推送 $(git rev-parse --short HEAD)"
