@@ -539,18 +539,38 @@ COMMIT
 # 开完 PR 一定要把工作区拨回 main:下一轮 run.sh 见到非 main 会直接跳过,
 # 而那会是一次**安静的不扫** —— 每天照常跑,一次都没扫,报告上看不出来。
 if [ "${PUSH_MODE:-main}" = 'pr' ]; then
-  branch="bugscan-$DAY"        # 不带斜杠:tansu 的 ref 规矩,`a` 和 `a/b` 不能共存
+  # ── 一天跑第二轮时,分支名不能撞 ────────────────────────────────────────
+  #
+  # 原来是 `git switch -c "$branch" || git switch "$branch"`。同一天的第二轮里
+  # `-c` 会失败(分支已存在),于是**切到了上一轮那个分支**:刚做完的那个 commit
+  # 留在 main 上没人认领,`push -f` 把上一轮的分支原样再推一遍,`gh pr create` 因为
+  # PR 已存在而失败 —— 日志只说「创建失败,分支已推」,听起来像只差最后一步。
+  # 2026-09-30 真发生了:第二轮那 20 个文件、173 行,过了全部四道闸和复审,
+  # 然后成了一个 reflog 里的悬空提交,而 PR 上挂的还是第一轮的东西。
+  #
+  # 现在:分支名被占了就往后加序号,谁都不覆盖谁。**绝不 force-push 到一个已经
+  # 有人在看的分支上。**
   base=$(git rev-parse --abbrev-ref HEAD)
-  if git switch -q -c "$branch" 2>>"$LOG" || git switch -q "$branch" 2>>"$LOG"; then :; else
+  branch="bugscan-$DAY"        # 不带斜杠:tansu 的 ref 规矩,`a` 和 `a/b` 不能共存
+  n=1
+  while git show-ref -q --verify "refs/heads/$branch" \
+     || git ls-remote --exit-code -q --heads origin "$branch" >/dev/null 2>&1; do
+    n=$((n + 1)); branch="bugscan-$DAY-$n"
+  done
+  if ! git switch -q -c "$branch" 2>>"$LOG"; then
     log "开不了分支 $branch"; exit 1
   fi
-  if git push -qf origin "$branch" 2>>"$LOG"; then
+  if git push -q origin "$branch" 2>>"$LOG"; then
+    # gh 的错误原样留下来。`|| echo ''` 把它吞了,于是「PR 已存在」和「没登录」
+    # 和「没网」在日志里长得一模一样,而它们要做的事完全不同。
+    pr_err="$STATE/$DAY.pr.err"
     url=$(gh pr create --base "$base" --head "$branch" \
       --title "🐛 bugscan 自动修复 $NFIX 条($DAY)" \
       --body "$(printf '模型:%s · 扫描 P0=%s P1=%s P2=%s · 跳过 %s · %s 行\n闸:禁改路径 / 规模 / %s 项检查 / 独立复审 全过\n\n%s\n\n---\n扫描报告 %s\n修复报告 %s' \
         "$MODEL" "$P0" "$P1" "$P2" "$NSKIP" "$lines" "${#GATE_STEPS[@]}" "$(sed -n '1,120p' "$FIX_OUT")" "$SCAN_OUT" "$FIX_OUT")" \
-      2>>"$LOG" || echo '')
-    log "已开 PR ${url:-(创建失败,分支已推)}"
+      2>"$pr_err" || echo '')
+    [ -n "$url" ] || log "gh pr create 失败:$(tr '\n' ' ' <"$pr_err" | head -c 300)"
+    log "已开 PR ${url:-(创建失败,分支 $branch 已推)}"
     { echo "修了 $NFIX 处,开了 PR,等你合:"; echo "${url:-分支 $branch 已推,PR 没建成,见 $LOG}"; echo
       [ -n "$(skipped_summary)" ] && { echo "另有 $NSKIP 处没自动修:"; echo; skipped_summary; }
       echo; echo "修复报告:$FIX_OUT"; } \
