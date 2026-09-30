@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T06:02:33.328Z",
+  "generatedAt": "2026-09-30T21:59:28.692Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -8,7 +8,7 @@
       "independent": true,
       "url": "https://arena.ai/leaderboard/text",
       "retrievedAt": "2026-09-30",
-      "snapshot": "8,528,723 votes across 409 models",
+      "snapshot": "8,602,501 votes across 410 models",
       "metric": "elo",
       "logo": "/model-index/logos/lmarena.png",
       "category": "Human preference",
@@ -3181,7 +3181,7 @@
     },
     {
       "id": "hypernova-60b-high-based-on-gpt-oss-120b",
-      "name": "HyperNova 60B (high, based on gpt-oss-120b)",
+      "name": "HyperNova 60B (High, Based on gpt-oss-120b)",
       "org": "Multiverse Computing",
       "size": { "paramsB": 120, "source": "name" }
     },
@@ -3615,7 +3615,7 @@
     },
     {
       "id": "nex-n2-pro-based-on-qwen3-5-397b-a17b",
-      "name": "Nex-N2-Pro (based on Qwen3.5-397B-A17B)",
+      "name": "Nex-N2-Pro (Based on Qwen3.5-397B-A17B)",
       "org": "Nex AGI",
       "size": { "paramsB": 397, "activeB": 17, "source": "name" }
     },
@@ -5035,7 +5035,7 @@
         "openrouter": {
           "id": "xiaomi/mimo-v2.6-flash",
           "url": "https://openrouter.ai/xiaomi/mimo-v2.6-flash",
-          "contextLength": 1048576,
+          "contextLength": 1050000,
           "inputPerM": 0.14,
           "outputPerM": 0.28,
           "listedAt": "2026-09-21",
@@ -6758,8 +6758,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -8464,6 +8464,17 @@
       "size": { "paramsB": 9, "source": "name" }
     },
     {
+      "id": "gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "org": "Google",
+      "access": {
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
       "id": "instinct-dual-4b",
       "name": "Instinct Dual 4B",
       "org": "Other",
@@ -8526,7 +8537,7 @@
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
           "inputPerM": 0.01,
-          "outputPerM": 1.28,
+          "outputPerM": 0.131,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
         },
@@ -8831,8 +8842,8 @@
           "id": "tencent/hy4-preview",
           "url": "https://openrouter.ai/tencent/hy4-preview",
           "contextLength": 1048576,
-          "inputPerM": 0.834,
-          "outputPerM": 2.501,
+          "inputPerM": 0.751,
+          "outputPerM": 2.251,
           "listedAt": "2026-08-28",
           "modalities": ["text"]
         },
@@ -9073,8 +9084,8 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.3,
-          "outputPerM": 1.2,
+          "inputPerM": 0.02,
+          "outputPerM": 0.396,
           "listedAt": "2026-09-10",
           "modalities": ["text", "image"]
         },
@@ -9644,7 +9655,7 @@
     },
     {
       "id": "quasar-438b-max-based-on-glm-5-2",
-      "name": "Quasar 438B (max, based on GLM-5.2)",
+      "name": "Quasar 438B (Max, Based on GLM-5.2)",
       "org": "Multiverse Computing",
       "size": { "paramsB": 438, "source": "name" }
     },
@@ -10001,8 +10012,8 @@
           "id": "z-ai/glm-5.1",
           "url": "https://openrouter.ai/z-ai/glm-5.1",
           "contextLength": 204800,
-          "inputPerM": 1.4,
-          "outputPerM": 4.4,
+          "inputPerM": 0.965,
+          "outputPerM": 3.032,
           "listedAt": "2026-04-07",
           "modalities": ["text"]
         },
@@ -10083,7 +10094,7 @@
           "id": "z-ai/glm-5.2",
           "url": "https://openrouter.ai/z-ai/glm-5.2",
           "contextLength": 1048576,
-          "inputPerM": 0.3,
+          "inputPerM": 0.624,
           "outputPerM": 3.99,
           "listedAt": "2026-06-16",
           "modalities": ["text"]
@@ -13731,8 +13742,8 @@
     {
       "modelId": "muse-spark-1-1",
       "benchmarkId": "lmarena",
-      "raw": 1491,
-      "stderr": 5,
+      "raw": 1492,
+      "stderr": 4,
       "sourceLabel": "muse-spark-1.1"
     },
     {
@@ -13740,14 +13751,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1208,
       "stderr": 26,
-      "sourceLabel": "Muse Spark 1.1 (xhigh)"
+      "sourceLabel": "Muse Spark 1.1 (Xhigh)"
     },
     {
       "modelId": "muse-spark-1-1",
       "benchmarkId": "aa-briefcase",
       "raw": 848,
       "stderr": 9,
-      "sourceLabel": "Muse Spark 1.1 (xhigh)"
+      "sourceLabel": "Muse Spark 1.1 (Xhigh)"
     },
     {
       "modelId": "muse-spark-1-1",
@@ -14127,7 +14138,7 @@
     {
       "modelId": "muse-spark-1-2",
       "benchmarkId": "lmarena",
-      "raw": 1496,
+      "raw": 1494,
       "stderr": 10,
       "sourceLabel": "muse-spark-1.2 (xHigh)"
     },
@@ -14136,14 +14147,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1482,
       "stderr": 25,
-      "sourceLabel": "Muse Spark 1.2 (xhigh)"
+      "sourceLabel": "Muse Spark 1.2 (Xhigh)"
     },
     {
       "modelId": "muse-spark-1-2",
       "benchmarkId": "aa-briefcase",
       "raw": 1333,
       "stderr": 8,
-      "sourceLabel": "Muse Spark 1.2 (xhigh)"
+      "sourceLabel": "Muse Spark 1.2 (Xhigh)"
     },
     {
       "modelId": "muse-spark-1-2",
@@ -14323,8 +14334,8 @@
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "lmarena",
-      "raw": 1494,
-      "stderr": 7,
+      "raw": 1495,
+      "stderr": 6,
       "sourceLabel": "muse-spark-1.3-max"
     },
     {
@@ -14338,14 +14349,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1672,
       "stderr": 22,
-      "sourceLabel": "Muse Spark 1.3 (max)"
+      "sourceLabel": "Muse Spark 1.3 (Max)"
     },
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "aa-briefcase",
       "raw": 1586,
       "stderr": 9.5,
-      "sourceLabel": "Muse Spark 1.3 (max)"
+      "sourceLabel": "Muse Spark 1.3 (Max)"
     },
     {
       "modelId": "muse-spark-1-3",
@@ -14649,7 +14660,7 @@
     {
       "modelId": "qwen1-5-72b-chat",
       "benchmarkId": "lmarena",
-      "raw": 1234,
+      "raw": 1233,
       "stderr": 5,
       "sourceLabel": "qwen1.5-72b-chat"
     },
@@ -15793,14 +15804,14 @@
     {
       "modelId": "oasst-pythia-12b",
       "benchmarkId": "lmarena",
-      "raw": 1024,
+      "raw": 1023,
       "stderr": 11,
       "sourceLabel": "oasst-pythia-12b"
     },
     {
       "modelId": "nvidia-nemotron-3-super-120b-a12b",
       "benchmarkId": "lmarena",
-      "raw": 1360,
+      "raw": 1361,
       "stderr": 7,
       "sourceLabel": "nvidia-nemotron-3-super-120b-a12b"
     },
@@ -15852,14 +15863,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 436,
       "stderr": 26,
-      "sourceLabel": "HyperNova 60B 2605 (high, based on gpt-oss-120b)"
+      "sourceLabel": "HyperNova 60B 2605 (High, Based on gpt-oss-120b)"
     },
     {
       "modelId": "hypernova-60b-high-based-on-gpt-oss-120b",
       "benchmarkId": "aa-briefcase",
       "raw": 228,
       "stderr": 10,
-      "sourceLabel": "HyperNova 60B 2605 (high, based on gpt-oss-120b)"
+      "sourceLabel": "HyperNova 60B 2605 (High, Based on gpt-oss-120b)"
     },
     {
       "modelId": "gpt-oss-120b",
@@ -15879,7 +15890,7 @@
       "benchmarkId": "aa-gdpval",
       "raw": 596,
       "stderr": 24,
-      "sourceLabel": "gpt-oss-120b (high)"
+      "sourceLabel": "gpt-oss-120b (High)"
     },
     {
       "modelId": "gpt-oss-120b",
@@ -16372,14 +16383,14 @@
     {
       "modelId": "vicuna-13b",
       "benchmarkId": "lmarena",
-      "raw": 1142,
+      "raw": 1141,
       "stderr": 7,
       "sourceLabel": "vicuna-13b"
     },
     {
       "modelId": "wizardlm-13b",
       "benchmarkId": "lmarena",
-      "raw": 1150,
+      "raw": 1149,
       "stderr": 9,
       "sourceLabel": "wizardlm-13b"
     },
@@ -16494,7 +16505,7 @@
     {
       "modelId": "nvidia-nemotron-3-nano-30b-a3b-bf16",
       "benchmarkId": "lmarena",
-      "raw": 1313,
+      "raw": 1314,
       "stderr": 5,
       "sourceLabel": "nvidia-nemotron-3-nano-30b-a3b-bf16"
     },
@@ -16921,14 +16932,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1091,
       "stderr": 24,
-      "sourceLabel": "Nex-N2-Pro (based on Qwen3.5-397B-A17B)"
+      "sourceLabel": "Nex-N2-Pro (Based on Qwen3.5-397B-A17B)"
     },
     {
       "modelId": "nex-n2-pro-based-on-qwen3-5-397b-a17b",
       "benchmarkId": "aa-briefcase",
       "raw": 935,
       "stderr": 9,
-      "sourceLabel": "Nex-N2-Pro (based on Qwen3.5-397B-A17B)"
+      "sourceLabel": "Nex-N2-Pro (Based on Qwen3.5-397B-A17B)"
     },
     {
       "modelId": "qwen3-5-9b-jev-like-data-mix-v2",
@@ -18424,7 +18435,7 @@
     {
       "modelId": "dola-seed-2-0-pro",
       "benchmarkId": "lmarena",
-      "raw": 1456,
+      "raw": 1457,
       "stderr": 3,
       "sourceLabel": "dola-seed-2.0-pro"
     },
@@ -18704,7 +18715,7 @@
     {
       "modelId": "ring-flash-2-0",
       "benchmarkId": "lmarena",
-      "raw": 1322,
+      "raw": 1323,
       "stderr": 7,
       "sourceLabel": "ring-flash-2.0"
     },
@@ -19340,7 +19351,7 @@
       "benchmarkId": "aa-gdpval",
       "raw": 354,
       "stderr": 25,
-      "sourceLabel": "Nova 2.0 Lite (high)"
+      "sourceLabel": "Nova 2.0 Lite (High)"
     },
     {
       "modelId": "nova-2-lite",
@@ -19475,7 +19486,7 @@
       "benchmarkId": "aa-gdpval",
       "raw": 456,
       "stderr": 24,
-      "sourceLabel": "Nova 2.0 Pro Preview (medium)"
+      "sourceLabel": "Nova 2.0 Pro Preview (Medium)"
     },
     {
       "modelId": "palm-2",
@@ -20738,7 +20749,7 @@
     {
       "modelId": "kimi-k2-5-instant",
       "benchmarkId": "lmarena",
-      "raw": 1430,
+      "raw": 1431,
       "stderr": 7,
       "sourceLabel": "kimi-k2.5-instant"
     },
@@ -21428,7 +21439,7 @@
       "modelId": "mimo-v2-6-flash",
       "benchmarkId": "lmarena",
       "raw": 1454,
-      "stderr": 9,
+      "stderr": 8,
       "sourceLabel": "mimo-v2.6-flash"
     },
     {
@@ -22342,7 +22353,7 @@
       "benchmarkId": "aa-gdpval",
       "raw": 326,
       "stderr": 24,
-      "sourceLabel": "gpt-oss-20b (high)"
+      "sourceLabel": "gpt-oss-20b (High)"
     },
     {
       "modelId": "gpt-oss-20b",
@@ -22511,7 +22522,7 @@
     {
       "modelId": "reka-flash-21b-online",
       "benchmarkId": "lmarena",
-      "raw": 1234,
+      "raw": 1233,
       "stderr": 7,
       "sourceLabel": "reka-flash-21b-20240226-online"
     },
@@ -22986,7 +22997,7 @@
     {
       "modelId": "gemma-4-26b-a4b",
       "benchmarkId": "lmarena",
-      "raw": 1438,
+      "raw": 1437,
       "stderr": 7,
       "sourceLabel": "gemma-4-26b-a4b"
     },
@@ -23296,8 +23307,8 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "lmarena",
-      "raw": 1438,
-      "stderr": 6,
+      "raw": 1439,
+      "stderr": 5,
       "sourceLabel": "qwen3.8-27b"
     },
     {
@@ -23309,16 +23320,16 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1409,
-      "stderr": 26,
-      "sourceLabel": "Qwen3.8 27B (xhigh)"
+      "raw": 1411,
+      "stderr": 24,
+      "sourceLabel": "Qwen3.8 27B (Xhigh)"
     },
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "aa-briefcase",
-      "raw": 1400,
+      "raw": 1401,
       "stderr": 8,
-      "sourceLabel": "Qwen3.8 27B (xhigh)"
+      "sourceLabel": "Qwen3.8 27B (Xhigh)"
     },
     {
       "modelId": "qwen3-8-27b",
@@ -24134,7 +24145,7 @@
     {
       "modelId": "nvidia-nemotron-3-ultra-550b-a55b-nvfp4",
       "benchmarkId": "lmarena",
-      "raw": 1425,
+      "raw": 1426,
       "stderr": 7,
       "sourceLabel": "nvidia-nemotron-3-ultra-550b-a55b-nvfp4"
     },
@@ -24418,7 +24429,7 @@
     {
       "modelId": "granite-4-2-3b",
       "benchmarkId": "lmarena",
-      "raw": 1292,
+      "raw": 1289,
       "stderr": 12,
       "sourceLabel": "granite-4.2-3b"
     },
@@ -24506,7 +24517,7 @@
     {
       "modelId": "fastchat-t5-3b",
       "benchmarkId": "lmarena",
-      "raw": 993,
+      "raw": 992,
       "stderr": 12,
       "sourceLabel": "fastchat-t5-3b"
     },
@@ -24611,7 +24622,7 @@
     {
       "modelId": "chatglm3-6b",
       "benchmarkId": "lmarena",
-      "raw": 1057,
+      "raw": 1056,
       "stderr": 12,
       "sourceLabel": "chatglm3-6b"
     },
@@ -24696,7 +24707,7 @@
     {
       "modelId": "llama-3-70b-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1277,
+      "raw": 1276,
       "stderr": 4,
       "sourceLabel": "llama-3-70b-instruct"
     },
@@ -26311,7 +26322,7 @@
     {
       "modelId": "grok-3-mini",
       "benchmarkId": "lmarena",
-      "raw": 1364,
+      "raw": 1363,
       "stderr": 5,
       "sourceLabel": "grok-3-mini-high"
     },
@@ -26598,14 +26609,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1524,
       "stderr": 24,
-      "sourceLabel": "Kimi K3 (max)"
+      "sourceLabel": "Kimi K3 (Max)"
     },
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-briefcase",
       "raw": 1505,
       "stderr": 7.5,
-      "sourceLabel": "Kimi K3 (max)"
+      "sourceLabel": "Kimi K3 (Max)"
     },
     {
       "modelId": "kimi-k3",
@@ -26887,7 +26898,7 @@
     {
       "modelId": "mistral-large-3",
       "benchmarkId": "lmarena",
-      "raw": 1413,
+      "raw": 1414,
       "stderr": 3,
       "sourceLabel": "mistral-large-3"
     },
@@ -27504,14 +27515,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 218,
       "stderr": 27,
-      "sourceLabel": "o3-mini (high)"
+      "sourceLabel": "o3-mini (High)"
     },
     {
       "modelId": "o3-mini",
       "benchmarkId": "aa-briefcase",
       "raw": 143,
       "stderr": 10.5,
-      "sourceLabel": "o3-mini (high)"
+      "sourceLabel": "o3-mini (High)"
     },
     {
       "modelId": "o3-mini",
@@ -28416,14 +28427,14 @@
     {
       "modelId": "olmo-3-1-32b-think",
       "benchmarkId": "lmarena",
-      "raw": 1287,
+      "raw": 1286,
       "stderr": 7,
       "sourceLabel": "olmo-3.1-32b-think"
     },
     {
       "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1334,
+      "raw": 1333,
       "stderr": 4,
       "sourceLabel": "llama-3.1-405b-instruct-fp8"
     },
@@ -29927,7 +29938,7 @@
     {
       "modelId": "nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
       "benchmarkId": "lmarena",
-      "raw": 1347,
+      "raw": 1349,
       "stderr": 6,
       "sourceLabel": "nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4"
     },
@@ -30214,14 +30225,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1185,
       "stderr": 22,
-      "sourceLabel": "Gemini 3.5 Flash (high)"
+      "sourceLabel": "Gemini 3.5 Flash (High)"
     },
     {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 872,
       "stderr": 7,
-      "sourceLabel": "Gemini 3.5 Flash (high)"
+      "sourceLabel": "Gemini 3.5 Flash (High)"
     },
     {
       "modelId": "gemini-3-5-flash",
@@ -30437,8 +30448,8 @@
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "lmarena",
-      "raw": 1456,
-      "stderr": 5,
+      "raw": 1454,
+      "stderr": 4,
       "sourceLabel": "gemini-3.5-flash-lite"
     },
     {
@@ -31020,7 +31031,7 @@
     {
       "modelId": "mistral-medium-3-5",
       "benchmarkId": "lmarena",
-      "raw": 1426,
+      "raw": 1427,
       "stderr": 6,
       "sourceLabel": "mistral-medium-3.5"
     },
@@ -31549,8 +31560,8 @@
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "lmarena",
-      "raw": 1482,
-      "stderr": 5,
+      "raw": 1483,
+      "stderr": 4,
       "sourceLabel": "gemini-3.6-flash-high"
     },
     {
@@ -31558,14 +31569,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1265,
       "stderr": 24,
-      "sourceLabel": "Gemini 3.6 Flash (high)"
+      "sourceLabel": "Gemini 3.6 Flash (High)"
     },
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 950,
       "stderr": 8,
-      "sourceLabel": "Gemini 3.6 Flash (high)"
+      "sourceLabel": "Gemini 3.6 Flash (High)"
     },
     {
       "modelId": "gemini-3-6-flash",
@@ -32006,14 +32017,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1371,
       "stderr": 25,
-      "sourceLabel": "Gemini 3.7 Flash (high)"
+      "sourceLabel": "Gemini 3.7 Flash (High)"
     },
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 1107,
       "stderr": 8.5,
-      "sourceLabel": "Gemini 3.7 Flash (high)"
+      "sourceLabel": "Gemini 3.7 Flash (High)"
     },
     {
       "modelId": "gemini-3-7-flash",
@@ -32628,7 +32639,7 @@
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "lmarena",
-      "raw": 1492,
+      "raw": 1494,
       "stderr": 5,
       "sourceLabel": "gemini-3.8-flash-high"
     },
@@ -32643,14 +32654,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1412,
       "stderr": 25,
-      "sourceLabel": "Gemini 3.8 Flash (high)"
+      "sourceLabel": "Gemini 3.8 Flash (High)"
     },
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 1202,
       "stderr": 9.5,
-      "sourceLabel": "Gemini 3.8 Flash (high)"
+      "sourceLabel": "Gemini 3.8 Flash (High)"
     },
     {
       "modelId": "gemini-3-8-flash",
@@ -32953,7 +32964,7 @@
     {
       "modelId": "qwen3-8-max",
       "benchmarkId": "lmarena",
-      "raw": 1479,
+      "raw": 1481,
       "stderr": 5,
       "sourceLabel": "qwen3.8-max"
     },
@@ -33185,7 +33196,7 @@
     {
       "modelId": "granite-4-2-30b",
       "benchmarkId": "lmarena",
-      "raw": 1341,
+      "raw": 1340,
       "stderr": 10,
       "sourceLabel": "granite-4.2-30b"
     },
@@ -33766,8 +33777,8 @@
     {
       "modelId": "gemma-4-e4b",
       "benchmarkId": "aa-gdpval",
-      "raw": -51,
-      "stderr": 29,
+      "raw": -32,
+      "stderr": 27,
       "sourceLabel": "Gemma 4 E4B (Reasoning)"
     },
     {
@@ -33958,6 +33969,118 @@
       "sourceLabel": "LongWriter-glm4-9b"
     },
     {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "lmarena",
+      "raw": 1525,
+      "stderr": 9,
+      "sourceLabel": "gemini-4-argon-high"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "artificial-analysis",
+      "raw": 53,
+      "sourceLabel": "Gemini 4 Argon (high)"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1611,
+      "stderr": 17,
+      "sourceLabel": "Gemini 4 Argon (High)"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1494,
+      "stderr": 10,
+      "sourceLabel": "Gemini 4 Argon (High)"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-legal_research",
+      "raw": 54.81,
+      "stderr": 3.46,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-legal_bench",
+      "raw": 88.3,
+      "stderr": 0.37,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-hlab",
+      "raw": 19.58,
+      "stderr": 3.31,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-fabv2",
+      "raw": 65.4,
+      "stderr": 0.32,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-medcode",
+      "raw": 58.8,
+      "stderr": 2.1,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-medscribe",
+      "raw": 87.43,
+      "stderr": 1.96,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-biomysterybench",
+      "raw": 76.3,
+      "stderr": 0.37,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-cyber",
+      "raw": 77.86,
+      "stderr": 5.3,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-srebench",
+      "raw": 44.27,
+      "stderr": 3.08,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-vibe-code",
+      "raw": 91.91,
+      "stderr": 1.9,
+      "sourceLabel": "Gemini 4 Argon",
+      "scaffold": "OpenHands"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-code-migration",
+      "raw": 68.17,
+      "stderr": 4.35,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
+      "modelId": "gemini-4-argon",
+      "benchmarkId": "vals-proof_bench",
+      "raw": 99,
+      "stderr": 1,
+      "sourceLabel": "Gemini 4 Argon"
+    },
+    {
       "modelId": "instinct-dual-4b",
       "benchmarkId": "jevbench-intelligence",
       "raw": 43.1,
@@ -34063,7 +34186,7 @@
     {
       "modelId": "deepseek-v4-flash",
       "benchmarkId": "lmarena",
-      "raw": 1439,
+      "raw": 1438,
       "stderr": 4,
       "sourceLabel": "deepseek-v4-flash-high-preview"
     },
@@ -34072,14 +34195,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1427,
       "stderr": 25,
-      "sourceLabel": "DeepSeek V4 Flash 0731 (Reasoning, Max Effort)"
+      "sourceLabel": "DeepSeek V4 Flash 0731 (Max)"
     },
     {
       "modelId": "deepseek-v4-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 1257,
       "stderr": 8,
-      "sourceLabel": "DeepSeek V4 Flash 0731 (Reasoning, Max Effort)"
+      "sourceLabel": "DeepSeek V4 Flash 0731 (Max)"
     },
     {
       "modelId": "deepseek-v4-flash",
@@ -34392,14 +34515,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1534,
       "stderr": 23,
-      "sourceLabel": "DeepSeek V4 Flash Vision (Reasoning, Max Effort)"
+      "sourceLabel": "DeepSeek V4 Flash Vision (Max)"
     },
     {
       "modelId": "deepseek-v4-flash-vision",
       "benchmarkId": "aa-briefcase",
       "raw": 1428,
       "stderr": 8.5,
-      "sourceLabel": "DeepSeek V4 Flash Vision (Reasoning, Max Effort)"
+      "sourceLabel": "DeepSeek V4 Flash Vision (Max)"
     },
     {
       "modelId": "deepseek-v4-flash-vision",
@@ -34467,14 +34590,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1441,
       "stderr": 25,
-      "sourceLabel": "DeepSeek V4 Pro 0813 (Reasoning, Max Effort)"
+      "sourceLabel": "DeepSeek V4 Pro 0813 (Max)"
     },
     {
       "modelId": "deepseek-v4-pro",
       "benchmarkId": "aa-briefcase",
       "raw": 1258,
       "stderr": 8.5,
-      "sourceLabel": "DeepSeek V4 Pro 0813 (Reasoning, Max Effort)"
+      "sourceLabel": "DeepSeek V4 Pro 0813 (Max)"
     },
     {
       "modelId": "deepseek-v4-pro",
@@ -36929,7 +37052,7 @@
     {
       "modelId": "solar-pro4",
       "benchmarkId": "lmarena",
-      "raw": 1385,
+      "raw": 1386,
       "stderr": 6,
       "sourceLabel": "solar-pro4"
     },
@@ -37128,15 +37251,15 @@
     {
       "modelId": "granite-4-1-8b",
       "benchmarkId": "lmarena",
-      "raw": 1304,
+      "raw": 1305,
       "stderr": 10,
       "sourceLabel": "granite-4.1-8b"
     },
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "lmarena",
-      "raw": 1477,
-      "stderr": 8,
+      "raw": 1473,
+      "stderr": 7,
       "sourceLabel": "deepseek-v4.1-flash-max"
     },
     {
@@ -37150,14 +37273,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1328,
       "stderr": 19,
-      "sourceLabel": "DeepSeek V4.1 Flash (Non-Reasoning)"
+      "sourceLabel": "DeepSeek V4.1 Flash (Non-reasoning)"
     },
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 1426,
       "stderr": 9.5,
-      "sourceLabel": "DeepSeek V4.1 Flash (Reasoning, Max Effort)"
+      "sourceLabel": "DeepSeek V4.1 Flash (Max)"
     },
     {
       "modelId": "deepseek-v4-1-flash",
@@ -38156,7 +38279,7 @@
     {
       "modelId": "granite-4-2-8b",
       "benchmarkId": "lmarena",
-      "raw": 1289,
+      "raw": 1288,
       "stderr": 11,
       "sourceLabel": "granite-4.2-8b"
     },
@@ -38231,14 +38354,14 @@
     {
       "modelId": "grok-4-20-multi-agent",
       "benchmarkId": "lmarena",
-      "raw": 1470,
+      "raw": 1471,
       "stderr": 4,
       "sourceLabel": "grok-4.20-multi-agent-beta-0309"
     },
     {
       "modelId": "grok-4-20",
       "benchmarkId": "lmarena",
-      "raw": 1471,
+      "raw": 1472,
       "stderr": 4,
       "sourceLabel": "grok-4.20-beta-0309-reasoning"
     },
@@ -38378,7 +38501,7 @@
     {
       "modelId": "grok-4-3",
       "benchmarkId": "lmarena",
-      "raw": 1442,
+      "raw": 1441,
       "stderr": 4,
       "sourceLabel": "grok-4.3"
     },
@@ -38387,14 +38510,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 923,
       "stderr": 23,
-      "sourceLabel": "Grok 4.3 (high)"
+      "sourceLabel": "Grok 4.3 (High)"
     },
     {
       "modelId": "grok-4-3",
       "benchmarkId": "aa-briefcase",
       "raw": 761,
       "stderr": 7.5,
-      "sourceLabel": "Grok 4.3 (high)"
+      "sourceLabel": "Grok 4.3 (High)"
     },
     {
       "modelId": "grok-4-3",
@@ -38811,7 +38934,7 @@
     {
       "modelId": "grok-4-5",
       "benchmarkId": "lmarena",
-      "raw": 1465,
+      "raw": 1466,
       "stderr": 4,
       "sourceLabel": "grok-4.5"
     },
@@ -38820,14 +38943,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1370,
       "stderr": 25,
-      "sourceLabel": "Grok 4.5 (high)"
+      "sourceLabel": "Grok 4.5 (High)"
     },
     {
       "modelId": "grok-4-5",
       "benchmarkId": "aa-briefcase",
       "raw": 1283,
       "stderr": 8,
-      "sourceLabel": "Grok 4.5 (high)"
+      "sourceLabel": "Grok 4.5 (High)"
     },
     {
       "modelId": "grok-4-5",
@@ -39844,14 +39967,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1632,
       "stderr": 25,
-      "sourceLabel": "Grok 4.6 (xhigh)"
+      "sourceLabel": "Grok 4.6 (Xhigh)"
     },
     {
       "modelId": "grok-4-6",
       "benchmarkId": "aa-briefcase",
       "raw": 1549,
       "stderr": 9,
-      "sourceLabel": "Grok 4.6 (xhigh)"
+      "sourceLabel": "Grok 4.6 (Xhigh)"
     },
     {
       "modelId": "grok-4-6",
@@ -40514,7 +40637,7 @@
     {
       "modelId": "glm-4-7",
       "benchmarkId": "lmarena",
-      "raw": 1441,
+      "raw": 1442,
       "stderr": 6,
       "sourceLabel": "glm-4.7"
     },
@@ -40612,8 +40735,8 @@
     {
       "modelId": "grok-4-7",
       "benchmarkId": "lmarena",
-      "raw": 1439,
-      "stderr": 9,
+      "raw": 1442,
+      "stderr": 8,
       "sourceLabel": "grok-4.7-xhigh"
     },
     {
@@ -40627,14 +40750,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1695,
       "stderr": 20,
-      "sourceLabel": "Grok 4.7 (xhigh)"
+      "sourceLabel": "Grok 4.7 (Xhigh)"
     },
     {
       "modelId": "grok-4-7",
       "benchmarkId": "aa-briefcase",
       "raw": 1657,
       "stderr": 9,
-      "sourceLabel": "Grok 4.7 (xhigh)"
+      "sourceLabel": "Grok 4.7 (Xhigh)"
     },
     {
       "modelId": "grok-4-7",
@@ -41046,7 +41169,7 @@
     {
       "modelId": "claude-opus-4-8",
       "benchmarkId": "lmarena",
-      "raw": 1480,
+      "raw": 1481,
       "stderr": 4,
       "sourceLabel": "claude-opus-4-8-high"
     },
@@ -41279,14 +41402,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1162,
       "stderr": 26,
-      "sourceLabel": "Quasar 438B (max, based on GLM-5.2)"
+      "sourceLabel": "Quasar 438B (Max, Based on GLM-5.2)"
     },
     {
       "modelId": "quasar-438b-max-based-on-glm-5-2",
       "benchmarkId": "aa-briefcase",
       "raw": 1122,
       "stderr": 9,
-      "sourceLabel": "Quasar 438B (max, based on GLM-5.2)"
+      "sourceLabel": "Quasar 438B (Max, Based on GLM-5.2)"
     },
     {
       "modelId": "quasar-438b",
@@ -41324,7 +41447,7 @@
     {
       "modelId": "claude-fable-5",
       "benchmarkId": "lmarena",
-      "raw": 1504,
+      "raw": 1505,
       "stderr": 4,
       "sourceLabel": "claude-fable-5-high"
     },
@@ -41534,7 +41657,7 @@
     {
       "modelId": "glm-5",
       "benchmarkId": "lmarena",
-      "raw": 1457,
+      "raw": 1458,
       "stderr": 4,
       "sourceLabel": "glm-5"
     },
@@ -41673,14 +41796,14 @@
     {
       "modelId": "glm-5v-turbo",
       "benchmarkId": "lmarena",
-      "raw": 1433,
+      "raw": 1434,
       "stderr": 6,
       "sourceLabel": "glm-5v-turbo"
     },
     {
       "modelId": "gpt-5",
       "benchmarkId": "lmarena",
-      "raw": 1435,
+      "raw": 1434,
       "stderr": 5,
       "sourceLabel": "gpt-5-high"
     },
@@ -41689,7 +41812,7 @@
       "benchmarkId": "aa-gdpval",
       "raw": 906,
       "stderr": 26,
-      "sourceLabel": "GPT-5 (high)"
+      "sourceLabel": "GPT-5 (High)"
     },
     {
       "modelId": "gpt-5",
@@ -41892,14 +42015,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 754,
       "stderr": 26,
-      "sourceLabel": "GPT-5 mini (high)"
+      "sourceLabel": "GPT-5 mini (High)"
     },
     {
       "modelId": "gpt-5-mini",
       "benchmarkId": "aa-briefcase",
       "raw": 428,
       "stderr": 10,
-      "sourceLabel": "GPT-5 mini (high)"
+      "sourceLabel": "GPT-5 mini (High)"
     },
     {
       "modelId": "gpt-5-mini",
@@ -42087,7 +42210,7 @@
     {
       "modelId": "gpt-5-nano",
       "benchmarkId": "lmarena",
-      "raw": 1338,
+      "raw": 1337,
       "stderr": 7,
       "sourceLabel": "gpt-5-nano-high"
     },
@@ -42272,7 +42395,7 @@
     {
       "modelId": "claude-opus-5",
       "benchmarkId": "lmarena",
-      "raw": 1488,
+      "raw": 1489,
       "stderr": 5,
       "sourceLabel": "claude-opus-5-max"
     },
@@ -43451,7 +43574,7 @@
       "benchmarkId": "aa-gdpval",
       "raw": 813,
       "stderr": 26,
-      "sourceLabel": "GPT-5.1 (high)"
+      "sourceLabel": "GPT-5.1 (High)"
     },
     {
       "modelId": "gpt-5-1",
@@ -43704,7 +43827,7 @@
     {
       "modelId": "glm-5-2",
       "benchmarkId": "lmarena",
-      "raw": 1476,
+      "raw": 1475,
       "stderr": 4,
       "sourceLabel": "glm-5.2-max"
     },
@@ -43713,14 +43836,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1358,
       "stderr": 21,
-      "sourceLabel": "GLM-5.2 (max)"
+      "sourceLabel": "GLM-5.2 (Max)"
     },
     {
       "modelId": "glm-5-2",
       "benchmarkId": "aa-briefcase",
       "raw": 1230,
       "stderr": 7,
-      "sourceLabel": "GLM-5.2 (max)"
+      "sourceLabel": "GLM-5.2 (Max)"
     },
     {
       "modelId": "glm-5-2",
@@ -44300,7 +44423,7 @@
       "benchmarkId": "aa-briefcase",
       "raw": 866,
       "stderr": 7,
-      "sourceLabel": "GPT-5.3 Codex (xhigh)"
+      "sourceLabel": "GPT-5.3 Codex (Xhigh)"
     },
     {
       "modelId": "gpt-5-3-codex",
@@ -44322,7 +44445,7 @@
       "modelId": "glm-5-3-flash",
       "benchmarkId": "lmarena",
       "raw": 1474,
-      "stderr": 6,
+      "stderr": 5,
       "sourceLabel": "glm-5.3-flash"
     },
     {
@@ -44531,7 +44654,7 @@
     {
       "modelId": "glm-5-3",
       "benchmarkId": "lmarena",
-      "raw": 1480,
+      "raw": 1479,
       "stderr": 6,
       "sourceLabel": "glm-5.3-max"
     },
@@ -44546,14 +44669,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1644,
       "stderr": 23,
-      "sourceLabel": "GLM-5.3 (max)"
+      "sourceLabel": "GLM-5.3 (Max)"
     },
     {
       "modelId": "glm-5-3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1512,
+      "raw": 1511,
       "stderr": 9,
-      "sourceLabel": "GLM-5.3 (max)"
+      "sourceLabel": "GLM-5.3 (Max)"
     },
     {
       "modelId": "glm-5-3",
@@ -44801,7 +44924,7 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1233,
       "stderr": 22,
-      "sourceLabel": "GPT-5.4 (xhigh)"
+      "sourceLabel": "GPT-5.4 (Xhigh)"
     },
     {
       "modelId": "gpt-5-4",
@@ -45024,14 +45147,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1000,
       "stderr": 22,
-      "sourceLabel": "GPT-5.4 mini (xhigh)"
+      "sourceLabel": "GPT-5.4 mini (Xhigh)"
     },
     {
       "modelId": "gpt-5-4-mini",
       "benchmarkId": "aa-briefcase",
       "raw": 718,
       "stderr": 7.5,
-      "sourceLabel": "GPT-5.4 mini (xhigh)"
+      "sourceLabel": "GPT-5.4 mini (Xhigh)"
     },
     {
       "modelId": "gpt-5-4-mini",
@@ -45204,14 +45327,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 937,
       "stderr": 23,
-      "sourceLabel": "GPT-5.4 nano (xhigh)"
+      "sourceLabel": "GPT-5.4 nano (Xhigh)"
     },
     {
       "modelId": "gpt-5-4-nano",
       "benchmarkId": "aa-briefcase",
       "raw": 671,
       "stderr": 9.5,
-      "sourceLabel": "GPT-5.4 nano (xhigh)"
+      "sourceLabel": "GPT-5.4 nano (Xhigh)"
     },
     {
       "modelId": "gpt-5-4-nano",
@@ -45424,14 +45547,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1336,
       "stderr": 21,
-      "sourceLabel": "GPT-5.5 (xhigh)"
+      "sourceLabel": "GPT-5.5 (Xhigh)"
     },
     {
       "modelId": "gpt-5-5",
       "benchmarkId": "aa-briefcase",
       "raw": 1137,
       "stderr": 7,
-      "sourceLabel": "GPT-5.5 (xhigh)"
+      "sourceLabel": "GPT-5.5 (Xhigh)"
     },
     {
       "modelId": "gpt-5-5",
@@ -45697,8 +45820,8 @@
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "lmarena",
-      "raw": 1509,
-      "stderr": 12,
+      "raw": 1504,
+      "stderr": 10,
       "sourceLabel": "claude-opus-5.5-high"
     },
     {
@@ -46080,23 +46203,23 @@
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "lmarena",
-      "raw": 1454,
+      "raw": 1453,
       "stderr": 4,
       "sourceLabel": "gpt-5.6-luna-xhigh"
     },
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "aa-gdpval",
-      "raw": 1443,
-      "stderr": 22,
-      "sourceLabel": "GPT-5.6 Luna (max)"
+      "raw": 1450,
+      "stderr": 20,
+      "sourceLabel": "GPT-5.6 Luna (Max)"
     },
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "aa-briefcase",
-      "raw": 1342,
-      "stderr": 8,
-      "sourceLabel": "GPT-5.6 Luna (max)"
+      "raw": 1344,
+      "stderr": 8.5,
+      "sourceLabel": "GPT-5.6 Luna (Max)"
     },
     {
       "modelId": "gpt-5-6-luna",
@@ -46452,8 +46575,8 @@
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "lmarena",
-      "raw": 1483,
-      "stderr": 5,
+      "raw": 1484,
+      "stderr": 4,
       "sourceLabel": "gpt-5.6-sol-xhigh"
     },
     {
@@ -46461,14 +46584,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1588,
       "stderr": 21,
-      "sourceLabel": "GPT-5.6 Sol (max)"
+      "sourceLabel": "GPT-5.6 Sol (Max)"
     },
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "aa-briefcase",
       "raw": 1487,
       "stderr": 8.5,
-      "sourceLabel": "GPT-5.6 Sol (max)"
+      "sourceLabel": "GPT-5.6 Sol (Max)"
     },
     {
       "modelId": "gpt-5-6-sol",
@@ -46836,14 +46959,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1432,
       "stderr": 22,
-      "sourceLabel": "GPT-5.6 Terra (max)"
+      "sourceLabel": "GPT-5.6 Terra (Max)"
     },
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "aa-briefcase",
       "raw": 1334,
       "stderr": 8,
-      "sourceLabel": "GPT-5.6 Terra (max)"
+      "sourceLabel": "GPT-5.6 Terra (Max)"
     },
     {
       "modelId": "gpt-5-6-terra",
@@ -47162,8 +47285,8 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "lmarena",
-      "raw": 1478,
-      "stderr": 8,
+      "raw": 1476,
+      "stderr": 7,
       "sourceLabel": "gpt-6-astra-max"
     },
     {
@@ -47177,14 +47300,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1542,
       "stderr": 25,
-      "sourceLabel": "GPT-6 Astra (max)"
+      "sourceLabel": "GPT-6 Astra (Max)"
     },
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "aa-briefcase",
       "raw": 1569,
       "stderr": 10.5,
-      "sourceLabel": "GPT-6 Astra (max)"
+      "sourceLabel": "GPT-6 Astra (Max)"
     },
     {
       "modelId": "gpt-6-astra",
@@ -47408,8 +47531,8 @@
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "lmarena",
-      "raw": 1442,
-      "stderr": 9,
+      "raw": 1444,
+      "stderr": 7,
       "sourceLabel": "gpt-6-luna-max"
     },
     {
@@ -47423,14 +47546,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1367,
       "stderr": 19,
-      "sourceLabel": "GPT-6 Luna (max)"
+      "sourceLabel": "GPT-6 Luna (Max)"
     },
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "aa-briefcase",
       "raw": 1299,
       "stderr": 9,
-      "sourceLabel": "GPT-6 Luna (max)"
+      "sourceLabel": "GPT-6 Luna (Max)"
     },
     {
       "modelId": "gpt-6-luna",
@@ -47608,8 +47731,8 @@
     {
       "modelId": "gpt-6-sol",
       "benchmarkId": "lmarena",
-      "raw": 1457,
-      "stderr": 9,
+      "raw": 1456,
+      "stderr": 7,
       "sourceLabel": "gpt-6-sol-max"
     },
     {
@@ -47623,14 +47746,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1487,
       "stderr": 19,
-      "sourceLabel": "GPT-6 Sol (max)"
+      "sourceLabel": "GPT-6 Sol (Max)"
     },
     {
       "modelId": "gpt-6-sol",
       "benchmarkId": "aa-briefcase",
       "raw": 1483,
       "stderr": 10,
-      "sourceLabel": "GPT-6 Sol (max)"
+      "sourceLabel": "GPT-6 Sol (Max)"
     },
     {
       "modelId": "gpt-6-sol",
@@ -47816,14 +47939,20 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1575,
       "stderr": 20,
-      "sourceLabel": "GPT-6.1 Sol (max)"
+      "sourceLabel": "GPT-6.1 Sol (Max)"
     },
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "aa-briefcase",
       "raw": 1564,
       "stderr": 9,
-      "sourceLabel": "GPT-6.1 Sol (max)"
+      "sourceLabel": "GPT-6.1 Sol (Max)"
+    },
+    {
+      "modelId": "gpt-6-1-sol",
+      "benchmarkId": "arc-agi-2",
+      "raw": 94.2,
+      "sourceLabel": "GPT-6.1 Sol (Max)"
     },
     {
       "modelId": "gpt-6-1-sol",
@@ -49665,7 +49794,7 @@
     {
       "modelId": "dbrx-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1196,
+      "raw": 1195,
       "stderr": 6,
       "sourceLabel": "dbrx-instruct-preview"
     },
@@ -49995,7 +50124,7 @@
     {
       "modelId": "muse-glimmer",
       "benchmarkId": "lmarena",
-      "raw": 1424,
+      "raw": 1425,
       "stderr": 10,
       "sourceLabel": "muse-glimmer"
     },
@@ -50010,14 +50139,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 774,
       "stderr": 28,
-      "sourceLabel": "Muse Glimmer (high)"
+      "sourceLabel": "Muse Glimmer (High)"
     },
     {
       "modelId": "muse-glimmer",
       "benchmarkId": "aa-briefcase",
       "raw": 474,
       "stderr": 9,
-      "sourceLabel": "Muse Glimmer (high)"
+      "sourceLabel": "Muse Glimmer (High)"
     },
     {
       "modelId": "ibm-granite-h-small",
@@ -50120,21 +50249,21 @@
       "modelId": "inkling",
       "benchmarkId": "artificial-analysis",
       "raw": 25,
-      "sourceLabel": "Inkling"
+      "sourceLabel": "Inkling (xhigh)"
     },
     {
       "modelId": "inkling",
       "benchmarkId": "aa-gdpval",
       "raw": 1064,
       "stderr": 27,
-      "sourceLabel": "Inkling (xhigh)"
+      "sourceLabel": "Inkling (Xhigh)"
     },
     {
       "modelId": "inkling",
       "benchmarkId": "aa-briefcase",
       "raw": 834,
       "stderr": 9,
-      "sourceLabel": "Inkling (xhigh)"
+      "sourceLabel": "Inkling (Xhigh)"
     },
     {
       "modelId": "inkling",
@@ -50820,7 +50949,7 @@
     {
       "modelId": "trinity-large",
       "benchmarkId": "lmarena",
-      "raw": 1368,
+      "raw": 1367,
       "stderr": 5,
       "sourceLabel": "trinity-large-thinking"
     },
@@ -51184,7 +51313,7 @@
     {
       "modelId": "mercury",
       "benchmarkId": "lmarena",
-      "raw": 1305,
+      "raw": 1306,
       "stderr": 14,
       "sourceLabel": "mercury"
     },
@@ -51270,7 +51399,7 @@
     {
       "modelId": "mistral-small",
       "benchmarkId": "lmarena",
-      "raw": 1357,
+      "raw": 1356,
       "stderr": 5,
       "sourceLabel": "mistral-small-2506"
     },
