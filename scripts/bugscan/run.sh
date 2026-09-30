@@ -56,6 +56,12 @@ for required in BUGSCAN_LABEL FORBID_RE FIX_NOTES REVIEW_NOTES; do
   [ -n "${!required}" ] || { echo "ERROR: profile 里缺 $required" >&2; exit 1; }
 done
 [ "${#GATE_STEPS[@]}" -gt 0 ] || { echo "ERROR: profile 里缺 GATE_STEPS" >&2; exit 1; }
+# 每一条闸都得先是一句合法的 shell。语法错的那条要在**这里**炸,而不是等跑了两个
+# 小时、修好了一个真 bug 之后,在闸那里以「没过」的形状把整批毙掉。
+for step in "${GATE_STEPS[@]}"; do
+  bash -n -c "${step#*|}" 2>/dev/null \
+    || { echo "ERROR: profile 的闸不是合法的 shell:${step#*|}" >&2; exit 1; }
+done
 
 # A pattern grep cannot compile matches nothing, so an invalid FORBID_RE does
 # not fail closed — it opens the gate completely and says nothing. Checked
@@ -447,10 +453,30 @@ log "改动规模 $lines 行(上限 $MAX_LINES)$( [ "$generated" -gt 0 ] && echo
 log "复核 ${#GATE_STEPS[@]} 项检查…"
 gate_log="$STATE/$DAY.gates.log"
 : >"$gate_log"
+# **闸要经过一个 shell。** `run_capped 900 $cmd` 是把 `$cmd` 拆成词直接 exec ——
+# 于是 `&&`、`for … do … done`、管道、通配都不是语法,是字面参数。两种结局:
+#
+#   `for d in backend/*/; do …`   → `for: command not found`,退出 127,整批回滚
+#   `cd app && npm run build`     → 跑的是内建 `cd app`,**多余的参数被 bash 悄悄丢掉**,
+#                                    退出 0 → 报 ✓,而 `npm run build` 一次都没跑过
+#
+# 第二种才是要命的那个:2026-09-26 接上 tansu 到 09-30,四道闸里有三道一直在报 ✓
+# 而什么都没执行,第四道把每一批都毙了。也就是说这道闸从上线起就没有做过它的事,
+# 而它是无人值守的修复器和一个「合进 main 就是上线」的仓之间唯一的东西。
 for step in "${GATE_STEPS[@]}"; do
   label=${step%%|*} cmd=${step#*|}
   echo "=== $cmd ===" >>"$gate_log"
-  if ! run_capped 900 $cmd >>"$gate_log" 2>&1; then
+  run_capped 900 bash -c "$cmd" >>"$gate_log" 2>&1
+  rc=$?
+  # **「没跑起来」和「没过」是两件事。** 127 是找不到命令,124 是超时 —— 都不是
+  # 「代码有问题」,而当成后者会让人去看一份根本不存在的失败。
+  if [ "$rc" -eq 127 ] || [ "$rc" -eq 124 ]; then
+    fail_batch "$label 没跑起来" "\`$cmd\` **没跑起来**($( [ "$rc" -eq 124 ] && echo '超过 900 秒' || echo '找不到命令,退出 127' ))——\
+这不是代码没过闸,是闸自己坏了,这一轮的判决不作数。最后 40 行:
+
+$(tail -40 "$gate_log")"
+  fi
+  if [ "$rc" -ne 0 ]; then
     fail_batch "$label 没过" "\`$cmd\` 没过,整批作废。最后 40 行:
 
 $(tail -40 "$gate_log")"
