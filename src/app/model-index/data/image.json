@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T22:27:13.513Z",
+  "generatedAt": "2026-09-30T06:02:33.328Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
-      "retrievedAt": "2026-09-29",
+      "retrievedAt": "2026-09-30",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-image.ico",
       "category": "Text-to-image",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-09-29",
+      "retrievedAt": "2026-09-30",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-image.png",
       "category": "Text-to-image",
@@ -39,7 +39,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-09-29",
+      "retrievedAt": "2026-09-30",
       "metric": "elo",
       "logo": "/model-index/logos/arena-image-edit.png",
       "category": "Image editing",
@@ -1278,7 +1278,7 @@
     {
       "modelId": "phoenix-0-9-ultra",
       "benchmarkId": "aa-text-to-image",
-      "raw": 833,
+      "raw": 834,
       "stderr": 7,
       "sourceLabel": "Phoenix 0.9 Ultra"
     },
@@ -1341,21 +1341,21 @@
     {
       "modelId": "hidream-i1-dev",
       "benchmarkId": "aa-text-to-image",
-      "raw": 873,
+      "raw": 874,
       "stderr": 10,
       "sourceLabel": "HiDream-I1-DevOpen Weights"
     },
     {
       "modelId": "hidream-o1-image-dev",
       "benchmarkId": "aa-text-to-image",
-      "raw": 877,
+      "raw": 876,
       "stderr": 8,
       "sourceLabel": "HiDream-O1-Image-DevOpen Weights"
     },
     {
       "modelId": "stable-diffusion-xl-1-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 677,
+      "raw": 678,
       "stderr": 9,
       "sourceLabel": "Stable Diffusion XL 1.0Open Weights"
     },
@@ -1376,7 +1376,7 @@
     {
       "modelId": "phoenix-1-0-fast",
       "benchmarkId": "aa-text-to-image",
-      "raw": 822,
+      "raw": 823,
       "stderr": 8,
       "sourceLabel": "Phoenix 1.0 Fast"
     },
@@ -1425,7 +1425,7 @@
     {
       "modelId": "flux-1-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 890,
+      "raw": 891,
       "stderr": 8,
       "sourceLabel": "FLUX.1 [pro]"
     },
@@ -1439,7 +1439,7 @@
     {
       "modelId": "amazon-titan-g1-standard",
       "benchmarkId": "aa-text-to-image",
-      "raw": 707,
+      "raw": 708,
       "stderr": 9,
       "sourceLabel": "Amazon Titan G1 (Standard)"
     },
@@ -1467,7 +1467,7 @@
     {
       "modelId": "gpt-image-1-mini",
       "benchmarkId": "aa-text-to-image",
-      "raw": 914,
+      "raw": 916,
       "stderr": 7,
       "sourceLabel": "GPT Image 1 Mini (medium)"
     },
@@ -1488,7 +1488,7 @@
     {
       "modelId": "hidream-o1-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 979,
+      "raw": 982,
       "stderr": 8,
       "sourceLabel": "HiDream-O1-ImageOpen Weights"
     },
@@ -1516,7 +1516,7 @@
     {
       "modelId": "mai-image-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 864,
+      "raw": 865,
       "stderr": 9,
       "sourceLabel": "MAI Image 1"
     },
@@ -1530,14 +1530,14 @@
     {
       "modelId": "krea-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 819,
+      "raw": 820,
       "stderr": 9,
       "sourceLabel": "Krea 1"
     },
     {
       "modelId": "luma-uni-1-max",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1013,
+      "raw": 1014,
       "stderr": 9,
       "sourceLabel": "Luma UNI 1 Max"
     },
@@ -1551,7 +1551,7 @@
     {
       "modelId": "phoenix-1-0-ultra",
       "benchmarkId": "aa-text-to-image",
-      "raw": 842,
+      "raw": 843,
       "stderr": 9,
       "sourceLabel": "Phoenix 1.0 Ultra"
     },
@@ -1628,7 +1628,7 @@
     {
       "modelId": "stable-diffusion-1-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 455,
+      "raw": 456,
       "stderr": 13,
       "sourceLabel": "Stable Diffusion 1.5Open Weights"
     },
@@ -1649,8 +1649,8 @@
     {
       "modelId": "gpt-image-1-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1106,
-      "stderr": 9,
+      "raw": 1107,
+      "stderr": 8,
       "sourceLabel": "GPT Image 1.5 (high)"
     },
     {
@@ -1670,14 +1670,14 @@
     {
       "modelId": "sana-sprint-1-6b",
       "benchmarkId": "aa-text-to-image",
-      "raw": 753,
+      "raw": 754,
       "stderr": 10,
       "sourceLabel": "Sana Sprint 1.6BOpen Weights"
     },
     {
       "modelId": "stable-diffusion-1-6",
       "benchmarkId": "aa-text-to-image",
-      "raw": 718,
+      "raw": 719,
       "stderr": 9,
       "sourceLabel": "Stable Diffusion 1.6"
     },
@@ -1691,7 +1691,7 @@
     {
       "modelId": "cosmos3-super-text2image-agentic",
       "benchmarkId": "aa-text-to-image",
-      "raw": 994,
+      "raw": 995,
       "stderr": 8,
       "sourceLabel": "Cosmos3-Super-Text2Image (agentic)Open Weights"
     },
@@ -1705,7 +1705,7 @@
     {
       "modelId": "cosmos3-super-text2image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 986,
+      "raw": 987,
       "stderr": 8,
       "sourceLabel": "Cosmos3-Super-Text2ImageOpen Weights"
     },
@@ -1719,7 +1719,7 @@
     {
       "modelId": "nano-banana-2-lite-gemini-3-1-flash-lite-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1095,
+      "raw": 1096,
       "stderr": 8,
       "sourceLabel": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)"
     },
@@ -1740,7 +1740,7 @@
     {
       "modelId": "nano-banana-2-gemini-3-1-flash-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1124,
+      "raw": 1125,
       "stderr": 8,
       "sourceLabel": "Nano Banana 2 (Gemini 3.1 Flash Image)"
     },
@@ -1768,7 +1768,7 @@
     {
       "modelId": "flux-2-klein-4b",
       "benchmarkId": "aa-text-to-image",
-      "raw": 862,
+      "raw": 863,
       "stderr": 9,
       "sourceLabel": "FLUX.2 [klein] 4BOpen Weights"
     },
@@ -1789,14 +1789,14 @@
     {
       "modelId": "flux-2-klein-base-9b",
       "benchmarkId": "aa-text-to-image",
-      "raw": 902,
+      "raw": 903,
       "stderr": 9,
       "sourceLabel": "FLUX.2 [klein] Base 9BOpen Weights"
     },
     {
       "modelId": "flux-2-klein-9b",
       "benchmarkId": "aa-text-to-image",
-      "raw": 940,
+      "raw": 941,
       "stderr": 8,
       "sourceLabel": "FLUX.2 [klein] 9BOpen Weights"
     },
@@ -1824,21 +1824,21 @@
     {
       "modelId": "ideogram-v2a",
       "benchmarkId": "aa-text-to-image",
-      "raw": 819,
+      "raw": 820,
       "stderr": 10,
       "sourceLabel": "Ideogram v2a"
     },
     {
       "modelId": "dall-e-2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 542,
+      "raw": 543,
       "stderr": 11,
       "sourceLabel": "DALLE 2"
     },
     {
       "modelId": "flux-2-dev-flash",
       "benchmarkId": "aa-text-to-image",
-      "raw": 985,
+      "raw": 988,
       "stderr": 9,
       "sourceLabel": "FLUX.2 [dev] FlashOpen Weights"
     },
@@ -1866,14 +1866,14 @@
     {
       "modelId": "step-image-edit-2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 797,
+      "raw": 798,
       "stderr": 11,
       "sourceLabel": "Step Image Edit 2"
     },
     {
       "modelId": "mai-image-2-efficient",
       "benchmarkId": "aa-text-to-image",
-      "raw": 989,
+      "raw": 990,
       "stderr": 10,
       "sourceLabel": "MAI-Image-2-Efficient"
     },
@@ -1957,7 +1957,7 @@
     {
       "modelId": "gpt-image-2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1171,
+      "raw": 1172,
       "stderr": 9,
       "sourceLabel": "GPT Image 2 (high)"
     },
@@ -1978,7 +1978,7 @@
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1155,
+      "raw": 1156,
       "stderr": 11,
       "sourceLabel": "Grok Imagine Image 2.0"
     },
@@ -2020,7 +2020,7 @@
     {
       "modelId": "lumina-image-v2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 781,
+      "raw": 782,
       "stderr": 9,
       "sourceLabel": "Lumina Image v2Open Weights"
     },
@@ -2041,7 +2041,7 @@
     {
       "modelId": "qwen-image-2-0-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1029,
+      "raw": 1030,
       "stderr": 9,
       "sourceLabel": "Qwen Image 2.0 Pro (2026-04-22)"
     },
@@ -2062,21 +2062,21 @@
     {
       "modelId": "qwen-image-2-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 961,
+      "raw": 962,
       "stderr": 8,
       "sourceLabel": "Qwen Image 2.0 (2026-03-03)"
     },
     {
       "modelId": "imagineart-2-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 971,
+      "raw": 970,
       "stderr": 9,
       "sourceLabel": "ImagineArt 2.0"
     },
     {
       "modelId": "krea-2-large",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1025,
+      "raw": 1026,
       "stderr": 7,
       "sourceLabel": "Krea 2 Large"
     },
@@ -2090,7 +2090,7 @@
     {
       "modelId": "krea-2-medium",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1013,
+      "raw": 1012,
       "stderr": 7,
       "sourceLabel": "Krea 2 Medium"
     },
@@ -2118,14 +2118,14 @@
     {
       "modelId": "omnigen-v2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 726,
+      "raw": 727,
       "stderr": 9,
       "sourceLabel": "OmniGen V2Open Weights"
     },
     {
       "modelId": "vidu-q2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 920,
+      "raw": 921,
       "stderr": 7,
       "sourceLabel": "Vidu Q2"
     },
@@ -2146,28 +2146,28 @@
     {
       "modelId": "vivago-2-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 923,
+      "raw": 924,
       "stderr": 9,
       "sourceLabel": "Vivago 2.0"
     },
     {
       "modelId": "stable-diffusion-2-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 548,
+      "raw": 549,
       "stderr": 11,
       "sourceLabel": "Stable Diffusion 2.1Open Weights"
     },
     {
       "modelId": "hunyuan-image-2-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 886,
+      "raw": 887,
       "stderr": 9,
       "sourceLabel": "HunyuanImage 2.1Open Weights"
     },
     {
       "modelId": "qwen-image-2-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1035,
+      "raw": 1034,
       "stderr": 10,
       "sourceLabel": "Qwen-Image-2.1Open Weights"
     },
@@ -2188,7 +2188,7 @@
     {
       "modelId": "kolors-2-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 943,
+      "raw": 944,
       "stderr": 9,
       "sourceLabel": "Kolors 2.1"
     },
@@ -2209,7 +2209,7 @@
     {
       "modelId": "vivago-2-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 944,
+      "raw": 945,
       "stderr": 9,
       "sourceLabel": "Vivago 2.1"
     },
@@ -2237,7 +2237,7 @@
     {
       "modelId": "gpt-image-2-5-flare",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1189,
+      "raw": 1190,
       "stderr": 9,
       "sourceLabel": "GPT Image 2.5 Flare (max)"
     },
@@ -2314,14 +2314,14 @@
     {
       "modelId": "playground-v2-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 776,
+      "raw": 777,
       "stderr": 8,
       "sourceLabel": "Playground v2.5Open Weights"
     },
     {
       "modelId": "wan-2-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 961,
+      "raw": 962,
       "stderr": 9,
       "sourceLabel": "Wan 2.5 Preview"
     },
@@ -2342,7 +2342,7 @@
     {
       "modelId": "mai-image-2-6-flash",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1103,
+      "raw": 1105,
       "stderr": 9,
       "sourceLabel": "MAI-Image-2.6-Flash"
     },
@@ -2370,7 +2370,7 @@
     {
       "modelId": "wan-2-6-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1026,
+      "raw": 1028,
       "stderr": 9,
       "sourceLabel": "Wan 2.6 Image"
     },
@@ -2384,7 +2384,7 @@
     {
       "modelId": "wan2-6",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1016,
+      "raw": 1018,
       "stderr": 9,
       "sourceLabel": "Wan2.6 Text to Image"
     },
@@ -2468,14 +2468,14 @@
     {
       "modelId": "hunyuan-image-3-0-tencent-cloud",
       "benchmarkId": "aa-text-to-image",
-      "raw": 984,
+      "raw": 988,
       "stderr": 11,
       "sourceLabel": "HunyuanImage 3.0 (Tencent Cloud)"
     },
     {
       "modelId": "dall-e-3",
       "benchmarkId": "aa-text-to-image",
-      "raw": 776,
+      "raw": 777,
       "stderr": 8,
       "sourceLabel": "DALLE 3"
     },
@@ -2489,7 +2489,7 @@
     {
       "modelId": "dall-e-3-hd",
       "benchmarkId": "aa-text-to-image",
-      "raw": 774,
+      "raw": 775,
       "stderr": 8,
       "sourceLabel": "DALLE 3 HD"
     },
@@ -2538,7 +2538,7 @@
     {
       "modelId": "hunyuan-image-3-0-instruct",
       "benchmarkId": "aa-text-to-image",
-      "raw": 994,
+      "raw": 996,
       "stderr": 9,
       "sourceLabel": "HunyuanImage 3.0 InstructOpen Weights"
     },
@@ -2552,7 +2552,7 @@
     {
       "modelId": "ideogram-3-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 896,
+      "raw": 897,
       "stderr": 8,
       "sourceLabel": "Ideogram 3.0"
     },
@@ -2594,14 +2594,14 @@
     {
       "modelId": "imagen-3-v002",
       "benchmarkId": "aa-text-to-image",
-      "raw": 915,
+      "raw": 916,
       "stderr": 9,
       "sourceLabel": "Imagen 3 (v002)"
     },
     {
       "modelId": "playground-v3-beta",
       "benchmarkId": "aa-text-to-image",
-      "raw": 809,
+      "raw": 810,
       "stderr": 8,
       "sourceLabel": "Playground v3 (beta)"
     },
@@ -2643,7 +2643,7 @@
     {
       "modelId": "dreamina-3-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 915,
+      "raw": 914,
       "stderr": 7,
       "sourceLabel": "Dreamina 3.1"
     },
@@ -2657,7 +2657,7 @@
     {
       "modelId": "stable-diffusion-3-5-large",
       "benchmarkId": "aa-text-to-image",
-      "raw": 839,
+      "raw": 840,
       "stderr": 9,
       "sourceLabel": "Stable Diffusion 3.5 LargeOpen Weights"
     },
@@ -2671,7 +2671,7 @@
     {
       "modelId": "stable-diffusion-3-5-large-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 828,
+      "raw": 829,
       "stderr": 9,
       "sourceLabel": "Stable Diffusion 3.5 Large TurboOpen Weights"
     },
@@ -2685,14 +2685,14 @@
     {
       "modelId": "hunyuan-image-3-5-preview",
       "benchmarkId": "aa-text-to-image",
-      "raw": 974,
+      "raw": 976,
       "stderr": 9,
       "sourceLabel": "HunyuanImage 3.5 (Preview)"
     },
     {
       "modelId": "ideogram-4-0-fast",
       "benchmarkId": "aa-text-to-image",
-      "raw": 970,
+      "raw": 969,
       "stderr": 9,
       "sourceLabel": "Ideogram 4.0 FastOpen Weights"
     },
@@ -2713,7 +2713,7 @@
     {
       "modelId": "runway-gen-4-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 791,
+      "raw": 792,
       "stderr": 9,
       "sourceLabel": "Runway Gen-4 Image"
     },
@@ -2755,14 +2755,14 @@
     {
       "modelId": "ideogram-4-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1003,
+      "raw": 1004,
       "stderr": 8,
       "sourceLabel": "Ideogram 4.0Open Weights"
     },
     {
       "modelId": "ideogram-4-0-instant",
       "benchmarkId": "aa-text-to-image",
-      "raw": 984,
+      "raw": 982,
       "stderr": 9,
       "sourceLabel": "Ideogram 4.0 InstantOpen Weights"
     },
@@ -2790,21 +2790,21 @@
     {
       "modelId": "imagen-4-ultra",
       "benchmarkId": "aa-text-to-image",
-      "raw": 997,
+      "raw": 998,
       "stderr": 10,
       "sourceLabel": "Imagen 4 Ultra"
     },
     {
       "modelId": "recraft-v4-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 985,
+      "raw": 986,
       "stderr": 9,
       "sourceLabel": "Recraft V4 Pro"
     },
     {
       "modelId": "recraft-v4",
       "benchmarkId": "aa-text-to-image",
-      "raw": 984,
+      "raw": 983,
       "stderr": 9,
       "sourceLabel": "Recraft V4"
     },
@@ -2818,7 +2818,7 @@
     {
       "modelId": "seedream-4-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1029,
+      "raw": 1030,
       "stderr": 9,
       "sourceLabel": "Seedream 4.0"
     },
@@ -2853,7 +2853,7 @@
     {
       "modelId": "recraft-v4-1-utility-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1019,
+      "raw": 1018,
       "stderr": 7,
       "sourceLabel": "Recraft V4.1 Utility Pro"
     },
@@ -2867,7 +2867,7 @@
     {
       "modelId": "recraft-v4-1-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 985,
+      "raw": 986,
       "stderr": 9,
       "sourceLabel": "Recraft V4.1 Pro"
     },
@@ -2881,8 +2881,8 @@
     {
       "modelId": "recraft-v4-1-utility",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1022,
-      "stderr": 9,
+      "raw": 1023,
+      "stderr": 8,
       "sourceLabel": "Recraft V4.1 Utility"
     },
     {
@@ -2895,7 +2895,7 @@
     {
       "modelId": "seedream-4-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1022,
+      "raw": 1024,
       "stderr": 9,
       "sourceLabel": "Seedream 4.5"
     },
@@ -2916,7 +2916,7 @@
     {
       "modelId": "seedream-5-0-lite",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1010,
+      "raw": 1011,
       "stderr": 9,
       "sourceLabel": "Seedream 5.0 Lite"
     },
@@ -2937,7 +2937,7 @@
     {
       "modelId": "seedream-5-0-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1079,
+      "raw": 1081,
       "stderr": 8,
       "sourceLabel": "Seedream 5.0 Pro"
     },
@@ -2958,7 +2958,7 @@
     {
       "modelId": "midjourney-v6",
       "benchmarkId": "aa-text-to-image",
-      "raw": 874,
+      "raw": 875,
       "stderr": 8,
       "sourceLabel": "Midjourney v6"
     },
@@ -2972,7 +2972,7 @@
     {
       "modelId": "midjourney-v7-alpha",
       "benchmarkId": "aa-text-to-image",
-      "raw": 878,
+      "raw": 879,
       "stderr": 10,
       "sourceLabel": "Midjourney v7 Alpha"
     },
@@ -2986,7 +2986,7 @@
     {
       "modelId": "bagel",
       "benchmarkId": "aa-text-to-image",
-      "raw": 704,
+      "raw": 705,
       "stderr": 9,
       "sourceLabel": "BagelOpen Weights"
     },
@@ -3007,7 +3007,7 @@
     {
       "modelId": "z-image-base",
       "benchmarkId": "aa-text-to-image",
-      "raw": 876,
+      "raw": 878,
       "stderr": 7,
       "sourceLabel": "Z-Image Base"
     },
@@ -3056,7 +3056,7 @@
     {
       "modelId": "ernie-image-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 923,
+      "raw": 924,
       "stderr": 8,
       "sourceLabel": "ERNIE Image TurboOpen Weights"
     },
@@ -3070,7 +3070,7 @@
     {
       "modelId": "lucid-origin-fast",
       "benchmarkId": "aa-text-to-image",
-      "raw": 902,
+      "raw": 903,
       "stderr": 7,
       "sourceLabel": "Lucid Origin Fast"
     },
@@ -3084,21 +3084,21 @@
     {
       "modelId": "fibo-lite",
       "benchmarkId": "aa-text-to-image",
-      "raw": 826,
+      "raw": 827,
       "stderr": 11,
       "sourceLabel": "FIBO LiteOpen Weights"
     },
     {
       "modelId": "luma-photon-flash",
       "benchmarkId": "aa-text-to-image",
-      "raw": 797,
+      "raw": 798,
       "stderr": 7,
       "sourceLabel": "Luma Photon Flash"
     },
     {
       "modelId": "glm-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 889,
+      "raw": 891,
       "stderr": 7,
       "sourceLabel": "GLM-ImageOpen Weights"
     },
@@ -3140,7 +3140,7 @@
     {
       "modelId": "grok-imagine-image-quality",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1045,
+      "raw": 1046,
       "stderr": 7,
       "sourceLabel": "grok-imagine-image-quality"
     },
@@ -3154,7 +3154,7 @@
     {
       "modelId": "reve-image-halfmoon",
       "benchmarkId": "aa-text-to-image",
-      "raw": 912,
+      "raw": 913,
       "stderr": 9,
       "sourceLabel": "Reve Image (Halfmoon)"
     },
@@ -3168,7 +3168,7 @@
     {
       "modelId": "longcat-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 859,
+      "raw": 860,
       "stderr": 8,
       "sourceLabel": "LongCat ImageOpen Weights"
     },
@@ -3182,7 +3182,7 @@
     {
       "modelId": "muse-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1112,
+      "raw": 1114,
       "stderr": 10,
       "sourceLabel": "Muse Image"
     },
@@ -3217,7 +3217,7 @@
     {
       "modelId": "qwen-image-plus",
       "benchmarkId": "aa-text-to-image",
-      "raw": 937,
+      "raw": 938,
       "stderr": 7,
       "sourceLabel": "Qwen Image Plus 2601"
     },
@@ -3238,8 +3238,8 @@
     {
       "modelId": "z-image-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 941,
-      "stderr": 9,
+      "raw": 942,
+      "stderr": 8,
       "sourceLabel": "Z-Image TurboOpen Weights"
     },
     {
@@ -3252,14 +3252,14 @@
     {
       "modelId": "janus-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 532,
+      "raw": 533,
       "stderr": 12,
       "sourceLabel": "Janus ProOpen Weights"
     },
     {
       "modelId": "sdxl-lightning",
       "benchmarkId": "aa-text-to-image",
-      "raw": 719,
+      "raw": 720,
       "stderr": 9,
       "sourceLabel": "SDXL LightningOpen Weights"
     },
@@ -3273,14 +3273,14 @@
     {
       "modelId": "lucid-origin-ultra",
       "benchmarkId": "aa-text-to-image",
-      "raw": 912,
+      "raw": 913,
       "stderr": 7,
       "sourceLabel": "Lucid Origin Ultra"
     },
     {
       "modelId": "luma-photon",
       "benchmarkId": "aa-text-to-image",
-      "raw": 884,
+      "raw": 886,
       "stderr": 7,
       "sourceLabel": "Luma Photon"
     },
@@ -3317,7 +3317,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-09-29",
+      "retrievedAt": "2026-09-30",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -3325,7 +3325,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-09-29",
+      "retrievedAt": "2026-09-30",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
