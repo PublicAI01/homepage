@@ -115,12 +115,6 @@ done
 if [ "$DRY" -eq 1 ]; then log "--dry-run:到此为止,没有改动 $SITE"; exit 0; fi
 
 cd "$SITE" || die "进不去 $SITE" "仓库不在"
-# The snapshot is data, but it is data the site's own tests read: a test
-# that counted how many models carry part of the Overall's weighting went
-# red at nineteen, and the deploy of a perfectly good snapshot died in CI
-# while this script reported success (2026-09-28). Three seconds here, and
-# a bad morning is a local failure with the site untouched.
-pnpm exec vitest run >>"$LOG" 2>&1 || die "首页仓的测试没过,快照没推" "测试没过"
 # Only what this job writes has to be clean. Someone's draft in another file
 # is not ours to refuse over (2026-09-29: a half-written bugscan script
 # blocked the night's snapshot); the commit below names its paths, so it
@@ -128,6 +122,17 @@ pnpm exec vitest run >>"$LOG" 2>&1 || die "首页仓的测试没过,快照没推
 git diff --cached --quiet && git diff --quiet -- "$D" public/model-index/logos \
   || die "首页仓里快照目录有未提交改动,不敢动" "工作区不干净"
 git pull -q --ff-only origin main 2>>"$LOG" || die "首页仓 pull 不动" "仓库分叉"
+
+# From here the tree carries tonight's snapshot. A way out that is not a
+# push puts yesterday's back: left in place, the copy is an uncommitted
+# change in the snapshot directory, and the guard above refuses every
+# night after this one until a person clears it. The guard is also what
+# makes this safe — nothing in "$D" was anyone's work in progress.
+marks=()
+put_back() {
+  git checkout -q -- "$D" 2>>"$LOG"
+  if [ "${#marks[@]}" -gt 0 ]; then rm -f "${marks[@]}"; fi
+}
 
 for f in index image video; do
   case " $held " in *" $f "*) continue ;; esac
@@ -138,15 +143,28 @@ done
 for m in "$PIPELINE"/raw/marks/*; do
   [ -f "$m" ] || continue
   dest="$SITE/public/model-index/logos/$(basename "$m")"
-  [ -e "$dest" ] || cp "$m" "$dest"
+  [ -e "$dest" ] || { cp "$m" "$dest"; marks+=("$dest"); }
 done
 
-node scripts/index-history.ts >>"$LOG" 2>&1 || die "写历史失败" "历史没写成"
+node scripts/index-history.ts >>"$LOG" 2>&1 \
+  || { put_back; die "写历史失败" "历史没写成"; }
 pnpm exec prettier --write "$D" >>"$LOG" 2>&1
 
 if git diff --quiet -- "$D"; then
   log "快照没有变化,不提交"; exit 0
 fi
+
+# The snapshot is data, but it is data the site's own tests read: a test
+# that counted how many models carry part of the Overall's weighting went
+# red at nineteen, and the deploy of a perfectly good snapshot died in CI
+# while this script reported success (2026-09-28). So the tests run here —
+# on the snapshot about to ship, which means after it is in place. They
+# used to run first, before the copy and before the pull, and so passed or
+# failed on yesterday's file: the one thing this step exists to catch went
+# straight through it (2026-10-01). A red run here is a local failure with
+# the site untouched and the tree put back.
+pnpm exec vitest run >>"$LOG" 2>&1 \
+  || { put_back; die "首页仓的测试没过,快照没推" "测试没过"; }
 # Only what this job produced. The guard above catches a dirty tree, but
 # `git diff` says nothing about a file nobody has added yet, so `git add -A`
 # would have swept an untracked draft sitting in the checkout into the
