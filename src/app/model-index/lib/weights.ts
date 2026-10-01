@@ -294,6 +294,10 @@ export const SOURCE_BADGE: Record<string, { code: string; tone: string }> = {
     code: 'VC',
     tone: 'border-[#7C3AED]/40 bg-[#7C3AED]/15 text-[#C4B5FD]',
   },
+  parsebench: {
+    code: 'PB',
+    tone: 'border-[#38BDF8]/40 bg-[#38BDF8]/15 text-[#7DD3FC]',
+  },
   jevbench: {
     code: 'JB',
     tone: 'border-[#4FB6A8]/40 bg-[#4FB6A8]/15 text-[#7FD8CB]',
