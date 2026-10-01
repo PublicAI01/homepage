@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T06:02:32.816Z",
+  "generatedAt": "2026-10-01T08:42:56.331Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -720,6 +720,96 @@
       "kind": "board",
       "source": "JevBench",
       "group": "jevbench"
+    },
+    {
+      "id": "parsebench",
+      "name": "ParseBench · Overall",
+      "publisher": "LlamaIndex",
+      "independent": true,
+      "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
+      "retrievedAt": "2026-10-01",
+      "metric": "percent",
+      "category": "Knowledge",
+      "domain": "Document parsing",
+      "caveat": "Document parsing only: tables, charts, text fidelity, formatting and visual grounding on page images. The leaderboard is kept by LlamaIndex, which also sells LlamaParse and has it in first place; those rows, and every other parsing API and OCR tool on the board, are left out of this index, and only the vision-language models are read. Never part of the Overall index.",
+      "kind": "board",
+      "source": "ParseBench",
+      "group": "parsebench"
+    },
+    {
+      "id": "parsebench-tables",
+      "name": "ParseBench · Tables",
+      "publisher": "LlamaIndex",
+      "independent": true,
+      "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
+      "retrievedAt": "2026-10-01",
+      "metric": "percent",
+      "category": "Knowledge",
+      "domain": "Document parsing",
+      "caveat": "Document parsing only: tables, charts, text fidelity, formatting and visual grounding on page images. The leaderboard is kept by LlamaIndex, which also sells LlamaParse and has it in first place; those rows, and every other parsing API and OCR tool on the board, are left out of this index, and only the vision-language models are read. Never part of the Overall index.",
+      "kind": "board",
+      "source": "ParseBench",
+      "group": "parsebench"
+    },
+    {
+      "id": "parsebench-charts",
+      "name": "ParseBench · Charts",
+      "publisher": "LlamaIndex",
+      "independent": true,
+      "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
+      "retrievedAt": "2026-10-01",
+      "metric": "percent",
+      "category": "Knowledge",
+      "domain": "Document parsing",
+      "caveat": "Document parsing only: tables, charts, text fidelity, formatting and visual grounding on page images. The leaderboard is kept by LlamaIndex, which also sells LlamaParse and has it in first place; those rows, and every other parsing API and OCR tool on the board, are left out of this index, and only the vision-language models are read. Never part of the Overall index.",
+      "kind": "board",
+      "source": "ParseBench",
+      "group": "parsebench"
+    },
+    {
+      "id": "parsebench-content-faithfulness",
+      "name": "ParseBench · Content faithfulness",
+      "publisher": "LlamaIndex",
+      "independent": true,
+      "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
+      "retrievedAt": "2026-10-01",
+      "metric": "percent",
+      "category": "Knowledge",
+      "domain": "Document parsing",
+      "caveat": "Document parsing only: tables, charts, text fidelity, formatting and visual grounding on page images. The leaderboard is kept by LlamaIndex, which also sells LlamaParse and has it in first place; those rows, and every other parsing API and OCR tool on the board, are left out of this index, and only the vision-language models are read. Never part of the Overall index.",
+      "kind": "board",
+      "source": "ParseBench",
+      "group": "parsebench"
+    },
+    {
+      "id": "parsebench-semantic-formatting",
+      "name": "ParseBench · Semantic formatting",
+      "publisher": "LlamaIndex",
+      "independent": true,
+      "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
+      "retrievedAt": "2026-10-01",
+      "metric": "percent",
+      "category": "Knowledge",
+      "domain": "Document parsing",
+      "caveat": "Document parsing only: tables, charts, text fidelity, formatting and visual grounding on page images. The leaderboard is kept by LlamaIndex, which also sells LlamaParse and has it in first place; those rows, and every other parsing API and OCR tool on the board, are left out of this index, and only the vision-language models are read. Never part of the Overall index.",
+      "kind": "board",
+      "source": "ParseBench",
+      "group": "parsebench"
+    },
+    {
+      "id": "parsebench-visual-grounding",
+      "name": "ParseBench · Visual grounding",
+      "publisher": "LlamaIndex",
+      "independent": true,
+      "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
+      "retrievedAt": "2026-10-01",
+      "metric": "percent",
+      "category": "Knowledge",
+      "domain": "Document parsing",
+      "caveat": "Document parsing only: tables, charts, text fidelity, formatting and visual grounding on page images. The leaderboard is kept by LlamaIndex, which also sells LlamaParse and has it in first place; those rows, and every other parsing API and OCR tool on the board, are left out of this index, and only the vision-language models are read. Never part of the Overall index.",
+      "kind": "board",
+      "source": "ParseBench",
+      "group": "parsebench"
     },
     {
       "id": "helm-safety-harmbench",
@@ -2213,6 +2303,12 @@
       "size": { "paramsB": 1, "source": "name" }
     },
     {
+      "id": "lightonocr-2-1b",
+      "name": "LightOnOCR 2 1B",
+      "org": "Other",
+      "size": { "paramsB": 1, "source": "name" }
+    },
+    {
       "id": "minimax-m2p1",
       "name": "MiniMax M2p1",
       "org": "MiniMax",
@@ -2234,6 +2330,12 @@
         }
       },
       "size": { "paramsB": 7, "source": "name" }
+    },
+    {
+      "id": "mineru-diffusion-v1-2-5b",
+      "name": "MinerU Diffusion V1 2.5B",
+      "org": "Other",
+      "size": { "paramsB": 2.5, "source": "name" }
     },
     {
       "id": "llama-3-1-nemotron-ultra-253b-v1",
@@ -2518,6 +2620,7 @@
         }
       }
     },
+    { "id": "jina-ocr-v1", "name": "Jina OCR V1", "org": "Other" },
     { "id": "laguna-m-1", "name": "Laguna M.1", "org": "Other" },
     {
       "id": "ling-1t",
@@ -2688,6 +2791,18 @@
       "id": "lfm2-1-2b",
       "name": "LFM2 1.2B",
       "org": "Liquid AI",
+      "size": { "paramsB": 1.2, "source": "name" }
+    },
+    {
+      "id": "mineru2-5-1-2b",
+      "name": "MinerU2.5 1.2B",
+      "org": "Other",
+      "size": { "paramsB": 1.2, "source": "name" }
+    },
+    {
+      "id": "mineru2-5-pro-1-2b",
+      "name": "MinerU2.5 Pro 1.2B",
+      "org": "Other",
       "size": { "paramsB": 1.2, "source": "name" }
     },
     {
@@ -2981,6 +3096,17 @@
       }
     },
     {
+      "id": "hunyuanocr-1-5",
+      "name": "HunyuanOCR 1.5",
+      "org": "Tencent",
+      "access": {
+        "official": {
+          "name": "Tencent Hunyuan",
+          "url": "https://cloud.tencent.com/product/hunyuan"
+        }
+      }
+    },
+    {
       "id": "jamba-1-5-large",
       "name": "Jamba 1.5 Large",
       "org": "AI21",
@@ -2996,6 +3122,7 @@
         "official": { "name": "AI21 docs", "url": "https://docs.ai21.com" }
       }
     },
+    { "id": "paddleocr-vl-1-5", "name": "PaddleOCR VL 1.5", "org": "Other" },
     { "id": "swe-1-6-fast", "name": "SWE-1.6 Fast", "org": "Other" },
     {
       "id": "jamba-1-6-large",
@@ -3013,6 +3140,7 @@
         "official": { "name": "AI21 docs", "url": "https://docs.ai21.com" }
       }
     },
+    { "id": "paddleocr-vl-1-6", "name": "PaddleOCR VL 1.6", "org": "Other" },
     {
       "id": "smollm2-1-7b-instruct",
       "name": "Smollm2 1.7B Instruct",
@@ -4043,10 +4171,17 @@
       "size": { "paramsB": 2, "source": "name" }
     },
     {
+      "id": "wevisdoc-2b",
+      "name": "WeVisDoc 2B",
+      "org": "Other",
+      "size": { "paramsB": 2, "source": "name" }
+    },
+    {
       "id": "mixedbread-mxbai-rerank-base-v2",
       "name": "Mixedbread mxbai-rerank-base-v2",
       "org": "MetaStone"
     },
+    { "id": "chandra-ocr-2", "name": "Chandra Ocr 2", "org": "Other" },
     {
       "id": "deepseek-coder-v2",
       "name": "DeepSeek Coder V2",
@@ -4059,6 +4194,17 @@
       }
     },
     { "id": "kat-coder-pro-v2", "name": "KAT Coder Pro V2", "org": "KwaiKAT" },
+    {
+      "id": "deepseek-ocr-2",
+      "name": "DeepSeek OCR 2",
+      "org": "DeepSeek",
+      "access": {
+        "official": {
+          "name": "DeepSeek API",
+          "url": "https://api-docs.deepseek.com"
+        }
+      }
+    },
     {
       "id": "devstral-2",
       "name": "Devstral 2",
@@ -4138,6 +4284,11 @@
           "url": "https://ai.google.dev/gemini-api/docs"
         }
       }
+    },
+    {
+      "id": "infinity-parser2-flash",
+      "name": "Infinity Parser2 Flash",
+      "org": "Other"
     },
     {
       "id": "ling-flash-2-0",
@@ -4224,6 +4375,11 @@
       "access": {
         "official": { "name": "xAI API", "url": "https://docs.x.ai" }
       }
+    },
+    {
+      "id": "infinity-parser2-pro",
+      "name": "Infinity Parser2 Pro",
+      "org": "Other"
     },
     {
       "id": "jamba-mini-2",
@@ -4431,6 +4587,8 @@
         }
       }
     },
+    { "id": "surya-ocr-2", "name": "Surya OCR 2", "org": "Other" },
+    { "id": "ovisocr2", "name": "OvisOCR2", "org": "Other" },
     {
       "id": "palm-2",
       "name": "Palm 2",
@@ -5560,8 +5718,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.077,
-          "outputPerM": 0.255,
+          "inputPerM": 0.09,
+          "outputPerM": 0.3,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -5895,6 +6053,15 @@
         "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
       },
       "size": { "paramsB": 31.6, "activeB": 3, "source": "huggingface" }
+    },
+    {
+      "id": "nemotron-3-nano-omni-30b-a3b",
+      "name": "Nemotron 3 Nano Omni 30B A3B",
+      "org": "NVIDIA",
+      "access": {
+        "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
+      },
+      "size": { "paramsB": 30, "activeB": 3, "source": "name" }
     },
     {
       "id": "nemotron-3-nano-omni-30b-a3b-reasoning",
@@ -6403,6 +6570,31 @@
       "size": { "paramsB": 8.2, "source": "huggingface" }
     },
     {
+      "id": "qwen3-vl-8b-instruct",
+      "name": "Qwen3 VL 8B Instruct",
+      "org": "Alibaba",
+      "access": {
+        "openrouter": {
+          "id": "qwen/qwen3-vl-8b-instruct",
+          "url": "https://openrouter.ai/qwen/qwen3-vl-8b-instruct",
+          "contextLength": 262144,
+          "inputPerM": 0.117,
+          "outputPerM": 0.455,
+          "listedAt": "2025-10-14",
+          "modalities": ["image", "text"]
+        },
+        "weights": {
+          "huggingFaceId": "Qwen/Qwen3-VL-8B-Instruct",
+          "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct"
+        },
+        "official": {
+          "name": "Alibaba Cloud Model Studio",
+          "url": "https://www.alibabacloud.com/help/en/model-studio"
+        }
+      },
+      "size": { "paramsB": 8.8, "source": "huggingface" }
+    },
+    {
       "id": "phi-3-small-8k-instruct",
       "name": "Phi 3 Small 8k Instruct",
       "org": "Microsoft",
@@ -6794,7 +6986,7 @@
           "id": "moonshotai/kimi-k3",
           "url": "https://openrouter.ai/moonshotai/kimi-k3",
           "contextLength": 1048576,
-          "inputPerM": 0.68,
+          "inputPerM": 0.677,
           "outputPerM": 10,
           "listedAt": "2026-07-16",
           "modalities": ["text", "image", "video"]
@@ -8408,6 +8600,18 @@
       }
     },
     {
+      "id": "granite-vision-4-1-4b",
+      "name": "Granite Vision 4.1 4B",
+      "org": "IBM",
+      "access": {
+        "official": {
+          "name": "IBM Granite",
+          "url": "https://www.ibm.com/granite"
+        }
+      },
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
       "id": "hermes-4-405b",
       "name": "Hermes 4 405B",
       "org": "Nous Research",
@@ -8517,6 +8721,12 @@
       "size": { "paramsB": 4, "source": "name" }
     },
     {
+      "id": "wevisdoc-4b",
+      "name": "WeVisDoc 4B",
+      "org": "Other",
+      "size": { "paramsB": 4, "source": "name" }
+    },
+    {
       "id": "chatgpt-4o",
       "name": "ChatGPT-4o",
       "org": "OpenAI",
@@ -8536,8 +8746,8 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.004,
-          "outputPerM": 0.131,
+          "inputPerM": 0.011,
+          "outputPerM": 1.28,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
         },
@@ -8581,8 +8791,8 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
           "contextLength": 1048576,
-          "inputPerM": 0.66,
-          "outputPerM": 1.98,
+          "inputPerM": 1.32,
+          "outputPerM": 3.96,
           "listedAt": "2026-08-12",
           "modalities": ["text"]
         },
@@ -9104,8 +9314,8 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.016,
-          "outputPerM": 0.396,
+          "inputPerM": 0.027,
+          "outputPerM": 0.6,
           "listedAt": "2026-09-10",
           "modalities": ["text", "image"]
         },
@@ -10229,7 +10439,7 @@
           "id": "z-ai/glm-5.3",
           "url": "https://openrouter.ai/z-ai/glm-5.3",
           "contextLength": 1048576,
-          "inputPerM": 0.3,
+          "inputPerM": 0.222,
           "outputPerM": 4.4,
           "listedAt": "2026-08-18",
           "modalities": ["text"]
@@ -11326,6 +11536,8 @@
     },
     { "id": "djev", "name": "Djev", "org": "Other" },
     { "id": "djev-spark", "name": "Djev Spark", "org": "Other" },
+    { "id": "docling-models", "name": "Docling Models", "org": "Other" },
+    { "id": "dots-mocr", "name": "Dots.mocr", "org": "Other" },
     { "id": "evocua", "name": "EvoCUA", "org": "Meituan" },
     { "id": "k-exaone", "name": "K EXAONE", "org": "LG AI Research" },
     {
@@ -11359,6 +11571,7 @@
         }
       }
     },
+    { "id": "falcon-ocr", "name": "Falcon OCR", "org": "TII" },
     { "id": "palmyra-fin", "name": "Palmyra Fin", "org": "Writer" },
     {
       "id": "longcat-flash-chat",
@@ -11370,6 +11583,16 @@
       "name": "Reka Flash",
       "org": "Reka",
       "access": { "official": { "name": "Reka", "url": "https://www.reka.ai" } }
+    },
+    {
+      "id": "florin-parser-nano",
+      "name": "Florin Parser Nano",
+      "org": "Other"
+    },
+    {
+      "id": "kdl-frontier-parser-nano",
+      "name": "KDL Frontier Parser Nano",
+      "org": "Other"
     },
     {
       "id": "fugu",
@@ -11430,6 +11653,14 @@
       }
     },
     {
+      "id": "glm-ocr",
+      "name": "GLM OCR",
+      "org": "Z.ai",
+      "access": {
+        "official": { "name": "Z.ai API", "url": "https://docs.z.ai" }
+      }
+    },
+    {
       "id": "ibm-granite-h-small",
       "name": "IBM Granite H Small",
       "org": "IBM",
@@ -11441,6 +11672,7 @@
       }
     },
     { "id": "hopper", "name": "Hopper", "org": "Other" },
+    { "id": "hpd-parsing", "name": "HPD Parsing", "org": "Other" },
     {
       "id": "hunyuan-a13b-instruct",
       "name": "Hunyuan A13B Instruct",
@@ -11761,6 +11993,7 @@
         }
       }
     },
+    { "id": "rakedoc-nano", "name": "Rakedoc Nano", "org": "Other" },
     {
       "id": "nova-premier",
       "name": "Nova Premier",
@@ -11783,6 +12016,8 @@
         }
       }
     },
+    { "id": "qianfan-ocr", "name": "Qianfan OCR", "org": "Other" },
+    { "id": "unlimited-ocr", "name": "Unlimited OCR", "org": "Other" },
     { "id": "system-one-open", "name": "System One Open", "org": "Other" },
     { "id": "system-one", "name": "System One", "org": "Other" },
     {
@@ -11795,6 +12030,7 @@
     { "id": "openjev-sglang", "name": "Openjev Sglang", "org": "Other" },
     { "id": "openjev-verdict", "name": "openJev Verdict", "org": "Other" },
     { "id": "opensourcejev", "name": "OpenSourceJev", "org": "Other" },
+    { "id": "paddleocr-vl", "name": "PaddleOCR VL", "org": "Other" },
     { "id": "palmyra-x", "name": "Palmyra X", "org": "Writer" },
     {
       "id": "qwen-plus",
@@ -11822,6 +12058,7 @@
     { "id": "verdict-small", "name": "Verdict Small", "org": "Other" },
     { "id": "spotlight", "name": "Spotlight", "org": "Arcee" },
     { "id": "swanone", "name": "swanOne", "org": "Other" },
+    { "id": "teleocr", "name": "TeleOCR", "org": "Other" },
     { "id": "typecastlm", "name": "Typecastlm", "org": "Other" },
     {
       "id": "ui-tars",
@@ -12334,6 +12571,42 @@
     },
     {
       "modelId": "qwen3-5-0-8b",
+      "benchmarkId": "parsebench",
+      "raw": 28.4,
+      "sourceLabel": "Qwen3.5-0.8B"
+    },
+    {
+      "modelId": "qwen3-5-0-8b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 1.5,
+      "sourceLabel": "Qwen3.5-0.8B"
+    },
+    {
+      "modelId": "qwen3-5-0-8b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 0.4,
+      "sourceLabel": "Qwen3.5-0.8B"
+    },
+    {
+      "modelId": "qwen3-5-0-8b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 82,
+      "sourceLabel": "Qwen3.5-0.8B"
+    },
+    {
+      "modelId": "qwen3-5-0-8b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 43.1,
+      "sourceLabel": "Qwen3.5-0.8B"
+    },
+    {
+      "modelId": "qwen3-5-0-8b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 15,
+      "sourceLabel": "Qwen3.5-0.8B"
+    },
+    {
+      "modelId": "qwen3-5-0-8b",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 11.9,
       "sourceLabel": "Qwen3.5-0.8B"
@@ -12533,6 +12806,42 @@
       "sourceLabel": "xLAM-2-1b-fc-r"
     },
     {
+      "modelId": "lightonocr-2-1b",
+      "benchmarkId": "parsebench",
+      "raw": 48,
+      "sourceLabel": "LightOnOCR-2-1B"
+    },
+    {
+      "modelId": "lightonocr-2-1b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 75.5,
+      "sourceLabel": "LightOnOCR-2-1B"
+    },
+    {
+      "modelId": "lightonocr-2-1b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 13.5,
+      "sourceLabel": "LightOnOCR-2-1B"
+    },
+    {
+      "modelId": "lightonocr-2-1b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.8,
+      "sourceLabel": "LightOnOCR-2-1B"
+    },
+    {
+      "modelId": "lightonocr-2-1b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 63.2,
+      "sourceLabel": "LightOnOCR-2-1B"
+    },
+    {
+      "modelId": "lightonocr-2-1b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 0,
+      "sourceLabel": "LightOnOCR-2-1B"
+    },
+    {
       "modelId": "minimax-m2p1",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 88.2,
@@ -12573,6 +12882,42 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 24,
       "sourceLabel": "Qwen2.5-7B-Instruct-1M"
+    },
+    {
+      "modelId": "mineru-diffusion-v1-2-5b",
+      "benchmarkId": "parsebench",
+      "raw": 42.63,
+      "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
+    },
+    {
+      "modelId": "mineru-diffusion-v1-2-5b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 66.51,
+      "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
+    },
+    {
+      "modelId": "mineru-diffusion-v1-2-5b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 1.19,
+      "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
+    },
+    {
+      "modelId": "mineru-diffusion-v1-2-5b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 69.46,
+      "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
+    },
+    {
+      "modelId": "mineru-diffusion-v1-2-5b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 1.46,
+      "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
+    },
+    {
+      "modelId": "mineru-diffusion-v1-2-5b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 74.54,
+      "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
     },
     {
       "modelId": "llama-3-1-nemotron-ultra-253b-v1",
@@ -13323,6 +13668,42 @@
       "sourceLabel": "hunyuan-t1-20250711"
     },
     {
+      "modelId": "jina-ocr-v1",
+      "benchmarkId": "parsebench",
+      "raw": 45.93,
+      "sourceLabel": "Jina-OCR-v1"
+    },
+    {
+      "modelId": "jina-ocr-v1",
+      "benchmarkId": "parsebench-tables",
+      "raw": 74.9,
+      "sourceLabel": "Jina-OCR-v1"
+    },
+    {
+      "modelId": "jina-ocr-v1",
+      "benchmarkId": "parsebench-charts",
+      "raw": 7.52,
+      "sourceLabel": "Jina-OCR-v1"
+    },
+    {
+      "modelId": "jina-ocr-v1",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 86.58,
+      "sourceLabel": "Jina-OCR-v1"
+    },
+    {
+      "modelId": "jina-ocr-v1",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 60.64,
+      "sourceLabel": "Jina-OCR-v1"
+    },
+    {
+      "modelId": "jina-ocr-v1",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 0,
+      "sourceLabel": "Jina-OCR-v1"
+    },
+    {
       "modelId": "laguna-m-1",
       "benchmarkId": "vals-legal_research",
       "raw": 2.4,
@@ -14016,6 +14397,78 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 59.1,
       "sourceLabel": "LFM2-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-1-2b",
+      "benchmarkId": "parsebench",
+      "raw": 45.9,
+      "sourceLabel": "MinerU2.5-2509-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-1-2b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 71.7,
+      "sourceLabel": "MinerU2.5-2509-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-1-2b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 1.1,
+      "sourceLabel": "MinerU2.5-2509-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-1-2b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 80.8,
+      "sourceLabel": "MinerU2.5-2509-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-1-2b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 4.5,
+      "sourceLabel": "MinerU2.5-2509-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-1-2b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 71.5,
+      "sourceLabel": "MinerU2.5-2509-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-pro-1-2b",
+      "benchmarkId": "parsebench",
+      "raw": 72.78,
+      "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-pro-1-2b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 77.59,
+      "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-pro-1-2b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 61.64,
+      "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-pro-1-2b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.88,
+      "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-pro-1-2b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 57.49,
+      "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
+    },
+    {
+      "modelId": "mineru2-5-pro-1-2b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 79.3,
+      "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
     },
     {
       "modelId": "decision-4b-v1-2",
@@ -15046,6 +15499,42 @@
       "sourceLabel": "hunyuan-vision-1.5-thinking"
     },
     {
+      "modelId": "hunyuanocr-1-5",
+      "benchmarkId": "parsebench",
+      "raw": 63.86,
+      "sourceLabel": "HunyuanOCR 1.5"
+    },
+    {
+      "modelId": "hunyuanocr-1-5",
+      "benchmarkId": "parsebench-tables",
+      "raw": 65.45,
+      "sourceLabel": "HunyuanOCR 1.5"
+    },
+    {
+      "modelId": "hunyuanocr-1-5",
+      "benchmarkId": "parsebench-charts",
+      "raw": 55.98,
+      "sourceLabel": "HunyuanOCR 1.5"
+    },
+    {
+      "modelId": "hunyuanocr-1-5",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 86.44,
+      "sourceLabel": "HunyuanOCR 1.5"
+    },
+    {
+      "modelId": "hunyuanocr-1-5",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 47.73,
+      "sourceLabel": "HunyuanOCR 1.5"
+    },
+    {
+      "modelId": "hunyuanocr-1-5",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 63.72,
+      "sourceLabel": "HunyuanOCR 1.5"
+    },
+    {
       "modelId": "jamba-1-5-large",
       "benchmarkId": "lmarena",
       "raw": 1289,
@@ -15186,6 +15675,42 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 8.9,
       "sourceLabel": "ai21.jamba-1-5-mini-v1:0"
+    },
+    {
+      "modelId": "paddleocr-vl-1-5",
+      "benchmarkId": "parsebench",
+      "raw": 65.95,
+      "sourceLabel": "PaddleOCR-VL-1.5"
+    },
+    {
+      "modelId": "paddleocr-vl-1-5",
+      "benchmarkId": "parsebench-tables",
+      "raw": 67.38,
+      "sourceLabel": "PaddleOCR-VL-1.5"
+    },
+    {
+      "modelId": "paddleocr-vl-1-5",
+      "benchmarkId": "parsebench-charts",
+      "raw": 47.62,
+      "sourceLabel": "PaddleOCR-VL-1.5"
+    },
+    {
+      "modelId": "paddleocr-vl-1-5",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 82.72,
+      "sourceLabel": "PaddleOCR-VL-1.5"
+    },
+    {
+      "modelId": "paddleocr-vl-1-5",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 54.27,
+      "sourceLabel": "PaddleOCR-VL-1.5"
+    },
+    {
+      "modelId": "paddleocr-vl-1-5",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 77.78,
+      "sourceLabel": "PaddleOCR-VL-1.5"
     },
     {
       "modelId": "swe-1-6-fast",
@@ -15364,6 +15889,42 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 60.4,
       "sourceLabel": "jamba-mini-1.6"
+    },
+    {
+      "modelId": "paddleocr-vl-1-6",
+      "benchmarkId": "parsebench",
+      "raw": 67.43,
+      "sourceLabel": "PaddleOCR-VL-1.6"
+    },
+    {
+      "modelId": "paddleocr-vl-1-6",
+      "benchmarkId": "parsebench-tables",
+      "raw": 67.77,
+      "sourceLabel": "PaddleOCR-VL-1.6"
+    },
+    {
+      "modelId": "paddleocr-vl-1-6",
+      "benchmarkId": "parsebench-charts",
+      "raw": 54.24,
+      "sourceLabel": "PaddleOCR-VL-1.6"
+    },
+    {
+      "modelId": "paddleocr-vl-1-6",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 82.71,
+      "sourceLabel": "PaddleOCR-VL-1.6"
+    },
+    {
+      "modelId": "paddleocr-vl-1-6",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 54.64,
+      "sourceLabel": "PaddleOCR-VL-1.6"
+    },
+    {
+      "modelId": "paddleocr-vl-1-6",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 77.8,
+      "sourceLabel": "PaddleOCR-VL-1.6"
     },
     {
       "modelId": "smollm2-1-7b-instruct",
@@ -16982,6 +17543,42 @@
     },
     {
       "modelId": "qwen3-5-2b",
+      "benchmarkId": "parsebench",
+      "raw": 27.3,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 0,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 0.1,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.2,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 31.1,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 18.3,
+      "sourceLabel": "Qwen3.5-2B"
+    },
+    {
+      "modelId": "qwen3-5-2b",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 54.9,
       "sourceLabel": "Qwen3.5-2B"
@@ -18391,6 +18988,42 @@
       "sourceLabel": "Malkuth-2B"
     },
     {
+      "modelId": "wevisdoc-2b",
+      "benchmarkId": "parsebench",
+      "raw": 38.93,
+      "sourceLabel": "WeVisDoc-2B"
+    },
+    {
+      "modelId": "wevisdoc-2b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 70.41,
+      "sourceLabel": "WeVisDoc-2B"
+    },
+    {
+      "modelId": "wevisdoc-2b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 0.86,
+      "sourceLabel": "WeVisDoc-2B"
+    },
+    {
+      "modelId": "wevisdoc-2b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 77.11,
+      "sourceLabel": "WeVisDoc-2B"
+    },
+    {
+      "modelId": "wevisdoc-2b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 46.28,
+      "sourceLabel": "WeVisDoc-2B"
+    },
+    {
+      "modelId": "wevisdoc-2b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 0,
+      "sourceLabel": "WeVisDoc-2B"
+    },
+    {
       "modelId": "mixedbread-mxbai-rerank-base-v2",
       "benchmarkId": "jevbench-intelligence",
       "raw": 0,
@@ -18401,6 +19034,42 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 86.6,
       "sourceLabel": "Mixedbread mxbai-rerank-base-v2"
+    },
+    {
+      "modelId": "chandra-ocr-2",
+      "benchmarkId": "parsebench",
+      "raw": 70.1,
+      "sourceLabel": "Chandra-ocr-2"
+    },
+    {
+      "modelId": "chandra-ocr-2",
+      "benchmarkId": "parsebench-tables",
+      "raw": 89.2,
+      "sourceLabel": "Chandra-ocr-2"
+    },
+    {
+      "modelId": "chandra-ocr-2",
+      "benchmarkId": "parsebench-charts",
+      "raw": 65.1,
+      "sourceLabel": "Chandra-ocr-2"
+    },
+    {
+      "modelId": "chandra-ocr-2",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 83.7,
+      "sourceLabel": "Chandra-ocr-2"
+    },
+    {
+      "modelId": "chandra-ocr-2",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 61.4,
+      "sourceLabel": "Chandra-ocr-2"
+    },
+    {
+      "modelId": "chandra-ocr-2",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 51.2,
+      "sourceLabel": "Chandra-ocr-2"
     },
     {
       "modelId": "deepseek-coder-v2",
@@ -18415,6 +19084,42 @@
       "raw": 720,
       "stderr": 28,
       "sourceLabel": "KAT Coder Pro V2"
+    },
+    {
+      "modelId": "deepseek-ocr-2",
+      "benchmarkId": "parsebench",
+      "raw": 41.2,
+      "sourceLabel": "DeepSeek-OCR-2"
+    },
+    {
+      "modelId": "deepseek-ocr-2",
+      "benchmarkId": "parsebench-tables",
+      "raw": 61.7,
+      "sourceLabel": "DeepSeek-OCR-2"
+    },
+    {
+      "modelId": "deepseek-ocr-2",
+      "benchmarkId": "parsebench-charts",
+      "raw": 1.1,
+      "sourceLabel": "DeepSeek-OCR-2"
+    },
+    {
+      "modelId": "deepseek-ocr-2",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 82,
+      "sourceLabel": "DeepSeek-OCR-2"
+    },
+    {
+      "modelId": "deepseek-ocr-2",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 54,
+      "sourceLabel": "DeepSeek-OCR-2"
+    },
+    {
+      "modelId": "deepseek-ocr-2",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 7,
+      "sourceLabel": "DeepSeek-OCR-2"
     },
     {
       "modelId": "devstral-2",
@@ -18705,6 +19410,42 @@
       "sourceLabel": "Gemini 2.0 Flash Thinking Exp"
     },
     {
+      "modelId": "infinity-parser2-flash",
+      "benchmarkId": "parsebench",
+      "raw": 73.25,
+      "sourceLabel": "Infinity-Parser2-Flash"
+    },
+    {
+      "modelId": "infinity-parser2-flash",
+      "benchmarkId": "parsebench-tables",
+      "raw": 82.88,
+      "sourceLabel": "Infinity-Parser2-Flash"
+    },
+    {
+      "modelId": "infinity-parser2-flash",
+      "benchmarkId": "parsebench-charts",
+      "raw": 55.56,
+      "sourceLabel": "Infinity-Parser2-Flash"
+    },
+    {
+      "modelId": "infinity-parser2-flash",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 89.52,
+      "sourceLabel": "Infinity-Parser2-Flash"
+    },
+    {
+      "modelId": "infinity-parser2-flash",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 57.7,
+      "sourceLabel": "Infinity-Parser2-Flash"
+    },
+    {
+      "modelId": "infinity-parser2-flash",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 80.61,
+      "sourceLabel": "Infinity-Parser2-Flash"
+    },
+    {
       "modelId": "ling-flash-2-0",
       "benchmarkId": "lmarena",
       "raw": 1344,
@@ -18917,6 +19658,42 @@
       "raw": 3.46,
       "stderr": 0.72,
       "sourceLabel": "Grok 2 Vision"
+    },
+    {
+      "modelId": "infinity-parser2-pro",
+      "benchmarkId": "parsebench",
+      "raw": 74.28,
+      "sourceLabel": "Infinity-Parser2-Pro"
+    },
+    {
+      "modelId": "infinity-parser2-pro",
+      "benchmarkId": "parsebench-tables",
+      "raw": 86.4,
+      "sourceLabel": "Infinity-Parser2-Pro"
+    },
+    {
+      "modelId": "infinity-parser2-pro",
+      "benchmarkId": "parsebench-charts",
+      "raw": 61.3,
+      "sourceLabel": "Infinity-Parser2-Pro"
+    },
+    {
+      "modelId": "infinity-parser2-pro",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 89.7,
+      "sourceLabel": "Infinity-Parser2-Pro"
+    },
+    {
+      "modelId": "infinity-parser2-pro",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 59.1,
+      "sourceLabel": "Infinity-Parser2-Pro"
+    },
+    {
+      "modelId": "infinity-parser2-pro",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 74.9,
+      "sourceLabel": "Infinity-Parser2-Pro"
     },
     {
       "modelId": "jamba-mini-2",
@@ -19381,6 +20158,42 @@
     },
     {
       "modelId": "nova-2-lite",
+      "benchmarkId": "parsebench",
+      "raw": 40.43,
+      "sourceLabel": "Amazon Nova 2 Lite"
+    },
+    {
+      "modelId": "nova-2-lite",
+      "benchmarkId": "parsebench-tables",
+      "raw": 68.38,
+      "sourceLabel": "Amazon Nova 2 Lite"
+    },
+    {
+      "modelId": "nova-2-lite",
+      "benchmarkId": "parsebench-charts",
+      "raw": 6.7,
+      "sourceLabel": "Amazon Nova 2 Lite"
+    },
+    {
+      "modelId": "nova-2-lite",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 77.04,
+      "sourceLabel": "Amazon Nova 2 Lite"
+    },
+    {
+      "modelId": "nova-2-lite",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 45.26,
+      "sourceLabel": "Amazon Nova 2 Lite"
+    },
+    {
+      "modelId": "nova-2-lite",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 4.78,
+      "sourceLabel": "Amazon Nova 2 Lite"
+    },
+    {
+      "modelId": "nova-2-lite",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 94.9,
       "sourceLabel": "amazon/nova-2-lite-v1:0"
@@ -19507,6 +20320,78 @@
       "raw": 456,
       "stderr": 24,
       "sourceLabel": "Nova 2.0 Pro Preview (Medium)"
+    },
+    {
+      "modelId": "surya-ocr-2",
+      "benchmarkId": "parsebench",
+      "raw": 64.83,
+      "sourceLabel": "Surya OCR 2"
+    },
+    {
+      "modelId": "surya-ocr-2",
+      "benchmarkId": "parsebench-tables",
+      "raw": 82.68,
+      "sourceLabel": "Surya OCR 2"
+    },
+    {
+      "modelId": "surya-ocr-2",
+      "benchmarkId": "parsebench-charts",
+      "raw": 21.95,
+      "sourceLabel": "Surya OCR 2"
+    },
+    {
+      "modelId": "surya-ocr-2",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 86.57,
+      "sourceLabel": "Surya OCR 2"
+    },
+    {
+      "modelId": "surya-ocr-2",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 61.36,
+      "sourceLabel": "Surya OCR 2"
+    },
+    {
+      "modelId": "surya-ocr-2",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 71.59,
+      "sourceLabel": "Surya OCR 2"
+    },
+    {
+      "modelId": "ovisocr2",
+      "benchmarkId": "parsebench",
+      "raw": 40.84,
+      "sourceLabel": "OvisOCR2"
+    },
+    {
+      "modelId": "ovisocr2",
+      "benchmarkId": "parsebench-tables",
+      "raw": 77.37,
+      "sourceLabel": "OvisOCR2"
+    },
+    {
+      "modelId": "ovisocr2",
+      "benchmarkId": "parsebench-charts",
+      "raw": 1.01,
+      "sourceLabel": "OvisOCR2"
+    },
+    {
+      "modelId": "ovisocr2",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 88.47,
+      "sourceLabel": "OvisOCR2"
+    },
+    {
+      "modelId": "ovisocr2",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 37.35,
+      "sourceLabel": "OvisOCR2"
+    },
+    {
+      "modelId": "ovisocr2",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 0,
+      "sourceLabel": "OvisOCR2"
     },
     {
       "modelId": "palm-2",
@@ -21168,14 +22053,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1107,
       "stderr": 22,
-      "sourceLabel": "MiMo-V2.5-Pro"
+      "sourceLabel": "MiMo-V2.5-Pro (Reasoning)"
     },
     {
       "modelId": "mimo-v2-5-pro",
       "benchmarkId": "aa-briefcase",
       "raw": 881,
       "stderr": 7.5,
-      "sourceLabel": "MiMo-V2.5-Pro"
+      "sourceLabel": "MiMo-V2.5-Pro (Reasoning)"
     },
     {
       "modelId": "mimo-v2-5-pro",
@@ -21608,14 +22493,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1026,
       "stderr": 22,
-      "sourceLabel": "Kimi K2.6"
+      "sourceLabel": "Kimi K2.6 (Reasoning)"
     },
     {
       "modelId": "kimi-k2-6",
       "benchmarkId": "aa-briefcase",
       "raw": 818,
       "stderr": 7,
-      "sourceLabel": "Kimi K2.6"
+      "sourceLabel": "Kimi K2.6 (Reasoning)"
     },
     {
       "modelId": "kimi-k2-6",
@@ -22924,14 +23809,14 @@
       "benchmarkId": "aa-gdpval",
       "raw": 1316,
       "stderr": 21,
-      "sourceLabel": "JT-4.1 Flash 236B A21B"
+      "sourceLabel": "JT-4.1 Flash 236B A21B (Reasoning)"
     },
     {
       "modelId": "jt-4-1-flash-236b-a21b",
       "benchmarkId": "aa-briefcase",
       "raw": 1088,
       "stderr": 10,
-      "sourceLabel": "JT-4.1 Flash 236B A21B"
+      "sourceLabel": "JT-4.1 Flash 236B A21B (Reasoning)"
     },
     {
       "modelId": "mistral-small-3-1-24b-instruct",
@@ -23027,6 +23912,42 @@
       "raw": 553,
       "stderr": 24,
       "sourceLabel": "Gemma 4 26B A4B (Reasoning)"
+    },
+    {
+      "modelId": "gemma-4-26b-a4b",
+      "benchmarkId": "parsebench",
+      "raw": 58.5,
+      "sourceLabel": "Gemma-4-26B-A4B-it"
+    },
+    {
+      "modelId": "gemma-4-26b-a4b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 70,
+      "sourceLabel": "Gemma-4-26B-A4B-it"
+    },
+    {
+      "modelId": "gemma-4-26b-a4b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 14.2,
+      "sourceLabel": "Gemma-4-26B-A4B-it"
+    },
+    {
+      "modelId": "gemma-4-26b-a4b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 83.8,
+      "sourceLabel": "Gemma-4-26B-A4B-it"
+    },
+    {
+      "modelId": "gemma-4-26b-a4b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 65.1,
+      "sourceLabel": "Gemma-4-26B-A4B-it"
+    },
+    {
+      "modelId": "gemma-4-26b-a4b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 59.2,
+      "sourceLabel": "Gemma-4-26B-A4B-it"
     },
     {
       "modelId": "gemma-4-26b-a4b",
@@ -23526,6 +24447,42 @@
     },
     {
       "modelId": "qwen3-8-27b",
+      "benchmarkId": "parsebench",
+      "raw": 70.79,
+      "sourceLabel": "Qwen 3.8 27B (Thinking)"
+    },
+    {
+      "modelId": "qwen3-8-27b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 66.82,
+      "sourceLabel": "Qwen 3.8 27B (Thinking)"
+    },
+    {
+      "modelId": "qwen3-8-27b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 69.17,
+      "sourceLabel": "Qwen 3.8 27B (Thinking)"
+    },
+    {
+      "modelId": "qwen3-8-27b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 88.28,
+      "sourceLabel": "Qwen 3.8 27B (Thinking)"
+    },
+    {
+      "modelId": "qwen3-8-27b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 59.77,
+      "sourceLabel": "Qwen 3.8 27B (Thinking)"
+    },
+    {
+      "modelId": "qwen3-8-27b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 69.9,
+      "sourceLabel": "Qwen 3.8 27B (Thinking)"
+    },
+    {
+      "modelId": "qwen3-8-27b",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 48,
       "sourceLabel": "Qwen3.8-27B"
@@ -23973,6 +24930,42 @@
       "benchmarkId": "vectara-factual-consistency",
       "raw": 90.4,
       "sourceLabel": "nvidia/Nemotron-3-Nano-30B-A3B"
+    },
+    {
+      "modelId": "nemotron-3-nano-omni-30b-a3b",
+      "benchmarkId": "parsebench",
+      "raw": 48.51,
+      "sourceLabel": "Nemotron-3-Nano-Omni-30B-A3B (Thinking)"
+    },
+    {
+      "modelId": "nemotron-3-nano-omni-30b-a3b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 70.44,
+      "sourceLabel": "Nemotron-3-Nano-Omni-30B-A3B (Thinking)"
+    },
+    {
+      "modelId": "nemotron-3-nano-omni-30b-a3b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 31.47,
+      "sourceLabel": "Nemotron-3-Nano-Omni-30B-A3B (Thinking)"
+    },
+    {
+      "modelId": "nemotron-3-nano-omni-30b-a3b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 80.97,
+      "sourceLabel": "Nemotron-3-Nano-Omni-30B-A3B (Thinking)"
+    },
+    {
+      "modelId": "nemotron-3-nano-omni-30b-a3b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 59.69,
+      "sourceLabel": "Nemotron-3-Nano-Omni-30B-A3B (Thinking)"
+    },
+    {
+      "modelId": "nemotron-3-nano-omni-30b-a3b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 0,
+      "sourceLabel": "Nemotron-3-Nano-Omni-30B-A3B (Thinking)"
     },
     {
       "modelId": "nemotron-3-nano-omni-30b-a3b-reasoning",
@@ -25157,6 +26150,42 @@
       "sourceLabel": "qwen/qwen3-8b"
     },
     {
+      "modelId": "qwen3-vl-8b-instruct",
+      "benchmarkId": "parsebench",
+      "raw": 61.97,
+      "sourceLabel": "Qwen3-VL-8B-Instruct"
+    },
+    {
+      "modelId": "qwen3-vl-8b-instruct",
+      "benchmarkId": "parsebench-tables",
+      "raw": 74.61,
+      "sourceLabel": "Qwen3-VL-8B-Instruct"
+    },
+    {
+      "modelId": "qwen3-vl-8b-instruct",
+      "benchmarkId": "parsebench-charts",
+      "raw": 28.18,
+      "sourceLabel": "Qwen3-VL-8B-Instruct"
+    },
+    {
+      "modelId": "qwen3-vl-8b-instruct",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.63,
+      "sourceLabel": "Qwen3-VL-8B-Instruct"
+    },
+    {
+      "modelId": "qwen3-vl-8b-instruct",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 64.23,
+      "sourceLabel": "Qwen3-VL-8B-Instruct"
+    },
+    {
+      "modelId": "qwen3-vl-8b-instruct",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 55.18,
+      "sourceLabel": "Qwen3-VL-8B-Instruct"
+    },
+    {
       "modelId": "phi-3-small-8k-instruct",
       "benchmarkId": "lmarena",
       "raw": 1171,
@@ -25809,6 +26838,42 @@
       "raw": 95.63,
       "stderr": 0.52,
       "sourceLabel": "Gemini 3 Flash (12/25)"
+    },
+    {
+      "modelId": "gemini-3-flash",
+      "benchmarkId": "parsebench",
+      "raw": 75.05,
+      "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-flash",
+      "benchmarkId": "parsebench-tables",
+      "raw": 91.5,
+      "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-flash",
+      "benchmarkId": "parsebench-charts",
+      "raw": 64.79,
+      "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-flash",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 90.87,
+      "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-flash",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 68.31,
+      "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-flash",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 59.77,
+      "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-flash",
@@ -29173,6 +30238,42 @@
     },
     {
       "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "parsebench",
+      "raw": 57.29,
+      "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "parsebench-tables",
+      "raw": 76.76,
+      "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "parsebench-charts",
+      "raw": 30.89,
+      "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 83.28,
+      "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 56.61,
+      "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 38.93,
+      "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-1-flash-lite",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 91.8,
       "sourceLabel": "google/gemini-3.1-flash-lite-preview"
@@ -29398,6 +30499,42 @@
       "raw": 26,
       "stderr": 4.41,
       "sourceLabel": "Gemini 3.1 Pro Preview (02/26)"
+    },
+    {
+      "modelId": "gemini-3-1-pro",
+      "benchmarkId": "parsebench",
+      "raw": 69.14,
+      "sourceLabel": "Google Gemini 3.1 Pro"
+    },
+    {
+      "modelId": "gemini-3-1-pro",
+      "benchmarkId": "parsebench-tables",
+      "raw": 91,
+      "sourceLabel": "Google Gemini 3.1 Pro"
+    },
+    {
+      "modelId": "gemini-3-1-pro",
+      "benchmarkId": "parsebench-charts",
+      "raw": 41.13,
+      "sourceLabel": "Google Gemini 3.1 Pro"
+    },
+    {
+      "modelId": "gemini-3-1-pro",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 90.16,
+      "sourceLabel": "Google Gemini 3.1 Pro"
+    },
+    {
+      "modelId": "gemini-3-1-pro",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 52.43,
+      "sourceLabel": "Google Gemini 3.1 Pro"
+    },
+    {
+      "modelId": "gemini-3-1-pro",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 70.99,
+      "sourceLabel": "Google Gemini 3.1 Pro"
     },
     {
       "modelId": "gemini-3-1-pro",
@@ -30125,6 +31262,42 @@
     },
     {
       "modelId": "qwen3-5-4b",
+      "benchmarkId": "parsebench",
+      "raw": 35.4,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 8,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 2.5,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 88.9,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 57.8,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 19.7,
+      "sourceLabel": "Qwen3.5-4B"
+    },
+    {
+      "modelId": "qwen3-5-4b",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 6.8,
       "sourceLabel": "Qwen3.5-4B"
@@ -30190,6 +31363,42 @@
       "raw": 336,
       "stderr": 11.5,
       "sourceLabel": "Qwen3.5 9B (Reasoning)"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "parsebench",
+      "raw": 31.9,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 9.9,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 5.4,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 90.5,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 22,
+      "sourceLabel": "Qwen3.5-9B"
+    },
+    {
+      "modelId": "qwen3-5-9b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 31.8,
+      "sourceLabel": "Qwen3.5-9B"
     },
     {
       "modelId": "qwen3-5-9b",
@@ -30431,6 +31640,42 @@
     },
     {
       "modelId": "gemini-3-5-flash",
+      "benchmarkId": "parsebench",
+      "raw": 74.02,
+      "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "parsebench-tables",
+      "raw": 90.44,
+      "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "parsebench-charts",
+      "raw": 45.27,
+      "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 88.92,
+      "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 77.85,
+      "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 67.6,
+      "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 30.6,
       "sourceLabel": "gemini-3.5-flash"
@@ -30652,6 +31897,42 @@
       "raw": 85.84,
       "stderr": 0.34,
       "sourceLabel": "Gemini 3.5 Flash Lite"
+    },
+    {
+      "modelId": "gemini-3-5-flash-lite",
+      "benchmarkId": "parsebench",
+      "raw": 60.64,
+      "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash-lite",
+      "benchmarkId": "parsebench-tables",
+      "raw": 83.31,
+      "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash-lite",
+      "benchmarkId": "parsebench-charts",
+      "raw": 19.27,
+      "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash-lite",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 86.85,
+      "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash-lite",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 54.03,
+      "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-5-flash-lite",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 59.75,
+      "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
     },
     {
       "modelId": "qwen3-5-flash",
@@ -31525,6 +32806,42 @@
     },
     {
       "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "parsebench",
+      "raw": 44.1,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 19.1,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 5.1,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 90.7,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 58.3,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 47.4,
+      "sourceLabel": "Qwen3.6-35B-A3B"
+    },
+    {
+      "modelId": "qwen3-6-35b-a3b",
       "benchmarkId": "ifm-k2-horizon:tau3-banking",
       "raw": 9.3,
       "sourceLabel": "Qwen3.6-35B-A3B"
@@ -31765,6 +33082,42 @@
       "raw": 89.28,
       "stderr": 0.3,
       "sourceLabel": "Gemini 3.6 Flash"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "parsebench",
+      "raw": 70.03,
+      "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "parsebench-tables",
+      "raw": 89.3,
+      "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "parsebench-charts",
+      "raw": 34.53,
+      "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 88.21,
+      "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 73.11,
+      "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-6-flash",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 64.98,
+      "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-6-flash",
@@ -32221,6 +33574,42 @@
       "raw": 58,
       "stderr": 4.96,
       "sourceLabel": "Gemini 3.7 Flash"
+    },
+    {
+      "modelId": "gemini-3-7-flash",
+      "benchmarkId": "parsebench",
+      "raw": 71.27,
+      "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-7-flash",
+      "benchmarkId": "parsebench-tables",
+      "raw": 90.16,
+      "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-7-flash",
+      "benchmarkId": "parsebench-charts",
+      "raw": 32.07,
+      "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-7-flash",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 88.6,
+      "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-7-flash",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 74.98,
+      "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-7-flash",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 70.56,
+      "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
     },
     {
       "modelId": "step-3-7-flash",
@@ -32867,6 +34256,42 @@
     },
     {
       "modelId": "gemini-3-8-flash",
+      "benchmarkId": "parsebench",
+      "raw": 72.08,
+      "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
+      "benchmarkId": "parsebench-tables",
+      "raw": 89.12,
+      "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
+      "benchmarkId": "parsebench-charts",
+      "raw": 32.34,
+      "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 89.68,
+      "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 76.36,
+      "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 72.91,
+      "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 15.5,
       "sourceLabel": "gemini-3.8-flash"
@@ -33445,6 +34870,42 @@
     },
     {
       "modelId": "gemma-4-31b",
+      "benchmarkId": "parsebench",
+      "raw": 62.4,
+      "sourceLabel": "Gemma-4-31B-it"
+    },
+    {
+      "modelId": "gemma-4-31b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 80.6,
+      "sourceLabel": "Gemma-4-31B-it"
+    },
+    {
+      "modelId": "gemma-4-31b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 15,
+      "sourceLabel": "Gemma-4-31B-it"
+    },
+    {
+      "modelId": "gemma-4-31b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 89.9,
+      "sourceLabel": "Gemma-4-31B-it"
+    },
+    {
+      "modelId": "gemma-4-31b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 69.3,
+      "sourceLabel": "Gemma-4-31B-it"
+    },
+    {
+      "modelId": "gemma-4-31b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 57.4,
+      "sourceLabel": "Gemma-4-31B-it"
+    },
+    {
+      "modelId": "gemma-4-31b",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 19.4,
       "sourceLabel": "gemma-4-31B-it"
@@ -33685,7 +35146,7 @@
       "benchmarkId": "aa-gdpval",
       "raw": 457,
       "stderr": 28,
-      "sourceLabel": "EXAONE 4.5 33B"
+      "sourceLabel": "EXAONE 4.5 33B (Reasoning)"
     },
     {
       "modelId": "guanaco-33b",
@@ -33803,6 +35264,42 @@
     },
     {
       "modelId": "gemma-4-e4b",
+      "benchmarkId": "parsebench",
+      "raw": 40.5,
+      "sourceLabel": "Gemma-4-E4B-it"
+    },
+    {
+      "modelId": "gemma-4-e4b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 25,
+      "sourceLabel": "Gemma-4-E4B-it"
+    },
+    {
+      "modelId": "gemma-4-e4b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 7.7,
+      "sourceLabel": "Gemma-4-E4B-it"
+    },
+    {
+      "modelId": "gemma-4-e4b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 81.4,
+      "sourceLabel": "Gemma-4-E4B-it"
+    },
+    {
+      "modelId": "gemma-4-e4b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 52.5,
+      "sourceLabel": "Gemma-4-E4B-it"
+    },
+    {
+      "modelId": "gemma-4-e4b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 35.8,
+      "sourceLabel": "Gemma-4-E4B-it"
+    },
+    {
+      "modelId": "gemma-4-e4b",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 22.6,
       "sourceLabel": "gemma-4-E4B-it"
@@ -33854,6 +35351,42 @@
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 52,
       "sourceLabel": "Gemma 4-E4B"
+    },
+    {
+      "modelId": "granite-vision-4-1-4b",
+      "benchmarkId": "parsebench",
+      "raw": 39.45,
+      "sourceLabel": "Granite Vision 4.1 4B"
+    },
+    {
+      "modelId": "granite-vision-4-1-4b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 63.81,
+      "sourceLabel": "Granite Vision 4.1 4B"
+    },
+    {
+      "modelId": "granite-vision-4-1-4b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 47.47,
+      "sourceLabel": "Granite Vision 4.1 4B"
+    },
+    {
+      "modelId": "granite-vision-4-1-4b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 64.43,
+      "sourceLabel": "Granite Vision 4.1 4B"
+    },
+    {
+      "modelId": "granite-vision-4-1-4b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 21.52,
+      "sourceLabel": "Granite Vision 4.1 4B"
+    },
+    {
+      "modelId": "granite-vision-4-1-4b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 0,
+      "sourceLabel": "Granite Vision 4.1 4B"
     },
     {
       "modelId": "hermes-4-405b",
@@ -34183,6 +35716,42 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 86.8,
       "sourceLabel": "reflex 4B"
+    },
+    {
+      "modelId": "wevisdoc-4b",
+      "benchmarkId": "parsebench",
+      "raw": 36.15,
+      "sourceLabel": "WeVisDoc-4B"
+    },
+    {
+      "modelId": "wevisdoc-4b",
+      "benchmarkId": "parsebench-tables",
+      "raw": 65.86,
+      "sourceLabel": "WeVisDoc-4B"
+    },
+    {
+      "modelId": "wevisdoc-4b",
+      "benchmarkId": "parsebench-charts",
+      "raw": 0.79,
+      "sourceLabel": "WeVisDoc-4B"
+    },
+    {
+      "modelId": "wevisdoc-4b",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 70.45,
+      "sourceLabel": "WeVisDoc-4B"
+    },
+    {
+      "modelId": "wevisdoc-4b",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 43.65,
+      "sourceLabel": "WeVisDoc-4B"
+    },
+    {
+      "modelId": "wevisdoc-4b",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 0,
+      "sourceLabel": "WeVisDoc-4B"
     },
     {
       "modelId": "chatgpt-4o",
@@ -37475,6 +39044,42 @@
     },
     {
       "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "parsebench",
+      "raw": 65.72,
+      "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "parsebench-tables",
+      "raw": 82.82,
+      "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "parsebench-charts",
+      "raw": 51.11,
+      "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.33,
+      "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 73.48,
+      "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 33.87,
+      "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
+    },
+    {
+      "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "deepseek-v4-1-flash:gpqa-diamond-pass-1",
       "raw": 90.9,
       "sourceLabel": "DS-V4.1-Flash"
@@ -39393,6 +40998,42 @@
     },
     {
       "modelId": "claude-haiku-4-5",
+      "benchmarkId": "parsebench",
+      "raw": 45.17,
+      "sourceLabel": "Claude Haiku 4.5 (Disable Thinking)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "parsebench-tables",
+      "raw": 77.21,
+      "sourceLabel": "Claude Haiku 4.5 (Disable Thinking)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "parsebench-charts",
+      "raw": 13.77,
+      "sourceLabel": "Claude Haiku 4.5 (Disable Thinking)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 78.74,
+      "sourceLabel": "Claude Haiku 4.5 (Disable Thinking)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 49.39,
+      "sourceLabel": "Claude Haiku 4.5 (Disable Thinking)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 6.72,
+      "sourceLabel": "Claude Haiku 4.5 (Disable Thinking)"
+    },
+    {
+      "modelId": "claude-haiku-4-5",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 95.9,
       "sourceLabel": "Claude 4.5 Haiku (20251001)"
@@ -40409,6 +42050,42 @@
     },
     {
       "modelId": "claude-opus-4-6",
+      "benchmarkId": "parsebench",
+      "raw": 54.07,
+      "sourceLabel": "Claude Opus 4.6"
+    },
+    {
+      "modelId": "claude-opus-4-6",
+      "benchmarkId": "parsebench-tables",
+      "raw": 86.52,
+      "sourceLabel": "Claude Opus 4.6"
+    },
+    {
+      "modelId": "claude-opus-4-6",
+      "benchmarkId": "parsebench-charts",
+      "raw": 13.49,
+      "sourceLabel": "Claude Opus 4.6"
+    },
+    {
+      "modelId": "claude-opus-4-6",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 89.7,
+      "sourceLabel": "Claude Opus 4.6"
+    },
+    {
+      "modelId": "claude-opus-4-6",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 64.19,
+      "sourceLabel": "Claude Opus 4.6"
+    },
+    {
+      "modelId": "claude-opus-4-6",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 16.47,
+      "sourceLabel": "Claude Opus 4.6"
+    },
+    {
+      "modelId": "claude-opus-4-6",
       "benchmarkId": "enkrypt-harmful",
       "raw": 0.6,
       "sourceLabel": "claude-opus-4-6"
@@ -41166,6 +42843,42 @@
     },
     {
       "modelId": "claude-opus-4-7",
+      "benchmarkId": "parsebench",
+      "raw": 63.34,
+      "sourceLabel": "Claude Opus 4.7"
+    },
+    {
+      "modelId": "claude-opus-4-7",
+      "benchmarkId": "parsebench-tables",
+      "raw": 87.17,
+      "sourceLabel": "Claude Opus 4.7"
+    },
+    {
+      "modelId": "claude-opus-4-7",
+      "benchmarkId": "parsebench-charts",
+      "raw": 55.84,
+      "sourceLabel": "Claude Opus 4.7"
+    },
+    {
+      "modelId": "claude-opus-4-7",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 90.26,
+      "sourceLabel": "Claude Opus 4.7"
+    },
+    {
+      "modelId": "claude-opus-4-7",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 69.42,
+      "sourceLabel": "Claude Opus 4.7"
+    },
+    {
+      "modelId": "claude-opus-4-7",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 13.99,
+      "sourceLabel": "Claude Opus 4.7"
+    },
+    {
+      "modelId": "claude-opus-4-7",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 1.7,
       "sourceLabel": "claude-opus-4-7"
@@ -41399,6 +43112,42 @@
       "benchmarkId": "vals-mmlu_pro",
       "raw": 89.58,
       "stderr": 0.3,
+      "sourceLabel": "Claude Opus 4.8"
+    },
+    {
+      "modelId": "claude-opus-4-8",
+      "benchmarkId": "parsebench",
+      "raw": 63.7,
+      "sourceLabel": "Claude Opus 4.8"
+    },
+    {
+      "modelId": "claude-opus-4-8",
+      "benchmarkId": "parsebench-tables",
+      "raw": 89.65,
+      "sourceLabel": "Claude Opus 4.8"
+    },
+    {
+      "modelId": "claude-opus-4-8",
+      "benchmarkId": "parsebench-charts",
+      "raw": 49.75,
+      "sourceLabel": "Claude Opus 4.8"
+    },
+    {
+      "modelId": "claude-opus-4-8",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 89.02,
+      "sourceLabel": "Claude Opus 4.8"
+    },
+    {
+      "modelId": "claude-opus-4-8",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 71.38,
+      "sourceLabel": "Claude Opus 4.8"
+    },
+    {
+      "modelId": "claude-opus-4-8",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 18.69,
       "sourceLabel": "Claude Opus 4.8"
     },
     {
@@ -41692,6 +43441,42 @@
       "benchmarkId": "vals-proof_bench",
       "raw": 95,
       "stderr": 2.19,
+      "sourceLabel": "Claude Fable 5"
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "parsebench",
+      "raw": 70.78,
+      "sourceLabel": "Claude Fable 5"
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "parsebench-tables",
+      "raw": 89.79,
+      "sourceLabel": "Claude Fable 5"
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "parsebench-charts",
+      "raw": 52.21,
+      "sourceLabel": "Claude Fable 5"
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 90.02,
+      "sourceLabel": "Claude Fable 5"
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 72.62,
+      "sourceLabel": "Claude Fable 5"
+    },
+    {
+      "modelId": "claude-fable-5",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 49.24,
       "sourceLabel": "Claude Fable 5"
     },
     {
@@ -42174,6 +43959,42 @@
       "raw": 91.46,
       "stderr": 0.84,
       "sourceLabel": "GPT 5 Mini"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "parsebench",
+      "raw": 51.52,
+      "sourceLabel": "GPT-5 Mini (Medium)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "parsebench-tables",
+      "raw": 74.6,
+      "sourceLabel": "GPT-5 Mini (Medium)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "parsebench-charts",
+      "raw": 38.96,
+      "sourceLabel": "GPT-5 Mini (Medium)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 85.68,
+      "sourceLabel": "GPT-5 Mini (Medium)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 45.35,
+      "sourceLabel": "GPT-5 Mini (Medium)"
+    },
+    {
+      "modelId": "gpt-5-mini",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 13.03,
+      "sourceLabel": "GPT-5 Mini (Medium)"
     },
     {
       "modelId": "gpt-5-mini",
@@ -43010,6 +44831,42 @@
     },
     {
       "modelId": "claude-sonnet-5",
+      "benchmarkId": "parsebench",
+      "raw": 62.13,
+      "sourceLabel": "Claude Sonnet 5"
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "parsebench-tables",
+      "raw": 86.65,
+      "sourceLabel": "Claude Sonnet 5"
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "parsebench-charts",
+      "raw": 60.53,
+      "sourceLabel": "Claude Sonnet 5"
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 86.51,
+      "sourceLabel": "Claude Sonnet 5"
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 64.93,
+      "sourceLabel": "Claude Sonnet 5"
+    },
+    {
+      "modelId": "claude-sonnet-5",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 12.03,
+      "sourceLabel": "Claude Sonnet 5"
+    },
+    {
+      "modelId": "claude-sonnet-5",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 2,
       "sourceLabel": "claude-sonnet-5"
@@ -43376,6 +45233,42 @@
       "benchmarkId": "vals-proof_bench",
       "raw": 100,
       "stderr": 0,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "parsebench",
+      "raw": 78.92,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "parsebench-tables",
+      "raw": 91.52,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "parsebench-charts",
+      "raw": 67.06,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 91.19,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 76.52,
+      "sourceLabel": "Claude Fable 5.1"
+    },
+    {
+      "modelId": "claude-fable-5-1",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 68.3,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
@@ -44657,6 +46550,42 @@
     },
     {
       "modelId": "glm-5-3-flash",
+      "benchmarkId": "parsebench",
+      "raw": 70.75,
+      "sourceLabel": "GLM-5.3 Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
+      "benchmarkId": "parsebench-tables",
+      "raw": 89.18,
+      "sourceLabel": "GLM-5.3 Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
+      "benchmarkId": "parsebench-charts",
+      "raw": 54.96,
+      "sourceLabel": "GLM-5.3 Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 88.34,
+      "sourceLabel": "GLM-5.3 Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 79.49,
+      "sourceLabel": "GLM-5.3 Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 41.78,
+      "sourceLabel": "GLM-5.3 Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 25.2,
       "sourceLabel": "glm-5.3-flash"
@@ -45135,6 +47064,42 @@
     },
     {
       "modelId": "gpt-5-4",
+      "benchmarkId": "parsebench",
+      "raw": 62.23,
+      "sourceLabel": "GPT-5.4 (None)"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "parsebench-tables",
+      "raw": 83.89,
+      "sourceLabel": "GPT-5.4 (None)"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "parsebench-charts",
+      "raw": 65.22,
+      "sourceLabel": "GPT-5.4 (None)"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 85.57,
+      "sourceLabel": "GPT-5.4 (None)"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 59.52,
+      "sourceLabel": "GPT-5.4 (None)"
+    },
+    {
+      "modelId": "gpt-5-4",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 16.95,
+      "sourceLabel": "GPT-5.4 (None)"
+    },
+    {
+      "modelId": "gpt-5-4",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 6.3,
       "sourceLabel": "gpt-5.4-2026-03-05"
@@ -45552,6 +47517,42 @@
     },
     {
       "modelId": "gpt-5-4-nano",
+      "benchmarkId": "parsebench",
+      "raw": 43.35,
+      "sourceLabel": "GPT-5.4 Nano"
+    },
+    {
+      "modelId": "gpt-5-4-nano",
+      "benchmarkId": "parsebench-tables",
+      "raw": 60.16,
+      "sourceLabel": "GPT-5.4 Nano"
+    },
+    {
+      "modelId": "gpt-5-4-nano",
+      "benchmarkId": "parsebench-charts",
+      "raw": 17.57,
+      "sourceLabel": "GPT-5.4 Nano"
+    },
+    {
+      "modelId": "gpt-5-4-nano",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 78.05,
+      "sourceLabel": "GPT-5.4 Nano"
+    },
+    {
+      "modelId": "gpt-5-4-nano",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 54.56,
+      "sourceLabel": "GPT-5.4 Nano"
+    },
+    {
+      "modelId": "gpt-5-4-nano",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 6.41,
+      "sourceLabel": "GPT-5.4 Nano"
+    },
+    {
+      "modelId": "gpt-5-4-nano",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 96.9,
       "sourceLabel": "openai/gpt-5.4-nano-2026-03-17"
@@ -45775,6 +47776,42 @@
       "raw": 88.14,
       "stderr": 0.32,
       "sourceLabel": "GPT 5.5"
+    },
+    {
+      "modelId": "gpt-5-5",
+      "benchmarkId": "parsebench",
+      "raw": 67.76,
+      "sourceLabel": "GPT-5.5 (Medium)"
+    },
+    {
+      "modelId": "gpt-5-5",
+      "benchmarkId": "parsebench-tables",
+      "raw": 90.05,
+      "sourceLabel": "GPT-5.5 (Medium)"
+    },
+    {
+      "modelId": "gpt-5-5",
+      "benchmarkId": "parsebench-charts",
+      "raw": 65.53,
+      "sourceLabel": "GPT-5.5 (Medium)"
+    },
+    {
+      "modelId": "gpt-5-5",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 86.81,
+      "sourceLabel": "GPT-5.5 (Medium)"
+    },
+    {
+      "modelId": "gpt-5-5",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 60.12,
+      "sourceLabel": "GPT-5.5 (Medium)"
+    },
+    {
+      "modelId": "gpt-5-5",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 36.28,
+      "sourceLabel": "GPT-5.5 (Medium)"
     },
     {
       "modelId": "gpt-5-5",
@@ -46024,6 +48061,42 @@
     },
     {
       "modelId": "claude-opus-5-5",
+      "benchmarkId": "parsebench",
+      "raw": 79.85,
+      "sourceLabel": "Claude Opus 5.5 (Effort High)"
+    },
+    {
+      "modelId": "claude-opus-5-5",
+      "benchmarkId": "parsebench-tables",
+      "raw": 94.25,
+      "sourceLabel": "Claude Opus 5.5 (Effort High)"
+    },
+    {
+      "modelId": "claude-opus-5-5",
+      "benchmarkId": "parsebench-charts",
+      "raw": 70.89,
+      "sourceLabel": "Claude Opus 5.5 (Effort High)"
+    },
+    {
+      "modelId": "claude-opus-5-5",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 91.72,
+      "sourceLabel": "Claude Opus 5.5 (Effort High)"
+    },
+    {
+      "modelId": "claude-opus-5-5",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 77.04,
+      "sourceLabel": "Claude Opus 5.5 (Effort High)"
+    },
+    {
+      "modelId": "claude-opus-5-5",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 65.33,
+      "sourceLabel": "Claude Opus 5.5 (Effort High)"
+    },
+    {
+      "modelId": "claude-opus-5-5",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 4.5,
       "sourceLabel": "claude-opus-5.5"
@@ -46202,6 +48275,42 @@
       "benchmarkId": "vals-proof_bench",
       "raw": 100,
       "stderr": 0,
+      "sourceLabel": "Claude Sonnet 5.5"
+    },
+    {
+      "modelId": "claude-sonnet-5-5",
+      "benchmarkId": "parsebench",
+      "raw": 70.18,
+      "sourceLabel": "Claude Sonnet 5.5"
+    },
+    {
+      "modelId": "claude-sonnet-5-5",
+      "benchmarkId": "parsebench-tables",
+      "raw": 91.04,
+      "sourceLabel": "Claude Sonnet 5.5"
+    },
+    {
+      "modelId": "claude-sonnet-5-5",
+      "benchmarkId": "parsebench-charts",
+      "raw": 37.69,
+      "sourceLabel": "Claude Sonnet 5.5"
+    },
+    {
+      "modelId": "claude-sonnet-5-5",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 91.64,
+      "sourceLabel": "Claude Sonnet 5.5"
+    },
+    {
+      "modelId": "claude-sonnet-5-5",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 71.63,
+      "sourceLabel": "Claude Sonnet 5.5"
+    },
+    {
+      "modelId": "claude-sonnet-5-5",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 58.92,
       "sourceLabel": "Claude Sonnet 5.5"
     },
     {
@@ -46467,6 +48576,42 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 94.7,
       "sourceLabel": "GPT-5.6 Luna (low reasoning effort)"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "parsebench",
+      "raw": 68.34,
+      "sourceLabel": "GPT-5.6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "parsebench-tables",
+      "raw": 88.27,
+      "sourceLabel": "GPT-5.6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "parsebench-charts",
+      "raw": 49.16,
+      "sourceLabel": "GPT-5.6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 86.57,
+      "sourceLabel": "GPT-5.6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 64.95,
+      "sourceLabel": "GPT-5.6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 52.73,
+      "sourceLabel": "GPT-5.6 Luna (Max)"
     },
     {
       "modelId": "gpt-5-6-luna",
@@ -46845,6 +48990,42 @@
     },
     {
       "modelId": "gpt-5-6-sol",
+      "benchmarkId": "parsebench",
+      "raw": 75.35,
+      "sourceLabel": "GPT-5.6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "parsebench-tables",
+      "raw": 91.39,
+      "sourceLabel": "GPT-5.6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "parsebench-charts",
+      "raw": 68.68,
+      "sourceLabel": "GPT-5.6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 88.16,
+      "sourceLabel": "GPT-5.6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 77.16,
+      "sourceLabel": "GPT-5.6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 51.35,
+      "sourceLabel": "GPT-5.6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-5-6-sol",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 9.2,
       "sourceLabel": "gpt-5.6-sol"
@@ -47198,6 +49379,42 @@
     },
     {
       "modelId": "gpt-5-6-terra",
+      "benchmarkId": "parsebench",
+      "raw": 68.39,
+      "sourceLabel": "GPT-5.6 Terra (Medium)"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
+      "benchmarkId": "parsebench-tables",
+      "raw": 86.72,
+      "sourceLabel": "GPT-5.6 Terra (Medium)"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
+      "benchmarkId": "parsebench-charts",
+      "raw": 67.86,
+      "sourceLabel": "GPT-5.6 Terra (Medium)"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.06,
+      "sourceLabel": "GPT-5.6 Terra (Medium)"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 68.47,
+      "sourceLabel": "GPT-5.6 Terra (Medium)"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 31.82,
+      "sourceLabel": "GPT-5.6 Terra (Medium)"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 8.5,
       "sourceLabel": "gpt-5.6-terra"
@@ -47497,6 +49714,42 @@
     },
     {
       "modelId": "gpt-6-astra",
+      "benchmarkId": "parsebench",
+      "raw": 70.67,
+      "sourceLabel": "GPT-6 Astra (Low)"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "parsebench-tables",
+      "raw": 93.17,
+      "sourceLabel": "GPT-6 Astra (Low)"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "parsebench-charts",
+      "raw": 35.08,
+      "sourceLabel": "GPT-6 Astra (Low)"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 89.6,
+      "sourceLabel": "GPT-6 Astra (Low)"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 75.52,
+      "sourceLabel": "GPT-6 Astra (Low)"
+    },
+    {
+      "modelId": "gpt-6-astra",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 59.99,
+      "sourceLabel": "GPT-6 Astra (Low)"
+    },
+    {
+      "modelId": "gpt-6-astra",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 91.3,
       "sourceLabel": "openai/gpt-6-astra"
@@ -47734,6 +49987,42 @@
     },
     {
       "modelId": "gpt-6-luna",
+      "benchmarkId": "parsebench",
+      "raw": 65.77,
+      "sourceLabel": "GPT-6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-6-luna",
+      "benchmarkId": "parsebench-tables",
+      "raw": 87.42,
+      "sourceLabel": "GPT-6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-6-luna",
+      "benchmarkId": "parsebench-charts",
+      "raw": 45.71,
+      "sourceLabel": "GPT-6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-6-luna",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 84.44,
+      "sourceLabel": "GPT-6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-6-luna",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 61.81,
+      "sourceLabel": "GPT-6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-6-luna",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 49.48,
+      "sourceLabel": "GPT-6 Luna (Max)"
+    },
+    {
+      "modelId": "gpt-6-luna",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 12.8,
       "sourceLabel": "gpt-6-luna"
@@ -47925,6 +50214,42 @@
       "raw": 83,
       "stderr": 3.77,
       "sourceLabel": "GPT-6 Sol"
+    },
+    {
+      "modelId": "gpt-6-sol",
+      "benchmarkId": "parsebench",
+      "raw": 69.69,
+      "sourceLabel": "GPT-6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-6-sol",
+      "benchmarkId": "parsebench-tables",
+      "raw": 92.63,
+      "sourceLabel": "GPT-6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-6-sol",
+      "benchmarkId": "parsebench-charts",
+      "raw": 48.05,
+      "sourceLabel": "GPT-6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-6-sol",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.81,
+      "sourceLabel": "GPT-6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-6-sol",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 67.91,
+      "sourceLabel": "GPT-6 Sol (High)"
+    },
+    {
+      "modelId": "gpt-6-sol",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 52.06,
+      "sourceLabel": "GPT-6 Sol (High)"
     },
     {
       "modelId": "gpt-6-sol",
@@ -50031,6 +52356,78 @@
       "sourceLabel": "djev-spark (self-hosted)"
     },
     {
+      "modelId": "docling-models",
+      "benchmarkId": "parsebench",
+      "raw": 50.65,
+      "sourceLabel": "Docling-models"
+    },
+    {
+      "modelId": "docling-models",
+      "benchmarkId": "parsebench-tables",
+      "raw": 66.41,
+      "sourceLabel": "Docling-models"
+    },
+    {
+      "modelId": "docling-models",
+      "benchmarkId": "parsebench-charts",
+      "raw": 52.76,
+      "sourceLabel": "Docling-models"
+    },
+    {
+      "modelId": "docling-models",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 66.93,
+      "sourceLabel": "Docling-models"
+    },
+    {
+      "modelId": "docling-models",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 1.03,
+      "sourceLabel": "Docling-models"
+    },
+    {
+      "modelId": "docling-models",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 66.11,
+      "sourceLabel": "Docling-models"
+    },
+    {
+      "modelId": "dots-mocr",
+      "benchmarkId": "parsebench",
+      "raw": 55.79,
+      "sourceLabel": "Dots.mocr"
+    },
+    {
+      "modelId": "dots-mocr",
+      "benchmarkId": "parsebench-tables",
+      "raw": 85.15,
+      "sourceLabel": "Dots.mocr"
+    },
+    {
+      "modelId": "dots-mocr",
+      "benchmarkId": "parsebench-charts",
+      "raw": 0.95,
+      "sourceLabel": "Dots.mocr"
+    },
+    {
+      "modelId": "dots-mocr",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 90.03,
+      "sourceLabel": "Dots.mocr"
+    },
+    {
+      "modelId": "dots-mocr",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 46.99,
+      "sourceLabel": "Dots.mocr"
+    },
+    {
+      "modelId": "dots-mocr",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 55.81,
+      "sourceLabel": "Dots.mocr"
+    },
+    {
       "modelId": "evocua",
       "benchmarkId": "osworld",
       "raw": 56.7,
@@ -50055,6 +52452,42 @@
       "benchmarkId": "simplebench",
       "raw": 81.9,
       "sourceLabel": "Claude Fable"
+    },
+    {
+      "modelId": "falcon-ocr",
+      "benchmarkId": "parsebench",
+      "raw": 53.08,
+      "sourceLabel": "Falcon-OCR"
+    },
+    {
+      "modelId": "falcon-ocr",
+      "benchmarkId": "parsebench-tables",
+      "raw": 74.7,
+      "sourceLabel": "Falcon-OCR"
+    },
+    {
+      "modelId": "falcon-ocr",
+      "benchmarkId": "parsebench-charts",
+      "raw": 0.82,
+      "sourceLabel": "Falcon-OCR"
+    },
+    {
+      "modelId": "falcon-ocr",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 78.59,
+      "sourceLabel": "Falcon-OCR"
+    },
+    {
+      "modelId": "falcon-ocr",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 47.91,
+      "sourceLabel": "Falcon-OCR"
+    },
+    {
+      "modelId": "falcon-ocr",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 63.37,
+      "sourceLabel": "Falcon-OCR"
     },
     {
       "modelId": "palmyra-fin",
@@ -50105,6 +52538,78 @@
       "raw": 1272,
       "stderr": 7,
       "sourceLabel": "reka-flash-20240904"
+    },
+    {
+      "modelId": "florin-parser-nano",
+      "benchmarkId": "parsebench",
+      "raw": 76.69,
+      "sourceLabel": "florin-parser-nano"
+    },
+    {
+      "modelId": "florin-parser-nano",
+      "benchmarkId": "parsebench-tables",
+      "raw": 86.1,
+      "sourceLabel": "florin-parser-nano"
+    },
+    {
+      "modelId": "florin-parser-nano",
+      "benchmarkId": "parsebench-charts",
+      "raw": 65.19,
+      "sourceLabel": "florin-parser-nano"
+    },
+    {
+      "modelId": "florin-parser-nano",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.37,
+      "sourceLabel": "florin-parser-nano"
+    },
+    {
+      "modelId": "florin-parser-nano",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 70.64,
+      "sourceLabel": "florin-parser-nano"
+    },
+    {
+      "modelId": "florin-parser-nano",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 74.14,
+      "sourceLabel": "florin-parser-nano"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano",
+      "benchmarkId": "parsebench",
+      "raw": 76.36,
+      "sourceLabel": "KDL-Frontier-Parser-nano"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano",
+      "benchmarkId": "parsebench-tables",
+      "raw": 85.56,
+      "sourceLabel": "KDL-Frontier-Parser-nano"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano",
+      "benchmarkId": "parsebench-charts",
+      "raw": 63.41,
+      "sourceLabel": "KDL-Frontier-Parser-nano"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.19,
+      "sourceLabel": "KDL-Frontier-Parser-nano"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 66.81,
+      "sourceLabel": "KDL-Frontier-Parser-nano"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 78.84,
+      "sourceLabel": "KDL-Frontier-Parser-nano"
     },
     {
       "modelId": "fugu",
@@ -50189,6 +52694,42 @@
       "sourceLabel": "Muse Glimmer (High)"
     },
     {
+      "modelId": "glm-ocr",
+      "benchmarkId": "parsebench",
+      "raw": 29.6,
+      "sourceLabel": "GLM-OCR"
+    },
+    {
+      "modelId": "glm-ocr",
+      "benchmarkId": "parsebench-tables",
+      "raw": 66.1,
+      "sourceLabel": "GLM-OCR"
+    },
+    {
+      "modelId": "glm-ocr",
+      "benchmarkId": "parsebench-charts",
+      "raw": 1.7,
+      "sourceLabel": "GLM-OCR"
+    },
+    {
+      "modelId": "glm-ocr",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 78,
+      "sourceLabel": "GLM-OCR"
+    },
+    {
+      "modelId": "glm-ocr",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 2.3,
+      "sourceLabel": "GLM-OCR"
+    },
+    {
+      "modelId": "glm-ocr",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 0,
+      "sourceLabel": "GLM-OCR"
+    },
+    {
       "modelId": "ibm-granite-h-small",
       "benchmarkId": "lmarena",
       "raw": 1287,
@@ -50206,6 +52747,42 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 87.9,
       "sourceLabel": "Hopper"
+    },
+    {
+      "modelId": "hpd-parsing",
+      "benchmarkId": "parsebench",
+      "raw": 54.04,
+      "sourceLabel": "HPD-Parsing"
+    },
+    {
+      "modelId": "hpd-parsing",
+      "benchmarkId": "parsebench-tables",
+      "raw": 73.77,
+      "sourceLabel": "HPD-Parsing"
+    },
+    {
+      "modelId": "hpd-parsing",
+      "benchmarkId": "parsebench-charts",
+      "raw": 0.79,
+      "sourceLabel": "HPD-Parsing"
+    },
+    {
+      "modelId": "hpd-parsing",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 82.21,
+      "sourceLabel": "HPD-Parsing"
+    },
+    {
+      "modelId": "hpd-parsing",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 45.67,
+      "sourceLabel": "HPD-Parsing"
+    },
+    {
+      "modelId": "hpd-parsing",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 67.76,
+      "sourceLabel": "HPD-Parsing"
     },
     {
       "modelId": "hunyuan-a13b-instruct",
@@ -51633,6 +54210,42 @@
       "sourceLabel": "Muse Spark"
     },
     {
+      "modelId": "rakedoc-nano",
+      "benchmarkId": "parsebench",
+      "raw": 77.23,
+      "sourceLabel": "rakedoc-nano"
+    },
+    {
+      "modelId": "rakedoc-nano",
+      "benchmarkId": "parsebench-tables",
+      "raw": 86.44,
+      "sourceLabel": "rakedoc-nano"
+    },
+    {
+      "modelId": "rakedoc-nano",
+      "benchmarkId": "parsebench-charts",
+      "raw": 64.89,
+      "sourceLabel": "rakedoc-nano"
+    },
+    {
+      "modelId": "rakedoc-nano",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 88.84,
+      "sourceLabel": "rakedoc-nano"
+    },
+    {
+      "modelId": "rakedoc-nano",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 71.68,
+      "sourceLabel": "rakedoc-nano"
+    },
+    {
+      "modelId": "rakedoc-nano",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 74.28,
+      "sourceLabel": "rakedoc-nano"
+    },
+    {
       "modelId": "nova-premier",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 11.7,
@@ -51724,6 +54337,78 @@
       "sourceLabel": "amazon/nova-pro-v1:0"
     },
     {
+      "modelId": "qianfan-ocr",
+      "benchmarkId": "parsebench",
+      "raw": 46.2,
+      "sourceLabel": "Qianfan-OCR"
+    },
+    {
+      "modelId": "qianfan-ocr",
+      "benchmarkId": "parsebench-tables",
+      "raw": 72.3,
+      "sourceLabel": "Qianfan-OCR"
+    },
+    {
+      "modelId": "qianfan-ocr",
+      "benchmarkId": "parsebench-charts",
+      "raw": 0.9,
+      "sourceLabel": "Qianfan-OCR"
+    },
+    {
+      "modelId": "qianfan-ocr",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 83.5,
+      "sourceLabel": "Qianfan-OCR"
+    },
+    {
+      "modelId": "qianfan-ocr",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 53.8,
+      "sourceLabel": "Qianfan-OCR"
+    },
+    {
+      "modelId": "qianfan-ocr",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 20.6,
+      "sourceLabel": "Qianfan-OCR"
+    },
+    {
+      "modelId": "unlimited-ocr",
+      "benchmarkId": "parsebench",
+      "raw": 46.17,
+      "sourceLabel": "Unlimited-OCR"
+    },
+    {
+      "modelId": "unlimited-ocr",
+      "benchmarkId": "parsebench-tables",
+      "raw": 70.21,
+      "sourceLabel": "Unlimited-OCR"
+    },
+    {
+      "modelId": "unlimited-ocr",
+      "benchmarkId": "parsebench-charts",
+      "raw": 1.34,
+      "sourceLabel": "Unlimited-OCR"
+    },
+    {
+      "modelId": "unlimited-ocr",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 86.81,
+      "sourceLabel": "Unlimited-OCR"
+    },
+    {
+      "modelId": "unlimited-ocr",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 0.97,
+      "sourceLabel": "Unlimited-OCR"
+    },
+    {
+      "modelId": "unlimited-ocr",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 71.52,
+      "sourceLabel": "Unlimited-OCR"
+    },
+    {
       "modelId": "system-one-open",
       "benchmarkId": "jevbench-intelligence",
       "raw": 41.6,
@@ -51813,6 +54498,42 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 76,
       "sourceLabel": "OpenSourceJev"
+    },
+    {
+      "modelId": "paddleocr-vl",
+      "benchmarkId": "parsebench",
+      "raw": 40.9,
+      "sourceLabel": "PaddleOCR-VL"
+    },
+    {
+      "modelId": "paddleocr-vl",
+      "benchmarkId": "parsebench-tables",
+      "raw": 67.1,
+      "sourceLabel": "PaddleOCR-VL"
+    },
+    {
+      "modelId": "paddleocr-vl",
+      "benchmarkId": "parsebench-charts",
+      "raw": 0.9,
+      "sourceLabel": "PaddleOCR-VL"
+    },
+    {
+      "modelId": "paddleocr-vl",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 82.7,
+      "sourceLabel": "PaddleOCR-VL"
+    },
+    {
+      "modelId": "paddleocr-vl",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 54,
+      "sourceLabel": "PaddleOCR-VL"
+    },
+    {
+      "modelId": "paddleocr-vl",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 0,
+      "sourceLabel": "PaddleOCR-VL"
     },
     {
       "modelId": "palmyra-x",
@@ -51928,6 +54649,42 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 87.1,
       "sourceLabel": "swanOne"
+    },
+    {
+      "modelId": "teleocr",
+      "benchmarkId": "parsebench",
+      "raw": 58.67,
+      "sourceLabel": "TeleOCR"
+    },
+    {
+      "modelId": "teleocr",
+      "benchmarkId": "parsebench-tables",
+      "raw": 72.74,
+      "sourceLabel": "TeleOCR"
+    },
+    {
+      "modelId": "teleocr",
+      "benchmarkId": "parsebench-charts",
+      "raw": 9.97,
+      "sourceLabel": "TeleOCR"
+    },
+    {
+      "modelId": "teleocr",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 85.39,
+      "sourceLabel": "TeleOCR"
+    },
+    {
+      "modelId": "teleocr",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 45.13,
+      "sourceLabel": "TeleOCR"
+    },
+    {
+      "modelId": "teleocr",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 80.14,
+      "sourceLabel": "TeleOCR"
     },
     {
       "modelId": "typecastlm",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T06:02:32.816Z",
+  "generatedAt": "2026-10-01T08:42:56.331Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-09-30",
+      "retrievedAt": "2026-10-01",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-image.png",
       "category": "Text-to-image",
