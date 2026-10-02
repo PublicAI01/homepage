@@ -572,7 +572,9 @@ if [ "${PUSH_MODE:-main}" = 'pr' ]; then
     [ -n "$url" ] || log "gh pr create 失败:$(tr '\n' ' ' <"$pr_err" | head -c 300)"
     log "已开 PR ${url:-(创建失败,分支 $branch 已推)}"
     { echo "修了 $NFIX 处,开了 PR,等你合:"; echo "${url:-分支 $branch 已推,PR 没建成,见 $LOG}"; echo
-      [ -n "$(skipped_summary)" ] && { echo "另有 $NSKIP 处没自动修:"; echo; skipped_summary; }
+      # skipped_summary 取一次就把条目记成「已告知」,调第二次是空的。
+      pr_skipped=$(skipped_summary)
+      [ -n "$pr_skipped" ] && { echo "另有 $NSKIP 处没自动修:"; echo; echo "$pr_skipped"; }
       echo; echo "修复报告:$FIX_OUT"; } \
       | mail_out "【bugscan/$BUGSCAN_LABEL】修了 $NFIX 处 · 等你合 PR"
   else
