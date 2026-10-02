@@ -139581,7 +139581,7 @@
     },
     {
       "date": "2026-10-02",
-      "generatedAt": "2026-10-02T00:44:11.068Z",
+      "generatedAt": "2026-10-02T06:02:37.752Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -140345,13 +140345,6 @@
           "rank": null,
           "covered": 1
         },
-        "jt-4-1-flash-236b-a21b": {
-          "name": "JT-4.1 Flash 236B A21B",
-          "org": "China Mobile",
-          "index": null,
-          "rank": null,
-          "covered": 3
-        },
         "gemini-3-flash": {
           "name": "Gemini 3 Flash",
           "org": "Google",
@@ -140386,6 +140379,13 @@
           "index": null,
           "rank": null,
           "covered": 1
+        },
+        "jt-4-1-flash-236b-a21b": {
+          "name": "JT-4.1 Flash 236B A21B",
+          "org": "China Mobile",
+          "index": null,
+          "rank": null,
+          "covered": 3
         },
         "surya-ocr-2": {
           "name": "Surya OCR 2",
@@ -141955,13 +141955,6 @@
           "rank": null,
           "covered": 4
         },
-        "gpt-4o": {
-          "name": "GPT-4o",
-          "org": "OpenAI",
-          "index": null,
-          "rank": null,
-          "covered": 10
-        },
         "deepseek-v3": {
           "name": "DeepSeek V3",
           "org": "DeepSeek",
@@ -142059,6 +142052,13 @@
           "index": null,
           "rank": null,
           "covered": 1
+        },
+        "gpt-4o": {
+          "name": "GPT-4o",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 11
         },
         "gemini-2-5-flash-lite": {
           "name": "Gemini 2.5 Flash Lite",

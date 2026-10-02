@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T00:44:11.068Z",
+  "generatedAt": "2026-10-02T06:02:37.752Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -1078,7 +1078,7 @@
     {
       "modelId": "ming-image-0-1-design",
       "benchmarkId": "aa-text-to-image",
-      "raw": 998,
+      "raw": 997,
       "stderr": 8,
       "sourceLabel": "Ming-Image-0.1-Design"
     },
@@ -1155,7 +1155,7 @@
     {
       "modelId": "hidream-o1-image-dev",
       "benchmarkId": "aa-text-to-image",
-      "raw": 876,
+      "raw": 875,
       "stderr": 8,
       "sourceLabel": "HiDream-O1-Image-Dev"
     },
@@ -1344,7 +1344,7 @@
     {
       "modelId": "luma-uni-1-max",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1014,
+      "raw": 1015,
       "stderr": 9,
       "sourceLabel": "Luma UNI 1 Max"
     },
@@ -1519,7 +1519,7 @@
     {
       "modelId": "cosmos3-super-text2image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 986,
+      "raw": 985,
       "stderr": 8,
       "sourceLabel": "Cosmos3-Super-Text2Image"
     },
@@ -1533,7 +1533,7 @@
     {
       "modelId": "nano-banana-2-lite-gemini-3-1-flash-lite-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1096,
+      "raw": 1095,
       "stderr": 8,
       "sourceLabel": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)"
     },
@@ -1610,7 +1610,7 @@
     {
       "modelId": "flux-2-klein-9b",
       "benchmarkId": "aa-text-to-image",
-      "raw": 941,
+      "raw": 940,
       "stderr": 8,
       "sourceLabel": "FLUX.2 [klein] 9B"
     },
@@ -1645,7 +1645,7 @@
     {
       "modelId": "dall-e-2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 543,
+      "raw": 542,
       "stderr": 11,
       "sourceLabel": "DALLE 2"
     },
@@ -1792,7 +1792,7 @@
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1155,
+      "raw": 1157,
       "stderr": 11,
       "sourceLabel": "Grok Imagine Image 2.0"
     },
@@ -1855,7 +1855,7 @@
     {
       "modelId": "qwen-image-2-0-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1030,
+      "raw": 1031,
       "stderr": 9,
       "sourceLabel": "Qwen Image 2.0 Pro (2026-04-22)"
     },
@@ -1876,14 +1876,14 @@
     {
       "modelId": "qwen-image-2-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 961,
+      "raw": 962,
       "stderr": 8,
       "sourceLabel": "Qwen Image 2.0 (2026-03-03)"
     },
     {
       "modelId": "imagineart-2-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 970,
+      "raw": 969,
       "stderr": 9,
       "sourceLabel": "ImagineArt 2.0"
     },
@@ -1918,7 +1918,7 @@
     {
       "modelId": "krea-2-medium-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1020,
+      "raw": 1022,
       "stderr": 9,
       "sourceLabel": "Krea 2 Medium Turbo"
     },
@@ -2072,14 +2072,14 @@
     {
       "modelId": "mai-image-2-5-flash",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1033,
+      "raw": 1032,
       "stderr": 9,
       "sourceLabel": "MAI-Image-2.5-Flash"
     },
     {
       "modelId": "gpt-image-2-5-sunburst",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1197,
+      "raw": 1195,
       "stderr": 9,
       "sourceLabel": "GPT Image 2.5 Sunburst (max)"
     },
@@ -2121,7 +2121,7 @@
     {
       "modelId": "mai-image-2-5-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1100,
+      "raw": 1099,
       "stderr": 8,
       "sourceLabel": "MAI-Image-2.5-Pro"
     },
@@ -2163,7 +2163,7 @@
     {
       "modelId": "mai-image-2-6",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1150,
+      "raw": 1149,
       "stderr": 10,
       "sourceLabel": "MAI-Image-2.6"
     },
@@ -2198,7 +2198,7 @@
     {
       "modelId": "wan2-6",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1017,
+      "raw": 1016,
       "stderr": 9,
       "sourceLabel": "Wan2.6 Text to Image"
     },
@@ -2380,7 +2380,7 @@
     {
       "modelId": "qwen-image-3-0-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1089,
+      "raw": 1090,
       "stderr": 10,
       "sourceLabel": "Qwen-Image-3.0-Pro"
     },
@@ -2394,7 +2394,7 @@
     {
       "modelId": "qwen-image-3-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1075,
+      "raw": 1077,
       "stderr": 10,
       "sourceLabel": "Qwen-Image-3.0"
     },
@@ -2513,7 +2513,7 @@
     {
       "modelId": "ideogram-4-0-fast-quality",
       "benchmarkId": "aa-text-to-image",
-      "raw": 984,
+      "raw": 985,
       "stderr": 9,
       "sourceLabel": "Ideogram 4.0 Fast (Quality)"
     },
@@ -2555,7 +2555,7 @@
     {
       "modelId": "ideogram-4-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1004,
+      "raw": 1005,
       "stderr": 8,
       "sourceLabel": "Ideogram 4.0"
     },
@@ -2611,14 +2611,14 @@
     {
       "modelId": "recraft-v4-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 986,
+      "raw": 987,
       "stderr": 9,
       "sourceLabel": "Recraft V4 Pro"
     },
     {
       "modelId": "recraft-v4",
       "benchmarkId": "aa-text-to-image",
-      "raw": 983,
+      "raw": 984,
       "stderr": 9,
       "sourceLabel": "Recraft V4"
     },
@@ -2681,7 +2681,7 @@
     {
       "modelId": "recraft-v4-1-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 985,
+      "raw": 986,
       "stderr": 9,
       "sourceLabel": "Recraft V4.1 Pro"
     },
@@ -2702,14 +2702,14 @@
     {
       "modelId": "recraft-v4-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 990,
+      "raw": 989,
       "stderr": 9,
       "sourceLabel": "Recraft V4.1"
     },
     {
       "modelId": "ideogram-4-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1014,
+      "raw": 1013,
       "stderr": 11,
       "sourceLabel": "Ideogram 4.5 (High)"
     },
@@ -2884,7 +2884,7 @@
     {
       "modelId": "ernie-image-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 924,
+      "raw": 923,
       "stderr": 8,
       "sourceLabel": "ERNIE Image Turbo"
     },
@@ -2982,7 +2982,7 @@
     {
       "modelId": "p-image-ideogram",
       "benchmarkId": "aa-text-to-image",
-      "raw": 985,
+      "raw": 984,
       "stderr": 11,
       "sourceLabel": "P-Image-Ideogram (Very High)"
     },
@@ -3003,7 +3003,7 @@
     {
       "modelId": "muse-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1114,
+      "raw": 1115,
       "stderr": 9,
       "sourceLabel": "Muse Image"
     },
@@ -3038,7 +3038,7 @@
     {
       "modelId": "qwen-image-plus",
       "benchmarkId": "aa-text-to-image",
-      "raw": 938,
+      "raw": 937,
       "stderr": 7,
       "sourceLabel": "Qwen Image Plus 2601"
     },

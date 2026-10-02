@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T00:44:11.068Z",
+  "generatedAt": "2026-10-02T06:02:37.752Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -6986,8 +6986,8 @@
           "id": "moonshotai/kimi-k3",
           "url": "https://openrouter.ai/moonshotai/kimi-k3",
           "contextLength": 1048576,
-          "inputPerM": 0.381,
-          "outputPerM": 10,
+          "inputPerM": 2.7,
+          "outputPerM": 13.5,
           "listedAt": "2026-07-16",
           "modalities": ["text", "image", "video"]
         },
@@ -7735,8 +7735,8 @@
           "id": "qwen/qwen3.5-35b-a3b",
           "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
           "contextLength": 262144,
-          "inputPerM": 0.163,
-          "outputPerM": 1.3,
+          "inputPerM": 0.15,
+          "outputPerM": 1,
           "listedAt": "2026-02-25",
           "modalities": ["text", "image", "video"]
         },
@@ -8746,7 +8746,7 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.011,
+          "inputPerM": 0.012,
           "outputPerM": 1.28,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
@@ -9314,8 +9314,8 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.03,
-          "outputPerM": 0.5,
+          "inputPerM": 0.015,
+          "outputPerM": 0.75,
           "listedAt": "2026-09-10",
           "modalities": ["text", "image"]
         },
@@ -24268,15 +24268,15 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "aa-gdpval",
-      "raw": 1411,
-      "stderr": 24,
+      "raw": 1423,
+      "stderr": 22,
       "sourceLabel": "Qwen3.8 27B (Xhigh)"
     },
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "aa-briefcase",
-      "raw": 1401,
-      "stderr": 8,
+      "raw": 1397,
+      "stderr": 7.5,
       "sourceLabel": "Qwen3.8 27B (Xhigh)"
     },
     {
@@ -28152,7 +28152,7 @@
     {
       "modelId": "minimax-m3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1092,
+      "raw": 1090,
       "stderr": 7,
       "sourceLabel": "MiniMax-M3"
     },
@@ -36978,6 +36978,13 @@
       "raw": 1336,
       "stderr": 4,
       "sourceLabel": "gpt-4o-2024-08-06"
+    },
+    {
+      "modelId": "gpt-4o",
+      "benchmarkId": "aa-gdpval",
+      "raw": -13,
+      "stderr": 30,
+      "sourceLabel": "GPT-4o (Nov '24)"
     },
     {
       "modelId": "gpt-4o",
