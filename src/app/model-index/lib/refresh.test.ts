@@ -128,6 +128,8 @@ esac`,
         ? readFileSync(join(root, 'tested'), 'utf8')
         : '',
     dirty: () => git(site, 'status', '--porcelain'),
+    /** git, in the site checkout. */
+    git: (...args: string[]) => git(site, ...args),
   };
 }
 
@@ -159,6 +161,24 @@ describe('scripts/refresh/daily.sh', { timeout: 60_000 }, () => {
       snapshot('tonight').trim(),
     );
     expect(s.shipped(join(LOGOS, 'new-board.png'))).toBe('mark');
+    expect(s.dirty()).toBe('');
+  });
+
+  // On a branch that fast-forwards, the snapshot was committed to the
+  // branch, `git push origin main` pushed an unchanged main, and the run
+  // exited 0 saying it had shipped (2026-10-03).
+  it('refuses to run when the site checkout is not on main', () => {
+    const s = sandbox(snapshot('tonight'));
+    s.git('switch', '-q', '-c', 'draft');
+    const before = s.git('rev-parse', 'HEAD');
+    const result = s.run();
+
+    expect(result.status).not.toBe(0);
+    expect(s.shipped(join(DATA, 'index.json'))).toBe(
+      snapshot('yesterday').trim(),
+    );
+    // Nothing committed to the branch someone is working on.
+    expect(s.git('rev-parse', 'HEAD')).toBe(before);
     expect(s.dirty()).toBe('');
   });
 

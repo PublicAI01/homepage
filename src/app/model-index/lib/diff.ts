@@ -2,6 +2,16 @@
  * What changed between two snapshots. Pure: no data import, so the digest
  * script can use it under plain Node as well as the page.
  */
+/**
+ * A snapshot date as every outlet must be given it: YYYY-MM-DD. Snapshots
+ * are compared as strings, so anything else does not fail, it answers
+ * wrongly — "last week" sorts after every snapshot and reads as "nothing
+ * changed", "01-09-2026" sorts before them all and returns the whole
+ * history. The API checked this by hand from 2026-09-20 and the MCP tool
+ * took any string (2026-10-03); one pattern, so they cannot differ again.
+ */
+export const SNAPSHOT_DATE = /^\d{4}-\d\d-\d\d$/;
+
 export interface HistoryEntry {
   date: string;
   generatedAt: string;

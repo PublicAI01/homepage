@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import { changesSince } from '../lib/changes';
+import { SNAPSHOT_DATE } from '../lib/diff';
 import type { RankQuery } from '../lib/query';
 import { trackOf, TRACKS } from '../lib/tracks';
 
@@ -17,7 +18,6 @@ import { trackOf, TRACKS } from '../lib/tracks';
  *     (track=text|image|video; text is the default. `since` is text-only.)
  */
 const SIZES = ['small', 'medium', 'large', 'xlarge', 'undisclosed'] as const;
-const DATE = /^\d{4}-\d\d-\d\d$/;
 
 const bad = (message: string) =>
   NextResponse.json(
@@ -56,7 +56,7 @@ export function GET(request: Request) {
   if (size !== undefined && !(SIZES as readonly string[]).includes(size))
     problems.push(`size must be one of ${SIZES.join(', ')}`);
   const since = p.get('since') ?? undefined;
-  if (since !== undefined && !DATE.test(since))
+  if (since !== undefined && !SNAPSHOT_DATE.test(since))
     problems.push('since must be a date, YYYY-MM-DD');
   if (since !== undefined && track.id !== 'text')
     problems.push('since is only kept for the text track');

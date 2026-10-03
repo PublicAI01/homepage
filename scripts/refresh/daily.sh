@@ -115,6 +115,15 @@ done
 if [ "$DRY" -eq 1 ]; then log "--dry-run:到此为止,没有改动 $SITE"; exit 0; fi
 
 cd "$SITE" || die "进不去 $SITE" "仓库不在"
+# On main, or not at all. Everything below commits to whatever branch is
+# checked out and then pushes `main`: on a feature branch that fast-forwards,
+# the snapshot commit lands on the branch, `git push origin main` pushes an
+# unchanged main and succeeds, and the log says "已推送" for a refresh that
+# never shipped — with the data commit left in somebody's pull request
+# (2026-10-03). Before the copy, so there is nothing to put back.
+site_branch=$(git rev-parse --abbrev-ref HEAD 2>>"$LOG")
+[ "$site_branch" = "main" ] \
+  || die "首页仓当前在 ${site_branch:-(读不出分支)},不是 main,不敢提交" "首页仓不在 main"
 # Only what this job writes has to be clean. Someone's draft in another file
 # is not ours to refuse over (2026-09-29: a half-written bugscan script
 # blocked the night's snapshot); the commit below names its paths, so it
