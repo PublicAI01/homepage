@@ -71,6 +71,53 @@ export function lineage(
 }
 
 /**
+ * Follows an id forward through the recorded renames to the one it is
+ * listed under now. Built once from the history, oldest entry first.
+ *
+ * A name that is changed and then changed back leaves both directions on
+ * record: motif-3 → motif-3-beta on 2026-09-27, motif-3-beta → motif-3 on
+ * 2026-09-30. Kept side by side they are a loop, the walk went round it
+ * and stopped where it started, and the three-day-old id answered "no such
+ * model" for a model on the list (2026-10-05). So an id that a later
+ * snapshot renames *to* is alive again as of that snapshot and its own
+ * earlier forwarding is dropped.
+ *
+ * An id that one snapshot hands to two models is a split, not a rename
+ * (qwen3-vl-235b-a22b became -thinking and -instruct on 2026-09-19). It
+ * is forwarded to neither: picking one would show that model's rank and
+ * score under a name that meant the other as well, and a number that may
+ * belong to someone else is worse than "not listed".
+ */
+export function aliasResolver(entries: HistoryEntry[]) {
+  const forward = new Map<string, string>();
+  for (const e of entries) {
+    const targets = new Map<string, Set<string>>();
+    for (const [now, olds] of Object.entries(e.aliases ?? {})) {
+      forward.delete(now);
+      for (const old of olds)
+        if (old !== now)
+          targets.set(old, (targets.get(old) ?? new Set()).add(now));
+    }
+    for (const [old, nows] of targets)
+      if (nows.size === 1) forward.set(old, [...nows][0]);
+      else forward.delete(old);
+  }
+  return (id: string): string => {
+    let cur = id;
+    // A chain, not a loop: an id renamed twice resolves twice. `seen` so a
+    // malformed history cannot spin.
+    const seen = new Set([cur]);
+    for (;;) {
+      const next = forward.get(cur);
+      if (next === undefined || seen.has(next)) break;
+      seen.add(next);
+      cur = next;
+    }
+    return cur;
+  };
+}
+
+/**
  * `entries` with `entry` in place of any entry of the same date, oldest
  * first, at most `limit` long.
  *

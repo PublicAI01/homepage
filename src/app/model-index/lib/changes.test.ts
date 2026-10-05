@@ -5,6 +5,7 @@ import type { Benchmark } from '../data/types';
 import { sourceLabel } from './boards';
 import { changesSince, enteredSince, snapshots } from './changes';
 import {
+  aliasResolver,
   appendEntry,
   backlogOf,
   diff,
@@ -321,5 +322,39 @@ describe('fallbackBadge', () => {
     expect(fallbackBadge('Vectara Hallucination Leaderboard').code).toBe('VH');
     expect(fallbackBadge('Vectara').code).toBe('VE');
     expect(fallbackBadge('').code).not.toBe('?');
+  });
+});
+
+describe('aliasResolver: a name changed and changed back', () => {
+  const renamed = (date: string, aliases: Record<string, string[]>) => ({
+    ...entry(date, {}),
+    aliases,
+  });
+
+  it('resolves the short-lived id to the one listed now', () => {
+    const resolve = aliasResolver([
+      renamed('2026-09-27', { 'motif-3-beta': ['motif-3'] }),
+      renamed('2026-09-30', { 'motif-3': ['motif-3-beta'] }),
+    ]);
+    expect(resolve('motif-3-beta')).toBe('motif-3');
+    expect(resolve('motif-3')).toBe('motif-3');
+  });
+
+  it('does not forward an id that one snapshot split between two models', () => {
+    // Merged on the 17th, split again on the 19th into two models.
+    const resolve = aliasResolver([
+      renamed('2026-09-17', { base: ['instruct'] }),
+      renamed('2026-09-19', { thinking: ['base'], instruct: ['base'] }),
+    ]);
+    expect(resolve('base')).toBe('base');
+  });
+
+  it('still follows a model renamed twice', () => {
+    const resolve = aliasResolver([
+      renamed('2026-09-10', { b: ['a'] }),
+      renamed('2026-09-12', { c: ['b'] }),
+    ]);
+    expect(resolve('a')).toBe('c');
+    expect(resolve('unknown')).toBe('unknown');
   });
 });

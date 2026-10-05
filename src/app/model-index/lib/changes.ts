@@ -1,6 +1,6 @@
 import { benchmarks, scores } from '../data';
 import history from '../data/history.json';
-import { backlogOf, diff, type HistoryEntry } from './diff';
+import { aliasResolver, backlogOf, diff, type HistoryEntry } from './diff';
 
 export type { Change, Changes, HistoryEntry } from './diff';
 export { diff } from './diff';
@@ -76,19 +76,4 @@ export function enteredSince(days = 7) {
  * model". The history file records what each renamed or merged id took
  * over from; this follows that forward.
  */
-const forward = new Map<string, string>();
-for (const e of entries)
-  for (const [now, olds] of Object.entries(e.aliases ?? {}))
-    for (const old of olds) forward.set(old, now);
-
-export function currentId(id: string): string {
-  let cur = id;
-  // A chain, not a loop: an id renamed twice resolves twice. Bounded so a
-  // malformed history cannot spin.
-  for (let i = 0; i < 20; i++) {
-    const next = forward.get(cur);
-    if (next === undefined || next === cur) break;
-    cur = next;
-  }
-  return cur;
-}
+export const currentId = aliasResolver(entries);
