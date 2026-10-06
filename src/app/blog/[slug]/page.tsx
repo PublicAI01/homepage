@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } = post.metadata;
   const ogImage = image
     ? `${baseUrl}${image}`.replace('_cover', '_og')
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+    : `${baseUrl}/og?post=${post.slug}`;
 
   return {
     title,
@@ -103,7 +103,7 @@ export default async function Page({
             description: post.metadata.summary,
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+              : `${baseUrl}/og?post=${post.slug}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
               '@type': 'Organization',

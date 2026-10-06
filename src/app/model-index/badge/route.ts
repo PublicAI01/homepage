@@ -32,7 +32,9 @@ export function GET(request: Request) {
   const p = new URL(request.url).searchParams;
   const modelQ = p.get('model') ?? '';
   const scope = resolveScope(p.get('scope') ?? undefined);
-  const found = getModel(modelQ);
+  // By id or full name only: a badge prints a number with no name beside
+  // it, so a near miss must read "not listed", never a neighbour's rank.
+  const found = getModel(modelQ, { exact: true });
   let label = 'PublicAI Index';
   let value = 'not listed';
   let title = 'No such model on the PublicAI Index';

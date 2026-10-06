@@ -27,13 +27,24 @@ const bad = (message: string) =>
 
 export function GET(request: Request) {
   const p = new URL(request.url).searchParams;
-  const bool = (k: string) => (p.has(k) ? p.get(k) !== 'false' : undefined);
   // A parameter that does not parse is an error, not an empty answer:
   // `limit=abc` sliced to nothing with total still reported, `minBoards=abc`
   // switched the filter off, `since=yesterday` compared as a string and
   // always found "no change" (2026-09-20). The MCP server validates with a
   // schema; this is the same contract by hand.
   const problems: string[] = [];
+  // Likewise a switch. Anything but the literal `false` used to read as
+  // on, so `reports=0` — the opposite of the page's own `reports=1` — let
+  // report ✱ figures into the scores for a caller asking to keep them out,
+  // and `openWeights=0` filtered to open weights (2026-10-06).
+  const bool = (k: string) => {
+    if (!p.has(k)) return undefined;
+    const v = p.get(k);
+    if (v === 'true' || v === '1') return true;
+    if (v === 'false' || v === '0') return false;
+    problems.push(`${k} must be true or false`);
+    return undefined;
+  };
   const int = (k: string, min: number) => {
     if (!p.has(k)) return undefined;
     const n = Number(p.get(k));
@@ -63,6 +74,9 @@ export function GET(request: Request) {
   const minDelta = int('minDelta', 0);
   const minBoards = int('minBoards', 0);
   const limit = int('limit', 1);
+  const openWeights = bool('openWeights');
+  const callable = bool('callable');
+  const reports = bool('reports');
   if (problems.length) return bad(problems.join('; '));
 
   const body = since
@@ -76,9 +90,9 @@ export function GET(request: Request) {
             family: p.get('family') ?? undefined,
             minBoards,
             limit,
-            openWeights: bool('openWeights'),
-            callable: bool('callable'),
-            reports: bool('reports'),
+            openWeights,
+            callable,
+            reports,
             size: size as RankQuery['size'],
             // Documented since launch but never read; the UI filter that
             // used to set it is gone, the API filter stays.

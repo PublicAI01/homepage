@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { cardUrl } from '@/app/og/title';
 import { cn } from '@/utils';
 
 import {
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     url: 'https://publicai.io/model-index/method',
     images: [
       {
-        url: 'https://publicai.io/og?title=How%20the%20PublicAI%20Index%20is%20built',
+        url: cardUrl('How the PublicAI Index is built'),
         width: 1200,
         height: 630,
         alt: 'How the PublicAI Index is built',

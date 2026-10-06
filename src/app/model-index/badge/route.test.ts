@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest';
 
 import { models } from '../data';
-import { getModel, headlineTaxonomy, positionIn, rankModels } from '../lib/query';
+import {
+  getModel,
+  headlineTaxonomy,
+  positionIn,
+  rankModels,
+} from '../lib/query';
 import { GET } from './route';
 
 const svgFor = (query: string) =>
@@ -64,6 +69,23 @@ describe('badge', () => {
       `aria-label="PublicAI Index: ≤${bounded!.estimatedIndex!.score.toFixed(1)} provisional"`,
     );
     expect(svg).not.toContain('~');
+  });
+
+  it('says "not listed" for a near miss, never a neighbour’s standing', async () => {
+    // `von` left the index and its badge went on rendering with JevOne's
+    // numbers, "von" being in "jevone" (2026-10-06). Any text that is in
+    // exactly one model's name and is nobody's id or name stands in for it.
+    const near = models
+      .map((m) => m.name.slice(1))
+      .find(
+        (q) =>
+          !('error' in getModel(q)) && 'error' in getModel(q, { exact: true }),
+      );
+    expect(near).toBeDefined();
+    const svg = await svgFor(
+      `model=${encodeURIComponent(near!)}&scope=category:Safety`,
+    );
+    expect(svg).toContain('aria-label="PublicAI Index: not listed"');
   });
 
   it('says a scope is unknown rather than denying a listed model', async () => {

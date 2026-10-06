@@ -688,7 +688,18 @@ export function createTrack(input: TrackInput) {
     };
   }
 
-  function getModel(query: string) {
+  /**
+   * `exact` is for a caller that prints the answer under the name it was
+   * asked for — the badge, a model's own page. There a lone substring hit
+   * is a candidate, not the answer: `von` was last listed on 2026-10-04 and
+   * its badge went on rendering, with JevOne's standing, because "von" is
+   * in "jevone"; five of the hundred ids no rename accounts for answered
+   * as some other model (2026-10-06). A number that may belong to someone
+   * else is worse than "not listed" (see aliasResolver). The API and the
+   * MCP tool search by name and return the name they found, so they keep
+   * the loose match.
+   */
+  function getModel(query: string, { exact: strict = false } = {}) {
     const q = fold(query);
     // An old id — from a link, a badge in someone's README, an agent's cached
     // call — still finds the model it named before a rename or merge.
@@ -699,12 +710,15 @@ export function createTrack(input: TrackInput) {
       rows.find((r) => fold(`${r.model.org} ${r.model.name}`) === q);
     if (exact) return { generatedAt, model: detail(exact) };
     const loose = rows.filter((r) => fold(r.model.name).includes(q));
-    if (loose.length === 1) return { generatedAt, model: detail(loose[0]) };
+    if (loose.length === 1 && !strict)
+      return { generatedAt, model: detail(loose[0]) };
     return {
       error:
         loose.length === 0
           ? `No model matches "${query}".`
-          : `"${query}" is ambiguous; pass one of the ids below.`,
+          : loose.length === 1
+            ? `No model is listed as "${query}"; the closest is below.`
+            : `"${query}" is ambiguous; pass one of the ids below.`,
       candidates: loose.slice(0, 20).map((r) => ({
         id: r.model.id,
         name: r.model.name,
@@ -848,7 +862,7 @@ export function createTrack(input: TrackInput) {
   function modelStandings(query: string): StandingsHit | StandingsMiss {
     // getModel's success shape carries `error?: undefined`, so `'error' in x`
     // narrows nothing. Rebuild the miss instead of passing it through.
-    const found = getModel(query);
+    const found = getModel(query, { exact: true });
     if (found.error !== undefined)
       return { error: found.error, candidates: found.candidates ?? [] };
     const model = found.model;

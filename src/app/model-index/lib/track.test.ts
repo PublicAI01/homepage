@@ -63,3 +63,30 @@ describe('createTrack', () => {
     expect(indexOf(heavyA, 'm1')).toBeGreaterThan(indexOf(heavyB, 'm1'));
   });
 });
+
+describe('getModel', () => {
+  const track = createTrack({
+    data: {
+      ...data,
+      models: [...data.models, { id: 'jevone', name: 'JevOne', org: 'Org' }],
+    },
+    weighting: weighting(50, 50),
+    url: 'https://publicai.io/model-index/x',
+  });
+
+  it('searches by a fragment of a name, and says which model it found', () => {
+    const found = track.getModel('von');
+    expect(found.model?.id).toBe('jevone');
+  });
+
+  it('does not take a fragment for the model when the caller named one', () => {
+    // A delisted id that happened to sit inside another model's name kept
+    // its badge and its page, with that model's numbers (2026-10-06).
+    const near = track.getModel('von', { exact: true });
+    expect(near.model).toBeUndefined();
+    expect(near.candidates?.map((c) => c.id)).toEqual(['jevone']);
+    expect('error' in track.modelStandings('von')).toBe(true);
+    for (const named of ['jevone', 'JevOne', 'Org JevOne'])
+      expect(track.getModel(named, { exact: true }).model?.id).toBe('jevone');
+  });
+});

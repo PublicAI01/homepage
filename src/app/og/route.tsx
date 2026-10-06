@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 import { MARK } from './mark';
+import { cardTitle } from './title';
 
 /**
  * The social card for a page that has no picture of its own.
@@ -34,8 +35,14 @@ const ascii = (t: string) =>
 /** Long titles wrap; a very long one is cut where a reader would stop. */
 const MAX = 120;
 
-export function GET(request: Request) {
-  const raw = new URL(request.url).searchParams.get('title') ?? 'PublicAI';
+export async function GET(request: Request) {
+  // Never the caller's own words: see ./title. A post is named by its slug
+  // and its title read from the post itself.
+  const raw = await cardTitle(
+    new URL(request.url).searchParams,
+    async (slug) =>
+      (await import(`@/app/blog/posts/${slug}.mdx`)).metadata?.title,
+  );
   const title = ascii(raw).slice(0, MAX).trim();
 
   return new ImageResponse(
@@ -90,6 +97,13 @@ export function GET(request: Request) {
         <span>PublicAI Index</span>
       </div>
     </div>,
-    { width: W, height: H },
+    {
+      width: W,
+      height: H,
+      // As on the index's card: drawn once, then served from the cache.
+      headers: {
+        'cache-control': 'public, max-age=3600, stale-while-revalidate=86400',
+      },
+    },
   );
 }
