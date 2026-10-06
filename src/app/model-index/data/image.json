@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T12:16:09.732Z",
+  "generatedAt": "2026-10-06T01:13:25.234Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-image.ico",
       "category": "Text-to-image",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-image.png",
       "category": "Text-to-image",
@@ -39,7 +39,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "metric": "elo",
       "logo": "/model-index/logos/arena-image-edit.png",
       "category": "Image editing",
@@ -1402,7 +1402,7 @@
       "modelId": "flux1-1-pro",
       "benchmarkId": "arena-text-to-image",
       "raw": 1016,
-      "stderr": 3,
+      "stderr": 4,
       "sourceLabel": "flux-1.1-pro"
     },
     {
@@ -1436,7 +1436,7 @@
     {
       "modelId": "uni-1-1",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1183,
+      "raw": 1185,
       "stderr": 4,
       "sourceLabel": "uni-1.1"
     },
@@ -1555,7 +1555,7 @@
     {
       "modelId": "nano-banana-2-lite-gemini-3-1-flash-lite-image",
       "benchmarkId": "arena-image-edit",
-      "raw": 1314,
+      "raw": 1313,
       "stderr": 5,
       "sourceLabel": "gemini-3.1-flash-lite-image (nano-banana-2-lite)"
     },
@@ -1653,15 +1653,15 @@
     {
       "modelId": "grok-imagine-image-2-0-canvas",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1335,
+      "raw": 1336,
       "stderr": 12,
       "sourceLabel": "grok-imagine-image-2.0 (canvas)"
     },
     {
       "modelId": "grok-imagine-image-2-0-canvas",
       "benchmarkId": "arena-image-edit",
-      "raw": 1441,
-      "stderr": 7,
+      "raw": 1437,
+      "stderr": 9,
       "sourceLabel": "grok-imagine-image-2.0 (canvas)"
     },
     {
@@ -1779,7 +1779,7 @@
     {
       "modelId": "flux-2-pro",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1154,
+      "raw": 1153,
       "stderr": 3,
       "sourceLabel": "flux-2-pro"
     },
@@ -1800,14 +1800,14 @@
     {
       "modelId": "gpt-image-2",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1383,
+      "raw": 1384,
       "stderr": 4,
       "sourceLabel": "gpt-image-2 (medium)"
     },
     {
       "modelId": "gpt-image-2",
       "benchmarkId": "arena-image-edit",
-      "raw": 1461,
+      "raw": 1462,
       "stderr": 3,
       "sourceLabel": "gpt-image-2 (medium)"
     },
@@ -1821,14 +1821,14 @@
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1301,
-      "stderr": 8,
+      "raw": 1297,
+      "stderr": 6,
       "sourceLabel": "grok-imagine-image-2.0 (20260801)"
     },
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "arena-image-edit",
-      "raw": 1427,
+      "raw": 1426,
       "stderr": 5,
       "sourceLabel": "grok-imagine-image-2.0 (20260801)"
     },
@@ -1919,7 +1919,7 @@
     {
       "modelId": "krea-2-large",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1110,
+      "raw": 1111,
       "stderr": 4,
       "sourceLabel": "krea-2-large"
     },
@@ -1933,7 +1933,7 @@
     {
       "modelId": "krea-2-medium",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1123,
+      "raw": 1124,
       "stderr": 4,
       "sourceLabel": "krea-2-medium"
     },
@@ -1947,8 +1947,8 @@
     {
       "modelId": "krea-2-turbo",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1113,
-      "stderr": 5,
+      "raw": 1114,
+      "stderr": 4,
       "sourceLabel": "krea-2-turbo"
     },
     {
@@ -2010,14 +2010,14 @@
     {
       "modelId": "qwen-image-2-1",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1228,
-      "stderr": 9,
+      "raw": 1222,
+      "stderr": 7,
       "sourceLabel": "qwen-image-2.1"
     },
     {
       "modelId": "qwen-image-2-1",
       "benchmarkId": "arena-image-edit",
-      "raw": 1366,
+      "raw": 1369,
       "stderr": 6,
       "sourceLabel": "qwen-image-2.1"
     },
@@ -2080,14 +2080,14 @@
     {
       "modelId": "gpt-image-2-5-flare",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1401,
-      "stderr": 8,
+      "raw": 1397,
+      "stderr": 7,
       "sourceLabel": "gpt-image-2.5-flare"
     },
     {
       "modelId": "gpt-image-2-5-flare",
       "benchmarkId": "arena-image-edit",
-      "raw": 1478,
+      "raw": 1481,
       "stderr": 5,
       "sourceLabel": "gpt-image-2.5-flare"
     },
@@ -2108,14 +2108,14 @@
     {
       "modelId": "gpt-image-2-5-sunburst",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1424,
-      "stderr": 8,
+      "raw": 1425,
+      "stderr": 7,
       "sourceLabel": "gpt-image-2.5-sunburst"
     },
     {
       "modelId": "gpt-image-2-5-sunburst",
       "benchmarkId": "arena-image-edit",
-      "raw": 1522,
+      "raw": 1524,
       "stderr": 5,
       "sourceLabel": "gpt-image-2.5-sunburst"
     },
@@ -2164,7 +2164,7 @@
     {
       "modelId": "wan-2-5",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1116,
+      "raw": 1115,
       "stderr": 3,
       "sourceLabel": "wan2.5-t2i-preview"
     },
@@ -2192,8 +2192,8 @@
     {
       "modelId": "mai-image-2-6",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1335,
-      "stderr": 6,
+      "raw": 1333,
+      "stderr": 5,
       "sourceLabel": "mai-image-2.6"
     },
     {
@@ -2241,7 +2241,7 @@
     {
       "modelId": "wan-2-7-pro",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1103,
+      "raw": 1104,
       "stderr": 5,
       "sourceLabel": "wan2.7-image-pro"
     },
@@ -2290,7 +2290,7 @@
     {
       "modelId": "nano-banana-pro-gemini-3-pro-image",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1247,
+      "raw": 1248,
       "stderr": 3,
       "sourceLabel": "gemini-3-pro-image-2k (nano-banana-pro)"
     },
@@ -2360,7 +2360,7 @@
     {
       "modelId": "hunyuan-image-3-0",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1150,
+      "raw": 1149,
       "stderr": 3,
       "sourceLabel": "hunyuan-image-3.0"
     },
@@ -2409,7 +2409,7 @@
     {
       "modelId": "qwen-image-3-0-pro",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1256,
+      "raw": 1255,
       "stderr": 6,
       "sourceLabel": "qwen-image-3.0-pro"
     },
@@ -2738,8 +2738,8 @@
     {
       "modelId": "ideogram-4-5",
       "benchmarkId": "arena-image-edit",
-      "raw": 1351,
-      "stderr": 8,
+      "raw": 1347,
+      "stderr": 6,
       "sourceLabel": "ideogram-4.5"
     },
     {
@@ -2752,7 +2752,7 @@
     {
       "modelId": "seedream-4-5",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1147,
+      "raw": 1148,
       "stderr": 3,
       "sourceLabel": "seedream-4.5"
     },
@@ -3032,7 +3032,7 @@
     {
       "modelId": "muse-image",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1276,
+      "raw": 1274,
       "stderr": 5,
       "sourceLabel": "muse-image"
     },
@@ -3088,7 +3088,7 @@
     {
       "modelId": "z-image-turbo",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1084,
+      "raw": 1083,
       "stderr": 5,
       "sourceLabel": "z-image-turbo"
     },
@@ -3160,7 +3160,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -3168,7 +3168,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]

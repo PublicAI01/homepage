@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T12:16:09.732Z",
+  "generatedAt": "2026-10-06T01:13:25.234Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-video.png",
       "category": "Text-to-video",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "metric": "elo",
       "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
@@ -554,7 +554,7 @@
     {
       "modelId": "gemini-omni-flash-1-1",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1112,
+      "raw": 1113,
       "stderr": 9,
       "sourceLabel": "Gemini Omni Flash 1.1"
     },
@@ -568,7 +568,7 @@
     {
       "modelId": "happyhorse-1-1",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1041,
+      "raw": 1043,
       "stderr": 9,
       "sourceLabel": "HappyHorse-1.1"
     },
@@ -589,8 +589,8 @@
     {
       "modelId": "grok-imagine-video-1-5",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1042,
-      "stderr": 10,
+      "raw": 1044,
+      "stderr": 9,
       "sourceLabel": "grok-imagine-video-1.5"
     },
     {
@@ -645,7 +645,7 @@
     {
       "modelId": "magi-2",
       "benchmarkId": "aa-text-to-video",
-      "raw": 958,
+      "raw": 961,
       "stderr": 10,
       "sourceLabel": "MAGI-2 Preview (0912)"
     },
@@ -673,7 +673,7 @@
     {
       "modelId": "seedance-2-0",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1116,
+      "raw": 1119,
       "stderr": 9,
       "sourceLabel": "Dreamina Seedance 2.0"
     },
@@ -729,7 +729,7 @@
     {
       "modelId": "ltx-2-3-fast",
       "benchmarkId": "aa-text-to-video",
-      "raw": 853,
+      "raw": 854,
       "stderr": 11,
       "sourceLabel": "LTX-2.3 Fast"
     },
@@ -750,8 +750,8 @@
     {
       "modelId": "ltx-2-3-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 890,
-      "stderr": 11,
+      "raw": 893,
+      "stderr": 10,
       "sourceLabel": "LTX-2.3 Pro"
     },
     {
@@ -764,8 +764,8 @@
     {
       "modelId": "agnes-video-2-5",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1055,
-      "stderr": 10,
+      "raw": 1058,
+      "stderr": 9,
       "sourceLabel": "Agnes-Video-2.5"
     },
     {
@@ -778,7 +778,7 @@
     {
       "modelId": "ltx-2-5-fast",
       "benchmarkId": "aa-text-to-video",
-      "raw": 945,
+      "raw": 947,
       "stderr": 10,
       "sourceLabel": "LTX-2.5 Fast"
     },
@@ -799,7 +799,7 @@
     {
       "modelId": "ltx-2-5-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 943,
+      "raw": 944,
       "stderr": 10,
       "sourceLabel": "LTX-2.5 Pro"
     },
@@ -813,7 +813,7 @@
     {
       "modelId": "seedance-2-5",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1140,
+      "raw": 1142,
       "stderr": 9,
       "sourceLabel": "Dreamina Seedance 2.5"
     },
@@ -862,7 +862,7 @@
     {
       "modelId": "wan2-7",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1028,
+      "raw": 1029,
       "stderr": 9,
       "sourceLabel": "Wan2.7-260612"
     },
@@ -883,7 +883,7 @@
     {
       "modelId": "minimax-h3-max-based-on-minimax-h3",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1133,
+      "raw": 1134,
       "stderr": 10,
       "sourceLabel": "MiniMax H3 Max (based on MiniMax H3)"
     },
@@ -897,14 +897,14 @@
     {
       "modelId": "minimax-h3-768p",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1137,
+      "raw": 1138,
       "stderr": 9,
       "sourceLabel": "MiniMax H3 (768p)"
     },
     {
       "modelId": "utopai-x-based-on-minimax-h3",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1149,
+      "raw": 1148,
       "stderr": 10,
       "sourceLabel": "Utopai X (based on MiniMax H3)"
     },
@@ -918,7 +918,7 @@
     {
       "modelId": "flux-3",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1126,
+      "raw": 1127,
       "stderr": 9,
       "sourceLabel": "FLUX 3"
     },
@@ -946,7 +946,7 @@
     {
       "modelId": "kling-3-0-omni-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1014,
+      "raw": 1017,
       "stderr": 10,
       "sourceLabel": "Kling 3.0 Omni 1080p (Pro)"
     },
@@ -995,7 +995,7 @@
     {
       "modelId": "vidu-q3-turbo",
       "benchmarkId": "aa-text-to-video",
-      "raw": 912,
+      "raw": 913,
       "stderr": 10,
       "sourceLabel": "Vidu Q3 Turbo"
     },
@@ -1023,7 +1023,7 @@
     {
       "modelId": "wan-3-0",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1155,
+      "raw": 1156,
       "stderr": 9,
       "sourceLabel": "Wan 3.0"
     },
@@ -1065,7 +1065,7 @@
     {
       "modelId": "veo-3-1-lite",
       "benchmarkId": "aa-text-to-video",
-      "raw": 943,
+      "raw": 947,
       "stderr": 10,
       "sourceLabel": "Veo 3.1 Lite"
     },
@@ -1079,7 +1079,7 @@
     {
       "modelId": "veo-3-1",
       "benchmarkId": "aa-text-to-video",
-      "raw": 965,
+      "raw": 966,
       "stderr": 10,
       "sourceLabel": "Veo 3.1"
     },
@@ -1100,7 +1100,7 @@
     {
       "modelId": "skyreels-v4",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1072,
+      "raw": 1075,
       "stderr": 9,
       "sourceLabel": "SkyReels V4"
     },
@@ -1149,7 +1149,7 @@
     {
       "modelId": "pixverse-v6",
       "benchmarkId": "aa-text-to-video",
-      "raw": 987,
+      "raw": 986,
       "stderr": 10,
       "sourceLabel": "PixVerse V6"
     },
@@ -1163,7 +1163,7 @@
     {
       "modelId": "boreal",
       "benchmarkId": "aa-text-to-video",
-      "raw": 841,
+      "raw": 843,
       "stderr": 12,
       "sourceLabel": "Boreal"
     },
@@ -1235,7 +1235,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1243,7 +1243,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-10-04",
+      "retrievedAt": "2026-10-06",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
