@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T06:03:09.815Z",
+  "generatedAt": "2026-10-06T13:16:21.172Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -73,7 +73,7 @@
       "independent": true,
       "url": "https://www.tbench.ai/leaderboard",
       "retrievedAt": "2026-10-06",
-      "snapshot": "Top entry dated Sep 3, 2026",
+      "snapshot": "Top entry dated Sep 22, 2026",
       "metric": "percent",
       "logo": "/model-index/logos/terminal-bench.png",
       "category": "Coding",
@@ -1019,7 +1019,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "elo",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1036,7 +1036,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1053,7 +1053,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1070,7 +1070,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1087,7 +1087,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1104,7 +1104,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1121,7 +1121,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1138,7 +1138,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1155,7 +1155,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1172,7 +1172,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1189,7 +1189,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1206,7 +1206,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1223,7 +1223,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1240,7 +1240,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1257,7 +1257,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1274,7 +1274,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1291,7 +1291,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1308,7 +1308,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1325,7 +1325,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1342,7 +1342,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1359,7 +1359,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1376,7 +1376,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1393,7 +1393,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1410,7 +1410,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1427,7 +1427,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1444,7 +1444,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -1461,7 +1461,7 @@
       "publisher": "Institute of Foundation Models (MBZUAI)",
       "independent": false,
       "url": "https://ifm.ai/blog/k2/",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-02",
       "publishedAt": "2026-09-03",
       "metric": "percent",
       "logo": "/model-index/logos/ifm-k2-horizon.png",
@@ -2706,7 +2706,6 @@
       "size": { "paramsB": 1000, "source": "name" }
     },
     { "id": "sarvam-1", "name": "Sarvam 1", "org": "Sarvam" },
-    { "id": "wity-1", "name": "Wity 1", "org": "Other" },
     {
       "id": "gemma-1-1-2b-it",
       "name": "Gemma 1.1 2B It",
@@ -2878,7 +2877,6 @@
         }
       }
     },
-    { "id": "sage-1-3-0", "name": "Sage 1.3.0", "org": "Other" },
     {
       "id": "openjev-verdict-1-4",
       "name": "openJev Verdict 1.4",
@@ -4940,11 +4938,6 @@
     },
     { "id": "composer-2-5", "name": "Composer 2.5", "org": "Other" },
     {
-      "id": "fastino-gliner-2-5-decide",
-      "name": "Fastino GLiNER-2.5-Decide",
-      "org": "Other"
-    },
-    {
       "id": "deepseek-v2-5",
       "name": "DeepSeek V2.5",
       "org": "DeepSeek",
@@ -5702,8 +5695,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.077,
-          "outputPerM": 0.255,
+          "inputPerM": 0.09,
+          "outputPerM": 0.3,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -7715,8 +7708,8 @@
           "id": "qwen/qwen3.5-35b-a3b",
           "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
           "contextLength": 262144,
-          "inputPerM": 0.15,
-          "outputPerM": 1,
+          "inputPerM": 0.08,
+          "outputPerM": 0.75,
           "listedAt": "2026-02-25",
           "modalities": ["text", "image", "video"]
         },
@@ -8370,8 +8363,8 @@
           "id": "meta/muse-glimmer-30b",
           "url": "https://openrouter.ai/meta/muse-glimmer-30b",
           "contextLength": 131072,
-          "inputPerM": 0.35,
-          "outputPerM": 1.5,
+          "inputPerM": 0.3,
+          "outputPerM": 1.2,
           "listedAt": "2026-08-09",
           "modalities": ["text", "image"]
         },
@@ -8718,7 +8711,7 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.012,
+          "inputPerM": 0.008,
           "outputPerM": 1.28,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
@@ -9041,6 +9034,17 @@
       "size": { "paramsB": 780, "source": "huggingface" }
     },
     {
+      "id": "mistral-large-4",
+      "name": "Mistral Large 4",
+      "org": "Mistral",
+      "access": {
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
       "id": "llama-4-maverick-instruct",
       "name": "Llama 4 Maverick Instruct",
       "org": "Meta",
@@ -9286,8 +9290,8 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.003,
-          "outputPerM": 2.4,
+          "inputPerM": 0.055,
+          "outputPerM": 1.32,
           "listedAt": "2026-09-10",
           "modalities": ["text", "image"]
         },
@@ -10296,7 +10300,7 @@
           "id": "z-ai/glm-5.2",
           "url": "https://openrouter.ai/z-ai/glm-5.2",
           "contextLength": 1048576,
-          "inputPerM": 0.152,
+          "inputPerM": 0.112,
           "outputPerM": 12,
           "listedAt": "2026-06-16",
           "modalities": ["text"]
@@ -14082,18 +14086,6 @@
       "sourceLabel": "sarvam-1"
     },
     {
-      "modelId": "wity-1",
-      "benchmarkId": "jevbench-intelligence",
-      "raw": 71.6,
-      "sourceLabel": "wity-1"
-    },
-    {
-      "modelId": "wity-1",
-      "benchmarkId": "jevbench-calibration",
-      "raw": 88,
-      "sourceLabel": "wity-1"
-    },
-    {
       "modelId": "gemma-1-1-2b-it",
       "benchmarkId": "lmarena",
       "raw": 1117,
@@ -14366,18 +14358,6 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 19.1,
       "sourceLabel": "muse-spark-1.1"
-    },
-    {
-      "modelId": "jev-1-13-0",
-      "benchmarkId": "jevbench-intelligence",
-      "raw": 62.4,
-      "sourceLabel": "Jev 1.13.0"
-    },
-    {
-      "modelId": "jev-1-13-0",
-      "benchmarkId": "jevbench-calibration",
-      "raw": 90.6,
-      "sourceLabel": "Jev 1.13.0"
     },
     {
       "modelId": "jev-1-13-0",
@@ -14785,6 +14765,13 @@
     },
     {
       "modelId": "muse-spark-1-2",
+      "benchmarkId": "vals-srebench",
+      "raw": 0,
+      "stderr": 0,
+      "sourceLabel": "Muse Spark 1.2"
+    },
+    {
+      "modelId": "muse-spark-1-2",
       "benchmarkId": "vals-swebench",
       "raw": 86.6,
       "stderr": 1.52,
@@ -14938,6 +14925,13 @@
     },
     {
       "modelId": "muse-spark-1-3",
+      "benchmarkId": "vals-srebench",
+      "raw": 3.82,
+      "stderr": 1.19,
+      "sourceLabel": "Muse Spark 1.3 Max"
+    },
+    {
+      "modelId": "muse-spark-1-3",
       "benchmarkId": "vals-vibe-code",
       "raw": 85.86,
       "stderr": 2.51,
@@ -14957,18 +14951,6 @@
       "raw": 58,
       "stderr": 4.96,
       "sourceLabel": "Muse Spark 1.3 Max"
-    },
-    {
-      "modelId": "sage-1-3-0",
-      "benchmarkId": "jevbench-intelligence",
-      "raw": 64.3,
-      "sourceLabel": "Sage 1.3.0"
-    },
-    {
-      "modelId": "sage-1-3-0",
-      "benchmarkId": "jevbench-calibration",
-      "raw": 89.9,
-      "sourceLabel": "Sage 1.3.0"
     },
     {
       "modelId": "openjev-verdict-1-4",
@@ -21129,18 +21111,6 @@
       "stderr": 4.97,
       "sourceLabel": "Composer 2.5",
       "scaffold": "Cursor CLI"
-    },
-    {
-      "modelId": "fastino-gliner-2-5-decide",
-      "benchmarkId": "jevbench-intelligence",
-      "raw": 6.4,
-      "sourceLabel": "Fastino GLiNER-2.5-Decide (hosted API)"
-    },
-    {
-      "modelId": "fastino-gliner-2-5-decide",
-      "benchmarkId": "jevbench-calibration",
-      "raw": 68.8,
-      "sourceLabel": "Fastino GLiNER-2.5-Decide (hosted API)"
     },
     {
       "modelId": "deepseek-v2-5",
@@ -30491,6 +30461,13 @@
     },
     {
       "modelId": "gemini-3-1-pro",
+      "benchmarkId": "vals-srebench",
+      "raw": 0,
+      "stderr": 0,
+      "sourceLabel": "Gemini 3.1 Pro Preview (02/26)"
+    },
+    {
+      "modelId": "gemini-3-1-pro",
       "benchmarkId": "vals-swebench",
       "raw": 78.8,
       "stderr": 1.83,
@@ -34252,6 +34229,13 @@
     },
     {
       "modelId": "gemini-3-8-flash",
+      "benchmarkId": "vals-srebench",
+      "raw": 11.07,
+      "stderr": 1.94,
+      "sourceLabel": "Gemini 3.8 Flash"
+    },
+    {
+      "modelId": "gemini-3-8-flash",
       "benchmarkId": "vals-swebench",
       "raw": 80,
       "stderr": 1.79,
@@ -35571,7 +35555,7 @@
     {
       "modelId": "gemini-4-argon",
       "benchmarkId": "aa-gdpval",
-      "raw": 1627,
+      "raw": 1626,
       "stderr": 22,
       "sourceLabel": "Gemini 4 Argon (High)"
     },
@@ -36331,6 +36315,13 @@
       "benchmarkId": "vals-cyber",
       "raw": 72.86,
       "stderr": 5.5,
+      "sourceLabel": "DeepSeek V4 Pro 0813"
+    },
+    {
+      "modelId": "deepseek-v4-pro",
+      "benchmarkId": "vals-srebench",
+      "raw": 1.91,
+      "stderr": 0.85,
       "sourceLabel": "DeepSeek V4 Pro 0813"
     },
     {
@@ -37801,6 +37792,70 @@
       "raw": 75,
       "stderr": 4.35,
       "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "benchmarkId": "vals-legal_research",
+      "raw": 31.73,
+      "stderr": 3.23,
+      "sourceLabel": "Mistral Large 4"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "benchmarkId": "vals-hlab",
+      "raw": 15.83,
+      "stderr": 2.96,
+      "sourceLabel": "Mistral Large 4"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "benchmarkId": "vals-fabv2",
+      "raw": 54.68,
+      "stderr": 0.58,
+      "sourceLabel": "Mistral Large 4"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "benchmarkId": "vals-medcode",
+      "raw": 40.69,
+      "stderr": 2.17,
+      "sourceLabel": "Mistral Large 4"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "benchmarkId": "vals-medscribe",
+      "raw": 80.43,
+      "stderr": 2,
+      "sourceLabel": "Mistral Large 4"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "benchmarkId": "vals-biomysterybench",
+      "raw": 67.04,
+      "stderr": 2.67,
+      "sourceLabel": "Mistral Large 4"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "benchmarkId": "vals-vibe-code",
+      "raw": 78.4,
+      "stderr": 3.55,
+      "sourceLabel": "Mistral Large 4",
+      "scaffold": "OpenHands"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "benchmarkId": "vals-code-migration",
+      "raw": 30.56,
+      "stderr": 4.22,
+      "sourceLabel": "Mistral Large 4"
+    },
+    {
+      "modelId": "mistral-large-4",
+      "benchmarkId": "vals-proof_bench",
+      "raw": 10,
+      "stderr": 3.02,
+      "sourceLabel": "Mistral Large 4"
     },
     {
       "modelId": "llama-4-maverick-instruct",
@@ -42614,6 +42669,13 @@
     },
     {
       "modelId": "grok-4-7",
+      "benchmarkId": "vals-srebench",
+      "raw": 3.82,
+      "stderr": 1.19,
+      "sourceLabel": "Grok 4.7"
+    },
+    {
+      "modelId": "grok-4-7",
       "benchmarkId": "vals-vibe-code",
       "raw": 86.17,
       "stderr": 2.18,
@@ -44811,6 +44873,13 @@
     },
     {
       "modelId": "claude-sonnet-5",
+      "benchmarkId": "vals-srebench",
+      "raw": 0.38,
+      "stderr": 0.38,
+      "sourceLabel": "Claude Sonnet 5"
+    },
+    {
+      "modelId": "claude-sonnet-5",
       "benchmarkId": "vals-swebench",
       "raw": 79.6,
       "stderr": 1.8,
@@ -46587,6 +46656,13 @@
     },
     {
       "modelId": "glm-5-3-flash",
+      "benchmarkId": "vals-srebench",
+      "raw": 0.76,
+      "stderr": 0.54,
+      "sourceLabel": "GLM 5.3 Flash"
+    },
+    {
+      "modelId": "glm-5-3-flash",
       "benchmarkId": "vals-swebench",
       "raw": 92,
       "stderr": 1.21,
@@ -46844,6 +46920,13 @@
       "benchmarkId": "vals-cyber",
       "raw": 72.08,
       "stderr": 5.41,
+      "sourceLabel": "GLM 5.3"
+    },
+    {
+      "modelId": "glm-5-3",
+      "benchmarkId": "vals-srebench",
+      "raw": 9.16,
+      "stderr": 1.79,
       "sourceLabel": "GLM 5.3"
     },
     {
@@ -47658,6 +47741,13 @@
       "sourceLabel": "Claude Opus 5.5 (CVP)"
     },
     {
+      "modelId": "claude-opus-5-5-cvp",
+      "benchmarkId": "vals-srebench",
+      "raw": 21.76,
+      "stderr": 2.55,
+      "sourceLabel": "Claude Opus 5.5 (CVP)"
+    },
+    {
       "modelId": "gpt-5-5",
       "benchmarkId": "lmarena",
       "raw": 1481,
@@ -48004,6 +48094,14 @@
     },
     {
       "modelId": "claude-opus-5-5",
+      "benchmarkId": "terminal-bench",
+      "raw": 64.8,
+      "stderr": 3.1,
+      "sourceLabel": "Opus 5.5(max)",
+      "scaffold": "Claude Code"
+    },
+    {
+      "modelId": "claude-opus-5-5",
       "benchmarkId": "arc-agi-2",
       "raw": 91.7,
       "sourceLabel": "Claude Opus 5.5 (Max)"
@@ -48238,6 +48336,14 @@
       "raw": 1823,
       "stderr": 12.5,
       "sourceLabel": "Claude Sonnet 5.5 (Max, Default Fallback)"
+    },
+    {
+      "modelId": "claude-sonnet-5-5",
+      "benchmarkId": "terminal-bench",
+      "raw": 61.8,
+      "stderr": 2.9,
+      "sourceLabel": "Sonnet 5.5(max)",
+      "scaffold": "Claude Code"
     },
     {
       "modelId": "claude-sonnet-5-5",
@@ -48613,6 +48719,13 @@
       "benchmarkId": "vals-cyber",
       "raw": 73.63,
       "stderr": 5.56,
+      "sourceLabel": "GPT-5.6 Luna"
+    },
+    {
+      "modelId": "gpt-5-6-luna",
+      "benchmarkId": "vals-srebench",
+      "raw": 1.53,
+      "stderr": 0.76,
       "sourceLabel": "GPT-5.6 Luna"
     },
     {
@@ -49417,6 +49530,13 @@
     },
     {
       "modelId": "gpt-5-6-terra",
+      "benchmarkId": "vals-srebench",
+      "raw": 9.54,
+      "stderr": 1.82,
+      "sourceLabel": "GPT-5.6 Terra"
+    },
+    {
+      "modelId": "gpt-5-6-terra",
       "benchmarkId": "vals-swebench",
       "raw": 95.4,
       "stderr": 0.94,
@@ -49932,6 +50052,14 @@
     },
     {
       "modelId": "gpt-6-luna",
+      "benchmarkId": "terminal-bench",
+      "raw": 16.4,
+      "stderr": 2.7,
+      "sourceLabel": "GPT-6 Luna(max)",
+      "scaffold": "Codex"
+    },
+    {
+      "modelId": "gpt-6-luna",
       "benchmarkId": "arc-agi-2",
       "raw": 59.3,
       "sourceLabel": "GPT-6 Luna (Max)"
@@ -50031,6 +50159,13 @@
       "benchmarkId": "vals-cyber",
       "raw": 76.25,
       "stderr": 5.29,
+      "sourceLabel": "GPT-6 Luna"
+    },
+    {
+      "modelId": "gpt-6-luna",
+      "benchmarkId": "vals-srebench",
+      "raw": 2.67,
+      "stderr": 1,
       "sourceLabel": "GPT-6 Luna"
     },
     {
@@ -50150,6 +50285,14 @@
     },
     {
       "modelId": "gpt-6-sol",
+      "benchmarkId": "terminal-bench",
+      "raw": 49.4,
+      "stderr": 3.2,
+      "sourceLabel": "GPT-6 Sol(max)",
+      "scaffold": "Codex"
+    },
+    {
+      "modelId": "gpt-6-sol",
       "benchmarkId": "arc-agi-2",
       "raw": 89.6,
       "sourceLabel": "GPT-6 Sol (Max)"
@@ -50255,6 +50398,13 @@
       "benchmarkId": "vals-cyber",
       "raw": 77.98,
       "stderr": 5.11,
+      "sourceLabel": "GPT-6 Sol"
+    },
+    {
+      "modelId": "gpt-6-sol",
+      "benchmarkId": "vals-srebench",
+      "raw": 30.53,
+      "stderr": 2.85,
       "sourceLabel": "GPT-6 Sol"
     },
     {
@@ -50383,6 +50533,14 @@
       "raw": 1564,
       "stderr": 9,
       "sourceLabel": "GPT-6.1 Sol (Max)"
+    },
+    {
+      "modelId": "gpt-6-1-sol",
+      "benchmarkId": "terminal-bench",
+      "raw": 58.2,
+      "stderr": 3.1,
+      "sourceLabel": "GPT-6.1 Sol(max)",
+      "scaffold": "Codex"
     },
     {
       "modelId": "gpt-6-1-sol",
@@ -51965,6 +52123,13 @@
       "sourceLabel": "Daybreak Blue"
     },
     {
+      "modelId": "daybreak-blue",
+      "benchmarkId": "vals-srebench",
+      "raw": 31.68,
+      "stderr": 2.88,
+      "sourceLabel": "Daybreak Blue"
+    },
+    {
       "modelId": "open-jev-json-canvas",
       "benchmarkId": "jevbench-intelligence",
       "raw": 61.2,
@@ -53087,6 +53252,13 @@
       "benchmarkId": "vals-cyber",
       "raw": 66.79,
       "stderr": 5.95,
+      "sourceLabel": "Inkling"
+    },
+    {
+      "modelId": "inkling",
+      "benchmarkId": "vals-srebench",
+      "raw": 0,
+      "stderr": 0,
       "sourceLabel": "Inkling"
     },
     {
