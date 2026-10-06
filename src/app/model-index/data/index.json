@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T01:13:25.234Z",
+  "generatedAt": "2026-10-06T06:03:09.815Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -6227,8 +6227,8 @@
       "size": { "paramsB": 3, "source": "name" }
     },
     {
-      "id": "nvidia-nemotron-3-nano-4b",
-      "name": "NVIDIA Nemotron 3 Nano 4B",
+      "id": "nemotron-3-nano-4b",
+      "name": "Nemotron 3 Nano 4B",
       "org": "NVIDIA",
       "access": {
         "official": { "name": "NVIDIA NIM", "url": "https://build.nvidia.com" }
@@ -6947,7 +6947,7 @@
           "id": "moonshotai/kimi-k3",
           "url": "https://openrouter.ai/moonshotai/kimi-k3",
           "contextLength": 1048576,
-          "inputPerM": 1.19,
+          "inputPerM": 0.95,
           "outputPerM": 14,
           "listedAt": "2026-07-16",
           "modalities": ["text", "image", "video"]
@@ -8718,7 +8718,7 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.015,
+          "inputPerM": 0.012,
           "outputPerM": 1.28,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
@@ -8763,8 +8763,8 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
           "contextLength": 1048576,
-          "inputPerM": 1.32,
-          "outputPerM": 3.96,
+          "inputPerM": 0.66,
+          "outputPerM": 1.98,
           "listedAt": "2026-08-12",
           "modalities": ["text"]
         },
@@ -9286,8 +9286,8 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.3,
-          "outputPerM": 1.2,
+          "inputPerM": 0.003,
+          "outputPerM": 2.4,
           "listedAt": "2026-09-10",
           "modalities": ["text", "image"]
         },
@@ -10296,7 +10296,7 @@
           "id": "z-ai/glm-5.2",
           "url": "https://openrouter.ai/z-ai/glm-5.2",
           "contextLength": 1048576,
-          "inputPerM": 0.044,
+          "inputPerM": 0.152,
           "outputPerM": 12,
           "listedAt": "2026-06-16",
           "modalities": ["text"]
@@ -18931,6 +18931,12 @@
     },
     {
       "modelId": "a-x-k2",
+      "benchmarkId": "artificial-analysis",
+      "raw": 21,
+      "sourceLabel": "A.X-K2"
+    },
+    {
+      "modelId": "a-x-k2",
       "benchmarkId": "aa-gdpval",
       "raw": 965,
       "stderr": 25,
@@ -25275,44 +25281,50 @@
       "sourceLabel": "Nanbeige4-3B-Thinking-2511"
     },
     {
-      "modelId": "nvidia-nemotron-3-nano-4b",
+      "modelId": "nemotron-3-nano-4b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 5,
+      "sourceLabel": "Nemotron 3 Nano 4B"
+    },
+    {
+      "modelId": "nemotron-3-nano-4b",
       "benchmarkId": "aa-gdpval",
       "raw": -55,
       "stderr": 26,
       "sourceLabel": "NVIDIA Nemotron 3 Nano 4B"
     },
     {
-      "modelId": "nvidia-nemotron-3-nano-4b",
+      "modelId": "nemotron-3-nano-4b",
       "benchmarkId": "ifm-k2-horizon:terminal-bench-2-1",
       "raw": 3.7,
       "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
-      "modelId": "nvidia-nemotron-3-nano-4b",
+      "modelId": "nemotron-3-nano-4b",
       "benchmarkId": "ifm-k2-horizon:scicode",
       "raw": 16.4,
       "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
-      "modelId": "nvidia-nemotron-3-nano-4b",
+      "modelId": "nemotron-3-nano-4b",
       "benchmarkId": "ifm-k2-horizon:gpqa-diamond",
       "raw": 51.3,
       "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
-      "modelId": "nvidia-nemotron-3-nano-4b",
+      "modelId": "nemotron-3-nano-4b",
       "benchmarkId": "ifm-k2-horizon:hmmt-feb-2026",
       "raw": 34.7,
       "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
-      "modelId": "nvidia-nemotron-3-nano-4b",
+      "modelId": "nemotron-3-nano-4b",
       "benchmarkId": "ifm-k2-horizon:hle",
       "raw": 4.9,
       "sourceLabel": "Nemotron 3 Nano-4B"
     },
     {
-      "modelId": "nvidia-nemotron-3-nano-4b",
+      "modelId": "nemotron-3-nano-4b",
       "benchmarkId": "ifm-k2-horizon:bfcl-v4",
       "raw": 36.8,
       "sourceLabel": "Nemotron 3 Nano-4B"
@@ -25470,7 +25482,7 @@
     {
       "modelId": "granite-4-2-3b",
       "benchmarkId": "aa-briefcase",
-      "raw": 95,
+      "raw": 98,
       "stderr": 11.5,
       "sourceLabel": "Granite 4.2 3B"
     },
@@ -27626,7 +27638,7 @@
       "modelId": "hy3",
       "benchmarkId": "aa-briefcase",
       "raw": 947,
-      "stderr": 9,
+      "stderr": 10,
       "sourceLabel": "Hy3"
     },
     {
@@ -30288,6 +30300,12 @@
     },
     {
       "modelId": "ling-3-1-flash",
+      "benchmarkId": "artificial-analysis",
+      "raw": 41,
+      "sourceLabel": "Ling 3.1 Flash"
+    },
+    {
+      "modelId": "ling-3-1-flash",
       "benchmarkId": "aa-gdpval",
       "raw": 1622,
       "stderr": 18,
@@ -32268,8 +32286,8 @@
     {
       "modelId": "nemotron-3-5-lightning",
       "benchmarkId": "aa-briefcase",
-      "raw": 502,
-      "stderr": 11,
+      "raw": 505,
+      "stderr": 10.5,
       "sourceLabel": "Nemotron 3.5 Lightning"
     },
     {
@@ -38892,7 +38910,7 @@
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1344,
+      "raw": 1343,
       "stderr": 22,
       "sourceLabel": "DeepSeek V4.1 Flash (Non-reasoning)"
     },
@@ -39944,7 +39962,7 @@
     {
       "modelId": "granite-4-2-8b",
       "benchmarkId": "aa-briefcase",
-      "raw": 305,
+      "raw": 309,
       "stderr": 9.5,
       "sourceLabel": "Granite 4.2 8B"
     },
@@ -51728,8 +51746,8 @@
     {
       "modelId": "command-a-2",
       "benchmarkId": "aa-briefcase",
-      "raw": 351,
-      "stderr": 9.5,
+      "raw": 355,
+      "stderr": 8.5,
       "sourceLabel": "Command A+"
     },
     {
@@ -51991,14 +52009,14 @@
     {
       "modelId": "north-mini-code",
       "benchmarkId": "aa-gdpval",
-      "raw": 315,
+      "raw": 314,
       "stderr": 23,
       "sourceLabel": "North Mini Code"
     },
     {
       "modelId": "north-mini-code",
       "benchmarkId": "aa-briefcase",
-      "raw": 207,
+      "raw": 211,
       "stderr": 9.5,
       "sourceLabel": "North Mini Code"
     },
@@ -52741,15 +52759,15 @@
     {
       "modelId": "muse-glimmer",
       "benchmarkId": "aa-gdpval",
-      "raw": 791,
+      "raw": 790,
       "stderr": 25,
       "sourceLabel": "Muse Glimmer (High)"
     },
     {
       "modelId": "muse-glimmer",
       "benchmarkId": "aa-briefcase",
-      "raw": 472,
-      "stderr": 9,
+      "raw": 477,
+      "stderr": 8.5,
       "sourceLabel": "Muse Glimmer (High)"
     },
     {
@@ -53602,14 +53620,14 @@
     {
       "modelId": "trinity-large",
       "benchmarkId": "aa-gdpval",
-      "raw": 340,
+      "raw": 339,
       "stderr": 25,
       "sourceLabel": "Trinity Large Thinking"
     },
     {
       "modelId": "trinity-large",
       "benchmarkId": "aa-briefcase",
-      "raw": 251,
+      "raw": 255,
       "stderr": 10,
       "sourceLabel": "Trinity Large Thinking"
     },
