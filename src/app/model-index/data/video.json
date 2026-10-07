@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T13:16:21.172Z",
+  "generatedAt": "2026-10-07T13:13:02.229Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-07",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-07",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-video.png",
       "category": "Text-to-video",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-07",
       "metric": "elo",
       "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
@@ -288,39 +288,6 @@
       }
     },
     {
-      "id": "minimax-h3-max-based-on-minimax-h3",
-      "name": "MiniMax H3 Max (based on MiniMax H3)",
-      "org": "MiniMax",
-      "access": {
-        "official": {
-          "name": "MiniMax Platform",
-          "url": "https://platform.minimax.io/docs"
-        }
-      }
-    },
-    {
-      "id": "minimax-h3-768p",
-      "name": "MiniMax H3 (768p)",
-      "org": "MiniMax",
-      "access": {
-        "official": {
-          "name": "MiniMax Platform",
-          "url": "https://platform.minimax.io/docs"
-        }
-      }
-    },
-    {
-      "id": "utopai-x-based-on-minimax-h3",
-      "name": "Utopai X (based on MiniMax H3)",
-      "org": "MiniMax",
-      "access": {
-        "official": {
-          "name": "MiniMax Platform",
-          "url": "https://platform.minimax.io/docs"
-        }
-      }
-    },
-    {
       "id": "veo-3-fast",
       "name": "Veo 3 Fast",
       "org": "Google",
@@ -336,6 +303,17 @@
       "id": "flux-3-video",
       "name": "Flux 3 Video",
       "org": "Black Forest Labs"
+    },
+    {
+      "id": "minimax-h3-max",
+      "name": "MiniMax H3 Max",
+      "org": "MiniMax",
+      "access": {
+        "official": {
+          "name": "MiniMax Platform",
+          "url": "https://platform.minimax.io/docs"
+        }
+      }
     },
     {
       "id": "minimax-h3",
@@ -478,7 +456,8 @@
           "url": "https://platform.openai.com/docs"
         }
       }
-    }
+    },
+    { "id": "utopai-x", "name": "Utopai X", "org": "Other" }
   ],
   "scores": [
     {
@@ -881,34 +860,6 @@
       "sourceLabel": "Wan 2.7"
     },
     {
-      "modelId": "minimax-h3-max-based-on-minimax-h3",
-      "benchmarkId": "aa-text-to-video",
-      "raw": 1130,
-      "stderr": 10,
-      "sourceLabel": "MiniMax H3 Max (based on MiniMax H3)"
-    },
-    {
-      "modelId": "minimax-h3-max-based-on-minimax-h3",
-      "benchmarkId": "aa-image-to-video",
-      "raw": 1195,
-      "stderr": 9,
-      "sourceLabel": "MiniMax H3 Max (based on MiniMax H3)"
-    },
-    {
-      "modelId": "minimax-h3-768p",
-      "benchmarkId": "aa-text-to-video",
-      "raw": 1137,
-      "stderr": 9,
-      "sourceLabel": "MiniMax H3 (768p)"
-    },
-    {
-      "modelId": "utopai-x-based-on-minimax-h3",
-      "benchmarkId": "aa-text-to-video",
-      "raw": 1149,
-      "stderr": 10,
-      "sourceLabel": "Utopai X (based on MiniMax H3)"
-    },
-    {
       "modelId": "veo-3-fast",
       "benchmarkId": "arena-text-to-video",
       "raw": 1348,
@@ -928,6 +879,27 @@
       "raw": 1493,
       "stderr": 17,
       "sourceLabel": "flux-3-video"
+    },
+    {
+      "modelId": "minimax-h3-max",
+      "benchmarkId": "aa-text-to-video",
+      "raw": 1130,
+      "stderr": 10,
+      "sourceLabel": "MiniMax H3 Max"
+    },
+    {
+      "modelId": "minimax-h3-max",
+      "benchmarkId": "aa-image-to-video",
+      "raw": 1195,
+      "stderr": 9,
+      "sourceLabel": "MiniMax H3 Max"
+    },
+    {
+      "modelId": "minimax-h3",
+      "benchmarkId": "aa-text-to-video",
+      "raw": 1137,
+      "stderr": 9,
+      "sourceLabel": "MiniMax H3 (768p)"
     },
     {
       "modelId": "minimax-h3",
@@ -1215,6 +1187,13 @@
       "raw": 1069,
       "stderr": 16,
       "sourceLabel": "sora"
+    },
+    {
+      "modelId": "utopai-x",
+      "benchmarkId": "aa-text-to-video",
+      "raw": 1149,
+      "stderr": 10,
+      "sourceLabel": "Utopai X"
     }
   ],
   "excluded": [
@@ -1235,7 +1214,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-07",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1243,7 +1222,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-07",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
