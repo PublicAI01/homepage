@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T13:13:02.229Z",
+  "generatedAt": "2026-10-09T06:03:55.199Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
-      "retrievedAt": "2026-10-07",
+      "retrievedAt": "2026-10-09",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-image.ico",
       "category": "Text-to-image",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-10-07",
+      "retrievedAt": "2026-10-09",
       "metric": "elo",
       "logo": "/model-index/logos/arena-text-to-image.png",
       "category": "Text-to-image",
@@ -39,7 +39,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-10-07",
+      "retrievedAt": "2026-10-06",
       "metric": "elo",
       "logo": "/model-index/logos/arena-image-edit.png",
       "category": "Image editing",
@@ -435,6 +435,22 @@
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
+        }
+      }
+    },
+    {
+      "id": "nano-banana-2-1",
+      "name": "Nano Banana 2.1",
+      "org": "Other",
+      "access": {
+        "openrouter": {
+          "id": "google/gemini-nano-banana-2.1",
+          "url": "https://openrouter.ai/google/gemini-nano-banana-2.1",
+          "contextLength": 65536,
+          "inputPerM": 1.5,
+          "outputPerM": 7.5,
+          "listedAt": "2026-10-06",
+          "modalities": ["image", "text"]
         }
       }
     },
@@ -1132,7 +1148,7 @@
     {
       "modelId": "flux-1-dev",
       "benchmarkId": "aa-text-to-image",
-      "raw": 841,
+      "raw": 840,
       "stderr": 7,
       "sourceLabel": "FLUX.1 [dev]"
     },
@@ -1258,7 +1274,7 @@
     {
       "modelId": "flux-1-schnell",
       "benchmarkId": "aa-text-to-image",
-      "raw": 802,
+      "raw": 803,
       "stderr": 7,
       "sourceLabel": "FLUX.1 [schnell]"
     },
@@ -1293,7 +1309,7 @@
     {
       "modelId": "gpt-image-1-mini",
       "benchmarkId": "aa-text-to-image",
-      "raw": 919,
+      "raw": 918,
       "stderr": 7,
       "sourceLabel": "GPT Image 1 Mini (medium)"
     },
@@ -1377,7 +1393,7 @@
     {
       "modelId": "reve-v1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 913,
+      "raw": 912,
       "stderr": 9,
       "sourceLabel": "Reve Image (Halfmoon)"
     },
@@ -1468,7 +1484,7 @@
     {
       "modelId": "gpt-image-1-5-high-fidelity",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1238,
+      "raw": 1237,
       "stderr": 3,
       "sourceLabel": "gpt-image-1.5-high-fidelity"
     },
@@ -1566,7 +1582,7 @@
     {
       "modelId": "nano-banana-2-lite-gemini-3-1-flash-lite-image",
       "benchmarkId": "arena-image-edit",
-      "raw": 1314,
+      "raw": 1313,
       "stderr": 5,
       "sourceLabel": "gemini-3.1-flash-lite-image (nano-banana-2-lite)"
     },
@@ -1580,7 +1596,7 @@
     {
       "modelId": "gemini-3-1-flash-image-nano-banana-2-web-search",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1261,
+      "raw": 1262,
       "stderr": 4,
       "sourceLabel": "gemini-3.1-flash-image (nano-banana-2) [web-search]"
     },
@@ -1664,14 +1680,14 @@
     {
       "modelId": "grok-imagine-image-2-0-canvas",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1321,
-      "stderr": 11,
+      "raw": 1334,
+      "stderr": 12,
       "sourceLabel": "grok-imagine-image-2.0 (canvas)"
     },
     {
       "modelId": "grok-imagine-image-2-0-canvas",
       "benchmarkId": "arena-image-edit",
-      "raw": 1439,
+      "raw": 1437,
       "stderr": 9,
       "sourceLabel": "grok-imagine-image-2.0 (canvas)"
     },
@@ -1832,14 +1848,14 @@
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1297,
+      "raw": 1294,
       "stderr": 6,
       "sourceLabel": "grok-imagine-image-2.0 (20260801)"
     },
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "arena-image-edit",
-      "raw": 1425,
+      "raw": 1426,
       "stderr": 5,
       "sourceLabel": "grok-imagine-image-2.0 (20260801)"
     },
@@ -1930,7 +1946,7 @@
     {
       "modelId": "krea-2-large",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1111,
+      "raw": 1112,
       "stderr": 4,
       "sourceLabel": "krea-2-large"
     },
@@ -1958,7 +1974,7 @@
     {
       "modelId": "krea-2-turbo",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1114,
+      "raw": 1113,
       "stderr": 4,
       "sourceLabel": "krea-2-turbo"
     },
@@ -2005,11 +2021,11 @@
       "sourceLabel": "gemini-nano-banana-2.1"
     },
     {
-      "modelId": "gemini-nano-banana-2-1",
-      "benchmarkId": "arena-image-edit",
-      "raw": 1428,
-      "stderr": 6,
-      "sourceLabel": "gemini-nano-banana-2.1"
+      "modelId": "nano-banana-2-1",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1160,
+      "stderr": 10,
+      "sourceLabel": "Nano Banana 2.1"
     },
     {
       "modelId": "stable-diffusion-2-1",
@@ -2189,7 +2205,7 @@
     {
       "modelId": "wan-2-5",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1115,
+      "raw": 1116,
       "stderr": 3,
       "sourceLabel": "wan2.5-t2i-preview"
     },
@@ -2217,14 +2233,14 @@
     {
       "modelId": "mai-image-2-6",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1333,
+      "raw": 1332,
       "stderr": 5,
       "sourceLabel": "mai-image-2.6"
     },
     {
       "modelId": "mai-image-2-6",
       "benchmarkId": "arena-image-edit",
-      "raw": 1428,
+      "raw": 1427,
       "stderr": 5,
       "sourceLabel": "mai-image-2.6"
     },
@@ -2385,7 +2401,7 @@
     {
       "modelId": "hunyuan-image-3-0",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1149,
+      "raw": 1150,
       "stderr": 3,
       "sourceLabel": "hunyuan-image-3.0"
     },
@@ -2707,7 +2723,7 @@
     {
       "modelId": "recraft-v4-1-flash",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1100,
+      "raw": 1099,
       "stderr": 9,
       "sourceLabel": "recraft-v4.1-flash"
     },
@@ -2764,7 +2780,7 @@
       "modelId": "ideogram-4-5",
       "benchmarkId": "arena-image-edit",
       "raw": 1347,
-      "stderr": 5,
+      "stderr": 6,
       "sourceLabel": "ideogram-4.5"
     },
     {
@@ -2777,7 +2793,7 @@
     {
       "modelId": "seedream-4-5",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1148,
+      "raw": 1149,
       "stderr": 3,
       "sourceLabel": "seedream-4.5"
     },
@@ -2819,7 +2835,7 @@
     {
       "modelId": "seedream-5-0-pro",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1256,
+      "raw": 1255,
       "stderr": 4,
       "sourceLabel": "seedream-5.0-pro"
     },
@@ -3185,7 +3201,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-10-07",
+      "retrievedAt": "2026-10-09",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -3193,7 +3209,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-10-07",
+      "retrievedAt": "2026-10-09",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
