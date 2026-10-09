@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T06:03:55.199Z",
+  "generatedAt": "2026-10-09T09:06:36.416Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -39,7 +39,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-10-06",
+      "retrievedAt": "2026-10-08",
       "metric": "elo",
       "logo": "/model-index/logos/arena-image-edit.png",
       "category": "Image editing",
@@ -1582,7 +1582,7 @@
     {
       "modelId": "nano-banana-2-lite-gemini-3-1-flash-lite-image",
       "benchmarkId": "arena-image-edit",
-      "raw": 1313,
+      "raw": 1314,
       "stderr": 5,
       "sourceLabel": "gemini-3.1-flash-lite-image (nano-banana-2-lite)"
     },
@@ -1687,7 +1687,7 @@
     {
       "modelId": "grok-imagine-image-2-0-canvas",
       "benchmarkId": "arena-image-edit",
-      "raw": 1437,
+      "raw": 1439,
       "stderr": 9,
       "sourceLabel": "grok-imagine-image-2.0 (canvas)"
     },
@@ -1855,7 +1855,7 @@
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "arena-image-edit",
-      "raw": 1426,
+      "raw": 1425,
       "stderr": 5,
       "sourceLabel": "grok-imagine-image-2.0 (20260801)"
     },
@@ -2018,6 +2018,13 @@
       "benchmarkId": "arena-text-to-image",
       "raw": 1328,
       "stderr": 9,
+      "sourceLabel": "gemini-nano-banana-2.1"
+    },
+    {
+      "modelId": "gemini-nano-banana-2-1",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1428,
+      "stderr": 6,
       "sourceLabel": "gemini-nano-banana-2.1"
     },
     {
@@ -2240,7 +2247,7 @@
     {
       "modelId": "mai-image-2-6",
       "benchmarkId": "arena-image-edit",
-      "raw": 1427,
+      "raw": 1428,
       "stderr": 5,
       "sourceLabel": "mai-image-2.6"
     },
@@ -2780,7 +2787,7 @@
       "modelId": "ideogram-4-5",
       "benchmarkId": "arena-image-edit",
       "raw": 1347,
-      "stderr": 6,
+      "stderr": 5,
       "sourceLabel": "ideogram-4.5"
     },
     {
