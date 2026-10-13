@@ -46,7 +46,7 @@ export const WEIGHTING: Weighting[] = [
     benchmarkId: 'livebench',
     weight: 20,
     rationale:
-      'Broad, refreshed to resist contamination, and covers reasoning, coding, maths and instruction following in one place.',
+      'LiveBench 2.0: five agentic suites graded by script plus two short single-answer suites, refreshed to resist contamination, covering agents, research, browser use, design, coding and reasoning in one place. Replaced 1.0 on 2026-10-13; 1.0 stays on the page as a frozen reference.',
   },
   {
     benchmarkId: 'terminal-bench',
@@ -141,10 +141,25 @@ export const VENDOR_REPORT_WEIGHT = 10;
 /** @deprecated The figure a caller means depends on who published it. */
 export const REPORT_WEIGHT = VENDOR_REPORT_WEIGHT;
 
+/**
+ * LiveBench 1.0's figures that LiveBench 2.0 also publishes. Same publisher,
+ * a different scale, and 2.0 already carries the category: counting both
+ * would give one voice two votes there. They stay on the page, unweighted.
+ * 1.0's Agentic Coding, Mathematics, Language and Instruction Following are
+ * the ones 2.0 dropped, so they keep the ordinary weight in their domains.
+ */
+const SUPERSEDED = new Set([
+  'livebench-v1',
+  'livebench-v1-reasoning',
+  'livebench-v1-coding',
+  'livebench-v1-data-analysis',
+]);
+
 export function weightFor(
   b: Benchmark,
   weighting: Weighting[] = WEIGHTING,
 ): number {
+  if (SUPERSEDED.has(b.id)) return 0;
   const w = weighting.find((x) => x.benchmarkId === b.id)?.weight;
   if (w !== undefined) return w;
   if (b.kind !== 'report') return BOARD_MEASURE_WEIGHT;
@@ -249,6 +264,10 @@ export const SOURCE_BADGE: Record<string, { code: string; tone: string }> = {
     code: 'LB',
     tone: 'border-[#7CB8FF]/40 bg-[#7CB8FF]/15 text-[#7CB8FF]',
   },
+  'livebench-v1': {
+    code: 'LB1',
+    tone: 'border-[#7CB8FF]/25 bg-[#7CB8FF]/10 text-[#7CB8FF]/80',
+  },
   livecodebench: {
     code: 'LC',
     tone: 'border-[#9EE7C8]/40 bg-[#9EE7C8]/15 text-[#9EE7C8]',
@@ -337,6 +356,7 @@ export const SOURCE_LOGO: Record<string, string> = {
   'terminal-bench': '/model-index/logos/terminal-bench.png',
   'arc-agi-2': '/model-index/logos/arc-agi-2.png',
   livebench: '/model-index/logos/livebench.png',
+  'livebench-v1': '/model-index/logos/livebench.png',
   'ifm-k2-horizon': '/model-index/logos/ifm-k2-horizon.png',
   'datacamp-astra-vs-fable': '/model-index/logos/datacamp-astra-vs-fable.png',
   'cellcog-k2-horizon': '/model-index/logos/cellcog-k2-horizon.png',
