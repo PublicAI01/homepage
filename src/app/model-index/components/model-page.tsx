@@ -6,9 +6,11 @@ import { cn } from '@/utils';
 
 import { MIN_OVERALL_WEIGHT } from '../lib/aggregate';
 import { estimateWords } from '../lib/estimate';
+import { bestDomains, type CardSpec } from '../lib/export-card';
 import type { Standing } from '../lib/track';
 import type { TrackInfo } from '../lib/tracks';
 import BadgeCopy from './badge-copy';
+import ModelExport from './model-export';
 
 /**
  * One model's page, for any track: the text index at /model-index/m/<id>,
@@ -260,6 +262,40 @@ export default async function ModelPage({
   const starred = standings.some((s) => !s.rankedInScope);
   const rankedTotal = track.index.describeIndex().counts.ranked;
   const badgeMarkdown = `[![PublicAI Index](${INDEX_URL}/badge?model=${model.id})](${INDEX_URL}/m/${model.id})`;
+  // The same figures the panel beside it prints, for the PNG. The reason a
+  // model is unranked is worded here once and shown in both places.
+  const unrankedReason =
+    model.measuredWeight > 0 && model.measuredWeight < MIN_OVERALL_WEIGHT
+      ? `${Math.round(model.measuredWeight * 100)}% of the Overall’s weighting measured — ${Math.round(MIN_OVERALL_WEIGHT * 100)}% places a model`
+      : 'Only one publisher has scored it';
+  const card: CardSpec = {
+    track: track.title,
+    name: model.name,
+    org: model.org,
+    tagline: `${model.size ? ` · ${model.size.label}` : ''}${model.catalog?.openWeights ? ' · open weights' : ''}`,
+    index: model.index,
+    rank: model.rank,
+    rankedTotal,
+    estimate: model.estimatedIndex
+      ? {
+          words: estimateWords(model.estimatedIndex.bound),
+          score: model.estimatedIndex.score,
+          position: model.estimatedIndex.position,
+        }
+      : null,
+    unrankedReason,
+    covered: model.covered,
+    coverable: model.coverable,
+    domainsTotal: standings.filter((s) => s.level === 'domain').length,
+    rows: bestDomains(standings).map((s) => ({
+      scope: s.scope,
+      score: s.score,
+      position: s.position!,
+      total: s.total,
+    })),
+    day: shortDay(day),
+    url: `${INDEX_URL}/m/${model.id}`.replace(/^https?:\/\//, ''),
+  };
   const bySource = [
     ...model.figures
       .reduce(
@@ -356,10 +392,7 @@ export default async function ModelPage({
                       placing for want of a second publisher or for want of
                       coverage, and the page named the first either way
                       (2026-09-23). */}
-                  {model.measuredWeight > 0 &&
-                  model.measuredWeight < MIN_OVERALL_WEIGHT
-                    ? `${Math.round(model.measuredWeight * 100)}% of the Overall’s weighting measured — ${Math.round(MIN_OVERALL_WEIGHT * 100)}% places a model`
-                    : 'Only one publisher has scored it'}
+                  {unrankedReason}
                   {model.estimatedIndex
                     ? ` — looks like ${estimateWords(model.estimatedIndex.bound)} ${model.estimatedIndex.score}${model.estimatedIndex.position ? `, around #${model.estimatedIndex.position} if ranked` : ''}`
                     : ''}
@@ -391,6 +424,13 @@ export default async function ModelPage({
                 </div>
               ))}
             </dl>
+            {/* The panel's numbers as a picture, for a post. */}
+            <div className="mt-4 border-t border-white/8 pt-3">
+              <ModelExport
+                spec={card}
+                filename={`publicai-index-${model.id}-${day}.png`}
+              />
+            </div>
           </aside>
         </header>
 
