@@ -148,7 +148,7 @@ export const REPORT_WEIGHT = VENDOR_REPORT_WEIGHT;
  * 1.0's Agentic Coding, Mathematics, Language and Instruction Following are
  * the ones 2.0 dropped, so they keep the ordinary weight in their domains.
  */
-const SUPERSEDED = new Set([
+export const SUPERSEDED = new Set([
   'livebench-v1',
   'livebench-v1-reasoning',
   'livebench-v1-coding',

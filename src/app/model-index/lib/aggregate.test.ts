@@ -16,6 +16,7 @@ import {
   MIN_SOURCES,
   OVERALL,
   PRIOR_FRACTION,
+  SUPERSEDED,
   VENDOR_REPORT_WEIGHT,
   weightFor,
   WEIGHTING,
@@ -620,11 +621,15 @@ describe('weighting', () => {
   it('names only shipped benchmarks, and gives every shipped measure a weight', () => {
     const ids = new Set(benchmarks.map((b) => b.id));
     for (const w of WEIGHTING) expect(ids.has(w.benchmarkId)).toBe(true);
-    for (const b of benchmarks) expect(weightFor(b)).toBeGreaterThan(0);
+    for (const b of benchmarks)
+      // A superseded figure stays on the page and counts for nothing.
+      if (SUPERSEDED.has(b.id)) expect(weightFor(b)).toBe(0);
+      else expect(weightFor(b)).toBeGreaterThan(0);
   });
 
   it('discounts a report below any board measure', () => {
     for (const b of benchmarks) {
+      if (SUPERSEDED.has(b.id)) continue;
       if (b.kind === 'report')
         expect(weightFor(b)).toBe(
           b.independent ? INDEPENDENT_REPORT_WEIGHT : VENDOR_REPORT_WEIGHT,
