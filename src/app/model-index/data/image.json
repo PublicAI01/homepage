@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T07:42:29.709Z",
+  "generatedAt": "2026-10-14T07:59:22.700Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -23,9 +23,8 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-10-13",
+      "retrievedAt": "2026-10-14",
       "metric": "elo",
-      "logo": "/model-index/logos/arena-text-to-image.png",
       "category": "Text-to-image",
       "domain": "Text-to-image",
       "caveat": "Blind pairwise votes on images from the same prompt. Measures what people prefer to look at; a model marked Preliminary has few votes yet and a wide error bar.",
@@ -39,9 +38,8 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-10-08",
+      "retrievedAt": "2026-10-14",
       "metric": "elo",
-      "logo": "/model-index/logos/arena-image-edit.png",
       "category": "Image editing",
       "domain": "Image editing",
       "caveat": "Blind pairwise votes on edits of the same source image under the same instruction. Preliminary marks a model with few votes yet.",

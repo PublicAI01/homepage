@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T07:42:29.709Z",
+  "generatedAt": "2026-10-14T07:59:22.700Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -9707,8 +9707,8 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.001,
-          "outputPerM": 0.6,
+          "inputPerM": 0,
+          "outputPerM": 0.891,
           "listedAt": "2026-09-10",
           "modalities": ["text", "image"]
         },

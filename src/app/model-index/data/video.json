@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T07:42:29.709Z",
+  "generatedAt": "2026-10-14T07:59:22.700Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -23,9 +23,8 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-13",
+      "retrievedAt": "2026-10-14",
       "metric": "elo",
-      "logo": "/model-index/logos/arena-text-to-video.png",
       "category": "Text-to-video",
       "domain": "Text-to-video",
       "caveat": "Blind pairwise votes on clips from the same prompt. Measures what people prefer to watch; Preliminary marks a model with few votes yet.",
