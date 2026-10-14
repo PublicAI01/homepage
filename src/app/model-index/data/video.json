@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T10:55:12.183Z",
+  "generatedAt": "2026-10-14T21:10:42.916Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -388,7 +388,6 @@
         }
       }
     },
-    { "id": "skyreels-v4", "name": "SkyReels V4", "org": "Other" },
     { "id": "runway-gen-4-5", "name": "Runway Gen 4.5", "org": "Runway" },
     {
       "id": "kandinsky-5-0-lite",
@@ -1007,20 +1006,6 @@
       "raw": 1031,
       "stderr": 17,
       "sourceLabel": "Veo 3.1"
-    },
-    {
-      "modelId": "skyreels-v4",
-      "benchmarkId": "aa-text-to-video",
-      "raw": 1088,
-      "stderr": 16,
-      "sourceLabel": "SkyReels V4"
-    },
-    {
-      "modelId": "skyreels-v4",
-      "benchmarkId": "aa-image-to-video",
-      "raw": 1035,
-      "stderr": 19,
-      "sourceLabel": "SkyReels V4"
     },
     {
       "modelId": "runway-gen-4-5",
