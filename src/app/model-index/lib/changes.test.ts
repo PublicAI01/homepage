@@ -298,9 +298,14 @@ describe('appendEntry: a rebuild on the same date', () => {
   it('keeps the earlier run’s renames and follows them through', () => {
     const entries = appendEntry([yesterday, run1], run2, 120);
     expect(entries.map((e) => e.date)).toEqual(['2026-09-14', '2026-09-15']);
-    expect(entries[1].aliases).toEqual({ c: ['b', 'a'], b: ['a'] });
+    // One record, not two: `b` is dead on this snapshot, and a second key
+    // saying "b ← a" beside "c ← b, a" read as a split of `a` (2026-10-14).
+    expect(entries[1].aliases).toEqual({ c: ['b', 'a'] });
     const c = diff(yesterday, entries[1], '2026-09-14', 3, entries);
     expect(c.models).toEqual([]);
+    const resolve = aliasResolver(entries);
+    expect(resolve('a')).toBe('c');
+    expect(resolve('b')).toBe('c');
   });
 
   it('keeps them when the rerun saw no renames of its own', () => {
@@ -347,6 +352,18 @@ describe('aliasResolver: a name changed and changed back', () => {
       renamed('2026-09-19', { thinking: ['base'], instruct: ['base'] }),
     ]);
     expect(resolve('base')).toBe('base');
+  });
+
+  it('follows an old id through a day whose record still lists the dead middle id', () => {
+    // What appendEntry wrote before 2026-10-14 for a → b → c on one day,
+    // and what a history file from then still holds: `b` is both a key
+    // and an old. Read as "a went to b and to c", `a` was dropped as a
+    // split and every link to it answered "not listed".
+    const resolve = aliasResolver([
+      renamed('2026-09-15', { c: ['b', 'a'], b: ['a'] }),
+    ]);
+    expect(resolve('a')).toBe('c');
+    expect(resolve('b')).toBe('c');
   });
 
   it('still follows a model renamed twice', () => {

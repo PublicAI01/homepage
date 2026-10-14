@@ -92,7 +92,14 @@ export function aliasResolver(entries: HistoryEntry[]) {
   const forward = new Map<string, string>();
   for (const e of entries) {
     const targets = new Map<string, Set<string>>();
+    // An id this snapshot renames *away* is not alive to be renamed *to*:
+    // what it had taken over is folded into its successor's record
+    // (appendEntry). Read as a target all the same, a same-day rerun's
+    // "c ← b, a" beside "b ← a" said a went to both b and c, which is the
+    // split rule below, and a stopped resolving (2026-10-14).
+    const renamedAway = new Set(Object.values(e.aliases ?? {}).flat());
     for (const [now, olds] of Object.entries(e.aliases ?? {})) {
+      if (renamedAway.has(now)) continue;
       forward.delete(now);
       for (const old of olds)
         if (old !== now)
@@ -154,8 +161,14 @@ export function appendEntry(
       aliases[now] = [
         ...new Set(olds.flatMap((old) => [old, ...(earlier[old] ?? [])])),
       ];
+    // Not the record of an id the rerun itself renamed away: it is dead on
+    // this snapshot, and what it took over has just been folded into its
+    // successor's list. Kept as a key too, the entry read "a → b" and
+    // "a → c" at once, and aliasResolver took that for a split (2026-10-14).
+    const renamedAway = new Set(Object.values(entry.aliases ?? {}).flat());
     for (const [now, olds] of Object.entries(earlier))
-      aliases[now] = [...new Set([...(aliases[now] ?? []), ...olds])];
+      if (!renamedAway.has(now))
+        aliases[now] = [...new Set([...(aliases[now] ?? []), ...olds])];
     merged.aliases = aliases;
   }
   return [...entries.filter((e) => e.date !== entry.date), merged]
