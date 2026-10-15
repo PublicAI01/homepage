@@ -70,3 +70,30 @@ export function groupBoards(benchmarks: Benchmark[]): BoardView[] {
   }
   return out;
 }
+
+/**
+ * The recognised boards a scope's figures come from — the count a coverage
+ * fraction is "of" — read from the measures that carry weight there, not
+ * from every measure filed under the scope.
+ *
+ * A board can keep a measure on the page with its weight set to zero:
+ * LiveBench 1.0's four figures that 2.0 also publishes have been a frozen
+ * reference since 2026-10-13 (SUPERSEDED in weights.ts). Counted by kind
+ * alone, they made LiveBench 1.0 a fifth board in General intelligence and
+ * a second in Code generation and Data analysis — while each row's own
+ * coverage, counted from the measures that score it, never saw it. Every
+ * one of the 443 standings in those four domains read "3 of 4 boards" or
+ * "1 of 2" in amber, warning of a subset that was never averaged
+ * (2026-10-15). One rule here, so the denominator and the numerator are
+ * the same set of boards wherever a fraction is printed.
+ */
+export function countingBoards(
+  inScope: readonly Benchmark[],
+  weights: Record<string, number>,
+): Set<string> {
+  return new Set(
+    inScope
+      .filter((b) => b.kind !== 'report' && (weights[b.id] ?? 0) > 0)
+      .map((b) => b.group),
+  );
+}

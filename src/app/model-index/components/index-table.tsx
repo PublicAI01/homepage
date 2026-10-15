@@ -20,7 +20,12 @@ import {
   MIN_OVERALL_WEIGHT,
   type NormalizedScore,
 } from '../lib/aggregate';
-import { type BoardView, figuresOn, groupBoards } from '../lib/boards';
+import {
+  type BoardView,
+  countingBoards,
+  figuresOn,
+  groupBoards,
+} from '../lib/boards';
 import { estimatedPosition,estimateMark } from '../lib/estimate';
 import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
@@ -527,14 +532,12 @@ export default function IndexTable({ tracks, newcomers }: Props) {
   const scopeBoardTotal = useMemo(() => {
     if (rankKey.level === 'overall') return coverable;
     const inScope = benchmarks.filter((b) =>
-      b.kind === 'report'
-        ? false
-        : rankKey.level === 'category'
-          ? b.category === rankKey.category
-          : b.domain === rankKey.domain,
+      rankKey.level === 'category'
+        ? b.category === rankKey.category
+        : b.domain === rankKey.domain,
     );
-    return new Set(inScope.map((b) => b.group)).size;
-  }, [rankKey, benchmarks, coverable]);
+    return countingBoards(inScope, weights).size;
+  }, [rankKey, benchmarks, coverable, weights]);
   const scopeCovered = (r: AggregateRow) =>
     rankKey.level === 'overall'
       ? r.covered
@@ -557,14 +560,12 @@ export default function IndexTable({ tracks, newcomers }: Props) {
         : b.domain === rankKey.domain,
     );
     return {
-      boards: new Set(
-        inScope.filter((b) => b.kind !== 'report').map((b) => b.group),
-      ).size,
+      boards: countingBoards(inScope, weights).size,
       reports: new Set(
         inScope.filter((b) => b.kind === 'report').map((b) => b.source),
       ),
     };
-  }, [benchmarks, rankKey]);
+  }, [benchmarks, rankKey, weights]);
 
   const activeCategory = rankKey.level === 'overall' ? null : rankKey.category;
   const activeDomains = activeCategory

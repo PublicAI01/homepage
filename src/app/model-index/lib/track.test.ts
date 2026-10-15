@@ -90,3 +90,36 @@ describe('getModel', () => {
       expect(track.getModel(named, { exact: true }).model?.id).toBe('jevone');
   });
 });
+
+describe('boards in a scope', () => {
+  // A frozen measure: its id is in SUPERSEDED, so weightFor gives it 0 and
+  // nothing it scores shapes a column. Counted by kind alone it was still a
+  // board "measuring" the domain, and every row read "1 of 2 boards" in
+  // amber for a subset that was never averaged (2026-10-15).
+  const frozen: Benchmark = {
+    ...board('livebench-v1-coding', 'LiveBench'),
+    group: 'livebench-v1',
+  };
+  const track = createTrack({
+    data: {
+      ...data,
+      benchmarks: [board('a', 'Publisher A'), frozen],
+      scores: data.scores.map((s) =>
+        s.benchmarkId === 'b' ? { ...s, benchmarkId: frozen.id } : s,
+      ),
+    },
+    weighting: weighting(100, 0),
+    url: 'https://publicai.io/model-index/x',
+  });
+
+  it('counts only the boards whose measures carry weight there', () => {
+    const r = track.rankModels({ scope: 'domain:General', minBoards: 0 });
+    if ('error' in r) throw new Error(r.error);
+    expect(r.scopeBoards).toBe(1);
+    const found = track.modelStandings('m1');
+    if ('error' in found) throw new Error(found.error);
+    const s = found.standings.find((x) => x.level === 'domain');
+    expect(s?.boards).toBe(1);
+    expect(s?.coveredBoards).toBe(1);
+  });
+});

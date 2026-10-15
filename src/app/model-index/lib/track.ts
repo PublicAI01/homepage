@@ -6,7 +6,7 @@ import {
   boardsFirst,
   compareScores,
 } from './aggregate';
-import { groupBoards } from './boards';
+import { countingBoards, groupBoards } from './boards';
 import { estimatedPosition } from './estimate';
 import { familyOf } from './family';
 import { scopeNote } from './scope-notes';
@@ -269,6 +269,8 @@ export function createTrack(input: TrackInput) {
   const rankedScores = rows.filter((r) => r.ranked).map((r) => r.score!);
   const benchById = new Map(benchmarks.map((b) => [b.id, b]));
   const sources = groupBoards(benchmarks);
+  // The weights the scores were built on, for "which boards count here".
+  const weights = weightsFor(benchmarks, WEIGHTING);
 
   const taxonomy: [string, string[]][] = (() => {
     // Built from the measures that actually placed a model, not from every
@@ -652,9 +654,7 @@ export function createTrack(input: TrackInput) {
               ? b.category === scope.category
               : b.domain === scope.domain,
           );
-    const scopeBoards = new Set(
-      inScope.filter((b) => b.kind !== 'report').map((b) => b.group),
-    ).size;
+    const scopeBoards = countingBoards(inScope, weights).size;
     const scopeReports = [
       ...new Set(
         inScope.filter((b) => b.kind === 'report').map((b) => b.source),
@@ -957,9 +957,7 @@ export function createTrack(input: TrackInput) {
         position: positions.get(model.id) ?? null,
         total: positions.size,
         score: me.scopeScore,
-        boards: new Set(
-          inScope.filter((b) => b.kind !== 'report').map((b) => b.group),
-        ).size,
+        boards: countingBoards(inScope, weights).size,
         coveredBoards:
           scope.level === 'category'
             ? (ranked[idx].boardsByCategory[scope.category] ?? 0)
