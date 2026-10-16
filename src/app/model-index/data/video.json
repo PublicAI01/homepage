@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T20:46:20.933Z",
+  "generatedAt": "2026-10-16T10:24:39.961Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-15",
+      "retrievedAt": "2026-10-16",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-15",
+      "retrievedAt": "2026-10-16",
       "metric": "elo",
       "category": "Text-to-video",
       "domain": "Text-to-video",
@@ -38,7 +38,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-10-15",
+      "retrievedAt": "2026-10-16",
       "metric": "elo",
       "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
@@ -464,7 +464,7 @@
     {
       "modelId": "happyhorse-1-0",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1036,
+      "raw": 1035,
       "stderr": 16,
       "sourceLabel": "HappyHorse-1.0"
     },
@@ -555,15 +555,15 @@
     {
       "modelId": "grok-imagine-video-1-5-lite",
       "benchmarkId": "aa-text-to-video",
-      "raw": 998,
+      "raw": 999,
       "stderr": 15,
       "sourceLabel": "Grok Imagine Video 1.5 Lite"
     },
     {
       "modelId": "grok-imagine-video-1-5",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1061,
-      "stderr": 17,
+      "raw": 1060,
+      "stderr": 16,
       "sourceLabel": "Grok Imagine Video 1.5"
     },
     {
@@ -702,7 +702,7 @@
     {
       "modelId": "ltx-2-3-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 894,
+      "raw": 893,
       "stderr": 18,
       "sourceLabel": "LTX-2.3 Pro"
     },
@@ -716,14 +716,14 @@
     {
       "modelId": "agnes-video-2-5",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1069,
+      "raw": 1068,
       "stderr": 17,
       "sourceLabel": "Agnes-Video-2.5"
     },
     {
       "modelId": "ltx-2-5-fast",
       "benchmarkId": "aa-text-to-video",
-      "raw": 949,
+      "raw": 950,
       "stderr": 18,
       "sourceLabel": "LTX-2.5 Fast"
     },
@@ -744,7 +744,7 @@
     {
       "modelId": "ltx-2-5-pro",
       "benchmarkId": "aa-text-to-video",
-      "raw": 949,
+      "raw": 948,
       "stderr": 18,
       "sourceLabel": "LTX-2.5 Pro"
     },
@@ -828,7 +828,7 @@
     {
       "modelId": "flux-3",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1147,
+      "raw": 1146,
       "stderr": 16,
       "sourceLabel": "FLUX 3"
     },
@@ -1117,7 +1117,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-10-15",
+      "retrievedAt": "2026-10-16",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1125,7 +1125,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-10-15",
+      "retrievedAt": "2026-10-16",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
