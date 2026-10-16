@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T20:55:44.368Z",
+  "generatedAt": "2026-10-16T21:04:22.615Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -9191,8 +9191,8 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.01,
-          "outputPerM": 1.152,
+          "inputPerM": 0.009,
+          "outputPerM": 1.28,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
         },
@@ -10887,8 +10887,8 @@
           "id": "z-ai/glm-5.3-flash",
           "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.013,
-          "outputPerM": 0.822,
+          "inputPerM": 0.012,
+          "outputPerM": 0.739,
           "listedAt": "2026-08-26",
           "modalities": ["text", "image", "video"]
         },
