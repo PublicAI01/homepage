@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T10:24:39.961Z",
+  "generatedAt": "2026-10-16T20:55:44.368Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -24,6 +24,7 @@
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
       "retrievedAt": "2026-10-16",
+      "snapshot": "Sep 22, 2026 — across 48 models",
       "metric": "elo",
       "category": "Text-to-video",
       "domain": "Text-to-video",
@@ -330,6 +331,7 @@
       "name": "Kling 3.0 Omni (Pro)",
       "org": "KlingAI"
     },
+    { "id": "kling-3-0-pro", "name": "Kling 3.0 (Pro)", "org": "KlingAI" },
     { "id": "vidu-q3-pro", "name": "Vidu Q3 Pro", "org": "Vidu" },
     { "id": "vidu-q3-turbo", "name": "Vidu Q3 Turbo", "org": "Vidu" },
     { "id": "ray-3", "name": "Ray 3", "org": "Luma AI" },
@@ -894,6 +896,18 @@
       "raw": 1004,
       "stderr": 18,
       "sourceLabel": "Kling 3.0 Omni 1080p (Pro)"
+    },
+    {
+      "modelId": "kling-3-0-pro",
+      "benchmarkId": "aa-text-to-video",
+      "raw": 1000,
+      "sourceLabel": "Kling 3.0 1080p (Pro)"
+    },
+    {
+      "modelId": "kling-3-0-pro",
+      "benchmarkId": "aa-image-to-video",
+      "raw": 1000,
+      "sourceLabel": "Kling 3.0 1080p (Pro)"
     },
     {
       "modelId": "vidu-q3-pro",
