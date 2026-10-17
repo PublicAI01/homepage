@@ -221591,7 +221591,7 @@
     },
     {
       "date": "2026-10-17",
-      "generatedAt": "2026-10-17T09:57:38.447Z",
+      "generatedAt": "2026-10-17T19:53:40.225Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -226355,6 +226355,13 @@
         },
         "aplomb-1": {
           "name": "Aplomb 1",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "basal-omni-1-0-ultra": {
+          "name": "Basal Omni 1.0 Ultra",
           "org": "Other",
           "index": null,
           "rank": null,
