@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T10:09:00.333Z",
+  "generatedAt": "2026-10-18T19:55:21.556Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -2169,32 +2169,10 @@
       "size": { "paramsB": 141, "activeB": 35, "source": "name" }
     },
     {
-      "id": "mixtral-8x22b-instruct-v0-1",
-      "name": "Mixtral 8x22b Instruct V0.1",
-      "org": "Mistral",
-      "access": {
-        "official": {
-          "name": "Mistral AI docs",
-          "url": "https://docs.mistral.ai"
-        }
-      }
-    },
-    {
       "id": "openhands-lm-32b-v0-1",
       "name": "Openhands Lm 32B V0.1",
       "org": "Other",
       "size": { "paramsB": 32, "source": "name" }
-    },
-    {
-      "id": "mixtral-8x7b-instruct-v0-1",
-      "name": "Mixtral 8x7b Instruct V0.1",
-      "org": "Mistral",
-      "access": {
-        "official": {
-          "name": "Mistral AI docs",
-          "url": "https://docs.mistral.ai"
-        }
-      }
     },
     {
       "id": "mistral-instruct-v0-1-7b",
@@ -5217,8 +5195,8 @@
       "size": { "paramsB": 7, "source": "name" }
     },
     {
-      "id": "qwen2-5-7b-instruct",
-      "name": "Qwen2.5 7B Instruct",
+      "id": "qwen-2-5-instruct-7b",
+      "name": "Qwen 2.5 Instruct (7B)",
       "org": "Alibaba",
       "access": {
         "openrouter": {
@@ -5240,18 +5218,6 @@
         }
       },
       "size": { "paramsB": 7.6, "source": "huggingface" }
-    },
-    {
-      "id": "qwen-2-5-instruct-turbo-7b",
-      "name": "Qwen 2.5 Instruct Turbo (7B)",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 7, "source": "name" }
     },
     {
       "id": "qwen2-5-72b-instruct",
@@ -5277,18 +5243,6 @@
         }
       },
       "size": { "paramsB": 72.7, "source": "huggingface" }
-    },
-    {
-      "id": "qwen-2-5-instruct-turbo-72b",
-      "name": "Qwen 2.5 Instruct Turbo (72B)",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 72, "source": "name" }
     },
     {
       "id": "qwen2-5-vl-72b-instruct",
@@ -5808,19 +5762,8 @@
       "size": { "paramsB": 21, "source": "name" }
     },
     {
-      "id": "open-mixtral-8x22b",
-      "name": "Open Mixtral 8x22b",
-      "org": "Mistral",
-      "access": {
-        "official": {
-          "name": "Mistral AI docs",
-          "url": "https://docs.mistral.ai"
-        }
-      }
-    },
-    {
-      "id": "mixtral-instruct-8x22b",
-      "name": "Mixtral Instruct (8x22B)",
+      "id": "mixtral-8x22b-instruct",
+      "name": "Mixtral 8x22b Instruct",
       "org": "Mistral",
       "access": {
         "openrouter": {
@@ -7331,8 +7274,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -7367,7 +7310,7 @@
           "id": "moonshotai/kimi-k3",
           "url": "https://openrouter.ai/moonshotai/kimi-k3",
           "contextLength": 1048576,
-          "inputPerM": 0.304,
+          "inputPerM": 0.249,
           "outputPerM": 11.936,
           "listedAt": "2026-07-16",
           "modalities": ["text", "image", "video"]
@@ -7635,18 +7578,6 @@
       "size": { "paramsB": 405, "source": "name" }
     },
     {
-      "id": "llama-3-1-instruct-turbo-405b",
-      "name": "Llama 3.1 Instruct Turbo (405B)",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      },
-      "size": { "paramsB": 405, "source": "name" }
-    },
-    {
       "id": "llama-3-1-nemotron-51b-instruct",
       "name": "Llama 3.1 Nemotron 51B Instruct",
       "org": "NVIDIA",
@@ -7705,18 +7636,6 @@
       "size": { "paramsB": 70, "source": "name" }
     },
     {
-      "id": "llama-3-1-instruct-turbo-70b",
-      "name": "Llama 3.1 Instruct Turbo (70B)",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      },
-      "size": { "paramsB": 70, "source": "name" }
-    },
-    {
       "id": "eai-llama-3-1-8b-instruct-sagealign",
       "name": "EAI Llama 3.1 8B Instruct SageAlign",
       "org": "Enkrypt AI",
@@ -7758,18 +7677,6 @@
         }
       },
       "size": { "paramsB": 8, "source": "huggingface" }
-    },
-    {
-      "id": "llama-3-1-instruct-turbo-8b",
-      "name": "Llama 3.1 Instruct Turbo (8B)",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      },
-      "size": { "paramsB": 8, "source": "name" }
     },
     {
       "id": "deepseek-v3-1-terminus",
@@ -7914,18 +7821,6 @@
       "size": { "paramsB": 8, "source": "name" }
     },
     {
-      "id": "llama-3-2-90b-vision-instruct-turbo",
-      "name": "Llama 3.2 90B Vision Instruct Turbo",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      },
-      "size": { "paramsB": 90, "source": "name" }
-    },
-    {
       "id": "llama-3-2-vision-90b",
       "name": "Llama 3.2 Vision (90B)",
       "org": "Meta",
@@ -7997,18 +7892,6 @@
         }
       },
       "size": { "paramsB": 70.6, "source": "huggingface" }
-    },
-    {
-      "id": "llama-3-3-instruct-turbo-70b",
-      "name": "Llama 3.3 Instruct Turbo (70B)",
-      "org": "Meta",
-      "access": {
-        "official": {
-          "name": "Llama developer docs",
-          "url": "https://www.llama.com/docs"
-        }
-      },
-      "size": { "paramsB": 70, "source": "name" }
     },
     {
       "id": "ibm-granite-3-3-8b-instruct",
@@ -9252,7 +9135,7 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.007,
+          "inputPerM": 0.009,
           "outputPerM": 0.144,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
@@ -9558,8 +9441,8 @@
           "id": "tencent/hy4-preview",
           "url": "https://openrouter.ai/tencent/hy4-preview",
           "contextLength": 1048576,
-          "inputPerM": 0.834,
-          "outputPerM": 2.501,
+          "inputPerM": 0.751,
+          "outputPerM": 2.251,
           "listedAt": "2026-08-28",
           "modalities": ["text"]
         },
@@ -10971,7 +10854,7 @@
           "url": "https://openrouter.ai/z-ai/glm-5.3",
           "contextLength": 1048576,
           "inputPerM": 0.079,
-          "outputPerM": 2.5,
+          "outputPerM": 1,
           "listedAt": "2026-08-18",
           "modalities": ["text"]
         },
@@ -11398,19 +11281,8 @@
       "size": { "paramsB": 67, "source": "name" }
     },
     {
-      "id": "open-mixtral-8x7b",
-      "name": "Open Mixtral 8x7b",
-      "org": "Mistral",
-      "access": {
-        "official": {
-          "name": "Mistral AI docs",
-          "url": "https://docs.mistral.ai"
-        }
-      }
-    },
-    {
-      "id": "mixtral-8x7b",
-      "name": "Mixtral (8x7B)",
+      "id": "mixtral-8x7b-instruct",
+      "name": "Mixtral 8x7b Instruct",
       "org": "Mistral",
       "access": {
         "official": {
@@ -12552,15 +12424,29 @@
     },
     { "id": "mirror", "name": "Mirror", "org": "Other" },
     {
-      "id": "open-mistral-nemo",
-      "name": "Open Mistral Nemo",
+      "id": "mistral-nemo",
+      "name": "Mistral Nemo",
       "org": "Mistral",
       "access": {
+        "openrouter": {
+          "id": "mistralai/mistral-nemo",
+          "url": "https://openrouter.ai/mistralai/mistral-nemo",
+          "contextLength": 131072,
+          "inputPerM": 0.029,
+          "outputPerM": 0.03,
+          "listedAt": "2024-07-19",
+          "modalities": ["text"]
+        },
+        "weights": {
+          "huggingFaceId": "mistralai/Mistral-Nemo-Instruct-2407",
+          "url": "https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407"
+        },
         "official": {
           "name": "Mistral AI docs",
           "url": "https://docs.mistral.ai"
         }
-      }
+      },
+      "size": { "paramsB": 12.2, "source": "huggingface" }
     },
     {
       "id": "mistral-small",
@@ -12721,6 +12607,7 @@
     { "id": "swanone", "name": "swanOne", "org": "Other" },
     { "id": "teleocr", "name": "TeleOCR", "org": "Other" },
     { "id": "typecastlm", "name": "Typecastlm", "org": "Other" },
+    { "id": "vega-u", "name": "Vega U", "org": "Other" },
     {
       "id": "ui-tars",
       "name": "UI-TARS",
@@ -12743,31 +12630,10 @@
       "sourceLabel": "zephyr-orpo-141b-A35b-v0.1"
     },
     {
-      "modelId": "mixtral-8x22b-instruct-v0-1",
-      "benchmarkId": "lmarena",
-      "raw": 1230,
-      "stderr": 5,
-      "sourceLabel": "mixtral-8x22b-instruct-v0.1"
-    },
-    {
-      "modelId": "mixtral-8x22b-instruct-v0-1",
-      "benchmarkId": "vals-medqa",
-      "raw": 62.14,
-      "stderr": 0.87,
-      "sourceLabel": "together/mistralai/Mixtral-8x22B-Instruct-v0.1"
-    },
-    {
       "modelId": "openhands-lm-32b-v0-1",
       "benchmarkId": "aider-polyglot",
       "raw": 10.2,
       "sourceLabel": "openhands-lm-32b-v0.1"
-    },
-    {
-      "modelId": "mixtral-8x7b-instruct-v0-1",
-      "benchmarkId": "lmarena",
-      "raw": 1197,
-      "stderr": 4,
-      "sourceLabel": "mixtral-8x7b-instruct-v0.1"
     },
     {
       "modelId": "mistral-instruct-v0-1-7b",
@@ -22429,110 +22295,74 @@
       "sourceLabel": "openhermes-2.5-mistral-7b"
     },
     {
-      "modelId": "qwen2-5-7b-instruct",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 41.3,
-      "sourceLabel": "Qwen2.5-7B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-7b-instruct",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 57.8,
-      "sourceLabel": "Qwen2.5-7B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-7b-instruct",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 17.3,
-      "sourceLabel": "Qwen2.5-7B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-7b-instruct",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 38.2,
-      "sourceLabel": "Qwen2.5-7B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-7b-instruct",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 78.3,
-      "sourceLabel": "Qwen2.5-7B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-7b-instruct",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 58.2,
-      "sourceLabel": "Qwen2.5-7B-Instruct"
-    },
-    {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "vals-legal_bench",
       "raw": 69.56,
       "stderr": 0.78,
       "sourceLabel": "Qwen 2.5 Instruct Turbo (7B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 67.7,
       "sourceLabel": "Qwen2.5 Instruct Turbo (7B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "helm-safety-simplesafetytests",
       "raw": 96,
       "sourceLabel": "Qwen2.5 Instruct Turbo (7B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "helm-safety-anthropic-red-team",
       "raw": 98.5,
       "sourceLabel": "Qwen2.5 Instruct Turbo (7B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "helm-safety-bbq",
       "raw": 90.6,
       "sourceLabel": "Qwen2.5 Instruct Turbo (7B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "helm-safety-xstest",
       "raw": 96.6,
       "sourceLabel": "Qwen2.5 Instruct Turbo (7B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 14.2,
       "sourceLabel": "Qwen2.5-7B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "enkrypt-harmful",
       "raw": 51.7,
       "sourceLabel": "Qwen2.5-7B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 15.7,
       "sourceLabel": "Qwen2.5-7B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 4.4,
       "sourceLabel": "Qwen2.5-7B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "enkrypt-bias",
       "raw": 50.7,
       "sourceLabel": "Qwen2.5-7B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-7b",
+      "modelId": "qwen-2-5-instruct-7b",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 42.7,
       "sourceLabel": "Qwen2.5-7B-Instruct-Turbo"
@@ -22546,116 +22376,80 @@
     },
     {
       "modelId": "qwen2-5-72b-instruct",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 5.4,
-      "sourceLabel": "Qwen2.5-72B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-72b-instruct",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 24.4,
-      "sourceLabel": "Qwen2.5-72B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-72b-instruct",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 11.8,
-      "sourceLabel": "Qwen2.5-72B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-72b-instruct",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 0,
-      "sourceLabel": "Qwen2.5-72B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-72b-instruct",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 78.6,
-      "sourceLabel": "Qwen2.5-72B-Instruct"
-    },
-    {
-      "modelId": "qwen2-5-72b-instruct",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 20,
-      "sourceLabel": "Qwen2.5-72B-Instruct"
-    },
-    {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
       "benchmarkId": "vals-legal_bench",
       "raw": 79.4,
       "stderr": 0.66,
       "sourceLabel": "Qwen 2.5 Instruct Turbo (72B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "vals-medqa",
       "raw": 77.39,
       "stderr": 0.74,
       "sourceLabel": "Qwen 2.5 Instruct Turbo (72B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 72.8,
       "sourceLabel": "Qwen2.5 Instruct Turbo (72B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "helm-safety-simplesafetytests",
       "raw": 100,
       "sourceLabel": "Qwen2.5 Instruct Turbo (72B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "helm-safety-anthropic-red-team",
       "raw": 99.6,
       "sourceLabel": "Qwen2.5 Instruct Turbo (72B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "helm-safety-bbq",
       "raw": 95.4,
       "sourceLabel": "Qwen2.5 Instruct Turbo (72B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "helm-safety-xstest",
       "raw": 97.9,
       "sourceLabel": "Qwen2.5 Instruct Turbo (72B)"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 7.4,
       "sourceLabel": "Qwen2.5-72B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "enkrypt-harmful",
       "raw": 28.3,
       "sourceLabel": "Qwen2.5-72B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 8.8,
       "sourceLabel": "Qwen2.5-72B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 2.2,
       "sourceLabel": "Qwen2.5-72B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "enkrypt-bias",
       "raw": 44.2,
       "sourceLabel": "Qwen2.5-72B-Instruct-Turbo"
     },
     {
-      "modelId": "qwen-2-5-instruct-turbo-72b",
+      "modelId": "qwen2-5-72b-instruct",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 30.2,
       "sourceLabel": "Qwen2.5-72B-Instruct-Turbo"
@@ -25061,70 +24855,84 @@
       "sourceLabel": "reka-flash-21b-20240226"
     },
     {
-      "modelId": "open-mixtral-8x22b",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 8,
-      "sourceLabel": "open-mixtral-8x22b"
+      "modelId": "mixtral-8x22b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1230,
+      "stderr": 5,
+      "sourceLabel": "mixtral-8x22b-instruct-v0.1"
     },
     {
-      "modelId": "open-mixtral-8x22b",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 46.1,
-      "sourceLabel": "open-mixtral-8x22b"
+      "modelId": "mixtral-8x22b-instruct",
+      "benchmarkId": "vals-medqa",
+      "raw": 62.14,
+      "stderr": 0.87,
+      "sourceLabel": "together/mistralai/Mixtral-8x22B-Instruct-v0.1"
     },
     {
-      "modelId": "open-mixtral-8x22b",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 9.3,
-      "sourceLabel": "open-mixtral-8x22b"
-    },
-    {
-      "modelId": "open-mixtral-8x22b",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 2.6,
-      "sourceLabel": "open-mixtral-8x22b"
-    },
-    {
-      "modelId": "open-mixtral-8x22b",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 88.1,
-      "sourceLabel": "open-mixtral-8x22b"
-    },
-    {
-      "modelId": "open-mixtral-8x22b",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 40.9,
-      "sourceLabel": "open-mixtral-8x22b"
-    },
-    {
-      "modelId": "mixtral-instruct-8x22b",
+      "modelId": "mixtral-8x22b-instruct",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 52.1,
       "sourceLabel": "Mixtral Instruct (8x22B)"
     },
     {
-      "modelId": "mixtral-instruct-8x22b",
+      "modelId": "mixtral-8x22b-instruct",
       "benchmarkId": "helm-safety-simplesafetytests",
       "raw": 91.5,
       "sourceLabel": "Mixtral Instruct (8x22B)"
     },
     {
-      "modelId": "mixtral-instruct-8x22b",
+      "modelId": "mixtral-8x22b-instruct",
       "benchmarkId": "helm-safety-anthropic-red-team",
       "raw": 96.2,
       "sourceLabel": "Mixtral Instruct (8x22B)"
     },
     {
-      "modelId": "mixtral-instruct-8x22b",
+      "modelId": "mixtral-8x22b-instruct",
       "benchmarkId": "helm-safety-bbq",
       "raw": 91.6,
       "sourceLabel": "Mixtral Instruct (8x22B)"
     },
     {
-      "modelId": "mixtral-instruct-8x22b",
+      "modelId": "mixtral-8x22b-instruct",
       "benchmarkId": "helm-safety-xstest",
       "raw": 94.1,
       "sourceLabel": "Mixtral Instruct (8x22B)"
+    },
+    {
+      "modelId": "mixtral-8x22b-instruct",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 8,
+      "sourceLabel": "open-mixtral-8x22b"
+    },
+    {
+      "modelId": "mixtral-8x22b-instruct",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 46.1,
+      "sourceLabel": "open-mixtral-8x22b"
+    },
+    {
+      "modelId": "mixtral-8x22b-instruct",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 9.3,
+      "sourceLabel": "open-mixtral-8x22b"
+    },
+    {
+      "modelId": "mixtral-8x22b-instruct",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 2.6,
+      "sourceLabel": "open-mixtral-8x22b"
+    },
+    {
+      "modelId": "mixtral-8x22b-instruct",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 88.1,
+      "sourceLabel": "open-mixtral-8x22b"
+    },
+    {
+      "modelId": "mixtral-8x22b-instruct",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 40.9,
+      "sourceLabel": "open-mixtral-8x22b"
     },
     {
       "modelId": "aya-23-8b",
@@ -29873,7 +29681,7 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "aa-briefcase",
-      "raw": 1500,
+      "raw": 1499,
       "stderr": 7.5,
       "sourceLabel": "Kimi K3 (Max)"
     },
@@ -31492,81 +31300,81 @@
       "sourceLabel": "Llama 3.1 405b instruct"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 60.88,
       "stderr": 0.96,
       "sourceLabel": "Llama 3.1 Instruct Turbo (405B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "vals-medqa",
       "raw": 88.24,
       "stderr": 0.58,
       "sourceLabel": "Llama 3.1 Instruct Turbo (405B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 62.7,
       "sourceLabel": "Llama 3.1 Instruct Turbo (405B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "helm-safety-simplesafetytests",
       "raw": 98.8,
       "sourceLabel": "Llama 3.1 Instruct Turbo (405B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "helm-safety-anthropic-red-team",
       "raw": 96.5,
       "sourceLabel": "Llama 3.1 Instruct Turbo (405B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "helm-safety-bbq",
       "raw": 94.5,
       "sourceLabel": "Llama 3.1 Instruct Turbo (405B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "helm-safety-xstest",
       "raw": 95.9,
       "sourceLabel": "Llama 3.1 Instruct Turbo (405B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 5.3,
       "sourceLabel": "Llama-3.1-405B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "enkrypt-harmful",
       "raw": 26.7,
       "sourceLabel": "Llama-3.1-405B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 9.8,
       "sourceLabel": "Llama-3.1-405B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 4,
       "sourceLabel": "Llama-3.1-405B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "enkrypt-bias",
       "raw": 87.1,
       "sourceLabel": "Llama-3.1-405B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-405b",
+      "modelId": "llama-3-1-405b-instruct",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 67.6,
       "sourceLabel": "Llama-3.1-405B-Instruct-Turbo"
@@ -31622,6 +31430,93 @@
       "sourceLabel": "llama-3.1-70b-instruct"
     },
     {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "vals-corp_fin_v2",
+      "raw": 38.85,
+      "stderr": 0.95,
+      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "vals-tax_eval_v2",
+      "raw": 56.17,
+      "stderr": 0.97,
+      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "vals-medqa",
+      "raw": 84.78,
+      "stderr": 0.64,
+      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "helm-safety-harmbench",
+      "raw": 46.9,
+      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "helm-safety-simplesafetytests",
+      "raw": 92.5,
+      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "helm-safety-anthropic-red-team",
+      "raw": 93.2,
+      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "helm-safety-bbq",
+      "raw": 95.4,
+      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "helm-safety-xstest",
+      "raw": 94.5,
+      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 8.2,
+      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 37.2,
+      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 13.5,
+      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 4.4,
+      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 86.3,
+      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-1-70b-instruct",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 92.9,
+      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
+    },
+    {
       "modelId": "llama-3-1-nemotron-70b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1299,
@@ -31663,93 +31558,6 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 60.9,
       "sourceLabel": "Reflection-Llama-3.1-70B"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "vals-corp_fin_v2",
-      "raw": 38.85,
-      "stderr": 0.95,
-      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "vals-tax_eval_v2",
-      "raw": 56.17,
-      "stderr": 0.97,
-      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "vals-medqa",
-      "raw": 84.78,
-      "stderr": 0.64,
-      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "helm-safety-harmbench",
-      "raw": 46.9,
-      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "helm-safety-simplesafetytests",
-      "raw": 92.5,
-      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "helm-safety-anthropic-red-team",
-      "raw": 93.2,
-      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "helm-safety-bbq",
-      "raw": 95.4,
-      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "helm-safety-xstest",
-      "raw": 94.5,
-      "sourceLabel": "Llama 3.1 Instruct Turbo (70B)"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 8.2,
-      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 37.2,
-      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 13.5,
-      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 4.4,
-      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 86.3,
-      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-70b",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 92.9,
-      "sourceLabel": "Llama-3.1-70B-Instruct-Turbo"
     },
     {
       "modelId": "eai-llama-3-1-8b-instruct-sagealign",
@@ -31858,123 +31666,87 @@
     },
     {
       "modelId": "llama-3-1-8b-instruct",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 25.4,
-      "sourceLabel": "Llama-3.1-8B-Instruct"
-    },
-    {
-      "modelId": "llama-3-1-8b-instruct",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 26.7,
-      "sourceLabel": "Llama-3.1-8B-Instruct"
-    },
-    {
-      "modelId": "llama-3-1-8b-instruct",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 16.2,
-      "sourceLabel": "Llama-3.1-8B-Instruct"
-    },
-    {
-      "modelId": "llama-3-1-8b-instruct",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 15.9,
-      "sourceLabel": "Llama-3.1-8B-Instruct"
-    },
-    {
-      "modelId": "llama-3-1-8b-instruct",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 81.7,
-      "sourceLabel": "Llama-3.1-8B-Instruct"
-    },
-    {
-      "modelId": "llama-3-1-8b-instruct",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 50.7,
-      "sourceLabel": "Llama-3.1-8B-Instruct"
-    },
-    {
-      "modelId": "llama-3-1-instruct-turbo-8b",
       "benchmarkId": "vals-corp_fin_v2",
       "raw": 37.8,
       "stderr": 0.93,
       "sourceLabel": "Llama 3.1 Instruct Turbo (8B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 32.34,
       "stderr": 0.92,
       "sourceLabel": "Llama 3.1 Instruct Turbo (8B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "vals-medqa",
       "raw": 62.61,
       "stderr": 0.86,
       "sourceLabel": "Llama 3.1 Instruct Turbo (8B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 61.6,
       "sourceLabel": "Llama 3.1 Instruct Turbo (8B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "helm-safety-simplesafetytests",
       "raw": 98.8,
       "sourceLabel": "Llama 3.1 Instruct Turbo (8B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "helm-safety-anthropic-red-team",
       "raw": 96.8,
       "sourceLabel": "Llama 3.1 Instruct Turbo (8B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "helm-safety-bbq",
       "raw": 78.5,
       "sourceLabel": "Llama 3.1 Instruct Turbo (8B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "helm-safety-xstest",
       "raw": 95.3,
       "sourceLabel": "Llama 3.1 Instruct Turbo (8B)"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 7.7,
       "sourceLabel": "Meta-Llama-3.1-8B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "enkrypt-harmful",
       "raw": 26.7,
       "sourceLabel": "Meta-Llama-3.1-8B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 16,
       "sourceLabel": "Meta-Llama-3.1-8B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 0,
       "sourceLabel": "Meta-Llama-3.1-8B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "enkrypt-bias",
       "raw": 81.7,
       "sourceLabel": "Meta-Llama-3.1-8B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-1-instruct-turbo-8b",
+      "modelId": "llama-3-1-8b-instruct",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 42.2,
       "sourceLabel": "Meta-Llama-3.1-8B-Instruct-Turbo"
@@ -32680,47 +32452,47 @@
       "sourceLabel": "granite-3.2-8b-instruct-preview(thinking)"
     },
     {
-      "modelId": "llama-3-2-90b-vision-instruct-turbo",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 4,
-      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-2-90b-vision-instruct-turbo",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 25,
-      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-2-90b-vision-instruct-turbo",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 8.3,
-      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-2-90b-vision-instruct-turbo",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 2.1,
-      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-2-90b-vision-instruct-turbo",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 47.8,
-      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
-    },
-    {
-      "modelId": "llama-3-2-90b-vision-instruct-turbo",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 52.4,
-      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
-    },
-    {
       "modelId": "llama-3-2-vision-90b",
       "benchmarkId": "vals-mortgage_tax",
       "raw": 38.79,
       "stderr": 1.9,
       "sourceLabel": "Llama 3.2 Vision (90B)"
+    },
+    {
+      "modelId": "llama-3-2-vision-90b",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 4,
+      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-2-vision-90b",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 25,
+      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-2-vision-90b",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 8.3,
+      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-2-vision-90b",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 2.1,
+      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-2-vision-90b",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 47.8,
+      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
+    },
+    {
+      "modelId": "llama-3-2-vision-90b",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 52.4,
+      "sourceLabel": "Llama-3-2-90B-Vision-Instruct-Turbo"
     },
     {
       "modelId": "deepseek-3-2-speciale",
@@ -32907,78 +32679,78 @@
       "sourceLabel": "Llama 3.3 70b instruct"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "vals-legal_bench",
       "raw": 77.18,
       "stderr": 0.77,
       "sourceLabel": "Llama 3.3 Instruct Turbo (70B)"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "vals-tax_eval_v2",
       "raw": 59.44,
       "stderr": 0.96,
       "sourceLabel": "Llama 3.3 Instruct Turbo (70B)"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "vals-gpqa",
       "raw": 50,
       "stderr": 2.51,
       "sourceLabel": "Llama 3.3 Instruct Turbo (70B)"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "vals-mmlu_pro",
       "raw": 69.86,
       "stderr": 0.44,
       "sourceLabel": "Llama 3.3 Instruct Turbo (70B)"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "vals-aime",
       "raw": 16.04,
       "stderr": 1.08,
       "sourceLabel": "Llama 3.3 Instruct Turbo (70B)"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 7.3,
       "sourceLabel": "Llama-3.3-70B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "enkrypt-harmful",
       "raw": 33.9,
       "sourceLabel": "Llama-3.3-70B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 12.2,
       "sourceLabel": "Llama-3.3-70B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 2.8,
       "sourceLabel": "Llama-3.3-70B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "enkrypt-bias",
       "raw": 88.9,
       "sourceLabel": "Llama-3.3-70B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 85.8,
       "sourceLabel": "Llama-3.3-70B-Instruct-Turbo"
     },
     {
-      "modelId": "llama-3-3-instruct-turbo-70b",
+      "modelId": "llama-3-3-70b-instruct",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 95.9,
       "sourceLabel": "meta-llama/Llama-3.3-70B-Instruct-Turbo"
@@ -38199,13 +37971,13 @@
     {
       "modelId": "torchcast-decision-4b",
       "benchmarkId": "jevbench-intelligence",
-      "raw": 54.2,
+      "raw": 60.3,
       "sourceLabel": "Torchcast Decision 4B"
     },
     {
       "modelId": "torchcast-decision-4b",
       "benchmarkId": "jevbench-calibration",
-      "raw": 83.1,
+      "raw": 85,
       "sourceLabel": "Torchcast Decision 4B"
     },
     {
@@ -44753,7 +44525,7 @@
     {
       "modelId": "grok-4-6",
       "benchmarkId": "livebench",
-      "raw": 74.6,
+      "raw": 74.9,
       "sourceLabel": "Grok 4.6"
     },
     {
@@ -44765,7 +44537,7 @@
     {
       "modelId": "grok-4-6",
       "benchmarkId": "livebench-reasoning",
-      "raw": 90.5,
+      "raw": 91.2,
       "sourceLabel": "Grok 4.6"
     },
     {
@@ -44783,7 +44555,7 @@
     {
       "modelId": "grok-4-6",
       "benchmarkId": "livebench-data-analysis",
-      "raw": 73.9,
+      "raw": 75.3,
       "sourceLabel": "Grok 4.6"
     },
     {
@@ -49985,7 +49757,7 @@
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 1453,
-      "stderr": 8.5,
+      "stderr": 8,
       "sourceLabel": "GLM-5.3-Flash"
     },
     {
@@ -55026,84 +54798,91 @@
       "sourceLabel": "deepseek-llm-67b-chat"
     },
     {
-      "modelId": "open-mixtral-8x7b",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 11.6,
-      "sourceLabel": "open-mixtral-8x7b"
+      "modelId": "mixtral-8x7b-instruct",
+      "benchmarkId": "lmarena",
+      "raw": 1197,
+      "stderr": 4,
+      "sourceLabel": "mixtral-8x7b-instruct-v0.1"
     },
     {
-      "modelId": "open-mixtral-8x7b",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 61.7,
-      "sourceLabel": "open-mixtral-8x7b"
-    },
-    {
-      "modelId": "open-mixtral-8x7b",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 13.3,
-      "sourceLabel": "open-mixtral-8x7b"
-    },
-    {
-      "modelId": "open-mixtral-8x7b",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 4.8,
-      "sourceLabel": "open-mixtral-8x7b"
-    },
-    {
-      "modelId": "open-mixtral-8x7b",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 88.6,
-      "sourceLabel": "open-mixtral-8x7b"
-    },
-    {
-      "modelId": "open-mixtral-8x7b",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 48,
-      "sourceLabel": "open-mixtral-8x7b"
-    },
-    {
-      "modelId": "mixtral-8x7b",
+      "modelId": "mixtral-8x7b-instruct",
       "benchmarkId": "vals-legal_bench",
       "raw": 55.84,
       "stderr": 0.74,
       "sourceLabel": "Mixtral (8x7B)"
     },
     {
-      "modelId": "mixtral-8x7b",
+      "modelId": "mixtral-8x7b-instruct",
       "benchmarkId": "vals-medqa",
       "raw": 53.22,
       "stderr": 0.89,
       "sourceLabel": "Mixtral (8x7B)"
     },
     {
-      "modelId": "mixtral-8x7b",
+      "modelId": "mixtral-8x7b-instruct",
       "benchmarkId": "helm-safety-harmbench",
       "raw": 45.1,
       "sourceLabel": "Mixtral Instruct (8x7B)"
     },
     {
-      "modelId": "mixtral-8x7b",
+      "modelId": "mixtral-8x7b-instruct",
       "benchmarkId": "helm-safety-simplesafetytests",
       "raw": 90.5,
       "sourceLabel": "Mixtral Instruct (8x7B)"
     },
     {
-      "modelId": "mixtral-8x7b",
+      "modelId": "mixtral-8x7b-instruct",
       "benchmarkId": "helm-safety-anthropic-red-team",
       "raw": 92.8,
       "sourceLabel": "Mixtral Instruct (8x7B)"
     },
     {
-      "modelId": "mixtral-8x7b",
+      "modelId": "mixtral-8x7b-instruct",
       "benchmarkId": "helm-safety-bbq",
       "raw": 85.7,
       "sourceLabel": "Mixtral Instruct (8x7B)"
     },
     {
-      "modelId": "mixtral-8x7b",
+      "modelId": "mixtral-8x7b-instruct",
       "benchmarkId": "helm-safety-xstest",
       "raw": 93.1,
       "sourceLabel": "Mixtral Instruct (8x7B)"
+    },
+    {
+      "modelId": "mixtral-8x7b-instruct",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 11.6,
+      "sourceLabel": "open-mixtral-8x7b"
+    },
+    {
+      "modelId": "mixtral-8x7b-instruct",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 61.7,
+      "sourceLabel": "open-mixtral-8x7b"
+    },
+    {
+      "modelId": "mixtral-8x7b-instruct",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 13.3,
+      "sourceLabel": "open-mixtral-8x7b"
+    },
+    {
+      "modelId": "mixtral-8x7b-instruct",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 4.8,
+      "sourceLabel": "open-mixtral-8x7b"
+    },
+    {
+      "modelId": "mixtral-8x7b-instruct",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 88.6,
+      "sourceLabel": "open-mixtral-8x7b"
+    },
+    {
+      "modelId": "mixtral-8x7b-instruct",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 48,
+      "sourceLabel": "open-mixtral-8x7b"
     },
     {
       "modelId": "tianxi-action-7b",
@@ -58797,7 +58576,7 @@
       "sourceLabel": "Mirror"
     },
     {
-      "modelId": "open-mistral-nemo",
+      "modelId": "mistral-nemo",
       "benchmarkId": "bfcl",
       "raw": 27.63,
       "sourceLabel": "Open-Mistral-Nemo-2407"
@@ -59780,6 +59559,18 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 83.3,
       "sourceLabel": "typecastlm"
+    },
+    {
+      "modelId": "vega-u",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 5.5,
+      "sourceLabel": "Vega-U"
+    },
+    {
+      "modelId": "vega-u",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 67.5,
+      "sourceLabel": "Vega-U"
     },
     {
       "modelId": "ui-tars",
