@@ -10,11 +10,15 @@
 # telling you nothing the first had not (2026-09-09, and Steven was right to
 # say so).
 #
-# Run by a LaunchAgent rather than cron, and that is not a preference. The
-# CLI's credentials live in the login keychain; cron runs in a background
-# context that cannot reach it, so every scan died at "Not logged in" while
-# `claude` worked perfectly in a terminal. A LaunchAgent runs in the user's
-# own session, where the keychain is unlocked.
+# Run by cron (the user's crontab), not a LaunchAgent, since 2026-10-20.
+# It used to be a LaunchAgent because the CLI's credentials then lived only in
+# the login keychain, which cron cannot reach ("Not logged in"). But a
+# LaunchAgent loads only with a desktop login: after the 10-19 power cut the
+# Mac mini came back with nobody logged in and nothing ran for two days. The
+# CLI now reads ~/.claude/.credentials.json and gh ~/.config/gh/hosts.yml,
+# both reachable from cron (checked under real cron 2026-10-20). If a scan
+# ever dies at "Not logged in" again, the probe below mails it; don't go back
+# to a LaunchAgent, fix the login file.
 set -uo pipefail
 
 CONF="${BUGSCAN_ENV:-$HOME/.config/publicai/bugscan.env}"
