@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T21:02:14.317Z",
+  "generatedAt": "2026-10-23T10:46:37.813Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-22",
+      "retrievedAt": "2026-10-23",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-22",
+      "retrievedAt": "2026-10-23",
       "snapshot": "Sep 22, 2026 — across 48 models",
       "metric": "elo",
       "category": "Text-to-video",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-10-22",
+      "retrievedAt": "2026-10-23",
       "metric": "elo",
       "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
@@ -74,6 +74,7 @@
       }
     },
     { "id": "happyhorse-1-0", "name": "HappyHorse 1.0", "org": "Alibaba-ATH" },
+    { "id": "heygen-video-1", "name": "HeyGen Video 1", "org": "Other" },
     { "id": "kling-o1-pro", "name": "Kling O1 Pro", "org": "KlingAI" },
     {
       "id": "seedance-v1-lite",
@@ -425,11 +426,6 @@
       }
     },
     {
-      "id": "heygen-video-ultraquality",
-      "name": "HeyGen Video (ultraquality)",
-      "org": "Other"
-    },
-    {
       "id": "muse-video",
       "name": "Muse Video",
       "org": "Meta",
@@ -489,6 +485,13 @@
       "raw": 1042,
       "stderr": 17,
       "sourceLabel": "HappyHorse-1.0"
+    },
+    {
+      "modelId": "heygen-video-1",
+      "benchmarkId": "aa-text-to-video",
+      "raw": 1160,
+      "stderr": 15,
+      "sourceLabel": "HeyGen Video 1"
     },
     {
       "modelId": "kling-o1-pro",
@@ -1105,13 +1108,6 @@
       "sourceLabel": "grok-imagine-video-720p"
     },
     {
-      "modelId": "heygen-video-ultraquality",
-      "benchmarkId": "aa-text-to-video",
-      "raw": 1160,
-      "stderr": 15,
-      "sourceLabel": "HeyGen Video (ultraquality)"
-    },
-    {
       "modelId": "muse-video",
       "benchmarkId": "arena-text-to-video",
       "raw": 1456,
@@ -1158,7 +1154,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-10-22",
+      "retrievedAt": "2026-10-23",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1166,7 +1162,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-10-22",
+      "retrievedAt": "2026-10-23",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
