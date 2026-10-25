@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T10:46:37.813Z",
+  "generatedAt": "2026-10-25T20:12:28.228Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-23",
+      "retrievedAt": "2026-10-25",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-10-23",
+      "retrievedAt": "2026-10-25",
       "snapshot": "Sep 22, 2026 — across 48 models",
       "metric": "elo",
       "category": "Text-to-video",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-10-23",
+      "retrievedAt": "2026-10-25",
       "metric": "elo",
       "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
@@ -823,13 +823,6 @@
       "sourceLabel": "wan2.7-t2v"
     },
     {
-      "modelId": "wan2-7",
-      "benchmarkId": "aa-image-to-video",
-      "raw": 1034,
-      "stderr": 18,
-      "sourceLabel": "Wan 2.7"
-    },
-    {
       "modelId": "veo-3-fast",
       "benchmarkId": "arena-text-to-video",
       "raw": 1348,
@@ -1154,7 +1147,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-10-23",
+      "retrievedAt": "2026-10-25",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1162,7 +1155,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-10-23",
+      "retrievedAt": "2026-10-25",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
