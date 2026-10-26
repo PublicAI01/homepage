@@ -4,12 +4,14 @@
 #
 #   scripts/refresh/watchdog.sh [--hours 36]
 #
-# `daily.sh` mails when a refresh runs and fails. Nothing mails when a
-# refresh never runs at all: this Mac was shut, the LaunchAgent was
-# unloaded, launchd never fired. That gap used to be covered by the
-# workflow's own failure notice, and the workflow is the thing that went
-# away — the index sat two days stale in September and the first to notice
-# was a person looking at the site.
+# `daily.sh` and the workflow mail when a refresh runs and fails. Nothing
+# mails when a refresh never runs, or when the failure mail itself breaks:
+# this Mac was shut, the cron line was removed, the workflow failed four
+# times and its mail step died with it (2026-10-23 to 10-25). The index sat
+# two days stale in September and the first to notice was a person looking
+# at the site.
+#
+# Testing the text: every run with a low --hours mails for real.
 #
 # So: read the date off what is actually published, and say something when
 # it is older than a day and a half. Run from the noon scan, which fires
@@ -75,13 +77,14 @@ if [ "$age" -ge "$HOURS" ]; then
   say "榜单 $age 小时没更新了" \
 "线上最新快照是 $(TZ=UTC date -r "$when" '+%Y-%m-%d %H:%M UTC'),距今 $age 小时,超过了 $HOURS 小时的线。
 
-刷新那一环没跑,或者跑了没推上去。按顺序看三件事:
+刷新那一环没跑,或者跑了没推上去。主刷新在 GitHub Actions(每天两次),本机每晚 23:00 兜底。按顺序看:
 
-1. \`launchctl list | grep io.publicai.refresh\` —— 任务还在不在,上次退出码是几
-2. \`tail -40 ~/.local/state/publicai-refresh/agent.log\` —— 最后一次跑到哪一步
-3. 这台机器昨晚 23:00 是不是关着的
+1. \`gh run list -R PublicAI01/publicai-index --workflow refresh.yml -L 6\` —— Actions 最近几次成功还是失败;失败就 \`gh run view <id> --log-failed\` 看挂在哪一步
+2. \`tail -20 ~/.local/state/publicai-refresh/agent.log\` —— 本机兜底跑没跑、跑到哪一步(Actions 24 小时内成功过它会让路)
+3. \`crontab -l | grep refresh\` —— 兜底任务还在不在;这台机器昨晚 23:00 是不是关着的
 
-手动补一次:\`~/homepage/scripts/refresh/daily.sh\`(加 --force 可以无视 Actions 的让路判断)。"
+两边都挂在同一步,多半是代码的问题(比如某个榜的解析),修代码;只有一边挂,多半是那边的环境。
+手动补一次:\`~/homepage/scripts/refresh/daily.sh --force\`。"
   exit 1
 fi
 

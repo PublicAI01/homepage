@@ -4,19 +4,20 @@ The pipeline's own workflow refreshes the index at 06:00 UTC and does it
 better: it archives every capture, mails the unknown rows, runs the
 discovery sweep. Use it whenever it works.
 
-This is the stand-in. The pipeline lives in a private repository, the
-account's Actions minutes have been unpaid since 2026-09-23, and the
-billing will not be fixed until next month — two refreshes were skipped
-before anyone noticed the index had gone stale.
+This is the stand-in. It was written when the account's Actions minutes
+went unpaid (2026-09-23) and two refreshes were skipped before anyone
+noticed; Actions is back since 2026-10-13 and runs twice a day, and this
+job stays as the fallback for a day the workflow does not succeed.
 
 ```
-scripts/refresh/daily.sh              # what the LaunchAgent runs
+scripts/refresh/daily.sh              # what cron runs
 scripts/refresh/daily.sh --dry-run    # fetch, build, gate; touch nothing
 scripts/refresh/daily.sh --force      # run even if Actions is working
 ```
 
-Installed as `~/Library/LaunchAgents/io.publicai.refresh.plist`, 23:00
-local — the same instant as the workflow's 06:00 UTC.
+Run from the user's crontab at 23:00 local (`crontab -l | grep refresh`),
+not a LaunchAgent since 2026-10-20: a LaunchAgent loads only with a
+desktop login, and after the 10-19 power cut nothing ran for two days.
 
 **It stands down on its own.** Before doing anything it asks GitHub
 whether `refresh.yml` has succeeded in the last 24 hours; if it has, the
@@ -33,9 +34,9 @@ State and logs: `~/.local/state/publicai-refresh/`.
 
 ## watchdog.sh
 
-`daily.sh` 会在刷新跑挂时发信。**没跑**是另一回事:机器关着、LaunchAgent
-被卸了、launchd 没触发——这些不会发出任何声音。原来这一层由 Actions 自己的
-失败通知兜着,而失踪的正是 Actions。
+`daily.sh` 会在刷新跑挂时发信。**没跑**是另一回事:机器关着、cron 条目被删了、
+Actions 连续失败而失败邮件也没发出(2026-10-23 到 10-25 正是这样)——这些不会
+发出任何声音。
 
 `watchdog.sh` 只做一件事:读线上 API 的 `generatedAt`,超过 36 小时就说话。
 它挂在中午 12 点的 bugscan 上跑——那个任务不依赖刷新有没有跑成。
