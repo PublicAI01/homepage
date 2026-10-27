@@ -2,7 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import { aggregate } from '../src/app/model-index/lib/aggregate.ts';
+import { aggregate, placeRows } from '../src/app/model-index/lib/aggregate.ts';
 import {
   appendEntry,
   type HistoryEntry,
@@ -162,13 +162,19 @@ const entry: HistoryEntry = {
   ...(Object.keys(aliases).length ? { aliases } : {}),
   ...(Object.keys(broughtBy).length ? { broughtBy } : {}),
 };
-let rank = 0;
+// The page's own rule (placeRows): equal scores share a rank.
+const rankOf = placeRows(
+  rows,
+  (r) => r.score,
+  (r) => r.ranked,
+  (r) => r.model.id,
+);
 for (const r of rows) {
   entry.models[r.model.id] = {
     name: r.model.name,
     org: r.model.org,
     index: r.score === null ? null : Math.round(r.score * 10) / 10,
-    rank: r.ranked ? ++rank : null,
+    rank: rankOf.get(r.model.id) ?? null,
     covered: r.covered,
   };
 }
@@ -182,7 +188,7 @@ await writeFile(
   JSON.stringify({ entries }, null, 2) + '\n',
 );
 console.log(
-  `history: ${entries.length} snapshot(s), latest ${entry.date}, ${rank} ranked of ${rows.length}${
+  `history: ${entries.length} snapshot(s), latest ${entry.date}, ${rankOf.size} ranked of ${rows.length}${
     Object.keys(aliases).length
       ? `, ${Object.keys(aliases).length} renamed or merged: ${Object.entries(
           aliases,

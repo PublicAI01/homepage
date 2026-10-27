@@ -19,6 +19,7 @@ import {
   compareScores,
   MIN_OVERALL_WEIGHT,
   type NormalizedScore,
+  placeRows,
 } from '../lib/aggregate';
 import {
   type BoardView,
@@ -26,7 +27,7 @@ import {
   figuresOn,
   groupBoards,
 } from '../lib/boards';
-import { estimatedPosition,estimateMark } from '../lib/estimate';
+import { estimatedPosition, estimateMark } from '../lib/estimate';
 import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
 import { scopeNote } from '../lib/scope-notes';
@@ -459,12 +460,16 @@ export default function IndexTable({ tracks, newcomers }: Props) {
     OVERALL,
   ]);
 
-  const rankOf = useMemo(() => {
-    const m = new Map<string, number>();
-    let n = 0;
-    for (const r of rows) if (r.ranked) m.set(r.model.id, ++n);
-    return m;
-  }, [rows]);
+  const rankOf = useMemo(
+    () =>
+      placeRows(
+        rows,
+        (r) => r.score,
+        (r) => r.ranked,
+        (r) => r.model.id,
+      ),
+    [rows],
+  );
 
   const isNew = useMemo(() => new Set(newcomers.ids), [newcomers.ids]);
   const newNames = useMemo(
@@ -514,13 +519,15 @@ export default function IndexTable({ tracks, newcomers }: Props) {
   // alone shows "—✱" and does not push the rows below it down a place.
   const positionOf = useMemo(() => {
     if (rankKey.level === 'overall') return rankOf;
-    const m = new Map<string, number>();
     const order = rows
       .filter((r) => keyOf(r, rankKey) !== null)
       .sort(compareScores<AggregateRow>((r) => keyOf(r, rankKey)));
-    let n = 0;
-    for (const r of order) if (eligible(r, rankKey)) m.set(r.model.id, ++n);
-    return m;
+    return placeRows(
+      order,
+      (r) => keyOf(r, rankKey),
+      (r) => eligible(r, rankKey),
+      (r) => r.model.id,
+    );
   }, [rows, rankKey, rankOf]);
   const scopeTotal = positionOf.size;
   const coverable = rows[0]?.coverable ?? boards.length;

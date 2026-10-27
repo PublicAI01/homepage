@@ -9,6 +9,7 @@ import {
   confidenceOf,
   normalizeBoard,
   placeAmong,
+  placeRows,
 } from './aggregate';
 import {
   BOARD_MEASURE_WEIGHT,
@@ -1144,5 +1145,36 @@ describe('estimates do not lean on safety figures', () => {
     expect(routerOnly.estimate).toBeNull();
     // The figure itself is kept and placed in its domain.
     expect(routerOnly.byDomain['Routing & classification']).not.toBeNull();
+  });
+});
+
+describe('placeRows', () => {
+  // Six models at one score in Toxicity avoidance read #1 to #6, in an
+  // order the domain's evidence had nothing to say about (2026-10-27).
+  const rows = [
+    { id: 'a', score: 70, ok: true },
+    { id: 'b', score: 65, ok: true },
+    { id: 'r', score: 65, ok: false },
+    { id: 'c', score: 65, ok: true },
+    { id: 'd', score: 60, ok: true },
+  ];
+  const places = placeRows(
+    rows,
+    (r) => r.score,
+    (r) => r.ok,
+    (r) => r.id,
+  );
+
+  it('gives equal scores one place and skips the places they share', () => {
+    expect([...places]).toEqual([
+      ['a', 1],
+      ['b', 2],
+      ['c', 2],
+      ['d', 4],
+    ]);
+  });
+
+  it('passes over rows that take no number without counting them', () => {
+    expect(places.has('r')).toBe(false);
   });
 });

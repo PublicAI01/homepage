@@ -5,6 +5,7 @@ import {
   type AggregateRow,
   boardsFirst,
   compareScores,
+  placeRows,
 } from './aggregate';
 import { countingBoards, groupBoards } from './boards';
 import { estimatedPosition } from './estimate';
@@ -150,7 +151,7 @@ export interface Rival {
   id: string;
   name: string;
   org: string;
-  /** Scopes where both are placed. */
+  /** Scopes where both are placed and one finished ahead; a tie counts for neither. */
   met: number;
   /** Of those, how many the rival finished ahead in. */
   ahead: number;
@@ -254,9 +255,12 @@ export function createTrack(input: TrackInput) {
       priorFraction: PRIOR_FRACTION,
       minSources: MIN_SOURCES,
     });
-    const rankOf = new Map<string, number>();
-    let n = 0;
-    for (const r of rows) if (r.ranked) rankOf.set(r.model.id, ++n);
+    const rankOf = placeRows(
+      rows,
+      (r) => r.score,
+      (r) => r.ranked,
+      (r) => r.model.id,
+    );
     return { rows, rankOf };
   }
   const WITH = build(true);
@@ -531,10 +535,12 @@ export function createTrack(input: TrackInput) {
     const key = scopeKey(scope, includeReports);
     const hit = scopePositionCache.get(key);
     if (hit) return hit;
-    const m = new Map<string, number>();
-    let n = 0;
-    for (const r of scopeOrder(scope, includeReports))
-      if (eligible(r, scope)) m.set(r.model.id, ++n);
+    const m = placeRows(
+      scopeOrder(scope, includeReports),
+      (r) => scopeScore(r, scope),
+      (r) => eligible(r, scope),
+      (r) => r.model.id,
+    );
     scopePositionCache.set(key, m);
     return m;
   }
@@ -925,12 +931,16 @@ export function createTrack(input: TrackInput) {
           };
         });
 
-      for (let i = 0; i < ranked.length; i++) {
-        const r = ranked[i];
+      // By score, not by row order: two rows at one score are a tie, and
+      // the order between them says nothing about who finished ahead.
+      const mine = scopeScore(ranked[idx], scope)!;
+      for (const r of ranked) {
         if (r.model.id === model.id) continue;
+        const theirs = scopeScore(r, scope);
+        if (theirs === null || theirs === mine) continue;
         const seen = met.get(r.model.id) ?? { row: r, met: 0, ahead: 0 };
         seen.met += 1;
-        if (i < idx) seen.ahead += 1;
+        if (theirs > mine) seen.ahead += 1;
         met.set(r.model.id, seen);
       }
 

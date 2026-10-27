@@ -744,6 +744,44 @@ export function placeAmong(
   return { overall: last.overall, bound: null };
 }
 
+/**
+ * Places for rows already in score order, highest first: one more than the
+ * number of rows with a strictly higher score, so equal scores share a
+ * place and the place after a tie is skipped (1, 2, 2, 4). Only `eligible`
+ * rows take a number; the rest are passed over without one.
+ *
+ * Numbered 1, 2, 3 down the sorted list instead, six models at one score
+ * in Toxicity avoidance — one board, the same raw figure — read #1 to #6,
+ * the order decided by Overall rank and then by the snapshot's file order,
+ * and one model's page claimed "Strongest in Toxicity avoidance (#1 of
+ * 269)" for a place five others held equally; 471 such groups across the
+ * text domains (2026-10-27). Equal at full precision, not at the printed
+ * decimal: 61.34 and 61.33 print alike but are different evidence.
+ * estimatedPosition's "~#" is the same "one more than those above" rule.
+ */
+export function placeRows<T>(
+  rows: readonly T[],
+  score: (row: T) => number | null,
+  eligible: (row: T) => boolean,
+  id: (row: T) => string,
+): Map<string, number> {
+  const out = new Map<string, number>();
+  let seen = 0;
+  let place = 0;
+  let last: number | null | undefined;
+  for (const r of rows) {
+    if (!eligible(r)) continue;
+    seen++;
+    const s = score(r);
+    if (s !== last) {
+      place = seen;
+      last = s;
+    }
+    out.set(id(r), place);
+  }
+  return out;
+}
+
 /** Sort highest first; models without a score go last. */
 export function compareScores<T>(key: (row: T) => number | null) {
   return (a: T, b: T) => {

@@ -65,7 +65,12 @@ describe('modelStandings', () => {
         p.position === null ? [] : [p.position],
       );
       expect([...ps].sort((a, b) => a - b)).toEqual(ps);
-      expect(new Set(ps).size).toBe(ps.length);
+      // A place repeats only between peers at the same score (2026-10-27).
+      const numbered = s.peers.filter((p) => p.position !== null);
+      numbered.forEach((p, i) => {
+        if (i > 0 && p.position === numbered[i - 1].position)
+          expect(p.score).toBe(numbered[i - 1].score);
+      });
       expect(new Set(s.peers.map((p) => p.id)).size).toBe(s.peers.length);
     }
   });

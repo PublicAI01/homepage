@@ -174,12 +174,21 @@ describe('reports switch', () => {
       );
       const off = ok(rankModels({ scope, minBoards: 0, limit: 500 }));
       // Overall leaves a provisional row unnumbered, so the run of numbers
-      // is over the rows that have one — and it still has to be 1..k with no
-      // gaps, which is what "numbered by its place" means.
-      const numbered = on.models
-        .map((m) => m.position)
-        .filter((p): p is number => p !== null);
-      expect(numbered).toEqual(numbered.map((_, i) => i + 1));
+      // is over the rows that have one — and each place is one more than
+      // the rows above it, which is what "numbered by its place" means. A
+      // place repeats only for a score that repeats, and the next place
+      // then skips what the tie took (2026-10-27). Ties are read at full
+      // precision and the API prints one decimal, so two rows printing
+      // alike may share a place or not; two printing differently never do.
+      const numbered = on.models.filter((m) => m.position !== null);
+      const scoreOf = (m: (typeof on.models)[number]) =>
+        scope === 'overall' ? m.index : m.scopeScore;
+      numbered.forEach((m, i) => {
+        const prev = numbered[i - 1];
+        const alike = i > 0 && scoreOf(m) === scoreOf(prev);
+        if (alike) expect([prev.position, i + 1]).toContain(m.position);
+        else expect(m.position, `${scope} ${m.name}`).toBe(i + 1);
+      });
 
       // In a domain, `rankedInScope` false means "no recognised board
       // measured it here". Such a row is listed either way — its ✱ figure
@@ -260,11 +269,19 @@ describe('one position, wherever it is printed', () => {
       const all = ok(rankModels({ scope, minBoards: 0, limit: 100 }));
       const thin = ok(rankModels({ scope, minBoards: 3, limit: 100 }));
       const bySeen = new Map(all.models.map((m) => [m.id, m.position]));
-      let last = 0;
+      let above = 0;
+      let last: { position: number | null; score: number | null } | null = null;
       for (const m of all.models) {
         if (m.rankedInScope) {
-          expect(m.position, `${scope} ${m.name}`).toBe(last + 1);
-          last = m.position!;
+          // One more than the rows above, or the same place as a row at
+          // the same score (2026-10-27); the API prints one decimal, so a
+          // row printing alike may share the place or not.
+          const score = m.scopeScore ?? m.index;
+          const alike = last !== null && score === last.score;
+          if (alike) expect([last!.position, above + 1]).toContain(m.position);
+          else expect(m.position, `${scope} ${m.name}`).toBe(above + 1);
+          above++;
+          last = { position: m.position, score };
         } else {
           expect(m.position, `${scope} ${m.name}`).toBeNull();
         }

@@ -123,3 +123,56 @@ describe('boards in a scope', () => {
     expect(s?.coveredBoards).toBe(1);
   });
 });
+
+describe('tied scores', () => {
+  // m2 and m3 carry the same figure on every board, so their Overall and
+  // their domain score are equal to the last digit. Numbered down the
+  // sorted list they read #2 and #3, the order decided by the snapshot's
+  // file order, and the page said one finished ahead of the other
+  // (2026-10-27).
+  const tied = createTrack({
+    data: {
+      ...data,
+      models: ['m1', 'm2', 'm3', 'm4'].map((id) => ({
+        id,
+        name: id,
+        org: 'Org',
+      })),
+      scores: (['a', 'b'] as const).flatMap((benchmarkId) => [
+        { modelId: 'm1', benchmarkId, raw: 90, sourceLabel: 'm1' },
+        { modelId: 'm2', benchmarkId, raw: 50, sourceLabel: 'm2' },
+        { modelId: 'm3', benchmarkId, raw: 50, sourceLabel: 'm3' },
+        { modelId: 'm4', benchmarkId, raw: 10, sourceLabel: 'm4' },
+      ]),
+    },
+    weighting: weighting(50, 50),
+    url: 'https://publicai.io/model-index/x',
+  });
+  const positions = (scope: string) => {
+    const r = tied.rankModels({ scope, minBoards: 0 });
+    if ('error' in r) throw new Error(r.error);
+    return Object.fromEntries(r.models.map((m) => [m.id, m.position]));
+  };
+
+  it('shares the place Overall and skips the one the tie took', () => {
+    expect(positions('overall')).toEqual({ m1: 1, m2: 2, m3: 2, m4: 4 });
+    expect(tied.getModel('m3').model?.rank).toBe(2);
+  });
+
+  it('shares the place in a domain, and the total still counts every row', () => {
+    expect(positions('domain:General')).toEqual({ m1: 1, m2: 2, m3: 2, m4: 4 });
+    expect(tied.scopeTotal(tied.resolveScope('General')!)).toBe(4);
+  });
+
+  it('counts a tie as neither ahead nor behind among the rivals', () => {
+    const found = tied.modelStandings('m3');
+    if ('error' in found) throw new Error(found.error);
+    const s = found.standings.find((x) => x.level === 'domain');
+    expect(s?.position).toBe(2);
+    expect(s?.peers.find((p) => p.id === 'm2')?.position).toBe(2);
+    const byId = Object.fromEntries(found.rivals.map((r) => [r.id, r]));
+    expect(byId.m2).toBeUndefined();
+    expect(byId.m1).toMatchObject({ ahead: byId.m1.met });
+    expect(byId.m4).toMatchObject({ ahead: 0 });
+  });
+});
