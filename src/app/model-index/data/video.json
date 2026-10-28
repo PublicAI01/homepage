@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T11:53:16.364Z",
+  "generatedAt": "2026-10-28T20:04:02.642Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -482,8 +482,8 @@
     {
       "modelId": "happyhorse-1-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1042,
-      "stderr": 17,
+      "raw": 1028,
+      "stderr": 18,
       "sourceLabel": "HappyHorse-1.0"
     },
     {
@@ -538,7 +538,7 @@
     {
       "modelId": "gemini-omni-flash-1-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1132,
+      "raw": 1044,
       "stderr": 17,
       "sourceLabel": "Gemini Omni Flash 1.1"
     },
@@ -552,7 +552,7 @@
     {
       "modelId": "happyhorse-1-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1061,
+      "raw": 1036,
       "stderr": 17,
       "sourceLabel": "HappyHorse-1.1"
     },
@@ -571,6 +571,13 @@
       "sourceLabel": "Grok Imagine Video 1.5 Lite"
     },
     {
+      "modelId": "grok-imagine-video-1-5-lite",
+      "benchmarkId": "aa-image-to-video",
+      "raw": 998,
+      "stderr": 18,
+      "sourceLabel": "Grok Imagine Video 1.5 Lite"
+    },
+    {
       "modelId": "grok-imagine-video-1-5",
       "benchmarkId": "aa-text-to-video",
       "raw": 1057,
@@ -580,7 +587,7 @@
     {
       "modelId": "grok-imagine-video-1-5",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1067,
+      "raw": 1047,
       "stderr": 17,
       "sourceLabel": "Grok Imagine Video 1.5"
     },
@@ -615,8 +622,8 @@
     {
       "modelId": "magi-2",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1046,
-      "stderr": 16,
+      "raw": 865,
+      "stderr": 19,
       "sourceLabel": "MAGI-2 Preview"
     },
     {
@@ -650,8 +657,8 @@
     {
       "modelId": "seedance-2-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1121,
-      "stderr": 18,
+      "raw": 1132,
+      "stderr": 17,
       "sourceLabel": "Dreamina Seedance 2.0"
     },
     {
@@ -699,8 +706,8 @@
     {
       "modelId": "ltx-2-3-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 888,
-      "stderr": 18,
+      "raw": 831,
+      "stderr": 19,
       "sourceLabel": "LTX-2.3 Fast"
     },
     {
@@ -720,8 +727,8 @@
     {
       "modelId": "ltx-2-3-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 903,
-      "stderr": 18,
+      "raw": 838,
+      "stderr": 19,
       "sourceLabel": "LTX-2.3 Pro"
     },
     {
@@ -741,8 +748,8 @@
     {
       "modelId": "ltx-2-5-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 984,
-      "stderr": 19,
+      "raw": 917,
+      "stderr": 18,
       "sourceLabel": "LTX-2.5 Fast"
     },
     {
@@ -762,8 +769,8 @@
     {
       "modelId": "ltx-2-5-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 958,
-      "stderr": 19,
+      "raw": 913,
+      "stderr": 18,
       "sourceLabel": "LTX-2.5 Pro"
     },
     {
@@ -783,7 +790,7 @@
     {
       "modelId": "seedance-2-5",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1138,
+      "raw": 1148,
       "stderr": 17,
       "sourceLabel": "Dreamina Seedance 2.5"
     },
@@ -839,23 +846,23 @@
     {
       "modelId": "flux-3",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1086,
-      "stderr": 16,
+      "raw": 1072,
+      "stderr": 17,
       "sourceLabel": "FLUX 3"
     },
     {
       "modelId": "flux-3-max",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1155,
-      "stderr": 15,
-      "sourceLabel": "FLUX 3 Max (720p)"
+      "raw": 1156,
+      "stderr": 18,
+      "sourceLabel": "FLUX 3 Max"
     },
     {
       "modelId": "flux-3-max",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1138,
-      "stderr": 15,
-      "sourceLabel": "FLUX 3 Max (720p)"
+      "raw": 1064,
+      "stderr": 17,
+      "sourceLabel": "FLUX 3 Max"
     },
     {
       "modelId": "flux-3-video",
@@ -867,14 +874,14 @@
     {
       "modelId": "minimax-h3-max",
       "benchmarkId": "aa-text-to-video",
-      "raw": 1152,
-      "stderr": 15,
+      "raw": 1151,
+      "stderr": 18,
       "sourceLabel": "MiniMax H3 Max"
     },
     {
       "modelId": "minimax-h3-max",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1125,
+      "raw": 1116,
       "stderr": 17,
       "sourceLabel": "MiniMax H3 Max"
     },
@@ -895,8 +902,8 @@
     {
       "modelId": "minimax-h3",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1140,
-      "stderr": 16,
+      "raw": 1126,
+      "stderr": 17,
       "sourceLabel": "MiniMax H3 (768p)"
     },
     {
@@ -909,8 +916,8 @@
     {
       "modelId": "kling-3-0-omni-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1004,
-      "stderr": 17,
+      "raw": 1001,
+      "stderr": 18,
       "sourceLabel": "Kling 3.0 Omni 1080p (Pro)"
     },
     {
@@ -935,8 +942,8 @@
     {
       "modelId": "vidu-q3-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1016,
-      "stderr": 15,
+      "raw": 931,
+      "stderr": 18,
       "sourceLabel": "Vidu Q3 Pro"
     },
     {
@@ -949,8 +956,8 @@
     {
       "modelId": "vidu-q3-turbo",
       "benchmarkId": "aa-image-to-video",
-      "raw": 967,
-      "stderr": 19,
+      "raw": 898,
+      "stderr": 18,
       "sourceLabel": "Vidu Q3 Turbo"
     },
     {
@@ -984,8 +991,8 @@
     {
       "modelId": "wan-3-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1127,
-      "stderr": 16,
+      "raw": 1108,
+      "stderr": 17,
       "sourceLabel": "Wan 3.0"
     },
     {
@@ -1005,8 +1012,8 @@
     {
       "modelId": "veo-3-1-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1017,
-      "stderr": 15,
+      "raw": 933,
+      "stderr": 18,
       "sourceLabel": "Veo 3.1 Fast"
     },
     {
@@ -1014,6 +1021,13 @@
       "benchmarkId": "aa-text-to-video",
       "raw": 951,
       "stderr": 16,
+      "sourceLabel": "Veo 3.1 Lite"
+    },
+    {
+      "modelId": "veo-3-1-lite",
+      "benchmarkId": "aa-image-to-video",
+      "raw": 927,
+      "stderr": 18,
       "sourceLabel": "Veo 3.1 Lite"
     },
     {
@@ -1033,8 +1047,8 @@
     {
       "modelId": "veo-3-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1028,
-      "stderr": 17,
+      "raw": 956,
+      "stderr": 18,
       "sourceLabel": "Veo 3.1"
     },
     {
@@ -1075,8 +1089,8 @@
     {
       "modelId": "pixverse-v6",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1024,
-      "stderr": 17,
+      "raw": 958,
+      "stderr": 18,
       "sourceLabel": "PixVerse V6"
     },
     {
