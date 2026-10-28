@@ -268923,7 +268923,7 @@
     },
     {
       "date": "2026-10-28",
-      "generatedAt": "2026-10-28T20:04:02.642Z",
+      "generatedAt": "2026-10-28T22:03:52.189Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -269555,6 +269555,13 @@
           "rank": null,
           "covered": 1
         },
+        "ovisocr3": {
+          "name": "OvisOCR3",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
         "ernie-5-1": {
           "name": "ERNIE 5.1",
           "org": "Baidu",
@@ -269751,13 +269758,6 @@
           "rank": null,
           "covered": 1
         },
-        "qwen3-8-flash-next": {
-          "name": "Qwen3.8 Flash Next",
-          "org": "Alibaba",
-          "index": null,
-          "rank": null,
-          "covered": 3
-        },
         "jina-ocr-v1": {
           "name": "Jina OCR V1",
           "org": "Other",
@@ -269771,6 +269771,13 @@
           "index": null,
           "rank": null,
           "covered": 8
+        },
+        "qwen3-8-flash-next": {
+          "name": "Qwen3.8 Flash Next",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 3
         },
         "unlimited-ocr-2": {
           "name": "Unlimited OCR 2",

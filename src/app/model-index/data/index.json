@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T20:04:02.642Z",
+  "generatedAt": "2026-10-28T22:03:52.189Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -3776,7 +3776,7 @@
         "openrouter": {
           "id": "nvidia/nemotron-3-super-120b-a12b",
           "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b",
-          "contextLength": 262144,
+          "contextLength": 1048576,
           "inputPerM": 0.3,
           "outputPerM": 2.4,
           "listedAt": "2026-03-11",
@@ -7687,6 +7687,7 @@
         }
       }
     },
+    { "id": "ovisocr3", "name": "OvisOCR3", "org": "Other" },
     {
       "id": "qwen-3-vl-plus",
       "name": "Qwen 3 VL Plus",
@@ -10965,7 +10966,7 @@
           "url": "https://openrouter.ai/z-ai/glm-5.2",
           "contextLength": 1048576,
           "inputPerM": 0.006,
-          "outputPerM": 7,
+          "outputPerM": 5.4,
           "listedAt": "2026-06-16",
           "modalities": ["text"]
         },
@@ -11057,8 +11058,8 @@
           "id": "z-ai/glm-5.3-flash",
           "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.026,
-          "outputPerM": 0.104,
+          "inputPerM": 0.029,
+          "outputPerM": 0.092,
           "listedAt": "2026-08-26",
           "modalities": ["text", "image", "video"]
         },
@@ -31564,6 +31565,42 @@
       "sourceLabel": "claude-3-opus-20240229"
     },
     {
+      "modelId": "ovisocr3",
+      "benchmarkId": "parsebench",
+      "raw": 71.81,
+      "sourceLabel": "OvisOCR3"
+    },
+    {
+      "modelId": "ovisocr3",
+      "benchmarkId": "parsebench-tables",
+      "raw": 80.18,
+      "sourceLabel": "OvisOCR3"
+    },
+    {
+      "modelId": "ovisocr3",
+      "benchmarkId": "parsebench-charts",
+      "raw": 62.5,
+      "sourceLabel": "OvisOCR3"
+    },
+    {
+      "modelId": "ovisocr3",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 89.12,
+      "sourceLabel": "OvisOCR3"
+    },
+    {
+      "modelId": "ovisocr3",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 53.29,
+      "sourceLabel": "OvisOCR3"
+    },
+    {
+      "modelId": "ovisocr3",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 73.94,
+      "sourceLabel": "OvisOCR3"
+    },
+    {
       "modelId": "qwen-3-vl-plus",
       "benchmarkId": "vals-medcode",
       "raw": 31.65,
@@ -49758,15 +49795,15 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1650,
+      "raw": 1649,
       "stderr": 17,
       "sourceLabel": "GLM-5.3-Flash"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-briefcase",
-      "raw": 1450,
-      "stderr": 8.5,
+      "raw": 1451,
+      "stderr": 8,
       "sourceLabel": "GLM-5.3-Flash"
     },
     {
