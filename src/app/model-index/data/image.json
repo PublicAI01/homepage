@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T21:40:09.173Z",
+  "generatedAt": "2026-10-28T11:53:16.364Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
-      "retrievedAt": "2026-10-27",
+      "retrievedAt": "2026-10-28",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-image.ico",
       "category": "Text-to-image",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-10-27",
+      "retrievedAt": "2026-10-28",
       "snapshot": "Oct 26, 2026 — across 82 models",
       "metric": "elo",
       "category": "Text-to-image",
@@ -39,8 +39,8 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-10-27",
-      "snapshot": "Oct 26, 2026 — across 60 models",
+      "retrievedAt": "2026-10-28",
+      "snapshot": "Oct 27, 2026 — across 61 models",
       "metric": "elo",
       "category": "Image editing",
       "domain": "Image editing",
@@ -480,6 +480,7 @@
         }
       }
     },
+    { "id": "mai-image-2-7", "name": "MAI Image 2.7", "org": "Microsoft AI" },
     {
       "id": "wan-2-7-pro",
       "name": "Wan 2.7 Pro",
@@ -985,7 +986,7 @@
     {
       "modelId": "flux-1-kontext-dev",
       "benchmarkId": "arena-image-edit",
-      "raw": 1150,
+      "raw": 1151,
       "stderr": 3,
       "sourceLabel": "FLUX.1 Kontext [dev]"
     },
@@ -1321,7 +1322,7 @@
     {
       "modelId": "gemini-3-1-flash-image-nano-banana-2-web-search",
       "benchmarkId": "arena-image-edit",
-      "raw": 1388,
+      "raw": 1387,
       "stderr": 3,
       "sourceLabel": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)"
     },
@@ -1439,7 +1440,7 @@
     {
       "modelId": "flux-2-flex",
       "benchmarkId": "arena-image-edit",
-      "raw": 1225,
+      "raw": 1224,
       "stderr": 3,
       "sourceLabel": "FLUX.2 [flex]"
     },
@@ -1481,7 +1482,7 @@
     {
       "modelId": "flux-2-pro",
       "benchmarkId": "arena-image-edit",
-      "raw": 1248,
+      "raw": 1247,
       "stderr": 3,
       "sourceLabel": "FLUX.2 [pro]"
     },
@@ -1558,7 +1559,7 @@
     {
       "modelId": "qwen-image-2-0-pro",
       "benchmarkId": "arena-image-edit",
-      "raw": 1303,
+      "raw": 1302,
       "stderr": 5,
       "sourceLabel": "Qwen-Image-2.0-Pro (2026-06-22)"
     },
@@ -1684,7 +1685,7 @@
     {
       "modelId": "qwen-image-2-1",
       "benchmarkId": "arena-image-edit",
-      "raw": 1364,
+      "raw": 1362,
       "stderr": 6,
       "sourceLabel": "Qwen-Image-2.1"
     },
@@ -1705,7 +1706,7 @@
     {
       "modelId": "reve-2-1",
       "benchmarkId": "arena-image-edit",
-      "raw": 1374,
+      "raw": 1373,
       "stderr": 6,
       "sourceLabel": "Reve 2.1"
     },
@@ -1726,7 +1727,7 @@
     {
       "modelId": "nano-banana-gemini-2-5-flash-image",
       "benchmarkId": "arena-image-edit",
-      "raw": 1292,
+      "raw": 1291,
       "stderr": 2,
       "sourceLabel": "Gemini 2.5 Flash Image Preview (nano-banana)"
     },
@@ -1747,7 +1748,7 @@
     {
       "modelId": "gpt-image-2-5-flare",
       "benchmarkId": "arena-image-edit",
-      "raw": 1483,
+      "raw": 1482,
       "stderr": 5,
       "sourceLabel": "GPT-Image-2.5 Flare"
     },
@@ -1775,7 +1776,7 @@
     {
       "modelId": "gpt-image-2-5-sunburst",
       "benchmarkId": "arena-image-edit",
-      "raw": 1515,
+      "raw": 1517,
       "stderr": 5,
       "sourceLabel": "GPT-Image-2.5 Sunburst"
     },
@@ -1845,7 +1846,7 @@
     {
       "modelId": "mai-image-2-6",
       "benchmarkId": "arena-image-edit",
-      "raw": 1425,
+      "raw": 1427,
       "stderr": 5,
       "sourceLabel": "MAI-Image-2.6"
     },
@@ -1876,6 +1877,13 @@
       "raw": 1138,
       "stderr": 3,
       "sourceLabel": "Wan 2.6"
+    },
+    {
+      "modelId": "mai-image-2-7",
+      "benchmarkId": "arena-image-edit",
+      "raw": 1471,
+      "stderr": 10,
+      "sourceLabel": "MAI-Image-2.7-Preview"
     },
     {
       "modelId": "wan-2-7-pro",
@@ -1937,7 +1945,7 @@
       "modelId": "nano-banana-pro-gemini-3-pro-image",
       "benchmarkId": "arena-image-edit",
       "raw": 1390,
-      "stderr": 2,
+      "stderr": 3,
       "sourceLabel": "Gemini 3 Pro Image (nano-banana-pro, 2K)"
     },
     {
@@ -2063,7 +2071,7 @@
       "modelId": "seededit-3-0",
       "benchmarkId": "arena-image-edit",
       "raw": 1139,
-      "stderr": 4,
+      "stderr": 3,
       "sourceLabel": "SeedEdit 3.0"
     },
     {
@@ -2244,7 +2252,7 @@
     {
       "modelId": "ideogram-4-5",
       "benchmarkId": "arena-image-edit",
-      "raw": 1345,
+      "raw": 1347,
       "stderr": 5,
       "sourceLabel": "Ideogram 4.5"
     },
@@ -2307,7 +2315,7 @@
     {
       "modelId": "seedream-5-0-pro",
       "benchmarkId": "arena-image-edit",
-      "raw": 1392,
+      "raw": 1390,
       "stderr": 3,
       "sourceLabel": "Seedream 5.0 Pro"
     },
@@ -2328,7 +2336,7 @@
     {
       "modelId": "bagel",
       "benchmarkId": "arena-image-edit",
-      "raw": 1026,
+      "raw": 1027,
       "stderr": 6,
       "sourceLabel": "BAGEL"
     },
@@ -2610,7 +2618,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-10-27",
+      "retrievedAt": "2026-10-28",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -2618,7 +2626,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-10-27",
+      "retrievedAt": "2026-10-28",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
