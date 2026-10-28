@@ -13,7 +13,8 @@ import { trackOf, TRACKS } from '../lib/tracks';
  *   /model-index/api?model=claude-fable-5-1 → get_model
  *   /model-index/api?since=2026-09-01       → whats_new (changes since that snapshot)
  *   /model-index/api?scope=coding&limit=10  → rank_models
- *     (also org, family, minBoards, openWeights, callable, reports=false, size=small|medium|large|xlarge|undisclosed)
+ *     (also org, family, minBoards — default 2 for Overall, 1 in a scope —
+ *     openWeights, callable, reports=false, size=small|medium|large|xlarge|undisclosed)
  *   /model-index/api?track=image&scope=text-to-image → the same, on the image track
  *     (track=text|image|video; text is the default. `since` is text-only.)
  */

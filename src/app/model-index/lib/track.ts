@@ -575,17 +575,30 @@ export function createTrack(input: TrackInput) {
         })),
       };
     }
-    const minBoards = q.minBoards ?? MIN_SOURCES;
+    // The default follows the rule the scope ranks by. Overall ranks a
+    // model once MIN_SOURCES publishers have scored it, so its default list
+    // is the rows two or more boards cover. A category or domain "ranks any
+    // model a recognised board measured there" (the note below), and the
+    // page's default is one board — but the API and MCP tool asked for two
+    // here as well, read against *every* board on the index, not the
+    // scope's own. A model measured only by the one board that defines a
+    // domain (JevBench's 221 System One models in Calibration, Enkrypt's
+    // in Fairness, OSWorld's in Computer use) holds a numbered place there
+    // and was filtered out of the default answer: Calibration listed no
+    // rows, Routing & classification one report-placed row, Fairness opened
+    // at #3, with nothing in the response to say the leaders were hidden
+    // (2026-10-28). Reports alone still take no place either way; 0 lists
+    // them too, as the badge asks.
+    const minBoards =
+      q.minBoards ?? (scope.level === 'overall' ? MIN_SOURCES : 1);
     const orgQ = q.org ? fold(q.org) : null;
     const includeReports = q.reports ?? false;
     const set = includeReports ? WITH : DEFAULT;
 
     let out = set.rows.filter((r) => {
+      // `covered` counts recognised boards across the index, not in this
+      // scope: minBoards=0 is how a reader asks for report-only rows too.
       if (r.covered < minBoards) return false;
-      // A model only a report ✱ has measured is listed either way: its
-      // figures are the only evidence there is for it, and it takes no
-      // number. `minBoards` is how a reader asks for board-measured rows
-      // only.
       if (orgQ && fold(r.model.org) !== orgQ) return false;
       if (q.family && fold(familyOf(r.model.name)) !== fold(q.family))
         return false;

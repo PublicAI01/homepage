@@ -47,7 +47,7 @@ const handler = createMcpHandler(
             .max(10)
             .optional()
             .describe(
-              'Minimum recognised boards a model must be scored by. Default 2 (ranked models only); 0 includes report-only models.',
+              'Minimum recognised boards (across the whole index) a model must be scored by. Default 2 for Overall, 1 in a category or domain — the same rows the page shows; 0 includes models only reports ✱ have measured.',
             ),
           limit: z
             .number()

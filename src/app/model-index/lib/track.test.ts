@@ -176,3 +176,40 @@ describe('tied scores', () => {
     expect(byId.m4).toMatchObject({ ahead: 0 });
   });
 });
+
+describe('default minBoards in a scope', () => {
+  // `only` is scored by board a alone, and leads it: covered 1 across the
+  // index, a numbered #1 in the domain. The default list asked for two
+  // boards everywhere, so it opened at #2 with #1 missing; Calibration,
+  // measured by one board, answered with no rows at all (2026-10-28).
+  const track = createTrack({
+    data: {
+      ...data,
+      models: [...data.models, { id: 'only', name: 'only', org: 'Org' }],
+      scores: [
+        ...data.scores,
+        { modelId: 'only', benchmarkId: 'a', raw: 95, sourceLabel: 'only' },
+      ],
+    },
+    weighting: weighting(50, 50),
+    url: 'https://publicai.io/model-index/x',
+  });
+  const list = (q: Parameters<typeof track.rankModels>[0]) => {
+    const r = track.rankModels(q);
+    if ('error' in r) throw new Error(r.error);
+    return r;
+  };
+
+  it('lists every board-placed row by default, so #1 is the first row', () => {
+    const r = list({ scope: 'domain:General' });
+    expect(r.minBoards).toBe(1);
+    expect(r.models[0]).toMatchObject({ id: 'only', position: 1 });
+    expect(r.total).toBe(r.scopeTotal);
+  });
+
+  it('keeps the two-board default for Overall, which ranks on publishers', () => {
+    const r = list({});
+    expect(r.minBoards).toBe(2);
+    expect(r.models.map((m) => m.id)).not.toContain('only');
+  });
+});
