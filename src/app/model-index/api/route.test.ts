@@ -43,3 +43,30 @@ describe('switches on the JSON API', () => {
     }
   });
 });
+
+describe('what a request is asking for', () => {
+  it('answers a ranking whenever any ranking parameter is present', async () => {
+    // The dispatch looked at four parameters; the other documented filters
+    // alone fell through to describe_index, so a caller asking for the
+    // open-weight small models got the method document (2026-10-29).
+    for (const q of [
+      'family=Qwen',
+      'openWeights=true&size=small',
+      'callable=true',
+      'reports=false',
+      'size=large',
+      'must=lmarena',
+    ]) {
+      const r = await get(q);
+      expect(r.status, q).toBe(200);
+      expect(r.body, q).toHaveProperty('models');
+      expect(r.body, q).not.toHaveProperty('method');
+    }
+  });
+
+  it('still describes the index when nothing is asked for', async () => {
+    const r = await get('');
+    expect(r.body).toHaveProperty('method');
+    expect(r.body).not.toHaveProperty('models');
+  });
+});

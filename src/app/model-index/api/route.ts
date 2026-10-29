@@ -20,6 +20,28 @@ import { trackOf, TRACKS } from '../lib/tracks';
  */
 const SIZES = ['small', 'medium', 'large', 'xlarge', 'undisclosed'] as const;
 
+/**
+ * Every parameter that asks for a ranking. Any one of them present means
+ * rank_models; none means describe_index. The list used to be four names
+ * (scope, org, limit, minBoards) while the header above documented ten, so
+ * `?openWeights=true&size=small` or `?family=Qwen` — filters alone, no
+ * scope — parsed, validated and then answered with the method document
+ * instead of a ranking (2026-10-29). One list, read by the dispatch and by
+ * nothing else, so a filter added below cannot be left off it again.
+ */
+const RANK_PARAMS = [
+  'scope',
+  'org',
+  'family',
+  'minBoards',
+  'limit',
+  'openWeights',
+  'callable',
+  'reports',
+  'size',
+  'must',
+] as const;
+
 const bad = (message: string) =>
   NextResponse.json(
     { error: message },
@@ -84,7 +106,7 @@ export function GET(request: Request) {
     ? changesSince(since, minDelta ?? 3)
     : p.has('model')
       ? getModel(p.get('model')!)
-      : p.has('scope') || p.has('org') || p.has('limit') || p.has('minBoards')
+      : RANK_PARAMS.some((k) => p.has(k))
         ? rankModels({
             scope: p.get('scope') ?? undefined,
             org: p.get('org') ?? undefined,
