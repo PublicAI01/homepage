@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T12:01:56.097Z",
+  "generatedAt": "2026-10-29T22:16:50.274Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -2646,17 +2646,6 @@
       "size": { "paramsB": 49, "source": "name" }
     },
     {
-      "id": "deepseek-r1-plus-claude-3-5-sonnet",
-      "name": "DeepSeek R1 + claude-3-5-sonnet",
-      "org": "Anthropic",
-      "access": {
-        "official": {
-          "name": "Claude Developer Platform",
-          "url": "https://docs.claude.com"
-        }
-      }
-    },
-    {
       "id": "arcbright-elf-1-31b",
       "name": "Arcbright Elf 1 31B",
       "org": "Other",
@@ -2715,14 +2704,6 @@
       "name": "Kahn1 4B",
       "org": "Other",
       "size": { "paramsB": 4, "source": "name" }
-    },
-    {
-      "id": "grok-4-20-1",
-      "name": "Grok 4.20 1",
-      "org": "SpaceXAI",
-      "access": {
-        "official": { "name": "xAI API", "url": "https://docs.x.ai" }
-      }
     },
     {
       "id": "valkyrie-49b-v1",
@@ -2939,26 +2920,6 @@
       "size": { "paramsB": 1000, "source": "name" }
     },
     {
-      "id": "amazon-nova-lite-1-0",
-      "name": "Amazon Nova Lite 1.0",
-      "org": "Amazon",
-      "access": {
-        "openrouter": {
-          "id": "amazon/nova-lite-v1",
-          "url": "https://openrouter.ai/amazon/nova-lite-v1",
-          "contextLength": 300000,
-          "inputPerM": 0.06,
-          "outputPerM": 0.24,
-          "listedAt": "2024-12-05",
-          "modalities": ["text", "image"]
-        },
-        "official": {
-          "name": "Amazon Bedrock",
-          "url": "https://docs.aws.amazon.com/bedrock"
-        }
-      }
-    },
-    {
       "id": "minimax-m1",
       "name": "MiniMax M1",
       "org": "MiniMax",
@@ -2975,26 +2936,6 @@
         "official": {
           "name": "MiniMax Platform",
           "url": "https://platform.minimax.io/docs"
-        }
-      }
-    },
-    {
-      "id": "amazon-nova-micro-1-0",
-      "name": "Amazon Nova Micro 1.0",
-      "org": "Amazon",
-      "access": {
-        "openrouter": {
-          "id": "amazon/nova-micro-v1",
-          "url": "https://openrouter.ai/amazon/nova-micro-v1",
-          "contextLength": 128000,
-          "inputPerM": 0.035,
-          "outputPerM": 0.14,
-          "listedAt": "2024-12-05",
-          "modalities": ["text"]
-        },
-        "official": {
-          "name": "Amazon Bedrock",
-          "url": "https://docs.aws.amazon.com/bedrock"
         }
       }
     },
@@ -3022,26 +2963,6 @@
         "official": {
           "name": "OpenBMB on GitHub",
           "url": "https://github.com/OpenBMB"
-        }
-      }
-    },
-    {
-      "id": "amazon-nova-pro-1-0",
-      "name": "Amazon Nova Pro 1.0",
-      "org": "Amazon",
-      "access": {
-        "openrouter": {
-          "id": "amazon/nova-pro-v1",
-          "url": "https://openrouter.ai/amazon/nova-pro-v1",
-          "contextLength": 300000,
-          "inputPerM": 0.8,
-          "outputPerM": 3.2,
-          "listedAt": "2024-12-05",
-          "modalities": ["text", "image"]
-        },
-        "official": {
-          "name": "Amazon Bedrock",
-          "url": "https://docs.aws.amazon.com/bedrock"
         }
       }
     },
@@ -5347,18 +5268,6 @@
       }
     },
     {
-      "id": "qwq-32b-plus-qwen-2-5-coder-instruct",
-      "name": "QwQ-32B + Qwen 2.5 Coder Instruct",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 32, "source": "name" }
-    },
-    {
       "id": "qwen2-5-coder-32b-instruct",
       "name": "Qwen2.5 Coder 32B Instruct",
       "org": "Alibaba",
@@ -6026,18 +5935,6 @@
       "size": { "paramsB": 8, "source": "name" }
     },
     {
-      "id": "qwen3-235b-a22b-diff-no-think-alibaba-api",
-      "name": "Qwen3 235B A22B diff, no think, Alibaba API",
-      "org": "Alibaba",
-      "access": {
-        "official": {
-          "name": "Alibaba Cloud Model Studio",
-          "url": "https://www.alibabacloud.com/help/en/model-studio"
-        }
-      },
-      "size": { "paramsB": 235, "activeB": 22, "source": "name" }
-    },
-    {
       "id": "qwen3-235b-a22b-instruct",
       "name": "Qwen3 235B A22B Instruct",
       "org": "Alibaba",
@@ -6229,6 +6126,26 @@
       }
     },
     {
+      "id": "codestral-25-08",
+      "name": "Codestral 25.08",
+      "org": "Mistral",
+      "access": {
+        "openrouter": {
+          "id": "mistralai/codestral-2508",
+          "url": "https://openrouter.ai/mistralai/codestral-2508",
+          "contextLength": 256000,
+          "inputPerM": 0.3,
+          "outputPerM": 0.9,
+          "listedAt": "2025-08-01",
+          "modalities": ["text", "file"]
+        },
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
       "id": "hunyuan-standard-256k",
       "name": "Hunyuan Standard 256K",
       "org": "Tencent",
@@ -6254,8 +6171,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.09,
-          "outputPerM": 0.3,
+          "inputPerM": 0.077,
+          "outputPerM": 0.255,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -6402,8 +6319,8 @@
           "id": "qwen/qwen3.8-27b",
           "url": "https://openrouter.ai/qwen/qwen3.8-27b",
           "contextLength": 1000000,
-          "inputPerM": 0.039,
-          "outputPerM": 1.25,
+          "inputPerM": 0.2,
+          "outputPerM": 2.5,
           "listedAt": "2026-08-14",
           "modalities": ["text", "image", "video"]
         },
@@ -6906,17 +6823,6 @@
       "name": "Nanbeige4.1 3B",
       "org": "Nanbeige",
       "size": { "paramsB": 3, "source": "name" }
-    },
-    {
-      "id": "o3-plus-gpt-4-1",
-      "name": "O3 + gpt-4.1",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
     },
     {
       "id": "granite-4-2-3b",
@@ -7477,8 +7383,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -7716,15 +7622,6 @@
       "name": "Solar Pro 3",
       "org": "Upstage",
       "access": {
-        "openrouter": {
-          "id": "upstage/solar-pro-3",
-          "url": "https://openrouter.ai/upstage/solar-pro-3",
-          "contextLength": 131072,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
-          "listedAt": "2026-01-27",
-          "modalities": ["text"]
-        },
         "official": {
           "name": "Upstage Console",
           "url": "https://console.upstage.ai"
@@ -9417,8 +9314,8 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.057,
-          "outputPerM": 0.134,
+          "inputPerM": 0.034,
+          "outputPerM": 0.3,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
         },
@@ -9700,8 +9597,8 @@
           "id": "tencent/hy4-preview",
           "url": "https://openrouter.ai/tencent/hy4-preview",
           "contextLength": 1048576,
-          "inputPerM": 0.834,
-          "outputPerM": 2.501,
+          "inputPerM": 0.751,
+          "outputPerM": 2.251,
           "listedAt": "2026-08-28",
           "modalities": ["text"]
         },
@@ -9725,11 +9622,26 @@
           "id": "mistralai/mistral-large-4-0",
           "url": "https://openrouter.ai/mistralai/mistral-large-4-0",
           "contextLength": 1048576,
-          "inputPerM": 1.36,
-          "outputPerM": 4.18,
+          "inputPerM": 0.7,
+          "outputPerM": 2.1,
           "listedAt": "2026-10-06",
           "modalities": ["text", "image"]
         },
+        "weights": {
+          "huggingFaceId": "mistralai/Mistral-Large-4-1T-A52B",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B"
+        },
+        "official": {
+          "name": "Mistral AI docs",
+          "url": "https://docs.mistral.ai"
+        }
+      }
+    },
+    {
+      "id": "mistral-large-4-oss",
+      "name": "Mistral Large 4 OSS",
+      "org": "Mistral",
+      "access": {
         "official": {
           "name": "Mistral AI docs",
           "url": "https://docs.mistral.ai"
@@ -10804,7 +10716,7 @@
         "openrouter": {
           "id": "stepfun/step-5-preview",
           "url": "https://openrouter.ai/stepfun/step-5-preview",
-          "contextLength": 1000000,
+          "contextLength": 1048576,
           "inputPerM": 1,
           "outputPerM": 2.7,
           "listedAt": "2026-10-08",
@@ -11077,7 +10989,7 @@
           "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
           "contextLength": 1048576,
           "inputPerM": 0.046,
-          "outputPerM": 0.074,
+          "outputPerM": 0.07,
           "listedAt": "2026-08-26",
           "modalities": ["text", "image", "video"]
         },
@@ -12119,26 +12031,6 @@
       }
     },
     {
-      "id": "codestral",
-      "name": "Codestral",
-      "org": "Mistral",
-      "access": {
-        "openrouter": {
-          "id": "mistralai/codestral-2508",
-          "url": "https://openrouter.ai/mistralai/codestral-2508",
-          "contextLength": 256000,
-          "inputPerM": 0.3,
-          "outputPerM": 0.9,
-          "listedAt": "2025-08-01",
-          "modalities": ["text", "file"]
-        },
-        "official": {
-          "name": "Mistral AI docs",
-          "url": "https://docs.mistral.ai"
-        }
-      }
-    },
-    {
       "id": "open-codestral-mamba",
       "name": "Open Codestral Mamba",
       "org": "Mistral",
@@ -12582,10 +12474,19 @@
     { "id": "lev", "name": "Lev", "org": "Other" },
     { "id": "yi-lightning", "name": "Yi Lightning", "org": "Other" },
     {
-      "id": "nova-lite",
-      "name": "Nova Lite",
+      "id": "amazon-nova-lite",
+      "name": "Amazon Nova Lite",
       "org": "Amazon",
       "access": {
+        "openrouter": {
+          "id": "amazon/nova-lite-v1",
+          "url": "https://openrouter.ai/amazon/nova-lite-v1",
+          "contextLength": 300000,
+          "inputPerM": 0.06,
+          "outputPerM": 0.24,
+          "listedAt": "2024-12-05",
+          "modalities": ["text", "image"]
+        },
         "official": {
           "name": "Amazon Bedrock",
           "url": "https://docs.aws.amazon.com/bedrock"
@@ -12651,10 +12552,19 @@
       }
     },
     {
-      "id": "nova-micro",
-      "name": "Nova Micro",
+      "id": "amazon-nova-micro",
+      "name": "Amazon Nova Micro",
       "org": "Amazon",
       "access": {
+        "openrouter": {
+          "id": "amazon/nova-micro-v1",
+          "url": "https://openrouter.ai/amazon/nova-micro-v1",
+          "contextLength": 128000,
+          "inputPerM": 0.035,
+          "outputPerM": 0.14,
+          "listedAt": "2024-12-05",
+          "modalities": ["text"]
+        },
         "official": {
           "name": "Amazon Bedrock",
           "url": "https://docs.aws.amazon.com/bedrock"
@@ -12761,6 +12671,15 @@
       "name": "Nova Premier",
       "org": "Amazon",
       "access": {
+        "openrouter": {
+          "id": "amazon/nova-premier-v1",
+          "url": "https://openrouter.ai/amazon/nova-premier-v1",
+          "contextLength": 1000000,
+          "inputPerM": 2.5,
+          "outputPerM": 12.5,
+          "listedAt": "2025-10-31",
+          "modalities": ["text", "image"]
+        },
         "official": {
           "name": "Amazon Bedrock",
           "url": "https://docs.aws.amazon.com/bedrock"
@@ -12768,10 +12687,19 @@
       }
     },
     {
-      "id": "nova-pro",
-      "name": "Nova Pro",
+      "id": "amazon-nova-pro",
+      "name": "Amazon Nova Pro",
       "org": "Amazon",
       "access": {
+        "openrouter": {
+          "id": "amazon/nova-pro-v1",
+          "url": "https://openrouter.ai/amazon/nova-pro-v1",
+          "contextLength": 300000,
+          "inputPerM": 0.8,
+          "outputPerM": 3.2,
+          "listedAt": "2024-12-05",
+          "modalities": ["text", "image"]
+        },
         "official": {
           "name": "Amazon Bedrock",
           "url": "https://docs.aws.amazon.com/bedrock"
@@ -14120,12 +14048,6 @@
       "sourceLabel": "Llama 3.3 Nemotron Super 49B v1"
     },
     {
-      "modelId": "deepseek-r1-plus-claude-3-5-sonnet",
-      "benchmarkId": "aider-polyglot",
-      "raw": 64,
-      "sourceLabel": "DeepSeek R1 + claude-3-5-sonnet-20241022"
-    },
-    {
       "modelId": "arcbright-elf-1-31b",
       "benchmarkId": "jevbench-intelligence",
       "raw": 71.9,
@@ -14238,13 +14160,6 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 83.8,
       "sourceLabel": "Kahn1 4B"
-    },
-    {
-      "modelId": "grok-4-20-1",
-      "benchmarkId": "lmarena",
-      "raw": 1475,
-      "stderr": 5,
-      "sourceLabel": "Grok 4.20 Beta 1"
     },
     {
       "modelId": "valkyrie-49b-v1",
@@ -15137,25 +15052,11 @@
       "sourceLabel": "inclusionai/ling-1t"
     },
     {
-      "modelId": "amazon-nova-lite-1-0",
-      "benchmarkId": "lmarena",
-      "raw": 1260,
-      "stderr": 5,
-      "sourceLabel": "Amazon Nova Lite 1.0"
-    },
-    {
       "modelId": "minimax-m1",
       "benchmarkId": "lmarena",
       "raw": 1364,
       "stderr": 4,
       "sourceLabel": "MiniMax-M1"
-    },
-    {
-      "modelId": "amazon-nova-micro-1-0",
-      "benchmarkId": "lmarena",
-      "raw": 1241,
-      "stderr": 5,
-      "sourceLabel": "Amazon Nova Micro 1.0"
     },
     {
       "modelId": "o1-mini",
@@ -15302,13 +15203,6 @@
       "benchmarkId": "parsebench-visual-grounding",
       "raw": 70.5,
       "sourceLabel": "MiniCPM-OCR 1.0"
-    },
-    {
-      "modelId": "amazon-nova-pro-1-0",
-      "benchmarkId": "lmarena",
-      "raw": 1290,
-      "stderr": 5,
-      "sourceLabel": "Amazon Nova Pro 1.0"
     },
     {
       "modelId": "o1",
@@ -16214,6 +16108,42 @@
       "raw": 80.68,
       "stderr": 1.21,
       "sourceLabel": "Magistral Small 1.2 (09/2025)"
+    },
+    {
+      "modelId": "magistral-small-1-2",
+      "benchmarkId": "enkrypt-jailbreak",
+      "raw": 12.3,
+      "sourceLabel": "magistral-small-2509"
+    },
+    {
+      "modelId": "magistral-small-1-2",
+      "benchmarkId": "enkrypt-harmful",
+      "raw": 63.9,
+      "sourceLabel": "magistral-small-2509"
+    },
+    {
+      "modelId": "magistral-small-1-2",
+      "benchmarkId": "enkrypt-cbrn",
+      "raw": 15.5,
+      "sourceLabel": "magistral-small-2509"
+    },
+    {
+      "modelId": "magistral-small-1-2",
+      "benchmarkId": "enkrypt-toxicity",
+      "raw": 12.5,
+      "sourceLabel": "magistral-small-2509"
+    },
+    {
+      "modelId": "magistral-small-1-2",
+      "benchmarkId": "enkrypt-bias",
+      "raw": 81.9,
+      "sourceLabel": "magistral-small-2509"
+    },
+    {
+      "modelId": "magistral-small-1-2",
+      "benchmarkId": "enkrypt-insecure-code",
+      "raw": 63.1,
+      "sourceLabel": "magistral-small-2509"
     },
     {
       "modelId": "muse-spark-1-2",
@@ -22821,12 +22751,6 @@
       "sourceLabel": "MiniCPM-Llama3-V 2.5"
     },
     {
-      "modelId": "qwq-32b-plus-qwen-2-5-coder-instruct",
-      "benchmarkId": "aider-polyglot",
-      "raw": 26.2,
-      "sourceLabel": "QwQ-32B + Qwen 2.5 Coder Instruct"
-    },
-    {
       "modelId": "qwen2-5-coder-32b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1271,
@@ -25562,12 +25486,6 @@
       "sourceLabel": "aya-23-8B"
     },
     {
-      "modelId": "qwen3-235b-a22b-diff-no-think-alibaba-api",
-      "benchmarkId": "aider-polyglot",
-      "raw": 59.6,
-      "sourceLabel": "Qwen3 235B A22B diff, no think, Alibaba API"
-    },
-    {
       "modelId": "qwen3-235b-a22b-instruct",
       "benchmarkId": "lmarena",
       "raw": 1422,
@@ -25585,6 +25503,12 @@
       "benchmarkId": "livecodebench",
       "raw": 65.9,
       "sourceLabel": "Qwen3-235B-A22B"
+    },
+    {
+      "modelId": "qwen3-235b-a22b-instruct",
+      "benchmarkId": "aider-polyglot",
+      "raw": 59.6,
+      "sourceLabel": "Qwen3 235B A22B (no think)"
     },
     {
       "modelId": "qwen3-235b-a22b-instruct",
@@ -26026,6 +25950,12 @@
       "benchmarkId": "aider-polyglot",
       "raw": 11.1,
       "sourceLabel": "Codestral 25.01"
+    },
+    {
+      "modelId": "codestral-25-08",
+      "benchmarkId": "kagi",
+      "raw": 32.5,
+      "sourceLabel": "mistralai/codestral-2508"
     },
     {
       "modelId": "hunyuan-standard-256k",
@@ -27808,12 +27738,6 @@
       "raw": -396,
       "stderr": 20,
       "sourceLabel": "Nanbeige4.1-3B"
-    },
-    {
-      "modelId": "o3-plus-gpt-4-1",
-      "benchmarkId": "aider-polyglot",
-      "raw": 78.2,
-      "sourceLabel": "o3 (high) + gpt-4.1"
     },
     {
       "modelId": "granite-4-2-3b",
@@ -33465,6 +33389,12 @@
     },
     {
       "modelId": "nvidia-nemotron-3-5-lightning-30b-a3b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 6,
+      "sourceLabel": "Nemotron 3.5 Lightning"
+    },
+    {
+      "modelId": "nvidia-nemotron-3-5-lightning-30b-a3b",
       "benchmarkId": "aa-gdpval",
       "raw": 646,
       "stderr": 24,
@@ -38777,14 +38707,14 @@
       "modelId": "gemini-4-carbon",
       "benchmarkId": "aa-gdpval",
       "raw": 1733,
-      "stderr": 21,
+      "stderr": 24,
       "sourceLabel": "Gemini 4 Carbon (High)"
     },
     {
       "modelId": "gemini-4-carbon",
       "benchmarkId": "aa-briefcase",
-      "raw": 1609,
-      "stderr": 10,
+      "raw": 1610,
+      "stderr": 11,
       "sourceLabel": "Gemini 4 Carbon (High)"
     },
     {
@@ -40832,8 +40762,8 @@
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "artificial-analysis",
-      "raw": 25,
-      "sourceLabel": "Mistral Large 4 Preview"
+      "raw": 26,
+      "sourceLabel": "Mistral Large 4 (high)"
     },
     {
       "modelId": "mistral-large-4",
@@ -40845,9 +40775,9 @@
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "aa-briefcase",
-      "raw": 1391,
-      "stderr": 11,
-      "sourceLabel": "Mistral Large 4 Preview"
+      "raw": 1349,
+      "stderr": 10,
+      "sourceLabel": "Mistral Large 4 (High)"
     },
     {
       "modelId": "mistral-large-4",
@@ -41044,6 +40974,28 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 15.6,
       "sourceLabel": "mistral-large-4-0"
+    },
+    {
+      "modelId": "mistral-large-4-oss",
+      "benchmarkId": "vals-legal_research",
+      "raw": 35.58,
+      "stderr": 3.33,
+      "sourceLabel": "Mistral Large 4 OSS"
+    },
+    {
+      "modelId": "mistral-large-4-oss",
+      "benchmarkId": "vals-hlab",
+      "raw": 15.83,
+      "stderr": 3.13,
+      "sourceLabel": "Mistral Large 4 OSS"
+    },
+    {
+      "modelId": "mistral-large-4-oss",
+      "benchmarkId": "vals-vibe-code",
+      "raw": 81.56,
+      "stderr": 3.29,
+      "sourceLabel": "Mistral Large 4 OSS",
+      "scaffold": "OpenHands"
     },
     {
       "modelId": "llama-4-maverick-instruct",
@@ -41655,6 +41607,12 @@
     },
     {
       "modelId": "mistral-small-4",
+      "benchmarkId": "artificial-analysis",
+      "raw": 4,
+      "sourceLabel": "Mistral Small 4"
+    },
+    {
+      "modelId": "mistral-small-4",
       "benchmarkId": "aa-gdpval",
       "raw": 370,
       "stderr": 22,
@@ -41664,7 +41622,7 @@
       "modelId": "mistral-small-4",
       "benchmarkId": "aa-briefcase",
       "raw": 241,
-      "stderr": 10.5,
+      "stderr": 11,
       "sourceLabel": "Mistral Small 4 (Reasoning)"
     },
     {
@@ -56329,12 +56287,6 @@
       "sourceLabel": "inception/mercury-coder"
     },
     {
-      "modelId": "codestral",
-      "benchmarkId": "kagi",
-      "raw": 32.5,
-      "sourceLabel": "mistralai/codestral-2508"
-    },
-    {
       "modelId": "open-codestral-mamba",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 11.1,
@@ -58121,43 +58073,50 @@
       "sourceLabel": "yi-lightning"
     },
     {
-      "modelId": "nova-lite",
+      "modelId": "amazon-nova-lite",
+      "benchmarkId": "lmarena",
+      "raw": 1260,
+      "stderr": 5,
+      "sourceLabel": "Amazon Nova Lite 1.0"
+    },
+    {
+      "modelId": "amazon-nova-lite",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 7,
       "sourceLabel": "amazon.nova-lite-v1:0"
     },
     {
-      "modelId": "nova-lite",
+      "modelId": "amazon-nova-lite",
       "benchmarkId": "enkrypt-harmful",
       "raw": 15.6,
       "sourceLabel": "amazon.nova-lite-v1:0"
     },
     {
-      "modelId": "nova-lite",
+      "modelId": "amazon-nova-lite",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 7.3,
       "sourceLabel": "amazon.nova-lite-v1:0"
     },
     {
-      "modelId": "nova-lite",
+      "modelId": "amazon-nova-lite",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 4.2,
       "sourceLabel": "amazon.nova-lite-v1:0"
     },
     {
-      "modelId": "nova-lite",
+      "modelId": "amazon-nova-lite",
       "benchmarkId": "enkrypt-bias",
       "raw": 85,
       "sourceLabel": "amazon.nova-lite-v1:0"
     },
     {
-      "modelId": "nova-lite",
+      "modelId": "amazon-nova-lite",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 35.1,
       "sourceLabel": "amazon.nova-lite-v1:0"
     },
     {
-      "modelId": "nova-lite",
+      "modelId": "amazon-nova-lite",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 93.9,
       "sourceLabel": "amazon/nova-lite-v1:0"
@@ -58250,38 +58209,38 @@
     {
       "modelId": "magistral-small",
       "benchmarkId": "enkrypt-jailbreak",
-      "raw": 12.3,
-      "sourceLabel": "magistral-small-2509"
+      "raw": 19,
+      "sourceLabel": "magistral-small-2506"
     },
     {
       "modelId": "magistral-small",
       "benchmarkId": "enkrypt-harmful",
-      "raw": 63.9,
-      "sourceLabel": "magistral-small-2509"
+      "raw": 66.7,
+      "sourceLabel": "magistral-small-2506"
     },
     {
       "modelId": "magistral-small",
       "benchmarkId": "enkrypt-cbrn",
-      "raw": 15.5,
-      "sourceLabel": "magistral-small-2509"
+      "raw": 23.8,
+      "sourceLabel": "magistral-small-2506"
     },
     {
       "modelId": "magistral-small",
       "benchmarkId": "enkrypt-toxicity",
-      "raw": 12.5,
-      "sourceLabel": "magistral-small-2509"
+      "raw": 8.4,
+      "sourceLabel": "magistral-small-2506"
     },
     {
       "modelId": "magistral-small",
       "benchmarkId": "enkrypt-bias",
-      "raw": 81.9,
-      "sourceLabel": "magistral-small-2509"
+      "raw": 85,
+      "sourceLabel": "magistral-small-2506"
     },
     {
       "modelId": "magistral-small",
       "benchmarkId": "enkrypt-insecure-code",
-      "raw": 63.1,
-      "sourceLabel": "magistral-small-2509"
+      "raw": 48,
+      "sourceLabel": "magistral-small-2506"
     },
     {
       "modelId": "qwen-max",
@@ -58383,49 +58342,56 @@
       "sourceLabel": "inception/mercury"
     },
     {
-      "modelId": "nova-micro",
+      "modelId": "amazon-nova-micro",
+      "benchmarkId": "lmarena",
+      "raw": 1241,
+      "stderr": 5,
+      "sourceLabel": "Amazon Nova Micro 1.0"
+    },
+    {
+      "modelId": "amazon-nova-micro",
       "benchmarkId": "bfcl",
       "raw": 22.29,
       "sourceLabel": "Amazon-Nova-Micro-v1:0"
     },
     {
-      "modelId": "nova-micro",
+      "modelId": "amazon-nova-micro",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 7.2,
       "sourceLabel": "amazon.nova-micro-v1:0"
     },
     {
-      "modelId": "nova-micro",
+      "modelId": "amazon-nova-micro",
       "benchmarkId": "enkrypt-harmful",
       "raw": 20.6,
       "sourceLabel": "amazon.nova-micro-v1:0"
     },
     {
-      "modelId": "nova-micro",
+      "modelId": "amazon-nova-micro",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 9.7,
       "sourceLabel": "amazon.nova-micro-v1:0"
     },
     {
-      "modelId": "nova-micro",
+      "modelId": "amazon-nova-micro",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 3,
       "sourceLabel": "amazon.nova-micro-v1:0"
     },
     {
-      "modelId": "nova-micro",
+      "modelId": "amazon-nova-micro",
       "benchmarkId": "enkrypt-bias",
       "raw": 87.1,
       "sourceLabel": "amazon.nova-micro-v1:0"
     },
     {
-      "modelId": "nova-micro",
+      "modelId": "amazon-nova-micro",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 29.8,
       "sourceLabel": "amazon.nova-micro-v1:0"
     },
     {
-      "modelId": "nova-micro",
+      "modelId": "amazon-nova-micro",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 94.5,
       "sourceLabel": "amazon/nova-micro-v1:0"
@@ -58970,49 +58936,56 @@
       "sourceLabel": "us.amazon.nova-premier-v1:0"
     },
     {
-      "modelId": "nova-pro",
+      "modelId": "amazon-nova-pro",
+      "benchmarkId": "lmarena",
+      "raw": 1290,
+      "stderr": 5,
+      "sourceLabel": "Amazon Nova Pro 1.0"
+    },
+    {
+      "modelId": "amazon-nova-pro",
       "benchmarkId": "bfcl",
       "raw": 24.97,
       "sourceLabel": "Amazon-Nova-Pro-v1:0"
     },
     {
-      "modelId": "nova-pro",
+      "modelId": "amazon-nova-pro",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 7.9,
       "sourceLabel": "amazon.nova-pro-v1:0"
     },
     {
-      "modelId": "nova-pro",
+      "modelId": "amazon-nova-pro",
       "benchmarkId": "enkrypt-harmful",
       "raw": 17.8,
       "sourceLabel": "amazon.nova-pro-v1:0"
     },
     {
-      "modelId": "nova-pro",
+      "modelId": "amazon-nova-pro",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 5.5,
       "sourceLabel": "amazon.nova-pro-v1:0"
     },
     {
-      "modelId": "nova-pro",
+      "modelId": "amazon-nova-pro",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 4.2,
       "sourceLabel": "amazon.nova-pro-v1:0"
     },
     {
-      "modelId": "nova-pro",
+      "modelId": "amazon-nova-pro",
       "benchmarkId": "enkrypt-bias",
       "raw": 84.8,
       "sourceLabel": "amazon.nova-pro-v1:0"
     },
     {
-      "modelId": "nova-pro",
+      "modelId": "amazon-nova-pro",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 52,
       "sourceLabel": "amazon.nova-pro-v1:0"
     },
     {
-      "modelId": "nova-pro",
+      "modelId": "amazon-nova-pro",
       "benchmarkId": "vectara-factual-consistency",
       "raw": 94.9,
       "sourceLabel": "amazon/nova-pro-v1:0"
