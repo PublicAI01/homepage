@@ -74,10 +74,22 @@ export function channelsOf(access: Access | undefined): Channel[] {
   return out;
 }
 
-export function recommend(access: Access | undefined): Recommendation {
+/**
+ * `rule` is the track's, not a constant: a population no catalog reaches has
+ * its own (UNCATALOGUED_RULE). It used to be ACCESS_RULE here and the
+ * exception lived in describeIndex alone, so every *row* of the image and
+ * video tracks still told an agent to "use the OpenRouter id" — which 67 of
+ * 67 video models and 139 of 144 image models do not have. That is the same
+ * bug 2026-09-16 fixed in the method document, surviving in the rows
+ * (2026-10-30). One argument, so the document and the rows cannot disagree.
+ */
+export function recommend(
+  access: Access | undefined,
+  rule: string = ACCESS_RULE,
+): Recommendation {
   const channels = channelsOf(access);
   const [recommended = null, ...alternatives] = channels;
-  return { recommended, alternatives, rule: ACCESS_RULE };
+  return { recommended, alternatives, rule };
 }
 
 /** "1,000,000" → "1M", "131,072" → "128K"; what a reader expects to see. */

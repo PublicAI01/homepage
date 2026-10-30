@@ -5,8 +5,10 @@ import type { Benchmark } from '../src/app/model-index/data/types.ts';
 import { sourceLabel } from '../src/app/model-index/lib/boards.ts';
 import {
   backlogOf,
+  coverageShift,
   diff,
   type HistoryEntry,
+  massMoveCause,
 } from '../src/app/model-index/lib/diff.ts';
 import { OVERALL } from '../src/app/model-index/lib/weights.ts';
 
@@ -162,9 +164,12 @@ const movers = c.models.filter(
 );
 const gained = movers.filter((m) => m.kind === 'ranked');
 const lost = movers.filter((m) => m.kind === 'unranked');
+// Whether the boards shrank or grew under them, which is what says why
+// (massMoveCause). Read from the same two snapshots the diff came from.
+const shift = coverageShift(from, to);
 const bulk = (
   list: typeof movers,
-  verb: string,
+  verb: 'entered' | 'left',
   at: (m: (typeof movers)[number]) => number | undefined,
 ) => {
   const named = [...list]
@@ -173,12 +178,14 @@ const bulk = (
     .map((m) => m.name)
     .join(', ');
   // "a change to what ranking requires, or to which boards answered" made
-  // the reader guess which. When nothing stopped answering, it was the
-  // rule, and the mail can say so.
-  const why =
-    c.removedSources.length === 0
-      ? 'A whole group moving together is a change to what ranking requires, not to the models: the method is on the index page.'
-      : 'A whole group moving together is a change to what ranking requires, or to which boards answered; the method is on the index page.';
+  // the reader guess which. The snapshots know; the sentence is picked from
+  // them rather than from whether a source disappeared entirely.
+  const why = massMoveCause(
+    verb,
+    list.length,
+    verb === 'left' ? shift.lost : shift.gained,
+    c.removedSources,
+  );
   return `${list.length} models ${verb} the Overall ranking at once — ${named} and ${list.length - 3} more. ${why}`;
 };
 // When a group that size joins or leaves, every place below it shifts by

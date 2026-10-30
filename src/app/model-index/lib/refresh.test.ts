@@ -193,3 +193,85 @@ describe('scripts/refresh/daily.sh', { timeout: 60_000 }, () => {
     expect(s.dirty()).toBe('');
   });
 });
+
+/**
+ * scripts/refresh/watchdog.sh. Freshness used to be the whole of it, and a
+ * refresh that runs on time and publishes half an index passed every check
+ * there was: on 2026-10-28 two of the five boards that build the Overall
+ * published about half their rows, 65 ranked models became 41, and this
+ * script said "没事" for three days.
+ *
+ * `curl` and `date` are stand-ins. `date -j` is BSD and CI is Linux, and
+ * the date path is not what is under test here — the coverage decision is.
+ * No mail can leave: with BUGSCAN_DIGEST set the script appends to that
+ * file, which is also how it runs under the noon scan.
+ */
+describe('scripts/refresh/watchdog.sh', { timeout: 30_000 }, () => {
+  const WATCHDOG = join(process.cwd(), 'scripts', 'refresh', 'watchdog.sh');
+
+  function watcher() {
+    root = mkdtempSync(join(tmpdir(), 'watchdog-'));
+    const bin = join(root, 'bin');
+    mkdirSync(bin);
+    const stub = (name: string, body: string) => {
+      writeFileSync(join(bin, name), `#!/bin/sh\n${body}\n`);
+      chmodSync(join(bin, name), 0o755);
+    };
+    stub('curl', 'cat "$WATCHDOG_BODY"');
+    // Only the three forms the script asks for, read as UTC.
+    stub(
+      'date',
+      `case "$1" in
+  +%s) exec node -e 'process.stdout.write(String(Math.floor(Date.now()/1e3)))' ;;
+  -j) exec node -e 'process.stdout.write(String(Date.parse(process.argv[1]+"Z")/1e3))' "$4" ;;
+  -r) exec node -e 'process.stdout.write(new Date(+process.argv[1]*1e3).toISOString())' "$2" ;;
+esac`,
+    );
+    const digest = join(root, 'digest.md');
+    return {
+      said: () => (existsSync(digest) ? readFileSync(digest, 'utf8') : ''),
+      /** One run against a published index that ranks `ranked` models. */
+      run: (ranked: number) => {
+        const body = join(root, 'body.json');
+        writeFileSync(
+          body,
+          `{"generatedAt":"${new Date().toISOString()}","scope":"Overall",` +
+            `"total":344,"scopeTotal":${ranked},"models":[{"ranked":true}]}`,
+        );
+        return spawnSync('bash', [WATCHDOG], {
+          encoding: 'utf8',
+          env: {
+            ...process.env,
+            PATH: `${bin}:${process.env.PATH}`,
+            HOME: root,
+            REFRESH_STATE: join(root, 'state'),
+            BUGSCAN_DIGEST: digest,
+            WATCHDOG_BODY: body,
+          },
+        });
+      },
+    };
+  }
+
+  it('speaks up when the index quietly stops ranking a third of its models', () => {
+    const w = watcher();
+    // Nothing to compare the first reading with; it is only recorded.
+    expect(w.run(65).status).toBe(0);
+    expect(w.said()).toBe('');
+
+    const dropped = w.run(41);
+    expect(dropped.status).not.toBe(0);
+    expect(w.said()).toContain('65 → 41');
+    // One event, one mail: tomorrow compares against 41, not against 65,
+    // or a deliberate change to the rules would be re-announced for ever.
+    expect(w.run(43).status).toBe(0);
+  });
+
+  it('keeps quiet about a move no larger than a board changing generation', () => {
+    const w = watcher();
+    w.run(66);
+    // -13.6%: LiveBench 2.0 replacing 1.0 on 2026-10-13, which a person did.
+    expect(w.run(57).status).toBe(0);
+    expect(w.said()).toBe('');
+  });
+});

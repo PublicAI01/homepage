@@ -1,5 +1,10 @@
 import type { Benchmark, IndexData } from '../data/types';
-import { recommend, type Recommendation, UNCATALOGUED_RULE } from './access';
+import {
+  ACCESS_RULE,
+  recommend,
+  type Recommendation,
+  UNCATALOGUED_RULE,
+} from './access';
 import {
   aggregate,
   type AggregateRow,
@@ -222,6 +227,10 @@ export function createTrack(input: TrackInput) {
   const API_BASE = input.apiBase ?? input.url;
   const MCP_URL = `${API_BASE}/mcp`;
   const API_URL = `${API_BASE}/api`;
+  // The access rule this track answers with, everywhere it answers: the
+  // method document and every row. Two copies of the condition meant only
+  // the document got the exception (see recommend).
+  const ACCESS = input.uncatalogued ? UNCATALOGUED_RULE : ACCESS_RULE;
   /**
    * One read model for everything that answers questions about the index: the
    * page, the MCP server and the JSON API. The snapshot is static, so the
@@ -429,7 +438,7 @@ export function createTrack(input: TrackInput) {
       coverable: r.coverable,
       reports: r.reports,
       agreement: r.covered > 1 ? agreement(r.dispersion) : 'single board',
-      access: recommend(r.model.access),
+      access: recommend(r.model.access, ACCESS),
     };
   }
 
@@ -848,9 +857,7 @@ export function createTrack(input: TrackInput) {
         category,
         domains,
       })),
-      access: input.uncatalogued
-        ? UNCATALOGUED_RULE
-        : recommend(undefined).rule,
+      access: ACCESS,
       limits: [
         'Reasoning-effort tiers are matched by rule; the highest published tier is indexed and the exact label kept.',
         'Some sources score a scaffold (model + agent framework), recorded beside the figure.',

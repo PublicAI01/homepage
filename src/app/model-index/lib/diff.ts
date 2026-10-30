@@ -214,6 +214,70 @@ export function backlogOf(
   return out;
 }
 
+/**
+ * Models in both snapshots whose recognised-board count moved, either way.
+ *
+ * The one fact that separates "the rule for ranking changed" from "a board
+ * published fewer rows this time", and the only one the history file can
+ * answer: it records each model's board count, not each board's model count.
+ * The two look identical from the rank column alone, and they are read by a
+ * person in opposite ways (see massMoveCause).
+ */
+export function coverageShift(
+  from: HistoryEntry,
+  to: HistoryEntry,
+): { lost: number; gained: number } {
+  let lost = 0;
+  let gained = 0;
+  for (const [id, now] of Object.entries(to.models)) {
+    const was = from.models[id];
+    // Only a model that is in both: one that arrived or left has no
+    // before-and-after to compare, and counting it would read as a board
+    // that shrank every time a snapshot drops a row.
+    if (!was) continue;
+    if (now.covered < was.covered) lost++;
+    if (now.covered > was.covered) gained++;
+  }
+  return { lost, gained };
+}
+
+/**
+ * Why a whole group of models gained or lost their rank at once, in one
+ * sentence, from what the snapshots actually show.
+ *
+ * This used to be two sentences chosen on `removedSources.length === 0`
+ * alone: no source removed meant "a change to what ranking requires, not to
+ * the models". There is a third case, and it is the one that matters — a
+ * board still answering but publishing half its rows. On 2026-10-28
+ * Artificial Analysis went from 88 rows to 38 and LiveBench from 51 to 30;
+ * 24 models lost their rank, 71 lost board coverage, no source was removed,
+ * and the week's mail told subscribers the ranking rule had changed. It had
+ * not, and that sentence was the only thing anyone would have read about the
+ * loss (2026-10-30).
+ *
+ * The coverage count is what tells them apart, and the margin is wide: that
+ * day 71 models lost a board against 24 losing a rank, while the two real
+ * rule changes moved 111 and 48 models with 2 and 1 losing a board. So the
+ * boards are the explanation when at least as many models lost or gained
+ * coverage as lost or gained a rank.
+ */
+export function massMoveCause(
+  verb: 'entered' | 'left',
+  group: number,
+  coverage: number,
+  removedSources: readonly string[],
+): string {
+  if (coverage > 0 && coverage >= group)
+    return `${coverage} models are scored by ${
+      verb === 'left' ? 'fewer' : 'more'
+    } boards than they were, so a source published a ${
+      verb === 'left' ? 'shorter' : 'longer'
+    } list this time — not a change to what ranking requires. Every board links to its own page from the index.`;
+  if (removedSources.length > 0)
+    return 'A whole group moving together is a change to what ranking requires, or to which boards answered; the method is on the index page.';
+  return 'A whole group moving together is a change to what ranking requires, not to the models: the method is on the index page.';
+}
+
 export interface Change {
   id: string;
   name: string;

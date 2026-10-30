@@ -8,9 +8,11 @@ import {
   aliasResolver,
   appendEntry,
   backlogOf,
+  coverageShift,
   diff,
   type HistoryEntry,
   lineage,
+  massMoveCause,
 } from './diff';
 import { fallbackBadge } from './weights';
 
@@ -373,5 +375,94 @@ describe('aliasResolver: a name changed and changed back', () => {
     ]);
     expect(resolve('a')).toBe('c');
     expect(resolve('unknown')).toBe('unknown');
+  });
+});
+
+/**
+ * Why a group of models all lost their rank at once. Two causes that look
+ * the same in the rank column and read in opposite ways: the ranking rule
+ * changed, or a board published a shorter list. The weekly mail asserted the
+ * first whenever no source had disappeared, which is exactly wrong for the
+ * second (2026-10-28, see massMoveCause).
+ */
+describe('a mass move in and out of the ranking', () => {
+  /** `models` maps id to [rank, boards that scored it]. */
+  const snap = (
+    date: string,
+    models: Record<string, [number | null, number]>,
+    sources = ['a', 'b'],
+  ): HistoryEntry => ({
+    date,
+    generatedAt: `${date}T06:00:00.000Z`,
+    sources,
+    models: Object.fromEntries(
+      Object.entries(models).map(([id, [rank, covered]]) => [
+        id,
+        { name: id.toUpperCase(), org: 'o', rank, index: 60, covered },
+      ]),
+    ),
+  });
+  const many = (
+    n: number,
+    rank: (i: number) => number | null,
+    covered: number,
+  ) =>
+    Object.fromEntries(
+      Array.from({ length: n }, (_, i) => [`m${i}`, [rank(i), covered]]),
+    ) as Record<string, [number | null, number]>;
+
+  it('counts the models whose board coverage moved, and only those in both', () => {
+    const from = snap('2026-10-25', { a: [1, 3], b: [2, 3], gone: [3, 3] });
+    const to = snap('2026-10-28', { a: [1, 2], b: [2, 3], fresh: [3, 1] });
+    expect(coverageShift(from, to)).toEqual({ lost: 1, gained: 0 });
+    expect(coverageShift(to, from)).toEqual({ lost: 0, gained: 1 });
+  });
+
+  // The real shape of 2026-10-28: two boards published about half their rows,
+  // 24 models lost their rank, 71 lost a board, nothing was removed.
+  it('blames the boards when the boards shrank, not the rule', () => {
+    const from = snap(
+      '2026-10-25',
+      many(30, (i) => i + 1, 3),
+    );
+    const to = snap(
+      '2026-10-28',
+      many(30, (i) => (i < 6 ? i + 1 : null), 2),
+    );
+    const shift = coverageShift(from, to);
+    const why = massMoveCause('left', 24, shift.lost, []);
+    expect(why).toContain('fewer boards');
+    expect(why).toContain('shorter list');
+    expect(why).not.toContain('a change to what ranking requires, not');
+  });
+
+  // And the real shape of 2026-09-11, when the two-publisher rule came in:
+  // 111 models lost their rank with their coverage untouched.
+  it('blames the rule when the boards held, which is what it used to always say', () => {
+    const from = snap(
+      '2026-09-10',
+      many(30, (i) => i + 1, 3),
+    );
+    const to = snap(
+      '2026-09-11',
+      many(30, (i) => (i < 6 ? i + 1 : null), 3),
+    );
+    const shift = coverageShift(from, to);
+    expect(shift).toEqual({ lost: 0, gained: 0 });
+    expect(massMoveCause('left', 24, shift.lost, [])).toBe(
+      'A whole group moving together is a change to what ranking requires, not to the models: the method is on the index page.',
+    );
+  });
+
+  it('still names a board that stopped answering altogether', () => {
+    expect(massMoveCause('left', 24, 0, ['terminal-bench'])).toContain(
+      'which boards answered',
+    );
+  });
+
+  it('reads a mass arrival the other way round', () => {
+    const why = massMoveCause('entered', 12, 40, []);
+    expect(why).toContain('more boards');
+    expect(why).toContain('longer list');
   });
 });

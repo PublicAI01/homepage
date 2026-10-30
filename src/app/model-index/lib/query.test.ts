@@ -88,8 +88,20 @@ describe('rankModels', () => {
     expect(describeIndex().access).toBe(ACCESS_RULE);
   });
 
+  // Every row, not only the method document. The exception used to live in
+  // describeIndex alone, so an agent reading the rows was still told to call
+  // a video model by an OpenRouter id that no video model has (2026-10-30).
   it('does not send a video model to OpenRouter', () => {
     expect(video.describeIndex().access).toBe(UNCATALOGUED_RULE);
+    const rows = ok(video.rankModels({ limit: 5 })).models;
+    expect(rows.length).toBeGreaterThan(0);
+    for (const m of rows) expect(m.access.rule).toBe(UNCATALOGUED_RULE);
+    expect(video.getModel(rows[0].id).model?.access.rule).toBe(
+      UNCATALOGUED_RULE,
+    );
+    // None of them carries an OpenRouter id to recommend, either.
+    for (const m of rows)
+      expect(m.access.recommended?.kind).not.toBe('openrouter');
   });
 
   it('explains an unknown scope instead of guessing', () => {
