@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T11:55:45.828Z",
+  "generatedAt": "2026-10-30T21:52:25.421Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -225,17 +225,6 @@
           "listedAt": "2026-06-18",
           "modalities": ["image", "text"]
         },
-        "official": {
-          "name": "Gemini API",
-          "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      }
-    },
-    {
-      "id": "gemini-3-1-flash-image-nano-banana-2-web-search",
-      "name": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)",
-      "org": "Google",
-      "access": {
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
@@ -520,17 +509,6 @@
         "official": {
           "name": "Gemini API",
           "url": "https://ai.google.dev/gemini-api/docs"
-        }
-      }
-    },
-    {
-      "id": "hunyuan-image-3-0-tencent-cloud",
-      "name": "Hunyuan Image 3.0 (Tencent Cloud)",
-      "org": "Tencent",
-      "access": {
-        "official": {
-          "name": "Tencent Hunyuan",
-          "url": "https://cloud.tencent.com/product/hunyuan"
         }
       }
     },
@@ -1313,14 +1291,14 @@
       "sourceLabel": "Nano Banana 2 (Gemini 3.1 Flash Image)"
     },
     {
-      "modelId": "gemini-3-1-flash-image-nano-banana-2-web-search",
+      "modelId": "nano-banana-2-gemini-3-1-flash-image",
       "benchmarkId": "arena-text-to-image",
       "raw": 1257,
       "stderr": 4,
       "sourceLabel": "Gemini 3.1 Flash Image (nano-banana-2, Web Search)"
     },
     {
-      "modelId": "gemini-3-1-flash-image-nano-banana-2-web-search",
+      "modelId": "nano-banana-2-gemini-3-1-flash-image",
       "benchmarkId": "arena-image-edit",
       "raw": 1387,
       "stderr": 3,
@@ -1949,13 +1927,6 @@
       "sourceLabel": "Gemini 3 Pro Image (nano-banana-pro, 2K)"
     },
     {
-      "modelId": "hunyuan-image-3-0-tencent-cloud",
-      "benchmarkId": "aa-text-to-image",
-      "raw": 989,
-      "stderr": 16,
-      "sourceLabel": "HunyuanImage 3.0 (Tencent Cloud)"
-    },
-    {
       "modelId": "dall-e-3",
       "benchmarkId": "arena-text-to-image",
       "raw": 967,
@@ -1979,9 +1950,9 @@
     {
       "modelId": "hunyuan-image-3-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 932,
+      "raw": 989,
       "stderr": 16,
-      "sourceLabel": "HunyuanImage 3.0"
+      "sourceLabel": "HunyuanImage 3.0 (Tencent Cloud)"
     },
     {
       "modelId": "hunyuan-image-3-0",
