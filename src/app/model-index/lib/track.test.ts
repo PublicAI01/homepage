@@ -213,3 +213,72 @@ describe('default minBoards in a scope', () => {
     expect(r.models.map((m) => m.id)).not.toContain('only');
   });
 });
+
+describe('head to head', () => {
+  // `blogged` is in this domain on the strength of one launch post and
+  // nothing else: no recognised board measured it, so it takes no number
+  // here and no other outlet on the site ranks it. Counted as an opponent
+  // all the same, its own publisher's post decided whether another model
+  // "finishes behind" it — and, as the subject, decided that it beat the
+  // models the boards did measure (2026-10-31).
+  const report = (id: string): Benchmark => ({
+    ...board(id, 'Blogger'),
+    kind: 'report',
+  });
+  // Asymmetric, so the three board-measured models do not all tie at 50:
+  // a tie counts for neither side and would hide the bug.
+  const rows = (benchmarkId: string, raws: [number, number, number]) =>
+    (['m1', 'm2', 'm3'] as const).map((modelId, i) => ({
+      modelId,
+      benchmarkId,
+      raw: raws[i],
+      sourceLabel: modelId,
+    }));
+  const track = createTrack({
+    data: {
+      ...data,
+      benchmarks: [...data.benchmarks, report('post')],
+      models: [...data.models, { id: 'blogged', name: 'blogged', org: 'Org' }],
+      scores: [
+        ...rows('a', [90, 60, 30]),
+        ...rows('b', [80, 50, 20]),
+        // A launch post comparing itself with two rivals: three rows, the
+        // fewest that standardize at all.
+        {
+          modelId: 'blogged',
+          benchmarkId: 'post',
+          raw: 99,
+          sourceLabel: 'blogged',
+        },
+        { modelId: 'm1', benchmarkId: 'post', raw: 50, sourceLabel: 'm1' },
+        { modelId: 'm2', benchmarkId: 'post', raw: 10, sourceLabel: 'm2' },
+      ],
+    },
+    weighting: weighting(50, 50),
+    url: 'https://publicai.io/model-index/x',
+  });
+  const standings = (id: string) => {
+    const found = track.modelStandings(id);
+    if ('error' in found) throw new Error(found.error);
+    return found;
+  };
+
+  it('places blogged by its report alone, with a score and no number', () => {
+    for (const s of standings('blogged').standings) {
+      expect(s.rankedInScope).toBe(false);
+      expect(s.position).toBeNull();
+      expect(s.score).toBeGreaterThan(0);
+    }
+  });
+
+  it('never counts a report-placed row as an opponent', () => {
+    const { rivals } = standings('m3');
+    // The boards' own rows still count: this is not an empty list.
+    expect(rivals.map((r) => r.id).sort()).toEqual(['m1', 'm2']);
+    for (const r of rivals) expect(r.ahead).toBe(r.met);
+  });
+
+  it('claims nothing in a scope where only a report placed the subject', () => {
+    expect(standings('blogged').rivals).toEqual([]);
+  });
+});

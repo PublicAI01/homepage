@@ -156,7 +156,7 @@ export interface Rival {
   id: string;
   name: string;
   org: string;
-  /** Scopes where both are placed and one finished ahead; a tie counts for neither. */
+  /** Scopes where both are placed and one finished ahead; a tie counts for neither, and a row only a report ✱ placed counts in neither direction. */
   met: number;
   /** Of those, how many the rival finished ahead in. */
   ahead: number;
@@ -953,15 +953,37 @@ export function createTrack(input: TrackInput) {
 
       // By score, not by row order: two rows at one score are a tie, and
       // the order between them says nothing about who finished ahead.
-      const mine = scopeScore(ranked[idx], scope)!;
-      for (const r of ranked) {
-        if (r.model.id === model.id) continue;
-        const theirs = scopeScore(r, scope);
-        if (theirs === null || theirs === mine) continue;
-        const seen = met.get(r.model.id) ?? { row: r, met: 0, ahead: 0 };
-        seen.met += 1;
-        if (theirs > mine) seen.ahead += 1;
-        met.set(r.model.id, seen);
+      //
+      // And only where a recognised board placed both of them, which is
+      // what Rival.met has always said it counts ("scopes where both are
+      // placed") and what `eligible` decides for the leader, the total and
+      // every position on the site. A row a report ✱ alone put in a scope
+      // keeps its figure and takes no number everywhere else — here it was
+      // counted as an opponent, and as a defeat. K2 Horizon 375B is placed
+      // by IFM's own launch post in 10 of the 12 domains it appears in, so
+      // "finishes behind … and ahead of …" on its page, and the won/lost
+      // bars beside it, were mostly that post's word with no ✱ anywhere to
+      // say so — the same thing boardsFirst exists to stop (2026-09-13),
+      // surviving in this one tally (2026-10-31).
+      //
+      // Both sides, not just the opponent: a scope where the subject
+      // itself is only ✱-placed would otherwise let its own publisher's
+      // post decide that it beat models the boards measured. A model the
+      // boards place in too few of its scopes then meets nobody often
+      // enough to clear `floor`, and the section is left off its page —
+      // which is the honest answer to "who does it keep running into".
+      if (eligible(ranked[idx], scope)) {
+        const mine = scopeScore(ranked[idx], scope)!;
+        for (const r of ranked) {
+          if (r.model.id === model.id) continue;
+          if (!eligible(r, scope)) continue;
+          const theirs = scopeScore(r, scope);
+          if (theirs === null || theirs === mine) continue;
+          const seen = met.get(r.model.id) ?? { row: r, met: 0, ahead: 0 };
+          seen.met += 1;
+          if (theirs > mine) seen.ahead += 1;
+          met.set(r.model.id, seen);
+        }
       }
 
       const inScope = benchmarks.filter((b) =>
