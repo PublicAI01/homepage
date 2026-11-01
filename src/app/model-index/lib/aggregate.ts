@@ -434,11 +434,29 @@ export function aggregate({
   // is documented as removing only the reports' own figures. Where no board
   // measures the scope, the reports are all the evidence there is, and the
   // prior is measured against them as before.
+  //
+  // "Against them" means against their voices, not their rows. A report
+  // enters a scope once (oneVotePerReport), so the most evidence a model
+  // can hold in a report-only domain is one per-measure weight per
+  // publication — but the denominator still counted every row each post
+  // printed: in Expert reasoning two posts printing five figures made a
+  // prior of 12.5 against at most 20 of evidence, 62% where the method
+  // says 25%, and Claude Opus 5 read 55.9 where one-voice arithmetic gives
+  // 58.8 (2026-11-01). One publication, one weight, here as there.
   const priorWeight = (inScope: Benchmark[]) => {
     const boards = sumWeight(
       inScope.filter((b) => b.kind !== 'report').map((b) => b.id),
     );
-    return boards > 0 ? boards : sumWeight(inScope.map((b) => b.id));
+    if (boards > 0) return boards;
+    const perReport = new Map<string, number>();
+    for (const b of inScope)
+      perReport.set(
+        b.group,
+        Math.max(perReport.get(b.group) ?? 0, weights[b.id] ?? 0),
+      );
+    let t = 0;
+    for (const w of perReport.values()) t += w;
+    return t;
   };
   // Normalize within each measure, over the models actually present on it.
   const normalizedBy = new Map<string, Map<string, NormalizedScore>>();

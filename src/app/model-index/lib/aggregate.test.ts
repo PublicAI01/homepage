@@ -987,6 +987,55 @@ describe('one publication, one voice', () => {
     // And the board still outweighs the one voice: 'a' lost on the board.
     expect(at(five, 'a')).toBeLessThan(at(five, 'c'));
   });
+
+  it('measures the prior of a report-only scope against voices, not rows', () => {
+    // No board in the domain, so the prior is measured against the
+    // reports. Each enters once, so a post that printed five figures must
+    // leave the same prior behind as one that printed a single figure;
+    // counted per row, five figures made the prior five times heavier and
+    // pulled the same model five times harder toward 50 (2026-11-01).
+    const models = ['a', 'b', 'c'].map((id) => ({ id, name: id, org: 'o' }));
+    const bench = (id: string) => ({
+      id,
+      name: id,
+      publisher: 'blog',
+      url: 'u',
+      retrievedAt: '2026-11-01',
+      metric: 'percent' as const,
+      category: 'Reasoning',
+      domain: 'Expert reasoning',
+      kind: 'report' as const,
+      source: 'blog',
+      group: 'blog',
+    });
+    const ids = ['r1', 'r2', 'r3', 'r4', 'r5'];
+    const benchmarks = ids.map(bench);
+    const scores = ids.flatMap((b) =>
+      models.map((m, i) => ({
+        modelId: m.id,
+        benchmarkId: b,
+        raw: [90, 50, 10][i],
+        sourceLabel: m.id,
+      })),
+    );
+    const weights = Object.fromEntries(ids.map((id) => [id, 10]));
+    const run = (keep: string[]) =>
+      aggregate({
+        models,
+        benchmarks: benchmarks.filter((b) => keep.includes(b.id)),
+        scores: scores.filter((s) => keep.includes(s.benchmarkId)),
+        weights,
+        priorFraction: 0.25,
+      });
+    const at = (rows: AggregateRow[], id: string) =>
+      rows.find((r) => r.model.id === id)!.byDomain['Expert reasoning']!;
+    const five = run(ids);
+    const one = run(['r1']);
+    expect(at(five, 'a')).toBeCloseTo(at(one, 'a'), 6);
+    // One voice of weight 10 against a prior of a quarter of that voice.
+    const z = one.find((r) => r.model.id === 'a')!.perBenchmark[0].normalized;
+    expect(at(one, 'a')).toBeCloseTo((z * 10 + 50 * 2.5) / 12.5, 6);
+  });
 });
 
 describe('boardsFirst', () => {
