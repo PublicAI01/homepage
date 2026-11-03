@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T14:16:44.135Z",
+  "generatedAt": "2026-11-03T00:16:10.988Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/text-to-video",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-video.ico",
       "category": "Text-to-video",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "snapshot": "Sep 22, 2026 — across 48 models",
       "metric": "elo",
       "category": "Text-to-video",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/video/leaderboard/image-to-video",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "elo",
       "logo": "/model-index/logos/aa-image-to-video.ico",
       "category": "Image-to-video",
@@ -484,7 +484,7 @@
     {
       "modelId": "happyhorse-1-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1027,
+      "raw": 1028,
       "stderr": 17,
       "sourceLabel": "HappyHorse-1.0"
     },
@@ -498,7 +498,7 @@
     {
       "modelId": "heygen-video-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1120,
+      "raw": 1122,
       "stderr": 16,
       "sourceLabel": "HeyGen Video 1"
     },
@@ -547,7 +547,7 @@
     {
       "modelId": "gemini-omni-flash-1-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1046,
+      "raw": 1048,
       "stderr": 16,
       "sourceLabel": "Gemini Omni Flash 1.1"
     },
@@ -561,7 +561,7 @@
     {
       "modelId": "happyhorse-1-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1037,
+      "raw": 1038,
       "stderr": 16,
       "sourceLabel": "HappyHorse-1.1"
     },
@@ -673,8 +673,8 @@
     {
       "modelId": "seedance-2-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1136,
-      "stderr": 17,
+      "raw": 1138,
+      "stderr": 16,
       "sourceLabel": "Dreamina Seedance 2.0"
     },
     {
@@ -722,8 +722,8 @@
     {
       "modelId": "ltx-2-3-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 829,
-      "stderr": 19,
+      "raw": 832,
+      "stderr": 18,
       "sourceLabel": "LTX-2.3 Fast"
     },
     {
@@ -743,8 +743,8 @@
     {
       "modelId": "ltx-2-3-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 837,
-      "stderr": 19,
+      "raw": 839,
+      "stderr": 18,
       "sourceLabel": "LTX-2.3 Pro"
     },
     {
@@ -757,7 +757,7 @@
     {
       "modelId": "agnes-video-2-5",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1100,
+      "raw": 1102,
       "stderr": 18,
       "sourceLabel": "Agnes-Video-2.5"
     },
@@ -772,7 +772,7 @@
       "modelId": "ltx-2-5-fast",
       "benchmarkId": "aa-image-to-video",
       "raw": 918,
-      "stderr": 18,
+      "stderr": 17,
       "sourceLabel": "LTX-2.5 Fast"
     },
     {
@@ -792,7 +792,7 @@
     {
       "modelId": "ltx-2-5-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 910,
+      "raw": 913,
       "stderr": 18,
       "sourceLabel": "LTX-2.5 Pro"
     },
@@ -813,8 +813,8 @@
     {
       "modelId": "seedance-2-5",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1153,
-      "stderr": 17,
+      "raw": 1155,
+      "stderr": 16,
       "sourceLabel": "Dreamina Seedance 2.5"
     },
     {
@@ -883,7 +883,7 @@
     {
       "modelId": "flux-3-max",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1064,
+      "raw": 1065,
       "stderr": 16,
       "sourceLabel": "FLUX 3 Max"
     },
@@ -897,7 +897,7 @@
     {
       "modelId": "hyperflow-h3",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1124,
+      "raw": 1125,
       "stderr": 16,
       "sourceLabel": "Hyperflow H3"
     },
@@ -911,7 +911,7 @@
     {
       "modelId": "minimax-h3-max",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1117,
+      "raw": 1119,
       "stderr": 16,
       "sourceLabel": "MiniMax H3 Max"
     },
@@ -932,7 +932,7 @@
     {
       "modelId": "minimax-h3",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1128,
+      "raw": 1131,
       "stderr": 16,
       "sourceLabel": "MiniMax H3 (768p)"
     },
@@ -946,7 +946,7 @@
     {
       "modelId": "kling-3-0-omni-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1000,
+      "raw": 1002,
       "stderr": 17,
       "sourceLabel": "Kling 3.0 Omni 1080p (Pro)"
     },
@@ -972,8 +972,8 @@
     {
       "modelId": "vidu-q3-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 930,
-      "stderr": 18,
+      "raw": 932,
+      "stderr": 17,
       "sourceLabel": "Vidu Q3 Pro"
     },
     {
@@ -987,7 +987,7 @@
       "modelId": "vidu-q3-turbo",
       "benchmarkId": "aa-image-to-video",
       "raw": 899,
-      "stderr": 18,
+      "stderr": 17,
       "sourceLabel": "Vidu Q3 Turbo"
     },
     {
@@ -1021,7 +1021,7 @@
     {
       "modelId": "wan-3-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1111,
+      "raw": 1112,
       "stderr": 16,
       "sourceLabel": "Wan 3.0"
     },
@@ -1057,7 +1057,7 @@
       "modelId": "veo-3-1-lite",
       "benchmarkId": "aa-image-to-video",
       "raw": 929,
-      "stderr": 18,
+      "stderr": 17,
       "sourceLabel": "Veo 3.1 Lite"
     },
     {
@@ -1175,7 +1175,7 @@
     {
       "modelId": "utopai-x",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1146,
+      "raw": 1147,
       "stderr": 16,
       "sourceLabel": "Utopai X"
     }
@@ -1198,7 +1198,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -1206,7 +1206,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]

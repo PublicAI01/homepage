@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T14:16:44.135Z",
+  "generatedAt": "2026-11-03T00:16:10.988Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -7,7 +7,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "snapshot": "Oct 28, 2026 — 419 models",
       "metric": "elo",
       "category": "Human preference",
@@ -23,7 +23,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/leaderboards/models",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/artificial-analysis.ico",
       "category": "Core abilities",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "elo",
       "logo": "/model-index/logos/aa-gdpval.ico",
       "category": "Agents",
@@ -55,7 +55,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/evaluations/aa-briefcase",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "elo",
       "logo": "/model-index/logos/aa-briefcase.ico",
       "category": "Agents",
@@ -71,7 +71,7 @@
       "publisher": "Terminal-Bench",
       "independent": true,
       "url": "https://www.tbench.ai/leaderboard",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "snapshot": "Top entry dated Sep 22, 2026",
       "metric": "percent",
       "logo": "/model-index/logos/terminal-bench.png",
@@ -88,7 +88,7 @@
       "publisher": "ARC Prize",
       "independent": true,
       "url": "https://arcprize.org/leaderboard",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/arc-agi-2.png",
       "category": "Reasoning",
@@ -104,7 +104,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Core abilities",
@@ -120,7 +120,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Agents",
@@ -136,7 +136,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Reasoning",
@@ -152,7 +152,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Coding",
@@ -168,7 +168,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Agents",
@@ -184,7 +184,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Core abilities",
@@ -200,7 +200,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Agents",
@@ -216,7 +216,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Professional",
@@ -232,7 +232,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Core abilities",
@@ -248,7 +248,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Reasoning",
@@ -264,7 +264,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Coding",
@@ -280,7 +280,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Coding",
@@ -296,7 +296,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Reasoning",
@@ -312,7 +312,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Core abilities",
@@ -328,7 +328,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Core abilities",
@@ -344,7 +344,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Core abilities",
@@ -360,7 +360,7 @@
       "publisher": "LiveCodeBench",
       "independent": true,
       "url": "https://livecodebench.github.io/leaderboard.html",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "category": "Coding",
       "domain": "Code generation",
@@ -375,7 +375,7 @@
       "publisher": "Aider",
       "independent": true,
       "url": "https://aider.chat/docs/leaderboards/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/aider.png",
       "category": "Coding",
@@ -391,7 +391,7 @@
       "publisher": "UC Berkeley (Gorilla)",
       "independent": true,
       "url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "category": "Agents",
       "domain": "Tool use",
@@ -406,7 +406,7 @@
       "publisher": "XLANG Lab",
       "independent": true,
       "url": "https://osworld-v1.xlang.ai/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/osworld.png",
       "category": "Agents",
@@ -422,7 +422,7 @@
       "publisher": "MMMU",
       "independent": true,
       "url": "https://mmmu-benchmark.github.io/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/mmmu.png",
       "category": "Knowledge",
@@ -438,7 +438,7 @@
       "publisher": "Kagi",
       "independent": true,
       "url": "https://help.kagi.com/kagi/ai/llm-benchmark.html",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/kagi.png",
       "category": "Core abilities",
@@ -454,7 +454,7 @@
       "publisher": "SimpleBench",
       "independent": true,
       "url": "https://simple-bench.com/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/simplebench.ico",
       "category": "Reasoning",
@@ -470,7 +470,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -486,7 +486,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -502,7 +502,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -518,7 +518,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -534,7 +534,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -550,7 +550,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -566,7 +566,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -582,7 +582,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -598,7 +598,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -614,7 +614,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -630,7 +630,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -646,7 +646,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -662,7 +662,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -678,7 +678,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -694,7 +694,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Agents",
@@ -710,7 +710,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Coding",
@@ -726,7 +726,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Coding",
@@ -742,7 +742,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Coding",
@@ -758,7 +758,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Reasoning",
@@ -774,7 +774,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Knowledge",
@@ -790,7 +790,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Reasoning",
@@ -806,7 +806,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Reasoning",
@@ -822,7 +822,7 @@
       "publisher": "Benchmark Heaven",
       "independent": true,
       "url": "https://benchmarkheaven.com/jev-models",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/jevbench.png",
       "category": "Decisions",
@@ -838,7 +838,7 @@
       "publisher": "Benchmark Heaven",
       "independent": true,
       "url": "https://benchmarkheaven.com/jev-models",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "logo": "/model-index/logos/jevbench.png",
       "category": "Decisions",
@@ -854,7 +854,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -869,7 +869,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -884,7 +884,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -899,7 +899,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -914,7 +914,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -929,7 +929,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -944,7 +944,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -961,7 +961,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -978,7 +978,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -995,7 +995,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -1012,7 +1012,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -1029,7 +1029,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1046,7 +1046,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1063,7 +1063,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1080,7 +1080,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1097,7 +1097,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1114,7 +1114,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1131,7 +1131,7 @@
       "publisher": "Vectara",
       "independent": true,
       "url": "https://github.com/vectara/hallucination-leaderboard",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "metric": "percent",
       "category": "Safety",
       "domain": "Factual grounding",
@@ -1605,7 +1605,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Reasoning",
@@ -1621,7 +1621,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Reasoning",
@@ -1637,7 +1637,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Agents",
@@ -1653,7 +1653,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Professional",
@@ -1669,7 +1669,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-05",
       "metric": "index",
       "category": "Core abilities",
@@ -1685,7 +1685,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1701,7 +1701,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1717,7 +1717,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1733,7 +1733,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1749,7 +1749,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-04",
       "metric": "elo",
       "category": "Agents",
@@ -1765,7 +1765,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1781,7 +1781,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1797,7 +1797,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1813,7 +1813,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1829,7 +1829,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1845,7 +1845,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1861,7 +1861,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1877,7 +1877,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "elo",
       "category": "Coding",
@@ -1893,7 +1893,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1909,7 +1909,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1925,7 +1925,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1941,7 +1941,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1957,7 +1957,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1973,7 +1973,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1989,7 +1989,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -2005,7 +2005,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -2021,7 +2021,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -2037,7 +2037,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -2053,7 +2053,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -2069,7 +2069,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Agents",
@@ -2085,7 +2085,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -2101,7 +2101,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -2117,7 +2117,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -2133,7 +2133,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -2149,7 +2149,7 @@
       "publisher": "LargitData",
       "independent": true,
       "url": "https://www.largitdata.com/en/blog/jev-system-one-model-open-source-benchmark/",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "publishedAt": "2026-09-19",
       "metric": "percent",
       "logo": "/model-index/logos/largitdata-jev.png",
@@ -4759,6 +4759,11 @@
       }
     },
     {
+      "id": "kdl-frontier-parser-nano-v2",
+      "name": "KDL Frontier Parser Nano V2",
+      "org": "Other"
+    },
+    {
       "id": "fugu-ultra-v2",
       "name": "Fugu Ultra V2",
       "org": "sakana",
@@ -6137,8 +6142,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.088,
-          "outputPerM": 0.263,
+          "inputPerM": 0.064,
+          "outputPerM": 0.192,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -7036,7 +7041,7 @@
           "id": "qwen/qwen3-next-80b-a3b-instruct",
           "url": "https://openrouter.ai/qwen/qwen3-next-80b-a3b-instruct",
           "contextLength": 262144,
-          "inputPerM": 0.09,
+          "inputPerM": 0.1,
           "outputPerM": 1.1,
           "listedAt": "2025-09-11",
           "modalities": ["text"]
@@ -7833,8 +7838,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.075,
+          "outputPerM": 0.3,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -7978,8 +7983,8 @@
           "id": "meta-llama/llama-3.3-70b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
           "contextLength": 131072,
-          "inputPerM": 0.1,
-          "outputPerM": 0.32,
+          "inputPerM": 0.2,
+          "outputPerM": 0.52,
           "listedAt": "2024-12-06",
           "modalities": ["text"]
         },
@@ -9585,17 +9590,6 @@
           "huggingFaceId": "mistralai/Mistral-Large-4-1T-A52B",
           "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B"
         },
-        "official": {
-          "name": "Mistral AI docs",
-          "url": "https://docs.mistral.ai"
-        }
-      }
-    },
-    {
-      "id": "mistral-large-4-oss",
-      "name": "Mistral Large 4 OSS",
-      "org": "Mistral",
-      "access": {
         "official": {
           "name": "Mistral AI docs",
           "url": "https://docs.mistral.ai"
@@ -13260,37 +13254,37 @@
     {
       "modelId": "lightonocr-3-0-8b",
       "benchmarkId": "parsebench",
-      "raw": 74.6,
+      "raw": 74.74,
       "sourceLabel": "LightOnOCR-3-0.8B"
     },
     {
       "modelId": "lightonocr-3-0-8b",
       "benchmarkId": "parsebench-tables",
-      "raw": 84.5,
+      "raw": 84.42,
       "sourceLabel": "LightOnOCR-3-0.8B"
     },
     {
       "modelId": "lightonocr-3-0-8b",
       "benchmarkId": "parsebench-charts",
-      "raw": 64.7,
+      "raw": 64.55,
       "sourceLabel": "LightOnOCR-3-0.8B"
     },
     {
       "modelId": "lightonocr-3-0-8b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 88.9,
+      "raw": 88.82,
       "sourceLabel": "LightOnOCR-3-0.8B"
     },
     {
       "modelId": "lightonocr-3-0-8b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 66.7,
+      "raw": 66.44,
       "sourceLabel": "LightOnOCR-3-0.8B"
     },
     {
       "modelId": "lightonocr-3-0-8b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 68.2,
+      "raw": 69.47,
       "sourceLabel": "LightOnOCR-3-0.8B"
     },
     {
@@ -13785,37 +13779,37 @@
     {
       "modelId": "mineru-diffusion-v1-2-5b",
       "benchmarkId": "parsebench",
-      "raw": 42.63,
+      "raw": 41.07,
       "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
     },
     {
       "modelId": "mineru-diffusion-v1-2-5b",
       "benchmarkId": "parsebench-tables",
-      "raw": 66.51,
+      "raw": 66.53,
       "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
     },
     {
       "modelId": "mineru-diffusion-v1-2-5b",
       "benchmarkId": "parsebench-charts",
-      "raw": 1.19,
+      "raw": 0.97,
       "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
     },
     {
       "modelId": "mineru-diffusion-v1-2-5b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 69.46,
+      "raw": 69.02,
       "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
     },
     {
       "modelId": "mineru-diffusion-v1-2-5b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 1.46,
+      "raw": 1.19,
       "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
     },
     {
       "modelId": "mineru-diffusion-v1-2-5b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 74.54,
+      "raw": 67.63,
       "sourceLabel": "MinerU-Diffusion-V1-0320-2.5B"
     },
     {
@@ -13901,37 +13895,37 @@
     {
       "modelId": "lightonocr-3-1b",
       "benchmarkId": "parsebench",
-      "raw": 71.4,
+      "raw": 71.16,
       "sourceLabel": "LightOnOCR-3-1B"
     },
     {
       "modelId": "lightonocr-3-1b",
       "benchmarkId": "parsebench-tables",
-      "raw": 84.8,
+      "raw": 84.82,
       "sourceLabel": "LightOnOCR-3-1B"
     },
     {
       "modelId": "lightonocr-3-1b",
       "benchmarkId": "parsebench-charts",
-      "raw": 57.3,
+      "raw": 56.38,
       "sourceLabel": "LightOnOCR-3-1B"
     },
     {
       "modelId": "lightonocr-3-1b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 88.6,
+      "raw": 88.61,
       "sourceLabel": "LightOnOCR-3-1B"
     },
     {
       "modelId": "lightonocr-3-1b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 64.5,
+      "raw": 64.47,
       "sourceLabel": "LightOnOCR-3-1B"
     },
     {
       "modelId": "lightonocr-3-1b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 61.7,
+      "raw": 61.54,
       "sourceLabel": "LightOnOCR-3-1B"
     },
     {
@@ -14852,7 +14846,7 @@
     {
       "modelId": "jina-ocr-v1",
       "benchmarkId": "parsebench",
-      "raw": 45.93,
+      "raw": 45.72,
       "sourceLabel": "Jina-OCR-v1"
     },
     {
@@ -14870,7 +14864,7 @@
     {
       "modelId": "jina-ocr-v1",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 86.58,
+      "raw": 85.55,
       "sourceLabel": "Jina-OCR-v1"
     },
     {
@@ -15785,73 +15779,73 @@
     {
       "modelId": "mineru2-5-1-2b",
       "benchmarkId": "parsebench",
-      "raw": 45.9,
+      "raw": 45.44,
       "sourceLabel": "MinerU2.5-2509-1.2B"
     },
     {
       "modelId": "mineru2-5-1-2b",
       "benchmarkId": "parsebench-tables",
-      "raw": 71.7,
+      "raw": 71.81,
       "sourceLabel": "MinerU2.5-2509-1.2B"
     },
     {
       "modelId": "mineru2-5-1-2b",
       "benchmarkId": "parsebench-charts",
-      "raw": 1.1,
+      "raw": 1.01,
       "sourceLabel": "MinerU2.5-2509-1.2B"
     },
     {
       "modelId": "mineru2-5-1-2b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 80.8,
+      "raw": 81.01,
       "sourceLabel": "MinerU2.5-2509-1.2B"
     },
     {
       "modelId": "mineru2-5-1-2b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 4.5,
+      "raw": 2.08,
       "sourceLabel": "MinerU2.5-2509-1.2B"
     },
     {
       "modelId": "mineru2-5-1-2b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 71.5,
+      "raw": 71.31,
       "sourceLabel": "MinerU2.5-2509-1.2B"
     },
     {
       "modelId": "mineru2-5-pro-1-2b",
       "benchmarkId": "parsebench",
-      "raw": 72.78,
+      "raw": 69.27,
       "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
     },
     {
       "modelId": "mineru2-5-pro-1-2b",
       "benchmarkId": "parsebench-tables",
-      "raw": 77.59,
+      "raw": 77.61,
       "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
     },
     {
       "modelId": "mineru2-5-pro-1-2b",
       "benchmarkId": "parsebench-charts",
-      "raw": 61.64,
+      "raw": 59.12,
       "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
     },
     {
       "modelId": "mineru2-5-pro-1-2b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 87.88,
+      "raw": 88.23,
       "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
     },
     {
       "modelId": "mineru2-5-pro-1-2b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 57.49,
+      "raw": 47.15,
       "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
     },
     {
       "modelId": "mineru2-5-pro-1-2b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 79.3,
+      "raw": 74.24,
       "sourceLabel": "MinerU2.5-Pro-2605-1.2B"
     },
     {
@@ -17072,13 +17066,13 @@
     {
       "modelId": "hunyuanocr-1-5",
       "benchmarkId": "parsebench",
-      "raw": 62.59,
+      "raw": 62.14,
       "sourceLabel": "HunyuanOCR 1.5"
     },
     {
       "modelId": "hunyuanocr-1-5",
       "benchmarkId": "parsebench-tables",
-      "raw": 65.45,
+      "raw": 65.32,
       "sourceLabel": "HunyuanOCR 1.5"
     },
     {
@@ -17090,13 +17084,13 @@
     {
       "modelId": "hunyuanocr-1-5",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 86.44,
+      "raw": 84.26,
       "sourceLabel": "HunyuanOCR 1.5"
     },
     {
       "modelId": "hunyuanocr-1-5",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 47.73,
+      "raw": 47.78,
       "sourceLabel": "HunyuanOCR 1.5"
     },
     {
@@ -17250,37 +17244,37 @@
     {
       "modelId": "paddleocr-vl-1-5",
       "benchmarkId": "parsebench",
-      "raw": 65.95,
+      "raw": 49.36,
       "sourceLabel": "PaddleOCR-VL-1.5"
     },
     {
       "modelId": "paddleocr-vl-1-5",
       "benchmarkId": "parsebench-tables",
-      "raw": 67.38,
+      "raw": 67.61,
       "sourceLabel": "PaddleOCR-VL-1.5"
     },
     {
       "modelId": "paddleocr-vl-1-5",
       "benchmarkId": "parsebench-charts",
-      "raw": 47.62,
+      "raw": 43.38,
       "sourceLabel": "PaddleOCR-VL-1.5"
     },
     {
       "modelId": "paddleocr-vl-1-5",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 82.72,
+      "raw": 82.46,
       "sourceLabel": "PaddleOCR-VL-1.5"
     },
     {
       "modelId": "paddleocr-vl-1-5",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 54.27,
+      "raw": 44.55,
       "sourceLabel": "PaddleOCR-VL-1.5"
     },
     {
       "modelId": "paddleocr-vl-1-5",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 77.78,
+      "raw": 8.79,
       "sourceLabel": "PaddleOCR-VL-1.5"
     },
     {
@@ -17464,37 +17458,37 @@
     {
       "modelId": "paddleocr-vl-1-6",
       "benchmarkId": "parsebench",
-      "raw": 67.43,
+      "raw": 50.9,
       "sourceLabel": "PaddleOCR-VL-1.6"
     },
     {
       "modelId": "paddleocr-vl-1-6",
       "benchmarkId": "parsebench-tables",
-      "raw": 67.77,
+      "raw": 67.79,
       "sourceLabel": "PaddleOCR-VL-1.6"
     },
     {
       "modelId": "paddleocr-vl-1-6",
       "benchmarkId": "parsebench-charts",
-      "raw": 54.24,
+      "raw": 50.62,
       "sourceLabel": "PaddleOCR-VL-1.6"
     },
     {
       "modelId": "paddleocr-vl-1-6",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 82.71,
+      "raw": 82.39,
       "sourceLabel": "PaddleOCR-VL-1.6"
     },
     {
       "modelId": "paddleocr-vl-1-6",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 54.64,
+      "raw": 44.92,
       "sourceLabel": "PaddleOCR-VL-1.6"
     },
     {
       "modelId": "paddleocr-vl-1-6",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 77.8,
+      "raw": 8.78,
       "sourceLabel": "PaddleOCR-VL-1.6"
     },
     {
@@ -20765,13 +20759,13 @@
     {
       "modelId": "wevisdoc-2b",
       "benchmarkId": "parsebench",
-      "raw": 38.93,
+      "raw": 38.9,
       "sourceLabel": "WeVisDoc-2B"
     },
     {
       "modelId": "wevisdoc-2b",
       "benchmarkId": "parsebench-tables",
-      "raw": 70.41,
+      "raw": 70.42,
       "sourceLabel": "WeVisDoc-2B"
     },
     {
@@ -20783,13 +20777,13 @@
     {
       "modelId": "wevisdoc-2b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 77.11,
+      "raw": 76.91,
       "sourceLabel": "WeVisDoc-2B"
     },
     {
       "modelId": "wevisdoc-2b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 46.28,
+      "raw": 46.32,
       "sourceLabel": "WeVisDoc-2B"
     },
     {
@@ -20813,7 +20807,7 @@
     {
       "modelId": "chandra-ocr-2",
       "benchmarkId": "parsebench",
-      "raw": 70.1,
+      "raw": 70.59,
       "sourceLabel": "Chandra-ocr-2"
     },
     {
@@ -20825,25 +20819,25 @@
     {
       "modelId": "chandra-ocr-2",
       "benchmarkId": "parsebench-charts",
-      "raw": 65.1,
+      "raw": 62.77,
       "sourceLabel": "Chandra-ocr-2"
     },
     {
       "modelId": "chandra-ocr-2",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 83.7,
+      "raw": 85.45,
       "sourceLabel": "Chandra-ocr-2"
     },
     {
       "modelId": "chandra-ocr-2",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 61.4,
+      "raw": 64.37,
       "sourceLabel": "Chandra-ocr-2"
     },
     {
       "modelId": "chandra-ocr-2",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 51.2,
+      "raw": 51.18,
       "sourceLabel": "Chandra-ocr-2"
     },
     {
@@ -20947,37 +20941,37 @@
     {
       "modelId": "upstage-document-parse-2-enhanced",
       "benchmarkId": "parsebench",
-      "raw": 80.51,
+      "raw": 80.64,
       "sourceLabel": "Upstage Document Parse 2 (Enhanced)"
     },
     {
       "modelId": "upstage-document-parse-2-enhanced",
       "benchmarkId": "parsebench-tables",
-      "raw": 89.49,
+      "raw": 89.48,
       "sourceLabel": "Upstage Document Parse 2 (Enhanced)"
     },
     {
       "modelId": "upstage-document-parse-2-enhanced",
       "benchmarkId": "parsebench-charts",
-      "raw": 77.26,
+      "raw": 77.5,
       "sourceLabel": "Upstage Document Parse 2 (Enhanced)"
     },
     {
       "modelId": "upstage-document-parse-2-enhanced",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 87.36,
+      "raw": 87.68,
       "sourceLabel": "Upstage Document Parse 2 (Enhanced)"
     },
     {
       "modelId": "upstage-document-parse-2-enhanced",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 76.88,
+      "raw": 76.68,
       "sourceLabel": "Upstage Document Parse 2 (Enhanced)"
     },
     {
       "modelId": "upstage-document-parse-2-enhanced",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 71.56,
+      "raw": 71.84,
       "sourceLabel": "Upstage Document Parse 2 (Enhanced)"
     },
     {
@@ -21242,7 +21236,7 @@
     {
       "modelId": "infinity-parser2-flash",
       "benchmarkId": "parsebench",
-      "raw": 72.18,
+      "raw": 68.63,
       "sourceLabel": "Infinity-Parser2-Flash"
     },
     {
@@ -21254,25 +21248,25 @@
     {
       "modelId": "infinity-parser2-flash",
       "benchmarkId": "parsebench-charts",
-      "raw": 55.56,
+      "raw": 52.67,
       "sourceLabel": "Infinity-Parser2-Flash"
     },
     {
       "modelId": "infinity-parser2-flash",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 89.52,
+      "raw": 88.61,
       "sourceLabel": "Infinity-Parser2-Flash"
     },
     {
       "modelId": "infinity-parser2-flash",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 57.7,
+      "raw": 44.04,
       "sourceLabel": "Infinity-Parser2-Flash"
     },
     {
       "modelId": "infinity-parser2-flash",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 75.25,
+      "raw": 74.95,
       "sourceLabel": "Infinity-Parser2-Flash"
     },
     {
@@ -21309,6 +21303,42 @@
       "raw": 1322,
       "stderr": 7,
       "sourceLabel": "Ring-flash-2.0"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano-v2",
+      "benchmarkId": "parsebench",
+      "raw": 79.07,
+      "sourceLabel": "KDL-Frontier-Parser-nano-v2"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano-v2",
+      "benchmarkId": "parsebench-tables",
+      "raw": 86.19,
+      "sourceLabel": "KDL-Frontier-Parser-nano-v2"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano-v2",
+      "benchmarkId": "parsebench-charts",
+      "raw": 69.14,
+      "sourceLabel": "KDL-Frontier-Parser-nano-v2"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano-v2",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 87.77,
+      "sourceLabel": "KDL-Frontier-Parser-nano-v2"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano-v2",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 76.91,
+      "sourceLabel": "KDL-Frontier-Parser-nano-v2"
+    },
+    {
+      "modelId": "kdl-frontier-parser-nano-v2",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 75.33,
+      "sourceLabel": "KDL-Frontier-Parser-nano-v2"
     },
     {
       "modelId": "fugu-ultra-v2",
@@ -21468,37 +21498,37 @@
     {
       "modelId": "infinity-parser2-pro",
       "benchmarkId": "parsebench",
-      "raw": 74.28,
+      "raw": 71.19,
       "sourceLabel": "Infinity-Parser2-Pro"
     },
     {
       "modelId": "infinity-parser2-pro",
       "benchmarkId": "parsebench-tables",
-      "raw": 86.4,
+      "raw": 86.39,
       "sourceLabel": "Infinity-Parser2-Pro"
     },
     {
       "modelId": "infinity-parser2-pro",
       "benchmarkId": "parsebench-charts",
-      "raw": 61.3,
+      "raw": 58.16,
       "sourceLabel": "Infinity-Parser2-Pro"
     },
     {
       "modelId": "infinity-parser2-pro",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 89.7,
+      "raw": 89.66,
       "sourceLabel": "Infinity-Parser2-Pro"
     },
     {
       "modelId": "infinity-parser2-pro",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 59.1,
+      "raw": 47.12,
       "sourceLabel": "Infinity-Parser2-Pro"
     },
     {
       "modelId": "infinity-parser2-pro",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 74.9,
+      "raw": 74.64,
       "sourceLabel": "Infinity-Parser2-Pro"
     },
     {
@@ -22160,37 +22190,37 @@
     {
       "modelId": "surya-ocr-2",
       "benchmarkId": "parsebench",
-      "raw": 64.83,
+      "raw": 60.63,
       "sourceLabel": "Surya OCR 2"
     },
     {
       "modelId": "surya-ocr-2",
       "benchmarkId": "parsebench-tables",
-      "raw": 82.68,
+      "raw": 82.74,
       "sourceLabel": "Surya OCR 2"
     },
     {
       "modelId": "surya-ocr-2",
       "benchmarkId": "parsebench-charts",
-      "raw": 21.95,
+      "raw": 19.04,
       "sourceLabel": "Surya OCR 2"
     },
     {
       "modelId": "surya-ocr-2",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 86.57,
+      "raw": 87.84,
       "sourceLabel": "Surya OCR 2"
     },
     {
       "modelId": "surya-ocr-2",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 61.36,
+      "raw": 63.59,
       "sourceLabel": "Surya OCR 2"
     },
     {
       "modelId": "surya-ocr-2",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 71.59,
+      "raw": 49.93,
       "sourceLabel": "Surya OCR 2"
     },
     {
@@ -26552,7 +26582,7 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "parsebench",
-      "raw": 69.72,
+      "raw": 69.03,
       "sourceLabel": "Qwen 3.8 27B (Thinking)"
     },
     {
@@ -26564,25 +26594,25 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "parsebench-charts",
-      "raw": 69.17,
+      "raw": 68.05,
       "sourceLabel": "Qwen 3.8 27B (Thinking)"
     },
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 88.28,
+      "raw": 88.01,
       "sourceLabel": "Qwen 3.8 27B (Thinking)"
     },
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 59.77,
+      "raw": 59.28,
       "sourceLabel": "Qwen 3.8 27B (Thinking)"
     },
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 64.56,
+      "raw": 63.01,
       "sourceLabel": "Qwen 3.8 27B (Thinking)"
     },
     {
@@ -27452,37 +27482,37 @@
     {
       "modelId": "lightonocr-3-4b",
       "benchmarkId": "parsebench",
-      "raw": 75.1,
+      "raw": 75.6,
       "sourceLabel": "LightOnOCR-3-4B"
     },
     {
       "modelId": "lightonocr-3-4b",
       "benchmarkId": "parsebench-tables",
-      "raw": 83.8,
+      "raw": 83.63,
       "sourceLabel": "LightOnOCR-3-4B"
     },
     {
       "modelId": "lightonocr-3-4b",
       "benchmarkId": "parsebench-charts",
-      "raw": 66.1,
+      "raw": 66.35,
       "sourceLabel": "LightOnOCR-3-4B"
     },
     {
       "modelId": "lightonocr-3-4b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 89.9,
+      "raw": 90.07,
       "sourceLabel": "LightOnOCR-3-4B"
     },
     {
       "modelId": "lightonocr-3-4b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 67.6,
+      "raw": 68.08,
       "sourceLabel": "LightOnOCR-3-4B"
     },
     {
       "modelId": "lightonocr-3-4b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 68.3,
+      "raw": 69.85,
       "sourceLabel": "LightOnOCR-3-4B"
     },
     {
@@ -29259,37 +29289,37 @@
     {
       "modelId": "gemini-3-flash",
       "benchmarkId": "parsebench",
-      "raw": 75.05,
+      "raw": 73.98,
       "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-flash",
       "benchmarkId": "parsebench-tables",
-      "raw": 91.5,
+      "raw": 91.19,
       "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-flash",
       "benchmarkId": "parsebench-charts",
-      "raw": 64.79,
+      "raw": 64.05,
       "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-flash",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 90.87,
+      "raw": 89.74,
       "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-flash",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 68.31,
+      "raw": 62.56,
       "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-flash",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 59.77,
+      "raw": 62.37,
       "sourceLabel": "Google Gemini 3 Flash (Thinking High)"
     },
     {
@@ -32339,13 +32369,13 @@
     {
       "modelId": "gemini-3-1-flash-lite",
       "benchmarkId": "parsebench",
-      "raw": 56.28,
+      "raw": 55.84,
       "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
     },
     {
       "modelId": "gemini-3-1-flash-lite",
       "benchmarkId": "parsebench-tables",
-      "raw": 76.76,
+      "raw": 76.8,
       "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
     },
     {
@@ -32357,7 +32387,7 @@
     {
       "modelId": "gemini-3-1-flash-lite",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 83.28,
+      "raw": 82.84,
       "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
     },
     {
@@ -32369,7 +32399,7 @@
     {
       "modelId": "gemini-3-1-flash-lite",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 33.84,
+      "raw": 32.08,
       "sourceLabel": "Google Gemini 3.1 Flash Lite (Thinking High)"
     },
     {
@@ -32700,37 +32730,37 @@
     {
       "modelId": "gemini-3-1-pro",
       "benchmarkId": "parsebench",
-      "raw": 69.14,
+      "raw": 67.32,
       "sourceLabel": "Google Gemini 3.1 Pro"
     },
     {
       "modelId": "gemini-3-1-pro",
       "benchmarkId": "parsebench-tables",
-      "raw": 91,
+      "raw": 91.13,
       "sourceLabel": "Google Gemini 3.1 Pro"
     },
     {
       "modelId": "gemini-3-1-pro",
       "benchmarkId": "parsebench-charts",
-      "raw": 41.13,
+      "raw": 40.43,
       "sourceLabel": "Google Gemini 3.1 Pro"
     },
     {
       "modelId": "gemini-3-1-pro",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 90.16,
+      "raw": 89.26,
       "sourceLabel": "Google Gemini 3.1 Pro"
     },
     {
       "modelId": "gemini-3-1-pro",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 52.43,
+      "raw": 44.91,
       "sourceLabel": "Google Gemini 3.1 Pro"
     },
     {
       "modelId": "gemini-3-1-pro",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 70.99,
+      "raw": 70.85,
       "sourceLabel": "Google Gemini 3.1 Pro"
     },
     {
@@ -33612,37 +33642,37 @@
     {
       "modelId": "qwen3-5-4b",
       "benchmarkId": "parsebench",
-      "raw": 35.4,
+      "raw": 30.85,
       "sourceLabel": "Qwen3.5-4B"
     },
     {
       "modelId": "qwen3-5-4b",
       "benchmarkId": "parsebench-tables",
-      "raw": 8,
+      "raw": 7.97,
       "sourceLabel": "Qwen3.5-4B"
     },
     {
       "modelId": "qwen3-5-4b",
       "benchmarkId": "parsebench-charts",
-      "raw": 2.5,
+      "raw": 2.01,
       "sourceLabel": "Qwen3.5-4B"
     },
     {
       "modelId": "qwen3-5-4b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 88.9,
+      "raw": 83.12,
       "sourceLabel": "Qwen3.5-4B"
     },
     {
       "modelId": "qwen3-5-4b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 57.8,
+      "raw": 43.76,
       "sourceLabel": "Qwen3.5-4B"
     },
     {
       "modelId": "qwen3-5-4b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 19.7,
+      "raw": 17.41,
       "sourceLabel": "Qwen3.5-4B"
     },
     {
@@ -34015,13 +34045,13 @@
     {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "parsebench",
-      "raw": 73.36,
+      "raw": 73.22,
       "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "parsebench-tables",
-      "raw": 90.44,
+      "raw": 90.48,
       "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
     },
     {
@@ -34033,19 +34063,19 @@
     {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 88.92,
+      "raw": 88.52,
       "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 77.85,
+      "raw": 77.87,
       "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 64.33,
+      "raw": 63.95,
       "sourceLabel": "Google Gemini 3.5 Flash (Thinking High)"
     },
     {
@@ -34268,13 +34298,13 @@
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "parsebench",
-      "raw": 59.66,
+      "raw": 59.49,
       "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
     },
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "parsebench-tables",
-      "raw": 83.31,
+      "raw": 83.35,
       "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
     },
     {
@@ -34286,19 +34316,19 @@
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 86.85,
+      "raw": 86.48,
       "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
     },
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 54.03,
+      "raw": 54.05,
       "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
     },
     {
       "modelId": "gemini-3-5-flash-lite",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 54.85,
+      "raw": 54.3,
       "sourceLabel": "Google Gemini 3.5 Flash Lite (Thinking High)"
     },
     {
@@ -34812,37 +34842,37 @@
     {
       "modelId": "nemotron-3-5-parse",
       "benchmarkId": "parsebench",
-      "raw": 75.2,
+      "raw": 75.07,
       "sourceLabel": "Nemotron-3.5-Parse"
     },
     {
       "modelId": "nemotron-3-5-parse",
       "benchmarkId": "parsebench-tables",
-      "raw": 84.67,
+      "raw": 84.62,
       "sourceLabel": "Nemotron-3.5-Parse"
     },
     {
       "modelId": "nemotron-3-5-parse",
       "benchmarkId": "parsebench-charts",
-      "raw": 64.4,
+      "raw": 63.85,
       "sourceLabel": "Nemotron-3.5-Parse"
     },
     {
       "modelId": "nemotron-3-5-parse",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 87.96,
+      "raw": 88.04,
       "sourceLabel": "Nemotron-3.5-Parse"
     },
     {
       "modelId": "nemotron-3-5-parse",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 68.28,
+      "raw": 69.06,
       "sourceLabel": "Nemotron-3.5-Parse"
     },
     {
       "modelId": "nemotron-3-5-parse",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 70.67,
+      "raw": 69.78,
       "sourceLabel": "Nemotron-3.5-Parse"
     },
     {
@@ -35243,37 +35273,37 @@
     {
       "modelId": "qwen3-6-35b-a3b",
       "benchmarkId": "parsebench",
-      "raw": 44.1,
+      "raw": 37.35,
       "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
       "modelId": "qwen3-6-35b-a3b",
       "benchmarkId": "parsebench-tables",
-      "raw": 19.1,
+      "raw": 19.04,
       "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
       "modelId": "qwen3-6-35b-a3b",
       "benchmarkId": "parsebench-charts",
-      "raw": 5.1,
+      "raw": 4,
       "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
       "modelId": "qwen3-6-35b-a3b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 90.7,
+      "raw": 80.61,
       "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
       "modelId": "qwen3-6-35b-a3b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 58.3,
+      "raw": 41.81,
       "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
       "modelId": "qwen3-6-35b-a3b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 47.4,
+      "raw": 41.27,
       "sourceLabel": "Qwen3.6-35B-A3B"
     },
     {
@@ -35515,13 +35545,13 @@
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "parsebench",
-      "raw": 69.38,
+      "raw": 69.12,
       "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "parsebench-tables",
-      "raw": 89.3,
+      "raw": 89.33,
       "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
     },
     {
@@ -35533,19 +35563,19 @@
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 88.21,
+      "raw": 87.93,
       "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 73.11,
+      "raw": 73.14,
       "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-6-flash",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 61.76,
+      "raw": 60.65,
       "sourceLabel": "Google Gemini 3.6 Flash (Thinking High)"
     },
     {
@@ -35987,13 +36017,13 @@
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "parsebench",
-      "raw": 70.66,
+      "raw": 70.37,
       "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "parsebench-tables",
-      "raw": 90.16,
+      "raw": 90.21,
       "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
     },
     {
@@ -36005,7 +36035,7 @@
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 88.6,
+      "raw": 88.21,
       "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
     },
     {
@@ -36017,7 +36047,7 @@
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 67.48,
+      "raw": 66.4,
       "sourceLabel": "Google Gemini 3.7 Flash (Thinking High)"
     },
     {
@@ -36707,37 +36737,37 @@
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "parsebench",
-      "raw": 71.5,
+      "raw": 71.2,
       "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "parsebench-tables",
-      "raw": 89.12,
+      "raw": 89.15,
       "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "parsebench-charts",
-      "raw": 32.34,
+      "raw": 32.58,
       "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 89.68,
+      "raw": 89.31,
       "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 76.36,
+      "raw": 75.91,
       "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
     },
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 70.01,
+      "raw": 69.03,
       "sourceLabel": "Google Gemini 3.8 Flash (Thinking High)"
     },
     {
@@ -37923,37 +37953,37 @@
     {
       "modelId": "gemma-4-e4b",
       "benchmarkId": "parsebench",
-      "raw": 40.5,
+      "raw": 41.13,
       "sourceLabel": "Gemma-4-E4B-it"
     },
     {
       "modelId": "gemma-4-e4b",
       "benchmarkId": "parsebench-tables",
-      "raw": 25,
+      "raw": 43.05,
       "sourceLabel": "Gemma-4-E4B-it"
     },
     {
       "modelId": "gemma-4-e4b",
       "benchmarkId": "parsebench-charts",
-      "raw": 7.7,
+      "raw": 5.86,
       "sourceLabel": "Gemma-4-E4B-it"
     },
     {
       "modelId": "gemma-4-e4b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 81.4,
+      "raw": 83.9,
       "sourceLabel": "Gemma-4-E4B-it"
     },
     {
       "modelId": "gemma-4-e4b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 52.5,
+      "raw": 41.03,
       "sourceLabel": "Gemma-4-E4B-it"
     },
     {
       "modelId": "gemma-4-e4b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 35.8,
+      "raw": 31.79,
       "sourceLabel": "Gemma-4-E4B-it"
     },
     {
@@ -38587,7 +38617,7 @@
     {
       "modelId": "wevisdoc-4b",
       "benchmarkId": "parsebench",
-      "raw": 36.15,
+      "raw": 36.12,
       "sourceLabel": "WeVisDoc-4B"
     },
     {
@@ -38605,13 +38635,13 @@
     {
       "modelId": "wevisdoc-4b",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 70.45,
+      "raw": 70.28,
       "sourceLabel": "WeVisDoc-4B"
     },
     {
       "modelId": "wevisdoc-4b",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 43.65,
+      "raw": 43.66,
       "sourceLabel": "WeVisDoc-4B"
     },
     {
@@ -40820,15 +40850,15 @@
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "vals-legal_research",
-      "raw": 31.73,
-      "stderr": 3.23,
+      "raw": 35.58,
+      "stderr": 3.33,
       "sourceLabel": "Mistral Large 4"
     },
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "vals-hlab",
-      "raw": 17.5,
-      "stderr": 3.22,
+      "raw": 15.83,
+      "stderr": 3.13,
       "sourceLabel": "Mistral Large 4"
     },
     {
@@ -40836,34 +40866,34 @@
       "benchmarkId": "vals-fabv2",
       "raw": 54.68,
       "stderr": 0.58,
-      "sourceLabel": "Mistral Large 4"
+      "sourceLabel": "Mistral Large 4 Preview"
     },
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "vals-medcode",
       "raw": 40.69,
       "stderr": 2.17,
-      "sourceLabel": "Mistral Large 4"
+      "sourceLabel": "Mistral Large 4 Preview"
     },
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "vals-medscribe",
       "raw": 80.43,
       "stderr": 2,
-      "sourceLabel": "Mistral Large 4"
+      "sourceLabel": "Mistral Large 4 Preview"
     },
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "vals-biomysterybench",
       "raw": 67.04,
       "stderr": 2.67,
-      "sourceLabel": "Mistral Large 4"
+      "sourceLabel": "Mistral Large 4 Preview"
     },
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "vals-vibe-code",
-      "raw": 78.4,
-      "stderr": 3.55,
+      "raw": 81.56,
+      "stderr": 3.29,
       "sourceLabel": "Mistral Large 4",
       "scaffold": "OpenHands"
     },
@@ -40872,14 +40902,14 @@
       "benchmarkId": "vals-code-migration",
       "raw": 30.56,
       "stderr": 4.22,
-      "sourceLabel": "Mistral Large 4"
+      "sourceLabel": "Mistral Large 4 Preview"
     },
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "vals-proof_bench",
       "raw": 10,
       "stderr": 3.02,
-      "sourceLabel": "Mistral Large 4"
+      "sourceLabel": "Mistral Large 4 Preview"
     },
     {
       "modelId": "mistral-large-4",
@@ -40916,28 +40946,6 @@
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 15.6,
       "sourceLabel": "mistral-large-4-0"
-    },
-    {
-      "modelId": "mistral-large-4-oss",
-      "benchmarkId": "vals-legal_research",
-      "raw": 35.58,
-      "stderr": 3.33,
-      "sourceLabel": "Mistral Large 4 OSS"
-    },
-    {
-      "modelId": "mistral-large-4-oss",
-      "benchmarkId": "vals-hlab",
-      "raw": 15.83,
-      "stderr": 3.13,
-      "sourceLabel": "Mistral Large 4 OSS"
-    },
-    {
-      "modelId": "mistral-large-4-oss",
-      "benchmarkId": "vals-vibe-code",
-      "raw": 81.56,
-      "stderr": 3.29,
-      "sourceLabel": "Mistral Large 4 OSS",
-      "scaffold": "OpenHands"
     },
     {
       "modelId": "llama-4-maverick-instruct",
@@ -42259,13 +42267,13 @@
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "parsebench",
-      "raw": 64.56,
+      "raw": 64.38,
       "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
     },
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "parsebench-tables",
-      "raw": 82.82,
+      "raw": 82.84,
       "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
     },
     {
@@ -42277,7 +42285,7 @@
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 87.33,
+      "raw": 86.92,
       "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
     },
     {
@@ -42289,7 +42297,7 @@
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 28.04,
+      "raw": 27.53,
       "sourceLabel": "DeepSeek V4.1 Flash (Thinking High)"
     },
     {
@@ -43146,6 +43154,12 @@
       "benchmarkId": "lmarena",
       "raw": 1290,
       "stderr": 11,
+      "sourceLabel": "Granite 4.2 8B"
+    },
+    {
+      "modelId": "granite-4-2-8b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 5,
       "sourceLabel": "Granite 4.2 8B"
     },
     {
@@ -44179,37 +44193,37 @@
     {
       "modelId": "claude-haiku-4-5",
       "benchmarkId": "parsebench",
-      "raw": 53.12,
+      "raw": 51.21,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
       "modelId": "claude-haiku-4-5",
       "benchmarkId": "parsebench-tables",
-      "raw": 78.7,
+      "raw": 78.53,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
       "modelId": "claude-haiku-4-5",
       "benchmarkId": "parsebench-charts",
-      "raw": 27.39,
+      "raw": 27.78,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
       "modelId": "claude-haiku-4-5",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 84.83,
+      "raw": 83.1,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
       "modelId": "claude-haiku-4-5",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 62.36,
+      "raw": 55.53,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
       "modelId": "claude-haiku-4-5",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 12.3,
+      "raw": 11.11,
       "sourceLabel": "Claude Haiku 4.5 (Thinking)"
     },
     {
@@ -45272,37 +45286,37 @@
     {
       "modelId": "claude-opus-4-6",
       "benchmarkId": "parsebench",
-      "raw": 54.07,
+      "raw": 53.8,
       "sourceLabel": "Claude Opus 4.6"
     },
     {
       "modelId": "claude-opus-4-6",
       "benchmarkId": "parsebench-tables",
-      "raw": 86.52,
+      "raw": 86.25,
       "sourceLabel": "Claude Opus 4.6"
     },
     {
       "modelId": "claude-opus-4-6",
       "benchmarkId": "parsebench-charts",
-      "raw": 13.49,
+      "raw": 15.03,
       "sourceLabel": "Claude Opus 4.6"
     },
     {
       "modelId": "claude-opus-4-6",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 89.7,
+      "raw": 89.23,
       "sourceLabel": "Claude Opus 4.6"
     },
     {
       "modelId": "claude-opus-4-6",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 64.19,
+      "raw": 62.04,
       "sourceLabel": "Claude Opus 4.6"
     },
     {
       "modelId": "claude-opus-4-6",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 16.47,
+      "raw": 16.44,
       "sourceLabel": "Claude Opus 4.6"
     },
     {
@@ -47217,37 +47231,37 @@
     {
       "modelId": "gpt-5-mini",
       "benchmarkId": "parsebench",
-      "raw": 51.52,
+      "raw": 49.86,
       "sourceLabel": "GPT-5 Mini (Medium)"
     },
     {
       "modelId": "gpt-5-mini",
       "benchmarkId": "parsebench-tables",
-      "raw": 74.6,
+      "raw": 74.53,
       "sourceLabel": "GPT-5 Mini (Medium)"
     },
     {
       "modelId": "gpt-5-mini",
       "benchmarkId": "parsebench-charts",
-      "raw": 38.96,
+      "raw": 38.9,
       "sourceLabel": "GPT-5 Mini (Medium)"
     },
     {
       "modelId": "gpt-5-mini",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 85.68,
+      "raw": 86.12,
       "sourceLabel": "GPT-5 Mini (Medium)"
     },
     {
       "modelId": "gpt-5-mini",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 45.35,
+      "raw": 38.05,
       "sourceLabel": "GPT-5 Mini (Medium)"
     },
     {
       "modelId": "gpt-5-mini",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 13.03,
+      "raw": 11.69,
       "sourceLabel": "GPT-5 Mini (Medium)"
     },
     {
@@ -48638,37 +48652,37 @@
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "parsebench",
-      "raw": 78.12,
+      "raw": 77.81,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "parsebench-tables",
-      "raw": 91.52,
+      "raw": 91.53,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "parsebench-charts",
-      "raw": 67.06,
+      "raw": 66.93,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 91.19,
+      "raw": 90.77,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 76.52,
+      "raw": 76.02,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 64.32,
+      "raw": 63.81,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
@@ -49993,31 +50007,31 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "parsebench",
-      "raw": 70.75,
+      "raw": 70.55,
       "sourceLabel": "GLM-5.3 Flash"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "parsebench-tables",
-      "raw": 89.18,
+      "raw": 89.19,
       "sourceLabel": "GLM-5.3 Flash"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "parsebench-charts",
-      "raw": 54.96,
+      "raw": 54.59,
       "sourceLabel": "GLM-5.3 Flash"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 88.34,
+      "raw": 88.18,
       "sourceLabel": "GLM-5.3 Flash"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 79.49,
+      "raw": 79.02,
       "sourceLabel": "GLM-5.3 Flash"
     },
     {
@@ -50507,31 +50521,31 @@
     {
       "modelId": "gpt-5-4",
       "benchmarkId": "parsebench",
-      "raw": 62.23,
+      "raw": 61.72,
       "sourceLabel": "GPT-5.4 (None)"
     },
     {
       "modelId": "gpt-5-4",
       "benchmarkId": "parsebench-tables",
-      "raw": 83.89,
+      "raw": 83.64,
       "sourceLabel": "GPT-5.4 (None)"
     },
     {
       "modelId": "gpt-5-4",
       "benchmarkId": "parsebench-charts",
-      "raw": 65.22,
+      "raw": 65.57,
       "sourceLabel": "GPT-5.4 (None)"
     },
     {
       "modelId": "gpt-5-4",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 85.57,
+      "raw": 86.78,
       "sourceLabel": "GPT-5.4 (None)"
     },
     {
       "modelId": "gpt-5-4",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 59.52,
+      "raw": 55.67,
       "sourceLabel": "GPT-5.4 (None)"
     },
     {
@@ -50946,37 +50960,37 @@
     {
       "modelId": "gpt-5-4-nano",
       "benchmarkId": "parsebench",
-      "raw": 43.35,
+      "raw": 42.24,
       "sourceLabel": "GPT-5.4 Nano"
     },
     {
       "modelId": "gpt-5-4-nano",
       "benchmarkId": "parsebench-tables",
-      "raw": 60.16,
+      "raw": 60.28,
       "sourceLabel": "GPT-5.4 Nano"
     },
     {
       "modelId": "gpt-5-4-nano",
       "benchmarkId": "parsebench-charts",
-      "raw": 17.57,
+      "raw": 16.67,
       "sourceLabel": "GPT-5.4 Nano"
     },
     {
       "modelId": "gpt-5-4-nano",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 78.05,
+      "raw": 79.19,
       "sourceLabel": "GPT-5.4 Nano"
     },
     {
       "modelId": "gpt-5-4-nano",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 54.56,
+      "raw": 48.71,
       "sourceLabel": "GPT-5.4 Nano"
     },
     {
       "modelId": "gpt-5-4-nano",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 6.41,
+      "raw": 6.37,
       "sourceLabel": "GPT-5.4 Nano"
     },
     {
@@ -51208,37 +51222,37 @@
     {
       "modelId": "gpt-5-5",
       "benchmarkId": "parsebench",
-      "raw": 66.63,
+      "raw": 66.42,
       "sourceLabel": "GPT-5.5 (Medium)"
     },
     {
       "modelId": "gpt-5-5",
       "benchmarkId": "parsebench-tables",
-      "raw": 90.05,
+      "raw": 90.11,
       "sourceLabel": "GPT-5.5 (Medium)"
     },
     {
       "modelId": "gpt-5-5",
       "benchmarkId": "parsebench-charts",
-      "raw": 65.53,
+      "raw": 64.84,
       "sourceLabel": "GPT-5.5 (Medium)"
     },
     {
       "modelId": "gpt-5-5",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 86.81,
+      "raw": 88.4,
       "sourceLabel": "GPT-5.5 (Medium)"
     },
     {
       "modelId": "gpt-5-5",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 60.12,
+      "raw": 58.09,
       "sourceLabel": "GPT-5.5 (Medium)"
     },
     {
       "modelId": "gpt-5-5",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 30.63,
+      "raw": 30.64,
       "sourceLabel": "GPT-5.5 (Medium)"
     },
     {
@@ -51526,7 +51540,7 @@
     {
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "parsebench",
-      "raw": 56.1,
+      "raw": 56.02,
       "sourceLabel": "Claude Haiku 5.5"
     },
     {
@@ -51544,7 +51558,7 @@
     {
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 90.24,
+      "raw": 89.83,
       "sourceLabel": "Claude Haiku 5.5"
     },
     {
@@ -51783,13 +51797,13 @@
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "parsebench",
-      "raw": 78.89,
+      "raw": 78.8,
       "sourceLabel": "Claude Opus 5.5 (Effort High)"
     },
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "parsebench-tables",
-      "raw": 94.25,
+      "raw": 94.26,
       "sourceLabel": "Claude Opus 5.5 (Effort High)"
     },
     {
@@ -51801,19 +51815,19 @@
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 91.72,
+      "raw": 91.25,
       "sourceLabel": "Claude Opus 5.5 (Effort High)"
     },
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 77.04,
+      "raw": 77.06,
       "sourceLabel": "Claude Opus 5.5 (Effort High)"
     },
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 60.53,
+      "raw": 60.56,
       "sourceLabel": "Claude Opus 5.5 (Effort High)"
     },
     {
@@ -52082,13 +52096,13 @@
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "parsebench",
-      "raw": 69.26,
+      "raw": 69.21,
       "sourceLabel": "Claude Sonnet 5.5"
     },
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "parsebench-tables",
-      "raw": 91.04,
+      "raw": 91.07,
       "sourceLabel": "Claude Sonnet 5.5"
     },
     {
@@ -52100,7 +52114,7 @@
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 91.64,
+      "raw": 91.24,
       "sourceLabel": "Claude Sonnet 5.5"
     },
     {
@@ -52112,7 +52126,7 @@
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 54.31,
+      "raw": 54.44,
       "sourceLabel": "Claude Sonnet 5.5"
     },
     {
@@ -52370,13 +52384,13 @@
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "parsebench",
-      "raw": 66.85,
+      "raw": 66.73,
       "sourceLabel": "GPT-5.6 Luna (Max)"
     },
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "parsebench-tables",
-      "raw": 88.27,
+      "raw": 88.3,
       "sourceLabel": "GPT-5.6 Luna (Max)"
     },
     {
@@ -52388,7 +52402,7 @@
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 86.57,
+      "raw": 86.4,
       "sourceLabel": "GPT-5.6 Luna (Max)"
     },
     {
@@ -52400,7 +52414,7 @@
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 45.29,
+      "raw": 44.83,
       "sourceLabel": "GPT-5.6 Luna (Max)"
     },
     {
@@ -52774,13 +52788,13 @@
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "parsebench",
-      "raw": 74.46,
+      "raw": 74.4,
       "sourceLabel": "GPT-5.6 Sol (High)"
     },
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "parsebench-tables",
-      "raw": 91.39,
+      "raw": 91.41,
       "sourceLabel": "GPT-5.6 Sol (High)"
     },
     {
@@ -52792,7 +52806,7 @@
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 88.16,
+      "raw": 87.84,
       "sourceLabel": "GPT-5.6 Sol (High)"
     },
     {
@@ -53205,13 +53219,13 @@
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "parsebench",
-      "raw": 67.11,
+      "raw": 67.06,
       "sourceLabel": "GPT-5.6 Terra (Medium)"
     },
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "parsebench-tables",
-      "raw": 86.72,
+      "raw": 86.74,
       "sourceLabel": "GPT-5.6 Terra (Medium)"
     },
     {
@@ -53223,7 +53237,7 @@
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 87.06,
+      "raw": 86.77,
       "sourceLabel": "GPT-5.6 Terra (Medium)"
     },
     {
@@ -53600,13 +53614,13 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "parsebench",
-      "raw": 69.88,
+      "raw": 69.81,
       "sourceLabel": "GPT-6 Astra (Low)"
     },
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "parsebench-tables",
-      "raw": 93.17,
+      "raw": 93.18,
       "sourceLabel": "GPT-6 Astra (Low)"
     },
     {
@@ -53618,7 +53632,7 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 89.6,
+      "raw": 89.21,
       "sourceLabel": "GPT-6 Astra (Low)"
     },
     {
@@ -53924,13 +53938,13 @@
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "parsebench",
-      "raw": 64.26,
+      "raw": 64.13,
       "sourceLabel": "GPT-6 Luna (Max)"
     },
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "parsebench-tables",
-      "raw": 87.42,
+      "raw": 87.44,
       "sourceLabel": "GPT-6 Luna (Max)"
     },
     {
@@ -53942,7 +53956,7 @@
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 84.44,
+      "raw": 84.21,
       "sourceLabel": "GPT-6 Luna (Max)"
     },
     {
@@ -53954,7 +53968,7 @@
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 41.9,
+      "raw": 41.48,
       "sourceLabel": "GPT-6 Luna (Max)"
     },
     {
@@ -54156,13 +54170,13 @@
     {
       "modelId": "gpt-6-sol",
       "benchmarkId": "parsebench",
-      "raw": 68.89,
+      "raw": 68.85,
       "sourceLabel": "GPT-6 Sol (High)"
     },
     {
       "modelId": "gpt-6-sol",
       "benchmarkId": "parsebench-tables",
-      "raw": 92.63,
+      "raw": 92.65,
       "sourceLabel": "GPT-6 Sol (High)"
     },
     {
@@ -54174,7 +54188,7 @@
     {
       "modelId": "gpt-6-sol",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 87.81,
+      "raw": 87.54,
       "sourceLabel": "GPT-6 Sol (High)"
     },
     {
@@ -54186,7 +54200,7 @@
     {
       "modelId": "gpt-6-sol",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 48.03,
+      "raw": 48.12,
       "sourceLabel": "GPT-6 Sol (High)"
     },
     {
@@ -54455,13 +54469,13 @@
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "parsebench",
-      "raw": 69.7,
+      "raw": 69.63,
       "sourceLabel": "GPT-6.1 Sol (Low)"
     },
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "parsebench-tables",
-      "raw": 92.44,
+      "raw": 92.46,
       "sourceLabel": "GPT-6.1 Sol (Low)"
     },
     {
@@ -54473,7 +54487,7 @@
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 89.25,
+      "raw": 88.89,
       "sourceLabel": "GPT-6.1 Sol (Low)"
     },
     {
@@ -56746,37 +56760,37 @@
     {
       "modelId": "dots-mocr",
       "benchmarkId": "parsebench",
-      "raw": 55.79,
+      "raw": 54.18,
       "sourceLabel": "Dots.mocr"
     },
     {
       "modelId": "dots-mocr",
       "benchmarkId": "parsebench-tables",
-      "raw": 85.15,
+      "raw": 85.03,
       "sourceLabel": "Dots.mocr"
     },
     {
       "modelId": "dots-mocr",
       "benchmarkId": "parsebench-charts",
-      "raw": 0.95,
+      "raw": 0.84,
       "sourceLabel": "Dots.mocr"
     },
     {
       "modelId": "dots-mocr",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 90.03,
+      "raw": 89.99,
       "sourceLabel": "Dots.mocr"
     },
     {
       "modelId": "dots-mocr",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 46.99,
+      "raw": 40.11,
       "sourceLabel": "Dots.mocr"
     },
     {
       "modelId": "dots-mocr",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 55.81,
+      "raw": 54.91,
       "sourceLabel": "Dots.mocr"
     },
     {
@@ -56942,37 +56956,37 @@
     {
       "modelId": "kdl-frontier-parser-nano",
       "benchmarkId": "parsebench",
-      "raw": 72.38,
+      "raw": 72.27,
       "sourceLabel": "KDL-Frontier-Parser-nano"
     },
     {
       "modelId": "kdl-frontier-parser-nano",
       "benchmarkId": "parsebench-tables",
-      "raw": 85.73,
+      "raw": 85.54,
       "sourceLabel": "KDL-Frontier-Parser-nano"
     },
     {
       "modelId": "kdl-frontier-parser-nano",
       "benchmarkId": "parsebench-charts",
-      "raw": 58.61,
+      "raw": 58.62,
       "sourceLabel": "KDL-Frontier-Parser-nano"
     },
     {
       "modelId": "kdl-frontier-parser-nano",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 87.75,
+      "raw": 87.71,
       "sourceLabel": "KDL-Frontier-Parser-nano"
     },
     {
       "modelId": "kdl-frontier-parser-nano",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 55.06,
+      "raw": 54.82,
       "sourceLabel": "KDL-Frontier-Parser-nano"
     },
     {
       "modelId": "kdl-frontier-parser-nano",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 74.75,
+      "raw": 74.66,
       "sourceLabel": "KDL-Frontier-Parser-nano"
     },
     {
@@ -57215,13 +57229,13 @@
     {
       "modelId": "hpd-parsing",
       "benchmarkId": "parsebench",
-      "raw": 53.39,
+      "raw": 53.4,
       "sourceLabel": "HPD-Parsing"
     },
     {
       "modelId": "hpd-parsing",
       "benchmarkId": "parsebench-tables",
-      "raw": 73.77,
+      "raw": 73.79,
       "sourceLabel": "HPD-Parsing"
     },
     {
@@ -57233,13 +57247,13 @@
     {
       "modelId": "hpd-parsing",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 82.21,
+      "raw": 82.19,
       "sourceLabel": "HPD-Parsing"
     },
     {
       "modelId": "hpd-parsing",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 45.67,
+      "raw": 45.69,
       "sourceLabel": "HPD-Parsing"
     },
     {
@@ -58990,7 +59004,7 @@
     {
       "modelId": "qianfan-ocr",
       "benchmarkId": "parsebench",
-      "raw": 46.2,
+      "raw": 42.25,
       "sourceLabel": "Qianfan-OCR"
     },
     {
@@ -59008,55 +59022,55 @@
     {
       "modelId": "qianfan-ocr",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 83.5,
+      "raw": 76.74,
       "sourceLabel": "Qianfan-OCR"
     },
     {
       "modelId": "qianfan-ocr",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 53.8,
+      "raw": 40.53,
       "sourceLabel": "Qianfan-OCR"
     },
     {
       "modelId": "qianfan-ocr",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 20.6,
+      "raw": 20.76,
       "sourceLabel": "Qianfan-OCR"
     },
     {
       "modelId": "unlimited-ocr",
       "benchmarkId": "parsebench",
-      "raw": 46.17,
+      "raw": 33.12,
       "sourceLabel": "Unlimited-OCR"
     },
     {
       "modelId": "unlimited-ocr",
       "benchmarkId": "parsebench-tables",
-      "raw": 70.21,
+      "raw": 70.25,
       "sourceLabel": "Unlimited-OCR"
     },
     {
       "modelId": "unlimited-ocr",
       "benchmarkId": "parsebench-charts",
-      "raw": 1.34,
+      "raw": 1.01,
       "sourceLabel": "Unlimited-OCR"
     },
     {
       "modelId": "unlimited-ocr",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 86.81,
+      "raw": 87.18,
       "sourceLabel": "Unlimited-OCR"
     },
     {
       "modelId": "unlimited-ocr",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 0.97,
+      "raw": 0.23,
       "sourceLabel": "Unlimited-OCR"
     },
     {
       "modelId": "unlimited-ocr",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 71.52,
+      "raw": 6.91,
       "sourceLabel": "Unlimited-OCR"
     },
     {
@@ -59304,13 +59318,13 @@
     {
       "modelId": "teleocr",
       "benchmarkId": "parsebench",
-      "raw": 57.53,
+      "raw": 57.52,
       "sourceLabel": "TeleOCR"
     },
     {
       "modelId": "teleocr",
       "benchmarkId": "parsebench-tables",
-      "raw": 72.74,
+      "raw": 72.77,
       "sourceLabel": "TeleOCR"
     },
     {
@@ -59322,19 +59336,19 @@
     {
       "modelId": "teleocr",
       "benchmarkId": "parsebench-content-faithfulness",
-      "raw": 85.39,
+      "raw": 84.59,
       "sourceLabel": "TeleOCR"
     },
     {
       "modelId": "teleocr",
       "benchmarkId": "parsebench-semantic-formatting",
-      "raw": 45.13,
+      "raw": 45.74,
       "sourceLabel": "TeleOCR"
     },
     {
       "modelId": "teleocr",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 74.42,
+      "raw": 74.55,
       "sourceLabel": "TeleOCR"
     },
     {
@@ -59398,7 +59412,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -59406,7 +59420,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-11-02",
+      "retrievedAt": "2026-11-03",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
