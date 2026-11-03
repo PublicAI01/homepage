@@ -310811,7 +310811,7 @@
     },
     {
       "date": "2026-11-03",
-      "generatedAt": "2026-11-03T00:16:10.988Z",
+      "generatedAt": "2026-11-03T13:18:24.363Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -310858,7 +310858,7 @@
         "gpt-6-1-sol": {
           "name": "GPT-6.1 Sol",
           "org": "OpenAI",
-          "index": 67.3,
+          "index": 67.2,
           "rank": 3,
           "covered": 11
         },
@@ -310928,7 +310928,7 @@
         "deepseek-v4-1-flash": {
           "name": "DeepSeek V4.1 Flash",
           "org": "DeepSeek",
-          "index": 58.6,
+          "index": 58.5,
           "rank": 13,
           "covered": 11
         },
@@ -310970,7 +310970,7 @@
         "grok-4-7": {
           "name": "Grok 4.7",
           "org": "SpaceXAI",
-          "index": 55.9,
+          "index": 56.1,
           "rank": 19,
           "covered": 10
         },
@@ -311082,7 +311082,7 @@
         "qwen3-8-27b": {
           "name": "Qwen3.8 27B",
           "org": "Alibaba",
-          "index": 49.6,
+          "index": 49.5,
           "rank": 35,
           "covered": 10
         },
@@ -312199,6 +312199,13 @@
           "rank": null,
           "covered": 2
         },
+        "qwen3-5-397b-a17b": {
+          "name": "Qwen3.5 397B A17B",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 5
+        },
         "gemma-4-31b": {
           "name": "Gemma 4 31B",
           "org": "Google",
@@ -312374,13 +312381,6 @@
           "rank": null,
           "covered": 4
         },
-        "qwen3-5-397b-a17b": {
-          "name": "Qwen3.5 397B A17B",
-          "org": "Alibaba",
-          "index": null,
-          "rank": null,
-          "covered": 5
-        },
         "qwen3-vl-235b-a22b-instruct": {
           "name": "Qwen3 VL 235B A22B Instruct",
           "org": "Alibaba",
@@ -312409,19 +312409,19 @@
           "rank": null,
           "covered": 7
         },
-        "grok-build-0-1": {
-          "name": "Grok Build 0.1",
-          "org": "SpaceXAI",
-          "index": null,
-          "rank": null,
-          "covered": 4
-        },
         "gpt-5": {
           "name": "GPT-5",
           "org": "OpenAI",
           "index": null,
           "rank": null,
           "covered": 10
+        },
+        "grok-build-0-1": {
+          "name": "Grok Build 0.1",
+          "org": "SpaceXAI",
+          "index": null,
+          "rank": null,
+          "covered": 4
         },
         "step-3": {
           "name": "Step 3",
@@ -312773,19 +312773,19 @@
           "rank": null,
           "covered": 1
         },
-        "qwen3-max": {
-          "name": "Qwen3 Max",
-          "org": "Alibaba",
-          "index": null,
-          "rank": null,
-          "covered": 3
-        },
         "grok-4-20": {
           "name": "Grok 4.20",
           "org": "SpaceXAI",
           "index": null,
           "rank": null,
           "covered": 4
+        },
+        "qwen3-max": {
+          "name": "Qwen3 Max",
+          "org": "Alibaba",
+          "index": null,
+          "rank": null,
+          "covered": 3
         },
         "gpt-5-4-mini": {
           "name": "GPT-5.4 mini",
@@ -313452,19 +313452,19 @@
           "rank": null,
           "covered": 3
         },
-        "gpt-4-5": {
-          "name": "GPT-4.5",
-          "org": "OpenAI",
-          "index": null,
-          "rank": null,
-          "covered": 5
-        },
         "hunyuan-turbos": {
           "name": "Hunyuan TurboS",
           "org": "Tencent",
           "index": null,
           "rank": null,
           "covered": 1
+        },
+        "gpt-4-5": {
+          "name": "GPT-4.5",
+          "org": "OpenAI",
+          "index": null,
+          "rank": null,
+          "covered": 5
         },
         "gemma-3-27b-it": {
           "name": "Gemma 3 27B IT",

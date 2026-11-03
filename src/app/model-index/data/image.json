@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T00:16:10.988Z",
+  "generatedAt": "2026-11-03T13:18:24.363Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -929,7 +929,7 @@
     {
       "modelId": "phoenix-0-9-ultra",
       "benchmarkId": "aa-text-to-image",
-      "raw": 834,
+      "raw": 833,
       "stderr": 20,
       "sourceLabel": "Phoenix 0.9 Ultra"
     },
@@ -943,8 +943,8 @@
     {
       "modelId": "flux-1-dev",
       "benchmarkId": "aa-text-to-image",
-      "raw": 827,
-      "stderr": 44,
+      "raw": 826,
+      "stderr": 43,
       "sourceLabel": "FLUX.1 [dev]"
     },
     {
@@ -971,14 +971,14 @@
     {
       "modelId": "flux-1-krea-dev",
       "benchmarkId": "aa-text-to-image",
-      "raw": 897,
-      "stderr": 39,
+      "raw": 889,
+      "stderr": 38,
       "sourceLabel": "FLUX.1 Krea [dev]"
     },
     {
       "modelId": "hidream-o1-image-dev",
       "benchmarkId": "aa-text-to-image",
-      "raw": 811,
+      "raw": 809,
       "stderr": 20,
       "sourceLabel": "HiDream-O1-Image-Dev"
     },
@@ -1041,14 +1041,14 @@
     {
       "modelId": "flux-1-schnell",
       "benchmarkId": "aa-text-to-image",
-      "raw": 739,
+      "raw": 740,
       "stderr": 20,
       "sourceLabel": "FLUX.1 [schnell]"
     },
     {
       "modelId": "gpt-image-1",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1013,
+      "raw": 1014,
       "stderr": 12,
       "sourceLabel": "GPT Image 1 (high)"
     },
@@ -1069,7 +1069,7 @@
     {
       "modelId": "gpt-image-1-mini",
       "benchmarkId": "aa-text-to-image",
-      "raw": 936,
+      "raw": 934,
       "stderr": 17,
       "sourceLabel": "GPT Image 1 Mini (medium)"
     },
@@ -1118,7 +1118,7 @@
     {
       "modelId": "luma-uni-1-max",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1023,
+      "raw": 1024,
       "stderr": 12,
       "sourceLabel": "Luma UNI 1 Max"
     },
@@ -1146,7 +1146,7 @@
     {
       "modelId": "flux1-1-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 870,
+      "raw": 871,
       "stderr": 19,
       "sourceLabel": "FLUX1.1 [pro]"
     },
@@ -1160,7 +1160,7 @@
     {
       "modelId": "flux1-1-pro-ultra",
       "benchmarkId": "aa-text-to-image",
-      "raw": 855,
+      "raw": 854,
       "stderr": 19,
       "sourceLabel": "FLUX1.1 [pro] Ultra"
     },
@@ -1216,7 +1216,7 @@
     {
       "modelId": "gpt-image-1-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1122,
+      "raw": 1123,
       "stderr": 11,
       "sourceLabel": "GPT Image 1.5 (high)"
     },
@@ -1230,14 +1230,14 @@
     {
       "modelId": "cosmos3-super-text2image-4step",
       "benchmarkId": "aa-text-to-image",
-      "raw": 970,
+      "raw": 971,
       "stderr": 10,
       "sourceLabel": "Cosmos3-Super-Text2Image-4Step"
     },
     {
       "modelId": "cosmos3-super-text2image-agentic",
       "benchmarkId": "aa-text-to-image",
-      "raw": 992,
+      "raw": 993,
       "stderr": 10,
       "sourceLabel": "Cosmos3-Super-Text2Image (agentic)"
     },
@@ -1251,7 +1251,7 @@
     {
       "modelId": "cosmos3-super-text2image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 985,
+      "raw": 986,
       "stderr": 10,
       "sourceLabel": "Cosmos3-Super-Text2Image"
     },
@@ -1307,7 +1307,7 @@
     {
       "modelId": "flux-2-klein-4b",
       "benchmarkId": "aa-text-to-image",
-      "raw": 837,
+      "raw": 838,
       "stderr": 12,
       "sourceLabel": "FLUX.2 [klein] 4B"
     },
@@ -1376,14 +1376,14 @@
     {
       "modelId": "flux-2-dev-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 994,
+      "raw": 995,
       "stderr": 11,
       "sourceLabel": "FLUX.2 [dev] Turbo"
     },
     {
       "modelId": "fibo-2-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1039,
+      "raw": 1040,
       "stderr": 12,
       "sourceLabel": "Fibo 2.0"
     },
@@ -1467,7 +1467,7 @@
     {
       "modelId": "gpt-image-2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1187,
+      "raw": 1189,
       "stderr": 11,
       "sourceLabel": "GPT Image 2 (high)"
     },
@@ -1488,7 +1488,7 @@
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1166,
+      "raw": 1168,
       "stderr": 12,
       "sourceLabel": "Grok Imagine Image 2.0"
     },
@@ -1579,7 +1579,7 @@
     {
       "modelId": "krea-2-medium-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1020,
+      "raw": 1021,
       "stderr": 11,
       "sourceLabel": "Krea 2 Medium Turbo"
     },
@@ -1593,7 +1593,7 @@
     {
       "modelId": "omnigen-v2",
       "benchmarkId": "aa-text-to-image",
-      "raw": 717,
+      "raw": 714,
       "stderr": 26,
       "sourceLabel": "OmniGen V2"
     },
@@ -1642,7 +1642,7 @@
     {
       "modelId": "qwen-image-2-1-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1057,
+      "raw": 1058,
       "stderr": 12,
       "sourceLabel": "Qwen-Image-2.1-Pro"
     },
@@ -1670,7 +1670,7 @@
     {
       "modelId": "qwen-image-2-1-turbo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1029,
+      "raw": 1028,
       "stderr": 12,
       "sourceLabel": "Qwen-Image-2.1-Turbo"
     },
@@ -1740,7 +1740,7 @@
     {
       "modelId": "gpt-image-2-5-sunburst",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1222,
+      "raw": 1223,
       "stderr": 10,
       "sourceLabel": "GPT Image 2.5 Sunburst (max)"
     },
@@ -1803,14 +1803,14 @@
     {
       "modelId": "mai-image-2-6-flash",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1119,
+      "raw": 1120,
       "stderr": 12,
       "sourceLabel": "MAI-Image-2.6-Flash"
     },
     {
       "modelId": "mai-image-2-6",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1166,
+      "raw": 1167,
       "stderr": 12,
       "sourceLabel": "MAI-Image-2.6"
     },
@@ -1831,7 +1831,7 @@
     {
       "modelId": "wan-2-6-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1027,
+      "raw": 1026,
       "stderr": 12,
       "sourceLabel": "Wan 2.6 Image"
     },
@@ -1887,7 +1887,7 @@
     {
       "modelId": "wan-2-7",
       "benchmarkId": "aa-text-to-image",
-      "raw": 986,
+      "raw": 987,
       "stderr": 12,
       "sourceLabel": "Wan 2.7"
     },
@@ -1936,7 +1936,7 @@
     {
       "modelId": "flux-3-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1117,
+      "raw": 1119,
       "stderr": 12,
       "sourceLabel": "FLUX 3 Image"
     },
@@ -1964,7 +1964,7 @@
     {
       "modelId": "hunyuan-image-3-0-instruct",
       "benchmarkId": "aa-text-to-image",
-      "raw": 987,
+      "raw": 988,
       "stderr": 12,
       "sourceLabel": "HunyuanImage 3.0 Instruct"
     },
@@ -1979,7 +1979,7 @@
       "modelId": "ideogram-3-0",
       "benchmarkId": "aa-text-to-image",
       "raw": 910,
-      "stderr": 18,
+      "stderr": 17,
       "sourceLabel": "Ideogram 3.0"
     },
     {
@@ -1992,14 +1992,14 @@
     {
       "modelId": "kling-image-3-0-omni",
       "benchmarkId": "aa-text-to-image",
-      "raw": 917,
-      "stderr": 17,
+      "raw": 919,
+      "stderr": 16,
       "sourceLabel": "Kling Image 3.0 Omni"
     },
     {
       "modelId": "qwen-image-3-0-pro",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1096,
+      "raw": 1097,
       "stderr": 12,
       "sourceLabel": "Qwen-Image-3.0-Pro"
     },
@@ -2013,7 +2013,7 @@
     {
       "modelId": "qwen-image-3-0",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1070,
+      "raw": 1072,
       "stderr": 12,
       "sourceLabel": "Qwen-Image-3.0"
     },
@@ -2118,14 +2118,14 @@
     {
       "modelId": "ideogram-4-0-instant",
       "benchmarkId": "aa-text-to-image",
-      "raw": 982,
+      "raw": 983,
       "stderr": 12,
       "sourceLabel": "Ideogram 4.0 Instant"
     },
     {
       "modelId": "ideogram-4-0-quality",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1026,
+      "raw": 1025,
       "stderr": 10,
       "sourceLabel": "Ideogram 4.0 (Quality)"
     },
@@ -2216,7 +2216,7 @@
     {
       "modelId": "ideogram-4-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1015,
+      "raw": 1016,
       "stderr": 15,
       "sourceLabel": "Ideogram 4.5 (High)"
     },
@@ -2230,7 +2230,7 @@
     {
       "modelId": "seedream-4-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1026,
+      "raw": 1027,
       "stderr": 12,
       "sourceLabel": "Seedream 4.5"
     },
@@ -2251,7 +2251,7 @@
     {
       "modelId": "seedream-5-0-lite",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1017,
+      "raw": 1019,
       "stderr": 12,
       "sourceLabel": "Seedream 5.0 Lite"
     },
@@ -2370,14 +2370,14 @@
     {
       "modelId": "lucid-origin-fast",
       "benchmarkId": "aa-text-to-image",
-      "raw": 860,
-      "stderr": 18,
+      "raw": 861,
+      "stderr": 17,
       "sourceLabel": "Lucid Origin Fast"
     },
     {
       "modelId": "fibo",
       "benchmarkId": "aa-text-to-image",
-      "raw": 849,
+      "raw": 850,
       "stderr": 19,
       "sourceLabel": "FIBO"
     },
@@ -2391,7 +2391,7 @@
     {
       "modelId": "luma-photon-flash",
       "benchmarkId": "aa-text-to-image",
-      "raw": 769,
+      "raw": 770,
       "stderr": 23,
       "sourceLabel": "Luma Photon Flash"
     },
@@ -2412,7 +2412,7 @@
     {
       "modelId": "grok-imagine-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1023,
+      "raw": 1022,
       "stderr": 11,
       "sourceLabel": "grok-imagine-image"
     },
@@ -2454,7 +2454,7 @@
     {
       "modelId": "p-image-ideogram",
       "benchmarkId": "aa-text-to-image",
-      "raw": 991,
+      "raw": 992,
       "stderr": 15,
       "sourceLabel": "P-Image-Ideogram (Very High)"
     },
@@ -2489,7 +2489,7 @@
     {
       "modelId": "p-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 899,
+      "raw": 898,
       "stderr": 18,
       "sourceLabel": "P-Image"
     },
@@ -2503,14 +2503,14 @@
     {
       "modelId": "qwen-image-plus",
       "benchmarkId": "aa-text-to-image",
-      "raw": 952,
+      "raw": 953,
       "stderr": 16,
       "sourceLabel": "Qwen Image Plus 2601"
     },
     {
       "modelId": "qwen-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 903,
+      "raw": 904,
       "stderr": 18,
       "sourceLabel": "Qwen Image"
     },
