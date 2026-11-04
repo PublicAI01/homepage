@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T13:32:27.256Z",
+  "generatedAt": "2026-11-04T23:03:37.610Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -72,6 +72,11 @@
           "url": "https://platform.minimax.io/docs"
         }
       }
+    },
+    {
+      "id": "hidream-o1-video-1-0",
+      "name": "HiDream O1 Video 1.0",
+      "org": "HiDream"
     },
     { "id": "happyhorse-1-0", "name": "HappyHorse 1.0", "org": "Alibaba-ATH" },
     { "id": "heygen-video-1", "name": "HeyGen Video 1", "org": "Other" },
@@ -466,6 +471,13 @@
       "raw": 1181,
       "stderr": 12,
       "sourceLabel": "hailuo-02-standard"
+    },
+    {
+      "modelId": "hidream-o1-video-1-0",
+      "benchmarkId": "aa-image-to-video",
+      "raw": 1098,
+      "stderr": 14,
+      "sourceLabel": "HiDream-O1-Video-1.0"
     },
     {
       "modelId": "happyhorse-1-0",

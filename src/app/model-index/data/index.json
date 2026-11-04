@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T13:32:27.256Z",
+  "generatedAt": "2026-11-04T23:03:37.610Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -3536,8 +3536,8 @@
           "id": "openai/gpt-oss-120b",
           "url": "https://openrouter.ai/openai/gpt-oss-120b",
           "contextLength": 131072,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.022,
+          "outputPerM": 0.081,
           "listedAt": "2025-08-05",
           "modalities": ["text"]
         },
@@ -5652,8 +5652,8 @@
           "id": "openai/gpt-oss-20b",
           "url": "https://openrouter.ai/openai/gpt-oss-20b",
           "contextLength": 131072,
-          "inputPerM": 0.03,
-          "outputPerM": 0.13,
+          "inputPerM": 0.018,
+          "outputPerM": 0.09,
           "listedAt": "2025-08-05",
           "modalities": ["text"]
         },
@@ -5991,8 +5991,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.085,
-          "outputPerM": 0.256,
+          "inputPerM": 0.033,
+          "outputPerM": 0.098,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -7230,8 +7230,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -7726,8 +7726,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.075,
+          "outputPerM": 0.3,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -7776,11 +7776,16 @@
           "listedAt": "2026-10-23",
           "modalities": ["text", "image", "video"]
         },
+        "weights": {
+          "huggingFaceId": "moonshotai/Kimi-K3.1-Pro",
+          "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+        },
         "official": {
           "name": "Moonshot AI Platform",
           "url": "https://platform.moonshot.ai/docs"
         }
-      }
+      },
+      "size": { "paramsB": 2780.1, "source": "huggingface" }
     },
     {
       "id": "mistral-medium-3-1",
@@ -9120,7 +9125,7 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.059,
+          "inputPerM": 0.043,
           "outputPerM": 0.3,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
@@ -10933,8 +10938,8 @@
           "id": "z-ai/glm-5.3-flash",
           "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.027,
-          "outputPerM": 0.1,
+          "inputPerM": 0.15,
+          "outputPerM": 0.5,
           "listedAt": "2026-08-26",
           "modalities": ["text", "image", "video"]
         },
@@ -10955,8 +10960,8 @@
           "id": "z-ai/glm-5.3",
           "url": "https://openrouter.ai/z-ai/glm-5.3",
           "contextLength": 1048576,
-          "inputPerM": 0.08,
-          "outputPerM": 3.6,
+          "inputPerM": 0.07,
+          "outputPerM": 1.4,
           "listedAt": "2026-08-18",
           "modalities": ["text"]
         },
@@ -19094,7 +19099,7 @@
       "modelId": "k2-horizon-3-7b",
       "benchmarkId": "aa-briefcase",
       "raw": 793,
-      "stderr": 10.5,
+      "stderr": 10,
       "sourceLabel": "K2 Horizon 3.7B"
     },
     {
@@ -34475,6 +34480,12 @@
     },
     {
       "modelId": "mistral-medium-3-5",
+      "benchmarkId": "artificial-analysis",
+      "raw": 5,
+      "sourceLabel": "Mistral Medium 3.5"
+    },
+    {
+      "modelId": "mistral-medium-3-5",
       "benchmarkId": "aa-gdpval",
       "raw": 769,
       "stderr": 19,
@@ -34484,7 +34495,7 @@
       "modelId": "mistral-medium-3-5",
       "benchmarkId": "aa-briefcase",
       "raw": 523,
-      "stderr": 8,
+      "stderr": 8.5,
       "sourceLabel": "Mistral Medium 3.5"
     },
     {
@@ -34846,7 +34857,7 @@
     {
       "modelId": "nemotron-3-5-super-vl",
       "benchmarkId": "vals-vibe-code",
-      "raw": 3.54,
+      "raw": 3.71,
       "stderr": 1.93,
       "sourceLabel": "Nemotron 3.5 Super VL",
       "scaffold": "OpenHands"
@@ -40324,9 +40335,9 @@
     {
       "modelId": "hy4",
       "benchmarkId": "vals-legal_research",
-      "raw": 45.19,
-      "stderr": 3.46,
-      "sourceLabel": "Hy4 Preview"
+      "raw": 41.35,
+      "stderr": 3.42,
+      "sourceLabel": "Hy4"
     },
     {
       "modelId": "hy4",
@@ -40338,9 +40349,9 @@
     {
       "modelId": "hy4",
       "benchmarkId": "vals-hlab",
-      "raw": 8.75,
-      "stderr": 2.19,
-      "sourceLabel": "Hy4 Preview"
+      "raw": 12.5,
+      "stderr": 2.66,
+      "sourceLabel": "Hy4"
     },
     {
       "modelId": "hy4",
@@ -40387,9 +40398,9 @@
     {
       "modelId": "hy4",
       "benchmarkId": "vals-vibe-code",
-      "raw": 77.48,
-      "stderr": 4.04,
-      "sourceLabel": "Hy4 Preview",
+      "raw": 81.01,
+      "stderr": 3.55,
+      "sourceLabel": "Hy4",
       "scaffold": "OpenHands"
     },
     {
@@ -49563,8 +49574,8 @@
     {
       "modelId": "gpt-5-2",
       "benchmarkId": "arc-agi-2",
-      "raw": 52.9,
-      "sourceLabel": "GPT-5.2 (XHigh)"
+      "raw": 72.9,
+      "sourceLabel": "GPT-5.2 (Refine.)"
     },
     {
       "modelId": "gpt-5-2",
@@ -56294,7 +56305,7 @@
       "modelId": "north-mini-code",
       "benchmarkId": "aa-briefcase",
       "raw": 212,
-      "stderr": 9,
+      "stderr": 9.5,
       "sourceLabel": "North Mini Code"
     },
     {
