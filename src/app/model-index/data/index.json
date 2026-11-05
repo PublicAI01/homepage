@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T13:46:49.784Z",
+  "generatedAt": "2026-11-05T23:05:51.401Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -5949,8 +5949,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.061,
-          "outputPerM": 0.184,
+          "inputPerM": 0.077,
+          "outputPerM": 0.255,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -7188,8 +7188,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -7698,8 +7698,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.075,
+          "outputPerM": 0.3,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -7873,8 +7873,8 @@
           "id": "meta-llama/llama-3.3-70b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
           "contextLength": 131072,
-          "inputPerM": 0.2,
-          "outputPerM": 0.52,
+          "inputPerM": 0.59,
+          "outputPerM": 0.79,
           "listedAt": "2024-12-06",
           "modalities": ["text"]
         },
@@ -9097,7 +9097,7 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.057,
+          "inputPerM": 0.043,
           "outputPerM": 0.3,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
@@ -56308,6 +56308,12 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 82.2,
       "sourceLabel": "Clef-omni"
+    },
+    {
+      "modelId": "north-mini-code",
+      "benchmarkId": "artificial-analysis",
+      "raw": 3,
+      "sourceLabel": "North Mini Code"
     },
     {
       "modelId": "north-mini-code",
