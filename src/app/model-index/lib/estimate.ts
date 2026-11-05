@@ -18,6 +18,24 @@ export function estimateMark(bound: EstimateBound, ascii = false): string {
   return '~';
 }
 
+/**
+ * The figure as every outlet prints it: the mark, the score to one
+ * decimal, and ✱ after it when every anchor was a report — "~46.7✱".
+ *
+ * ✱ still means a report and nothing else: here it says the comparison
+ * set the figure was placed in is one a publication printed, not a board
+ * that ran the model. Without it, a rival's launch post read as a board
+ * placement on the badge, the card and the API (2026-11-05).
+ */
+export function estimateLabel(
+  estimate: { score: number; bound: EstimateBound; fromReports?: boolean },
+  ascii = false,
+): string {
+  return `${estimateMark(estimate.bound, ascii)}${estimate.score.toFixed(1)}${
+    estimate.fromReports ? (ascii ? '*' : '✱') : ''
+  }`;
+}
+
 /** The same in prose: "at most 51.5", "at least 60.2", "about 55.0". */
 export function estimateWords(bound: EstimateBound): string {
   if (bound === 'below') return 'at most';

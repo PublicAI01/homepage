@@ -894,6 +894,58 @@ describe('anchored estimates', () => {
   });
 });
 
+describe('estimates anchored on reports alone', () => {
+  // Two boards build the Overall; m1–m3 are on both and ranked. m4 is on
+  // one board only (unranked, board-anchored estimate). m5 appears nowhere
+  // but on a vendor's post, which also prints m1 and m2 — so m5 can be
+  // placed, and only within the set that post chose.
+  const bs = [
+    bench('a'),
+    bench('b'),
+    bench('r:x', 'r', { kind: 'report', source: 'r', independent: false }),
+  ];
+  const ms = ['m1', 'm2', 'm3', 'm4', 'm5'].map(model);
+  const ss = [
+    ...['a', 'b'].flatMap((x) => [
+      score('m1', x, 90),
+      score('m2', x, 50),
+      score('m3', x, 10),
+    ]),
+    score('m4', 'a', 70),
+    score('m1', 'r:x', 80),
+    score('m2', 'r:x', 40),
+    score('m5', 'r:x', 60),
+  ];
+  const run = (w: Record<string, number>) =>
+    aggregate({
+      models: ms,
+      benchmarks: bs,
+      scores: ss,
+      weights: w,
+      overall: new Set(['a', 'b']),
+      priorFraction: 0.25,
+      minSources: 2,
+    });
+  const withReports = run(weightsFor(bs));
+  const boardOnly = run({ ...weightsFor(bs), 'r:x': 0 });
+  const rows = boardsFirst(boardOnly, withReports);
+  const of = (id: string) => rows.find((r) => r.model.id === id)!;
+
+  it('marks an estimate whose every anchor is a report, and not one a board placed', () => {
+    // Five models no board had scored were printed "~46.7" from a
+    // rival's launch post, indistinguishable from a board placement
+    // (2026-11-05).
+    expect(of('m5').covered).toBe(0);
+    expect(of('m5').estimate).not.toBeNull();
+    expect(of('m5').estimate!.fromReports).toBe(true);
+    expect(of('m4').estimate!.fromReports).toBe(false);
+    // The board run had nothing to place m5 by; the grafted estimate
+    // carries the mark across.
+    expect(boardOnly.find((r) => r.model.id === 'm5')!.estimate).toBeNull();
+    for (const r of rows.filter((r) => r.ranked)) expect(r.estimate).toBeNull();
+  });
+});
+
 describe('what a one-off publication is worth', () => {
   const report = (independent?: boolean): Benchmark => ({
     id: 'r:x',

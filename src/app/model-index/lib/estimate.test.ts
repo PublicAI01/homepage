@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest';
 
-import { estimatedPosition, estimateMark, estimateWords } from './estimate';
+import {
+  estimatedPosition,
+  estimateLabel,
+  estimateMark,
+  estimateWords,
+} from './estimate';
 
 describe('estimateMark', () => {
   it('never uses the report mark, and keeps the bound', () => {
@@ -20,6 +25,26 @@ describe('estimateMark', () => {
     expect(estimateWords(null)).toBe('about');
     expect(estimateWords('below')).toBe('at most');
     expect(estimateWords('above')).toBe('at least');
+  });
+});
+
+describe('estimateLabel', () => {
+  it('adds the report mark only when every anchor was a report', () => {
+    expect(estimateLabel({ score: 46.71, bound: null })).toBe('~46.7');
+    expect(
+      estimateLabel({ score: 46.71, bound: null, fromReports: false }),
+    ).toBe('~46.7');
+    expect(
+      estimateLabel({ score: 46.71, bound: null, fromReports: true }),
+    ).toBe('~46.7✱');
+    expect(
+      estimateLabel({ score: 51.5, bound: 'below', fromReports: true }),
+    ).toBe('≤51.5✱');
+    // The social card renders Latin-1 only.
+    expect(
+      estimateLabel({ score: 60.2, bound: 'above', fromReports: true }, true),
+    ).toBe('>=60.2*');
+    expect(estimateLabel({ score: 60.2, bound: 'above' }, true)).toBe('>=60.2');
   });
 });
 

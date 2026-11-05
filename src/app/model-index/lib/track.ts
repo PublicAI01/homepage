@@ -76,6 +76,8 @@ export interface ModelSummary {
     anchors: number;
     /** `below`: trailed every anchor, score is a ceiling; `above`: led every anchor, score is a floor. */
     bound: 'below' | 'above' | null;
+    /** True when every anchoring measure is a report ✱: the model shares no board with a ranked model, and the figure is placed within a comparison set a publication chose to print. Cite with the ✱. */
+    fromReports: boolean;
     /** Where the estimate would stand among ranked models; null for a ceiling or floor. Approximate, never a rank. */
     position: number | null;
   } | null;

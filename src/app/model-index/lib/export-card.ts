@@ -25,8 +25,13 @@ export interface CardSpec {
   index: number | null;
   rank: number | null;
   rankedTotal: number;
-  /** Only when `index` is null. */
-  estimate: { words: string; score: number; position: number | null } | null;
+  /** Only when `index` is null. `fromReports`: every anchor was a report ✱, and the figure is printed with it. */
+  estimate: {
+    words: string;
+    score: number;
+    position: number | null;
+    fromReports?: boolean;
+  } | null;
   /** Why it is not ranked, when it is not. */
   unrankedReason: string;
   covered: number;
@@ -211,7 +216,7 @@ export async function drawCard(spec: CardSpec): Promise<HTMLCanvasElement> {
     y += 54;
     text(
       spec.estimate
-        ? `Looks like ${spec.estimate.words} ${spec.estimate.score.toFixed(1)}${spec.estimate.position ? `, around #${spec.estimate.position} if ranked` : ''}`
+        ? `Looks like ${spec.estimate.words} ${spec.estimate.score.toFixed(1)}${spec.estimate.fromReports ? '✱' : ''}${spec.estimate.position ? `, around #${spec.estimate.position} if ranked` : ''}`
         : spec.unrankedReason,
       PAD,
       y,

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { models } from '../data';
+import { estimateLabel } from '../lib/estimate';
 import {
   getModel,
   headlineTaxonomy,
@@ -61,7 +62,10 @@ describe('badge', () => {
     // it as a point (2026-09-21).
     const bounded = models
       .map((m) => getModel(m.id).model)
-      .find((m) => m?.estimatedIndex?.bound === 'below');
+      .find(
+        (m) =>
+          m?.estimatedIndex?.bound === 'below' && !m.estimatedIndex.fromReports,
+      );
     expect(bounded).toBeDefined();
     const svg = await svgFor(`model=${encodeURIComponent(bounded!.id)}`);
     // The value itself; the tooltip legitimately explains what ✱ means.
@@ -69,6 +73,20 @@ describe('badge', () => {
       `aria-label="PublicAI Index: ≤${bounded!.estimatedIndex!.score.toFixed(1)} provisional"`,
     );
     expect(svg).not.toContain('~');
+  });
+
+  it('marks an estimate anchored on reports alone with ✱', async () => {
+    // Five models no board had scored read "~46.7 provisional" off a
+    // rival's launch post, like any board placement (2026-11-05). The
+    // snapshot may or may not carry such a model on a given day.
+    const starred = models
+      .map((m) => getModel(m.id).model)
+      .find((m) => m?.estimatedIndex?.fromReports);
+    if (!starred) return;
+    const svg = await svgFor(`model=${encodeURIComponent(starred.id)}`);
+    const label = estimateLabel(starred.estimatedIndex!);
+    expect(label).toContain('✱');
+    expect(svg).toContain(`aria-label="PublicAI Index: ${label} provisional"`);
   });
 
   it('says "not listed" for a near miss, never a neighbour’s standing', async () => {

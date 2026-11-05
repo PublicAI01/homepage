@@ -27,7 +27,7 @@ import {
   figuresOn,
   groupBoards,
 } from '../lib/boards';
-import { estimatedPosition, estimateMark } from '../lib/estimate';
+import { estimatedPosition, estimateLabel } from '../lib/estimate';
 import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
 import { scopeNote } from '../lib/scope-notes';
@@ -1220,12 +1220,10 @@ function Row({
               title={
                 row.ranked
                   ? 'Overall index: this model’s weighted score across every board that builds it.'
-                  : `Overall estimate ✱ — no Overall score. Placed by its figures on ${row.estimate!.measures} measure${row.estimate!.measures > 1 ? 's' : ''} among ${row.estimate!.anchors} models that have one. Never ranked.`
+                  : `Overall estimate — no Overall score. Placed by its figures on ${row.estimate!.measures} measure${row.estimate!.measures > 1 ? 's' : ''} among ${row.estimate!.anchors} models that have one.${row.estimate!.fromReports ? ' Every one of those figures is from a report ✱: a comparison set its publisher chose, not a board.' : ''} Never ranked.`
               }>
               Overall{' '}
-              {row.ranked
-                ? fmt(row.score)
-                : `${estimateMark(row.estimate!.bound)}${fmt(row.estimate!.score)}`}
+              {row.ranked ? fmt(row.score) : estimateLabel(row.estimate!)}
             </span>
           ) : null}
           {!inScope ? (
@@ -1255,9 +1253,8 @@ function Row({
             {row.score === null && row.estimate ? (
               <span
                 className="text-[#B9B7C4]"
-                title={`Estimate — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position.${row.estimate.bound === 'below' ? ' It trailed every such model there, so this is a ceiling.' : row.estimate.bound === 'above' ? ' It led every such model there, so this is a floor.' : ''} Never ranked.`}>
-                {estimateMark(row.estimate.bound)}
-                {fmt(row.estimate.score)}
+                title={`Estimate — no Overall score. Placed by its figures on ${row.estimate.measures} measure${row.estimate.measures > 1 ? 's' : ''} among ${row.estimate.anchors} models that have one, reading their Overall index at that position.${row.estimate.bound === 'below' ? ' It trailed every such model there, so this is a ceiling.' : row.estimate.bound === 'above' ? ' It led every such model there, so this is a floor.' : ''}${row.estimate.fromReports ? ' Every one of those figures is from a report ✱: a comparison set its publisher chose, not a board.' : ''} Never ranked.`}>
+                {estimateLabel(row.estimate)}
               </span>
             ) : rankKey.level === 'overall' && !row.ranked ? (
               // Below the coverage threshold the number is a floor, not a
@@ -1435,8 +1432,7 @@ function ModelCard({
                 <span className="text-[#9C9AA8]">
                   , estimated{' '}
                   <b className="font-medium text-[#D9D7E0]">
-                    {estimateMark(row.estimate.bound)}
-                    {fmt(row.estimate.score)}
+                    {estimateLabel(row.estimate)}
                   </b>
                 </span>
               ) : null}

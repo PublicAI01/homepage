@@ -1,4 +1,4 @@
-import { estimateMark } from '../lib/estimate';
+import { estimateLabel } from '../lib/estimate';
 import { getModel, positionIn, resolveScope, scopeLabel } from '../lib/query';
 
 /**
@@ -48,7 +48,7 @@ export function GET(request: Request) {
       value = m.ranked
         ? `#${m.rank} · ${m.index?.toFixed(1)}`
         : m.estimatedIndex
-          ? `${estimateMark(m.estimatedIndex.bound)}${m.estimatedIndex.score.toFixed(1)} provisional`
+          ? `${estimateLabel(m.estimatedIndex)} provisional`
           : 'provisional';
       tone = m.ranked ? '#4000C8' : '#6F6D7A';
     } else {

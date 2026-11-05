@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 import { MARK } from '../../og/mark';
 import { cardOf } from '../lib/card';
-import { estimateMark } from '../lib/estimate';
+import { estimateLabel } from '../lib/estimate';
 import { decodeView } from '../lib/view-state';
 
 /**
@@ -91,7 +91,11 @@ export async function GET(request: Request) {
           }}
         />
         <div style={{ display: 'flex', marginLeft: 12, fontWeight: 600 }}>
-          {`${estimated ? estimateMark(estimated.bound, true) : ''}${v === null ? '-' : v.toFixed(1)}`}
+          {estimated
+            ? estimateLabel(estimated, true)
+            : v === null
+              ? '-'
+              : v.toFixed(1)}
         </div>
       </div>
     );

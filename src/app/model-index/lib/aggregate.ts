@@ -115,6 +115,18 @@ export interface Estimate {
    * a ceiling (≤), not a point; `above` the reverse (≥).
    */
   bound: 'below' | 'above' | null;
+  /**
+   * True when every measure the placement drew on is a report ✱ — the
+   * model shares no board with a ranked model, and the only comparison
+   * set is the one a publication chose to print. The default view grafts
+   * such an estimate onto a row the board run could not place
+   * (boardsFirst, 2026-09-20), and from 2026-09-21 every estimate wore
+   * ~ / ≤ / ≥ on the premise that estimates are anchored on boards: five
+   * models no board had scored were printed "~46.7" on the badge, the
+   * card and the API from a rival's launch post, with nothing anywhere
+   * to say so (2026-11-05). The outlets print ✱ after such a figure.
+   */
+  fromReports: boolean;
 }
 
 const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length;
@@ -372,7 +384,9 @@ export function boardsFirst(
       byDomain: fill(b.byDomain, s.byDomain),
       byCategory: fill(b.byCategory, s.byCategory),
       // Same rule for the Overall estimate ✱, which is never a rank: where
-      // boards give nothing to place a model by, its ✱ figures do.
+      // boards give nothing to place a model by, its ✱ figures do — and
+      // the grafted estimate says so (`fromReports`), so the outlets can
+      // print the ✱ its figures carry.
       estimate: b.estimate ?? s.estimate,
       // The ✱ figures themselves stay: they are shown, cited and counted,
       // they just do not move a number a board already decided.
@@ -694,6 +708,7 @@ export function aggregate({
     let below = 0;
     let above = 0;
     let measures = 0;
+    let reportMeasures = 0;
     const anchorIds = new Set<string>();
     for (const s of r.perBenchmark) {
       const w = weights[s.benchmarkId] ?? 0;
@@ -707,6 +722,7 @@ export function aggregate({
       if (placed.bound === 'below') below += w * support;
       if (placed.bound === 'above') above += w * support;
       measures++;
+      if (kindOf.get(s.benchmarkId) === 'report') reportMeasures++;
       for (const [modelId] of normalizedBy.get(s.benchmarkId)!)
         if (overallOf.has(modelId)) anchorIds.add(modelId);
     }
@@ -716,6 +732,7 @@ export function aggregate({
         measures,
         anchors: anchorIds.size,
         bound: below > wsum / 2 ? 'below' : above > wsum / 2 ? 'above' : null,
+        fromReports: reportMeasures === measures,
       };
   }
 

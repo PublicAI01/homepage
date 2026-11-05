@@ -281,6 +281,7 @@ export default async function ModelPage({
           words: estimateWords(model.estimatedIndex.bound),
           score: model.estimatedIndex.score,
           position: model.estimatedIndex.position,
+          fromReports: model.estimatedIndex.fromReports,
         }
       : null,
     unrankedReason,
@@ -394,7 +395,7 @@ export default async function ModelPage({
                       (2026-09-23). */}
                   {unrankedReason}
                   {model.estimatedIndex
-                    ? ` — looks like ${estimateWords(model.estimatedIndex.bound)} ${model.estimatedIndex.score}${model.estimatedIndex.position ? `, around #${model.estimatedIndex.position} if ranked` : ''}`
+                    ? ` — looks like ${estimateWords(model.estimatedIndex.bound)} ${model.estimatedIndex.score}${model.estimatedIndex.fromReports ? '✱' : ''}${model.estimatedIndex.position ? `, around #${model.estimatedIndex.position} if ranked` : ''}`
                     : ''}
                 </p>
               </>
