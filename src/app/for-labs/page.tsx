@@ -26,6 +26,15 @@ const READABLE = 'max-w-4xl';
 /** Comfortable line length for body copy inside a READABLE block. */
 const MEASURE = 'max-w-[68ch]';
 
+/**
+ * The open release. The sample is ungated (ODC-BY); the other 18,000 sessions
+ * sit in a gated repository and are approved by hand. The two do not overlap.
+ */
+const SAMPLE_URL =
+  'https://huggingface.co/datasets/publicai-dev/Trajector-SWE-20K-sample';
+const FULL_URL =
+  'https://huggingface.co/datasets/publicai-dev/Trajector-SWE-20K';
+
 const ACCEPT = 'text-[#6EE7A0]';
 const REJECT = 'text-[#F08A8A]';
 
@@ -800,70 +809,97 @@ export default function ForLabs() {
         <div>
           <SectionHeading
             title="Start with the sample"
-            lede="Ten correction events from public repos, fully scrubbed, under a research license. Enough to audit the schema and the labeling, not enough to train on."
+            lede="2,000 real Claude Code sessions from Trajector-SWE-20K, open under ODC-BY. Whole sessions — system prompt, tools, every message and tool call — so you can audit capture and redaction before you scope anything."
           />
-          <Button
-            className="w-auto px-4 text-base"
-            theme="primary"
-            href="/business"
-            aria-label="request the sample">
-            Request the sample
-          </Button>
-          <p className="text-g2 text-body-sm mt-6">
-            If you publish on it, cite the dataset card. Private-repo data is
-            available through a pilot.
+          <ul className="flex flex-col gap-5">
+            <li>
+              <Button
+                className="w-auto px-4 text-base"
+                theme="primary"
+                href={SAMPLE_URL}
+                aria-label="download the 2K open sample on Hugging Face (opens in a new tab)">
+                Download the 2K sample <span aria-hidden>↗</span>
+              </Button>
+              <p className="text-g2 text-body-sm mt-2">
+                Open on Hugging Face · ODC-BY · no sign-up
+              </p>
+            </li>
+            <li>
+              <Button
+                className="w-auto px-4 text-base shadow-none"
+                href={FULL_URL}
+                aria-label="request access to the full 20K release on Hugging Face (opens in a new tab)">
+                Request the full 20K <span aria-hidden>↗</span>
+              </Button>
+              <p className="text-g2 text-body-sm mt-2">
+                The other 18,000 sessions · gated, reviewed by our team · no
+                redistribution
+              </p>
+            </li>
+          </ul>
+          <p className="text-g2 text-body-sm mt-8">
+            If you publish on it, cite <i>Actions Without Reasons</i> (NeurIPS
+            2026 workshop). Link to the repository instead of re-hosting it, so
+            withdrawals reach every copy. Labeled views and private-repo data
+            come through a pilot.
           </p>
         </div>
-        <pre className="text-code overflow-auto rounded-2xl border border-[#2C2C31] bg-[#161618] p-5 font-mono text-[#D9D7E0]">
-          {'{\n'}
-          {'  '}
-          <Key>&quot;event_id&quot;</Key>: &quot;9c2e-t4&quot;,{' '}
-          <Key>&quot;session_id&quot;</Key>: &quot;9c2e&quot;,{'\n'}
-          {'  '}
-          <Key>&quot;task_context&quot;</Key>: {'{\n'}
-          {'    '}
-          <Key>&quot;task&quot;</Key>: &quot;rate limiter lets bursts through
-          after a restart&quot;,{'\n'}
-          {'    '}
-          <Key>&quot;repo_visibility&quot;</Key>: &quot;public&quot;,{' '}
-          <Key>&quot;language&quot;</Key>: &quot;go&quot;{'\n'}
-          {'  },\n'}
-          {'  '}
-          <Key>&quot;trajectory_context&quot;</Key>: {'{\n'}
-          {'    '}
-          <Key>&quot;turn&quot;</Key>: 3, <Key>&quot;agent&quot;</Key>:
-          &quot;claude-code&quot;, <Key>&quot;model&quot;</Key>:
-          &quot;claude-sonnet-4-6&quot;{'\n'}
-          {'  },\n'}
-          {'  '}
-          <Key>&quot;rejected_action&quot;</Key>:{'  { '}
-          <Key>&quot;diff&quot;</Key>: &quot;...&quot;,{' '}
-          <Key>&quot;retained_lines&quot;</Key>: 0{' },\n'}
-          {'  '}
-          <Key>&quot;human_feedback&quot;</Key>: &quot;no, that&apos;s not it.
-          refill uses wall clock...&quot;,{'\n'}
-          {'  '}
-          <Key>&quot;preferred_action&quot;</Key>: {'{ '}
-          <Key>&quot;diff&quot;</Key>: &quot;...&quot;,{' '}
-          <Key>&quot;retained_lines&quot;</Key>: 5{' },\n'}
-          {'  '}
-          <Key>&quot;outcome&quot;</Key>:{' { '}
-          <Key>&quot;commit&quot;</Key>: &quot;7d21f4a&quot;,{' '}
-          <Key>&quot;tests&quot;</Key>: &quot;pass&quot;,{' '}
-          <Key>&quot;patch_retained&quot;</Key>: true{' },\n'}
-          {'  '}
-          <Key>&quot;correction_reason&quot;</Key>:
-          &quot;wrong_root_cause_diagnosis&quot;,{'\n'}
-          {'  '}
-          <Key>&quot;quality_score&quot;</Key>: 84,{'\n'}
-          {'  '}
-          <Key>&quot;reasoning_source&quot;</Key>: &quot;original&quot;,{' '}
-          <Comment>{'// original | generated | none'}</Comment>
-          {'\n'}
-          {'  '}
-          <Key>&quot;audited&quot;</Key>: false{'\n'}
-          {'}'}
-        </pre>
+        <figure className="flex flex-col gap-3">
+          <pre className="text-code overflow-auto rounded-2xl border border-[#2C2C31] bg-[#161618] p-5 font-mono text-[#D9D7E0]">
+            {'{\n'}
+            {'  '}
+            <Key>&quot;event_id&quot;</Key>: &quot;9c2e-t4&quot;,{' '}
+            <Key>&quot;session_id&quot;</Key>: &quot;9c2e&quot;,{'\n'}
+            {'  '}
+            <Key>&quot;task_context&quot;</Key>: {'{\n'}
+            {'    '}
+            <Key>&quot;task&quot;</Key>: &quot;rate limiter lets bursts through
+            after a restart&quot;,{'\n'}
+            {'    '}
+            <Key>&quot;repo_visibility&quot;</Key>: &quot;public&quot;,{' '}
+            <Key>&quot;language&quot;</Key>: &quot;go&quot;{'\n'}
+            {'  },\n'}
+            {'  '}
+            <Key>&quot;trajectory_context&quot;</Key>: {'{\n'}
+            {'    '}
+            <Key>&quot;turn&quot;</Key>: 3, <Key>&quot;agent&quot;</Key>:
+            &quot;claude-code&quot;, <Key>&quot;model&quot;</Key>:
+            &quot;claude-sonnet-4-6&quot;{'\n'}
+            {'  },\n'}
+            {'  '}
+            <Key>&quot;rejected_action&quot;</Key>:{'  { '}
+            <Key>&quot;diff&quot;</Key>: &quot;...&quot;,{' '}
+            <Key>&quot;retained_lines&quot;</Key>: 0{' },\n'}
+            {'  '}
+            <Key>&quot;human_feedback&quot;</Key>: &quot;no, that&apos;s not it.
+            refill uses wall clock...&quot;,{'\n'}
+            {'  '}
+            <Key>&quot;preferred_action&quot;</Key>: {'{ '}
+            <Key>&quot;diff&quot;</Key>: &quot;...&quot;,{' '}
+            <Key>&quot;retained_lines&quot;</Key>: 5{' },\n'}
+            {'  '}
+            <Key>&quot;outcome&quot;</Key>:{' { '}
+            <Key>&quot;commit&quot;</Key>: &quot;7d21f4a&quot;,{' '}
+            <Key>&quot;tests&quot;</Key>: &quot;pass&quot;,{' '}
+            <Key>&quot;patch_retained&quot;</Key>: true{' },\n'}
+            {'  '}
+            <Key>&quot;correction_reason&quot;</Key>:
+            &quot;wrong_root_cause_diagnosis&quot;,{'\n'}
+            {'  '}
+            <Key>&quot;quality_score&quot;</Key>: 84,{'\n'}
+            {'  '}
+            <Key>&quot;reasoning_source&quot;</Key>: &quot;original&quot;,{' '}
+            <Comment>{'// original | generated | none'}</Comment>
+            {'\n'}
+            {'  '}
+            <Key>&quot;audited&quot;</Key>: false{'\n'}
+            {'}'}
+          </pre>
+          <figcaption className="text-caption text-[#78758A]">
+            One correction event from the Human corrections view. The open
+            release ships the whole sessions these events are cut from.
+          </figcaption>
+        </figure>
       </section>
 
       {/* ===================== PRICING ===================== */}
