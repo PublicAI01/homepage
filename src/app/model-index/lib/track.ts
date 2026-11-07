@@ -211,6 +211,15 @@ export interface TrackInput {
    * 190 without (2026-09-20).
    */
   uncatalogued?: boolean;
+  /**
+   * False where OpenRouter cannot return what this track scores. Its
+   * endpoint answers in text and images; a video model listed there is the
+   * vendor's chat model, which reads video and makes none. Gemini Omni Flash
+   * arrived with such a listing and became the "recommended" way to generate
+   * the video it was ranked for (2026-11-05). The listing is dropped when the
+   * track is built, so no row, filter or card can offer it.
+   */
+  routerOutput?: boolean;
 }
 
 /**
@@ -220,8 +229,15 @@ export interface TrackInput {
  * original; image and video are the same machinery over their own data.
  */
 export function createTrack(input: TrackInput) {
-  const { benchmarks, catalogs, excluded, generatedAt, models, scores } =
-    input.data;
+  const { benchmarks, catalogs, excluded, generatedAt, scores } = input.data;
+  const models =
+    input.routerOutput === false
+      ? input.data.models.map((m) => {
+          if (!m.access?.openrouter) return m;
+          const { openrouter: _, ...access } = m.access;
+          return { ...m, access };
+        })
+      : input.data.models;
   const WEIGHTING = input.weighting;
   const OVERALL = new Set(WEIGHTING.map((w) => w.benchmarkId));
   const currentId = input.currentId ?? ((id: string) => id);

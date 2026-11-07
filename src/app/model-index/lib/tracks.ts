@@ -41,6 +41,7 @@ export const video = createTrack({
   url: `${ORIGIN}/model-index/video`,
   apiBase: `${ORIGIN}/model-index`,
   uncatalogued: true,
+  routerOutput: false,
 });
 
 export const TRACKS: Record<TrackId, TrackInfo> = {

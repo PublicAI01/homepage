@@ -99,9 +99,14 @@ describe('rankModels', () => {
     expect(video.getModel(rows[0].id).model?.access.rule).toBe(
       UNCATALOGUED_RULE,
     );
-    // None of them carries an OpenRouter id to recommend, either.
-    for (const m of rows)
-      expect(m.access.recommended?.kind).not.toBe('openrouter');
+    // None of them carries an OpenRouter id to recommend, either — not even
+    // one the router lists: its endpoint reads video and returns none, and
+    // Gemini Omni Flash arrived with such a listing (2026-11-05).
+    const all = ok(video.rankModels({ minBoards: 0, limit: 1000 })).models;
+    for (const m of all)
+      for (const c of [m.access.recommended, ...m.access.alternatives])
+        expect(c?.kind).not.toBe('openrouter');
+    expect(ok(video.rankModels({ callable: true })).models).toEqual([]);
   });
 
   it('explains an unknown scope instead of guessing', () => {
