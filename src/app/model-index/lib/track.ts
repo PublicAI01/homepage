@@ -238,6 +238,15 @@ export function createTrack(input: TrackInput) {
           return { ...m, access };
         })
       : input.data.models;
+  // The snapshot as this track reads it, with the same `models` the rows
+  // are built from. Returned as `input.data`, it still carried the listings
+  // dropped above: the page hands `index.data.models` to the table, which
+  // aggregates in the browser and drew its own card from them — so the day
+  // after routerOutput was added, the API refused to recommend OpenRouter
+  // for Gemini Omni Flash while the Video tab's expanded row still did
+  // (2026-11-07). One object, so nothing that reads the snapshot can see
+  // a channel the track has ruled out.
+  const data: IndexData = { ...input.data, models };
   const WEIGHTING = input.weighting;
   const OVERALL = new Set(WEIGHTING.map((w) => w.benchmarkId));
   const currentId = input.currentId ?? ((id: string) => id);
@@ -1064,7 +1073,7 @@ export function createTrack(input: TrackInput) {
 
   return {
     /** The snapshot itself, for a page that renders the table from it. */
-    data: input.data,
+    data,
     INDEX_URL,
     MCP_URL,
     API_URL,

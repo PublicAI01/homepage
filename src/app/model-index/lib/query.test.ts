@@ -12,7 +12,7 @@ import {
   rankModels,
   resolveScope,
 } from './query';
-import { video } from './tracks';
+import { image, video } from './tracks';
 import {
   MIN_BOARDS_TO_VOTE_IN,
   MIN_MODELS_FOR_HEADLINE,
@@ -107,6 +107,20 @@ describe('rankModels', () => {
       for (const c of [m.access.recommended, ...m.access.alternatives])
         expect(c?.kind).not.toBe('openrouter');
     expect(ok(video.rankModels({ callable: true })).models).toEqual([]);
+  });
+
+  // The snapshot the track hands out, not only the rows it answers with.
+  // The page gives `index.data.models` to the table, which aggregates in
+  // the browser and draws its own model card; returned unstripped, the
+  // Video tab's card still recommended `google/gemini-omni-1.2-flash` on
+  // OpenRouter the day after the API stopped (2026-11-07).
+  it('hands the page a video snapshot with no OpenRouter listing', () => {
+    expect(video.data.models.length).toBeGreaterThan(0);
+    for (const m of video.data.models)
+      expect(m.access?.openrouter).toBeUndefined();
+    // The ruling is the video track's alone: the image track's router
+    // listings do return images, and stay.
+    expect(image.data.models.some((m) => m.access?.openrouter)).toBe(true);
   });
 
   it('explains an unknown scope instead of guessing', () => {
