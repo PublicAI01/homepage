@@ -456,19 +456,25 @@ export default function ForLabs() {
             Trajector captures real-world coding-agent interactions and turns
             them into outcome-labeled trajectories with built-in training views.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap">
             <Button
-              className="w-auto px-4 text-base"
+              className="w-full px-4 text-base sm:w-auto md:text-lg"
               theme="primary"
               href="/business"
               aria-label="request a pilot">
-              Request a pilot
+              Request a Pilot
             </Button>
             <Button
-              className="w-auto px-4 text-base shadow-none"
+              className="w-full px-4 text-base shadow-none sm:w-auto md:text-lg"
+              href="#sample"
+              aria-label="get the sample">
+              Get the Sample
+            </Button>
+            <Button
+              className="w-full px-4 text-base shadow-none sm:w-auto md:text-lg"
               href="#products"
-              aria-label="see what we license">
-              See what we license
+              aria-label="see the data">
+              See the Data
             </Button>
           </div>
           <p className="text-g2 text-body-sm mt-7">
@@ -811,33 +817,33 @@ export default function ForLabs() {
             title="Start with the sample"
             lede="2,000 real Claude Code sessions from Trajector-SWE-20K, open under ODC-BY. Whole sessions — system prompt, tools, every message and tool call — so you can audit capture and redaction before you scope anything."
           />
-          <ul className="flex flex-col gap-5">
-            <li>
+          <ul className="flex flex-col gap-6">
+            <li className="flex flex-col items-start gap-2.5">
               <Button
-                className="w-auto px-4 text-base"
+                className="w-full px-4 text-base sm:w-76"
                 theme="primary"
                 href={SAMPLE_URL}
                 aria-label="download the 2K open sample on Hugging Face (opens in a new tab)">
-                Download the 2K sample <span aria-hidden>↗</span>
+                Download the 2K Sample <span aria-hidden>↗</span>
               </Button>
-              <p className="text-g2 text-body-sm mt-2">
+              <p className="text-g2 text-caption">
                 Open on Hugging Face · ODC-BY · no sign-up
               </p>
             </li>
-            <li>
+            <li className="flex flex-col items-start gap-2.5">
               <Button
-                className="w-auto px-4 text-base shadow-none"
+                className="w-full px-4 text-base shadow-none sm:w-76"
                 href={FULL_URL}
                 aria-label="request access to the full 20K release on Hugging Face (opens in a new tab)">
-                Request the full 20K <span aria-hidden>↗</span>
+                Request the Full 20K <span aria-hidden>↗</span>
               </Button>
-              <p className="text-g2 text-body-sm mt-2">
+              <p className="text-g2 text-caption">
                 The other 18,000 sessions · gated, reviewed by our team · no
                 redistribution
               </p>
             </li>
           </ul>
-          <p className="text-g2 text-body-sm mt-8">
+          <p className="text-g2 text-body-sm mt-8 border-t border-white/8 pt-6">
             If you publish on it, cite <i>Actions Without Reasons</i> (NeurIPS
             2026 workshop). Link to the repository instead of re-hosting it, so
             withdrawals reach every copy. Labeled views and private-repo data
@@ -968,13 +974,13 @@ export default function ForLabs() {
               theme="primary"
               href="/business"
               aria-label="request a pilot">
-              Request a pilot
+              Request a Pilot
             </Button>
             <Button
               className="w-auto px-4 text-base shadow-none"
               href="#sample"
               aria-label="see the sample first">
-              See the sample first
+              See the Sample First
             </Button>
           </div>
         </div>

@@ -17,7 +17,7 @@ const ButtonGroup = (props: ButtonGroupProps) => {
       )}
       {...rest}>
       <Button
-        className="w-auto px-3 shadow-none"
+        className="w-auto px-3 whitespace-nowrap shadow-none"
         href="/business"
         aria-label="request a pilot"
         onClick={() => {
@@ -26,7 +26,7 @@ const ButtonGroup = (props: ButtonGroupProps) => {
             screen_name: 'homepage/header',
           });
         }}>
-        Request a pilot
+        Request a Pilot
       </Button>
     </div>
   );
