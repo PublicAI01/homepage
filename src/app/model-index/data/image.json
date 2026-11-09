@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T13:30:25.470Z",
+  "generatedAt": "2026-11-09T06:39:27.310Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
-      "retrievedAt": "2026-11-06",
+      "retrievedAt": "2026-11-09",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-image.ico",
       "category": "Text-to-image",
@@ -23,8 +23,8 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-11-06",
-      "snapshot": "Nov 4, 2026 — across 84 models",
+      "retrievedAt": "2026-11-09",
+      "snapshot": "Nov 8, 2026 — across 84 models",
       "metric": "elo",
       "category": "Text-to-image",
       "domain": "Text-to-image",
@@ -39,8 +39,8 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-11-06",
-      "snapshot": "Nov 4, 2026 — across 63 models",
+      "retrievedAt": "2026-11-09",
+      "snapshot": "Nov 8, 2026 — across 63 models",
       "metric": "elo",
       "category": "Image editing",
       "domain": "Image editing",
@@ -443,7 +443,7 @@
     },
     {
       "id": "gpt-image-2-6-flare",
-      "name": "GPT-Image-2.6 Flare",
+      "name": "GPT Image 2.6 Flare",
       "org": "OpenAI",
       "access": {
         "official": {
@@ -459,7 +459,7 @@
     },
     {
       "id": "gpt-image-2-6-sunburst",
-      "name": "GPT-Image-2.6 Sunburst",
+      "name": "GPT Image 2.6 Sunburst",
       "org": "OpenAI",
       "access": {
         "official": {
@@ -1133,7 +1133,7 @@
     {
       "modelId": "mai-image-1",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1092,
+      "raw": 1093,
       "stderr": 4,
       "sourceLabel": "MAI-Image-1"
     },
@@ -1189,14 +1189,14 @@
     {
       "modelId": "uni-1-1-max",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1189,
+      "raw": 1188,
       "stderr": 6,
       "sourceLabel": "UNI-1.1 Max"
     },
     {
       "modelId": "uni-1-1-max",
       "benchmarkId": "arena-image-edit",
-      "raw": 1334,
+      "raw": 1333,
       "stderr": 5,
       "sourceLabel": "UNI-1.1 Max"
     },
@@ -1210,7 +1210,7 @@
     {
       "modelId": "uni-1-1",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1183,
+      "raw": 1182,
       "stderr": 4,
       "sourceLabel": "UNI-1.1"
     },
@@ -1231,7 +1231,7 @@
     {
       "modelId": "gpt-image-1-5-high-fidelity",
       "benchmarkId": "arena-image-edit",
-      "raw": 1368,
+      "raw": 1367,
       "stderr": 3,
       "sourceLabel": "GPT-Image-1.5 (High Fidelity)"
     },
@@ -1266,7 +1266,7 @@
     {
       "modelId": "cosmos3-super-text2image-agentic",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1165,
+      "raw": 1164,
       "stderr": 7,
       "sourceLabel": "Cosmos3-Super-Text2Image (Agentic)"
     },
@@ -1280,7 +1280,7 @@
     {
       "modelId": "cosmos3-super-text2image",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1151,
+      "raw": 1150,
       "stderr": 6,
       "sourceLabel": "Cosmos3-Super-Text2Image"
     },
@@ -1440,7 +1440,7 @@
     {
       "modelId": "flux-2-flex",
       "benchmarkId": "arena-image-edit",
-      "raw": 1225,
+      "raw": 1224,
       "stderr": 3,
       "sourceLabel": "FLUX.2 [flex]"
     },
@@ -1461,7 +1461,7 @@
     {
       "modelId": "flux-2-max",
       "benchmarkId": "arena-image-edit",
-      "raw": 1261,
+      "raw": 1262,
       "stderr": 3,
       "sourceLabel": "FLUX.2 [max]"
     },
@@ -1503,7 +1503,7 @@
     {
       "modelId": "gpt-image-2",
       "benchmarkId": "arena-image-edit",
-      "raw": 1460,
+      "raw": 1461,
       "stderr": 3,
       "sourceLabel": "GPT-Image-2 (Medium)"
     },
@@ -1517,14 +1517,14 @@
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1291,
+      "raw": 1290,
       "stderr": 5,
       "sourceLabel": "Grok Imagine Image 2.0 (20260801)"
     },
     {
       "modelId": "grok-imagine-image-2-0",
       "benchmarkId": "arena-image-edit",
-      "raw": 1416,
+      "raw": 1418,
       "stderr": 4,
       "sourceLabel": "Grok Imagine Image 2.0 (20260801)"
     },
@@ -1552,14 +1552,14 @@
     {
       "modelId": "qwen-image-2-0-pro",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1192,
+      "raw": 1190,
       "stderr": 6,
       "sourceLabel": "Qwen-Image-2.0-Pro (2026-06-22)"
     },
     {
       "modelId": "qwen-image-2-0-pro",
       "benchmarkId": "arena-image-edit",
-      "raw": 1302,
+      "raw": 1303,
       "stderr": 5,
       "sourceLabel": "Qwen-Image-2.0-Pro (2026-06-22)"
     },
@@ -1580,7 +1580,7 @@
     {
       "modelId": "krea-2-large",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1115,
+      "raw": 1114,
       "stderr": 4,
       "sourceLabel": "Krea 2 Large"
     },
@@ -1594,7 +1594,7 @@
     {
       "modelId": "krea-2-medium",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1129,
+      "raw": 1128,
       "stderr": 4,
       "sourceLabel": "Krea 2 Medium"
     },
@@ -1608,7 +1608,7 @@
     {
       "modelId": "krea-2-turbo",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1115,
+      "raw": 1116,
       "stderr": 4,
       "sourceLabel": "Krea 2 Turbo"
     },
@@ -1636,8 +1636,8 @@
     {
       "modelId": "reve-2-0",
       "benchmarkId": "arena-image-edit",
-      "raw": 1358,
-      "stderr": 6,
+      "raw": 1359,
+      "stderr": 7,
       "sourceLabel": "Reve 2.0"
     },
     {
@@ -1650,7 +1650,7 @@
     {
       "modelId": "nano-banana-2-1",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1325,
+      "raw": 1328,
       "stderr": 9,
       "sourceLabel": "Gemini Nano Banana 2.1"
     },
@@ -1685,7 +1685,7 @@
     {
       "modelId": "qwen-image-2-1",
       "benchmarkId": "arena-image-edit",
-      "raw": 1364,
+      "raw": 1363,
       "stderr": 6,
       "sourceLabel": "Qwen-Image-2.1"
     },
@@ -1699,14 +1699,14 @@
     {
       "modelId": "reve-2-1",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1300,
+      "raw": 1302,
       "stderr": 8,
       "sourceLabel": "Reve 2.1"
     },
     {
       "modelId": "reve-2-1",
       "benchmarkId": "arena-image-edit",
-      "raw": 1374,
+      "raw": 1373,
       "stderr": 6,
       "sourceLabel": "Reve 2.1"
     },
@@ -1720,7 +1720,7 @@
     {
       "modelId": "nano-banana-gemini-2-5-flash-image",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1149,
+      "raw": 1148,
       "stderr": 2,
       "sourceLabel": "Gemini 2.5 Flash Image Preview (nano-banana)"
     },
@@ -1741,14 +1741,14 @@
     {
       "modelId": "gpt-image-2-5-flare",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1399,
+      "raw": 1400,
       "stderr": 5,
       "sourceLabel": "GPT-Image-2.5 Flare"
     },
     {
       "modelId": "gpt-image-2-5-flare",
       "benchmarkId": "arena-image-edit",
-      "raw": 1482,
+      "raw": 1485,
       "stderr": 5,
       "sourceLabel": "GPT-Image-2.5 Flare"
     },
@@ -1769,14 +1769,14 @@
     {
       "modelId": "gpt-image-2-5-sunburst",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1427,
+      "raw": 1428,
       "stderr": 5,
       "sourceLabel": "GPT-Image-2.5 Sunburst"
     },
     {
       "modelId": "gpt-image-2-5-sunburst",
       "benchmarkId": "arena-image-edit",
-      "raw": 1517,
+      "raw": 1520,
       "stderr": 5,
       "sourceLabel": "GPT-Image-2.5 Sunburst"
     },
@@ -1824,15 +1824,22 @@
     },
     {
       "modelId": "gpt-image-2-6-flare",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1228,
+      "stderr": 12,
+      "sourceLabel": "GPT Image 2.6 Flare (max)"
+    },
+    {
+      "modelId": "gpt-image-2-6-flare",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1384,
+      "raw": 1383,
       "stderr": 13,
       "sourceLabel": "GPT-Image-2.6 Flare (Medium)"
     },
     {
       "modelId": "gpt-image-2-6-flare",
       "benchmarkId": "arena-image-edit",
-      "raw": 1462,
+      "raw": 1460,
       "stderr": 10,
       "sourceLabel": "GPT-Image-2.6 Flare (Medium)"
     },
@@ -1845,16 +1852,23 @@
     },
     {
       "modelId": "gpt-image-2-6-sunburst",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1259,
+      "stderr": 15,
+      "sourceLabel": "GPT Image 2.6 Sunburst (max)"
+    },
+    {
+      "modelId": "gpt-image-2-6-sunburst",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1409,
+      "raw": 1406,
       "stderr": 13,
       "sourceLabel": "GPT-Image-2.6 Sunburst (Medium)"
     },
     {
       "modelId": "gpt-image-2-6-sunburst",
       "benchmarkId": "arena-image-edit",
-      "raw": 1476,
-      "stderr": 10,
+      "raw": 1477,
+      "stderr": 11,
       "sourceLabel": "GPT-Image-2.6 Sunburst (Medium)"
     },
     {
@@ -1867,15 +1881,15 @@
     {
       "modelId": "mai-image-2-6",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1331,
+      "raw": 1330,
       "stderr": 5,
       "sourceLabel": "MAI-Image-2.6"
     },
     {
       "modelId": "mai-image-2-6",
       "benchmarkId": "arena-image-edit",
-      "raw": 1426,
-      "stderr": 4,
+      "raw": 1428,
+      "stderr": 5,
       "sourceLabel": "MAI-Image-2.6"
     },
     {
@@ -1909,8 +1923,8 @@
     {
       "modelId": "mai-image-2-7",
       "benchmarkId": "arena-image-edit",
-      "raw": 1469,
-      "stderr": 7,
+      "raw": 1468,
+      "stderr": 6,
       "sourceLabel": "MAI-Image-2.7-Preview"
     },
     {
@@ -1944,14 +1958,14 @@
     {
       "modelId": "wan-2-7",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1101,
+      "raw": 1100,
       "stderr": 5,
       "sourceLabel": "Wan 2.7 Image"
     },
     {
       "modelId": "wan-2-7",
       "benchmarkId": "arena-image-edit",
-      "raw": 1301,
+      "raw": 1300,
       "stderr": 4,
       "sourceLabel": "Wan 2.7 Image"
     },
@@ -1972,8 +1986,8 @@
     {
       "modelId": "nano-banana-pro-gemini-3-pro-image",
       "benchmarkId": "arena-image-edit",
-      "raw": 1390,
-      "stderr": 2,
+      "raw": 1391,
+      "stderr": 3,
       "sourceLabel": "Gemini 3 Pro Image (nano-banana-pro, 2K)"
     },
     {
@@ -2007,7 +2021,7 @@
     {
       "modelId": "hunyuan-image-3-0",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1151,
+      "raw": 1152,
       "stderr": 3,
       "sourceLabel": "HunyuanImage 3.0"
     },
@@ -2021,7 +2035,7 @@
     {
       "modelId": "hunyuan-image-3-0-instruct",
       "benchmarkId": "arena-image-edit",
-      "raw": 1302,
+      "raw": 1301,
       "stderr": 3,
       "sourceLabel": "HunyuanImage 3.0 Instruct"
     },
@@ -2057,7 +2071,7 @@
       "modelId": "qwen-image-3-0-pro",
       "benchmarkId": "arena-text-to-image",
       "raw": 1254,
-      "stderr": 6,
+      "stderr": 7,
       "sourceLabel": "Qwen-Image-3.0-Pro"
     },
     {
@@ -2078,7 +2092,7 @@
       "modelId": "krea-3-ultra",
       "benchmarkId": "arena-image-edit",
       "raw": 1411,
-      "stderr": 11,
+      "stderr": 12,
       "sourceLabel": "Krea 3 Ultra"
     },
     {
@@ -2098,7 +2112,7 @@
     {
       "modelId": "seedream-3-0",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1082,
+      "raw": 1081,
       "stderr": 5,
       "sourceLabel": "Seedream 3.0"
     },
@@ -2203,14 +2217,14 @@
     {
       "modelId": "recraft-v4",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1115,
+      "raw": 1116,
       "stderr": 3,
       "sourceLabel": "Recraft V4"
     },
     {
       "modelId": "seedream-4-0",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1139,
+      "raw": 1138,
       "stderr": 7,
       "sourceLabel": "Seedream 4.0 (2K)"
     },
@@ -2253,7 +2267,7 @@
       "modelId": "recraft-v4-1-pro",
       "benchmarkId": "arena-text-to-image",
       "raw": 1132,
-      "stderr": 10,
+      "stderr": 11,
       "sourceLabel": "Recraft V4.1 Pro"
     },
     {
@@ -2273,7 +2287,7 @@
     {
       "modelId": "ideogram-4-5",
       "benchmarkId": "arena-image-edit",
-      "raw": 1347,
+      "raw": 1346,
       "stderr": 4,
       "sourceLabel": "Ideogram 4.5"
     },
@@ -2315,7 +2329,7 @@
     {
       "modelId": "seedream-5-0-lite",
       "benchmarkId": "arena-image-edit",
-      "raw": 1295,
+      "raw": 1293,
       "stderr": 3,
       "sourceLabel": "Seedream 5.0 Lite"
     },
@@ -2329,14 +2343,14 @@
     {
       "modelId": "seedream-5-0-pro",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1251,
+      "raw": 1249,
       "stderr": 4,
       "sourceLabel": "Seedream 5.0 Pro"
     },
     {
       "modelId": "seedream-5-0-pro",
       "benchmarkId": "arena-image-edit",
-      "raw": 1391,
+      "raw": 1392,
       "stderr": 3,
       "sourceLabel": "Seedream 5.0 Pro"
     },
@@ -2357,7 +2371,7 @@
     {
       "modelId": "bagel",
       "benchmarkId": "arena-image-edit",
-      "raw": 1026,
+      "raw": 1027,
       "stderr": 6,
       "sourceLabel": "BAGEL"
     },
@@ -2371,7 +2385,7 @@
     {
       "modelId": "chatgpt-image-high-fidelity",
       "benchmarkId": "arena-image-edit",
-      "raw": 1386,
+      "raw": 1387,
       "stderr": 3,
       "sourceLabel": "ChatGPT Image Latest (High Fidelity, 20251216)"
     },
@@ -2469,7 +2483,7 @@
     {
       "modelId": "grok-imagine-image",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1169,
+      "raw": 1168,
       "stderr": 3,
       "sourceLabel": "Grok Imagine Image"
     },
@@ -2483,7 +2497,7 @@
     {
       "modelId": "grok-imagine-image-pro",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1161,
+      "raw": 1160,
       "stderr": 4,
       "sourceLabel": "Grok Imagine Image Pro"
     },
@@ -2525,14 +2539,14 @@
     {
       "modelId": "muse-image",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1268,
+      "raw": 1266,
       "stderr": 5,
       "sourceLabel": "Muse Image"
     },
     {
       "modelId": "muse-image",
       "benchmarkId": "arena-image-edit",
-      "raw": 1399,
+      "raw": 1400,
       "stderr": 4,
       "sourceLabel": "Muse Image"
     },
@@ -2546,8 +2560,8 @@
     {
       "modelId": "p-image",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1032,
-      "stderr": 3,
+      "raw": 1033,
+      "stderr": 4,
       "sourceLabel": "P-Image"
     },
     {
@@ -2567,7 +2581,7 @@
     {
       "modelId": "qwen-image",
       "benchmarkId": "arena-text-to-image",
-      "raw": 1125,
+      "raw": 1124,
       "stderr": 3,
       "sourceLabel": "Qwen-Image (2512)"
     },
@@ -2639,7 +2653,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-11-06",
+      "retrievedAt": "2026-11-09",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -2647,7 +2661,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-11-06",
+      "retrievedAt": "2026-11-09",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
