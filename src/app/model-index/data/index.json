@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T06:39:27.310Z",
+  "generatedAt": "2026-11-09T14:45:48.076Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -5201,6 +5201,11 @@
       "size": { "paramsB": 7.6, "source": "huggingface" }
     },
     { "id": "agnes-2-5-pro", "name": "Agnes 2.5 Pro", "org": "Sapiens AI" },
+    {
+      "id": "agnes-2-5-pro-theta",
+      "name": "Agnes 2.5 Pro Theta",
+      "org": "Sapiens AI"
+    },
     { "id": "composer-2-5", "name": "Composer 2.5", "org": "Other" },
     {
       "id": "deepseek-v2-5",
@@ -5618,8 +5623,8 @@
           "id": "openai/gpt-oss-20b",
           "url": "https://openrouter.ai/openai/gpt-oss-20b",
           "contextLength": 131072,
-          "inputPerM": 0.018,
-          "outputPerM": 0.09,
+          "inputPerM": 0.03,
+          "outputPerM": 0.13,
           "listedAt": "2025-08-05",
           "modalities": ["text"]
         },
@@ -5884,8 +5889,8 @@
           "id": "mistralai/mistral-small-3.2-24b-instruct",
           "url": "https://openrouter.ai/mistralai/mistral-small-3.2-24b-instruct",
           "contextLength": 256000,
-          "inputPerM": 0.075,
-          "outputPerM": 0.2,
+          "inputPerM": 0.1,
+          "outputPerM": 0.3,
           "listedAt": "2025-06-20",
           "modalities": ["image", "text"]
         },
@@ -9880,8 +9885,8 @@
           "id": "z-ai/glm-4.5-air",
           "url": "https://openrouter.ai/z-ai/glm-4.5-air",
           "contextLength": 131072,
-          "inputPerM": 0.13,
-          "outputPerM": 0.85,
+          "inputPerM": 0.2,
+          "outputPerM": 1.1,
           "listedAt": "2025-07-25",
           "modalities": ["text"]
         },
@@ -22630,6 +22635,26 @@
       "raw": 1335,
       "stderr": 20,
       "sourceLabel": "Agnes 2.5 Pro Beta"
+    },
+    {
+      "modelId": "agnes-2-5-pro-theta",
+      "benchmarkId": "artificial-analysis",
+      "raw": 24,
+      "sourceLabel": "Agnes 2.5 Pro Theta"
+    },
+    {
+      "modelId": "agnes-2-5-pro-theta",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1507,
+      "stderr": 20,
+      "sourceLabel": "Agnes 2.5 Pro Theta"
+    },
+    {
+      "modelId": "agnes-2-5-pro-theta",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1496,
+      "stderr": 10,
+      "sourceLabel": "Agnes 2.5 Pro Theta"
     },
     {
       "modelId": "composer-2-5",
