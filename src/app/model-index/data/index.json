@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T14:45:48.076Z",
+  "generatedAt": "2026-11-10T01:02:18.988Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -7,7 +7,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "snapshot": "Nov 8, 2026 — 420 models",
       "metric": "elo",
       "category": "Human preference",
@@ -23,7 +23,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/leaderboards/models",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/artificial-analysis.ico",
       "category": "Core abilities",
@@ -39,7 +39,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "elo",
       "logo": "/model-index/logos/aa-gdpval.ico",
       "category": "Agents",
@@ -55,7 +55,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/evaluations/aa-briefcase",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "elo",
       "logo": "/model-index/logos/aa-briefcase.ico",
       "category": "Agents",
@@ -71,7 +71,7 @@
       "publisher": "Terminal-Bench",
       "independent": true,
       "url": "https://www.tbench.ai/leaderboard",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "snapshot": "Top entry dated Sep 22, 2026",
       "metric": "percent",
       "logo": "/model-index/logos/terminal-bench.png",
@@ -88,7 +88,7 @@
       "publisher": "ARC Prize",
       "independent": true,
       "url": "https://arcprize.org/leaderboard",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/arc-agi-2.png",
       "category": "Reasoning",
@@ -104,7 +104,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Core abilities",
@@ -120,7 +120,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Agents",
@@ -136,7 +136,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Reasoning",
@@ -152,7 +152,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Coding",
@@ -168,7 +168,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Agents",
@@ -184,7 +184,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Core abilities",
@@ -200,7 +200,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Agents",
@@ -216,7 +216,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench.png",
       "category": "Professional",
@@ -232,7 +232,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Core abilities",
@@ -248,7 +248,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Reasoning",
@@ -264,7 +264,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Coding",
@@ -280,7 +280,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Coding",
@@ -296,7 +296,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Reasoning",
@@ -312,7 +312,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Core abilities",
@@ -328,7 +328,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Core abilities",
@@ -344,7 +344,7 @@
       "publisher": "LiveBench",
       "independent": true,
       "url": "https://livebench.ai/v1/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "index",
       "logo": "/model-index/logos/livebench-v1.png",
       "category": "Core abilities",
@@ -360,7 +360,7 @@
       "publisher": "LiveCodeBench",
       "independent": true,
       "url": "https://livecodebench.github.io/leaderboard.html",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "category": "Coding",
       "domain": "Code generation",
@@ -375,7 +375,7 @@
       "publisher": "Aider",
       "independent": true,
       "url": "https://aider.chat/docs/leaderboards/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/aider.png",
       "category": "Coding",
@@ -391,7 +391,7 @@
       "publisher": "UC Berkeley (Gorilla)",
       "independent": true,
       "url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "category": "Agents",
       "domain": "Tool use",
@@ -406,7 +406,7 @@
       "publisher": "XLANG Lab",
       "independent": true,
       "url": "https://osworld-v1.xlang.ai/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/osworld.png",
       "category": "Agents",
@@ -422,7 +422,7 @@
       "publisher": "MMMU",
       "independent": true,
       "url": "https://mmmu-benchmark.github.io/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/mmmu.png",
       "category": "Knowledge",
@@ -438,7 +438,7 @@
       "publisher": "Kagi",
       "independent": true,
       "url": "https://help.kagi.com/kagi/ai/llm-benchmark.html",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/kagi.png",
       "category": "Core abilities",
@@ -454,7 +454,7 @@
       "publisher": "SimpleBench",
       "independent": true,
       "url": "https://simple-bench.com/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/simplebench.ico",
       "category": "Reasoning",
@@ -470,7 +470,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -486,7 +486,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -502,7 +502,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -518,7 +518,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -534,7 +534,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -550,7 +550,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -566,7 +566,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -582,7 +582,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -598,7 +598,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -614,7 +614,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -630,7 +630,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -646,7 +646,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -662,7 +662,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -678,7 +678,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Professional",
@@ -694,7 +694,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Agents",
@@ -710,7 +710,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Coding",
@@ -726,7 +726,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Coding",
@@ -742,7 +742,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Coding",
@@ -758,7 +758,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Reasoning",
@@ -774,7 +774,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Knowledge",
@@ -790,7 +790,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Reasoning",
@@ -806,7 +806,7 @@
       "publisher": "Vals AI",
       "independent": true,
       "url": "https://www.vals.ai/benchmarks",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/vals.png",
       "category": "Reasoning",
@@ -822,7 +822,7 @@
       "publisher": "Benchmark Heaven",
       "independent": true,
       "url": "https://benchmarkheaven.com/jev-models",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/jevbench.png",
       "category": "Decisions",
@@ -838,7 +838,7 @@
       "publisher": "Benchmark Heaven",
       "independent": true,
       "url": "https://benchmarkheaven.com/jev-models",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "logo": "/model-index/logos/jevbench.png",
       "category": "Decisions",
@@ -854,7 +854,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -869,7 +869,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -884,7 +884,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -899,7 +899,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -914,7 +914,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -929,7 +929,7 @@
       "publisher": "LlamaIndex",
       "independent": true,
       "url": "https://github.com/run-llama/ParseBench/blob/main/leaderboard.csv",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "category": "Knowledge",
       "domain": "Document parsing",
@@ -944,7 +944,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -961,7 +961,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -978,7 +978,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -995,7 +995,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -1012,7 +1012,7 @@
       "publisher": "Stanford CRFM",
       "independent": true,
       "url": "https://crfm.stanford.edu/helm/safety/latest/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "snapshot": "Release v1.17.0",
       "metric": "percent",
       "logo": "/model-index/logos/helm-safety.svg",
@@ -1029,7 +1029,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1046,7 +1046,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1063,7 +1063,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1080,7 +1080,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1097,7 +1097,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1114,7 +1114,7 @@
       "publisher": "Enkrypt AI",
       "independent": true,
       "url": "https://leaderboard.enkryptai.com/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "direction": "lower",
       "logo": "/model-index/logos/enkrypt.ico",
@@ -1131,7 +1131,7 @@
       "publisher": "Vectara",
       "independent": true,
       "url": "https://github.com/vectara/hallucination-leaderboard",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "metric": "percent",
       "category": "Safety",
       "domain": "Factual grounding",
@@ -1605,7 +1605,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Reasoning",
@@ -1621,7 +1621,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Reasoning",
@@ -1637,7 +1637,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Agents",
@@ -1653,7 +1653,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Professional",
@@ -1669,7 +1669,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-05",
       "metric": "index",
       "category": "Core abilities",
@@ -1685,7 +1685,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1701,7 +1701,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1717,7 +1717,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1733,7 +1733,7 @@
       "publisher": "DataCamp",
       "independent": true,
       "url": "https://www.datacamp.com/blog/gpt-6-astra-vs-claude-fable-5-1",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-05",
       "metric": "percent",
       "category": "Coding",
@@ -1749,7 +1749,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-04",
       "metric": "elo",
       "category": "Agents",
@@ -1765,7 +1765,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1781,7 +1781,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1797,7 +1797,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1813,7 +1813,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Agents",
@@ -1829,7 +1829,7 @@
       "publisher": "CellCog",
       "independent": true,
       "url": "https://cellcog.ai/blog/k2-horizon/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-04",
       "metric": "percent",
       "category": "Coding",
@@ -1845,7 +1845,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1861,7 +1861,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1877,7 +1877,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "elo",
       "category": "Coding",
@@ -1893,7 +1893,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -1909,7 +1909,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1925,7 +1925,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1941,7 +1941,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1957,7 +1957,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1973,7 +1973,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -1989,7 +1989,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Coding",
@@ -2005,7 +2005,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -2021,7 +2021,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -2037,7 +2037,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Professional",
@@ -2053,7 +2053,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -2069,7 +2069,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Agents",
@@ -2085,7 +2085,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Reasoning",
@@ -2101,7 +2101,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -2117,7 +2117,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -2133,7 +2133,7 @@
       "publisher": "DeepSeek",
       "independent": false,
       "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-10",
       "metric": "percent",
       "category": "Knowledge",
@@ -2149,7 +2149,7 @@
       "publisher": "LargitData",
       "independent": true,
       "url": "https://www.largitdata.com/en/blog/jev-system-one-model-open-source-benchmark/",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "publishedAt": "2026-09-19",
       "metric": "percent",
       "logo": "/model-index/logos/largitdata-jev.png",
@@ -2827,15 +2827,6 @@
       "name": "MiniMax M1",
       "org": "MiniMax",
       "access": {
-        "openrouter": {
-          "id": "minimax/minimax-m1",
-          "url": "https://openrouter.ai/minimax/minimax-m1",
-          "contextLength": 1000000,
-          "inputPerM": 0.55,
-          "outputPerM": 2.2,
-          "listedAt": "2025-06-17",
-          "modalities": ["text"]
-        },
         "official": {
           "name": "MiniMax Platform",
           "url": "https://platform.minimax.io/docs"
@@ -3842,8 +3833,8 @@
           "id": "qwen/qwen3-14b",
           "url": "https://openrouter.ai/qwen/qwen3-14b",
           "contextLength": 40960,
-          "inputPerM": 0.12,
-          "outputPerM": 0.24,
+          "inputPerM": 0.1,
+          "outputPerM": 0.22,
           "listedAt": "2025-04-28",
           "modalities": ["text"]
         },
@@ -5322,7 +5313,7 @@
         "openrouter": {
           "id": "minimax/minimax-m2.5",
           "url": "https://openrouter.ai/minimax/minimax-m2.5",
-          "contextLength": 204800,
+          "contextLength": 200000,
           "inputPerM": 0.3,
           "outputPerM": 1.2,
           "listedAt": "2026-02-12",
@@ -5359,7 +5350,7 @@
         "openrouter": {
           "id": "xiaomi/mimo-v2.5-pro",
           "url": "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
-          "contextLength": 1050000,
+          "contextLength": 1024000,
           "inputPerM": 0.48,
           "outputPerM": 1.8,
           "listedAt": "2026-04-22",
@@ -5574,7 +5565,7 @@
         "openrouter": {
           "id": "minimax/minimax-m2.7",
           "url": "https://openrouter.ai/minimax/minimax-m2.7",
-          "contextLength": 204800,
+          "contextLength": 196608,
           "inputPerM": 0.21,
           "outputPerM": 0.84,
           "listedAt": "2026-03-18",
@@ -5962,8 +5953,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.09,
-          "outputPerM": 0.3,
+          "inputPerM": 0.08,
+          "outputPerM": 0.1,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -7702,8 +7693,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.075,
+          "outputPerM": 0.3,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -7877,8 +7868,8 @@
           "id": "meta-llama/llama-3.3-70b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
           "contextLength": 131072,
-          "inputPerM": 0.59,
-          "outputPerM": 0.79,
+          "inputPerM": 0.71,
+          "outputPerM": 0.71,
           "listedAt": "2024-12-06",
           "modalities": ["text"]
         },
@@ -8289,7 +8280,7 @@
           "url": "https://openrouter.ai/nvidia/nemotron-3.5-super-vl",
           "contextLength": 1048576,
           "inputPerM": 0.15,
-          "outputPerM": 0.5,
+          "outputPerM": 0.47,
           "listedAt": "2026-10-15",
           "modalities": ["text", "image", "video"]
         },
@@ -10666,7 +10657,7 @@
         "openrouter": {
           "id": "stepfun/step-5-preview",
           "url": "https://openrouter.ai/stepfun/step-5-preview",
-          "contextLength": 1048576,
+          "contextLength": 1000000,
           "inputPerM": 1,
           "outputPerM": 2.7,
           "listedAt": "2026-10-08",
@@ -10837,6 +10828,26 @@
       }
     },
     {
+      "id": "claude-fable-5-2",
+      "name": "Claude Fable 5.2",
+      "org": "Anthropic",
+      "access": {
+        "openrouter": {
+          "id": "anthropic/claude-fable-5.2",
+          "url": "https://openrouter.ai/anthropic/claude-fable-5.2",
+          "contextLength": 1000000,
+          "inputPerM": 8,
+          "outputPerM": 40,
+          "listedAt": "2026-11-09",
+          "modalities": ["text", "image", "file"]
+        },
+        "official": {
+          "name": "Claude Developer Platform",
+          "url": "https://docs.claude.com"
+        }
+      }
+    },
+    {
       "id": "glm-5-2",
       "name": "GLM-5.2",
       "org": "Z.ai",
@@ -10938,8 +10949,8 @@
           "id": "z-ai/glm-5.3-flash",
           "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.034,
-          "outputPerM": 0.083,
+          "inputPerM": 0.15,
+          "outputPerM": 0.5,
           "listedAt": "2026-08-26",
           "modalities": ["text", "image", "video"]
         },
@@ -12100,6 +12111,26 @@
     { "id": "djev-spark", "name": "Djev Spark", "org": "Other" },
     { "id": "docling-models", "name": "Docling Models", "org": "Other" },
     { "id": "dots-mocr", "name": "Dots.mocr", "org": "Other" },
+    {
+      "id": "muse-ember",
+      "name": "Muse Ember",
+      "org": "Meta",
+      "access": {
+        "openrouter": {
+          "id": "meta/muse-ember",
+          "url": "https://openrouter.ai/meta/muse-ember",
+          "contextLength": 1048576,
+          "inputPerM": 0.1,
+          "outputPerM": 0.5,
+          "listedAt": "2026-11-09",
+          "modalities": ["text", "image", "video", "file", "audio"]
+        },
+        "official": {
+          "name": "Llama developer docs",
+          "url": "https://www.llama.com/docs"
+        }
+      }
+    },
     { "id": "evocua", "name": "EvoCUA", "org": "Meituan" },
     { "id": "k-exaone", "name": "K EXAONE", "org": "LG AI Research" },
     {
@@ -12122,8 +12153,8 @@
           "id": "~anthropic/claude-fable-latest",
           "url": "https://openrouter.ai/~anthropic/claude-fable-latest",
           "contextLength": 1000000,
-          "inputPerM": 10,
-          "outputPerM": 50,
+          "inputPerM": 8,
+          "outputPerM": 40,
           "listedAt": "2026-06-09",
           "modalities": ["text", "image", "file"]
         },
@@ -16027,21 +16058,21 @@
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "terminal-bench",
-      "raw": 14.5,
-      "stderr": 2.9,
+      "raw": 14.8,
+      "stderr": 3,
       "sourceLabel": "Muse Spark 1.3(xhigh)",
       "scaffold": "Muse Code"
     },
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "livebench",
-      "raw": 63,
+      "raw": 68.4,
       "sourceLabel": "Muse Spark 1.3"
     },
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "livebench-agentic",
-      "raw": 25.5,
+      "raw": 47.9,
       "sourceLabel": "Muse Spark 1.3"
     },
     {
@@ -16053,7 +16084,7 @@
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "livebench-coding",
-      "raw": 90.2,
+      "raw": 83.1,
       "sourceLabel": "Muse Spark 1.3"
     },
     {
@@ -16071,7 +16102,7 @@
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "livebench-research",
-      "raw": 68.6,
+      "raw": 82.5,
       "sourceLabel": "Muse Spark 1.3"
     },
     {
@@ -17639,6 +17670,12 @@
       "raw": 1352,
       "stderr": 4,
       "sourceLabel": "gpt-oss-120b"
+    },
+    {
+      "modelId": "gpt-oss-120b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 4,
+      "sourceLabel": "gpt-oss-120b (high)"
     },
     {
       "modelId": "gpt-oss-120b",
@@ -24288,8 +24325,8 @@
     {
       "modelId": "mimo-v2-6-pro",
       "benchmarkId": "aa-gdpval",
-      "raw": 1689,
-      "stderr": 21,
+      "raw": 1692,
+      "stderr": 20,
       "sourceLabel": "MiMo-V2.6-Pro"
     },
     {
@@ -24302,13 +24339,13 @@
     {
       "modelId": "mimo-v2-6-pro",
       "benchmarkId": "livebench",
-      "raw": 68.5,
+      "raw": 66.1,
       "sourceLabel": "MiMo V2.6 Proopen"
     },
     {
       "modelId": "mimo-v2-6-pro",
       "benchmarkId": "livebench-agentic",
-      "raw": 35.2,
+      "raw": 36.4,
       "sourceLabel": "MiMo V2.6 Proopen"
     },
     {
@@ -24320,7 +24357,7 @@
     {
       "modelId": "mimo-v2-6-pro",
       "benchmarkId": "livebench-coding",
-      "raw": 81.5,
+      "raw": 64.5,
       "sourceLabel": "MiMo V2.6 Proopen"
     },
     {
@@ -24338,13 +24375,13 @@
     {
       "modelId": "mimo-v2-6-pro",
       "benchmarkId": "livebench-research",
-      "raw": 76.7,
+      "raw": 84.8,
       "sourceLabel": "MiMo V2.6 Proopen"
     },
     {
       "modelId": "mimo-v2-6-pro",
       "benchmarkId": "livebench-design",
-      "raw": 78.5,
+      "raw": 74.3,
       "sourceLabel": "MiMo V2.6 Proopen"
     },
     {
@@ -26072,13 +26109,13 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "livebench",
-      "raw": 58.4,
+      "raw": 54,
       "sourceLabel": "Qwen3.8 27Bopen"
     },
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "livebench-agentic",
-      "raw": 20.6,
+      "raw": 15.9,
       "sourceLabel": "Qwen3.8 27Bopen"
     },
     {
@@ -26090,7 +26127,7 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "livebench-coding",
-      "raw": 86.8,
+      "raw": 69.3,
       "sourceLabel": "Qwen3.8 27Bopen"
     },
     {
@@ -26108,13 +26145,13 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "livebench-research",
-      "raw": 59.4,
+      "raw": 61.3,
       "sourceLabel": "Qwen3.8 27Bopen"
     },
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "livebench-design",
-      "raw": 75.9,
+      "raw": 72.4,
       "sourceLabel": "Qwen3.8 27Bopen"
     },
     {
@@ -29973,13 +30010,13 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "livebench",
-      "raw": 64.6,
+      "raw": 65,
       "sourceLabel": "Kimi K3open"
     },
     {
       "modelId": "kimi-k3",
       "benchmarkId": "livebench-agentic",
-      "raw": 26.4,
+      "raw": 36,
       "sourceLabel": "Kimi K3open"
     },
     {
@@ -29991,7 +30028,7 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "livebench-coding",
-      "raw": 59.3,
+      "raw": 53.1,
       "sourceLabel": "Kimi K3open"
     },
     {
@@ -30009,13 +30046,13 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "livebench-research",
-      "raw": 79,
+      "raw": 79.8,
       "sourceLabel": "Kimi K3open"
     },
     {
       "modelId": "kimi-k3",
       "benchmarkId": "livebench-design",
-      "raw": 77.2,
+      "raw": 72.5,
       "sourceLabel": "Kimi K3open"
     },
     {
@@ -32353,13 +32390,13 @@
     {
       "modelId": "minimax-m3-1-flash",
       "benchmarkId": "livebench",
-      "raw": 66.9,
+      "raw": 63.7,
       "sourceLabel": "MiniMax M3.1 Flashopen"
     },
     {
       "modelId": "minimax-m3-1-flash",
       "benchmarkId": "livebench-agentic",
-      "raw": 28.8,
+      "raw": 25.7,
       "sourceLabel": "MiniMax M3.1 Flashopen"
     },
     {
@@ -32371,7 +32408,7 @@
     {
       "modelId": "minimax-m3-1-flash",
       "benchmarkId": "livebench-coding",
-      "raw": 83.9,
+      "raw": 68.8,
       "sourceLabel": "MiniMax M3.1 Flashopen"
     },
     {
@@ -32389,13 +32426,13 @@
     {
       "modelId": "minimax-m3-1-flash",
       "benchmarkId": "livebench-research",
-      "raw": 72.7,
+      "raw": 76.7,
       "sourceLabel": "MiniMax M3.1 Flashopen"
     },
     {
       "modelId": "minimax-m3-1-flash",
       "benchmarkId": "livebench-design",
-      "raw": 74,
+      "raw": 71.2,
       "sourceLabel": "MiniMax M3.1 Flashopen"
     },
     {
@@ -32694,13 +32731,13 @@
     {
       "modelId": "kimi-k3-1-pro",
       "benchmarkId": "livebench",
-      "raw": 71.3,
+      "raw": 68.7,
       "sourceLabel": "Kimi K3.1 Pro"
     },
     {
       "modelId": "kimi-k3-1-pro",
       "benchmarkId": "livebench-agentic",
-      "raw": 39.1,
+      "raw": 38.7,
       "sourceLabel": "Kimi K3.1 Pro"
     },
     {
@@ -32712,7 +32749,7 @@
     {
       "modelId": "kimi-k3-1-pro",
       "benchmarkId": "livebench-coding",
-      "raw": 81.8,
+      "raw": 67.8,
       "sourceLabel": "Kimi K3.1 Pro"
     },
     {
@@ -32730,13 +32767,13 @@
     {
       "modelId": "kimi-k3-1-pro",
       "benchmarkId": "livebench-research",
-      "raw": 77.9,
+      "raw": 82.1,
       "sourceLabel": "Kimi K3.1 Pro"
     },
     {
       "modelId": "kimi-k3-1-pro",
       "benchmarkId": "livebench-design",
-      "raw": 77.8,
+      "raw": 73.7,
       "sourceLabel": "Kimi K3.1 Pro"
     },
     {
@@ -34842,13 +34879,13 @@
     {
       "modelId": "smaug-nemotron-3-5",
       "benchmarkId": "livebench",
-      "raw": 50.3,
+      "raw": 47,
       "sourceLabel": "Smaug-Nemotron-3.5-NVFP4open"
     },
     {
       "modelId": "smaug-nemotron-3-5",
       "benchmarkId": "livebench-agentic",
-      "raw": 8.4,
+      "raw": 11.3,
       "sourceLabel": "Smaug-Nemotron-3.5-NVFP4open"
     },
     {
@@ -34860,7 +34897,7 @@
     {
       "modelId": "smaug-nemotron-3-5",
       "benchmarkId": "livebench-coding",
-      "raw": 72.2,
+      "raw": 51.5,
       "sourceLabel": "Smaug-Nemotron-3.5-NVFP4open"
     },
     {
@@ -34878,13 +34915,13 @@
     {
       "modelId": "smaug-nemotron-3-5",
       "benchmarkId": "livebench-research",
-      "raw": 67.8,
+      "raw": 66.8,
       "sourceLabel": "Smaug-Nemotron-3.5-NVFP4open"
     },
     {
       "modelId": "smaug-nemotron-3-5",
       "benchmarkId": "livebench-design",
-      "raw": 62.7,
+      "raw": 60.6,
       "sourceLabel": "Smaug-Nemotron-3.5-NVFP4open"
     },
     {
@@ -34916,13 +34953,13 @@
     {
       "modelId": "nemotron-3-5-super-vl",
       "benchmarkId": "livebench",
-      "raw": 50.2,
+      "raw": 47,
       "sourceLabel": "Nemotron 3.5 Super VLopen"
     },
     {
       "modelId": "nemotron-3-5-super-vl",
       "benchmarkId": "livebench-agentic",
-      "raw": 11.7,
+      "raw": 12,
       "sourceLabel": "Nemotron 3.5 Super VLopen"
     },
     {
@@ -34934,7 +34971,7 @@
     {
       "modelId": "nemotron-3-5-super-vl",
       "benchmarkId": "livebench-coding",
-      "raw": 71.3,
+      "raw": 54.1,
       "sourceLabel": "Nemotron 3.5 Super VLopen"
     },
     {
@@ -34952,13 +34989,13 @@
     {
       "modelId": "nemotron-3-5-super-vl",
       "benchmarkId": "livebench-research",
-      "raw": 66.7,
+      "raw": 67.1,
       "sourceLabel": "Nemotron 3.5 Super VLopen"
     },
     {
       "modelId": "nemotron-3-5-super-vl",
       "benchmarkId": "livebench-design",
-      "raw": 62.8,
+      "raw": 60,
       "sourceLabel": "Nemotron 3.5 Super VLopen"
     },
     {
@@ -35798,7 +35835,7 @@
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "aa-gdpval",
-      "raw": 1403,
+      "raw": 1404,
       "stderr": 19,
       "sourceLabel": "Gemini 3.7 Flash (High)"
     },
@@ -35812,8 +35849,8 @@
     {
       "modelId": "gemini-3-7-flash",
       "benchmarkId": "terminal-bench",
-      "raw": 11.2,
-      "stderr": 2.4,
+      "raw": 12.4,
+      "stderr": 2.5,
       "sourceLabel": "Gemini 3.7 Flash(high)",
       "scaffold": "mini-SWE-agent"
     },
@@ -36464,7 +36501,7 @@
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "terminal-bench",
-      "raw": 19.1,
+      "raw": 18.2,
       "stderr": 3.4,
       "sourceLabel": "Gemini 3.8 Flash(high)",
       "scaffold": "mini-SWE-agent"
@@ -36478,7 +36515,7 @@
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "livebench",
-      "raw": 59.2,
+      "raw": 56,
       "sourceLabel": "Gemini 3.8 Flash"
     },
     {
@@ -36496,7 +36533,7 @@
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "livebench-coding",
-      "raw": 82.2,
+      "raw": 65.7,
       "sourceLabel": "Gemini 3.8 Flash"
     },
     {
@@ -36514,13 +36551,13 @@
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "livebench-research",
-      "raw": 79.1,
+      "raw": 79.4,
       "sourceLabel": "Gemini 3.8 Flash"
     },
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "livebench-design",
-      "raw": 72.7,
+      "raw": 69.7,
       "sourceLabel": "Gemini 3.8 Flash"
     },
     {
@@ -36861,34 +36898,34 @@
       "modelId": "qwen3-8-max",
       "benchmarkId": "aa-gdpval",
       "raw": 1674,
-      "stderr": 20,
+      "stderr": 19,
       "sourceLabel": "Qwen3.8 Max (0902)"
     },
     {
       "modelId": "qwen3-8-max",
       "benchmarkId": "aa-briefcase",
-      "raw": 1606,
-      "stderr": 9,
+      "raw": 1605,
+      "stderr": 8.5,
       "sourceLabel": "Qwen3.8 Max (0902)"
     },
     {
       "modelId": "qwen3-8-max",
       "benchmarkId": "terminal-bench",
       "raw": 27,
-      "stderr": 3.8,
+      "stderr": 3.9,
       "sourceLabel": "Qwen3.8-Max-0902(max)",
       "scaffold": "Claude Code"
     },
     {
       "modelId": "qwen3-8-max",
       "benchmarkId": "livebench",
-      "raw": 61.6,
+      "raw": 60.9,
       "sourceLabel": "Qwen3.8 Maxopen"
     },
     {
       "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-agentic",
-      "raw": 29.9,
+      "raw": 26.6,
       "sourceLabel": "Qwen3.8 Maxopen"
     },
     {
@@ -36900,7 +36937,7 @@
     {
       "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-coding",
-      "raw": 60.3,
+      "raw": 60.9,
       "sourceLabel": "Qwen3.8 Maxopen"
     },
     {
@@ -36918,13 +36955,13 @@
     {
       "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-research",
-      "raw": 69.9,
+      "raw": 72.8,
       "sourceLabel": "Qwen3.8 Maxopen"
     },
     {
       "modelId": "qwen3-8-max",
       "benchmarkId": "livebench-design",
-      "raw": 78.6,
+      "raw": 76.6,
       "sourceLabel": "Qwen3.8 Maxopen"
     },
     {
@@ -37352,13 +37389,13 @@
     {
       "modelId": "gemma-4-31b",
       "benchmarkId": "livebench",
-      "raw": 38.7,
+      "raw": 32.4,
       "sourceLabel": "Gemma 4 31Bopen"
     },
     {
       "modelId": "gemma-4-31b",
       "benchmarkId": "livebench-agentic",
-      "raw": 10.7,
+      "raw": 8.5,
       "sourceLabel": "Gemma 4 31Bopen"
     },
     {
@@ -37370,7 +37407,7 @@
     {
       "modelId": "gemma-4-31b",
       "benchmarkId": "livebench-coding",
-      "raw": 49,
+      "raw": 20.3,
       "sourceLabel": "Gemma 4 31Bopen"
     },
     {
@@ -37388,13 +37425,13 @@
     {
       "modelId": "gemma-4-31b",
       "benchmarkId": "livebench-research",
-      "raw": 44.4,
+      "raw": 38.1,
       "sourceLabel": "Gemma 4 31Bopen"
     },
     {
       "modelId": "gemma-4-31b",
       "benchmarkId": "livebench-design",
-      "raw": 58.4,
+      "raw": 56.5,
       "sourceLabel": "Gemma 4 31Bopen"
     },
     {
@@ -38346,13 +38383,13 @@
     {
       "modelId": "gemini-4-argon",
       "benchmarkId": "livebench",
-      "raw": 79.3,
+      "raw": 77.7,
       "sourceLabel": "Gemini 4 Argon"
     },
     {
       "modelId": "gemini-4-argon",
       "benchmarkId": "livebench-agentic",
-      "raw": 61.2,
+      "raw": 58.5,
       "sourceLabel": "Gemini 4 Argon"
     },
     {
@@ -38364,7 +38401,7 @@
     {
       "modelId": "gemini-4-argon",
       "benchmarkId": "livebench-coding",
-      "raw": 89.7,
+      "raw": 85.7,
       "sourceLabel": "Gemini 4 Argon"
     },
     {
@@ -38382,13 +38419,13 @@
     {
       "modelId": "gemini-4-argon",
       "benchmarkId": "livebench-research",
-      "raw": 83.1,
+      "raw": 86.8,
       "sourceLabel": "Gemini 4 Argon"
     },
     {
       "modelId": "gemini-4-argon",
       "benchmarkId": "livebench-design",
-      "raw": 73.7,
+      "raw": 69.2,
       "sourceLabel": "Gemini 4 Argon"
     },
     {
@@ -40581,19 +40618,19 @@
       "modelId": "mistral-large-4",
       "benchmarkId": "aa-briefcase",
       "raw": 1348,
-      "stderr": 11,
+      "stderr": 10,
       "sourceLabel": "Mistral Large 4 (High)"
     },
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "livebench",
-      "raw": 63.5,
+      "raw": 60.3,
       "sourceLabel": "Mistral Large 4 1029open"
     },
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "livebench-agentic",
-      "raw": 27.5,
+      "raw": 24.7,
       "sourceLabel": "Mistral Large 4 1029open"
     },
     {
@@ -40605,7 +40642,7 @@
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "livebench-coding",
-      "raw": 95.4,
+      "raw": 79.4,
       "sourceLabel": "Mistral Large 4 1029open"
     },
     {
@@ -40623,7 +40660,7 @@
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "livebench-research",
-      "raw": 79.7,
+      "raw": 80.3,
       "sourceLabel": "Mistral Large 4 1029open"
     },
     {
@@ -41949,13 +41986,13 @@
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "livebench",
-      "raw": 72.9,
+      "raw": 70.3,
       "sourceLabel": "DeepSeek V4.1 Flash 1017open"
     },
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "livebench-agentic",
-      "raw": 35.7,
+      "raw": 38.8,
       "sourceLabel": "DeepSeek V4.1 Flash 1017open"
     },
     {
@@ -41967,7 +42004,7 @@
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "livebench-coding",
-      "raw": 96,
+      "raw": 80.4,
       "sourceLabel": "DeepSeek V4.1 Flash 1017open"
     },
     {
@@ -41985,13 +42022,13 @@
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "livebench-research",
-      "raw": 79.5,
+      "raw": 78.6,
       "sourceLabel": "DeepSeek V4.1 Flash 1017open"
     },
     {
       "modelId": "deepseek-v4-1-flash",
       "benchmarkId": "livebench-design",
-      "raw": 83.4,
+      "raw": 79.8,
       "sourceLabel": "DeepSeek V4.1 Flash 1017open"
     },
     {
@@ -44723,7 +44760,7 @@
     {
       "modelId": "grok-4-6",
       "benchmarkId": "terminal-bench",
-      "raw": 20.3,
+      "raw": 19.7,
       "stderr": 3.1,
       "sourceLabel": "Grok 4.6(high)",
       "scaffold": "Grok Build"
@@ -44737,13 +44774,13 @@
     {
       "modelId": "grok-4-6",
       "benchmarkId": "livebench",
-      "raw": 67.8,
+      "raw": 63.5,
       "sourceLabel": "Grok 4.6"
     },
     {
       "modelId": "grok-4-6",
       "benchmarkId": "livebench-agentic",
-      "raw": 28,
+      "raw": 18.7,
       "sourceLabel": "Grok 4.6"
     },
     {
@@ -44755,7 +44792,7 @@
     {
       "modelId": "grok-4-6",
       "benchmarkId": "livebench-coding",
-      "raw": 89.1,
+      "raw": 76.7,
       "sourceLabel": "Grok 4.6"
     },
     {
@@ -44773,13 +44810,13 @@
     {
       "modelId": "grok-4-6",
       "benchmarkId": "livebench-research",
-      "raw": 84.5,
+      "raw": 88.8,
       "sourceLabel": "Grok 4.6"
     },
     {
       "modelId": "grok-4-6",
       "benchmarkId": "livebench-design",
-      "raw": 79.8,
+      "raw": 76.3,
       "sourceLabel": "Grok 4.6"
     },
     {
@@ -45562,22 +45599,22 @@
     {
       "modelId": "grok-4-7",
       "benchmarkId": "aa-gdpval",
-      "raw": 1718,
-      "stderr": 21,
+      "raw": 1717,
+      "stderr": 20,
       "sourceLabel": "Grok 4.7 (Xhigh)"
     },
     {
       "modelId": "grok-4-7",
       "benchmarkId": "aa-briefcase",
-      "raw": 1637,
+      "raw": 1636,
       "stderr": 9,
       "sourceLabel": "Grok 4.7 (Xhigh)"
     },
     {
       "modelId": "grok-4-7",
       "benchmarkId": "terminal-bench",
-      "raw": 37.6,
-      "stderr": 3.5,
+      "raw": 38.8,
+      "stderr": 3.6,
       "sourceLabel": "Grok 4.7(xhigh)",
       "scaffold": "Grok Build"
     },
@@ -45590,13 +45627,13 @@
     {
       "modelId": "grok-4-7",
       "benchmarkId": "livebench",
-      "raw": 70.1,
+      "raw": 67.9,
       "sourceLabel": "Grok 4.7"
     },
     {
       "modelId": "grok-4-7",
       "benchmarkId": "livebench-agentic",
-      "raw": 46.1,
+      "raw": 45.3,
       "sourceLabel": "Grok 4.7"
     },
     {
@@ -45608,7 +45645,7 @@
     {
       "modelId": "grok-4-7",
       "benchmarkId": "livebench-coding",
-      "raw": 84.5,
+      "raw": 73.1,
       "sourceLabel": "Grok 4.7"
     },
     {
@@ -45626,13 +45663,13 @@
     {
       "modelId": "grok-4-7",
       "benchmarkId": "livebench-research",
-      "raw": 86.4,
+      "raw": 89.5,
       "sourceLabel": "Grok 4.7"
     },
     {
       "modelId": "grok-4-7",
       "benchmarkId": "livebench-design",
-      "raw": 78,
+      "raw": 75,
       "sourceLabel": "Grok 4.7"
     },
     {
@@ -46725,7 +46762,7 @@
     {
       "modelId": "claude-fable-5",
       "benchmarkId": "terminal-bench",
-      "raw": 44.5,
+      "raw": 44.8,
       "stderr": 3.8,
       "sourceLabel": "Fable 5(max)",
       "scaffold": "Claude Code"
@@ -47738,8 +47775,8 @@
     {
       "modelId": "claude-opus-5",
       "benchmarkId": "terminal-bench",
-      "raw": 53.9,
-      "stderr": 3.2,
+      "raw": 53.3,
+      "stderr": 3.1,
       "sourceLabel": "Opus 5(xhigh)",
       "scaffold": "Claude Code"
     },
@@ -48110,8 +48147,8 @@
     {
       "modelId": "claude-sonnet-5",
       "benchmarkId": "terminal-bench",
-      "raw": 12.4,
-      "stderr": 3.1,
+      "raw": 12.1,
+      "stderr": 3,
       "sourceLabel": "Sonnet 5(max)",
       "scaffold": "Claude Code"
     },
@@ -48475,7 +48512,7 @@
     {
       "modelId": "step-5",
       "benchmarkId": "livebench",
-      "raw": 58.6,
+      "raw": 55.2,
       "sourceLabel": "Step 5 (Preview)open"
     },
     {
@@ -48493,7 +48530,7 @@
     {
       "modelId": "step-5",
       "benchmarkId": "livebench-coding",
-      "raw": 85.6,
+      "raw": 69.4,
       "sourceLabel": "Step 5 (Preview)open"
     },
     {
@@ -48511,13 +48548,13 @@
     {
       "modelId": "step-5",
       "benchmarkId": "livebench-research",
-      "raw": 72.8,
+      "raw": 75.5,
       "sourceLabel": "Step 5 (Preview)open"
     },
     {
       "modelId": "step-5",
       "benchmarkId": "livebench-design",
-      "raw": 76.9,
+      "raw": 70.8,
       "sourceLabel": "Step 5 (Preview)open"
     },
     {
@@ -48609,12 +48646,6 @@
     },
     {
       "modelId": "claude-fable-5-1",
-      "benchmarkId": "artificial-analysis",
-      "raw": 49,
-      "sourceLabel": "Claude Fable 5.1 (max)"
-    },
-    {
-      "modelId": "claude-fable-5-1",
       "benchmarkId": "aa-gdpval",
       "raw": 1763,
       "stderr": 19,
@@ -48630,9 +48661,9 @@
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "terminal-bench",
-      "raw": 57.9,
-      "stderr": 3.8,
-      "sourceLabel": "Fable 5.1(max)",
+      "raw": 57.6,
+      "stderr": 3.3,
+      "sourceLabel": "Fable 5.1(xhigh)",
       "scaffold": "Claude Code"
     },
     {
@@ -48644,13 +48675,13 @@
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "livebench",
-      "raw": 85.7,
+      "raw": 84,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "livebench-agentic",
-      "raw": 77.9,
+      "raw": 74.2,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
@@ -48662,7 +48693,7 @@
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "livebench-coding",
-      "raw": 97.7,
+      "raw": 89.7,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
@@ -48680,13 +48711,13 @@
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "livebench-research",
-      "raw": 82,
+      "raw": 88.5,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "livebench-design",
-      "raw": 83.4,
+      "raw": 81.6,
       "sourceLabel": "Claude Fable 5.1"
     },
     {
@@ -49358,6 +49389,116 @@
       "scaffold": "OpenHands"
     },
     {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "artificial-analysis",
+      "raw": 65,
+      "sourceLabel": "Claude Fable 5.2 (max)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1831,
+      "stderr": 27,
+      "sourceLabel": "Claude Fable 5.2 (Max, Default Fallback)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1785,
+      "stderr": 12.5,
+      "sourceLabel": "Claude Fable 5.2 (Max, Default Fallback)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "arc-agi-2",
+      "raw": 92.5,
+      "sourceLabel": "Claude Fable 5.2 (Max)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "livebench",
+      "raw": 84.9,
+      "sourceLabel": "Claude Fable 5.2 (xhigh)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "livebench-agentic",
+      "raw": 82.9,
+      "sourceLabel": "Claude Fable 5.2 (xhigh)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "livebench-reasoning",
+      "raw": 88.8,
+      "sourceLabel": "Claude Fable 5.2 (xhigh)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "livebench-coding",
+      "raw": 79.2,
+      "sourceLabel": "Claude Fable 5.2 (xhigh)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "livebench-browser-use",
+      "raw": 86.9,
+      "sourceLabel": "Claude Fable 5.2 (xhigh)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "livebench-data-analysis",
+      "raw": 81.5,
+      "sourceLabel": "Claude Fable 5.2 (xhigh)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "livebench-research",
+      "raw": 94.5,
+      "sourceLabel": "Claude Fable 5.2 (xhigh)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "livebench-design",
+      "raw": 85.1,
+      "sourceLabel": "Claude Fable 5.2 (xhigh)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "vals-legal_research",
+      "raw": 46.15,
+      "stderr": 3.46,
+      "sourceLabel": "Claude Fable 5.2"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "vals-hlab",
+      "raw": 5,
+      "stderr": 1.72,
+      "sourceLabel": "Claude Fable 5.2"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "vals-biomysterybench",
+      "raw": 83.7,
+      "stderr": 0.74,
+      "sourceLabel": "Claude Fable 5.2"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "vals-vibe-code",
+      "raw": 93.77,
+      "stderr": 1.15,
+      "sourceLabel": "Claude Fable 5.2",
+      "scaffold": "OpenHands"
+    },
+    {
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "vals-proof_bench",
+      "raw": 100,
+      "stderr": 0,
+      "sourceLabel": "Claude Fable 5.2"
+    },
+    {
       "modelId": "glm-5-2",
       "benchmarkId": "lmarena",
       "raw": 1475,
@@ -49990,8 +50131,8 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "terminal-bench",
-      "raw": 35.8,
-      "stderr": 3.5,
+      "raw": 35.5,
+      "stderr": 3.6,
       "sourceLabel": "GLM-5.3-Flash(none)",
       "scaffold": "Claude Code"
     },
@@ -50004,13 +50145,13 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "livebench",
-      "raw": 62.1,
+      "raw": 60.7,
       "sourceLabel": "GLM-5.3 Flashopen"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "livebench-agentic",
-      "raw": 19,
+      "raw": 20.7,
       "sourceLabel": "GLM-5.3 Flashopen"
     },
     {
@@ -50022,7 +50163,7 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "livebench-coding",
-      "raw": 80.6,
+      "raw": 70.9,
       "sourceLabel": "GLM-5.3 Flashopen"
     },
     {
@@ -50040,13 +50181,13 @@
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "livebench-research",
-      "raw": 70.1,
+      "raw": 73.9,
       "sourceLabel": "GLM-5.3 Flashopen"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "livebench-design",
-      "raw": 77.2,
+      "raw": 73.7,
       "sourceLabel": "GLM-5.3 Flashopen"
     },
     {
@@ -50299,8 +50440,8 @@
     {
       "modelId": "glm-5-3",
       "benchmarkId": "terminal-bench",
-      "raw": 41.8,
-      "stderr": 3.2,
+      "raw": 41.2,
+      "stderr": 3.3,
       "sourceLabel": "GLM-5.3(max)",
       "scaffold": "Claude Code"
     },
@@ -51539,14 +51680,14 @@
     {
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "aa-gdpval",
-      "raw": 1631,
-      "stderr": 22,
+      "raw": 1629,
+      "stderr": 21,
       "sourceLabel": "Claude Haiku 5.5 (Max)"
     },
     {
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "aa-briefcase",
-      "raw": 1574,
+      "raw": 1573,
       "stderr": 10,
       "sourceLabel": "Claude Haiku 5.5 (Max)"
     },
@@ -51559,13 +51700,13 @@
     {
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "livebench",
-      "raw": 69.8,
+      "raw": 69,
       "sourceLabel": "Claude Haiku 5.5"
     },
     {
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "livebench-agentic",
-      "raw": 40,
+      "raw": 48.1,
       "sourceLabel": "Claude Haiku 5.5"
     },
     {
@@ -51577,7 +51718,7 @@
     {
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "livebench-coding",
-      "raw": 91.4,
+      "raw": 77.6,
       "sourceLabel": "Claude Haiku 5.5"
     },
     {
@@ -51595,13 +51736,13 @@
     {
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "livebench-research",
-      "raw": 81.9,
+      "raw": 84.3,
       "sourceLabel": "Claude Haiku 5.5"
     },
     {
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "livebench-design",
-      "raw": 83.1,
+      "raw": 79.3,
       "sourceLabel": "Claude Haiku 5.5"
     },
     {
@@ -51789,14 +51930,14 @@
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "aa-briefcase",
-      "raw": 1800,
-      "stderr": 11.5,
+      "raw": 1801,
+      "stderr": 10,
       "sourceLabel": "Claude Opus 5.5 (Max, Default Fallback)"
     },
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "terminal-bench",
-      "raw": 64.8,
+      "raw": 65.8,
       "stderr": 3.1,
       "sourceLabel": "Opus 5.5(max)",
       "scaffold": "Claude Code"
@@ -51810,7 +51951,7 @@
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "livebench",
-      "raw": 85.1,
+      "raw": 83.4,
       "sourceLabel": "Claude Opus 5.5"
     },
     {
@@ -51828,7 +51969,7 @@
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "livebench-coding",
-      "raw": 96.3,
+      "raw": 87.1,
       "sourceLabel": "Claude Opus 5.5"
     },
     {
@@ -51846,13 +51987,13 @@
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "livebench-research",
-      "raw": 85,
+      "raw": 88.9,
       "sourceLabel": "Claude Opus 5.5"
     },
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "livebench-design",
-      "raw": 86.9,
+      "raw": 83.3,
       "sourceLabel": "Claude Opus 5.5"
     },
     {
@@ -52095,8 +52236,8 @@
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "terminal-bench",
-      "raw": 61.8,
-      "stderr": 2.9,
+      "raw": 63.9,
+      "stderr": 3,
       "sourceLabel": "Sonnet 5.5(max)",
       "scaffold": "Claude Code"
     },
@@ -52109,7 +52250,7 @@
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "livebench",
-      "raw": 80,
+      "raw": 77,
       "sourceLabel": "Claude Sonnet 5.5"
     },
     {
@@ -52127,7 +52268,7 @@
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "livebench-coding",
-      "raw": 94.7,
+      "raw": 77.2,
       "sourceLabel": "Claude Sonnet 5.5"
     },
     {
@@ -52145,13 +52286,13 @@
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "livebench-research",
-      "raw": 83.6,
+      "raw": 88,
       "sourceLabel": "Claude Sonnet 5.5"
     },
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "livebench-design",
-      "raw": 85,
+      "raw": 81.3,
       "sourceLabel": "Claude Sonnet 5.5"
     },
     {
@@ -52382,8 +52523,8 @@
     {
       "modelId": "gpt-5-6-luna",
       "benchmarkId": "terminal-bench",
-      "raw": 17.3,
-      "stderr": 2.8,
+      "raw": 17.6,
+      "stderr": 2.9,
       "sourceLabel": "GPT-5.6 Luna(max)",
       "scaffold": "Codex"
     },
@@ -52778,7 +52919,7 @@
     {
       "modelId": "gpt-5-6-sol",
       "benchmarkId": "terminal-bench",
-      "raw": 37.3,
+      "raw": 38.5,
       "stderr": 3.8,
       "sourceLabel": "GPT-5.6 Sol(max)",
       "scaffold": "Codex"
@@ -53190,13 +53331,13 @@
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "livebench",
-      "raw": 67.8,
+      "raw": 67.2,
       "sourceLabel": "GPT-5.6 Terra"
     },
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "livebench-agentic",
-      "raw": 33.1,
+      "raw": 25.9,
       "sourceLabel": "GPT-5.6 Terra"
     },
     {
@@ -53208,7 +53349,7 @@
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "livebench-coding",
-      "raw": 86.2,
+      "raw": 84.2,
       "sourceLabel": "GPT-5.6 Terra"
     },
     {
@@ -53226,13 +53367,13 @@
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "livebench-research",
-      "raw": 60.4,
+      "raw": 79.7,
       "sourceLabel": "GPT-5.6 Terra"
     },
     {
       "modelId": "gpt-5-6-terra",
       "benchmarkId": "livebench-design",
-      "raw": 76,
+      "raw": 70.9,
       "sourceLabel": "GPT-5.6 Terra"
     },
     {
@@ -53599,8 +53740,8 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "aa-gdpval",
-      "raw": 1584,
-      "stderr": 19,
+      "raw": 1586,
+      "stderr": 18,
       "sourceLabel": "GPT-6 Astra (Max)"
     },
     {
@@ -53613,7 +53754,7 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "terminal-bench",
-      "raw": 58.2,
+      "raw": 60.3,
       "stderr": 2.8,
       "sourceLabel": "GPT-6 Astra(max)",
       "scaffold": "Codex"
@@ -53627,13 +53768,13 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "livebench",
-      "raw": 85.6,
+      "raw": 84.5,
       "sourceLabel": "GPT-6 Astra"
     },
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "livebench-agentic",
-      "raw": 77.5,
+      "raw": 75.6,
       "sourceLabel": "GPT-6 Astra"
     },
     {
@@ -53645,7 +53786,7 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "livebench-coding",
-      "raw": 93.7,
+      "raw": 87.5,
       "sourceLabel": "GPT-6 Astra"
     },
     {
@@ -53663,13 +53804,13 @@
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "livebench-research",
-      "raw": 85.2,
+      "raw": 90.6,
       "sourceLabel": "GPT-6 Astra"
     },
     {
       "modelId": "gpt-6-astra",
       "benchmarkId": "livebench-design",
-      "raw": 82,
+      "raw": 80,
       "sourceLabel": "GPT-6 Astra"
     },
     {
@@ -53936,7 +54077,7 @@
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "terminal-bench",
-      "raw": 16.4,
+      "raw": 15.2,
       "stderr": 2.7,
       "sourceLabel": "GPT-6 Luna(max)",
       "scaffold": "Codex"
@@ -53950,13 +54091,13 @@
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "livebench",
-      "raw": 64.6,
+      "raw": 60.4,
       "sourceLabel": "GPT-6 Luna"
     },
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "livebench-agentic",
-      "raw": 30.9,
+      "raw": 24.7,
       "sourceLabel": "GPT-6 Luna"
     },
     {
@@ -53968,7 +54109,7 @@
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "livebench-coding",
-      "raw": 84.5,
+      "raw": 70.8,
       "sourceLabel": "GPT-6 Luna"
     },
     {
@@ -53986,13 +54127,13 @@
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "livebench-research",
-      "raw": 43.5,
+      "raw": 48.5,
       "sourceLabel": "GPT-6 Luna"
     },
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "livebench-design",
-      "raw": 82.5,
+      "raw": 76.1,
       "sourceLabel": "GPT-6 Luna"
     },
     {
@@ -54217,7 +54358,7 @@
     {
       "modelId": "gpt-6-sol",
       "benchmarkId": "terminal-bench",
-      "raw": 49.4,
+      "raw": 50.3,
       "stderr": 3.2,
       "sourceLabel": "GPT-6 Sol(max)",
       "scaffold": "Codex"
@@ -54447,22 +54588,22 @@
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "aa-gdpval",
-      "raw": 1609,
-      "stderr": 22,
+      "raw": 1608,
+      "stderr": 21,
       "sourceLabel": "GPT-6.1 Sol (Max)"
     },
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "aa-briefcase",
       "raw": 1555,
-      "stderr": 9,
+      "stderr": 8.5,
       "sourceLabel": "GPT-6.1 Sol (Max)"
     },
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "terminal-bench",
-      "raw": 58.2,
-      "stderr": 3.1,
+      "raw": 60.9,
+      "stderr": 3,
       "sourceLabel": "GPT-6.1 Sol(max)",
       "scaffold": "Codex"
     },
@@ -54475,13 +54616,13 @@
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "livebench",
-      "raw": 84.1,
+      "raw": 81.4,
       "sourceLabel": "GPT-6.1 Sol"
     },
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "livebench-agentic",
-      "raw": 68.7,
+      "raw": 65.6,
       "sourceLabel": "GPT-6.1 Sol"
     },
     {
@@ -54493,7 +54634,7 @@
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "livebench-coding",
-      "raw": 96,
+      "raw": 82.1,
       "sourceLabel": "GPT-6.1 Sol"
     },
     {
@@ -54511,13 +54652,13 @@
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "livebench-research",
-      "raw": 83.5,
+      "raw": 90,
       "sourceLabel": "GPT-6.1 Sol"
     },
     {
       "modelId": "gpt-6-1-sol",
       "benchmarkId": "livebench-design",
-      "raw": 82.1,
+      "raw": 79.6,
       "sourceLabel": "GPT-6.1 Sol"
     },
     {
@@ -54704,20 +54845,20 @@
     {
       "modelId": "gpt-6-1-terra",
       "benchmarkId": "aa-briefcase",
-      "raw": 1401,
-      "stderr": 10.5,
+      "raw": 1403,
+      "stderr": 10,
       "sourceLabel": "GPT-6.1 Terra (Max)"
     },
     {
       "modelId": "gpt-6-1-terra",
       "benchmarkId": "livebench",
-      "raw": 77.8,
+      "raw": 78.8,
       "sourceLabel": "GPT-6.1 Terra"
     },
     {
       "modelId": "gpt-6-1-terra",
       "benchmarkId": "livebench-agentic",
-      "raw": 48.6,
+      "raw": 56.2,
       "sourceLabel": "GPT-6.1 Terra"
     },
     {
@@ -54729,7 +54870,7 @@
     {
       "modelId": "gpt-6-1-terra",
       "benchmarkId": "livebench-coding",
-      "raw": 94.3,
+      "raw": 89.2,
       "sourceLabel": "GPT-6.1 Terra"
     },
     {
@@ -54747,13 +54888,13 @@
     {
       "modelId": "gpt-6-1-terra",
       "benchmarkId": "livebench-research",
-      "raw": 73.9,
+      "raw": 79.1,
       "sourceLabel": "GPT-6.1 Terra"
     },
     {
       "modelId": "gpt-6-1-terra",
       "benchmarkId": "livebench-design",
-      "raw": 82.3,
+      "raw": 79.7,
       "sourceLabel": "GPT-6.1 Terra"
     },
     {
@@ -56957,6 +57098,41 @@
       "sourceLabel": "Dots.mocr"
     },
     {
+      "modelId": "muse-ember",
+      "benchmarkId": "artificial-analysis",
+      "raw": 36,
+      "sourceLabel": "Muse Ember (max)"
+    },
+    {
+      "modelId": "muse-ember",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1521,
+      "stderr": 11.5,
+      "sourceLabel": "Muse Ember (Max)"
+    },
+    {
+      "modelId": "muse-ember",
+      "benchmarkId": "vals-legal_research",
+      "raw": 49.04,
+      "stderr": 3.48,
+      "sourceLabel": "Muse Ember"
+    },
+    {
+      "modelId": "muse-ember",
+      "benchmarkId": "vals-hlab",
+      "raw": 25,
+      "stderr": 3.69,
+      "sourceLabel": "Muse Ember"
+    },
+    {
+      "modelId": "muse-ember",
+      "benchmarkId": "vals-vibe-code",
+      "raw": 83.7,
+      "stderr": 2.76,
+      "sourceLabel": "Muse Ember",
+      "scaffold": "OpenHands"
+    },
+    {
       "modelId": "evocua",
       "benchmarkId": "osworld",
       "raw": 56.7,
@@ -57532,13 +57708,13 @@
     {
       "modelId": "inkling",
       "benchmarkId": "livebench",
-      "raw": 47,
+      "raw": 44.3,
       "sourceLabel": "Inklingopen"
     },
     {
       "modelId": "inkling",
       "benchmarkId": "livebench-agentic",
-      "raw": 8.5,
+      "raw": 9.8,
       "sourceLabel": "Inklingopen"
     },
     {
@@ -57550,7 +57726,7 @@
     {
       "modelId": "inkling",
       "benchmarkId": "livebench-coding",
-      "raw": 64,
+      "raw": 48.7,
       "sourceLabel": "Inklingopen"
     },
     {
@@ -57568,13 +57744,13 @@
     {
       "modelId": "inkling",
       "benchmarkId": "livebench-research",
-      "raw": 59.9,
+      "raw": 60.3,
       "sourceLabel": "Inklingopen"
     },
     {
       "modelId": "inkling",
       "benchmarkId": "livebench-design",
-      "raw": 58.3,
+      "raw": 55.2,
       "sourceLabel": "Inklingopen"
     },
     {
@@ -58658,13 +58834,13 @@
     {
       "modelId": "muse-spark-open",
       "benchmarkId": "livebench",
-      "raw": 51.6,
+      "raw": 48.5,
       "sourceLabel": "Muse Spark Openopen"
     },
     {
       "modelId": "muse-spark-open",
       "benchmarkId": "livebench-agentic",
-      "raw": 11.7,
+      "raw": 12.1,
       "sourceLabel": "Muse Spark Openopen"
     },
     {
@@ -58676,7 +58852,7 @@
     {
       "modelId": "muse-spark-open",
       "benchmarkId": "livebench-coding",
-      "raw": 73.6,
+      "raw": 55.1,
       "sourceLabel": "Muse Spark Openopen"
     },
     {
@@ -58694,13 +58870,13 @@
     {
       "modelId": "muse-spark-open",
       "benchmarkId": "livebench-research",
-      "raw": 80.3,
+      "raw": 82.7,
       "sourceLabel": "Muse Spark Openopen"
     },
     {
       "modelId": "muse-spark-open",
       "benchmarkId": "livebench-design",
-      "raw": 60.3,
+      "raw": 58.1,
       "sourceLabel": "Muse Spark Openopen"
     },
     {
@@ -58869,13 +59045,13 @@
     {
       "modelId": "muse-wonder",
       "benchmarkId": "livebench",
-      "raw": 74.2,
+      "raw": 70.7,
       "sourceLabel": "Muse Wonder 1.0"
     },
     {
       "modelId": "muse-wonder",
       "benchmarkId": "livebench-agentic",
-      "raw": 52.6,
+      "raw": 46.2,
       "sourceLabel": "Muse Wonder 1.0"
     },
     {
@@ -58887,7 +59063,7 @@
     {
       "modelId": "muse-wonder",
       "benchmarkId": "livebench-coding",
-      "raw": 86.2,
+      "raw": 74.9,
       "sourceLabel": "Muse Wonder 1.0"
     },
     {
@@ -58905,13 +59081,13 @@
     {
       "modelId": "muse-wonder",
       "benchmarkId": "livebench-research",
-      "raw": 88,
+      "raw": 93,
       "sourceLabel": "Muse Wonder 1.0"
     },
     {
       "modelId": "muse-wonder",
       "benchmarkId": "livebench-design",
-      "raw": 75.1,
+      "raw": 70.9,
       "sourceLabel": "Muse Wonder 1.0"
     },
     {
@@ -59575,7 +59751,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -59583,7 +59759,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-11-09",
+      "retrievedAt": "2026-11-10",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
