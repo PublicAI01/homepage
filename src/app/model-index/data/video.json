@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T01:02:18.988Z",
+  "generatedAt": "2026-11-10T14:07:00.627Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -24,7 +24,7 @@
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-video",
       "retrievedAt": "2026-11-10",
-      "snapshot": "Nov 8, 2026 — across 50 models",
+      "snapshot": "Nov 9, 2026 — across 50 models",
       "metric": "elo",
       "category": "Text-to-video",
       "domain": "Text-to-video",
@@ -824,7 +824,7 @@
     {
       "modelId": "kling-2-5-turbo",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1220,
+      "raw": 1219,
       "stderr": 17,
       "sourceLabel": "Kling 2.5 Turbo (1080p)"
     },
@@ -880,7 +880,7 @@
     {
       "modelId": "wan-2-6",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1323,
+      "raw": 1324,
       "stderr": 7,
       "sourceLabel": "Wan 2.6"
     },
@@ -1242,7 +1242,7 @@
     {
       "modelId": "p-video",
       "benchmarkId": "arena-text-to-video",
-      "raw": 1207,
+      "raw": 1206,
       "stderr": 16,
       "sourceLabel": "P-Video"
     },
