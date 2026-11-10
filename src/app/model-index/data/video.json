@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T14:07:00.627Z",
+  "generatedAt": "2026-11-10T22:43:00.750Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -126,8 +126,8 @@
     },
     { "id": "happyhorse-1-1", "name": "HappyHorse 1.1", "org": "Other" },
     {
-      "id": "gemini-omni-1-2-flash",
-      "name": "Gemini Omni 1.2 Flash",
+      "id": "gemini-omni-flash-1-2",
+      "name": "Gemini Omni Flash 1.2",
       "org": "Google",
       "access": {
         "openrouter": {
@@ -598,11 +598,25 @@
       "sourceLabel": "HappyHorse-1.1"
     },
     {
-      "modelId": "gemini-omni-1-2-flash",
+      "modelId": "gemini-omni-flash-1-2",
+      "benchmarkId": "aa-text-to-video",
+      "raw": 1154,
+      "stderr": 14,
+      "sourceLabel": "Gemini Omni Flash 1.2"
+    },
+    {
+      "modelId": "gemini-omni-flash-1-2",
       "benchmarkId": "arena-text-to-video",
       "raw": 1540,
       "stderr": 16,
       "sourceLabel": "Gemini Omni 1.2 Flash"
+    },
+    {
+      "modelId": "gemini-omni-flash-1-2",
+      "benchmarkId": "aa-image-to-video",
+      "raw": 1086,
+      "stderr": 15,
+      "sourceLabel": "Gemini Omni Flash 1.2"
     },
     {
       "modelId": "grok-imagine-video-1-5-lite",
