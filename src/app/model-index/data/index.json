@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T13:16:53.241Z",
+  "generatedAt": "2026-11-11T23:54:32.733Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -5988,7 +5988,7 @@
           "url": "https://openrouter.ai/google/gemma-3-27b-it",
           "contextLength": 131072,
           "inputPerM": 0.08,
-          "outputPerM": 0.45,
+          "outputPerM": 0.35,
           "listedAt": "2025-03-12",
           "modalities": ["text", "image"]
         },
@@ -7165,8 +7165,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -7695,8 +7695,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.075,
+          "outputPerM": 0.3,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -12101,28 +12101,6 @@
       "org": "Other"
     },
     {
-      "id": "deepseek-chat",
-      "name": "DeepSeek Chat",
-      "org": "DeepSeek",
-      "access": {
-        "official": {
-          "name": "DeepSeek API",
-          "url": "https://api-docs.deepseek.com"
-        }
-      }
-    },
-    {
-      "id": "deepseek-reasoner",
-      "name": "DeepSeek Reasoner",
-      "org": "DeepSeek",
-      "access": {
-        "official": {
-          "name": "DeepSeek API",
-          "url": "https://api-docs.deepseek.com"
-        }
-      }
-    },
-    {
       "id": "devstral-medium",
       "name": "Devstral Medium",
       "org": "Mistral",
@@ -16109,7 +16087,7 @@
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "livebench",
-      "raw": 68.4,
+      "raw": 68.6,
       "sourceLabel": "Muse Spark 1.3"
     },
     {
@@ -16127,7 +16105,7 @@
     {
       "modelId": "muse-spark-1-3",
       "benchmarkId": "livebench-coding",
-      "raw": 83.1,
+      "raw": 84.4,
       "sourceLabel": "Muse Spark 1.3"
     },
     {
@@ -36565,7 +36543,7 @@
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "livebench",
-      "raw": 56,
+      "raw": 57.3,
       "sourceLabel": "Gemini 3.8 Flash"
     },
     {
@@ -36583,7 +36561,7 @@
     {
       "modelId": "gemini-3-8-flash",
       "benchmarkId": "livebench-coding",
-      "raw": 65.7,
+      "raw": 73.3,
       "sourceLabel": "Gemini 3.8 Flash"
     },
     {
@@ -36868,6 +36846,12 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 90.4,
       "sourceLabel": "NInfer Qwen3.8-Flash-Next mixed"
+    },
+    {
+      "modelId": "qwen3-8-flash-next",
+      "benchmarkId": "artificial-analysis",
+      "raw": 29,
+      "sourceLabel": "Qwen3.8-Flash-Next"
     },
     {
       "modelId": "qwen3-8-flash-next",
@@ -41815,6 +41799,12 @@
       "benchmarkId": "lmarena",
       "raw": 1387,
       "stderr": 5,
+      "sourceLabel": "Solar Pro 4"
+    },
+    {
+      "modelId": "solar-pro-4",
+      "benchmarkId": "artificial-analysis",
+      "raw": 14,
       "sourceLabel": "Solar Pro 4"
     },
     {
@@ -48628,7 +48618,7 @@
     {
       "modelId": "step-5",
       "benchmarkId": "livebench",
-      "raw": 55.2,
+      "raw": 54.9,
       "sourceLabel": "Step 5 (Preview)open"
     },
     {
@@ -48646,7 +48636,7 @@
     {
       "modelId": "step-5",
       "benchmarkId": "livebench-coding",
-      "raw": 69.4,
+      "raw": 67.6,
       "sourceLabel": "Step 5 (Preview)open"
     },
     {
@@ -57058,78 +57048,6 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 83,
       "sourceLabel": "Laya typed-decisions"
-    },
-    {
-      "modelId": "deepseek-chat",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 9.1,
-      "sourceLabel": "deepseek-chat"
-    },
-    {
-      "modelId": "deepseek-chat",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 41.7,
-      "sourceLabel": "deepseek-chat"
-    },
-    {
-      "modelId": "deepseek-chat",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 8.8,
-      "sourceLabel": "deepseek-chat"
-    },
-    {
-      "modelId": "deepseek-chat",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 6.5,
-      "sourceLabel": "deepseek-chat"
-    },
-    {
-      "modelId": "deepseek-chat",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 85.3,
-      "sourceLabel": "deepseek-chat"
-    },
-    {
-      "modelId": "deepseek-chat",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 26.7,
-      "sourceLabel": "deepseek-chat"
-    },
-    {
-      "modelId": "deepseek-reasoner",
-      "benchmarkId": "enkrypt-jailbreak",
-      "raw": 10.7,
-      "sourceLabel": "deepseek-reasoner"
-    },
-    {
-      "modelId": "deepseek-reasoner",
-      "benchmarkId": "enkrypt-harmful",
-      "raw": 45,
-      "sourceLabel": "deepseek-reasoner"
-    },
-    {
-      "modelId": "deepseek-reasoner",
-      "benchmarkId": "enkrypt-cbrn",
-      "raw": 13,
-      "sourceLabel": "deepseek-reasoner"
-    },
-    {
-      "modelId": "deepseek-reasoner",
-      "benchmarkId": "enkrypt-toxicity",
-      "raw": 6.7,
-      "sourceLabel": "deepseek-reasoner"
-    },
-    {
-      "modelId": "deepseek-reasoner",
-      "benchmarkId": "enkrypt-bias",
-      "raw": 83.7,
-      "sourceLabel": "deepseek-reasoner"
-    },
-    {
-      "modelId": "deepseek-reasoner",
-      "benchmarkId": "enkrypt-insecure-code",
-      "raw": 38.7,
-      "sourceLabel": "deepseek-reasoner"
     },
     {
       "modelId": "devstral-medium",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T13:16:53.241Z",
+  "generatedAt": "2026-11-11T23:54:32.733Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -513,6 +513,11 @@
           "url": "https://www.alibabacloud.com/help/en/model-studio"
         }
       }
+    },
+    {
+      "id": "adm-3-cloud-image",
+      "name": "ADM 3 Cloud (Image)",
+      "org": "Other"
     },
     {
       "id": "nano-banana-pro-gemini-3-pro-image",
@@ -1979,6 +1984,13 @@
       "raw": 1300,
       "stderr": 4,
       "sourceLabel": "Wan 2.7 Image"
+    },
+    {
+      "modelId": "adm-3-cloud-image",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 910,
+      "stderr": 15,
+      "sourceLabel": "ADM 3 Cloud (Image)"
     },
     {
       "modelId": "nano-banana-pro-gemini-3-pro-image",
