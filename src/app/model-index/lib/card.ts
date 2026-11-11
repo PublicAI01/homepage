@@ -1,5 +1,7 @@
+import { estimateLabel } from './estimate';
 import { familyOf } from './family';
 import { SIZE_TIERS } from './size';
+import type { ModelSummary } from './track';
 import { TRACKS } from './tracks';
 import { rankName, rankScope, type ViewState } from './view-state';
 
@@ -58,8 +60,48 @@ export function cardOf(view: ViewState) {
   const title = `Top ${rows.length} - ${rankName(view.rank)}${tier ? ` · ${tier.label}` : ''}${view.family !== 'all' ? ` · ${view.family}` : ''}${track.id !== 'text' ? ` · ${track.label}` : ''}`;
   return {
     track,
+    /**
+     * The view the rows were drawn for — sanitized, so the caller reads
+     * the scope the rows are in and not the one the link asked for. The
+     * card route kept its own copy of the raw view to decide the marks:
+     * on a link whose scope did not resolve (`rank=domain:General`, a
+     * name the index no longer uses) the rows were Overall's while the
+     * level read "domain", so every unranked row printed its estimate
+     * as a plain figure — `≤53.4` as `53.4` — and wore the `*` the
+     * legend reserves for reports (2026-11-11).
+     */
+    view,
     rows,
     title,
     generatedAt: 'error' in result ? '' : result.generatedAt.slice(0, 10),
+  };
+}
+
+/**
+ * What the card prints for one row, from the scope the rows are in: the
+ * position cell and the figure. One function beside the gate, so the
+ * marks cannot be decided from a view the rows were not drawn for.
+ *
+ * In a scope, a row only reports ✱ placed has no number and wears `*`.
+ * On Overall, a row with no index prints its estimate with its own mark
+ * (`~`, `<=`, `>=`, never `*`), ASCII because Satori fetches a font for
+ * anything outside Latin-1.
+ */
+export function cardCells(
+  level: ViewState['rank']['level'],
+  m: ModelSummary,
+): { position: string; figure: string; score: number | null } {
+  const score = m.scopeScore ?? m.index ?? m.estimatedIndex?.score ?? null;
+  const byReport = level !== 'overall' && !m.rankedInScope;
+  const estimated =
+    level === 'overall' && m.index === null ? m.estimatedIndex : null;
+  return {
+    position: `${m.position ?? '-'}${byReport ? '*' : ''}`,
+    figure: estimated
+      ? estimateLabel(estimated, true)
+      : score === null
+        ? '-'
+        : score.toFixed(1),
+    score,
   };
 }

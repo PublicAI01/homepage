@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import { models as textModels } from '../data';
 import { imageData, videoData } from '../data/tracks';
-import { cardOf, sanitizeView } from './card';
+import { cardCells, cardOf, sanitizeView } from './card';
 import { familyOf } from './family';
 import { rankModels } from './query';
 import { decodeView } from './view-state';
@@ -61,6 +61,61 @@ describe('cardOf', () => {
     expect(c.title).toContain(beyond!);
     expect(c.rows.length).toBeGreaterThan(0);
     for (const m of c.rows) expect(m.family).toBe(beyond);
+  });
+});
+
+describe('cardCells', () => {
+  // The social card decided its marks from the link's own view while the
+  // rows came from the sanitized one. On `rank=domain:General` — a name
+  // the index no longer resolves — the rows were Overall's and the level
+  // read "domain", so every unranked row in the top ten printed its
+  // estimate as a plain figure (`<=53.4` as `53.4`) and wore the `*` the
+  // legend reserves for reports (2026-11-11).
+  it('prints an unresolved scope as Overall: estimates marked, no report star', () => {
+    const q = 'rank=domain:General&family=Gemma';
+    const raw = decodeView(new URLSearchParams(q));
+    expect(raw.rank.level).toBe('domain');
+    const card = cardOf(raw);
+    expect(card.view.rank).toEqual({ level: 'overall' });
+    const unranked = card.rows.filter((m) => m.index === null);
+    expect(unranked.length).toBeGreaterThan(0);
+    for (const m of unranked) {
+      const cell = cardCells(card.view.rank.level, m);
+      expect(cell.position).not.toContain('*');
+      expect(cell.figure).toMatch(/^(~|<=|>=)\d+\.\d$/);
+      // The raw view's level is what the route used to read; same rows,
+      // wrong marks.
+      const wrong = cardCells(raw.rank.level, m);
+      expect(wrong.position).toContain('*');
+      expect(wrong.figure).toMatch(/^\d+\.\d$/);
+    }
+    const ranked = card.rows.filter((m) => m.index !== null);
+    for (const m of ranked)
+      expect(cardCells(card.view.rank.level, m)).toEqual({
+        position: String(m.position),
+        figure: m.index!.toFixed(1),
+        score: m.index,
+      });
+  });
+
+  it('in a real scope, a report-placed row wears the star and no number', () => {
+    const card = cardOf(
+      decodeView(new URLSearchParams('rank=domain:Agentic coding&min=0')),
+    );
+    expect(card.view.rank.level).toBe('domain');
+    const starred = card.rows.find((m) => !m.rankedInScope);
+    if (starred) {
+      const cell = cardCells(card.view.rank.level, starred);
+      expect(cell.position).toBe('-*');
+      expect(cell.figure).toBe(starred.scopeScore!.toFixed(1));
+    }
+    const placed = card.rows.find((m) => m.rankedInScope);
+    expect(placed).toBeDefined();
+    expect(cardCells(card.view.rank.level, placed!)).toEqual({
+      position: String(placed!.position),
+      figure: placed!.scopeScore!.toFixed(1),
+      score: placed!.scopeScore,
+    });
   });
 });
 

@@ -1,8 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 import { MARK } from '../../og/mark';
-import { cardOf } from '../lib/card';
-import { estimateLabel } from '../lib/estimate';
+import { cardCells, cardOf } from '../lib/card';
 import { decodeView } from '../lib/view-state';
 
 /**
@@ -30,13 +29,15 @@ const ascii = (t: string) =>
     .replace(/✱/g, '*');
 
 export async function GET(request: Request) {
-  const view = decodeView(new URL(request.url).searchParams);
-  const card = cardOf(view);
+  // Everything below reads the card's own view, not the link's: the scope
+  // the rows are in is the one cardOf settled on (see its `view`).
+  const card = cardOf(decodeView(new URL(request.url).searchParams));
   const rows = card.rows;
+  const level = card.view.rank.level;
   const title = ascii(card.title);
-  const scoreOf = (m: (typeof rows)[number]) =>
-    m.scopeScore ?? m.index ?? m.estimatedIndex?.score ?? null;
-  const scores = rows.map(scoreOf).filter((n): n is number => n !== null);
+  const scores = rows
+    .map((m) => cardCells(level, m).score)
+    .filter((n): n is number => n !== null);
   const max = Math.max(...scores, 1);
   const min = Math.min(...scores, max);
   const floor = Math.max(0, Math.floor((min - 5) / 10) * 10);
@@ -44,16 +45,11 @@ export async function GET(request: Request) {
   const generated = card.generatedAt;
 
   const bar = (m: (typeof rows)[number]) => {
-    const v = scoreOf(m);
-    const w = v === null ? 0 : ((v - floor) / span) * 640;
-    const byReport = view.rank.level !== 'overall' && !m.rankedInScope;
     // An estimate wears its own mark (~, <=, >=), never the report mark:
     // `55.0*` under a legend reading "from reports" called a figure
     // anchored on boards a launch-post number (2026-09-21).
-    const estimated =
-      view.rank.level === 'overall' && m.index === null
-        ? m.estimatedIndex
-        : null;
+    const { position, figure, score: v } = cardCells(level, m);
+    const w = v === null ? 0 : ((v - floor) / span) * 640;
     return (
       <div
         key={m.id}
@@ -64,7 +60,7 @@ export async function GET(request: Request) {
           fontSize: 19,
         }}>
         <div style={{ display: 'flex', width: 44, color: '#8E8BA0' }}>
-          {`${m.position ?? '-'}${byReport ? '*' : ''}`}
+          {position}
         </div>
         <div
           style={{
@@ -91,11 +87,7 @@ export async function GET(request: Request) {
           }}
         />
         <div style={{ display: 'flex', marginLeft: 12, fontWeight: 600 }}>
-          {estimated
-            ? estimateLabel(estimated, true)
-            : v === null
-              ? '-'
-              : v.toFixed(1)}
+          {figure}
         </div>
       </div>
     );
