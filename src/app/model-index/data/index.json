@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T14:18:57.454Z",
+  "generatedAt": "2026-11-12T23:02:22.087Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -4650,11 +4650,25 @@
       "name": "Inkling 2 Small",
       "org": "Thinking Machines",
       "access": {
+        "openrouter": {
+          "id": "thinkingmachines/inkling-2-small",
+          "url": "https://openrouter.ai/thinkingmachines/inkling-2-small",
+          "contextLength": 1048576,
+          "inputPerM": 0.3,
+          "outputPerM": 1,
+          "listedAt": "2026-11-09",
+          "modalities": ["text", "image"]
+        },
+        "weights": {
+          "huggingFaceId": "thinkingmachines/Inkling-2-Small",
+          "url": "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+        },
         "official": {
           "name": "Thinking Machines",
           "url": "https://thinkingmachines.ai"
         }
-      }
+      },
+      "size": { "paramsB": 383.1, "source": "huggingface" }
     },
     {
       "id": "jamba-mini-2",
@@ -5262,8 +5276,8 @@
           "id": "moonshotai/kimi-k2.5",
           "url": "https://openrouter.ai/moonshotai/kimi-k2.5",
           "contextLength": 262144,
-          "inputPerM": 0.532,
-          "outputPerM": 3.325,
+          "inputPerM": 0.5,
+          "outputPerM": 2.5,
           "listedAt": "2026-01-27",
           "modalities": ["text", "image"]
         },
@@ -5587,8 +5601,8 @@
           "id": "openai/gpt-oss-20b",
           "url": "https://openrouter.ai/openai/gpt-oss-20b",
           "contextLength": 131072,
-          "inputPerM": 0.03,
-          "outputPerM": 0.13,
+          "inputPerM": 0.018,
+          "outputPerM": 0.09,
           "listedAt": "2025-08-05",
           "modalities": ["text"]
         },
@@ -5926,8 +5940,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.08,
-          "outputPerM": 0.1,
+          "inputPerM": 0.077,
+          "outputPerM": 0.255,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -7031,6 +7045,15 @@
       "name": "Ling 3.0 Flash Fin",
       "org": "InclusionAI",
       "access": {
+        "openrouter": {
+          "id": "inclusionai/ling-3.0-flash-fin",
+          "url": "https://openrouter.ai/inclusionai/ling-3.0-flash-fin",
+          "contextLength": 262144,
+          "inputPerM": 0.042,
+          "outputPerM": 0.123,
+          "listedAt": "2026-08-27",
+          "modalities": ["text"]
+        },
         "official": {
           "name": "inclusionAI on GitHub",
           "url": "https://github.com/inclusionAI"
@@ -7165,8 +7188,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -7695,8 +7718,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.075,
+          "outputPerM": 0.3,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -7741,7 +7764,7 @@
           "url": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
           "contextLength": 1048576,
           "inputPerM": 0.238,
-          "outputPerM": 8.786,
+          "outputPerM": 8.411,
           "listedAt": "2026-10-23",
           "modalities": ["text", "image", "video"]
         },
@@ -8068,8 +8091,8 @@
           "id": "qwen/qwen3.5-9b",
           "url": "https://openrouter.ai/qwen/qwen3.5-9b",
           "contextLength": 262144,
-          "inputPerM": 0.156,
-          "outputPerM": 0.229,
+          "inputPerM": 0.163,
+          "outputPerM": 0.239,
           "listedAt": "2026-03-10",
           "modalities": ["text", "image", "video"]
         },
@@ -9198,6 +9221,26 @@
       "org": "SpaceXAI",
       "access": {
         "official": { "name": "xAI API", "url": "https://docs.x.ai" }
+      }
+    },
+    {
+      "id": "gemini-4-hydrogen",
+      "name": "Gemini 4 Hydrogen",
+      "org": "Google",
+      "access": {
+        "openrouter": {
+          "id": "google/gemini-4-hydrogen",
+          "url": "https://openrouter.ai/google/gemini-4-hydrogen",
+          "contextLength": 1048576,
+          "inputPerM": 1.5,
+          "outputPerM": 7.5,
+          "listedAt": "2026-11-12",
+          "modalities": ["audio", "file", "image", "text", "video"]
+        },
+        "official": {
+          "name": "Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs"
+        }
       }
     },
     {
@@ -39625,6 +39668,89 @@
       "sourceLabel": "xai-org/grok-4-fast-reasoning"
     },
     {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "artificial-analysis",
+      "raw": 54,
+      "sourceLabel": "Gemini 4 Hydrogen (xhigh)"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1567,
+      "stderr": 11.5,
+      "sourceLabel": "Gemini 4 Hydrogen (Xhigh)"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "livebench",
+      "raw": 77,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "livebench-agentic",
+      "raw": 61.8,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "livebench-reasoning",
+      "raw": 88.6,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "livebench-coding",
+      "raw": 78.5,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "livebench-browser-use",
+      "raw": 77.1,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "livebench-data-analysis",
+      "raw": 83.2,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "livebench-research",
+      "raw": 86.8,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "livebench-design",
+      "raw": 77.3,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "vals-legal_research",
+      "raw": 53.85,
+      "stderr": 3.46,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "vals-hlab",
+      "raw": 11.25,
+      "stderr": 2.68,
+      "sourceLabel": "Gemini 4 Hydrogen"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "vals-vibe-code",
+      "raw": 87.78,
+      "stderr": 2.29,
+      "sourceLabel": "Gemini 4 Hydrogen",
+      "scaffold": "OpenHands"
+    },
+    {
       "modelId": "glm-4",
       "benchmarkId": "lmarena",
       "raw": 1273,
@@ -49517,7 +49643,7 @@
       "modelId": "claude-fable-5-2",
       "benchmarkId": "aa-briefcase",
       "raw": 1785,
-      "stderr": 12.5,
+      "stderr": 12,
       "sourceLabel": "Claude Fable 5.2 (Max, Default Fallback)"
     },
     {
@@ -51910,6 +52036,12 @@
       "benchmarkId": "livebench-v1-instruction-following",
       "raw": 66.5,
       "sourceLabel": "Claude Haiku 5.5 xHigh Effort"
+    },
+    {
+      "modelId": "claude-haiku-5-5",
+      "benchmarkId": "simplebench",
+      "raw": 59.2,
+      "sourceLabel": "Claude Haiku 5.5"
     },
     {
       "modelId": "claude-haiku-5-5",
