@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T13:41:57.296Z",
+  "generatedAt": "2026-11-13T23:04:56.984Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -2733,7 +2733,6 @@
       "name": "Baselabs mammoth-1",
       "org": "Other"
     },
-    { "id": "beam-1-0", "name": "Beam 1.0", "org": "Reflection" },
     { "id": "celeris-1", "name": "Celeris 1", "org": "Celeris" },
     { "id": "certo-v1", "name": "Certo v1", "org": "Other" },
     {
@@ -2852,6 +2851,7 @@
         }
       }
     },
+    { "id": "quyet-1-0-medium", "name": "Quyet 1.0 Medium", "org": "Other" },
     {
       "id": "o1-mini",
       "name": "O1 Mini",
@@ -2901,7 +2901,6 @@
         }
       }
     },
-    { "id": "quyet-1-0", "name": "Quyet 1.0", "org": "Other" },
     { "id": "quyet-1-0-small", "name": "Quyet 1.0 Small", "org": "Other" },
     { "id": "sarvam-1", "name": "Sarvam 1", "org": "Sarvam AI" },
     { "id": "jez-large-1-0-0", "name": "Jez Large 1.0.0", "org": "Other" },
@@ -3012,7 +3011,7 @@
       "name": "Decision-King v1.1",
       "org": "Other"
     },
-    { "id": "jeff-1-1", "name": "Jeff 1.1", "org": "Other" },
+    { "id": "jeff-1-1-medium", "name": "Jeff 1.1 Medium", "org": "Other" },
     {
       "id": "muse-spark-1-1",
       "name": "Muse Spark 1.1",
@@ -4722,7 +4721,7 @@
           "url": "https://thinkingmachines.ai"
         }
       },
-      "size": { "paramsB": 383.1, "source": "huggingface" }
+      "size": { "paramsB": 594.1, "source": "huggingface" }
     },
     {
       "id": "jamba-mini-2",
@@ -5979,8 +5978,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.09,
-          "outputPerM": 0.3,
+          "inputPerM": 0.068,
+          "outputPerM": 0.225,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -7236,8 +7235,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -7272,7 +7271,7 @@
           "id": "moonshotai/kimi-k3",
           "url": "https://openrouter.ai/moonshotai/kimi-k3",
           "contextLength": 1048576,
-          "inputPerM": 0.2,
+          "inputPerM": 0.192,
           "outputPerM": 16,
           "listedAt": "2026-07-16",
           "modalities": ["text", "image", "video"]
@@ -7767,8 +7766,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.075,
+          "outputPerM": 0.3,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -7857,8 +7856,8 @@
           "id": "meta-llama/llama-3.2-3b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.2-3b-instruct",
           "contextLength": 131072,
-          "inputPerM": 0.05,
-          "outputPerM": 0.33,
+          "inputPerM": 0.051,
+          "outputPerM": 0.335,
           "listedAt": "2024-09-25",
           "modalities": ["text"]
         },
@@ -8140,8 +8139,8 @@
           "id": "qwen/qwen3.5-9b",
           "url": "https://openrouter.ai/qwen/qwen3.5-9b",
           "contextLength": 262144,
-          "inputPerM": 0.022,
-          "outputPerM": 0.032,
+          "inputPerM": 0.163,
+          "outputPerM": 0.239,
           "listedAt": "2026-03-10",
           "modalities": ["text", "image", "video"]
         },
@@ -9506,30 +9505,6 @@
       }
     },
     {
-      "id": "hy4",
-      "name": "Hy4",
-      "org": "Tencent",
-      "access": {
-        "openrouter": {
-          "id": "tencent/hy4",
-          "url": "https://openrouter.ai/tencent/hy4",
-          "contextLength": 1048576,
-          "inputPerM": 0.417,
-          "outputPerM": 1.251,
-          "listedAt": "2026-11-04",
-          "modalities": ["text", "image"]
-        },
-        "weights": {
-          "huggingFaceId": "tencent/Hy4",
-          "url": "https://huggingface.co/tencent/Hy4"
-        },
-        "official": {
-          "name": "Tencent Hunyuan",
-          "url": "https://cloud.tencent.com/product/hunyuan"
-        }
-      }
-    },
-    {
       "id": "tencent-hy4",
       "name": "Tencent Hy4",
       "org": "Tencent",
@@ -9830,8 +9805,8 @@
           "id": "deepseek/deepseek-v4.1-flash-1017",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
           "contextLength": 1048576,
-          "inputPerM": 0.038,
-          "outputPerM": 0.5,
+          "inputPerM": 0.15,
+          "outputPerM": 0.6,
           "listedAt": "2026-10-17",
           "modalities": ["text", "image"]
         },
@@ -12346,8 +12321,8 @@
       "org": "Other"
     },
     {
-      "id": "fugu",
-      "name": "Fugu",
+      "id": "fugu-max",
+      "name": "Fugu Max",
       "org": "Sakana AI",
       "access": {
         "openrouter": {
@@ -13483,7 +13458,7 @@
     {
       "modelId": "lightonocr-3-0-8b",
       "benchmarkId": "parsebench",
-      "raw": 74.74,
+      "raw": 74.56,
       "sourceLabel": "LightOnOCR-3-0.8B"
     },
     {
@@ -13513,7 +13488,7 @@
     {
       "modelId": "lightonocr-3-0-8b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 69.47,
+      "raw": 68.59,
       "sourceLabel": "LightOnOCR-3-0.8B"
     },
     {
@@ -14171,6 +14146,76 @@
       "sourceLabel": "Beam 1.0 501B A23B"
     },
     {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "artificial-analysis",
+      "raw": 18,
+      "sourceLabel": "Beam 1.0"
+    },
+    {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1177,
+      "stderr": 19,
+      "sourceLabel": "Beam 1.0"
+    },
+    {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "aa-briefcase",
+      "raw": 976,
+      "stderr": 10,
+      "sourceLabel": "Beam 1.0"
+    },
+    {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "terminal-bench",
+      "raw": 6.4,
+      "stderr": 1.7,
+      "sourceLabel": "Beam 1.0(none)",
+      "scaffold": "mini-swe-agent"
+    },
+    {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "arc-agi-2",
+      "raw": 23.5,
+      "sourceLabel": "Beam 1.0 (XHigh)"
+    },
+    {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "vals-legal_research",
+      "raw": 28.85,
+      "stderr": 3.15,
+      "sourceLabel": "Beam 1.0"
+    },
+    {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "vals-hlab",
+      "raw": 4.58,
+      "stderr": 1.77,
+      "sourceLabel": "Beam 1.0"
+    },
+    {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "vals-biomysterybench",
+      "raw": 42.59,
+      "stderr": 1.61,
+      "sourceLabel": "Beam 1.0"
+    },
+    {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "vals-vibe-code",
+      "raw": 66.44,
+      "stderr": 4.06,
+      "sourceLabel": "Beam 1.0",
+      "scaffold": "OpenHands"
+    },
+    {
+      "modelId": "beam-1-0-501b-a23b",
+      "benchmarkId": "vals-proof_bench",
+      "raw": 18,
+      "stderr": 3.86,
+      "sourceLabel": "Beam 1.0"
+    },
+    {
       "modelId": "liquid-ai-d1-omni-600m",
       "benchmarkId": "jevbench-intelligence",
       "raw": 3.3,
@@ -14379,76 +14424,6 @@
       "benchmarkId": "jevbench-calibration",
       "raw": 94.3,
       "sourceLabel": "baselabs mammoth-1"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "artificial-analysis",
-      "raw": 18,
-      "sourceLabel": "Beam 1.0"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "aa-gdpval",
-      "raw": 1177,
-      "stderr": 19,
-      "sourceLabel": "Beam 1.0"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "aa-briefcase",
-      "raw": 976,
-      "stderr": 10,
-      "sourceLabel": "Beam 1.0"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "terminal-bench",
-      "raw": 6.4,
-      "stderr": 1.7,
-      "sourceLabel": "Beam 1.0(none)",
-      "scaffold": "mini-swe-agent"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "arc-agi-2",
-      "raw": 23.5,
-      "sourceLabel": "Beam 1.0 (XHigh)"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "vals-legal_research",
-      "raw": 28.85,
-      "stderr": 3.15,
-      "sourceLabel": "Beam 1.0"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "vals-hlab",
-      "raw": 4.58,
-      "stderr": 1.77,
-      "sourceLabel": "Beam 1.0"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "vals-biomysterybench",
-      "raw": 42.59,
-      "stderr": 1.61,
-      "sourceLabel": "Beam 1.0"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "vals-vibe-code",
-      "raw": 66.44,
-      "stderr": 4.06,
-      "sourceLabel": "Beam 1.0",
-      "scaffold": "OpenHands"
-    },
-    {
-      "modelId": "beam-1-0",
-      "benchmarkId": "vals-proof_bench",
-      "raw": 18,
-      "stderr": 3.86,
-      "sourceLabel": "Beam 1.0"
     },
     {
       "modelId": "celeris-1",
@@ -14974,6 +14949,18 @@
       "sourceLabel": "MiniMax-M1"
     },
     {
+      "modelId": "quyet-1-0-medium",
+      "benchmarkId": "jevbench-intelligence",
+      "raw": 41.7,
+      "sourceLabel": "Quyet-1.0-Medium"
+    },
+    {
+      "modelId": "quyet-1-0-medium",
+      "benchmarkId": "jevbench-calibration",
+      "raw": 76.8,
+      "sourceLabel": "Quyet-1.0-Medium"
+    },
+    {
       "modelId": "o1-mini",
       "benchmarkId": "lmarena",
       "raw": 1337,
@@ -15254,18 +15241,6 @@
       "sourceLabel": "Step-1o Turbo (202506)"
     },
     {
-      "modelId": "quyet-1-0",
-      "benchmarkId": "jevbench-intelligence",
-      "raw": 41.7,
-      "sourceLabel": "Quyet-1.0-Medium"
-    },
-    {
-      "modelId": "quyet-1-0",
-      "benchmarkId": "jevbench-calibration",
-      "raw": 76.8,
-      "sourceLabel": "Quyet-1.0-Medium"
-    },
-    {
       "modelId": "quyet-1-0-small",
       "benchmarkId": "jevbench-intelligence",
       "raw": 4,
@@ -15516,13 +15491,13 @@
       "sourceLabel": "Decision-King v1.1"
     },
     {
-      "modelId": "jeff-1-1",
+      "modelId": "jeff-1-1-medium",
       "benchmarkId": "jevbench-intelligence",
       "raw": 74.5,
       "sourceLabel": "Jeff-1.1-Medium"
     },
     {
-      "modelId": "jeff-1-1",
+      "modelId": "jeff-1-1-medium",
       "benchmarkId": "jevbench-calibration",
       "raw": 89.3,
       "sourceLabel": "Jeff-1.1-Medium"
@@ -18883,7 +18858,7 @@
     {
       "modelId": "lightonocr-3-1b",
       "benchmarkId": "parsebench",
-      "raw": 71.16,
+      "raw": 70.93,
       "sourceLabel": "LightOnOCR-3-1B"
     },
     {
@@ -18913,7 +18888,7 @@
     {
       "modelId": "lightonocr-3-1b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 61.54,
+      "raw": 60.38,
       "sourceLabel": "LightOnOCR-3-1B"
     },
     {
@@ -28052,7 +28027,7 @@
     {
       "modelId": "lightonocr-3-4b",
       "benchmarkId": "parsebench",
-      "raw": 75.6,
+      "raw": 75.34,
       "sourceLabel": "LightOnOCR-3-4B"
     },
     {
@@ -28082,7 +28057,7 @@
     {
       "modelId": "lightonocr-3-4b",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 69.85,
+      "raw": 68.59,
       "sourceLabel": "LightOnOCR-3-4B"
     },
     {
@@ -40077,6 +40052,14 @@
     },
     {
       "modelId": "gemini-4-hydrogen",
+      "benchmarkId": "terminal-bench",
+      "raw": 56.4,
+      "stderr": 3,
+      "sourceLabel": "Gemini 4 Hydrogen(high)",
+      "scaffold": "Antigravity CLI"
+    },
+    {
+      "modelId": "gemini-4-hydrogen",
       "benchmarkId": "livebench",
       "raw": 77,
       "sourceLabel": "Gemini 4 Hydrogen"
@@ -41124,99 +41107,6 @@
       "sourceLabel": "claude-4-haiku-thinking"
     },
     {
-      "modelId": "hy4",
-      "benchmarkId": "terminal-bench",
-      "raw": 37.9,
-      "stderr": 3.5,
-      "sourceLabel": "Hy4(max)",
-      "scaffold": "Claude Code"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-legal_research",
-      "raw": 41.35,
-      "stderr": 3.42,
-      "sourceLabel": "Hy4"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-legal_bench",
-      "raw": 83.76,
-      "stderr": 0.41,
-      "sourceLabel": "Hy4 Preview"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-hlab",
-      "raw": 12.5,
-      "stderr": 2.66,
-      "sourceLabel": "Hy4"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-fabv2",
-      "raw": 55.06,
-      "stderr": 0.31,
-      "sourceLabel": "Hy4 Preview"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-medcode",
-      "raw": 43.25,
-      "stderr": 2.13,
-      "sourceLabel": "Hy4 Preview"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-medscribe",
-      "raw": 83.6,
-      "stderr": 2.06,
-      "sourceLabel": "Hy4 Preview"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-biomysterybench",
-      "raw": 69.26,
-      "stderr": 2.59,
-      "sourceLabel": "Hy4 Preview"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-cyber",
-      "raw": 65.36,
-      "stderr": 5.55,
-      "sourceLabel": "Hy4 Preview"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-srebench",
-      "raw": 2.29,
-      "stderr": 0.93,
-      "sourceLabel": "Hy4 Preview"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-vibe-code",
-      "raw": 81.01,
-      "stderr": 3.55,
-      "sourceLabel": "Hy4",
-      "scaffold": "OpenHands"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-code-migration",
-      "raw": 47.43,
-      "stderr": 4.27,
-      "sourceLabel": "Hy4 Preview"
-    },
-    {
-      "modelId": "hy4",
-      "benchmarkId": "vals-proof_bench",
-      "raw": 75,
-      "stderr": 4.35,
-      "sourceLabel": "Hy4 Preview"
-    },
-    {
       "modelId": "tencent-hy4",
       "benchmarkId": "artificial-analysis",
       "raw": 35,
@@ -41228,6 +41118,135 @@
       "raw": 1446,
       "stderr": 10,
       "sourceLabel": "Tencent Hy4"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "terminal-bench",
+      "raw": 37.9,
+      "stderr": 3.5,
+      "sourceLabel": "Hy4(max)",
+      "scaffold": "Claude Code"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-legal_research",
+      "raw": 41.35,
+      "stderr": 3.42,
+      "sourceLabel": "Hy4"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-legal_bench",
+      "raw": 83.76,
+      "stderr": 0.41,
+      "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-hlab",
+      "raw": 12.5,
+      "stderr": 2.66,
+      "sourceLabel": "Hy4"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-fabv2",
+      "raw": 55.06,
+      "stderr": 0.31,
+      "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-medcode",
+      "raw": 43.25,
+      "stderr": 2.13,
+      "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-medscribe",
+      "raw": 83.6,
+      "stderr": 2.06,
+      "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-biomysterybench",
+      "raw": 69.26,
+      "stderr": 2.59,
+      "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-cyber",
+      "raw": 65.36,
+      "stderr": 5.55,
+      "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-srebench",
+      "raw": 2.29,
+      "stderr": 0.93,
+      "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-vibe-code",
+      "raw": 81.01,
+      "stderr": 3.55,
+      "sourceLabel": "Hy4",
+      "scaffold": "OpenHands"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-code-migration",
+      "raw": 47.43,
+      "stderr": 4.27,
+      "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "vals-proof_bench",
+      "raw": 75,
+      "stderr": 4.35,
+      "sourceLabel": "Hy4 Preview"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "parsebench",
+      "raw": 73.95,
+      "sourceLabel": "Tencent Hy4 (Thinking High)"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "parsebench-tables",
+      "raw": 82.21,
+      "sourceLabel": "Tencent Hy4 (Thinking High)"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "parsebench-charts",
+      "raw": 70.96,
+      "sourceLabel": "Tencent Hy4 (Thinking High)"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "parsebench-content-faithfulness",
+      "raw": 85.74,
+      "sourceLabel": "Tencent Hy4 (Thinking High)"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "parsebench-semantic-formatting",
+      "raw": 75.41,
+      "sourceLabel": "Tencent Hy4 (Thinking High)"
+    },
+    {
+      "modelId": "tencent-hy4",
+      "benchmarkId": "parsebench-visual-grounding",
+      "raw": 55.42,
+      "sourceLabel": "Tencent Hy4 (Thinking High)"
     },
     {
       "modelId": "mistral-large-4",
@@ -58051,37 +58070,37 @@
       "sourceLabel": "KDL-Frontier-Parser-nano"
     },
     {
-      "modelId": "fugu",
+      "modelId": "fugu-max",
       "benchmarkId": "enkrypt-jailbreak",
       "raw": 21.2,
       "sourceLabel": "fugu-max"
     },
     {
-      "modelId": "fugu",
+      "modelId": "fugu-max",
       "benchmarkId": "enkrypt-harmful",
       "raw": 2.2,
       "sourceLabel": "fugu-max"
     },
     {
-      "modelId": "fugu",
+      "modelId": "fugu-max",
       "benchmarkId": "enkrypt-cbrn",
       "raw": 44.8,
       "sourceLabel": "fugu-max"
     },
     {
-      "modelId": "fugu",
+      "modelId": "fugu-max",
       "benchmarkId": "enkrypt-toxicity",
       "raw": 3.6,
       "sourceLabel": "fugu-max"
     },
     {
-      "modelId": "fugu",
+      "modelId": "fugu-max",
       "benchmarkId": "enkrypt-bias",
       "raw": 78.8,
       "sourceLabel": "fugu-max"
     },
     {
-      "modelId": "fugu",
+      "modelId": "fugu-max",
       "benchmarkId": "enkrypt-insecure-code",
       "raw": 8,
       "sourceLabel": "fugu-max"
