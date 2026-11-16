@@ -41,9 +41,16 @@ const MONO = '"JetBrains Mono", "SF Mono", Menlo, monospace';
 /**
  * The position as printed: the table's ✱ for a row placed by reports alone
  * travels with the chart, which is the copy that gets screenshotted.
+ *
+ * `inScope` is read first, not `rank`. A row no board placed never has a
+ * rank — placeRows numbers only the rows a board measured — so testing
+ * `rank === null` first printed a bare "—" for every such row, and the
+ * `${rank}✱` branch was unreachable: a launch-post figure sat beside the
+ * board-placed rows in the PNG with nothing to say so, the mark the table
+ * shows on the same row lost in the copy that gets posted (2026-11-16).
  */
 export const positionLabel = (r: Pick<ChartRow, 'rank' | 'inScope'>) =>
-  r.rank === null ? '—' : r.inScope ? String(r.rank) : `${r.rank}✱`;
+  !r.inScope ? '—✱' : r.rank === null ? '—' : String(r.rank);
 
 /**
  * Axis from the scores on the chart: a tick below the lowest bar to a tick

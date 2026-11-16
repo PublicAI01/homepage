@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
+import { placeRows } from './aggregate';
 import { axisOf, positionLabel } from './export-chart';
 
 describe('axisOf', () => {
@@ -18,9 +19,36 @@ describe('axisOf', () => {
 });
 
 describe('positionLabel', () => {
-  it('marks a row placed by reports alone, as the table does', () => {
+  it('numbers a row a board placed', () => {
     expect(positionLabel({ rank: 3, inScope: true })).toBe('3');
-    expect(positionLabel({ rank: 3, inScope: false })).toBe('3✱');
-    expect(positionLabel({ rank: null, inScope: false })).toBe('—');
+    expect(positionLabel({ rank: null, inScope: true })).toBe('—');
+  });
+
+  it('marks a row placed by reports alone, as the table does', () => {
+    // The combination the table actually produces: placeRows numbers only
+    // the rows a board measured, so a report-only row always arrives with
+    // rank null. Checked on `rank` first, it printed a bare "—" and the ✱
+    // never reached the PNG (2026-11-16).
+    expect(positionLabel({ rank: null, inScope: false })).toBe('—✱');
+    // A rank on a row no board placed cannot happen; the mark still wins.
+    expect(positionLabel({ rank: 3, inScope: false })).toBe('—✱');
+  });
+
+  it('agrees with placeRows on which rows take a number', () => {
+    const rows = [
+      { id: 'a', score: 70, board: true },
+      { id: 'b', score: 65, board: false },
+      { id: 'c', score: 60, board: true },
+    ];
+    const positions = placeRows(
+      rows,
+      (r) => r.score,
+      (r) => r.board,
+      (r) => r.id,
+    );
+    const labels = rows.map((r) =>
+      positionLabel({ rank: positions.get(r.id) ?? null, inScope: r.board }),
+    );
+    expect(labels).toEqual(['1', '—✱', '2']);
   });
 });
