@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T01:21:48.622Z",
+  "generatedAt": "2026-11-17T15:13:53.055Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -967,6 +967,13 @@
       "raw": 1491,
       "stderr": 17,
       "sourceLabel": "FLUX 3 Video"
+    },
+    {
+      "modelId": "hyperflow-h3",
+      "benchmarkId": "aa-text-to-video",
+      "raw": 1154,
+      "stderr": 14,
+      "sourceLabel": "Hyperflow H3"
     },
     {
       "modelId": "hyperflow-h3",
