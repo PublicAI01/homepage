@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T15:13:53.055Z",
+  "generatedAt": "2026-11-18T00:16:42.472Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -7,7 +7,7 @@
       "publisher": "Artificial Analysis",
       "independent": true,
       "url": "https://artificialanalysis.ai/image/leaderboard/text-to-image",
-      "retrievedAt": "2026-11-17",
+      "retrievedAt": "2026-11-18",
       "metric": "elo",
       "logo": "/model-index/logos/aa-text-to-image.ico",
       "category": "Text-to-image",
@@ -23,7 +23,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/text-to-image",
-      "retrievedAt": "2026-11-17",
+      "retrievedAt": "2026-11-18",
       "snapshot": "Nov 12, 2026 — across 85 models",
       "metric": "elo",
       "category": "Text-to-image",
@@ -39,7 +39,7 @@
       "publisher": "LMArena",
       "independent": true,
       "url": "https://arena.ai/leaderboard/image-edit",
-      "retrievedAt": "2026-11-17",
+      "retrievedAt": "2026-11-18",
       "snapshot": "Nov 12, 2026 — across 64 models",
       "metric": "elo",
       "category": "Image editing",
@@ -147,17 +147,6 @@
     { "id": "uni-1-1-max", "name": "UNI-1.1 Max", "org": "Luma AI" },
     { "id": "reve-v1-1", "name": "Reve v1.1", "org": "Reve" },
     { "id": "uni-1-1", "name": "UNI 1.1", "org": "Luma AI" },
-    {
-      "id": "gpt-image-1-5-high-fidelity",
-      "name": "GPT-Image-1.5 (High Fidelity)",
-      "org": "OpenAI",
-      "access": {
-        "official": {
-          "name": "OpenAI Platform",
-          "url": "https://platform.openai.com/docs"
-        }
-      }
-    },
     {
       "id": "gpt-image-1-5",
       "name": "GPT Image 1.5",
@@ -491,6 +480,11 @@
         }
       }
     },
+    {
+      "id": "mai-image-2-7-flash",
+      "name": "MAI Image 2.7 Flash",
+      "org": "Other"
+    },
     { "id": "mai-image-2-7", "name": "MAI Image 2.7", "org": "Microsoft AI" },
     {
       "id": "wan-2-7-pro",
@@ -601,11 +595,6 @@
     },
     { "id": "ideogram-3-0", "name": "Ideogram 3.0", "org": "Ideogram" },
     {
-      "id": "ideogram-3-0-quality",
-      "name": "Ideogram 3.0 (Quality)",
-      "org": "Ideogram"
-    },
-    {
       "id": "kling-image-3-0-omni",
       "name": "Kling Image 3.0 Omni",
       "org": "KlingAI"
@@ -689,39 +678,14 @@
       "name": "Ideogram 4.0 Fast",
       "org": "Ideogram"
     },
-    {
-      "id": "ideogram-4-0-fast-quality",
-      "name": "Ideogram 4.0 Fast (Quality)",
-      "org": "Ideogram"
-    },
     { "id": "runway-gen-4", "name": "Runway Gen-4", "org": "Runway" },
-    {
-      "id": "seedream-4-0-high-res-fal",
-      "name": "Seedream 4.0 (High Res, fal)",
-      "org": "ByteDance",
-      "access": {
-        "official": {
-          "name": "Volcengine Doubao",
-          "url": "https://www.volcengine.com/product/doubao"
-        }
-      }
-    },
     { "id": "ideogram-4-0", "name": "Ideogram 4.0", "org": "Ideogram" },
     {
       "id": "ideogram-4-0-instant",
       "name": "Ideogram 4.0 Instant",
       "org": "Ideogram"
     },
-    {
-      "id": "ideogram-4-0-quality",
-      "name": "Ideogram 4.0 (Quality)",
-      "org": "Ideogram"
-    },
-    {
-      "id": "kling-image-4-0-preview",
-      "name": "Kling Image 4.0 (preview)",
-      "org": "KlingAI"
-    },
+    { "id": "kling-image-4-0", "name": "Kling Image 4.0", "org": "KlingAI" },
     {
       "id": "imagen-4-generate-001",
       "name": "Imagen 4 (generate-001)",
@@ -831,8 +795,8 @@
     { "id": "z-image-base", "name": "Z-Image Base", "org": "Other" },
     { "id": "canva-craft", "name": "Canva Craft", "org": "Other" },
     {
-      "id": "chatgpt-image-high-fidelity",
-      "name": "ChatGPT Image (High Fidelity)",
+      "id": "chatgpt-image",
+      "name": "ChatGPT Image",
       "org": "OpenAI",
       "access": {
         "official": {
@@ -1261,25 +1225,25 @@
       "sourceLabel": "UNI-1.1"
     },
     {
-      "modelId": "gpt-image-1-5-high-fidelity",
+      "modelId": "gpt-image-1-5",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1125,
+      "stderr": 11,
+      "sourceLabel": "GPT Image 1.5 (high)"
+    },
+    {
+      "modelId": "gpt-image-1-5",
       "benchmarkId": "arena-text-to-image",
       "raw": 1236,
       "stderr": 3,
       "sourceLabel": "GPT-Image-1.5 (High Fidelity)"
     },
     {
-      "modelId": "gpt-image-1-5-high-fidelity",
+      "modelId": "gpt-image-1-5",
       "benchmarkId": "arena-image-edit",
       "raw": 1367,
       "stderr": 3,
       "sourceLabel": "GPT-Image-1.5 (High Fidelity)"
-    },
-    {
-      "modelId": "gpt-image-1-5",
-      "benchmarkId": "aa-text-to-image",
-      "raw": 1125,
-      "stderr": 11,
-      "sourceLabel": "GPT Image 1.5 (high)"
     },
     {
       "modelId": "reve-v1-5",
@@ -1960,6 +1924,20 @@
       "sourceLabel": "Wan 2.6"
     },
     {
+      "modelId": "mai-image-2-7-flash",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1158,
+      "stderr": 12,
+      "sourceLabel": "MAI-Image-2.7-Flash"
+    },
+    {
+      "modelId": "mai-image-2-7",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1214,
+      "stderr": 14,
+      "sourceLabel": "MAI-Image-2.7"
+    },
+    {
       "modelId": "mai-image-2-7",
       "benchmarkId": "arena-image-edit",
       "raw": 1471,
@@ -2121,7 +2099,7 @@
       "sourceLabel": "Ideogram 3.0"
     },
     {
-      "modelId": "ideogram-3-0-quality",
+      "modelId": "ideogram-3-0",
       "benchmarkId": "arena-text-to-image",
       "raw": 1049,
       "stderr": 4,
@@ -2214,13 +2192,6 @@
     {
       "modelId": "ideogram-4-0-fast",
       "benchmarkId": "aa-text-to-image",
-      "raw": 966,
-      "stderr": 12,
-      "sourceLabel": "Ideogram 4.0 Fast"
-    },
-    {
-      "modelId": "ideogram-4-0-fast-quality",
-      "benchmarkId": "aa-text-to-image",
       "raw": 982,
       "stderr": 11,
       "sourceLabel": "Ideogram 4.0 Fast (Quality)"
@@ -2233,25 +2204,18 @@
       "sourceLabel": "Runway Gen-4"
     },
     {
-      "modelId": "seedream-4-0-high-res-fal",
-      "benchmarkId": "arena-text-to-image",
-      "raw": 1113,
-      "stderr": 3,
-      "sourceLabel": "Seedream 4.0 (High Res, fal)"
-    },
-    {
-      "modelId": "seedream-4-0-high-res-fal",
-      "benchmarkId": "arena-image-edit",
-      "raw": 1216,
-      "stderr": 3,
-      "sourceLabel": "Seedream 4.0 (High Res, fal)"
+      "modelId": "ideogram-4-0",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1026,
+      "stderr": 10,
+      "sourceLabel": "Ideogram 4.0 (Quality)"
     },
     {
       "modelId": "ideogram-4-0",
-      "benchmarkId": "aa-text-to-image",
-      "raw": 1003,
-      "stderr": 10,
-      "sourceLabel": "Ideogram 4.0"
+      "benchmarkId": "arena-text-to-image",
+      "raw": 1199,
+      "stderr": 4,
+      "sourceLabel": "Ideogram 4.0 (Quality)"
     },
     {
       "modelId": "ideogram-4-0-instant",
@@ -2261,25 +2225,11 @@
       "sourceLabel": "Ideogram 4.0 Instant"
     },
     {
-      "modelId": "ideogram-4-0-quality",
-      "benchmarkId": "aa-text-to-image",
-      "raw": 1026,
-      "stderr": 10,
-      "sourceLabel": "Ideogram 4.0 (Quality)"
-    },
-    {
-      "modelId": "ideogram-4-0-quality",
-      "benchmarkId": "arena-text-to-image",
-      "raw": 1199,
-      "stderr": 4,
-      "sourceLabel": "Ideogram 4.0 (Quality)"
-    },
-    {
-      "modelId": "kling-image-4-0-preview",
+      "modelId": "kling-image-4-0",
       "benchmarkId": "aa-text-to-image",
       "raw": 1180,
       "stderr": 13,
-      "sourceLabel": "Kling Image 4.0 (preview)"
+      "sourceLabel": "Kling Image 4.0"
     },
     {
       "modelId": "imagen-4-generate-001",
@@ -2478,7 +2428,7 @@
       "sourceLabel": "Canva Craft"
     },
     {
-      "modelId": "chatgpt-image-high-fidelity",
+      "modelId": "chatgpt-image",
       "benchmarkId": "arena-image-edit",
       "raw": 1388,
       "stderr": 3,
@@ -2748,7 +2698,7 @@
       "name": "OpenRouter",
       "publisher": "OpenRouter",
       "url": "https://openrouter.ai/models",
-      "retrievedAt": "2026-11-17",
+      "retrievedAt": "2026-11-18",
       "caveat": "Used as a catalog of where a model can be called and on what terms, not as a source of scores. Prices and availability are the router’s at the date read and move often. Listing here is not an endorsement of the router over the vendor’s own API."
     },
     {
@@ -2756,7 +2706,7 @@
       "name": "Hugging Face",
       "publisher": "Hugging Face",
       "url": "https://huggingface.co",
-      "retrievedAt": "2026-11-17",
+      "retrievedAt": "2026-11-18",
       "caveat": "Parameter counts are read from the weights files of the model’s repository (safetensors metadata). Only open-weight models have one; a closed model’s size is undisclosed, not estimated."
     }
   ]
