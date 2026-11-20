@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T00:03:46.162Z",
+  "generatedAt": "2026-11-20T14:46:19.421Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -8,7 +8,7 @@
       "independent": true,
       "url": "https://arena.ai/leaderboard/text",
       "retrievedAt": "2026-11-20",
-      "snapshot": "Nov 18, 2026 — 422 models",
+      "snapshot": "Nov 19, 2026 — 426 models",
       "metric": "elo",
       "category": "Human preference",
       "domain": "Human preference",
@@ -2191,15 +2191,6 @@
       "name": "Grok Build 0.1",
       "org": "SpaceXAI",
       "access": {
-        "openrouter": {
-          "id": "x-ai/grok-build-0.1",
-          "url": "https://openrouter.ai/x-ai/grok-build-0.1",
-          "contextLength": 256000,
-          "inputPerM": 1,
-          "outputPerM": 2,
-          "listedAt": "2026-05-20",
-          "modalities": ["text", "image", "file"]
-        },
         "official": { "name": "xAI API", "url": "https://docs.x.ai" }
       }
     },
@@ -3597,8 +3588,8 @@
           "id": "openai/gpt-oss-120b",
           "url": "https://openrouter.ai/openai/gpt-oss-120b",
           "contextLength": 131072,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.09,
+          "outputPerM": 0.36,
           "listedAt": "2025-08-05",
           "modalities": ["text"]
         },
@@ -4006,25 +3997,12 @@
       "name": "Llama 3.2 1B Instruct",
       "org": "Meta",
       "access": {
-        "openrouter": {
-          "id": "meta-llama/llama-3.2-1b-instruct",
-          "url": "https://openrouter.ai/meta-llama/llama-3.2-1b-instruct",
-          "contextLength": 60000,
-          "inputPerM": 0.027,
-          "outputPerM": 0.201,
-          "listedAt": "2024-09-25",
-          "modalities": ["text"]
-        },
-        "weights": {
-          "huggingFaceId": "meta-llama/Llama-3.2-1B-Instruct",
-          "url": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct"
-        },
         "official": {
           "name": "Llama developer docs",
           "url": "https://www.llama.com/docs"
         }
       },
-      "size": { "paramsB": 1.2, "source": "huggingface" }
+      "size": { "paramsB": 1, "source": "name" }
     },
     {
       "id": "olmoe-1b-7b-instruct",
@@ -5599,8 +5577,8 @@
           "id": "moonshotai/kimi-k2.7-code",
           "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code",
           "contextLength": 262144,
-          "inputPerM": 0.65,
-          "outputPerM": 3.5,
+          "inputPerM": 0.6,
+          "outputPerM": 3,
           "listedAt": "2026-06-12",
           "modalities": ["text", "image"]
         },
@@ -5999,8 +5977,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.077,
-          "outputPerM": 0.255,
+          "inputPerM": 0.09,
+          "outputPerM": 0.3,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -6148,7 +6126,7 @@
           "url": "https://openrouter.ai/qwen/qwen3.8-27b",
           "contextLength": 1024000,
           "inputPerM": 0.06,
-          "outputPerM": 2.2,
+          "outputPerM": 1.96,
           "listedAt": "2026-08-14",
           "modalities": ["text", "image", "video"]
         },
@@ -7788,8 +7766,8 @@
           "id": "inclusionai/ling-3.1-flash",
           "url": "https://openrouter.ai/inclusionai/ling-3.1-flash",
           "contextLength": 1000000,
-          "inputPerM": 0.045,
-          "outputPerM": 0.135,
+          "inputPerM": 0.06,
+          "outputPerM": 0.18,
           "listedAt": "2026-10-02",
           "modalities": ["text"]
         },
@@ -7813,8 +7791,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.075,
-          "outputPerM": 0.3,
+          "inputPerM": 0.15,
+          "outputPerM": 0.6,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -7903,8 +7881,8 @@
           "id": "meta-llama/llama-3.2-3b-instruct",
           "url": "https://openrouter.ai/meta-llama/llama-3.2-3b-instruct",
           "contextLength": 131072,
-          "inputPerM": 0.051,
-          "outputPerM": 0.335,
+          "inputPerM": 0.05,
+          "outputPerM": 0.33,
           "listedAt": "2024-09-25",
           "modalities": ["text"]
         },
@@ -9244,8 +9222,8 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.06,
-          "outputPerM": 0.18,
+          "inputPerM": 0.044,
+          "outputPerM": 0.132,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
         },
@@ -9289,8 +9267,8 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
           "contextLength": 1048576,
-          "inputPerM": 0.22,
-          "outputPerM": 9.5,
+          "inputPerM": 1.32,
+          "outputPerM": 3.96,
           "listedAt": "2026-08-12",
           "modalities": ["text"]
         },
@@ -9605,7 +9583,8 @@
           "name": "Tencent Hunyuan",
           "url": "https://cloud.tencent.com/product/hunyuan"
         }
-      }
+      },
+      "size": { "paramsB": 774.4, "source": "huggingface" }
     },
     {
       "id": "mistral-large-4",
@@ -11057,8 +11036,8 @@
       }
     },
     {
-      "id": "claude-fable-5-2-max-default-fallback",
-      "name": "Claude Fable 5.2 Max, Default Fallback",
+      "id": "claude-fable-5-2",
+      "name": "Claude Fable 5.2",
       "org": "Anthropic",
       "access": {
         "openrouter": {
@@ -11178,8 +11157,8 @@
           "id": "z-ai/glm-5.3-flash",
           "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.5,
+          "inputPerM": 0.04,
+          "outputPerM": 0.078,
           "listedAt": "2026-08-26",
           "modalities": ["text", "image", "video"]
         },
@@ -16109,7 +16088,7 @@
       "modelId": "muse-spark-1-2",
       "benchmarkId": "lmarena",
       "raw": 1493,
-      "stderr": 6,
+      "stderr": 5,
       "sourceLabel": "Muse Spark 1.2 (xHigh)"
     },
     {
@@ -18044,7 +18023,7 @@
     {
       "modelId": "nvidia-nemotron-3-5-super-vl-120b-a12b",
       "benchmarkId": "lmarena",
-      "raw": 1415,
+      "raw": 1416,
       "stderr": 10,
       "sourceLabel": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B (NVFP4)"
     },
@@ -19025,7 +19004,7 @@
     {
       "modelId": "step-2-16k",
       "benchmarkId": "lmarena",
-      "raw": 1334,
+      "raw": 1333,
       "stderr": 9,
       "sourceLabel": "Step-2 16K Exp (202412)"
     },
@@ -21846,7 +21825,7 @@
     {
       "modelId": "kimi-k2",
       "benchmarkId": "lmarena",
-      "raw": 1419,
+      "raw": 1418,
       "stderr": 7,
       "sourceLabel": "Kimi K2 Preview (0905)"
     },
@@ -22321,7 +22300,7 @@
     {
       "modelId": "minimax-m2",
       "benchmarkId": "lmarena",
-      "raw": 1344,
+      "raw": 1343,
       "stderr": 8,
       "sourceLabel": "MiniMax-M2"
     },
@@ -23632,7 +23611,7 @@
     {
       "modelId": "gemini-2-5-pro",
       "benchmarkId": "lmarena",
-      "raw": 1446,
+      "raw": 1445,
       "stderr": 2,
       "sourceLabel": "Gemini 2.5 Pro"
     },
@@ -24917,7 +24896,7 @@
     {
       "modelId": "mimo-v2-6-pro",
       "benchmarkId": "lmarena",
-      "raw": 1480,
+      "raw": 1481,
       "stderr": 9,
       "sourceLabel": "MiMo-V2.6-Pro"
     },
@@ -25459,7 +25438,7 @@
     {
       "modelId": "gpt-oss-20b",
       "benchmarkId": "lmarena",
-      "raw": 1318,
+      "raw": 1317,
       "stderr": 6,
       "sourceLabel": "gpt-oss-20b"
     },
@@ -26270,7 +26249,7 @@
     {
       "modelId": "gemma-4-26b-a4b",
       "benchmarkId": "lmarena",
-      "raw": 1437,
+      "raw": 1438,
       "stderr": 7,
       "sourceLabel": "Gemma 4 26B A4B"
     },
@@ -26284,7 +26263,7 @@
     {
       "modelId": "gemma-4-26b-a4b",
       "benchmarkId": "aa-briefcase",
-      "raw": 316,
+      "raw": 318,
       "stderr": 11,
       "sourceLabel": "Gemma 4 26B A4B (Reasoning)"
     },
@@ -26498,7 +26477,7 @@
     {
       "modelId": "qwen3-5-27b",
       "benchmarkId": "lmarena",
-      "raw": 1409,
+      "raw": 1408,
       "stderr": 4,
       "sourceLabel": "Qwen3.5-27B"
     },
@@ -26665,7 +26644,7 @@
     {
       "modelId": "qwen3-8-27b",
       "benchmarkId": "lmarena",
-      "raw": 1434,
+      "raw": 1435,
       "stderr": 4,
       "sourceLabel": "Qwen3.8-27B"
     },
@@ -28446,7 +28425,7 @@
     {
       "modelId": "nvidia-nemotron-3-ultra-550b-a55b",
       "benchmarkId": "lmarena",
-      "raw": 1426,
+      "raw": 1427,
       "stderr": 7,
       "sourceLabel": "NVIDIA-Nemotron-3-Ultra-550B-A55B (NVFP4)"
     },
@@ -28988,7 +28967,7 @@
     {
       "modelId": "qwen3-next-80b-a3b-thinking",
       "benchmarkId": "lmarena",
-      "raw": 1369,
+      "raw": 1370,
       "stderr": 6,
       "sourceLabel": "Qwen3-Next-80B-A3B-Thinking"
     },
@@ -30620,7 +30599,7 @@
     {
       "modelId": "kimi-k3",
       "benchmarkId": "lmarena",
-      "raw": 1487,
+      "raw": 1488,
       "stderr": 4,
       "sourceLabel": "Kimi K3 (Max)"
     },
@@ -31098,7 +31077,7 @@
     {
       "modelId": "minimax-m3",
       "benchmarkId": "lmarena",
-      "raw": 1435,
+      "raw": 1434,
       "stderr": 4,
       "sourceLabel": "MiniMax-M3"
     },
@@ -33390,7 +33369,7 @@
     {
       "modelId": "kimi-k3-1-pro",
       "benchmarkId": "lmarena",
-      "raw": 1487,
+      "raw": 1482,
       "stderr": 8,
       "sourceLabel": "Kimi K3.1 Pro (Max)"
     },
@@ -34545,7 +34524,7 @@
     {
       "modelId": "gemini-3-5-flash",
       "benchmarkId": "lmarena",
-      "raw": 1478,
+      "raw": 1479,
       "stderr": 4,
       "sourceLabel": "Gemini 3.5 Flash (High)"
     },
@@ -38390,7 +38369,7 @@
     {
       "modelId": "qwq-32b",
       "benchmarkId": "lmarena",
-      "raw": 1335,
+      "raw": 1336,
       "stderr": 4,
       "sourceLabel": "QwQ-32B"
     },
@@ -39029,7 +39008,7 @@
     {
       "modelId": "gemini-4-argon",
       "benchmarkId": "lmarena",
-      "raw": 1521,
+      "raw": 1520,
       "stderr": 5,
       "sourceLabel": "Gemini 4 Argon (High)"
     },
@@ -39215,7 +39194,7 @@
     {
       "modelId": "gemini-4-carbon",
       "benchmarkId": "lmarena",
-      "raw": 1526,
+      "raw": 1527,
       "stderr": 10,
       "sourceLabel": "Gemini 4 Carbon (High)"
     },
@@ -40289,6 +40268,14 @@
     },
     {
       "modelId": "hy4-flash",
+      "benchmarkId": "terminal-bench",
+      "raw": 11.8,
+      "stderr": 2.8,
+      "sourceLabel": "Hy4 Flash(none)",
+      "scaffold": "mini-swe-agent"
+    },
+    {
+      "modelId": "hy4-flash",
       "benchmarkId": "vals-legal_research",
       "raw": 38.46,
       "stderr": 3.38,
@@ -40416,8 +40403,8 @@
     {
       "modelId": "gemini-4-neon",
       "benchmarkId": "lmarena",
-      "raw": 1518,
-      "stderr": 10,
+      "raw": 1513,
+      "stderr": 9,
       "sourceLabel": "Gemini 4 Neon (High)"
     },
     {
@@ -41504,7 +41491,7 @@
       "modelId": "tencent-hy4",
       "benchmarkId": "aa-briefcase",
       "raw": 1446,
-      "stderr": 10,
+      "stderr": 10.5,
       "sourceLabel": "Tencent Hy4"
     },
     {
@@ -41639,8 +41626,8 @@
     {
       "modelId": "mistral-large-4",
       "benchmarkId": "lmarena",
-      "raw": 1422,
-      "stderr": 8,
+      "raw": 1423,
+      "stderr": 7,
       "sourceLabel": "Mistral Large 4"
     },
     {
@@ -42056,7 +42043,7 @@
     {
       "modelId": "llama-4-scout-instruct",
       "benchmarkId": "lmarena",
-      "raw": 1322,
+      "raw": 1321,
       "stderr": 5,
       "sourceLabel": "Llama 4 Scout 17B 16E Instruct"
     },
@@ -42837,7 +42824,7 @@
     {
       "modelId": "solar-pro-4",
       "benchmarkId": "lmarena",
-      "raw": 1387,
+      "raw": 1388,
       "stderr": 5,
       "sourceLabel": "Solar Pro 4"
     },
@@ -45367,7 +45354,7 @@
     {
       "modelId": "claude-opus-4-5",
       "benchmarkId": "lmarena",
-      "raw": 1474,
+      "raw": 1473,
       "stderr": 4,
       "sourceLabel": "Claude Opus 4.5 (High, 32K, 20251101)"
     },
@@ -46766,8 +46753,8 @@
     {
       "modelId": "grok-4-7",
       "benchmarkId": "aa-briefcase",
-      "raw": 1636,
-      "stderr": 9,
+      "raw": 1634,
+      "stderr": 8.5,
       "sourceLabel": "Grok 4.7 (Xhigh)"
     },
     {
@@ -49829,7 +49816,7 @@
     {
       "modelId": "claude-fable-5-1",
       "benchmarkId": "lmarena",
-      "raw": 1502,
+      "raw": 1503,
       "stderr": 5,
       "sourceLabel": "Claude Fable 5.1 (Max)"
     },
@@ -50578,27 +50565,34 @@
       "scaffold": "OpenHands"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
+      "benchmarkId": "lmarena",
+      "raw": 1503,
+      "stderr": 9,
+      "sourceLabel": "Claude Fable 5.2 (Max)"
+    },
+    {
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "artificial-analysis",
       "raw": 65,
       "sourceLabel": "Claude Fable 5.2 Max, Default Fallback"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "aa-gdpval",
       "raw": 1831,
       "stderr": 27,
       "sourceLabel": "Claude Fable 5.2 (Max, Default Fallback)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "aa-briefcase",
       "raw": 1785,
       "stderr": 11,
       "sourceLabel": "Claude Fable 5.2 (Max, Default Fallback)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "terminal-bench",
       "raw": 65.8,
       "stderr": 2.8,
@@ -50606,88 +50600,88 @@
       "scaffold": "Claude Code"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "arc-agi-2",
       "raw": 92.5,
       "sourceLabel": "Claude Fable 5.2 (Max)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "livebench",
       "raw": 84.9,
       "sourceLabel": "Claude Fable 5.2 (xhigh)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "livebench-agentic",
       "raw": 82.9,
       "sourceLabel": "Claude Fable 5.2 (xhigh)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "livebench-reasoning",
       "raw": 88.8,
       "sourceLabel": "Claude Fable 5.2 (xhigh)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "livebench-coding",
       "raw": 79.2,
       "sourceLabel": "Claude Fable 5.2 (xhigh)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "livebench-browser-use",
       "raw": 86.9,
       "sourceLabel": "Claude Fable 5.2 (xhigh)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "livebench-data-analysis",
       "raw": 81.5,
       "sourceLabel": "Claude Fable 5.2 (xhigh)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "livebench-research",
       "raw": 94.5,
       "sourceLabel": "Claude Fable 5.2 (xhigh)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "livebench-design",
       "raw": 85.1,
       "sourceLabel": "Claude Fable 5.2 (xhigh)"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "simplebench",
       "raw": 94.9,
       "sourceLabel": "Claude Fable 5.2"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "vals-legal_research",
       "raw": 46.15,
       "stderr": 3.46,
       "sourceLabel": "Claude Fable 5.2"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "vals-hlab",
       "raw": 5,
       "stderr": 1.72,
       "sourceLabel": "Claude Fable 5.2"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "vals-biomysterybench",
       "raw": 83.7,
       "stderr": 0.74,
       "sourceLabel": "Claude Fable 5.2"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "vals-vibe-code",
       "raw": 93.77,
       "stderr": 1.15,
@@ -50695,7 +50689,7 @@
       "scaffold": "OpenHands"
     },
     {
-      "modelId": "claude-fable-5-2-max-default-fallback",
+      "modelId": "claude-fable-5-2",
       "benchmarkId": "vals-proof_bench",
       "raw": 100,
       "stderr": 0,
@@ -51616,7 +51610,7 @@
     {
       "modelId": "glm-5-3",
       "benchmarkId": "lmarena",
-      "raw": 1483,
+      "raw": 1482,
       "stderr": 5,
       "sourceLabel": "GLM-5.3 (Max)"
     },
@@ -53135,7 +53129,7 @@
     {
       "modelId": "claude-opus-5-5",
       "benchmarkId": "lmarena",
-      "raw": 1507,
+      "raw": 1506,
       "stderr": 6,
       "sourceLabel": "Claude Opus 5.5 (High)"
     },
@@ -53442,7 +53436,7 @@
     {
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "lmarena",
-      "raw": 1474,
+      "raw": 1473,
       "stderr": 6,
       "sourceLabel": "Claude Sonnet 5.5 (xHigh)"
     },
@@ -55271,7 +55265,7 @@
     {
       "modelId": "gpt-6-luna",
       "benchmarkId": "lmarena",
-      "raw": 1441,
+      "raw": 1443,
       "stderr": 4,
       "sourceLabel": "GPT-6 Luna (Max)"
     },
@@ -56046,6 +56040,13 @@
     },
     {
       "modelId": "gpt-6-1-terra",
+      "benchmarkId": "lmarena",
+      "raw": 1474,
+      "stderr": 8,
+      "sourceLabel": "GPT-6.1 Terra (Max)"
+    },
+    {
+      "modelId": "gpt-6-1-terra",
       "benchmarkId": "artificial-analysis",
       "raw": 51,
       "sourceLabel": "GPT-6.1 Terra Max"
@@ -56186,6 +56187,13 @@
     },
     {
       "modelId": "gpt-6-2-astra",
+      "benchmarkId": "lmarena",
+      "raw": 1468,
+      "stderr": 12,
+      "sourceLabel": "GPT-6.2 Astra (Max)"
+    },
+    {
+      "modelId": "gpt-6-2-astra",
       "benchmarkId": "artificial-analysis",
       "raw": 62,
       "sourceLabel": "GPT-6.2 Astra Max"
@@ -56299,6 +56307,13 @@
       "benchmarkId": "simplebench",
       "raw": 79.2,
       "sourceLabel": "GPT-6.2 Astra Pro"
+    },
+    {
+      "modelId": "gpt-6-2-sol",
+      "benchmarkId": "lmarena",
+      "raw": 1465,
+      "stderr": 12,
+      "sourceLabel": "GPT-6.2 Sol (Max)"
     },
     {
       "modelId": "gpt-6-2-sol",
@@ -58535,7 +58550,7 @@
       "modelId": "muse-ember",
       "benchmarkId": "aa-briefcase",
       "raw": 1520,
-      "stderr": 10.5,
+      "stderr": 11,
       "sourceLabel": "Muse Ember (Max)"
     },
     {
@@ -59484,7 +59499,7 @@
     {
       "modelId": "inkling-small",
       "benchmarkId": "lmarena",
-      "raw": 1405,
+      "raw": 1406,
       "stderr": 5,
       "sourceLabel": "Inkling-Small"
     },
