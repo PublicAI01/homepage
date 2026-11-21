@@ -64,6 +64,8 @@ export interface ModelSummary {
   index: number | null;
   /** Share of the Overall index's weighting a board has measured, 0-1. */
   measuredWeight: number;
+  /** Independent publishers among the boards that build the Overall index; ranked needs MIN_SOURCES of them and half the weighting. */
+  overallPublishers: number;
   /**
    * Only when `index` is null: an estimate ✱ anchored on models that have an
    * Overall index — the model's figures placed among theirs on each shared
@@ -455,6 +457,7 @@ export function createTrack(input: TrackInput) {
       ranked: r.ranked,
       /** Share of the Overall's weighting measured, 0-1; see MIN_OVERALL_WEIGHT. */
       measuredWeight: Math.round(r.measuredWeight * 100) / 100,
+      overallPublishers: r.overallPublishers,
       rankedInScope: eligible(r, scope),
       position: null,
       size: r.model.size

@@ -4,11 +4,11 @@ import { notFound } from 'next/navigation';
 
 import { cn } from '@/utils';
 
-import { MIN_OVERALL_WEIGHT } from '../lib/aggregate';
 import { estimateWords } from '../lib/estimate';
 import { bestDomains, type CardSpec } from '../lib/export-card';
 import type { Standing } from '../lib/track';
 import type { TrackInfo } from '../lib/tracks';
+import { unrankedReason as reasonFor } from '../lib/unranked';
 import BadgeCopy from './badge-copy';
 import ModelExport from './model-export';
 
@@ -263,11 +263,8 @@ export default async function ModelPage({
   const rankedTotal = track.index.describeIndex().counts.ranked;
   const badgeMarkdown = `[![PublicAI Index](${INDEX_URL}/badge?model=${model.id})](${INDEX_URL}/m/${model.id})`;
   // The same figures the panel beside it prints, for the PNG. The reason a
-  // model is unranked is worded here once and shown in both places.
-  const unrankedReason =
-    model.measuredWeight > 0 && model.measuredWeight < MIN_OVERALL_WEIGHT
-      ? `${Math.round(model.measuredWeight * 100)}% of the Overall’s weighting measured — ${Math.round(MIN_OVERALL_WEIGHT * 100)}% places a model`
-      : 'Only one publisher has scored it';
+  // model is unranked is decided once (lib/unranked.ts) and shown in both.
+  const unrankedReason = reasonFor(model);
   const card: CardSpec = {
     track: track.title,
     name: model.name,

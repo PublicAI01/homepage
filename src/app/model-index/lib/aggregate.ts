@@ -70,6 +70,15 @@ export interface AggregateRow {
   covered: number;
   /** Distinct publishers behind those boards. Two of Artificial Analysis's boards are one publisher's word. */
   publishers: number;
+  /**
+   * Distinct publishers among the boards that build the Overall index —
+   * the count `ranked` is decided on (MIN_SOURCES). Kept apart from
+   * `publishers`: a model four publishers scored on domain boards and none
+   * on an Overall board has 4 there and 0 here, and the reason it is not
+   * ranked is the 0. Read off `measuredWeight` alone, the model page told
+   * 56 such models "only one publisher has scored it" (2026-11-21).
+   */
+  overallPublishers: number;
   /** Recognised boards with a figure in each domain and category, so a vertical can rank on its own evidence. */
   boardsByDomain: Record<string, number>;
   boardsByCategory: Record<string, number>;
@@ -658,6 +667,7 @@ export function aggregate({
       perBenchmark,
       covered,
       publishers,
+      overallPublishers,
       boardsByDomain,
       boardsByCategory,
       coverable,

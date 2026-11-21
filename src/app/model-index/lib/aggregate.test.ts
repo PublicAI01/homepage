@@ -881,6 +881,17 @@ describe('anchored estimates', () => {
     expect(of('m5').estimate!.anchors).toBe(4);
   });
 
+  it('counts the publishers among the Overall boards apart from all boards', () => {
+    // m5 is on one of the three Overall boards: one publisher there, and
+    // that is the number `ranked` is decided on. Left off the row, the
+    // model page read the reason off measuredWeight alone and told models
+    // no Overall board had scored "only one publisher has scored it"
+    // (2026-11-21).
+    const { of } = thin();
+    expect(of('m5').overallPublishers).toBe(1);
+    expect(of('m1').overallPublishers).toBe(3);
+  });
+
   it('orders the unranked rows by their estimates', () => {
     const { out } = thin();
     const unranked = out.filter((r) => !r.ranked);
