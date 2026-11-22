@@ -431580,7 +431580,7 @@
     },
     {
       "date": "2026-11-22",
-      "generatedAt": "2026-11-22T07:45:03.829Z",
+      "generatedAt": "2026-11-22T13:51:03.269Z",
       "sources": [
         "lmarena",
         "artificial-analysis",
@@ -435873,6 +435873,13 @@
           "rank": null,
           "covered": 1
         },
+        "cue-reflex-4b-v0-2": {
+          "name": "Cue-Reflex-4B v0.2",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
         "messier-one-v0-2": {
           "name": "Messier One v0.2",
           "org": "Other",
@@ -436321,6 +436328,13 @@
           "rank": null,
           "covered": 1
         },
+        "minimodels-decision-1-0": {
+          "name": "Minimodels Decision 1.0",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
         "deepseek-r1-hide-reasoning": {
           "name": "DeepSeek R1 (hide reasoning)",
           "org": "DeepSeek",
@@ -436552,6 +436566,20 @@
           "rank": null,
           "covered": 1
         },
+        "quyet-1-2-large": {
+          "name": "Quyet 1.2 Large",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "quyet-1-2-small": {
+          "name": "Quyet 1.2 Small",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
         "lfm2-1-2b": {
           "name": "LFM2 1.2B",
           "org": "Liquid AI",
@@ -436568,6 +436596,13 @@
         },
         "bobcat-1-3": {
           "name": "Bobcat 1.3",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "h2o-lightning-31b-v1-3-4": {
+          "name": "H2O-Lightning-31B v1.3.4",
           "org": "Other",
           "index": null,
           "rank": null,
@@ -436806,6 +436841,13 @@
         },
         "decision-2-0-vega-27b": {
           "name": "Decision 2.0 Vega 27B",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "starlord-27b-v2-0": {
+          "name": "Starlord 27B V2.0",
           "org": "Other",
           "index": null,
           "rank": null,
@@ -437450,6 +437492,13 @@
         },
         "metask-jev-rain-31b-trained-service-v3": {
           "name": "metask-jev-rain-31B-trained service v3",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "sieve-31b-v3": {
+          "name": "Sieve 31B V3",
           "org": "Other",
           "index": null,
           "rank": null,
@@ -438150,6 +438199,13 @@
         },
         "saif-4b": {
           "name": "Saif 4B",
+          "org": "Other",
+          "index": null,
+          "rank": null,
+          "covered": 1
+        },
+        "starlord-4b": {
+          "name": "Starlord 4B",
           "org": "Other",
           "index": null,
           "rank": null,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T07:45:03.829Z",
+  "generatedAt": "2026-11-22T13:51:03.269Z",
   "benchmarks": [
     {
       "id": "aa-text-to-video",
@@ -522,7 +522,7 @@
       "modelId": "happyhorse-1-0",
       "benchmarkId": "aa-image-to-video",
       "raw": 1023,
-      "stderr": 14,
+      "stderr": 15,
       "sourceLabel": "HappyHorse-1.0"
     },
     {
@@ -598,7 +598,7 @@
     {
       "modelId": "happyhorse-1-1",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1037,
+      "raw": 1036,
       "stderr": 14,
       "sourceLabel": "HappyHorse-1.1"
     },
@@ -633,8 +633,8 @@
     {
       "modelId": "grok-imagine-video-1-5-lite",
       "benchmarkId": "aa-image-to-video",
-      "raw": 998,
-      "stderr": 14,
+      "raw": 999,
+      "stderr": 15,
       "sourceLabel": "Grok Imagine Video 1.5 Lite"
     },
     {
@@ -654,7 +654,7 @@
     {
       "modelId": "grok-imagine-video-1-5",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1047,
+      "raw": 1048,
       "stderr": 14,
       "sourceLabel": "Grok Imagine Video 1.5"
     },
@@ -689,8 +689,8 @@
     {
       "modelId": "magi-2",
       "benchmarkId": "aa-image-to-video",
-      "raw": 969,
-      "stderr": 15,
+      "raw": 967,
+      "stderr": 16,
       "sourceLabel": "MAGI-2 Preview"
     },
     {
@@ -703,7 +703,7 @@
     {
       "modelId": "p-video-2-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1119,
+      "raw": 1117,
       "stderr": 15,
       "sourceLabel": "P-Video-2-Pro"
     },
@@ -738,7 +738,7 @@
     {
       "modelId": "seedance-2-0",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1142,
+      "raw": 1141,
       "stderr": 14,
       "sourceLabel": "Dreamina Seedance 2.0"
     },
@@ -787,7 +787,7 @@
     {
       "modelId": "ltx-2-3-fast",
       "benchmarkId": "aa-image-to-video",
-      "raw": 835,
+      "raw": 834,
       "stderr": 16,
       "sourceLabel": "LTX-2.3 Fast"
     },
@@ -808,7 +808,7 @@
     {
       "modelId": "ltx-2-3-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 842,
+      "raw": 841,
       "stderr": 16,
       "sourceLabel": "LTX-2.3 Pro"
     },
@@ -822,7 +822,7 @@
     {
       "modelId": "agnes-video-2-5",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1103,
+      "raw": 1104,
       "stderr": 15,
       "sourceLabel": "Agnes-Video-2.5"
     },
@@ -920,7 +920,7 @@
     {
       "modelId": "boreal-h3",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1154,
+      "raw": 1151,
       "stderr": 17,
       "sourceLabel": "Boreal-H3"
     },
@@ -941,7 +941,7 @@
     {
       "modelId": "pika-h3-flex",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1117,
+      "raw": 1116,
       "stderr": 15,
       "sourceLabel": "Pika H3 Flex"
     },
@@ -1004,7 +1004,7 @@
     {
       "modelId": "minimax-h3-max",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1120,
+      "raw": 1119,
       "stderr": 14,
       "sourceLabel": "MiniMax H3 Max"
     },
@@ -1025,7 +1025,7 @@
     {
       "modelId": "minimax-h3",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1137,
+      "raw": 1136,
       "stderr": 14,
       "sourceLabel": "MiniMax H3 (768p)"
     },
@@ -1040,7 +1040,7 @@
       "modelId": "kling-3-0-omni-pro",
       "benchmarkId": "aa-image-to-video",
       "raw": 1005,
-      "stderr": 14,
+      "stderr": 15,
       "sourceLabel": "Kling 3.0 Omni 1080p (Pro)"
     },
     {
@@ -1065,7 +1065,7 @@
     {
       "modelId": "vidu-q3-pro",
       "benchmarkId": "aa-image-to-video",
-      "raw": 927,
+      "raw": 928,
       "stderr": 15,
       "sourceLabel": "Vidu Q3 Pro"
     },
@@ -1079,7 +1079,7 @@
     {
       "modelId": "vidu-q3-turbo",
       "benchmarkId": "aa-image-to-video",
-      "raw": 901,
+      "raw": 900,
       "stderr": 15,
       "sourceLabel": "Vidu Q3 Turbo"
     },
@@ -1149,7 +1149,7 @@
     {
       "modelId": "veo-3-1-lite",
       "benchmarkId": "aa-image-to-video",
-      "raw": 934,
+      "raw": 933,
       "stderr": 15,
       "sourceLabel": "Veo 3.1 Lite"
     },
@@ -1240,7 +1240,7 @@
     {
       "modelId": "pixverse-v6-legacy",
       "benchmarkId": "aa-image-to-video",
-      "raw": 959,
+      "raw": 960,
       "stderr": 15,
       "sourceLabel": "PixVerse V6 (Legacy)"
     },
@@ -1296,7 +1296,7 @@
     {
       "modelId": "utopai-x",
       "benchmarkId": "aa-image-to-video",
-      "raw": 1153,
+      "raw": 1152,
       "stderr": 14,
       "sourceLabel": "Utopai X"
     }
