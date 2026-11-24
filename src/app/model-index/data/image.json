@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T03:41:03.689Z",
+  "generatedAt": "2026-11-24T16:46:21.320Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -967,7 +967,7 @@
     {
       "modelId": "hidream-o1-image-1-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1020,
+      "raw": 1019,
       "stderr": 10,
       "sourceLabel": "HiDream-O1-Image-1.5"
     },
@@ -1002,7 +1002,7 @@
     {
       "modelId": "flux-1-krea-dev",
       "benchmarkId": "aa-text-to-image",
-      "raw": 871,
+      "raw": 870,
       "stderr": 28,
       "sourceLabel": "FLUX.1 Krea [dev]"
     },
@@ -1149,7 +1149,7 @@
     {
       "modelId": "luma-uni-1-max",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1025,
+      "raw": 1024,
       "stderr": 11,
       "sourceLabel": "Luma UNI 1 Max"
     },
@@ -1233,7 +1233,7 @@
     {
       "modelId": "gpt-image-1-5",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1126,
+      "raw": 1125,
       "stderr": 11,
       "sourceLabel": "GPT Image 1.5 (high)"
     },
@@ -1261,7 +1261,7 @@
     {
       "modelId": "cosmos3-super-text2image-4step",
       "benchmarkId": "aa-text-to-image",
-      "raw": 973,
+      "raw": 972,
       "stderr": 10,
       "sourceLabel": "Cosmos3-Super-Text2Image-4Step"
     },
@@ -1282,7 +1282,7 @@
     {
       "modelId": "cosmos3-super-text2image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 988,
+      "raw": 987,
       "stderr": 10,
       "sourceLabel": "Cosmos3-Super-Text2Image"
     },
@@ -1688,7 +1688,7 @@
       "modelId": "qwen-image-2-1",
       "benchmarkId": "aa-text-to-image",
       "raw": 1048,
-      "stderr": 11,
+      "stderr": 12,
       "sourceLabel": "Qwen-Image-2.1"
     },
     {
@@ -2065,7 +2065,7 @@
     {
       "modelId": "h3-image",
       "benchmarkId": "aa-text-to-image",
-      "raw": 1066,
+      "raw": 1065,
       "stderr": 14,
       "sourceLabel": "H3-Image"
     },
@@ -2289,7 +2289,7 @@
     {
       "modelId": "recraft-v4-1-flash",
       "benchmarkId": "aa-text-to-image",
-      "raw": 949,
+      "raw": 948,
       "stderr": 11,
       "sourceLabel": "Recraft V4.1 Flash"
     },
@@ -2422,7 +2422,7 @@
     {
       "modelId": "bagel",
       "benchmarkId": "aa-text-to-image",
-      "raw": 606,
+      "raw": 605,
       "stderr": 32,
       "sourceLabel": "Bagel"
     },
@@ -2590,7 +2590,7 @@
     {
       "modelId": "p-image-ideogram",
       "benchmarkId": "aa-text-to-image",
-      "raw": 996,
+      "raw": 995,
       "stderr": 14,
       "sourceLabel": "P-Image-Ideogram (Very High)"
     },
@@ -2681,7 +2681,7 @@
     {
       "modelId": "lucid-origin-ultra",
       "benchmarkId": "aa-text-to-image",
-      "raw": 878,
+      "raw": 877,
       "stderr": 16,
       "sourceLabel": "Lucid Origin Ultra"
     },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T03:41:03.689Z",
+  "generatedAt": "2026-11-24T16:46:21.320Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -4799,25 +4799,11 @@
       "name": "Kimi K2",
       "org": "Moonshot",
       "access": {
-        "openrouter": {
-          "id": "moonshotai/kimi-k2-0905",
-          "url": "https://openrouter.ai/moonshotai/kimi-k2-0905",
-          "contextLength": 262144,
-          "inputPerM": 0.6,
-          "outputPerM": 2.5,
-          "listedAt": "2025-09-04",
-          "modalities": ["text"]
-        },
-        "weights": {
-          "huggingFaceId": "moonshotai/Kimi-K2-Instruct-0905",
-          "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905"
-        },
         "official": {
           "name": "Moonshot AI Platform",
           "url": "https://platform.moonshot.ai/docs"
         }
-      },
-      "size": { "paramsB": 1026.4, "source": "huggingface" }
+      }
     },
     {
       "id": "kimi-k2-thinking",
@@ -5980,8 +5966,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.077,
-          "outputPerM": 0.255,
+          "inputPerM": 0.09,
+          "outputPerM": 0.3,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -7158,9 +7144,9 @@
         "openrouter": {
           "id": "inclusionai/ling-3.0-flash",
           "url": "https://openrouter.ai/inclusionai/ling-3.0-flash",
-          "contextLength": 131072,
-          "inputPerM": 0.06,
-          "outputPerM": 0.18,
+          "contextLength": 262144,
+          "inputPerM": 0.021,
+          "outputPerM": 0.063,
           "listedAt": "2026-07-23",
           "modalities": ["text"]
         },
@@ -7258,8 +7244,8 @@
           "id": "tencent/hy3",
           "url": "https://openrouter.ai/tencent/hy3",
           "contextLength": 262144,
-          "inputPerM": 0.132,
-          "outputPerM": 0.528,
+          "inputPerM": 0.083,
+          "outputPerM": 0.33,
           "listedAt": "2026-07-06",
           "modalities": ["text"]
         },
@@ -7411,15 +7397,6 @@
       "name": "Mistral Medium 3",
       "org": "Mistral",
       "access": {
-        "openrouter": {
-          "id": "mistralai/mistral-medium-3",
-          "url": "https://openrouter.ai/mistralai/mistral-medium-3",
-          "contextLength": 131072,
-          "inputPerM": 0.44,
-          "outputPerM": 2.2,
-          "listedAt": "2025-05-07",
-          "modalities": ["text", "image", "file"]
-        },
         "official": {
           "name": "Mistral AI docs",
           "url": "https://docs.mistral.ai"
@@ -7800,8 +7777,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.075,
+          "outputPerM": 0.3,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -7866,15 +7843,6 @@
       "name": "Mistral Medium 3.1",
       "org": "Mistral",
       "access": {
-        "openrouter": {
-          "id": "mistralai/mistral-medium-3.1",
-          "url": "https://openrouter.ai/mistralai/mistral-medium-3.1",
-          "contextLength": 131072,
-          "inputPerM": 0.44,
-          "outputPerM": 2.2,
-          "listedAt": "2025-08-13",
-          "modalities": ["text", "image", "file"]
-        },
         "official": {
           "name": "Mistral AI docs",
           "url": "https://docs.mistral.ai"
@@ -9242,8 +9210,8 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.044,
-          "outputPerM": 0.132,
+          "inputPerM": 0.045,
+          "outputPerM": 0.136,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
         },
@@ -11183,8 +11151,8 @@
           "id": "z-ai/glm-5.3-flash",
           "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.12,
-          "outputPerM": 0.38,
+          "inputPerM": 0.15,
+          "outputPerM": 0.5,
           "listedAt": "2026-08-26",
           "modalities": ["text", "image", "video"]
         },
@@ -21055,7 +21023,7 @@
     {
       "modelId": "chandra-ocr-2",
       "benchmarkId": "parsebench",
-      "raw": 70.59,
+      "raw": 74.07,
       "sourceLabel": "Chandra-ocr-2"
     },
     {
@@ -21085,7 +21053,7 @@
     {
       "modelId": "chandra-ocr-2",
       "benchmarkId": "parsebench-visual-grounding",
-      "raw": 51.18,
+      "raw": 68.58,
       "sourceLabel": "Chandra-ocr-2"
     },
     {
@@ -40781,6 +40749,12 @@
     },
     {
       "modelId": "gemini-4-neon",
+      "benchmarkId": "arc-agi-2",
+      "raw": 90.8,
+      "sourceLabel": "Gemini 4 Neon (High)"
+    },
+    {
+      "modelId": "gemini-4-neon",
       "benchmarkId": "livebench",
       "raw": 87.4,
       "sourceLabel": "Gemini 4 Neon"
@@ -51680,21 +51654,21 @@
       "modelId": "glm-5-3-flash",
       "benchmarkId": "artificial-analysis",
       "raw": 28,
-      "sourceLabel": "GLM-5.3-Flash"
+      "sourceLabel": "GLM-5.3-Flash Max"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-gdpval",
       "raw": 1649,
       "stderr": 16,
-      "sourceLabel": "GLM-5.3-Flash"
+      "sourceLabel": "GLM-5.3-Flash (Max)"
     },
     {
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 1448,
       "stderr": 7.5,
-      "sourceLabel": "GLM-5.3-Flash"
+      "sourceLabel": "GLM-5.3-Flash (Max)"
     },
     {
       "modelId": "glm-5-3-flash",
