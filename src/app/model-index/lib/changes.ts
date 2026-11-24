@@ -1,6 +1,12 @@
 import { benchmarks, scores } from '../data';
 import history from '../data/history.json';
-import { aliasResolver, backlogOf, diff, type HistoryEntry } from './diff';
+import {
+  aliasResolver,
+  backlogOf,
+  diff,
+  type HistoryEntry,
+  type RetiredAliases,
+} from './diff';
 
 export type { Change, Changes, HistoryEntry } from './diff';
 export { diff } from './diff';
@@ -13,7 +19,11 @@ export { diff } from './diff';
 // the snapshots disagree on which model ids exist (a rename, 2026-09-11)
 // the literal type no longer "sufficiently overlaps" HistoryEntry[] and
 // the build fails on a data change.
-const entries = (history as unknown as { entries: HistoryEntry[] }).entries;
+const { entries, retired = [] } = history as unknown as {
+  entries: HistoryEntry[];
+  /** Renames of snapshots the window has dropped; see retireAliases. */
+  retired?: RetiredAliases[];
+};
 
 export const snapshots = () => entries.map((e) => e.date);
 export const latest = () => entries[entries.length - 1];
@@ -76,4 +86,6 @@ export function enteredSince(days = 7) {
  * model". The history file records what each renamed or merged id took
  * over from; this follows that forward.
  */
-export const currentId = aliasResolver(entries);
+// The retired renames first: they are older than every entry the window
+// kept, and a chain a → b → c may cross the window's edge.
+export const currentId = aliasResolver([...retired, ...entries]);

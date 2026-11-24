@@ -6,6 +6,8 @@ import { aggregate, placeRows } from '../src/app/model-index/lib/aggregate.ts';
 import {
   appendEntry,
   type HistoryEntry,
+  retireAliases,
+  type RetiredAliases,
 } from '../src/app/model-index/lib/diff.ts';
 import {
   MIN_SOURCES,
@@ -132,7 +134,9 @@ function committedSnapshot(): Snapshot | null {
 }
 
 const data = JSON.parse(await readFile(join(DIR, 'index.json'), 'utf8'));
-let history: { entries: HistoryEntry[] } = { entries: [] };
+let history: { entries: HistoryEntry[]; retired?: RetiredAliases[] } = {
+  entries: [],
+};
 try {
   history = JSON.parse(await readFile(join(DIR, 'history.json'), 'utf8'));
 } catch {
@@ -182,10 +186,14 @@ for (const r of rows) {
 // Same-date reruns merge their aliases rather than replacing the day's
 // entry; see appendEntry.
 const entries = appendEntry(history.entries, entry, LIMIT);
+// The renames of whatever the window just dropped stay on record, so an
+// old id keeps resolving past LIMIT days (retireAliases).
+const retired = retireAliases(history.entries, entries, history.retired);
 
 await writeFile(
   join(DIR, 'history.json'),
-  JSON.stringify({ entries }, null, 2) + '\n',
+  JSON.stringify({ entries, ...(retired.length ? { retired } : {}) }, null, 2) +
+    '\n',
 );
 console.log(
   `history: ${entries.length} snapshot(s), latest ${entry.date}, ${rankOf.size} ranked of ${rows.length}${

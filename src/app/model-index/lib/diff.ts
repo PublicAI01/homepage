@@ -88,7 +88,9 @@ export function lineage(
  * score under a name that meant the other as well, and a number that may
  * belong to someone else is worse than "not listed".
  */
-export function aliasResolver(entries: HistoryEntry[]) {
+export function aliasResolver(
+  entries: readonly Pick<HistoryEntry, 'aliases'>[],
+) {
   const forward = new Map<string, string>();
   for (const e of entries) {
     const targets = new Map<string, Set<string>>();
@@ -174,6 +176,50 @@ export function appendEntry(
   return [...entries.filter((e) => e.date !== entry.date), merged]
     .sort((a, b) => a.date.localeCompare(b.date))
     .slice(-limit);
+}
+
+/**
+ * The renames of a snapshot the window has dropped: its date and its
+ * `aliases`, nothing else. Kept in history.json beside `entries`, oldest
+ * first, and read by aliasResolver ahead of them.
+ *
+ * `appendEntry` keeps the last `limit` snapshots, and every rename the
+ * index has ever recorded lived only in those snapshots' `aliases` — so an
+ * old id in a README badge, a shared link or an agent's cached call
+ * resolved for `limit` days after the rename and then answered "not
+ * listed" for a model still on the index. 411 renames across 29 snapshots
+ * stood to fall out of the window from January 2027, 173 of them from one
+ * day (2026-11-24). A snapshot's models and ranks are the window's to
+ * forget; its renames are not.
+ */
+export interface RetiredAliases {
+  date: string;
+  aliases: Record<string, string[]>;
+}
+
+/**
+ * `retired` plus the renames of every entry in `before` that `after` no
+ * longer carries, oldest first. One record per date: a same-date rebuild
+ * replaces its entry rather than dropping it (appendEntry), and is not
+ * retired; a record already retired is not retired twice.
+ */
+export function retireAliases(
+  before: readonly HistoryEntry[],
+  after: readonly HistoryEntry[],
+  retired: readonly RetiredAliases[] = [],
+): RetiredAliases[] {
+  const kept = new Set(after.map((e) => e.date));
+  const have = new Set(retired.map((r) => r.date));
+  const dropped = before
+    .filter(
+      (e) =>
+        !kept.has(e.date) &&
+        !have.has(e.date) &&
+        e.aliases !== undefined &&
+        Object.keys(e.aliases).length > 0,
+    )
+    .map((e) => ({ date: e.date, aliases: e.aliases! }));
+  return [...retired, ...dropped].sort((a, b) => a.date.localeCompare(b.date));
 }
 
 /**

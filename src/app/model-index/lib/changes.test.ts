@@ -13,6 +13,7 @@ import {
   type HistoryEntry,
   lineage,
   massMoveCause,
+  retireAliases,
 } from './diff';
 import { fallbackBadge } from './weights';
 
@@ -320,6 +321,54 @@ describe('appendEntry: a rebuild on the same date', () => {
   it('orders by date and keeps only the last `limit` entries', () => {
     const entries = appendEntry([run1, yesterday], entry('2026-09-16', {}), 2);
     expect(entries.map((e) => e.date)).toEqual(['2026-09-15', '2026-09-16']);
+  });
+});
+
+describe('retireAliases: a rename outlives the history window', () => {
+  // Day 1 renamed a → b. The window keeps two snapshots, so day 3 drops
+  // day 1 — and with it, until 2026-11-24, the only record that `a` was
+  // ever `b`: a badge pasted under the old id read "not listed".
+  const day1: HistoryEntry = {
+    ...entry('2026-09-15', { b: [1, 70], x: [2, 65] }),
+    aliases: { b: ['a'] },
+  };
+  const day2 = entry('2026-09-16', { b: [1, 70], x: [2, 65] });
+  const day3 = entry('2026-09-17', { b: [1, 70], x: [2, 65] });
+
+  it('keeps the dropped snapshot’s renames, and the resolver reads them', () => {
+    const before = appendEntry([day1], day2, 2);
+    const after = appendEntry(before, day3, 2);
+    expect(after.map((e) => e.date)).toEqual(['2026-09-16', '2026-09-17']);
+    // The window alone has forgotten the rename.
+    expect(aliasResolver(after)('a')).toBe('a');
+    const retired = retireAliases(before, after);
+    expect(retired).toEqual([{ date: '2026-09-15', aliases: { b: ['a'] } }]);
+    expect(aliasResolver([...retired, ...after])('a')).toBe('b');
+  });
+
+  it('follows a chain across the window’s edge', () => {
+    // a → b fell out of the window; b → c is still in it.
+    const renamed: HistoryEntry = {
+      ...entry('2026-09-17', { c: [1, 70], x: [2, 65] }),
+      aliases: { c: ['b'] },
+    };
+    const before = appendEntry([day1], day2, 2);
+    const after = appendEntry(before, renamed, 2);
+    const resolve = aliasResolver([...retireAliases(before, after), ...after]);
+    expect(resolve('a')).toBe('c');
+  });
+
+  it('retires a date once, and never a same-date rebuild or a snapshot without renames', () => {
+    const before = appendEntry([day1], day2, 2);
+    const after = appendEntry(before, day3, 2);
+    const once = retireAliases(before, after);
+    // The next run drops day 2, which recorded no rename: nothing to add,
+    // and day 1 is not recorded again.
+    const later = appendEntry(after, entry('2026-09-18', {}), 2);
+    expect(retireAliases(after, later, once)).toEqual(once);
+    // A rebuild of day 3 replaces its entry; the date is still in the window.
+    const rebuilt = appendEntry(after, day3, 2);
+    expect(retireAliases(after, rebuilt, once)).toEqual(once);
   });
 });
 
