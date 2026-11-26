@@ -10,6 +10,7 @@ import {
   type AggregateRow,
   boardsFirst,
   compareScores,
+  MIN_OVERALL_WEIGHT,
   placeRows,
 } from './aggregate';
 import { countingBoards, groupBoards } from './boards';
@@ -85,7 +86,7 @@ export interface ModelSummary {
   } | null;
   /** The figure the list is ranked by, when a scope other than Overall was asked for. */
   scopeScore?: number | null;
-  /** Ranked Overall: scored by boards from at least two independent publishers. */
+  /** Ranked Overall: boards from MIN_SOURCES independent publishers among those that build the index scored it, and at least MIN_OVERALL_WEIGHT of the index's weighting was measured. */
   ranked: boolean;
   /** Ranked in the requested scope: a recognised board measured the model there. Equals `ranked` for Overall. */
   rankedInScope: boolean;
@@ -742,7 +743,7 @@ export function createTrack(input: TrackInput) {
       /** Rows a recognised board measured in this scope, filters aside — what a position is "of". Overall: the ranked count. */
       scopeTotal: positions.size,
       models,
-      note: 'Scores are 0–100 standardized across the models each source lists; 50 is that measure’s average, not a grade. Overall ranks a model once boards from two independent publishers have scored it; a category or domain ranks any model a recognised board measured there. Report (✱) figures never rank a model on their own. This is a snapshot dated generatedAt, not a live feed; every figure links to its publisher.',
+      note: 'Scores are 0–100 standardized across the models each source lists; 50 is that measure’s average, not a grade. Overall ranks a model once boards from two independent publishers that build the index have scored it and at least half of the index’s weighting has been measured; a category or domain ranks any model a recognised board measured there. Report (✱) figures never rank a model on their own. This is a snapshot dated generatedAt, not a live feed; every figure links to its publisher.',
     };
   }
 
@@ -850,7 +851,10 @@ export function createTrack(input: TrackInput) {
         'Each measure is z-scored across the models its source lists and mapped to 0–100 (mean 50, sd 15), with z capped at ±2 (so 20–80): past two standard deviations a board has stopped discriminating and started extrapolating, and one such figure could outweigh four boards. The cap changes no board’s own order. A measure marked direction "lower" (a risk or error rate) is read the other way round; its raw stays as printed.',
         'Where a source publishes an error bar, the figure’s weight is discounted by how wide it is relative to the board’s spread.',
         `A model absent from a source is excluded from that term, never imputed; a prior worth ${Math.round(PRIOR_FRACTION * 100)}% of the in-scope weight pulls thin evidence toward 50.`,
-        `Overall ranks a model once ${MIN_SOURCES} independent publishers among the boards that build the index have scored it — a board that shapes only a domain does not count toward it; otherwise the model is provisional. A category or domain ranks any model a recognised board has measured there.`,
+        // Both halves of the rule. Stated as the publisher count alone, an
+        // agent reading this beside 57 two-publisher rows with no rank
+        // could only conclude the data contradicted the method (2026-11-26).
+        `Overall ranks a model once ${MIN_SOURCES} independent publishers among the boards that build the index have scored it — a board that shapes only a domain does not count toward it — and at least ${Math.round(MIN_OVERALL_WEIGHT * 100)}% of the index's weighting has actually been measured; below that the prior decides more than the boards do, so the model is listed provisional with its coverage and no number. A category or domain ranks any model a recognised board has measured there.`,
         `In a category or domain, position counts only models a recognised board measured there; a model placed by report ✱ figures alone keeps its score and takes no number (position null). Filters hide rows without renumbering the rest.`,
         `Reports (launch posts, blogs) are marked ✱. They never enter the Overall index, and in a category or domain they decide nothing a recognised board measured: the boards' number stands, and a ✱ figure sets the score only for a model no board measured there (which takes no position). Pass reports=true to let ✱ figures into every score instead. An independent write-up carries ${INDEPENDENT_REPORT_WEIGHT} against a board measure's ${BOARD_MEASURE_WEIGHT}; a figure the model's own publisher printed carries ${VENDOR_REPORT_WEIGHT}. One publication is one voice in a scope: the measures it contributes there are averaged and enter once, so a post that printed five numbers does not outweigh a board that ran a fixed set on everyone.`,
         `scopes lists the domains offered as headline rankings: measured by at least ${MIN_BOARDS_TO_VOTE_IN} boards, or by one board that ranks at least ${MIN_MODELS_FOR_HEADLINE} models there. Every other domain a board measured is still on the model pages and accepted as a scope by name.`,

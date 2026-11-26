@@ -32,6 +32,7 @@ import { downloadChart } from '../lib/export-chart';
 import { familyOf } from '../lib/family';
 import { scopeNote } from '../lib/scope-notes';
 import { SIZE_TIERS, sizeLabel, type SizeTier, tierOf } from '../lib/size';
+import { unrankedReason } from '../lib/unranked';
 import {
   decodeView,
   encodeView,
@@ -1087,8 +1088,10 @@ export default function IndexTable({ tracks, newcomers }: Props) {
 
       <p className="text-caption text-g2 mt-3">
         0–100, standardized: 50 is the average of the models each source lists.
-        Provisional = fewer than {MIN_SOURCES} independent publishers. ✱ = from
-        reports. Open a row for the model card.
+        Provisional = not ranked Overall: fewer than {MIN_SOURCES} independent
+        publishers among the boards that build it, or under{' '}
+        {Math.round(MIN_OVERALL_WEIGHT * 100)}% of its weighting measured. ✱ =
+        from reports. Open a row for the model card.
         {filtered.length > shown.length
           ? ` Showing the first ${PAGE} of ${filtered.length}.`
           : ''}
@@ -1167,10 +1170,13 @@ function Row({
               ~{approx}
             </span>
           ) : rankKey.level === 'overall' ? (
-            <span
-              title={`Provisional — fewer than ${MIN_SOURCES} independent publishers`}>
-              —
-            </span>
+            // The reason this row has no place, not a guess at it: the
+            // rule is two publishers *and* half the weighting measured, and
+            // "fewer than 2 publishers" was false for 57 of the 984
+            // provisional rows — GPT-5.5, Claude Opus 4.7, Qwen4 Max among
+            // them, each on two publishers at 40–45% (2026-11-26). The model
+            // page had been corrected on 2026-11-21; the table had not.
+            <span title={`Provisional — ${unrankedReason(row)}`}>—</span>
           ) : (
             <span
               className="text-[#B9B7C4]"
@@ -1427,7 +1433,10 @@ function ModelCard({
             </>
           ) : (
             <span className="text-[#F5C86B]">
-              Provisional — fewer than {MIN_SOURCES} independent publishers
+              {/* One rule for the sentence, shared with the model page
+                  (lib/unranked.ts): the hardcoded publisher count was the
+                  wrong reason for 57 rows (2026-11-26). */}
+              Provisional — {unrankedReason(row)}
               {row.score === null && row.estimate ? (
                 <span className="text-[#9C9AA8]">
                   , estimated{' '}

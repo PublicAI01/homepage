@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import type { Benchmark, IndexData } from '../data/types';
+import { MIN_OVERALL_WEIGHT } from './aggregate';
 import { createTrack } from './track';
 import type { Weighting } from './weights';
 
@@ -280,5 +281,32 @@ describe('head to head', () => {
 
   it('claims nothing in a scope where only a report placed the subject', () => {
     expect(standings('blogged').rivals).toEqual([]);
+  });
+});
+
+describe('the ranking rule as the API and MCP state it', () => {
+  // Two conditions place a model Overall (aggregate.ts, `ranked`): MIN_SOURCES
+  // publishers among the boards that build the index, and MIN_OVERALL_WEIGHT
+  // of its weighting measured. The method document and the note under every
+  // rank_models answer stated only the first, so an agent reading them
+  // beside the 57 two-publisher rows with no rank (GPT-5.5, Claude Opus 4.7,
+  // Qwen4 Max on 2026-11-26) could only conclude the data contradicted the
+  // method.
+  const track = createTrack({
+    data,
+    weighting: weighting(50, 50),
+    url: 'https://publicai.io/model-index/x',
+  });
+
+  it('names the measured-weighting threshold in the method', () => {
+    const method = track.describeIndex().method.join('\n');
+    expect(method).toContain(`${Math.round(MIN_OVERALL_WEIGHT * 100)}%`);
+    expect(method).toMatch(/weighting has actually been measured/);
+  });
+
+  it('does not reduce the rule to the publisher count in the note', () => {
+    const r = track.rankModels({});
+    if ('error' in r) throw new Error(r.error);
+    expect(r.note).toMatch(/half of the index.s weighting has been measured/);
   });
 });
