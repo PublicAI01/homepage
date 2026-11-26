@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T01:23:01.948Z",
+  "generatedAt": "2026-11-26T16:04:27.605Z",
   "benchmarks": [
     {
       "id": "aa-text-to-image",
@@ -54,6 +54,11 @@
     {
       "id": "ming-image-0-1-design",
       "name": "Ming Image 0.1 Design",
+      "org": "Other"
+    },
+    {
+      "id": "ming-image-0-2-design",
+      "name": "Ming Image 0.2 Design",
       "org": "Other"
     },
     { "id": "phoenix-0-9-ultra", "name": "Phoenix 0.9 Ultra", "org": "Other" },
@@ -956,6 +961,13 @@
       "raw": 1001,
       "stderr": 9,
       "sourceLabel": "Ming-Image-0.1-Design"
+    },
+    {
+      "modelId": "ming-image-0-2-design",
+      "benchmarkId": "aa-text-to-image",
+      "raw": 1095,
+      "stderr": 12,
+      "sourceLabel": "Ming-Image-0.2-Design"
     },
     {
       "modelId": "phoenix-0-9-ultra",
