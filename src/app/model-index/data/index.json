@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T01:21:25.364Z",
+  "generatedAt": "2026-11-27T15:53:16.152Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -3042,6 +3042,12 @@
     },
     { "id": "jev-1-13-0", "name": "Jev 1.13.0", "org": "TypeSafe AI" },
     {
+      "id": "quasar-1-2-358b-max-based-on-glm-5-3",
+      "name": "Quasar 1.2 358B Max, Based on GLM-5.3",
+      "org": "Multiverse Computing",
+      "size": { "paramsB": 358, "source": "name" }
+    },
+    {
       "id": "torchcast-decision-4b-v1-2",
       "name": "Torchcast Decision 4B v1.2",
       "org": "Other",
@@ -4744,8 +4750,8 @@
           "id": "thinkingmachines/inkling-2-mini",
           "url": "https://openrouter.ai/thinkingmachines/inkling-2-mini",
           "contextLength": 1048576,
-          "inputPerM": 0.075,
-          "outputPerM": 0.3,
+          "inputPerM": 0.06,
+          "outputPerM": 0.24,
           "listedAt": "2026-11-21",
           "modalities": ["text", "image"]
         },
@@ -5058,7 +5064,7 @@
         "openrouter": {
           "id": "qwen/qwen3.8-2.4t-a95b",
           "url": "https://openrouter.ai/qwen/qwen3.8-2.4t-a95b",
-          "contextLength": 1048576,
+          "contextLength": 1000000,
           "inputPerM": 2,
           "outputPerM": 6,
           "listedAt": "2026-08-12",
@@ -5966,8 +5972,8 @@
           "id": "google/gemma-4-26b-a4b-it",
           "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
           "contextLength": 262144,
-          "inputPerM": 0.077,
-          "outputPerM": 0.255,
+          "inputPerM": 0.09,
+          "outputPerM": 0.3,
           "listedAt": "2026-04-03",
           "modalities": ["image", "text", "video"]
         },
@@ -6040,7 +6046,7 @@
           "url": "https://openrouter.ai/google/gemma-3-27b-it",
           "contextLength": 131072,
           "inputPerM": 0.08,
-          "outputPerM": 0.45,
+          "outputPerM": 0.16,
           "listedAt": "2025-03-12",
           "modalities": ["text", "image"]
         },
@@ -7789,8 +7795,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.15,
-          "outputPerM": 0.6,
+          "inputPerM": 0.075,
+          "outputPerM": 0.3,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -9222,8 +9228,8 @@
           "id": "~deepseek/deepseek-v4-flash-latest",
           "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
           "contextLength": 1048576,
-          "inputPerM": 0.047,
-          "outputPerM": 0.3,
+          "inputPerM": 0.045,
+          "outputPerM": 0.136,
           "listedAt": "2026-08-01",
           "modalities": ["text"]
         },
@@ -9242,8 +9248,8 @@
           "id": "deepseek/deepseek-v4-flash-vision-exp",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
           "contextLength": 1048576,
-          "inputPerM": 0.44,
-          "outputPerM": 1.32,
+          "inputPerM": 0.216,
+          "outputPerM": 0.647,
           "listedAt": "2026-08-21",
           "modalities": ["text", "image"]
         },
@@ -9267,7 +9273,7 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
           "contextLength": 1048576,
-          "inputPerM": 0.25,
+          "inputPerM": 0.1,
           "outputPerM": 5,
           "listedAt": "2026-08-12",
           "modalities": ["text"]
@@ -9894,8 +9900,8 @@
           "id": "deepseek/deepseek-v4.1-flash-1017",
           "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
           "contextLength": 1048576,
-          "inputPerM": 0.3,
-          "outputPerM": 1.2,
+          "inputPerM": 0.15,
+          "outputPerM": 0.6,
           "listedAt": "2026-10-17",
           "modalities": ["text", "image"]
         },
@@ -11286,6 +11292,17 @@
         "official": {
           "name": "Claude Developer Platform",
           "url": "https://docs.claude.com"
+        }
+      }
+    },
+    {
+      "id": "ernie-5-5-flash",
+      "name": "ERNIE 5.5 Flash",
+      "org": "Baidu",
+      "access": {
+        "official": {
+          "name": "Baidu Qianfan",
+          "url": "https://cloud.baidu.com/product/wenxinworkshop"
         }
       }
     },
@@ -15917,6 +15934,19 @@
       "sourceLabel": "Jev 1.13.0 (hosted API)"
     },
     {
+      "modelId": "quasar-1-2-358b-max-based-on-glm-5-3",
+      "benchmarkId": "artificial-analysis",
+      "raw": 23,
+      "sourceLabel": "Quasar 1.2 358B Max, Based on GLM-5.3"
+    },
+    {
+      "modelId": "quasar-1-2-358b-max-based-on-glm-5-3",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1316,
+      "stderr": 10,
+      "sourceLabel": "Quasar 1.2 358B (Max, Based on GLM-5.3)"
+    },
+    {
       "modelId": "torchcast-decision-4b-v1-2",
       "benchmarkId": "jevbench-intelligence",
       "raw": 60.3,
@@ -20110,7 +20140,7 @@
     {
       "modelId": "k2-horizon-375b-a23b",
       "benchmarkId": "aa-briefcase",
-      "raw": 1291,
+      "raw": 1290,
       "stderr": 7.5,
       "sourceLabel": "K2 Horizon 375B A23B"
     },
@@ -25224,7 +25254,7 @@
       "modelId": "mimo-v2-6-pro",
       "benchmarkId": "aa-briefcase",
       "raw": 1511,
-      "stderr": 9,
+      "stderr": 8.5,
       "sourceLabel": "MiMo-V2.6-Pro"
     },
     {
@@ -26847,7 +26877,7 @@
       "modelId": "qwen3-6-27b",
       "benchmarkId": "aa-briefcase",
       "raw": 818,
-      "stderr": 7.5,
+      "stderr": 7,
       "sourceLabel": "Qwen3.6 27B (Reasoning)"
     },
     {
@@ -28764,8 +28794,8 @@
     {
       "modelId": "nvidia-nemotron-3-ultra-550b-a55b",
       "benchmarkId": "aa-briefcase",
-      "raw": 879,
-      "stderr": 7.5,
+      "raw": 880,
+      "stderr": 7,
       "sourceLabel": "Nemotron 3 Ultra 550B A55B (Reasoning)"
     },
     {
@@ -34400,8 +34430,8 @@
     {
       "modelId": "nvidia-nemotron-3-5-lightning-30b-a3b",
       "benchmarkId": "aa-briefcase",
-      "raw": 507,
-      "stderr": 9,
+      "raw": 508,
+      "stderr": 9.5,
       "sourceLabel": "Nemotron 3.5 Lightning"
     },
     {
@@ -37757,7 +37787,7 @@
       "modelId": "qwen3-8-flash-next",
       "benchmarkId": "aa-briefcase",
       "raw": 1568,
-      "stderr": 7.5,
+      "stderr": 8,
       "sourceLabel": "Qwen3.8-Flash-Next"
     },
     {
@@ -38206,7 +38236,7 @@
     {
       "modelId": "muse-glimmer",
       "benchmarkId": "aa-briefcase",
-      "raw": 479,
+      "raw": 480,
       "stderr": 8.5,
       "sourceLabel": "Muse Glimmer (High)"
     },
@@ -38336,7 +38366,7 @@
     {
       "modelId": "gemma-4-31b",
       "benchmarkId": "aa-briefcase",
-      "raw": 371,
+      "raw": 372,
       "stderr": 8,
       "sourceLabel": "Gemma 4 31B (Reasoning)"
     },
@@ -40767,7 +40797,7 @@
       "modelId": "gemini-4-neon",
       "benchmarkId": "aa-briefcase",
       "raw": 1698,
-      "stderr": 11,
+      "stderr": 11.5,
       "sourceLabel": "Gemini 4 Neon (Xhigh)"
     },
     {
@@ -42011,7 +42041,7 @@
       "modelId": "mistral-large-4",
       "benchmarkId": "aa-briefcase",
       "raw": 1347,
-      "stderr": 9,
+      "stderr": 9.5,
       "sourceLabel": "Mistral Large 4 (High)"
     },
     {
@@ -42607,7 +42637,7 @@
       "modelId": "qwen4-max",
       "benchmarkId": "aa-briefcase",
       "raw": 1685,
-      "stderr": 11.5,
+      "stderr": 12,
       "sourceLabel": "Qwen4 Max"
     },
     {
@@ -51706,7 +51736,7 @@
       "modelId": "glm-5-3-flash",
       "benchmarkId": "aa-briefcase",
       "raw": 1448,
-      "stderr": 7.5,
+      "stderr": 8,
       "sourceLabel": "GLM-5.3-Flash (Max)"
     },
     {
@@ -52021,7 +52051,7 @@
       "modelId": "glm-5-3",
       "benchmarkId": "aa-briefcase",
       "raw": 1498,
-      "stderr": 7.5,
+      "stderr": 7,
       "sourceLabel": "GLM-5.3 (Max)"
     },
     {
@@ -52953,6 +52983,26 @@
       "raw": 21.76,
       "stderr": 2.55,
       "sourceLabel": "Claude Opus 5.5 (CVP)"
+    },
+    {
+      "modelId": "ernie-5-5-flash",
+      "benchmarkId": "artificial-analysis",
+      "raw": 31,
+      "sourceLabel": "ERNIE 5.5 Flash Preview"
+    },
+    {
+      "modelId": "ernie-5-5-flash",
+      "benchmarkId": "aa-gdpval",
+      "raw": 1687,
+      "stderr": 22,
+      "sourceLabel": "ERNIE 5.5 Flash Preview"
+    },
+    {
+      "modelId": "ernie-5-5-flash",
+      "benchmarkId": "aa-briefcase",
+      "raw": 1474,
+      "stderr": 11,
+      "sourceLabel": "ERNIE 5.5 Flash Preview"
     },
     {
       "modelId": "gpt-5-5",
@@ -55676,7 +55726,7 @@
       "modelId": "gpt-6-luna",
       "benchmarkId": "aa-briefcase",
       "raw": 1335,
-      "stderr": 8.5,
+      "stderr": 8,
       "sourceLabel": "GPT-6 Luna (Max)"
     },
     {
@@ -56460,7 +56510,7 @@
       "modelId": "gpt-6-1-terra",
       "benchmarkId": "aa-briefcase",
       "raw": 1399,
-      "stderr": 9.5,
+      "stderr": 10,
       "sourceLabel": "GPT-6.1 Terra (Max)"
     },
     {
@@ -56723,7 +56773,7 @@
       "modelId": "gpt-6-2-sol",
       "benchmarkId": "aa-briefcase",
       "raw": 1612,
-      "stderr": 11.5,
+      "stderr": 11,
       "sourceLabel": "GPT-6.2 Sol (Max)"
     },
     {
@@ -58948,7 +58998,7 @@
       "modelId": "muse-ember",
       "benchmarkId": "aa-briefcase",
       "raw": 1519,
-      "stderr": 11.5,
+      "stderr": 10,
       "sourceLabel": "Muse Ember (Max)"
     },
     {
@@ -60613,7 +60663,7 @@
       "modelId": "muse-spark-open",
       "benchmarkId": "aa-briefcase",
       "raw": 1281,
-      "stderr": 9,
+      "stderr": 10,
       "sourceLabel": "Muse Spark Open (Xhigh)"
     },
     {
