@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T00:54:51.383Z",
+  "generatedAt": "2026-11-28T14:49:16.405Z",
   "benchmarks": [
     {
       "id": "lmarena",
@@ -2642,7 +2642,7 @@
           "id": "reflection/beam-1.0-501b-a23b",
           "url": "https://openrouter.ai/reflection/beam-1.0-501b-a23b",
           "contextLength": 1048576,
-          "inputPerM": 0.25,
+          "inputPerM": 0.3,
           "outputPerM": 1,
           "listedAt": "2026-10-16",
           "modalities": ["text"]
@@ -2767,8 +2767,8 @@
           "id": "deepseek/deepseek-r1-0528",
           "url": "https://openrouter.ai/deepseek/deepseek-r1-0528",
           "contextLength": 163840,
-          "inputPerM": 0.571,
-          "outputPerM": 2.286,
+          "inputPerM": 0.5,
+          "outputPerM": 2.18,
           "listedAt": "2025-05-28",
           "modalities": ["text"]
         },
@@ -7782,8 +7782,8 @@
           "id": "minimax/minimax-m3.1-flash",
           "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
           "contextLength": 1048576,
-          "inputPerM": 0.075,
-          "outputPerM": 0.3,
+          "inputPerM": 0.15,
+          "outputPerM": 0.6,
           "listedAt": "2026-10-19",
           "modalities": ["text", "image", "video"]
         },
@@ -8007,7 +8007,7 @@
           "id": "nvidia/nemotron-3.5-lightning",
           "url": "https://openrouter.ai/nvidia/nemotron-3.5-lightning",
           "contextLength": 1048576,
-          "inputPerM": 0.07,
+          "inputPerM": 0.05,
           "outputPerM": 0.2,
           "listedAt": "2026-08-11",
           "modalities": ["text"]
@@ -8157,8 +8157,8 @@
           "id": "qwen/qwen3.5-9b",
           "url": "https://openrouter.ai/qwen/qwen3.5-9b",
           "contextLength": 262144,
-          "inputPerM": 0.075,
-          "outputPerM": 0.11,
+          "inputPerM": 0.085,
+          "outputPerM": 0.125,
           "listedAt": "2026-03-10",
           "modalities": ["text", "image", "video"]
         },
@@ -50967,14 +50967,14 @@
     {
       "modelId": "claude-fable-5-2",
       "benchmarkId": "aa-gdpval",
-      "raw": 1830,
-      "stderr": 27,
+      "raw": 1827,
+      "stderr": 26,
       "sourceLabel": "Claude Fable 5.2 (Max, Default Fallback)"
     },
     {
       "modelId": "claude-fable-5-2",
       "benchmarkId": "aa-briefcase",
-      "raw": 1783,
+      "raw": 1782,
       "stderr": 11,
       "sourceLabel": "Claude Fable 5.2 (Max, Default Fallback)"
     },
@@ -53320,7 +53320,7 @@
       "modelId": "claude-haiku-5-5",
       "benchmarkId": "aa-briefcase",
       "raw": 1571,
-      "stderr": 9.5,
+      "stderr": 10,
       "sourceLabel": "Claude Haiku 5.5 (Max)"
     },
     {
@@ -53577,7 +53577,7 @@
       "modelId": "claude-opus-5-5",
       "benchmarkId": "aa-briefcase",
       "raw": 1797,
-      "stderr": 10,
+      "stderr": 9.5,
       "sourceLabel": "Claude Opus 5.5 (Max, Default Fallback)"
     },
     {
@@ -53884,7 +53884,7 @@
       "modelId": "claude-sonnet-5-5",
       "benchmarkId": "aa-briefcase",
       "raw": 1812,
-      "stderr": 11,
+      "stderr": 9.5,
       "sourceLabel": "Claude Sonnet 5.5 (Max, Default Fallback)"
     },
     {
@@ -56636,7 +56636,7 @@
     {
       "modelId": "gpt-6-2-astra",
       "benchmarkId": "aa-briefcase",
-      "raw": 1642,
+      "raw": 1643,
       "stderr": 11,
       "sourceLabel": "GPT-6.2 Astra (Max)"
     },
